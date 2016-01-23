@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>kz.theeurasia.police</groupId>
+	<artifactId>parent</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>Eurasia police : Parent</name>
+
+	<organization>
+		<name>Eurasia Insurance Company</name>
+		<url>http://www.theeurasia.kz</url>
+	</organization>
+
+	<distributionManagement>
+		<repository>
+			<id>archiva.releases</id>
+			<url>http://mvnrepo/repository/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>archiva.snapshots</id>
+			<url>http://mvnrepo/repository/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<modules>
+		<module>webapp</module>
+		<module>ear</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-web-api</artifactId>
+				<version>7.0</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.faces</groupId>
+				<artifactId>javax.faces-api</artifactId>
+				<version>2.2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.glassfish</groupId>
+				<artifactId>javax.faces</artifactId>
+				<version>2.2.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.eclipse.persistence</groupId>
+				<artifactId>javax.persistence</artifactId>
+				<version>2.1.0</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.el</groupId>
+				<artifactId>javax.el-api</artifactId>
+				<version>3.0.0</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.ejb</groupId>
+				<artifactId>javax.ejb-api</artifactId>
+				<version>3.2</version>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.12</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.hamcrest</groupId>
+				<artifactId>hamcrest-all</artifactId>
+				<version>1.3</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<defaultGoal>clean install</defaultGoal>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.1</version>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-ear-plugin</artifactId>
+					<version>2.9</version>
+					<configuration>
+						<version>7</version>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-ejb-plugin</artifactId>
+					<version>2.3</version>
+					<configuration>
+						<ejbVersion>3.1</ejbVersion>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<version>2.10</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.4</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<scm>
+		<connection>scm:git:https://gitrepo.theeurasia.kz/eurasia/eurasia-police.git</connection>
+		<developerConnection>scm:git:https://gitrepo.theeurasia.kz/eurasia/eurasia-police.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+</project>

@@ -6,14 +6,16 @@
 
 	<application>
 		<locale-config>
-			<default-locale>ru</default-locale>
-			<supported-locale>en</supported-locale>
-			<supported-locale>ru</supported-locale>
-			<supported-locale>kz</supported-locale>
+			<default-locale>ru_RU</default-locale>
+			<supported-locale>ru_RU</supported-locale>
 		</locale-config>
 		<resource-bundle>
 			<base-name>kz.theeurasia.police.i18n.messages</base-name>
 			<var>msg</var>
+		</resource-bundle>
+		<resource-bundle>
+			<base-name>kz.theeurasia.police.i18n.select_labels</base-name>
+			<var>si</var>
 		</resource-bundle>
 	</application>
 </faces-config>

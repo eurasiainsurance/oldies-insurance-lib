@@ -15,6 +15,11 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>kz.theeurasia.services</groupId>
+			<artifactId>eurasia-services-api</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>javax.faces</groupId>
 			<artifactId>javax.faces-api</artifactId>
 			<scope>provided</scope>

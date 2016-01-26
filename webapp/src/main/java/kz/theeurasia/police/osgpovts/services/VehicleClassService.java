@@ -3,7 +3,7 @@ package kz.theeurasia.police.osgpovts.services;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 
-import kz.theeurasia.services.domain.VehicleClass;
+import kz.theeurasia.services.domain.osgpovts.VehicleClass;
 
 @ManagedBean(eager = true)
 @ApplicationScoped

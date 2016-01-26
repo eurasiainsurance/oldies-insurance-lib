@@ -2,15 +2,15 @@ package kz.theeurasia.police.osgpovts.domain;
 
 import java.util.UUID;
 
-import kz.theeurasia.services.domain.AgeClass;
-import kz.theeurasia.services.domain.ClientInfo;
-import kz.theeurasia.services.domain.DriverExpirienceClass;
-import kz.theeurasia.services.domain.InsuranceClassType;
+import kz.theeurasia.services.domain.esbd.ClientInfo;
+import kz.theeurasia.services.domain.global.InsuranceClassType;
+import kz.theeurasia.services.domain.osgpovts.DriverExpirienceClass;
+import kz.theeurasia.services.domain.osgpovts.InsuredAgeClass;
 
 public class Insured {
     private UUID id;
 
-    private AgeClass ageClass;
+    private InsuredAgeClass insuredAgeClass;
     private DriverExpirienceClass driverExpirienceClass;
     private String idNumber;
     private boolean hasPrivilege;
@@ -21,10 +21,10 @@ public class Insured {
 	id = UUID.randomUUID();
     }
 
-    public Insured(AgeClass ageClass, DriverExpirienceClass driverExpirienceClass, String idNumber,
+    public Insured(InsuredAgeClass insuredAgeClass, DriverExpirienceClass driverExpirienceClass, String idNumber,
 	    boolean hasPrivilege, ClientInfo clientInfo, InsuranceClassType insuranceClassType) {
 	id = UUID.randomUUID();
-	this.ageClass = ageClass;
+	this.insuredAgeClass = insuredAgeClass;
 	this.driverExpirienceClass = driverExpirienceClass;
 	this.idNumber = idNumber;
 	this.hasPrivilege = hasPrivilege;
@@ -35,12 +35,12 @@ public class Insured {
 	return id;
     }
 
-    public AgeClass getAgeClass() {
-	return ageClass;
+    public InsuredAgeClass getInsuredAgeClass() {
+	return insuredAgeClass;
     }
 
-    public void setAgeClass(AgeClass ageClass) {
-	this.ageClass = ageClass;
+    public void setInsuredAgeClass(InsuredAgeClass insuredAgeClass) {
+	this.insuredAgeClass = insuredAgeClass;
     }
 
     public DriverExpirienceClass getDriverExpirienceClass() {

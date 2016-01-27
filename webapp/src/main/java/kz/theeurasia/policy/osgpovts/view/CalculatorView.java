@@ -29,6 +29,7 @@ import kz.theeurasia.services.domain.osgpovts.VehicleClass;
 import kz.theeurasia.services.domain.osgpovts.VehicleInfo;
 import kz.theeurasia.services.services.ESBDAccess;
 import kz.theeurasia.services.services.ESBDException;
+import kz.theeurasia.services.services.ESBDFaultException;
 import kz.theeurasia.services.services.NotFound;
 import kz.theeurasia.services.services.OSGPOVTSCalculator;
 
@@ -138,7 +139,7 @@ public class CalculatorView implements Serializable {
 		policyTermClass);
     }
 
-    private void _prepareInsured() throws ESBDException {
+    private void _prepareInsured() throws ESBDException, ESBDFaultException {
 	for (Insured insured : insuredList) {
 	    try {
 		InsuranceClassType classType = esbdAccessService
@@ -167,7 +168,7 @@ public class CalculatorView implements Serializable {
 		_calculateByManyVehicle();
 	    else
 		_calculateByManyInsured();
-	} catch (ESBDException e) {
+	} catch (ESBDException | ESBDFaultException e) {
 	    FacesContext
 		    .getCurrentInstance()
 		    .addMessage(null,

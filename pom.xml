@@ -31,6 +31,8 @@
 	</properties>
 
 	<modules>
+		<module>services-api</module>
+		<module>services-impl-ejb</module>
 		<module>webapp</module>
 		<module>ear</module>
 	</modules>

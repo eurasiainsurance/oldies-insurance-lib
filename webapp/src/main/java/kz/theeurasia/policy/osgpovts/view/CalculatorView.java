@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import javax.annotation.PostConstruct;
-import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -14,24 +13,18 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 import kz.theeurasia.policy.GlobalMessages;
+import kz.theeurasia.policy.osgpovts.domain.Insurant;
 import kz.theeurasia.policy.osgpovts.domain.Insured;
 import kz.theeurasia.policy.osgpovts.domain.Vehicle;
-import kz.theeurasia.services.domain.esbd.ClientInfo;
+import kz.theeurasia.policy.osgpovts.services.CalculatorService;
 import kz.theeurasia.services.domain.global.CountryRegion;
-import kz.theeurasia.services.domain.global.IdNumber;
-import kz.theeurasia.services.domain.global.InsuranceClassType;
 import kz.theeurasia.services.domain.osgpovts.DriverExpirienceClass;
 import kz.theeurasia.services.domain.osgpovts.InsuredAgeClass;
-import kz.theeurasia.services.domain.osgpovts.InsuredInfo;
 import kz.theeurasia.services.domain.osgpovts.PolicyTermClass;
 import kz.theeurasia.services.domain.osgpovts.VehicleAgeClass;
 import kz.theeurasia.services.domain.osgpovts.VehicleClass;
-import kz.theeurasia.services.domain.osgpovts.VehicleInfo;
-import kz.theeurasia.services.services.ESBDAccess;
 import kz.theeurasia.services.services.ESBDException;
 import kz.theeurasia.services.services.ESBDFaultException;
-import kz.theeurasia.services.services.NotFound;
-import kz.theeurasia.services.services.OSGPOVTSCalculator;
 
 @ManagedBean
 @ViewScoped
@@ -39,27 +32,23 @@ public class CalculatorView implements Serializable {
 
     private static final long serialVersionUID = -1581967628944479567L;
 
-    @EJB
-    private OSGPOVTSCalculator calculatorService;
-
-    @EJB
-    private ESBDAccess esbdAccessService;
-
     @ManagedProperty("#{glb}")
     private ResourceBundle glb;
 
-    public void setGlb(ResourceBundle glb) {
-	this.glb = glb;
-    }
-
+    private Insurant insurant;
     private List<Insured> insuredList;
     private List<Vehicle> vehicleList;
     private PolicyTermClass policyTermClass = PolicyTermClass.YEAR;
 
     private double premiumCost;
 
+    @ManagedProperty("#{calculatorService}")
+    private CalculatorService calcServ;
+
     @PostConstruct
     public void cleanInit() {
+	insurant = new Insurant();
+
 	insuredList = new ArrayList<>();
 	addInsured();
 
@@ -67,12 +56,31 @@ public class CalculatorView implements Serializable {
 	addVehicle();
     }
 
+    public void setGlb(ResourceBundle glb) {
+	this.glb = glb;
+    }
+
+    public void setCalcServ(CalculatorService calcServ) {
+	this.calcServ = calcServ;
+    }
+
+    public Insurant getInsurant() {
+	return insurant;
+    }
+
+    public void setInsurant(Insurant insurant) {
+	this.insurant = insurant;
+    }
+
     public List<Insured> getInsuredList() {
 	return insuredList;
     }
 
     public Insured addInsured() {
-	Insured insured = new Insured(InsuredAgeClass.OVER25, DriverExpirienceClass.MORE2, "", false, null, null);
+	Insured insured = new Insured();
+	insured.setInsuredAgeClass(InsuredAgeClass.OVER25);
+	insured.setDriverExpirienceClass(DriverExpirienceClass.MORE2);
+	insured.setHasPrivilege(false);
 	insuredList.add(insured);
 	return insured;
     }
@@ -86,7 +94,12 @@ public class CalculatorView implements Serializable {
     }
 
     public Vehicle addVehicle() {
-	Vehicle vehicle = new Vehicle(CountryRegion.GALM, true, VehicleClass.CAR, VehicleAgeClass.UNDER7, true);
+	Vehicle vehicle = new Vehicle();
+	vehicle.setVehicleClass(VehicleClass.CAR);
+	vehicle.setMajorCity(true);
+	vehicle.setMajorCityTrueForced(true);
+	vehicle.setRegion(CountryRegion.GALM);
+	vehicle.setAgeClass(VehicleAgeClass.UNDER7);
 	vehicleList.add(vehicle);
 	return vehicle;
     }
@@ -107,53 +120,6 @@ public class CalculatorView implements Serializable {
 	return premiumCost;
     }
 
-    private void _calculateByManyInsured() throws ESBDException {
-	List<InsuredInfo> insuredInfos = new ArrayList<>();
-	for (Insured insured : insuredList) {
-	    InsuredInfo insuredInfo = new InsuredInfo(insured.getInsuredAgeClass(), insured.getDriverExpirienceClass(),
-		    insured.getInsuranceClassType(),
-		    insured.isHasPrivilege());
-	    insuredInfos.add(insuredInfo);
-	}
-	Vehicle vehicle = vehicleList.iterator().next();
-	VehicleInfo vehicleInfo = new VehicleInfo(vehicle.getRegion(), vehicle.isMajorCity(), vehicle.getVehicleClass(),
-		vehicle.getAgeClass());
-	premiumCost = calculatorService.calculatePremium(insuredInfos.toArray(new InsuredInfo[0]), vehicleInfo,
-		policyTermClass);
-    }
-
-    private void _calculateByManyVehicle() throws ESBDException {
-	Insured insured = insuredList.iterator().next();
-	InsuredInfo insuredInfo = new InsuredInfo(insured.getInsuredAgeClass(), insured.getDriverExpirienceClass(),
-		insured.getInsuranceClassType(),
-		insured.isHasPrivilege());
-
-	List<VehicleInfo> vehicleInfos = new ArrayList<>();
-	for (Vehicle vehicle : vehicleList) {
-	    VehicleInfo vehicleInfo = new VehicleInfo(vehicle.getRegion(), vehicle.isMajorCity(),
-		    vehicle.getVehicleClass(),
-		    vehicle.getAgeClass());
-	    vehicleInfos.add(vehicleInfo);
-	}
-	premiumCost = calculatorService.calculatePremium(insuredInfo, vehicleInfos.toArray(new VehicleInfo[0]),
-		policyTermClass);
-    }
-
-    private void _prepareInsured() throws ESBDException, ESBDFaultException {
-	for (Insured insured : insuredList) {
-	    try {
-		InsuranceClassType classType = esbdAccessService
-			.getInsuranceClassTypeForIndividual(new IdNumber(insured.getIdNumber()));
-		insured.setInsuranceClassType(classType);
-		ClientInfo clientInfo = esbdAccessService.getClientInfo(new IdNumber(insured.getIdNumber()));
-		insured.setClientInfo(clientInfo);
-	    } catch (NotFound e) {
-		insured.setInsuranceClassType(InsuranceClassType.DEFAULT);
-		insured.setClientInfo(null);
-	    }
-	}
-    }
-
     public void checkMajorCityForced(Vehicle vehicle) {
 	vehicle.setMajorCityTrueForced(
 		vehicle.getRegion().equals(CountryRegion.GALM) || vehicle.getRegion().equals(CountryRegion.GAST));
@@ -161,13 +127,11 @@ public class CalculatorView implements Serializable {
 	    vehicle.setMajorCity(true);
     }
 
+    
+    
     public void doCalculate() {
 	try {
-	    _prepareInsured();
-	    if (vehicleList.size() > 1)
-		_calculateByManyVehicle();
-	    else
-		_calculateByManyInsured();
+	    premiumCost = calcServ.calculate(insuredList, vehicleList, policyTermClass);
 	} catch (ESBDException | ESBDFaultException e) {
 	    FacesContext
 		    .getCurrentInstance()

@@ -1,8 +1,10 @@
 package kz.theeurasia.services.services.impl;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 import java.util.logging.Logger;
 
 import javax.annotation.PostConstruct;
@@ -14,10 +16,15 @@ import kz.theeurasia.asb.esbd.jaxws.ArrayOfClient;
 import kz.theeurasia.asb.esbd.jaxws.Client;
 import kz.theeurasia.asb.esbd.jaxws.IICWebService;
 import kz.theeurasia.asb.esbd.jaxws.IICWebServiceSoap;
+import kz.theeurasia.asb.esbd.jaxws.Item;
 import kz.theeurasia.asb.esbd.jaxws.User;
 import kz.theeurasia.services.domain.esbd.ClientInfo;
+import kz.theeurasia.services.domain.esbd.ContactInfo;
+import kz.theeurasia.services.domain.esbd.OriginInfo;
+import kz.theeurasia.services.domain.esbd.PersonalInfo;
 import kz.theeurasia.services.domain.global.IdNumber;
 import kz.theeurasia.services.domain.global.InsuranceClassType;
+import kz.theeurasia.services.domain.osgpovts.DocumentInfo;
 import kz.theeurasia.services.services.ESBDAccess;
 import kz.theeurasia.services.services.ESBDException;
 import kz.theeurasia.services.services.ESBDFaultException;
@@ -37,11 +44,22 @@ public class ESBDAccessImplementation implements ESBDAccess {
 
     private String aSessionID;
     private IICWebServiceSoap soapService;
+    private List<Item> esbdDocTypes;
+    private List<Item> esbdCountries;
+    private List<Item> esbdSex;
 
     @PostConstruct
     protected void initRemoteWS() {
 	soapService = esbdService.getIICWebServiceSoap();
 	checkSession();
+
+	esbdDocTypes = soapService.getItems(aSessionID, "DOCUMENTS_TYPES").getItem();
+	esbdCountries = soapService.getItems(aSessionID, "COUNTRIES").getItem();
+	esbdSex = soapService.getItems(aSessionID, "SEX").getItem();
+	// TODO убрать
+	for (Item i : esbdSex) {
+	    System.out.println(i.getID() + " " + i.getName());
+	}
     }
 
     private void checkSession() {
@@ -91,28 +109,87 @@ public class ESBDAccessImplementation implements ESBDAccess {
 	}
     }
 
+    private Client _findClientByIINorDie(String iin) throws NotFound {
+	Client aClient = new Client();
+	aClient.setNaturalPersonBool(1);
+	aClient.setIIN(iin);
+
+	// ищем среди резидентов
+	aClient.setRESIDENTBOOL(1);
+	ArrayOfClient clients = soapService.getClientsByKeyFields(aSessionID, aClient);
+	if (clients != null && clients.getClient() != null && clients.getClient().size() > 0)
+	    return clients.getClient().iterator().next();
+
+	// если не нашли, то ищем среди нерезидентов
+	aClient.setRESIDENTBOOL(0);
+	clients = soapService.getClientsByKeyFields(aSessionID, aClient);
+	if (clients == null || clients.getClient() == null || clients.getClient().size() == 0)
+	    throw new NotFound();
+	return clients.getClient().iterator().next();
+    }
+
     @Override
-    public ClientInfo getClientInfo(IdNumber idNumber) throws ESBDException, NotFound, ESBDFaultException {
+    public ClientInfo fetchClient(IdNumber idNumber) throws ESBDException, NotFound, ESBDFaultException {
 	try {
 	    checkSession();
-	    Client aClient = new Client();
-	    aClient.setNaturalPersonBool(1);
-	    aClient.setRESIDENTBOOL(1);
-	    aClient.setIIN(idNumber.getNumber());
-	    checkSession();
-	    ArrayOfClient clients = soapService.getClientsByKeyFields(aSessionID, aClient);
-	    if (clients == null || clients.getClient() == null || clients.getClient().size() == 0)
-		throw new NotFound();
-	    Client cl = clients.getClient().iterator().next();
+	    Client cl = _findClientByIINorDie(idNumber.getNumber());
+
 	    ClientInfo ci = new ClientInfo();
-	    ci.setFirstName(cl.getFirstName());
-	    ci.setLastName(cl.getLastName());
-	    ci.setMiddleName(cl.getMiddleName());
-	    ci.setEmail(cl.getEMAIL());
-	    ci.setAddress(cl.getAddress());
+
+	    PersonalInfo pi = new PersonalInfo();
+	    ci.setPersonal(pi);
+
+	    pi.setFirstName(cl.getFirstName());
+	    pi.setLastName(cl.getLastName());
+	    pi.setMiddleName(cl.getMiddleName());
+	    pi.setDayOfBirth(_safeConvertDate(cl.getBorn()));
+
+	    DocumentInfo di = new DocumentInfo();
+	    ci.setDocument(di);
+
+	    di.setDateOfIssue(_safeConvertDate(cl.getDOCUMENTGIVEDDATE()));
+	    di.setIssuingAuthority(cl.getDOCUMENTGIVEDBY());
+	    di.setNumber(cl.getDOCUMENTNUMBER());
+	    di.setTypeId(cl.getDOCUMENTTYPEID());
+	    for (Item i : esbdDocTypes) {
+		if (i.getID() == di.getTypeId()) {
+		    di.setType(i.getName());
+		    break;
+		}
+	    }
+
+	    OriginInfo oi = new OriginInfo();
+	    ci.setOrigin(oi);
+
+	    oi.setResident(cl.getRESIDENTBOOL() == 1);
+	    oi.setCountryId(cl.getCOUNTRYID());
+	    for (Item i : esbdCountries) {
+		if (i.getID() == oi.getCountryId()) {
+		    oi.setCountry(i.getName());
+		    break;
+		}
+	    }
+
+	    ContactInfo cni = new ContactInfo();
+	    ci.setContact(cni);
+
+	    cni.setPhone(cl.getPHONES());
+	    cni.setHomeAdress(cl.getAddress());
+	    cni.setEmail(cl.getEMAIL());
+
 	    return ci;
 	} catch (SOAPFaultException e) {
 	    throw new ESBDFaultException(e);
+	}
+    }
+
+    private Calendar _safeConvertDate(String esbdDate) {
+	try {
+	    Calendar date = Calendar.getInstance();
+	    date.setTime(ESBD_DATE_FORMATER.parse(esbdDate));
+	    return date;
+	} catch (ParseException e) {
+	    return null;
 	}
     }
 }

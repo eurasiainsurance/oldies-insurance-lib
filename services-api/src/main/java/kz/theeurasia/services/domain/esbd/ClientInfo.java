@@ -1,5 +1,7 @@
 package kz.theeurasia.services.domain.esbd;
 
+import kz.theeurasia.services.domain.osgpovts.DocumentInfo;
+
 /**
  * Класс для представления данных о клиенте физ.лице
  * 
@@ -7,59 +9,52 @@ package kz.theeurasia.services.domain.esbd;
  *
  */
 public class ClientInfo {
-    private String firstName;
-    private String lastName;
-    private String middleName;
-    private String birth;
-    private String email;
-    private String address;
 
-    public String getFirstName() {
-	return firstName;
+    private PersonalInfo personal;
+    private OriginInfo origin;
+    private DocumentInfo document;
+    private ContactInfo contact;
+
+    public ClientInfo() {
     }
 
-    public void setFirstName(String firstName) {
-	this.firstName = firstName;
+    public ClientInfo(PersonalInfo personal, OriginInfo origin, DocumentInfo document, ContactInfo contact) {
+	this.personal = personal;
+	this.origin = origin;
+	this.document = document;
+	this.contact = contact;
     }
 
-    public String getLastName() {
-	return lastName;
+    public PersonalInfo getPersonal() {
+	return personal;
     }
 
-    public void setLastName(String lastName) {
-	this.lastName = lastName;
+    public void setPersonal(PersonalInfo personal) {
+	this.personal = personal;
     }
 
-    public String getMiddleName() {
-	return middleName;
+    public DocumentInfo getDocument() {
+	return document;
     }
 
-    public void setMiddleName(String middleName) {
-	this.middleName = middleName;
+    public void setDocument(DocumentInfo document) {
+	this.document = document;
     }
 
-    public String getBirth() {
-	return birth;
+    public OriginInfo getOrigin() {
+	return origin;
     }
 
-    public void setBirth(String birth) {
-	this.birth = birth;
+    public void setOrigin(OriginInfo origin) {
+	this.origin = origin;
     }
 
-    public String getEmail() {
-	return email;
+    public ContactInfo getContact() {
+	return contact;
     }
 
-    public void setEmail(String email) {
-	this.email = email;
-    }
-
-    public String getAddress() {
-	return address;
-    }
-
-    public void setAddress(String address) {
-	this.address = address;
+    public void setContact(ContactInfo contact) {
+	this.contact = contact;
     }
 
 }

@@ -2,33 +2,28 @@ package kz.theeurasia.policy.osgpovts.domain;
 
 import java.util.UUID;
 
+import org.primefaces.model.UploadedFile;
+
 import kz.theeurasia.services.domain.esbd.ClientInfo;
 import kz.theeurasia.services.domain.global.InsuranceClassType;
 import kz.theeurasia.services.domain.osgpovts.DriverExpirienceClass;
 import kz.theeurasia.services.domain.osgpovts.InsuredAgeClass;
 
 public class Insured {
-    private UUID id;
+    private final UUID id;
 
     private InsuredAgeClass insuredAgeClass;
     private DriverExpirienceClass driverExpirienceClass;
     private String idNumber;
     private boolean hasPrivilege;
     private InsuranceClassType insuranceClassType;
-    private ClientInfo clientInfo;
+    private ClientInfo client;
+
+    private UploadedFile idCardScanCopy;
+    private UploadedFile driverCertificateScanCopy;
 
     public Insured() {
 	id = UUID.randomUUID();
-    }
-
-    public Insured(InsuredAgeClass insuredAgeClass, DriverExpirienceClass driverExpirienceClass, String idNumber,
-	    boolean hasPrivilege, ClientInfo clientInfo, InsuranceClassType insuranceClassType) {
-	this();
-	this.insuredAgeClass = insuredAgeClass;
-	this.driverExpirienceClass = driverExpirienceClass;
-	this.idNumber = idNumber;
-	this.hasPrivilege = hasPrivilege;
-	this.insuranceClassType = insuranceClassType;
     }
 
     public UUID getId() {
@@ -75,12 +70,28 @@ public class Insured {
 	this.insuranceClassType = insuranceClassType;
     }
 
-    public ClientInfo getClientInfo() {
-	return clientInfo;
+    public ClientInfo getClient() {
+	return client;
     }
 
-    public void setClientInfo(ClientInfo clientInfo) {
-	this.clientInfo = clientInfo;
+    public void setClient(ClientInfo client) {
+	this.client = client;
+    }
+
+    public UploadedFile getIdCardScanCopy() {
+	return idCardScanCopy;
+    }
+
+    public void setIdCardScanCopy(UploadedFile idCardScanCopy) {
+	this.idCardScanCopy = idCardScanCopy;
+    }
+
+    public UploadedFile getDriverCertificateScanCopy() {
+	return driverCertificateScanCopy;
+    }
+
+    public void setDriverCertificateScanCopy(UploadedFile driverCertificateScanCopy) {
+	this.driverCertificateScanCopy = driverCertificateScanCopy;
     }
 
     @Override

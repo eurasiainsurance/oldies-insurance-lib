@@ -6,7 +6,7 @@ import kz.theeurasia.services.domain.global.InsuranceClassType;
 
 public interface ESBDAccess {
     InsuranceClassType getInsuranceClassTypeForIndividual(IdNumber idNumber)
-	    throws ESBDException, ESBDFaultException, NotFound;
-    ClientInfo getClientInfo(IdNumber idNumber) throws ESBDException, ESBDFaultException, NotFound;
+	    throws ESBDException, ESBDFaultException;
+    ClientInfo fetchClient(IdNumber idNumber) throws ESBDException, ESBDFaultException, NotFound;
 
 }

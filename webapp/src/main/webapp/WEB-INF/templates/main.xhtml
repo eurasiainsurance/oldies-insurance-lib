@@ -18,6 +18,12 @@
 		<br />
 		<br />
 		<ui:insert name="page-content" />
+		<p:ajaxStatus>
+			<f:facet name="start">
+				<p:graphicImage library="images" name="loading.gif" />
+			</f:facet>
+		</p:ajaxStatus>
+
 	</f:view>
 </h:body>
 </html>

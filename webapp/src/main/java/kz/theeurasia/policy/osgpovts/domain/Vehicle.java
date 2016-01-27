@@ -2,12 +2,14 @@ package kz.theeurasia.policy.osgpovts.domain;
 
 import java.util.UUID;
 
+import org.primefaces.model.UploadedFile;
+
 import kz.theeurasia.services.domain.global.CountryRegion;
 import kz.theeurasia.services.domain.osgpovts.VehicleAgeClass;
 import kz.theeurasia.services.domain.osgpovts.VehicleClass;
 
 public class Vehicle {
-    private UUID id;
+    private final UUID id;
 
     private CountryRegion region;
     private boolean isMajorCity;
@@ -15,17 +17,10 @@ public class Vehicle {
     private VehicleAgeClass ageClass;
     private boolean majorCityTrueForced;
 
+    private UploadedFile vehicleCertificateScanCopy;
+
     public Vehicle() {
 	id = UUID.randomUUID();
-    }
-
-    public Vehicle(CountryRegion region, boolean isMajorCity, VehicleClass vehicleClass, VehicleAgeClass ageClass, boolean majorCityForced) {
-	this();
-	this.region = region;
-	this.isMajorCity = isMajorCity;
-	this.vehicleClass = vehicleClass;
-	this.ageClass = ageClass;
-	this.majorCityTrueForced = majorCityForced;
     }
 
     public UUID getId() {
@@ -70,6 +65,14 @@ public class Vehicle {
 
     public void setMajorCityTrueForced(boolean majorCityTrueForced) {
 	this.majorCityTrueForced = majorCityTrueForced;
+    }
+
+    public UploadedFile getVehicleCertificateScanCopy() {
+	return vehicleCertificateScanCopy;
+    }
+
+    public void setVehicleCertificateScanCopy(UploadedFile vehicleCertificateScanCopy) {
+	this.vehicleCertificateScanCopy = vehicleCertificateScanCopy;
     }
 
     @Override

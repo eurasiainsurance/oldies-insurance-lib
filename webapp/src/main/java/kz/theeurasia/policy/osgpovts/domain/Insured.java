@@ -1,4 +1,4 @@
-package kz.theeurasia.police.osgpovts.domain;
+package kz.theeurasia.policy.osgpovts.domain;
 
 import java.util.UUID;
 

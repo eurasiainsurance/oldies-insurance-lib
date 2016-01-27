@@ -138,7 +138,7 @@
 							header="#{gpovts['title.calculator.results']}"
 							rendered="#{calculatorView.premiumCost &gt; 0}">
 							<h:panelGrid columns="2">
-								<p:outputLabel value="#{gpovts['label.output.police-cost']}" />
+								<p:outputLabel value="#{gpovts['label.output.policy-cost']}" />
 								<p:outputLabel style="font-weight: bold;"
 									value="#{calculatorView.premiumCost}">
 									<f:convertNumber type="currency" currencySymbol="&#8376;" />
@@ -151,7 +151,7 @@
 							update="@form" />
 					</p:panel>
 				</p:tab>
-				<p:tab id="policeForm" title="#{gpovts['title.wizard.police-form']}">
+				<p:tab id="policyForm" title="#{gpovts['title.wizard.policy-form']}">
 					<p:panel>
 					</p:panel>
 				</p:tab>

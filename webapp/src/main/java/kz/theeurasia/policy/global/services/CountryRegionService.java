@@ -1,4 +1,4 @@
-package kz.theeurasia.police.global.services;
+package kz.theeurasia.policy.global.services;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;

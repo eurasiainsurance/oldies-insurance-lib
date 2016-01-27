@@ -1,4 +1,4 @@
-package kz.theeurasia.police.osgpovts.view;
+package kz.theeurasia.policy.osgpovts.view;
 
 import java.io.Serializable;
 

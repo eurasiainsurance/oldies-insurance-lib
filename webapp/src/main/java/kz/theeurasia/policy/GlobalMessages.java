@@ -1,4 +1,4 @@
-package kz.theeurasia.police;
+package kz.theeurasia.policy;
 
 public interface GlobalMessages {
     public static final String MESSAGES_SERVER_FATAL_ERROR_DESCRIPTION = "messages.server_fatal_error.description";

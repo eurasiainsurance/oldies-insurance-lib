@@ -42,7 +42,7 @@
 						<webModule>
 							<groupId>kz.theeurasia.policy</groupId>
 							<artifactId>eurasia-policy-webapp</artifactId>
-							<contextRoot>/order/</contextRoot>
+							<contextRoot>/order</contextRoot>
 						</webModule>
 					</modules>
 				</configuration>

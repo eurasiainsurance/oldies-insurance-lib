@@ -1,4 +1,4 @@
-package kz.theeurasia.police.osgpovts.view;
+package kz.theeurasia.policy.osgpovts.view;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -13,9 +13,9 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
-import kz.theeurasia.police.GlobalMessages;
-import kz.theeurasia.police.osgpovts.domain.Insured;
-import kz.theeurasia.police.osgpovts.domain.Vehicle;
+import kz.theeurasia.policy.GlobalMessages;
+import kz.theeurasia.policy.osgpovts.domain.Insured;
+import kz.theeurasia.policy.osgpovts.domain.Vehicle;
 import kz.theeurasia.services.domain.esbd.ClientInfo;
 import kz.theeurasia.services.domain.global.CountryRegion;
 import kz.theeurasia.services.domain.global.IdNumber;

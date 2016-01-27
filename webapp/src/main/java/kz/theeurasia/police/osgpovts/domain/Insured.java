@@ -23,7 +23,7 @@ public class Insured {
 
     public Insured(InsuredAgeClass insuredAgeClass, DriverExpirienceClass driverExpirienceClass, String idNumber,
 	    boolean hasPrivilege, ClientInfo clientInfo, InsuranceClassType insuranceClassType) {
-	id = UUID.randomUUID();
+	this();
 	this.insuredAgeClass = insuredAgeClass;
 	this.driverExpirienceClass = driverExpirienceClass;
 	this.idNumber = idNumber;

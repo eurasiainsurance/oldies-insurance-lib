@@ -31,8 +31,10 @@
 	</properties>
 
 	<modules>
-		<module>services-api</module>
-		<module>services-impl-ejb</module>
+		<module>esbdproxy-api</module>
+		<module>esbdproxy-ejbimpl</module>
+		<module>policyservices-api</module>
+		<module>policyservices-ejbimpl</module>
 		<module>webapp</module>
 		<module>ear</module>
 	</modules>

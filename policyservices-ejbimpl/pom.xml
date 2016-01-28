@@ -8,15 +8,15 @@
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>eurasia-services-ejb</artifactId>
+	<artifactId>policyservices-ejbimpl</artifactId>
 	<packaging>ejb</packaging>
 
-	<name>Eurasia services implementation : Enterprise Java-Beans</name>
+	<name>Eurasia policy services : Implementation Enterprise Java-Beans</name>
 
 	<dependencies>
 		<dependency>
 			<groupId>kz.theeurasia.policy</groupId>
-			<artifactId>eurasia-services-api</artifactId>
+			<artifactId>policyservices-api</artifactId>
 			<version>1.0-SNAPSHOT</version>
 			<scope>compile</scope>
 		</dependency>

@@ -1,4 +1,4 @@
-package kz.theeurasia.policy.osgpovts.view;
+package kz.theeurasia.policy2.osgpovts.view;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -6,31 +6,26 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import javax.annotation.PostConstruct;
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
-import javax.faces.context.FacesContext;
 
-import kz.theeurasia.esbdproxy.GlobalMessages;
-import kz.theeurasia.policy.osgpovts.domain.Insurant;
-import kz.theeurasia.policy.osgpovts.domain.Insured;
-import kz.theeurasia.policy.osgpovts.domain.Vehicle;
-import kz.theeurasia.policy.osgpovts.services.CalculatorService;
+import kz.theeurasia.policy2.osgpovts.domain.Insurant;
+import kz.theeurasia.policy2.osgpovts.domain.Insured;
+import kz.theeurasia.policy2.osgpovts.domain.Vehicle;
+import kz.theeurasia.policy2.osgpovts.facade.CalculatorFacade;
 import kz.theeurasia.services.domain.global.CountryRegion;
 import kz.theeurasia.services.domain.osgpovts.DriverExpirienceClass;
 import kz.theeurasia.services.domain.osgpovts.InsuredAgeClass;
 import kz.theeurasia.services.domain.osgpovts.PolicyTermClass;
 import kz.theeurasia.services.domain.osgpovts.VehicleAgeClass;
 import kz.theeurasia.services.domain.osgpovts.VehicleClass;
-import kz.theeurasia.services.services.ESBDException;
-import kz.theeurasia.services.services.ESBDFaultException;
 
-@ManagedBean
+@ManagedBean(name = "osgpovtsView")
 @ViewScoped
-public class CalculatorView implements Serializable {
+public class OSGPOVTSView implements Serializable {
 
-    private static final long serialVersionUID = -1581967628944479567L;
+    private static final long serialVersionUID = 6605204552704504011L;
 
     @ManagedProperty("#{glb}")
     private ResourceBundle glb;
@@ -42,8 +37,8 @@ public class CalculatorView implements Serializable {
 
     private double premiumCost;
 
-    @ManagedProperty("#{calculatorService}")
-    private CalculatorService calcServ;
+    @ManagedProperty("#{calculatorFacade}")
+    private CalculatorFacade calculatorFacade;
 
     @PostConstruct
     public void cleanInit() {
@@ -60,8 +55,8 @@ public class CalculatorView implements Serializable {
 	this.glb = glb;
     }
 
-    public void setCalcServ(CalculatorService calcServ) {
-	this.calcServ = calcServ;
+    public void setCalcServ(CalculatorFacade calculatorFacade) {
+	this.calculatorFacade = calculatorFacade;
     }
 
     public Insurant getInsurant() {
@@ -127,19 +122,11 @@ public class CalculatorView implements Serializable {
 	    vehicle.setMajorCity(true);
     }
 
-    
-    
     public void doCalculate() {
-	try {
-	    premiumCost = calcServ.calculate(insuredList, vehicleList, policyTermClass);
-	} catch (ESBDException | ESBDFaultException e) {
-	    FacesContext
-		    .getCurrentInstance()
-		    .addMessage(null,
-			    new FacesMessage(FacesMessage.SEVERITY_FATAL,
-				    glb.getString(GlobalMessages.MESSAGES_SERVER_FATAL_ERROR_CAPTION),
-				    glb.getString(GlobalMessages.MESSAGES_SERVER_FATAL_ERROR_DESCRIPTION)));
-	}
+	calculatorFacade.validate(insuredList.toArray(new Insured[0]),
+		vehicleList.toArray(new Vehicle[0]), policyTermClass);
+	premiumCost = calculatorFacade.calculate(insuredList.toArray(new Insured[0]),
+		vehicleList.toArray(new Vehicle[0]), policyTermClass);
     }
 
 }

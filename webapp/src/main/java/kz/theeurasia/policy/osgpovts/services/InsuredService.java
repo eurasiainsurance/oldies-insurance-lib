@@ -9,7 +9,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.context.FacesContext;
 
-import kz.theeurasia.policy.GlobalMessages;
+import kz.theeurasia.esbdproxy.GlobalMessages;
 import kz.theeurasia.policy.osgpovts.domain.Insured;
 import kz.theeurasia.services.domain.esbd.ClientInfo;
 import kz.theeurasia.services.domain.global.IdNumber;

@@ -132,4 +132,19 @@
 		<developerConnection>scm:git:https://gitrepo.theeurasia.kz/eurasia/eurasia-policy.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
+
+
+	<repositories>
+		<repository>
+			<id>primefaces-repository</id>
+			<name>Primefaces Maven Repository</name>
+			<url>http://repository.primefaces.org/</url>
+		</repository>
+		<repository>
+			<id>eurasia-repository</id>
+			<name>Eurasia Maven Repository</name>
+			<url>http://mvnrepo.theeurasia.kz/repository/releases/</url>
+		</repository>
+	</repositories>
+
 </project>

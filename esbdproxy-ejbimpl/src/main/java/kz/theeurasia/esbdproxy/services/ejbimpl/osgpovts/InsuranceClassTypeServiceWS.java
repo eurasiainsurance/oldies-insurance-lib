@@ -2,15 +2,15 @@ package kz.theeurasia.esbdproxy.services.ejbimpl.osgpovts;
 
 import java.util.Calendar;
 
-import javax.ejb.Stateless;
+import javax.ejb.Singleton;
 
-import kz.theeurasia.esbdproxy.dict.osgpovts.InsuranceClassTypeDict;
-import kz.theeurasia.esbdproxy.domain.IndividualInfo;
+import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuranceClassTypeDict;
+import kz.theeurasia.esbdproxy.domain.entities.IndividualEntity;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.ejbimpl.ESBDServiceWS;
 import kz.theeurasia.esbdproxy.services.osgpovts.InsuranceClassTypeServiceDAO;
 
-@Stateless
+@Singleton
 public class InsuranceClassTypeServiceWS extends ESBDServiceWS implements InsuranceClassTypeServiceDAO {
 
     @Override
@@ -18,7 +18,7 @@ public class InsuranceClassTypeServiceWS extends ESBDServiceWS implements Insura
 	checkSession();
 	String classCode = getSoapService().getClassText(getSessionId(), new Long(id).intValue());
 	if (classCode == null || classCode.trim().equals(""))
-	    throw new NotFound("WS-call getClassText returned null or empty value");
+	    throw new NotFound("Not found with ID = '" + id + "'");
 	return getByCode(classCode);
     }
 
@@ -26,21 +26,22 @@ public class InsuranceClassTypeServiceWS extends ESBDServiceWS implements Insura
     public InsuranceClassTypeDict getByCode(String code) throws NotFound {
 	InsuranceClassTypeDict result = InsuranceClassTypeDict.forCode(code);
 	if (result == null)
-	    throw new NotFound("Class type '" + code + "' is not recognized");
+	    throw new NotFound("Not found with CODE = '" + code + "'");
 	return result;
     }
 
     @Override
-    public InsuranceClassTypeDict getForIndividualOnToday(IndividualInfo individual) throws NotFound {
+    public InsuranceClassTypeDict getForIndividualOnToday(IndividualEntity individual) throws NotFound {
 	Calendar today = Calendar.getInstance();
 	return getForIndividualOnDate(individual, today);
     }
 
     @Override
-    public InsuranceClassTypeDict getForIndividualOnDate(IndividualInfo individual, Calendar date) throws NotFound {
+    public InsuranceClassTypeDict getForIndividualOnDate(IndividualEntity individual, Calendar date) throws NotFound {
 	checkSession();
 	String esbdDate = convertCalendarToESBDDate(date);
-	int aClassID = getSoapService().getClassId(getSessionId(), individual.getId(), esbdDate, 0);
+	int aClassID = getSoapService().getClassId(getSessionId(), new Long(individual.getId()).intValue(), esbdDate,
+		0);
 	if (aClassID == 0)
 	    throw new NotFound("WS-call getClassId returned zero value for clientId = " + individual.getId()
 		    + " and date = " + esbdDate);

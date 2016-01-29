@@ -1,7 +1,7 @@
 package kz.theeurasia.esbdproxy.services;
 
-import kz.theeurasia.esbdproxy.domain.IndividualInfo;
+import kz.theeurasia.esbdproxy.domain.entities.IndividualEntity;
 
-public interface IndividualServiceDAO extends EntityServiceDAO<IndividualInfo, Long> {
-    IndividualInfo getByIDNumber(String idNumber) throws NotFound;
+public interface IndividualServiceDAO extends EntityServiceDAO<IndividualEntity, Long> {
+    IndividualEntity getByIDNumber(String idNumber) throws NotFound;
 }

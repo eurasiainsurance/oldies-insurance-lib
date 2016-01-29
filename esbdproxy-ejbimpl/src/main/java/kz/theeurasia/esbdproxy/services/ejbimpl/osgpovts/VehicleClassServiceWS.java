@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.ejb.Stateless;
+import javax.ejb.Singleton;
 
-import kz.theeurasia.esbdproxy.dict.osgpovts.VehicleClassDict;
+import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.ejbimpl.ESBDServiceWS;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleClassServiceDAO;
 
-@Stateless
+@Singleton
 public class VehicleClassServiceWS extends ESBDServiceWS implements VehicleClassServiceDAO {
 
     private List<VehicleClassDict> all;
@@ -27,7 +27,7 @@ public class VehicleClassServiceWS extends ESBDServiceWS implements VehicleClass
     public VehicleClassDict getById(Long id) throws NotFound {
 	VehicleClassDict result = VehicleClassDict.forId(id);
 	if (result == null)
-	    throw new NotFound();
+	    throw new NotFound("Not found with ID = '" + id + "'");
 	return result;
     }
 

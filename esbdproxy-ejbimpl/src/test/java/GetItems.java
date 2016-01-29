@@ -26,20 +26,28 @@ public class GetItems {
 	dumpCancelationReasonTypes();
 	dumpCountryInfo();
 	dumpClassUsingTypes();
+	dumpBranchInfo();
+	dumpClientForm();
+    }
+
+    private void dumpClientForm() {
+	dump("QQQ", "CLIENT_FORMS");
     }
 
     private void dumpCancelationReasonTypes() {
 	dump("CancelationReasonType", "RESCINDING_REASONS");
     }
-    
+
     private void dumpClassUsingTypes() {
 	dump("CancelationReasonType", "CLASS_USING");
     }
-    
-    
 
     private void dumpCountryInfo() {
 	dumpCodes("CountryInfo", "COUNTRIES");
+    }
+    
+    private void dumpBranchInfo() {
+	dumpCodes("BranchInfo", "OGPO_TRANSPORT_TYPES");
     }
 
     private void dump(String className, String dictionaryName) {

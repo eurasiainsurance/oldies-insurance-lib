@@ -1,19 +1,19 @@
 package kz.theeurasia.esbdproxy.services.ejbimpl;
 
-import javax.ejb.Stateless;
+import javax.ejb.Singleton;
 
-import kz.theeurasia.esbdproxy.dict.CancelationReasonDict;
+import kz.theeurasia.esbdproxy.domain.dict.CancelationReasonDict;
 import kz.theeurasia.esbdproxy.services.CancelationReasonTypeServiceDAO;
 import kz.theeurasia.esbdproxy.services.NotFound;
 
-@Stateless
+@Singleton
 public class CancelationReasonTypeServiceWS extends ESBDServiceWS implements CancelationReasonTypeServiceDAO {
 
     @Override
     public CancelationReasonDict getById(Long id) throws NotFound {
 	CancelationReasonDict result = CancelationReasonDict.forId(id);
 	if (result == null)
-	    throw new NotFound("CancelationReasonTypeInfo type '" + id + "' is not recognized");
+	    throw new NotFound("Not found with ID = '" + id + "'");
 	return result;
     }
 }

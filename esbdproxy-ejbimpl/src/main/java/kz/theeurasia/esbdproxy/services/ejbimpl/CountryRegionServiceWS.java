@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.ejb.Stateless;
+import javax.ejb.Singleton;
 
-import kz.theeurasia.esbdproxy.dict.CountryRegionDict;
+import kz.theeurasia.esbdproxy.domain.dict.CountryRegionDict;
 import kz.theeurasia.esbdproxy.services.CountryRegionServiceDAO;
 import kz.theeurasia.esbdproxy.services.NotFound;
 
-@Stateless
+@Singleton
 public class CountryRegionServiceWS extends ESBDServiceWS implements CountryRegionServiceDAO {
 
     private List<CountryRegionDict> all;
@@ -30,7 +30,7 @@ public class CountryRegionServiceWS extends ESBDServiceWS implements CountryRegi
     public CountryRegionDict getById(Long id) throws NotFound {
 	CountryRegionDict result = CountryRegionDict.forId(id);
 	if (result == null)
-	    throw new NotFound();
+	    throw new NotFound("Not found with ID = '" + id + "'");
 	return result;
     }
 

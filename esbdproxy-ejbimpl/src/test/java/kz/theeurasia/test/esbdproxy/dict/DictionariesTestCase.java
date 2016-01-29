@@ -9,19 +9,25 @@ import org.junit.Test;
 
 import kz.theeurasia.asb.esbd.jaxws.ArrayOfItem;
 import kz.theeurasia.asb.esbd.jaxws.Item;
-import kz.theeurasia.esbdproxy.dict.CancelationReasonDict;
-import kz.theeurasia.esbdproxy.dict.CountryDict;
-import kz.theeurasia.esbdproxy.dict.CountryRegionDict;
-import kz.theeurasia.esbdproxy.dict.SexDict;
-import kz.theeurasia.esbdproxy.dict.osgpovts.VehicleAgeClassDict;
-import kz.theeurasia.esbdproxy.dict.osgpovts.VehicleClassDict;
+import kz.theeurasia.esbdproxy.domain.dict.CancelationReasonDict;
+import kz.theeurasia.esbdproxy.domain.dict.CountryDict;
+import kz.theeurasia.esbdproxy.domain.dict.CountryRegionDict;
+import kz.theeurasia.esbdproxy.domain.dict.IdentityCardTypeDict;
+import kz.theeurasia.esbdproxy.domain.dict.MaritalStatusDict;
+import kz.theeurasia.esbdproxy.domain.dict.SexDict;
+import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuredDriverExpirienceClassComplexDict;
+import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleAgeClassDict;
+import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
 
 public class DictionariesTestCase extends ESBDTestCase {
 
     private static final String DICT_CANCELATION_REASON = "RESCINDING_REASONS";
     private static final String DICT_COUNTRY = "COUNTRIES";
     private static final String DICT_COUNTRY_REGION = "REGIONS";
+    private static final String DICT_IDENTITY_CARD_TYPE = "DOCUMENTS_TYPES";
+    private static final String DICT_MARITAL_STATUS = "HOUSEHOLD_POSITION";
     private static final String DICT_SEX = "SEX";
+    private static final String DICT_DRIVER_EXPIRIENCE_CLASSIFICATION = "AGE_EXPERIENCE";
     private static final String DICT_VEHICLE_AGE_CLASS = "TF_AGE";
     private static final String DICT_VEHICLE_CLASS = "TF_TYPES";
 
@@ -33,10 +39,12 @@ public class DictionariesTestCase extends ESBDTestCase {
 	while (i.hasNext()) {
 	    Item item = i.next();
 	    CancelationReasonDict dict = CancelationReasonDict.forId(item.getID());
-	    assertThat("ESBD  dictionary '" + DICT_CANCELATION_REASON + "' name = '" + item.getName() + "' with code = '"
-		    + item.getCode()
-		    + "' and id = '" + item.getID() + "' present, but "
-		    + CancelationReasonDict.class.getSimpleName() + " enum variable is missing", dict,
+	    assertThat(
+		    "ESBD  dictionary '" + DICT_CANCELATION_REASON + "' name = '" + item.getName() + "' with code = '"
+			    + item.getCode()
+			    + "' and id = '" + item.getID() + "' present, but "
+			    + CancelationReasonDict.class.getSimpleName() + " enum variable is missing",
+		    dict,
 		    not(nullValue()));
 	}
     }
@@ -50,7 +58,8 @@ public class DictionariesTestCase extends ESBDTestCase {
 	    Item item = i.next();
 	    CountryDict dict = CountryDict.forId(item.getID());
 	    assertThat(
-		    "ESBD dictionary '" + DICT_COUNTRY + "' name = '" + item.getName() + "' with code = '" + item.getCode()
+		    "ESBD dictionary '" + DICT_COUNTRY + "' name = '" + item.getName() + "' with code = '"
+			    + item.getCode()
 			    + "' and id = '" + item.getID() + "' present, but "
 			    + CountryDict.class.getSimpleName() + " enum variable is missing",
 		    dict,
@@ -74,7 +83,40 @@ public class DictionariesTestCase extends ESBDTestCase {
 	}
     }
 
-    
+    @Test
+    public void testIdentityCardTypeDictMapping() {
+	ArrayOfItem items = getSoap().getItems(getSessionId(), DICT_IDENTITY_CARD_TYPE);
+	assertThat(items, not(nullValue()));
+	Iterator<Item> i = items.getItem().iterator();
+	while (i.hasNext()) {
+	    Item item = i.next();
+	    IdentityCardTypeDict dict = IdentityCardTypeDict.forId(item.getID());
+	    assertThat(
+		    "ESBD  dictionary '" + DICT_IDENTITY_CARD_TYPE + "' name = '" + item.getName() + "' with code = '"
+			    + item.getCode()
+			    + "' and id = '" + item.getID() + "' present, but "
+			    + CountryRegionDict.class.getSimpleName() + " enum variable is missing",
+		    dict,
+		    not(nullValue()));
+	}
+    }
+
+    @Test
+    public void testMaritalStatusDictMapping() {
+	ArrayOfItem items = getSoap().getItems(getSessionId(), DICT_MARITAL_STATUS);
+	assertThat(items, not(nullValue()));
+	Iterator<Item> i = items.getItem().iterator();
+	while (i.hasNext()) {
+	    Item item = i.next();
+	    MaritalStatusDict dict = MaritalStatusDict.forId(item.getID());
+	    assertThat("ESBD  dictionary '" + DICT_MARITAL_STATUS + "' name = '" + item.getName() + "' with code = '"
+		    + item.getCode()
+		    + "' and id = '" + item.getID() + "' present, but "
+		    + MaritalStatusDict.class.getSimpleName() + " enum variable is missing", dict,
+		    not(nullValue()));
+	}
+    }
+
     @Test
     public void testSexDictMapping() {
 	ArrayOfItem items = getSoap().getItems(getSessionId(), DICT_SEX);
@@ -87,6 +129,25 @@ public class DictionariesTestCase extends ESBDTestCase {
 		    + item.getCode()
 		    + "' and id = '" + item.getID() + "' present, but "
 		    + SexDict.class.getSimpleName() + " enum variable is missing", dict,
+		    not(nullValue()));
+	}
+    }
+
+    @Test
+    public void testDriverExpirienceClassificationComplexDictMapping() {
+	ArrayOfItem items = getSoap().getItems(getSessionId(), DICT_DRIVER_EXPIRIENCE_CLASSIFICATION);
+	assertThat(items, not(nullValue()));
+	Iterator<Item> i = items.getItem().iterator();
+	while (i.hasNext()) {
+	    Item item = i.next();
+	    InsuredDriverExpirienceClassComplexDict dict = InsuredDriverExpirienceClassComplexDict
+		    .forId(item.getID());
+	    assertThat("ESBD  dictionary '" + DICT_DRIVER_EXPIRIENCE_CLASSIFICATION + "' name = '" + item.getName()
+		    + "' with code = '"
+		    + item.getCode()
+		    + "' and id = '" + item.getID() + "' present, but "
+		    + InsuredDriverExpirienceClassComplexDict.class.getSimpleName() + " enum variable is missing",
+		    dict,
 		    not(nullValue()));
 	}
     }

@@ -4,8 +4,8 @@ import java.util.UUID;
 
 import org.primefaces.model.UploadedFile;
 
-import kz.theeurasia.esbdproxy.dict.osgpovts.InsuranceClassTypeDict;
-import kz.theeurasia.esbdproxy.domain.IndividualInfo;
+import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuranceClassTypeDict;
+import kz.theeurasia.esbdproxy.domain.entities.IndividualEntity;
 import kz.theeurasia.services.domain.osgpovts.DriverExpirienceClass;
 import kz.theeurasia.services.domain.osgpovts.InsuredAgeClass;
 
@@ -18,7 +18,7 @@ public class Insured {
     private String idNumber;
     private boolean hasPrivilege;
     private InsuranceClassTypeDict insuranceClassType;
-    private IndividualInfo client;
+    private IndividualEntity client;
 
     private UploadedFile idCardScanCopy;
     private UploadedFile driverCertificateScanCopy;
@@ -71,11 +71,11 @@ public class Insured {
 	this.insuranceClassType = insuranceClassType;
     }
 
-    public IndividualInfo getClient() {
+    public IndividualEntity getClient() {
 	return client;
     }
 
-    public void setClient(IndividualInfo client) {
+    public void setClient(IndividualEntity client) {
 	this.client = client;
     }
 

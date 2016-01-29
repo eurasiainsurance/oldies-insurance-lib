@@ -1,25 +1,25 @@
 package kz.theeurasia.esbdproxy.services.ejbimpl;
 
 import javax.ejb.EJB;
-import javax.ejb.Stateless;
+import javax.ejb.Singleton;
 
 import kz.theeurasia.asb.esbd.jaxws.ArrayOfClient;
 import kz.theeurasia.asb.esbd.jaxws.Client;
-import kz.theeurasia.esbdproxy.dict.CountryDict;
-import kz.theeurasia.esbdproxy.dict.SexDict;
-import kz.theeurasia.esbdproxy.domain.ContactInfo;
-import kz.theeurasia.esbdproxy.domain.IdentityCardInfo;
-import kz.theeurasia.esbdproxy.domain.IdentityCardTypeInfo;
-import kz.theeurasia.esbdproxy.domain.IndividualInfo;
-import kz.theeurasia.esbdproxy.domain.OriginInfo;
-import kz.theeurasia.esbdproxy.domain.PersonalInfo;
+import kz.theeurasia.esbdproxy.domain.dict.CountryDict;
+import kz.theeurasia.esbdproxy.domain.dict.IdentityCardTypeDict;
+import kz.theeurasia.esbdproxy.domain.dict.SexDict;
+import kz.theeurasia.esbdproxy.domain.entities.IdentityCardEntity;
+import kz.theeurasia.esbdproxy.domain.entities.IndividualEntity;
+import kz.theeurasia.esbdproxy.domain.infos.ContactInfo;
+import kz.theeurasia.esbdproxy.domain.infos.OriginInfo;
+import kz.theeurasia.esbdproxy.domain.infos.PersonalInfo;
 import kz.theeurasia.esbdproxy.services.CountryServiceDAO;
 import kz.theeurasia.esbdproxy.services.IdentityCardTypeServiceDAO;
 import kz.theeurasia.esbdproxy.services.IndividualServiceDAO;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.SexServiceDAO;
 
-@Stateless
+@Singleton
 public class IndividualServiceWS extends ESBDServiceWS implements IndividualServiceDAO {
 
     @EJB
@@ -32,16 +32,18 @@ public class IndividualServiceWS extends ESBDServiceWS implements IndividualServ
     private SexServiceDAO sexService;
 
     @Override
-    public IndividualInfo getById(Long id) throws NotFound {
+    public IndividualEntity getById(Long id) throws NotFound {
 	checkSession();
 
 	Client source = getSoapService().getClientByID(getSessionId(), id.intValue());
-	IndividualInfo target = new IndividualInfo();
+	if (source == null)
+	    throw new NotFound("Not found with ID = '" + id + "'");
+	IndividualEntity target = new IndividualEntity();
 	fillValues(source, target);
 	return target;
     }
 
-    void fillValues(Client source, IndividualInfo target) {
+    void fillValues(Client source, IndividualEntity target) {
 	target.setId(source.getID());
 
 	PersonalInfo pi = new PersonalInfo();
@@ -52,31 +54,30 @@ public class IndividualServiceWS extends ESBDServiceWS implements IndividualServ
 	pi.setDayOfBirth(convertESBDDateToCalendar(source.getBorn()));
 
 	try {
-	    SexDict sd = sexService.getById(new Long(source.getSexID()));
-	    pi.setSex(sd);
+	    pi.setSex(sexService.getById(new Long(source.getSexID())));
 	} catch (NotFound e) {
 	    pi.setSex(SexDict.UNSPECIFIED);
 	}
 
-	IdentityCardInfo di = new IdentityCardInfo();
+	IdentityCardEntity di = new IdentityCardEntity();
 	target.setIdentityCardInfo(di);
 	di.setDateOfIssue(convertESBDDateToCalendar(source.getDOCUMENTGIVEDDATE()));
 	di.setIssuingAuthority(source.getDOCUMENTGIVEDBY());
 	di.setNumber(source.getDOCUMENTNUMBER());
 	try {
-	    IdentityCardTypeInfo dti = identityCardTypeService
-		    .getById(new Integer(source.getDOCUMENTTYPEID()).longValue());
-	    di.setIdentityCardTypeInfo(dti);
+	    di.setIdentityCardType(identityCardTypeService
+		    .getById(new Integer(source.getDOCUMENTTYPEID()).longValue()));
 	} catch (NotFound e) {
+	    di.setIdentityCardType(IdentityCardTypeDict.UNSPECIFIED);
 	}
 
 	OriginInfo oi = new OriginInfo();
 	target.setOrigin(oi);
 	oi.setResident(source.getRESIDENTBOOL() == 1);
 	try {
-	    CountryDict ci = countryService.getById(new Long(source.getCOUNTRYID()));
-	    oi.setCountry(ci);
+	    oi.setCountry(countryService.getById(new Long(source.getCOUNTRYID())));
 	} catch (NotFound e) {
+	    oi.setCountry(CountryDict.UNSPECIFIED);
 	}
 
 	ContactInfo cni = new ContactInfo();
@@ -88,9 +89,9 @@ public class IndividualServiceWS extends ESBDServiceWS implements IndividualServ
     }
 
     @Override
-    public IndividualInfo getByIDNumber(String idNumber) throws NotFound {
+    public IndividualEntity getByIDNumber(String idNumber) throws NotFound {
 	Client source = fetchClientByIINorDie(idNumber);
-	IndividualInfo target = new IndividualInfo();
+	IndividualEntity target = new IndividualEntity();
 	fillValues(source, target);
 	return target;
     }

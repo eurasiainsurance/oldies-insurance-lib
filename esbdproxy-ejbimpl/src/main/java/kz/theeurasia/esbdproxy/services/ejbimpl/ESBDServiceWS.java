@@ -8,13 +8,11 @@ import java.util.Date;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
-import javax.ejb.Stateless;
 import javax.xml.ws.WebServiceRef;
 
 import kz.theeurasia.asb.esbd.jaxws.IICWebService;
 import kz.theeurasia.asb.esbd.jaxws.IICWebServiceSoap;
 
-@Stateless
 public abstract class ESBDServiceWS {
 
     private static final String ESBD_DATE_FORMAT_PATTERN = "dd.MM.yyyy";
@@ -47,6 +45,8 @@ public abstract class ESBDServiceWS {
     }
 
     protected Calendar convertESBDDateToCalendar(String esbdDate) {
+	if (esbdDate == null || esbdDate.trim().equals(""))
+	    return null;
 	try {
 	    Calendar date = Calendar.getInstance();
 	    date.setTime(ESBD_DATE_FORMATER.parse(esbdDate));
@@ -57,6 +57,8 @@ public abstract class ESBDServiceWS {
     }
 
     protected Date convertESBDDateToDate(String esbdDate) {
+	if (esbdDate == null || esbdDate.trim().equals(""))
+	    return null;
 	try {
 	    return ESBD_DATE_FORMATER.parse(esbdDate);
 	} catch (ParseException e) {
@@ -65,10 +67,14 @@ public abstract class ESBDServiceWS {
     }
 
     protected String convertCalendarToESBDDate(Calendar calendar) {
+	if (calendar == null)
+	    return null;
 	return convertDateToESBDDate(calendar.getTime());
     }
 
     protected String convertDateToESBDDate(Date date) {
+	if (date == null)
+	    return null;
 	return ESBD_DATE_FORMATER.format(date);
     }
 }

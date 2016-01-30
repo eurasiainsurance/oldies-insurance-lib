@@ -7,7 +7,6 @@ import java.util.List;
 
 import javax.naming.NamingException;
 
-import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import kz.theeurasia.esbdproxy.domain.entities.CityEntity;
@@ -26,23 +25,23 @@ public class CityServiceTestCase extends GeneralServiceTestCase {
 			not(empty())));
     }
 
-    @Test(expected = NotFound.class)
-    public void testGetById() throws NamingException, NotFound {
+    @Test
+    public void testGetById() throws NamingException {
 	CityServiceDAO cityServiceService = getCityService();
 	List<CityEntity> list = cityServiceService.getAll();
 	for (CityEntity i : list) {
 	    try {
 		CityEntity res = cityServiceService.getById(i.getId());
-		assertThat(res, allOf(not(nullValue()), equalTo(i)));
+		assertThat(res, allOf(not(nullValue()), is(i)));
 	    } catch (NotFound e) {
 		fail(e.getMessage());
 	    }
 	}
-	// try {
-	cityServiceService.getById(-99999l);
-	// fail("Expected a NotFound to be thrown");
-	// } catch (NotFound e) {
-	// }
+    }
 
+    @Test(expected = NotFound.class)
+    public void testGetById_NotFound() throws NamingException, NotFound {
+	CityServiceDAO cityServiceService = getCityService();
+	cityServiceService.getById(-99999l);
     }
 }

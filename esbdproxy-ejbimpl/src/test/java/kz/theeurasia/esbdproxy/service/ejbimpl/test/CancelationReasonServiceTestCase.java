@@ -37,12 +37,12 @@ public class CancelationReasonServiceTestCase extends GeneralServiceTestCase {
 		fail(e.getMessage());
 	    }
 	}
-	try {
-	    cancelationReasonService.getById(-99999l);
-	    fail("Expected a NotFound to be thrown");
-	} catch (NotFound e) {
-	}
+    }
 
+    @Test(expected = NotFound.class)
+    public void testGetById_NotFOund() throws NamingException, NotFound {
+	CancelationReasonServiceDAO cancelationReasonService = getCancelationReasonService();
+	cancelationReasonService.getById(-99999l);
     }
 
 }

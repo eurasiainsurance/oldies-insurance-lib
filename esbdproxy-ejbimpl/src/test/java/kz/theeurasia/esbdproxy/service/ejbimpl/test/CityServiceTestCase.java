@@ -20,16 +20,14 @@ public class CityServiceTestCase extends GeneralServiceTestCase {
     public void testGetAll() throws NamingException {
 	CityServiceDAO cityServiceService = getCityService();
 	List<CityEntity> all = cityServiceService.getAll();
-	assertThat(all, not(nullValue()));
-	assertThat(all, Matchers.anything());
-	// assertThat(all,
-	// allOf(
-	// not(nullValue()),
-	// contains(CancelationReasonDict.values())));
+	assertThat(all,
+		allOf(
+			not(nullValue()),
+			not(empty())));
     }
 
-    @Test
-    public void testGetById() throws NamingException {
+    @Test(expected = NotFound.class)
+    public void testGetById() throws NamingException, NotFound {
 	CityServiceDAO cityServiceService = getCityService();
 	List<CityEntity> list = cityServiceService.getAll();
 	for (CityEntity i : list) {
@@ -40,11 +38,11 @@ public class CityServiceTestCase extends GeneralServiceTestCase {
 		fail(e.getMessage());
 	    }
 	}
-	try {
-	    cityServiceService.getById(-99999l);
-	    fail("Expected a NotFound to be thrown");
-	} catch (NotFound e) {
-	}
+	// try {
+	cityServiceService.getById(-99999l);
+	// fail("Expected a NotFound to be thrown");
+	// } catch (NotFound e) {
+	// }
 
     }
 }

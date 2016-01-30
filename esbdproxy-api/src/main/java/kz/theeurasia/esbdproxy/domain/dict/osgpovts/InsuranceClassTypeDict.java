@@ -18,7 +18,6 @@ public enum InsuranceClassTypeDict {
     CLASS_13("13", 0),
     CLASS_M("М", 0),
     UNSPECIFIED("", 0);
-    ;
 
     private final String code;
     private final long id;
@@ -26,14 +25,6 @@ public enum InsuranceClassTypeDict {
     InsuranceClassTypeDict(String code, long id) {
 	this.code = code;
 	this.id = id;
-    }
-
-    public String getCode() {
-	return code;
-    }
-
-    public long getId() {
-	return id;
     }
 
     public static InsuranceClassTypeDict forId(long id) {
@@ -49,5 +40,15 @@ public enum InsuranceClassTypeDict {
 		return ict;
 	}
 	return null;
+    }
+
+    // GENERATED
+
+    public String getCode() {
+	return code;
+    }
+
+    public long getId() {
+	return id;
     }
 }

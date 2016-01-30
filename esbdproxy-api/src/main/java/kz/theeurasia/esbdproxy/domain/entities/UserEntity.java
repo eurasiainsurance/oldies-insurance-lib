@@ -11,7 +11,7 @@ public class UserEntity {
     private BranchEntity branch;
 
     // CLIENT_ID s:int Клиент пользователя (справочник CLIENTS)
-    private ClientEntity client;
+    private SubjectEntity client;
 
     // SYSTEM_DELIMITER_ID s:int Разделитель учета (справочник SYSTEM_DELIMITER)
     private InsuranceCompanyEntity organization;
@@ -24,6 +24,18 @@ public class UserEntity {
 
     // ErrorMessage s:string Описание ошибки аутентификации
     // LastRequestTime s:string Время последнего действия пользователя
+
+    @Override
+    public int hashCode() {
+	return this.getClass().hashCode() * new Long(id).hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	return obj != null && this.getClass().isInstance(obj) && getId() == this.getClass().cast(obj).getId();
+    }
+
+    // GENERATED
 
     public long getId() {
 	return id;
@@ -49,11 +61,11 @@ public class UserEntity {
 	this.branch = branch;
     }
 
-    public ClientEntity getClient() {
+    public SubjectEntity getClient() {
 	return client;
     }
 
-    public void setClient(ClientEntity client) {
+    public void setClient(SubjectEntity client) {
 	this.client = client;
     }
 

@@ -8,19 +8,19 @@ package kz.theeurasia.esbdproxy.domain.infos;
  */
 public class ContactInfo {
 
+    // PHONES s:string Номера телефонов
     private String phone;
+
+    // EMAIL s:string Адрес электронной почты
     private String email;
+
+    // Address s:string Адрес
     private String homeAdress;
 
-    public ContactInfo() {
-    }
+    // WWW s:string Сайт
+    private String siteUrl;
 
-    public ContactInfo(String phone, String email, String homeAdress) {
-	super();
-	this.phone = phone;
-	this.email = email;
-	this.homeAdress = homeAdress;
-    }
+    // GENERATED
 
     public String getPhone() {
 	return phone;
@@ -44,6 +44,14 @@ public class ContactInfo {
 
     public void setHomeAdress(String postAdress) {
 	this.homeAdress = postAdress;
+    }
+
+    public String getSiteUrl() {
+	return siteUrl;
+    }
+
+    public void setSiteUrl(String siteUrl) {
+	this.siteUrl = siteUrl;
     }
 
 }

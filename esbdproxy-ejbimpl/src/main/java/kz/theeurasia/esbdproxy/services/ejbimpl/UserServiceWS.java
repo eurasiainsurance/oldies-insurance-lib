@@ -11,7 +11,7 @@ import kz.theeurasia.asb.esbd.jaxws.ArrayOfUser;
 import kz.theeurasia.asb.esbd.jaxws.User;
 import kz.theeurasia.esbdproxy.domain.entities.UserEntity;
 import kz.theeurasia.esbdproxy.services.BranchServiceDAO;
-import kz.theeurasia.esbdproxy.services.ClientServiceDAO;
+import kz.theeurasia.esbdproxy.services.SubjectServiceDAO;
 import kz.theeurasia.esbdproxy.services.InsuranceCompanyServiceDAO;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.UserServiceDAO;
@@ -23,7 +23,7 @@ public class UserServiceWS extends ESBDServiceWS implements UserServiceDAO {
     private BranchServiceDAO branchService;
 
     @EJB
-    private ClientServiceDAO clientService;
+    private SubjectServiceDAO clientService;
 
     @EJB
     private InsuranceCompanyServiceDAO insuranceCompanyService;

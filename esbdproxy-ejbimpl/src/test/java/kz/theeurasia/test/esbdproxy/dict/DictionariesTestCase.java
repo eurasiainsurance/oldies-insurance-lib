@@ -15,7 +15,7 @@ import kz.theeurasia.esbdproxy.domain.dict.CountryRegionDict;
 import kz.theeurasia.esbdproxy.domain.dict.IdentityCardTypeDict;
 import kz.theeurasia.esbdproxy.domain.dict.MaritalStatusDict;
 import kz.theeurasia.esbdproxy.domain.dict.SexDict;
-import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuredDriverExpirienceClassComplexDict;
+import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuredAgeExpirienceClassDict;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleAgeClassDict;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
 
@@ -140,13 +140,13 @@ public class DictionariesTestCase extends ESBDTestCase {
 	Iterator<Item> i = items.getItem().iterator();
 	while (i.hasNext()) {
 	    Item item = i.next();
-	    InsuredDriverExpirienceClassComplexDict dict = InsuredDriverExpirienceClassComplexDict
+	    InsuredAgeExpirienceClassDict dict = InsuredAgeExpirienceClassDict
 		    .forId(item.getID());
 	    assertThat("ESBD  dictionary '" + DICT_DRIVER_EXPIRIENCE_CLASSIFICATION + "' name = '" + item.getName()
 		    + "' with code = '"
 		    + item.getCode()
 		    + "' and id = '" + item.getID() + "' present, but "
-		    + InsuredDriverExpirienceClassComplexDict.class.getSimpleName() + " enum variable is missing",
+		    + InsuredAgeExpirienceClassDict.class.getSimpleName() + " enum variable is missing",
 		    dict,
 		    not(nullValue()));
 	}

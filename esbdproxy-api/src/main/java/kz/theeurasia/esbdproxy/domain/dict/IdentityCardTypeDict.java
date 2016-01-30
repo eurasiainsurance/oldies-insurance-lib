@@ -13,14 +13,16 @@ public enum IdentityCardTypeDict {
 	this.id = id;
     }
 
-    public long getId() {
-	return id;
-    }
-
     public static IdentityCardTypeDict forId(long id) {
 	for (IdentityCardTypeDict dict : values())
 	    if (dict.getId() == id)
 		return dict;
 	return null;
+    }
+
+    // GENERATED
+
+    public long getId() {
+	return id;
     }
 }

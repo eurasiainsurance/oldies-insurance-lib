@@ -3,8 +3,11 @@ package kz.theeurasia.esbdproxy.domain.infos.osgpovts;
 import java.util.Calendar;
 
 public class GPWParticipantInfo {
+
     private String certificateNumber;
     private Calendar certificateDateOfIssue;
+
+    // GENERATED
 
     public String getCertificateNumber() {
 	return certificateNumber;

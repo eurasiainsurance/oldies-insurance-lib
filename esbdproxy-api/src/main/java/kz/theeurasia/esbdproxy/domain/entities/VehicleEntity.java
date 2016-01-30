@@ -4,14 +4,14 @@ import java.util.Calendar;
 
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
 import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleModelEntity;
-import kz.theeurasia.esbdproxy.domain.infos.osgpovts.SteeringWheelLocationInfo;
+import kz.theeurasia.esbdproxy.domain.enums.osgpovts.SteeringWheelLocationEnum;
 
 public class VehicleEntity {
     // TF_ID s:int Идентификатор ТС
     private long id;
 
     // TF_TYPE_ID s:int Тип ТС (справочник TF_TYPES)
-    private VehicleClassDict vehicleClass;
+    private VehicleClassDict vehicleClass = VehicleClassDict.UNSPECIFIED;
 
     // VIN s:string VIN код (номер кузова) (обязательно)
     private String vinCode;
@@ -21,7 +21,7 @@ public class VehicleEntity {
 
     // RIGHT_HAND_DRIVE_BOOL s:int Признак расположения руля (0 - слева; 1 -
     // справа)
-    private SteeringWheelLocationInfo steeringWheelLocation;
+    private SteeringWheelLocationEnum steeringWheelLocation = SteeringWheelLocationEnum.UNSPECIFIED;
 
     // ENGINE_VOLUME s:int Объем двигателя (куб.см.)
     private int engineVolume;
@@ -38,6 +38,18 @@ public class VehicleEntity {
     // BORN s:string Год выпуска (обязательно)
     // BORN_MONTH s:int Месяц выпуска ТС
     private Calendar realeaseDate;
+
+    @Override
+    public int hashCode() {
+	return this.getClass().hashCode() * new Long(id).hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	return obj != null && this.getClass().isInstance(obj) && getId() == this.getClass().cast(obj).getId();
+    }
+
+    // GENERATED
 
     public long getId() {
 	return id;
@@ -71,11 +83,11 @@ public class VehicleEntity {
 	this.vehicleModel = vehicleModel;
     }
 
-    public SteeringWheelLocationInfo getSteeringWheelLocation() {
+    public SteeringWheelLocationEnum getSteeringWheelLocation() {
 	return steeringWheelLocation;
     }
 
-    public void setSteeringWheelLocation(SteeringWheelLocationInfo steeringWheelLocation) {
+    public void setSteeringWheelLocation(SteeringWheelLocationEnum steeringWheelLocation) {
 	this.steeringWheelLocation = steeringWheelLocation;
     }
 

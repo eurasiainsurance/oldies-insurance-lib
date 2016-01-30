@@ -9,7 +9,7 @@ import kz.theeurasia.asb.esbd.jaxws.ArrayOfTF;
 import kz.theeurasia.asb.esbd.jaxws.TF;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
 import kz.theeurasia.esbdproxy.domain.entities.VehicleEntity;
-import kz.theeurasia.esbdproxy.domain.infos.osgpovts.SteeringWheelLocationInfo;
+import kz.theeurasia.esbdproxy.domain.enums.osgpovts.SteeringWheelLocationEnum;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.VehicleModelServiceDAO;
 import kz.theeurasia.esbdproxy.services.VehicleServiceDAO;
@@ -85,8 +85,8 @@ public class VehicleServiceWS extends ESBDServiceWS implements VehicleServiceDAO
 
 	// RIGHT_HAND_DRIVE_BOOL s:int Признак расположения руля (0 - слева; 1 -
 	// справа)
-	target.setSteeringWheelLocation(source.getRIGHTHANDDRIVEBOOL() == 0 ? SteeringWheelLocationInfo.LEFT_SIDE
-		: SteeringWheelLocationInfo.RIGHT_SIDE);
+	target.setSteeringWheelLocation(source.getRIGHTHANDDRIVEBOOL() == 0 ? SteeringWheelLocationEnum.LEFT_SIDE
+		: SteeringWheelLocationEnum.RIGHT_SIDE);
 
 	// ENGINE_VOLUME s:int Объем двигателя (куб.см.)
 	target.setEngineVolume(source.getENGINEVOLUME());

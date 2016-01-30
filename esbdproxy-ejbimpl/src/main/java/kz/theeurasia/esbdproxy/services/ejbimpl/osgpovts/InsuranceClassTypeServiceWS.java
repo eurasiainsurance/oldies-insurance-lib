@@ -5,7 +5,7 @@ import java.util.Calendar;
 import javax.ejb.Singleton;
 
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuranceClassTypeDict;
-import kz.theeurasia.esbdproxy.domain.entities.IndividualEntity;
+import kz.theeurasia.esbdproxy.domain.entities.SubjectPersonEntity;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.ejbimpl.ESBDServiceWS;
 import kz.theeurasia.esbdproxy.services.osgpovts.InsuranceClassTypeServiceDAO;
@@ -31,13 +31,13 @@ public class InsuranceClassTypeServiceWS extends ESBDServiceWS implements Insura
     }
 
     @Override
-    public InsuranceClassTypeDict getForIndividualOnToday(IndividualEntity individual) throws NotFound {
+    public InsuranceClassTypeDict getForIndividualOnToday(SubjectPersonEntity individual) throws NotFound {
 	Calendar today = Calendar.getInstance();
 	return getForIndividualOnDate(individual, today);
     }
 
     @Override
-    public InsuranceClassTypeDict getForIndividualOnDate(IndividualEntity individual, Calendar date) throws NotFound {
+    public InsuranceClassTypeDict getForIndividualOnDate(SubjectPersonEntity individual, Calendar date) throws NotFound {
 	checkSession();
 	String esbdDate = convertCalendarToESBDDate(date);
 	int aClassID = getSoapService().getClassId(getSessionId(), new Long(individual.getId()).intValue(), esbdDate,

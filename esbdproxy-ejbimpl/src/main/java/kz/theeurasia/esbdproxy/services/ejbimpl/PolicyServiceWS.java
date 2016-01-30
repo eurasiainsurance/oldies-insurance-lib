@@ -17,23 +17,23 @@ import kz.theeurasia.esbdproxy.domain.entities.osgpovts.InsuredVehicleEntity;
 import kz.theeurasia.esbdproxy.domain.entities.osgpovts.PolicyEntity;
 import kz.theeurasia.esbdproxy.domain.infos.RecordOperationInfo;
 import kz.theeurasia.esbdproxy.domain.infos.VehicleCertificateInfo;
-import kz.theeurasia.esbdproxy.domain.infos.osgpovts.CertificateInfo;
+import kz.theeurasia.esbdproxy.domain.infos.osgpovts.DriverLicenseInfo;
 import kz.theeurasia.esbdproxy.domain.infos.osgpovts.GPWParticipantInfo;
 import kz.theeurasia.esbdproxy.domain.infos.osgpovts.InvalidInfo;
 import kz.theeurasia.esbdproxy.domain.infos.osgpovts.PensionerInfo;
 import kz.theeurasia.esbdproxy.domain.infos.osgpovts.PrivilegerInfo;
 import kz.theeurasia.esbdproxy.services.BranchServiceDAO;
 import kz.theeurasia.esbdproxy.services.CancelationReasonTypeServiceDAO;
-import kz.theeurasia.esbdproxy.services.ClientServiceDAO;
+import kz.theeurasia.esbdproxy.services.SubjectServiceDAO;
 import kz.theeurasia.esbdproxy.services.CountryRegionServiceDAO;
-import kz.theeurasia.esbdproxy.services.IndividualServiceDAO;
+import kz.theeurasia.esbdproxy.services.SubjectPersonServiceDAO;
 import kz.theeurasia.esbdproxy.services.InsuranceCompanyServiceDAO;
 import kz.theeurasia.esbdproxy.services.MaritalStatusServiceDAO;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.PolicyServiceDAO;
 import kz.theeurasia.esbdproxy.services.UserServiceDAO;
 import kz.theeurasia.esbdproxy.services.VehicleServiceDAO;
-import kz.theeurasia.esbdproxy.services.osgpovts.DriverExpirienceClassificationServiceDAO;
+import kz.theeurasia.esbdproxy.services.osgpovts.InsuredAgeExpirienceClassServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.InsuranceClassTypeServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleAgeClassServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleClassServiceDAO;
@@ -45,7 +45,7 @@ public class PolicyServiceWS extends ESBDServiceWS implements PolicyServiceDAO {
     private InsuranceCompanyServiceDAO insuranceCompanyService;
 
     @EJB
-    private ClientServiceDAO clientService;
+    private SubjectServiceDAO subjectService;
 
     @EJB
     private CancelationReasonTypeServiceDAO cancelationReasonTypeService;
@@ -54,13 +54,13 @@ public class PolicyServiceWS extends ESBDServiceWS implements PolicyServiceDAO {
     private BranchServiceDAO branchService;
 
     @EJB
-    private DriverExpirienceClassificationServiceDAO driverExpirienceClassificationService;
+    private InsuredAgeExpirienceClassServiceDAO driverExpirienceClassificationService;
 
     @EJB
     private InsuranceClassTypeServiceDAO insuranceClassTypeService;
 
     @EJB
-    private IndividualServiceDAO individualService;
+    private SubjectPersonServiceDAO subjectPersonService;
 
     @EJB
     private MaritalStatusServiceDAO maritalStatusService;
@@ -92,13 +92,25 @@ public class PolicyServiceWS extends ESBDServiceWS implements PolicyServiceDAO {
     }
 
     void fillValues(Policy source, PolicyEntity target) {
+	// POLICY_ID s:int Идентификатор полиса (обязательно)
 	target.setId(source.getPOLICYID());
+
+	// POLICY_NUMBER s:string Номер полиса (обязательно)
 	target.setNumber(source.getPOLICYNUMBER());
+
+	// DATE_BEG s:string Дата начала действия полиса (обязательно)
 	target.setValidFrom(convertESBDDateToCalendar(source.getDATEBEG()));
+
+	// DATE_END s:string Дата окончания действия полиса (обязательно)
 	target.setValidTill(convertESBDDateToCalendar(source.getDATEEND()));
+
+	// PREMIUM s:double Страховая премия (обязательно)
 	target.setActualPremiumCost(source.getPREMIUM());
+
+	// CALCULATED_PREMIUM s:double Страховая премия рассчитанная системой
 	target.setPremiumCost(source.getCALCULATEDPREMIUM());
 
+	// SYSTEM_DELIMITER_ID s:int Идентификатор страховой компании
 	try {
 	    target.setInsurer(insuranceCompanyService.getById(new Long(source.getSYSTEMDELIMITERID())));
 	} catch (NotFound e) {
@@ -110,8 +122,9 @@ public class PolicyServiceWS extends ESBDServiceWS implements PolicyServiceDAO {
 		    e);
 	}
 
+	// CLIENT_ID s:int Идентификатор страхователя (обязательно)
 	try {
-	    target.setInsurant(clientService.getById(new Long(source.getCLIENTID())));
+	    target.setInsurant(subjectService.getById(new Long(source.getCLIENTID())));
 	} catch (NotFound e) {
 	    // mandatory field
 	    throw new DataCoruptionException(
@@ -120,9 +133,13 @@ public class PolicyServiceWS extends ESBDServiceWS implements PolicyServiceDAO {
 		    e);
 	}
 
+	// POLICY_DATE s:string Дата полиса
 	target.setDateOfIssue(convertESBDDateToCalendar(source.getPOLICYDATE()));
+
+	// RESCINDING_DATE s:string Дата расторжения полиса
 	target.setDateOfCancelation(convertESBDDateToCalendar(source.getRESCINDINGDATE()));
 
+	// RESCINDING_REASON_ID s:int Идентификатор причины расторжения
 	try {
 	    target.setCancelationReasonType(
 		    cancelationReasonTypeService.getById(new Long(source.getRESCINDINGREASONID())));
@@ -130,6 +147,7 @@ public class PolicyServiceWS extends ESBDServiceWS implements PolicyServiceDAO {
 	    target.setCancelationReasonType(CancelationReasonDict.UNSPECIFIED);
 	}
 
+	// BRANCH_ID s:int Филиал (обязательно)
 	try {
 	    target.setBranch(branchService.getById(new Long(source.getBRANCHID())));
 	} catch (NotFound e) {
@@ -138,8 +156,16 @@ public class PolicyServiceWS extends ESBDServiceWS implements PolicyServiceDAO {
 		    "Error while fetching Policy from ESBD. Branch ID = '" + source.getBRANCHID() + "' not found", e);
 	}
 
+	// REWRITE_BOOL s:int Признак переоформления
+	target.setReissued(source.getREWRITEBOOL() == 1);
+
+	// REWRITE_POLICY_ID s:int Ссылка на переоформляемый полис
+	target.setReissuedPolicyId(source.getREWRITEPOLICYID());
+
+	// DESCRIPTION s:string Комментарии к полису
 	target.setComments(source.getDESCRIPTION());
 
+	// Drivers tns:ArrayOfDriver Водители (обязательно)
 	ArrayOfDriver drivers = source.getDrivers();
 	if (drivers == null)
 	    throw new DataCoruptionException(
@@ -152,6 +178,8 @@ public class PolicyServiceWS extends ESBDServiceWS implements PolicyServiceDAO {
 	    insuredDrivers.add(t);
 	}
 
+	// PoliciesTF tns:ArrayOfPolicies_TF Транспортные средства полиса
+	// (обязательно)
 	ArrayOfPoliciesTF vehicles = source.getPoliciesTF();
 	if (vehicles == null)
 	    throw new DataCoruptionException(
@@ -164,10 +192,57 @@ public class PolicyServiceWS extends ESBDServiceWS implements PolicyServiceDAO {
 	    fillValues(s, t, target);
 	    insuredVehicles.add(t);
 	}
+
+	// CREATED_BY_USER_ID s:int Идентификатор пользователя, создавшего полис
+	// INPUT_DATE s:string Дата\время ввода полиса в систему
+	RecordOperationInfo created = new RecordOperationInfo();
+	target.setCreated(created);
+	created.setDate(convertESBDDateToCalendar(source.getINPUTDATE()));
+	try {
+	    created.setAuthor(userService.getById(new Long(source.getCREATEDBYUSERID())));
+	} catch (NotFound e) {
+	    throw new DataCoruptionException(
+		    "Error while fetching Policy ID = '" + source.getPOLICYID()
+			    + "' from ESBD. User created ID = '" + source.getCREATEDBYUSERID()
+			    + "' not found",
+		    e);
+	}
+
+	// RECORD_CHANGED_AT s:string Дата\время изменения полиса
+	// RECORD_CHANGED_AT_DATETIME s:string Дата\время изменения полиса
+	// CHANGED_BY_USER_ID s:int Идентификатор пользователя, изменившего
+	// полис
+	RecordOperationInfo modified = new RecordOperationInfo();
+	target.setModified(modified);
+	modified.setDate(convertESBDDateToCalendar(source.getRECORDCHANGEDAT()));
+	if (modified.getDate() != null)
+	    try {
+		modified.setAuthor(userService.getById(new Long(source.getCHANGEDBYUSERID())));
+	    } catch (NotFound e) {
+		throw new DataCoruptionException(
+			"Error while fetching Policy ID = '" + source.getPOLICYID()
+				+ "' from ESBD. User modified ID = '" + source.getCHANGEDBYUSERID()
+				+ "' not found",
+			e);
+	    }
+
+	// GLOBAL_ID s:string Уникальный глобальный идентификатор полиса
+	// ScheduledPayments tns:ArrayOfSCHEDULED_PAYMENT Плановые платежи по
+	// полису
+	// PAYMENT_ORDER_TYPE_ID s:int Порядок оплаты (Идентификатор)
+	// PAYMENT_ORDER_TYPE s:string Порядок оплаты
+	// PAYMENT_DATE s:string Дата оплаты
+	// MIDDLEMAN_ID s:int Посредник (Идентификатор)
+	// MIDDLEMAN_CONTRACT_NUMBER s:string Номер договора посредника
+	// CLIENT_FORM_ID s:int Форма клиента (справочник CLIENT_FORMS)
+
     }
 
     void fillValues(Driver source, InsuredDriverEntity target, PolicyEntity policy) {
+	// DRIVER_ID s:int Идентификатор водителя
 	target.setId(source.getDRIVERID());
+
+	// POLICY_ID s:int Идентификатор полиса
 	if (policy.getId() == source.getPOLICYID())
 	    target.setPolicy(policy);
 	else {
@@ -181,30 +256,9 @@ public class PolicyServiceWS extends ESBDServiceWS implements PolicyServiceDAO {
 	    }
 	}
 
+	// CLIENT_ID s:int Идентификатор клиента (обязательно)
 	try {
-	    target.setInsuredDriverExpirienceClass(
-		    driverExpirienceClassificationService.getById(new Long(source.getAGEEXPERIENCEID())));
-	} catch (NotFound e) {
-	    throw new DataCoruptionException(
-		    "Error while fetching Driver ID = '" + source.getDRIVERID()
-			    + "' at Policy ID = '" + source.getPOLICYID()
-			    + "' from ESBD. AGEEXPIRIENCE with ID = '" + source.getAGEEXPERIENCEID() + "' not found");
-	}
-
-	target.setDrivingExpirience(source.getEXPERIENCE());
-
-	try {
-	    target.setInsuraceClassType(insuranceClassTypeService.getById(new Long(source.getClassId())));
-	} catch (NotFound e) {
-	    // TODO is mandatory?
-	    throw new DataCoruptionException(
-		    "Error while fetching Driver ID = '" + source.getDRIVERID()
-			    + "' at Policy ID = '" + source.getPOLICYID()
-			    + "' from ESBD. Class Type with ID = '" + source.getClassId() + "' not found");
-	}
-
-	try {
-	    target.setInsuredPerson(individualService.getById(new Long(source.getCLIENTID())));
+	    target.setInsuredPerson(subjectPersonService.getById(new Long(source.getCLIENTID())));
 	} catch (NotFound e) {
 	    throw new DataCoruptionException(
 		    "Error while fetching Driver ID = '" + source.getDRIVERID()
@@ -214,6 +268,7 @@ public class PolicyServiceWS extends ESBDServiceWS implements PolicyServiceDAO {
 		    e);
 	}
 
+	// HOUSEHOLD_POSITION_ID s:int Идентификатор семейного положения
 	try {
 	    target.setMaritalStatus(maritalStatusService.getById(new Long(source.getHOUSEHOLDPOSITIONID())));
 	} catch (NotFound e) {
@@ -225,10 +280,44 @@ public class PolicyServiceWS extends ESBDServiceWS implements PolicyServiceDAO {
 		    e);
 	}
 
-	CertificateInfo dl = new CertificateInfo(source.getDRIVERCERTIFICATE(),
-		convertESBDDateToCalendar(source.getDRIVERCERTIFICATEDATE()));
-	target.setDriverLicense(dl);
+	// AGE_EXPERIENCE_ID s:int Идентификатор возраста\стажа вождения
+	try {
+	    target.setInsuredAgeExpirienceClass(
+		    driverExpirienceClassificationService.getById(new Long(source.getAGEEXPERIENCEID())));
+	} catch (NotFound e) {
+	    throw new DataCoruptionException(
+		    "Error while fetching Driver ID = '" + source.getDRIVERID()
+			    + "' at Policy ID = '" + source.getPOLICYID()
+			    + "' from ESBD. AGEEXPIRIENCE with ID = '" + source.getAGEEXPERIENCEID() + "' not found");
+	}
 
+	// EXPERIENCE s:int Стаж вождения
+	target.setDrivingExpirience(source.getEXPERIENCE());
+
+	// DRIVER_CERTIFICATE s:string Номер водительского удостоверения
+	// DRIVER_CERTIFICATE_DATE s:string Дата выдачи водительского
+	// удостоверения
+	DriverLicenseInfo ci = new DriverLicenseInfo();
+	target.setDriverLicense(ci);
+	ci.setNumber(source.getDRIVERCERTIFICATE());
+	ci.setDateOfIssue(convertESBDDateToCalendar(source.getDRIVERCERTIFICATEDATE()));
+
+	// getClassId
+	try {
+	    target.setInsuraceClassType(insuranceClassTypeService.getById(new Long(source.getClassId())));
+	} catch (NotFound e) {
+	    // mandatory field
+	    throw new DataCoruptionException(
+		    "Error while fetching Driver ID = '" + source.getDRIVERID()
+			    + "' at Policy ID = '" + source.getPOLICYID()
+			    + "' from ESBD. Class Type with ID = '" + source.getClassId() + "' not found");
+	}
+
+	// PRIVELEGER_BOOL s:int Признак приравненного лица
+	// PRIVELEDGER_TYPE s:string Тип приравненного лица
+	// PRIVELEDGER_CERTIFICATE s:string Удостоверение приравненного лица
+	// PRIVELEDGER_CERTIFICATE_DATE s:string Дата выдачи удостоверения
+	// приравненного лица
 	PrivilegerInfo pi = new PrivilegerInfo();
 	target.setPrivilegerInfo(pi);
 	target.setPrivileger(source.getPRIVELEGERBOOL() == 1);
@@ -238,6 +327,35 @@ public class PolicyServiceWS extends ESBDServiceWS implements PolicyServiceDAO {
 	    pi.setCertificateDateOfIssue(convertESBDDateToCalendar(source.getPRIVELEDGERCERTIFICATEDATE()));
 	}
 
+	// WOW_BOOL s:int Признак участника ВОВ
+	// WOW_CERTIFICATE s:string Удостоверение участника ВОВ
+	// WOW_CERTIFICATE_DATE s:string Дата выдачи удостоверения участника ВОВ
+	GPWParticipantInfo gpwi = new GPWParticipantInfo();
+	target.setGpwParticipantInfo(gpwi);
+	target.setGpwParticipant(source.getWOWBOOL() == 1);
+	if (target.isGpwParticipant()) {
+	    gpwi.setCertificateNumber(source.getWOWCERTIFICATE());
+	    gpwi.setCertificateDateOfIssue(convertESBDDateToCalendar(source.getWOWCERTIFICATEDATE()));
+	}
+
+	// PENSIONER_BOOL s:int Признак пенсионера
+	// PENSIONER_CERTIFICATE s:string Удостоверение пенсионера
+	// PENSIONER_CERTIFICATE_DATE s:string Дата выдачи удостоверения
+	// пенсионера
+	PensionerInfo pei = new PensionerInfo();
+	target.setPensionerInfo(pei);
+	target.setPensioner(source.getPENSIONERBOOL() == 1);
+	if (target.isPensioner()) {
+	    pei.setCertificateNumber(source.getPENSIONERCERTIFICATE());
+	    pei.setCertiticateDateOfIssue(convertESBDDateToCalendar(source.getPENSIONERCERTIFICATEDATE()));
+	}
+
+	// INVALID_BOOL s:int Признак инвалида
+	// INVALID_CERTIFICATE s:string Удостоверение инвалида
+	// INVALID_CERTIFICATE_BEG_DATE s:string Дата выдачи удостоверения
+	// инвалида
+	// INVALID_CERTIFICATE_END_DATE s:string Дата завершения удостоверения
+	// инвалида
 	InvalidInfo ii = new InvalidInfo();
 	target.setInvalidInfo(ii);
 	target.setInvalid(source.getINVALIDBOOL() == 1);
@@ -247,22 +365,9 @@ public class PolicyServiceWS extends ESBDServiceWS implements PolicyServiceDAO {
 	    ii.setCertificateValidTill(convertESBDDateToCalendar(source.getINVALIDCERTIFICATEENDDATE()));
 	}
 
-	PensionerInfo pei = new PensionerInfo();
-	target.setPensionerInfo(pei);
-	target.setPensioner(source.getPENSIONERBOOL() == 1);
-	if (target.isPensioner()) {
-	    pei.setCertificateNumber(source.getPENSIONERCERTIFICATE());
-	    pei.setCertiticateDateOfIssue(convertESBDDateToCalendar(source.getPENSIONERCERTIFICATEDATE()));
-	}
-
-	GPWParticipantInfo gpwi = new GPWParticipantInfo();
-	target.setGpwParticipantInfo(gpwi);
-	target.setGpwParticipant(source.getWOWBOOL() == 1);
-	if (target.isGpwParticipant()) {
-	    gpwi.setCertificateNumber(source.getWOWCERTIFICATE());
-	    gpwi.setCertificateDateOfIssue(convertESBDDateToCalendar(source.getWOWCERTIFICATEDATE()));
-	}
-
+	// CREATED_BY_USER_ID s:int Идентификатор пользователя, создавшего
+	// запись
+	// INPUT_DATE s:string Дата\время ввода записи в систему
 	RecordOperationInfo created = new RecordOperationInfo();
 	target.setCreated(created);
 	created.setDate(convertESBDDateToCalendar(source.getINPUTDATE()));
@@ -277,6 +382,9 @@ public class PolicyServiceWS extends ESBDServiceWS implements PolicyServiceDAO {
 		    e);
 	}
 
+	// RECORD_CHANGED_AT s:string Дата\время изменения записи
+	// CHANGED_BY_USER_ID s:int Идентификатор пользователя, изменившего
+	// запись
 	RecordOperationInfo modified = new RecordOperationInfo();
 	target.setModified(modified);
 	modified.setDate(convertESBDDateToCalendar(source.getRECORDCHANGEDAT()));
@@ -292,6 +400,7 @@ public class PolicyServiceWS extends ESBDServiceWS implements PolicyServiceDAO {
 			e);
 	    }
 
+	// SYSTEM_DELIMITER_ID s:int Идентификатор страховой компании
 	try {
 	    target.setInsurer(insuranceCompanyService.getById(new Long(source.getSYSTEMDELIMITERID())));
 	} catch (NotFound e) {
@@ -433,7 +542,5 @@ public class PolicyServiceWS extends ESBDServiceWS implements PolicyServiceDAO {
 			    + "' not found",
 		    e);
 	}
-
     }
-
 }

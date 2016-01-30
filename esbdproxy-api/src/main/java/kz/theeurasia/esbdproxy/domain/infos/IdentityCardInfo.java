@@ -1,15 +1,23 @@
-package kz.theeurasia.esbdproxy.domain.entities;
+package kz.theeurasia.esbdproxy.domain.infos;
 
 import java.util.Calendar;
 
 import kz.theeurasia.esbdproxy.domain.dict.IdentityCardTypeDict;
 
-public class IdentityCardEntity {
-
+public class IdentityCardInfo {
+    // DOCUMENT_GIVED_DATE s:string Дата выдачи документа
     private Calendar dateOfIssue;
+
+    // DOCUMENT_GIVED_BY s:string Документ выдан
     private String issuingAuthority;
+
+    // DOCUMENT_NUMBER s:string Номер документа
     private String number;
-    private IdentityCardTypeDict identityCardType;
+
+    // DOCUMENT_TYPE_ID s:int Тип документа (справочник DOCUMENTS_TYPES)
+    private IdentityCardTypeDict identityCardType = IdentityCardTypeDict.UNSPECIFIED;
+
+    // GENERATED
 
     public Calendar getDateOfIssue() {
 	return dateOfIssue;

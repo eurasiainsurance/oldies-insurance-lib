@@ -1,6 +1,6 @@
-package kz.theeurasia.esbdproxy.domain.infos.osgpovts;
+package kz.theeurasia.esbdproxy.domain.enums.osgpovts;
 
-public enum InsuredAgeClassInfo {
+public enum InsuredAgeClassEnum {
     OVER25, // 25 лет и старше
     UNDER25, // Менее 25 лет
     UNSPECIFIED;

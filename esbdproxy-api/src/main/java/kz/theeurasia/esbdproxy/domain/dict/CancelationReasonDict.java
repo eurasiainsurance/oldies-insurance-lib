@@ -19,14 +19,17 @@ public enum CancelationReasonDict {
 	this.id = id;
     }
 
-    public long getId() {
-	return id;
-    }
-
     public static CancelationReasonDict forId(long id) {
 	for (CancelationReasonDict crti : values())
 	    if (crti.getId() == id)
 		return crti;
 	return null;
     }
+
+    // GENERATED
+
+    public long getId() {
+	return id;
+    }
+
 }

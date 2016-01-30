@@ -11,14 +11,16 @@ public enum MaritalStatusDict {
 	this.id = id;
     }
 
-    public long getId() {
-	return id;
-    }
-
     public static MaritalStatusDict forId(long id) {
 	for (MaritalStatusDict dict : values())
 	    if (dict.getId() == id)
 		return dict;
 	return null;
+    }
+
+    // GENERATED
+
+    public long getId() {
+	return id;
     }
 }

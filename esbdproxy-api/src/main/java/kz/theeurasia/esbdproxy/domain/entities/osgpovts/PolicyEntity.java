@@ -1,12 +1,14 @@
 package kz.theeurasia.esbdproxy.domain.entities.osgpovts;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 import kz.theeurasia.esbdproxy.domain.dict.CancelationReasonDict;
 import kz.theeurasia.esbdproxy.domain.entities.BranchEntity;
-import kz.theeurasia.esbdproxy.domain.entities.ClientEntity;
+import kz.theeurasia.esbdproxy.domain.entities.SubjectEntity;
 import kz.theeurasia.esbdproxy.domain.entities.InsuranceCompanyEntity;
+import kz.theeurasia.esbdproxy.domain.infos.RecordOperationInfo;
 
 public class PolicyEntity {
     // POLICY_ID s:int Идентификатор полиса (обязательно)
@@ -31,15 +33,7 @@ public class PolicyEntity {
     private InsuranceCompanyEntity insurer;
 
     // CLIENT_ID s:int Идентификатор страхователя (обязательно)
-    private ClientEntity insurant;
-
-    //TODO Добавить поля Changed
-    // RECORD_CHANGED_AT s:string Дата\время изменения полиса
-    // RECORD_CHANGED_AT_DATETIME s:string Дата\время изменения полиса
-    // CHANGED_BY_USER_ID s:int Идентификатор пользователя, изменившего полис
-
-    // CREATED_BY_USER_ID s:int Идентификатор пользователя, создавшего полис
-    // INPUT_DATE s:string Дата\время ввода полиса в систему
+    private SubjectEntity insurant;
 
     // POLICY_DATE s:string Дата полиса
     private Calendar dateOfIssue;
@@ -48,23 +42,56 @@ public class PolicyEntity {
     private Calendar dateOfCancelation;
 
     // RESCINDING_REASON_ID s:int Идентификатор причины расторжения
-    private CancelationReasonDict cancelationReasonType;
+    private CancelationReasonDict cancelationReasonType = CancelationReasonDict.UNSPECIFIED;
 
     // BRANCH_ID s:int Филиал (обязательно)
     private BranchEntity branch;
 
     // REWRITE_BOOL s:int Признак переоформления
+    private boolean reissued = false;
+
     // REWRITE_POLICY_ID s:int Ссылка на переоформляемый полис
+    private long reissuedPolicyId;
 
     // DESCRIPTION s:string Комментарии к полису
     private String comments;
 
     // Drivers tns:ArrayOfDriver Водители (обязательно)
-    private List<InsuredDriverEntity> insuredDrivers;
+    private List<InsuredDriverEntity> insuredDrivers = new ArrayList<>();
 
     // PoliciesTF tns:ArrayOfPolicies_TF Транспортные средства полиса
     // (обязательно)
-    private List<InsuredVehicleEntity> insuredVehicles;
+    private List<InsuredVehicleEntity> insuredVehicles = new ArrayList<>();
+
+    // CREATED_BY_USER_ID s:int Идентификатор пользователя, создавшего полис
+    // INPUT_DATE s:string Дата\время ввода полиса в систему
+    private RecordOperationInfo created = new RecordOperationInfo();
+
+    // RECORD_CHANGED_AT s:string Дата\время изменения полиса
+    // RECORD_CHANGED_AT_DATETIME s:string Дата\время изменения полиса
+    // CHANGED_BY_USER_ID s:int Идентификатор пользователя, изменившего полис
+    private RecordOperationInfo modified = new RecordOperationInfo();
+
+    // GLOBAL_ID s:string Уникальный глобальный идентификатор полиса
+    // ScheduledPayments tns:ArrayOfSCHEDULED_PAYMENT Плановые платежи по полису
+    // PAYMENT_ORDER_TYPE_ID s:int Порядок оплаты (Идентификатор)
+    // PAYMENT_ORDER_TYPE s:string Порядок оплаты
+    // PAYMENT_DATE s:string Дата оплаты
+    // MIDDLEMAN_ID s:int Посредник (Идентификатор)
+    // MIDDLEMAN_CONTRACT_NUMBER s:string Номер договора посредника
+    // CLIENT_FORM_ID s:int Форма клиента (справочник CLIENT_FORMS)
+
+    @Override
+    public int hashCode() {
+	return this.getClass().hashCode() * new Long(id).hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	return obj != null && this.getClass().isInstance(obj) && getId() == this.getClass().cast(obj).getId();
+    }
+
+    // GENERATED
 
     public long getId() {
 	return id;
@@ -122,11 +149,11 @@ public class PolicyEntity {
 	this.insurer = insurer;
     }
 
-    public ClientEntity getInsurant() {
+    public SubjectEntity getInsurant() {
 	return insurant;
     }
 
-    public void setInsurant(ClientEntity insurant) {
+    public void setInsurant(SubjectEntity insurant) {
 	this.insurant = insurant;
     }
 
@@ -162,6 +189,22 @@ public class PolicyEntity {
 	this.branch = branch;
     }
 
+    public boolean isReissued() {
+	return reissued;
+    }
+
+    public void setReissued(boolean reissued) {
+	this.reissued = reissued;
+    }
+
+    public long getReissuedPolicyId() {
+	return reissuedPolicyId;
+    }
+
+    public void setReissuedPolicyId(long reissuedPolicyId) {
+	this.reissuedPolicyId = reissuedPolicyId;
+    }
+
     public String getComments() {
 	return comments;
     }
@@ -186,13 +229,20 @@ public class PolicyEntity {
 	this.insuredVehicles = insuredVehicles;
     }
 
-    // GLOBAL_ID s:string Уникальный глобальный идентификатор полиса
-    // ScheduledPayments tns:ArrayOfSCHEDULED_PAYMENT Плановые платежи по полису
-    // PAYMENT_ORDER_TYPE_ID s:int Порядок оплаты (Идентификатор)
-    // PAYMENT_ORDER_TYPE s:string Порядок оплаты
-    // PAYMENT_DATE s:string Дата оплаты
-    // MIDDLEMAN_ID s:int Посредник (Идентификатор)
-    // MIDDLEMAN_CONTRACT_NUMBER s:string Номер договора посредника
-    // CLIENT_FORM_ID s:int Форма клиента (справочник CLIENT_FORMS)
+    public RecordOperationInfo getCreated() {
+	return created;
+    }
+
+    public void setCreated(RecordOperationInfo created) {
+	this.created = created;
+    }
+
+    public RecordOperationInfo getModified() {
+	return modified;
+    }
+
+    public void setModified(RecordOperationInfo modified) {
+	this.modified = modified;
+    }
 
 }

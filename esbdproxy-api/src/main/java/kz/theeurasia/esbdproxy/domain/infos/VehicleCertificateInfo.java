@@ -5,20 +5,17 @@ import java.util.Calendar;
 import kz.theeurasia.esbdproxy.domain.dict.CountryRegionDict;
 
 public class VehicleCertificateInfo {
-    // TF_NUMBER s:string Гос. номер ТС
     private String registrationNumber;
 
-    // TF_REGISTRATION_CERTIFICATE s:string Номер тех. паспорта
     private String certificateNumber;
 
-    // GIVE_DATE s:string Дата выдачи тех. паспорта
     private Calendar dateOfIssue;
 
-    // REGION_ID s:int Идентификатор региона регистрации ТС (обязательно)
-    private CountryRegionDict registrationRegion;
+    private CountryRegionDict registrationRegion = CountryRegionDict.UNSPECIFIED;
 
-    // BIG_CITY_BOOL s:int Признак города областного значения (обязательно)
-    private boolean majorCity;
+    private boolean majorCity = false;
+
+    // GENERATED
 
     public String getRegistrationNumber() {
 	return registrationNumber;

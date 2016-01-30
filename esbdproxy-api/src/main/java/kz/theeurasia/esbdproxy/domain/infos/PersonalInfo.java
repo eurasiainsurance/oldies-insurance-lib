@@ -13,23 +13,22 @@ import kz.theeurasia.esbdproxy.domain.dict.SexDict;
  */
 public class PersonalInfo {
 
+    // First_Name s:string Имя (для физ. лица)
     private String firstName;
+
+    // Last_Name s:string Фамилия (для физ. лица)
     private String lastName;
+
+    // Middle_Name s:string Отчество (для физ. лица)
     private String middleName;
+
+    // Born s:string Дата рождения
     private Calendar dayOfBirth;
-    private SexDict sex;
 
-    public PersonalInfo() {
-    }
+    // Sex_ID s:int Пол (справочник SEX)
+    private SexDict sex = SexDict.UNSPECIFIED;
 
-    public PersonalInfo(String firstName, String lastName, String middleName, Calendar dayOfBirth,
-	    SexDict sex) {
-	this.firstName = firstName;
-	this.lastName = lastName;
-	this.middleName = middleName;
-	this.dayOfBirth = dayOfBirth;
-	this.sex = sex;
-    }
+    // GENERATED
 
     public String getFirstName() {
 	return firstName;

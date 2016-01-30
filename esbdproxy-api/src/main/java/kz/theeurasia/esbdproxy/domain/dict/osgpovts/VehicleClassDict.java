@@ -20,14 +20,16 @@ public enum VehicleClassDict {
 	this.id = id;
     }
 
-    public long getId() {
-	return id;
-    }
-
     public static VehicleClassDict forId(long id) {
 	for (VehicleClassDict dict : values())
 	    if (dict.getId() == id)
 		return dict;
 	return null;
+    }
+
+    // GENERATED
+
+    public long getId() {
+	return id;
     }
 }

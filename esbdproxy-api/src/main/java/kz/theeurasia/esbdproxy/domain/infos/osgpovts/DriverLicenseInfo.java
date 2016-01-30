@@ -2,17 +2,12 @@ package kz.theeurasia.esbdproxy.domain.infos.osgpovts;
 
 import java.util.Calendar;
 
-public class CertificateInfo {
+public class DriverLicenseInfo {
+
     private String number;
     private Calendar dateOfIssue;
 
-    public CertificateInfo() {
-    }
-
-    public CertificateInfo(String number, Calendar dateOfIssue) {
-	this.number = number;
-	this.dateOfIssue = dateOfIssue;
-    }
+    // GENERATED
 
     public String getNumber() {
 	return number;

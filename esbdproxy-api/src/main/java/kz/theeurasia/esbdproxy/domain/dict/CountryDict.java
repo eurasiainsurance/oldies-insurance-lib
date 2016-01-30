@@ -182,7 +182,7 @@ public enum CountryDict {
     MSR(500, "Монтсеррат", "Montserrat", 129), // Монтсеррат
     MMR(104, "Мьянма", "Burma", 131, 39), // Мьянма
     NAM(516, "Намибия", "Namibia", 132), // Намибия
-    COUNTRY_133(520, "Науру", "Науру", 133), // Науру
+    NRU(520, "Науру", "Nauru", 133), // Науру
     NPL(524, "Непал", "Nepal", 134), // Непал
     NER(562, "Нигер", "Niger", 135), // Нигер
     NGA(566, "Нигерия", "Nigeria", 136), // Нигерия
@@ -296,10 +296,10 @@ public enum CountryDict {
 							     // Мартина
     UNSPECIFIED(0, "", "", 0);
 
-    private long[] ids;
-    private int isoCode;
-    private String rusname;
-    private String engname;
+    private final long[] ids;
+    private final int isoCode;
+    private final String rusname;
+    private final String engname;
 
     CountryDict(int isoCode, String rusname, String engname, long... ids) {
 	this.isoCode = isoCode;
@@ -308,27 +308,11 @@ public enum CountryDict {
 	this.ids = ids;
     }
 
-    public int getIsoCode() {
-	return isoCode;
-    }
-
     public long getId() {
 	if (ids.length > 0)
 	    return ids[0];
 	else
 	    return -1;
-    }
-
-    public long[] getIds() {
-	return ids;
-    }
-
-    protected String getRusname() {
-	return rusname;
-    }
-
-    protected String getEngname() {
-	return engname;
     }
 
     public static CountryDict forISOCode(int isoCode) {
@@ -354,4 +338,23 @@ public enum CountryDict {
 		    return c;
 	return null;
     }
+
+    // GENERATED
+
+    public long[] getIds() {
+	return ids;
+    }
+
+    public int getIsoCode() {
+	return isoCode;
+    }
+
+    public String getRusname() {
+	return rusname;
+    }
+
+    public String getEngname() {
+	return engname;
+    }
+
 }

@@ -52,6 +52,7 @@ public abstract class ESBDServiceWS {
 	    date.setTime(ESBD_DATE_FORMATER.parse(esbdDate));
 	    return date;
 	} catch (ParseException e) {
+	    e.printStackTrace();
 	    return null;
 	}
     }
@@ -62,6 +63,7 @@ public abstract class ESBDServiceWS {
 	try {
 	    return ESBD_DATE_FORMATER.parse(esbdDate);
 	} catch (ParseException e) {
+	    e.printStackTrace();
 	    return null;
 	}
     }

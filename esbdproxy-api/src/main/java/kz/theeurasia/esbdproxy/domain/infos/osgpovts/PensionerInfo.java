@@ -7,6 +7,8 @@ public class PensionerInfo {
     private String certificateNumber;
     private Calendar certiticateDateOfIssue;
 
+    // GENERATED
+
     public String getCertificateNumber() {
 	return certificateNumber;
     }

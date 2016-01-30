@@ -9,14 +9,16 @@ public enum SexDict {
 	this.id = id;
     }
 
-    public long getId() {
-	return id;
-    }
-
     public static SexDict forId(long id) {
 	for (SexDict dict : values())
 	    if (dict.getId() == id)
 		return dict;
 	return null;
+    }
+
+    // GENERATED
+
+    public long getId() {
+	return id;
     }
 }

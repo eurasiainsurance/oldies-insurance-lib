@@ -1,5 +1,6 @@
 package kz.theeurasia.esbdproxy.domain.infos;
 
+import kz.theeurasia.esbdproxy.domain.dict.CityDict;
 import kz.theeurasia.esbdproxy.domain.dict.CountryDict;
 
 /**
@@ -10,16 +11,16 @@ import kz.theeurasia.esbdproxy.domain.dict.CountryDict;
  */
 public class OriginInfo {
 
+    // RESIDENT_BOOL s:int Признак резидентства (обязательно)
     private boolean resident;
-    private CountryDict country;
 
-    public OriginInfo() {
-    }
+    // COUNTRY_ID s:int Страна (справочник COUNTRIES)
+    private CountryDict country = CountryDict.UNSPECIFIED;
 
-    public OriginInfo(boolean resident, CountryDict country) {
-	this.resident = resident;
-	this.country = country;
-    }
+    // SETTLEMENT_ID s:int Населенный пункт (справочник SETTLEMENTS)
+    private CityDict city = CityDict.UNSPECIFIED;
+
+    // GENERATED
 
     public boolean isResident() {
 	return resident;
@@ -37,4 +38,11 @@ public class OriginInfo {
 	this.country = country;
     }
 
+    public CityDict getCity() {
+	return city;
+    }
+
+    public void setCity(CityDict city) {
+	this.city = city;
+    }
 }

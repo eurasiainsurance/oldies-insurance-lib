@@ -19,17 +19,17 @@ public class InsuredVehicleEntity {
     private VehicleEntity vehicle;
 
     // TF_TYPE_ID s:int Идентификатор типа ТС (обязательно)
-    private VehicleClassDict vehicleClass;
+    private VehicleClassDict vehicleClass = VehicleClassDict.UNSPECIFIED;
 
     // TF_AGE_ID s:int Идентификатор возраста ТС (обязательно)
-    private VehicleAgeClassDict vehicleAgeClass;
+    private VehicleAgeClassDict vehicleAgeClass = VehicleAgeClassDict.UNSPECIFIED;
 
     // TF_NUMBER s:string Гос. номер ТС
     // TF_REGISTRATION_CERTIFICATE s:string Номер тех. паспорта
     // GIVE_DATE s:string Дата выдачи тех. паспорта
     // REGION_ID s:int Идентификатор региона регистрации ТС (обязательно)
     // BIG_CITY_BOOL s:int Признак города областного значения (обязательно)
-    private VehicleCertificateInfo certificate;
+    private VehicleCertificateInfo certificate = new VehicleCertificateInfo();
 
     // PURPOSE s:string Цель использования ТС
     private String vehiclePurpose;
@@ -39,14 +39,26 @@ public class InsuredVehicleEntity {
 
     // CREATED_BY_USER_ID s:int Идентификатор пользователя, создавшего запись
     // INPUT_DATE s:string Дата\время ввода записи в систему
-    private RecordOperationInfo created;
+    private RecordOperationInfo created = new RecordOperationInfo();
 
     // RECORD_CHANGED_AT s:string Дата\время изменения записи
     // CHANGED_BY_USER_ID s:int Идентификатор пользователя, изменившего запись
-    private RecordOperationInfo modified;
+    private RecordOperationInfo modified = new RecordOperationInfo();
 
     // SYSTEM_DELIMITER_ID s:int Идентификатор страховой компании
     private InsuranceCompanyEntity insurer;
+
+    @Override
+    public int hashCode() {
+	return this.getClass().hashCode() * new Long(id).hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	return obj != null && this.getClass().isInstance(obj) && getId() == this.getClass().cast(obj).getId();
+    }
+
+    // GENERATED
 
     public long getId() {
 	return id;

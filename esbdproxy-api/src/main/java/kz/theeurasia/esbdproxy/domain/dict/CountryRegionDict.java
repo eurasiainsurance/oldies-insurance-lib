@@ -31,18 +31,6 @@ public enum CountryRegionDict {
 	this.region = region;
     }
 
-    public long getId() {
-	return id;
-    }
-
-    public String getCode() {
-	return code;
-    }
-
-    public boolean isRegion() {
-	return region;
-    }
-
     public static CountryRegionDict forId(long id) {
 	for (CountryRegionDict dict : values())
 	    if (dict.getId() == id)
@@ -56,4 +44,19 @@ public enum CountryRegionDict {
 		return dict;
 	return null;
     }
+
+    // GENERATED
+
+    public long getId() {
+	return id;
+    }
+
+    public String getCode() {
+	return code;
+    }
+
+    public boolean isRegion() {
+	return region;
+    }
+
 }

@@ -7,6 +7,8 @@ public class PrivilegerInfo {
     private String certificateNumber;
     private Calendar certificateDateOfIssue;
 
+    // GENERATED
+
     public String getType() {
 	return type;
     }

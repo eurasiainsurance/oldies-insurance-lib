@@ -8,6 +8,8 @@ public class RecordOperationInfo {
     private Calendar date;
     private UserEntity author;
 
+    // GENERATED
+
     public Calendar getDate() {
 	return date;
     }

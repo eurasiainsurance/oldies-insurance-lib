@@ -15,6 +15,8 @@ import kz.theeurasia.esbdproxy.services.NotFound;
 
 public class IdentityCardTypeServiceTestCase extends GeneralServiceTestCase {
 
+    private static final long INVALID_ID = -99999l;
+
     @Test
     public void testGetAll() throws NamingException {
 	IdentityCardTypeServiceDAO service = getIdentityCardTypeServiceEntityWS();
@@ -42,7 +44,7 @@ public class IdentityCardTypeServiceTestCase extends GeneralServiceTestCase {
     @Test(expected = NotFound.class)
     public void testGetById_NotFound() throws NamingException, NotFound {
 	IdentityCardTypeServiceDAO service = getIdentityCardTypeServiceEntityWS();
-	service.getById(-99999l);
+	service.getById(INVALID_ID);
     }
 
 }

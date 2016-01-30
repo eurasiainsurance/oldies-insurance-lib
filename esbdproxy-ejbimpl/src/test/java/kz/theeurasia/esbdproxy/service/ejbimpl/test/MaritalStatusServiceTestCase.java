@@ -15,6 +15,8 @@ import kz.theeurasia.esbdproxy.services.NotFound;
 
 public class MaritalStatusServiceTestCase extends GeneralServiceTestCase {
 
+    private static final long INVALID_ID = -99999l;
+
     @Test
     public void testGetAll() throws NamingException {
 	MaritalStatusServiceDAO service = getMaritalStatusServiceEntityWS();
@@ -42,7 +44,7 @@ public class MaritalStatusServiceTestCase extends GeneralServiceTestCase {
     @Test(expected = NotFound.class)
     public void testGetById_NotFound() throws NamingException, NotFound {
 	MaritalStatusServiceDAO service = getMaritalStatusServiceEntityWS();
-	service.getById(-99999l);
+	service.getById(INVALID_ID);
     }
 
 }

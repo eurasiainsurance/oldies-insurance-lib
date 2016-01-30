@@ -15,6 +15,8 @@ import kz.theeurasia.esbdproxy.services.NotFound;
 
 public class CancelationReasonServiceTestCase extends GeneralServiceTestCase {
 
+    private static final long INVALID_ID = -99999l;
+
     @Test
     public void testGetAll() throws NamingException {
 	CancelationReasonServiceDAO service = getCancelationReasonService();
@@ -42,7 +44,7 @@ public class CancelationReasonServiceTestCase extends GeneralServiceTestCase {
     @Test(expected = NotFound.class)
     public void testGetById_NotFound() throws NamingException, NotFound {
 	CancelationReasonServiceDAO service = getCancelationReasonService();
-	service.getById(-99999l);
+	service.getById(INVALID_ID);
     }
 
 }

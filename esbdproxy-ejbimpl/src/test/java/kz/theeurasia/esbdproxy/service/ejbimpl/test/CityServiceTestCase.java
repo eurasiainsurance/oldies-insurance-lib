@@ -15,6 +15,8 @@ import kz.theeurasia.esbdproxy.services.NotFound;
 
 public class CityServiceTestCase extends GeneralServiceTestCase {
 
+    private static final long INVALID_ID = -99999l;
+
     @Test
     public void testGetAll() throws NamingException {
 	CityServiceDAO service = getCityService();
@@ -42,6 +44,6 @@ public class CityServiceTestCase extends GeneralServiceTestCase {
     @Test(expected = NotFound.class)
     public void testGetById_NotFound() throws NamingException, NotFound {
 	CityServiceDAO service = getCityService();
-	service.getById(-99999l);
+	service.getById(INVALID_ID);
     }
 }

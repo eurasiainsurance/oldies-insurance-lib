@@ -1,4 +1,4 @@
-package kz.theeurasia.esbdproxy.service.ejbimpl.test;
+package kz.theeurasia.esbdproxy.service.ejbimpl.test.osgpovts;
 
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuranceClassTypeDict;
 import kz.theeurasia.esbdproxy.domain.entities.SubjectPersonEntity;
+import kz.theeurasia.esbdproxy.service.ejbimpl.test.GeneralServiceTestCase;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.osgpovts.InsuranceClassTypeServiceDAO;
 

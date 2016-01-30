@@ -15,6 +15,8 @@ import kz.theeurasia.esbdproxy.services.NotFound;
 
 public class CountryRegionServiceTestCase extends GeneralServiceTestCase {
 
+    private static final long INVALID_ID = -99999l;
+
     @Test
     public void testGetAll() throws NamingException {
 	CountryRegionServiceDAO service = getCountryRegionServiceEntityWS();
@@ -42,7 +44,7 @@ public class CountryRegionServiceTestCase extends GeneralServiceTestCase {
     @Test(expected = NotFound.class)
     public void testGetById_NotFound() throws NamingException, NotFound {
 	CountryRegionServiceDAO service = getCountryRegionServiceEntityWS();
-	service.getById(-99999l);
+	service.getById(INVALID_ID);
     }
 
 }

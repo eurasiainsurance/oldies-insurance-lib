@@ -27,6 +27,9 @@ public abstract class AbstractESBDServiceWS {
 
     @PostConstruct
     protected void initRemoteWS() {
+	// TODO make research, how to inject WebServiceRef into EJB
+	if (esbdService == null)
+	    esbdService = new IICWebService();
 	soapService = esbdService.getIICWebServiceSoap();
 	session.checkSession(soapService);
     }

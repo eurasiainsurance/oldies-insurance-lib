@@ -26,31 +26,31 @@ public class GetItems {
 	dumpCancelationReasonTypes();
 	dumpCountryInfo();
 	dumpClassUsingTypes();
-	dumpBranchInfo();
 	dumpEconomicsSector();
+	dumpCities();
+    }
+
+    private void dumpCities() {
+	dump("CityDict", "SETTLEMENTS", "CITY");
     }
 
     private void dumpEconomicsSector() {
-	dumpCodes("EconomicsSector", "ECONOMICS_SECTORS");
+	dumpCodes("EconomicsSector", "ECONOMICS_SECTORS", "Economics_Sector");
     }
 
     private void dumpCancelationReasonTypes() {
-	dump("CancelationReasonType", "RESCINDING_REASONS");
+	dump("CancelationReasonType", "RESCINDING_REASONS", "Cancelation_Reason_Type");
     }
 
     private void dumpClassUsingTypes() {
-	dump("CancelationReasonType", "CLASS_USING");
+	dump("CancelationReasonType", "CLASS_USING", "Cancelation_Reason_Type");
     }
 
     private void dumpCountryInfo() {
-	dumpCodes("CountryInfo", "COUNTRIES");
+	dumpCodes("CountryInfo", "COUNTRIES", "Country");
     }
 
-    private void dumpBranchInfo() {
-	dumpCodes("BranchInfo", "OGPO_TRANSPORT_TYPES");
-    }
-
-    private void dump(String className, String dictionaryName) {
+    private void dump(String className, String dictionaryName, String prefix) {
 	System.out.println(dictionaryName);
 
 	System.out.println("public enum " + className + "Info {");
@@ -60,13 +60,15 @@ public class GetItems {
 	Iterator<Item> i = items.getItem().iterator();
 	while (i.hasNext()) {
 	    Item item = i.next();
-	    System.out.println("\tREASON_" + item.getID() + "(" + item.getID() + ")" + (i.hasNext() ? "," : ";") + " //"
-		    + item.getName());
+	    System.out.println(
+		    "\t" + prefix.toUpperCase() + "_" + item.getID() + "(" + item.getID() + ")"
+			    + (i.hasNext() ? "," : ";") + " //"
+			    + item.getName());
 	}
 	System.out.println("}");
     }
 
-    private void dumpCodes(String className, String dictionaryName) {
+    private void dumpCodes(String className, String dictionaryName, String prefix) {
 	System.out.println(dictionaryName);
 
 	System.out.println("public enum " + className + "Info {");
@@ -76,7 +78,7 @@ public class GetItems {
 	Iterator<Item> i = items.getItem().iterator();
 	while (i.hasNext()) {
 	    Item item = i.next();
-	    System.out.println("\tCOUNTRY_CODE_" + item.getCode() + "(" + item.getID()
+	    System.out.println("\t" + prefix.toUpperCase() + "_" + item.getCode() + "(" + item.getID()
 		    + ", \"" + item.getCode() + "\")" + (i.hasNext() ? "," : ";") + " //"
 		    + item.getName());
 	}

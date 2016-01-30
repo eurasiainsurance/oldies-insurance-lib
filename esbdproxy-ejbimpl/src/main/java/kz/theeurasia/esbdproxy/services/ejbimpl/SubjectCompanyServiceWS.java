@@ -4,10 +4,10 @@ import javax.ejb.EJB;
 import javax.ejb.Singleton;
 
 import kz.theeurasia.asb.esbd.jaxws.Client;
-import kz.theeurasia.esbdproxy.domain.dict.CompanyActivityKindDict;
-import kz.theeurasia.esbdproxy.domain.dict.EconomicSectorDict;
 import kz.theeurasia.esbdproxy.domain.entities.SubjectCompanyEntity;
 import kz.theeurasia.esbdproxy.domain.entities.SubjectEntity;
+import kz.theeurasia.esbdproxy.services.CompanyActivityKindServiceDAO;
+import kz.theeurasia.esbdproxy.services.EconomicSectorServiceDAO;
 import kz.theeurasia.esbdproxy.services.IdentityCardTypeServiceDAO;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.SexServiceDAO;
@@ -21,6 +21,12 @@ public class SubjectCompanyServiceWS extends SubjectServiceWS implements Subject
 
     @EJB
     private SexServiceDAO sexService;
+
+    @EJB
+    private CompanyActivityKindServiceDAO companyActivityKindService;
+
+    @EJB
+    private EconomicSectorServiceDAO econimicsSectorService;
 
     @Override
     public SubjectCompanyEntity getById(Long id) throws NotFound {
@@ -46,10 +52,28 @@ public class SubjectCompanyServiceWS extends SubjectServiceWS implements Subject
 	target.setAccountantName(source.getMAINACCOUNTANT());
 
 	// ACTIVITY_KIND_ID s:int Вид деятельности (справочник ACTIVITY_KINDS)
-	target.setCompanyActivityKind(companyActivityKind);
+	try {
+	    target.setCompanyActivityKind(companyActivityKindService.getById(new Long(source.getACTIVITYKINDID())));
+	} catch (NotFound e) {
+	    // mandatory field
+	    throw new DataCoruptionException(
+		    "Error while fetching Company Client ID = '" + source.getID()
+			    + "' from ESBD. CompanyActivityKind ID = '"
+			    + source.getACTIVITYKINDID() + "' not found",
+		    e);
+	}
 
 	// ECONOMICS_SECTOR_ID s:int Сектор экономики (справочник
 	// ECONOMICS_SECTORS)
-	target.setEconomicsSector(economicsSector);
+	try {
+	    target.setEconomicsSector(econimicsSectorService.getById(new Long(source.getECONOMICSSECTORID())));
+	} catch (NotFound e) {
+	    // mandatory field
+	    throw new DataCoruptionException(
+		    "Error while fetching Company Client ID = '" + source.getID()
+			    + "' from ESBD. Economics Sector ID = '"
+			    + source.getECONOMICSSECTORID() + "' not found",
+		    e);
+	}
     }
 }

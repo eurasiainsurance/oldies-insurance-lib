@@ -4,6 +4,6 @@ import java.util.List;
 
 import kz.theeurasia.esbdproxy.domain.dict.SexDict;
 
-public interface SexServiceDAO extends EntityServiceDAO<SexDict, Long> {
+public interface SexServiceDAO extends AbstractServiceDAO<SexDict, Long> {
     List<SexDict> getAll();
 }

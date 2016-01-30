@@ -10,7 +10,6 @@ import org.junit.Test;
 import kz.theeurasia.asb.esbd.jaxws.ArrayOfItem;
 import kz.theeurasia.asb.esbd.jaxws.Item;
 import kz.theeurasia.esbdproxy.domain.dict.CancelationReasonDict;
-import kz.theeurasia.esbdproxy.domain.dict.CompanyActivityKindDict;
 import kz.theeurasia.esbdproxy.domain.dict.CountryDict;
 import kz.theeurasia.esbdproxy.domain.dict.CountryRegionDict;
 import kz.theeurasia.esbdproxy.domain.dict.EconomicSectorDict;
@@ -24,7 +23,6 @@ import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
 public class DictionariesTestCase extends ESBDTestCase {
 
     private static final String DICT_CANCELATION_REASON = "RESCINDING_REASONS";
-    private static final String DICT_COMPANY_ACTIVITY_KIND = "ACTIVITY_KINDS";
     private static final String DICT_COUNTRY = "COUNTRIES";
     private static final String DICT_COUNTRY_REGION = "REGIONS";
     private static final String DICT_ECONOMICS_SECTOR = "ECONOMICS_SECTORS";
@@ -48,25 +46,6 @@ public class DictionariesTestCase extends ESBDTestCase {
 			    + item.getCode()
 			    + "' and id = '" + item.getID() + "' present, but "
 			    + CancelationReasonDict.class.getSimpleName() + " enum variable is missing",
-		    dict,
-		    not(nullValue()));
-	}
-    }
-
-    @Test
-    public void testCompanyActivityKindDictMapping() {
-	ArrayOfItem items = getSoap().getItems(getSessionId(), DICT_COMPANY_ACTIVITY_KIND);
-	assertThat(items, not(nullValue()));
-	Iterator<Item> i = items.getItem().iterator();
-	while (i.hasNext()) {
-	    Item item = i.next();
-	    CompanyActivityKindDict dict = CompanyActivityKindDict.forId(item.getID());
-	    assertThat(
-		    "ESBD  dictionary '" + DICT_COMPANY_ACTIVITY_KIND + "' name = '" + item.getName()
-			    + "' with code = '"
-			    + item.getCode()
-			    + "' and id = '" + item.getID() + "' present, but "
-			    + CompanyActivityKindDict.class.getSimpleName() + " enum variable is missing",
 		    dict,
 		    not(nullValue()));
 	}

@@ -1,7 +1,9 @@
 package kz.theeurasia.esbdproxy.services;
 
-import kz.theeurasia.esbdproxy.domain.dict.CompanyActivityKindDict;
+import java.util.List;
 
-public interface CompanyActivityKindServiceDAO extends AbstractServiceDAO<CompanyActivityKindDict, Long> {
+import kz.theeurasia.esbdproxy.domain.entities.CompanyActivityKindEntity;
 
+public interface CompanyActivityKindServiceDAO extends AbstractServiceDAO<CompanyActivityKindEntity, Long> {
+    List<CompanyActivityKindEntity> getAll();
 }

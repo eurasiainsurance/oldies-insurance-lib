@@ -1,6 +1,5 @@
 package kz.theeurasia.esbdproxy.domain.entities;
 
-import kz.theeurasia.esbdproxy.domain.dict.CompanyActivityKindDict;
 import kz.theeurasia.esbdproxy.domain.dict.EconomicSectorDict;
 import kz.theeurasia.esbdproxy.domain.enums.SubjectTypeEnum;
 
@@ -22,7 +21,7 @@ public class SubjectCompanyEntity extends SubjectEntity {
     private String accountantName;
 
     // ACTIVITY_KIND_ID s:int Вид деятельности (справочник ACTIVITY_KINDS)
-    private CompanyActivityKindDict companyActivityKind = CompanyActivityKindDict.UNSPECIFIED;
+    private CompanyActivityKindEntity companyActivityKind;
 
     // ECONOMICS_SECTOR_ID s:int Сектор экономики (справочник ECONOMICS_SECTORS)
     private EconomicSectorDict economicsSector = EconomicSectorDict.UNSPECIFIED;
@@ -68,11 +67,11 @@ public class SubjectCompanyEntity extends SubjectEntity {
 	this.accountantName = accountantName;
     }
 
-    public CompanyActivityKindDict getCompanyActivityKind() {
+    public CompanyActivityKindEntity getCompanyActivityKind() {
 	return companyActivityKind;
     }
 
-    public void setCompanyActivityKind(CompanyActivityKindDict companyActivityKind) {
+    public void setCompanyActivityKind(CompanyActivityKindEntity companyActivityKind) {
 	this.companyActivityKind = companyActivityKind;
     }
 

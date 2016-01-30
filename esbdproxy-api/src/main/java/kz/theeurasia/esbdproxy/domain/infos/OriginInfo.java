@@ -1,7 +1,7 @@
 package kz.theeurasia.esbdproxy.domain.infos;
 
-import kz.theeurasia.esbdproxy.domain.dict.CityDict;
 import kz.theeurasia.esbdproxy.domain.dict.CountryDict;
+import kz.theeurasia.esbdproxy.domain.entities.CityEntity;
 
 /**
  * Класс для представления данных о происхождении клиента
@@ -18,7 +18,7 @@ public class OriginInfo {
     private CountryDict country = CountryDict.UNSPECIFIED;
 
     // SETTLEMENT_ID s:int Населенный пункт (справочник SETTLEMENTS)
-    private CityDict city = CityDict.UNSPECIFIED;
+    private CityEntity city;
 
     // GENERATED
 
@@ -38,11 +38,11 @@ public class OriginInfo {
 	this.country = country;
     }
 
-    public CityDict getCity() {
+    public CityEntity getCity() {
 	return city;
     }
 
-    public void setCity(CityDict city) {
+    public void setCity(CityEntity city) {
 	this.city = city;
     }
 }

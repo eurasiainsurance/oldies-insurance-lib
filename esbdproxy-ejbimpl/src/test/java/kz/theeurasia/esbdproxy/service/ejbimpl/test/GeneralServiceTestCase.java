@@ -10,6 +10,7 @@ import org.junit.BeforeClass;
 
 import kz.theeurasia.esbdproxy.services.BranchServiceDAO;
 import kz.theeurasia.esbdproxy.services.CancelationReasonServiceDAO;
+import kz.theeurasia.esbdproxy.services.CityServiceDAO;
 import kz.theeurasia.esbdproxy.services.CompanyActivityKindServiceDAO;
 import kz.theeurasia.esbdproxy.services.CountryRegionServiceDAO;
 import kz.theeurasia.esbdproxy.services.CountryServiceDAO;
@@ -37,6 +38,7 @@ import kz.theeurasia.esbdproxy.services.ejbimpl.dict.osgpovts.InsuredAgeExpirien
 import kz.theeurasia.esbdproxy.services.ejbimpl.dict.osgpovts.VehicleAgeClassDictServiceWS;
 import kz.theeurasia.esbdproxy.services.ejbimpl.dict.osgpovts.VehicleClassDictServiceWS;
 import kz.theeurasia.esbdproxy.services.ejbimpl.entity.BranchEntityServiceWS;
+import kz.theeurasia.esbdproxy.services.ejbimpl.entity.CityEntityServiceWS;
 import kz.theeurasia.esbdproxy.services.ejbimpl.entity.CompanyActivityKindEntityServiceWS;
 import kz.theeurasia.esbdproxy.services.ejbimpl.entity.InsuranceCompanyEntityServiceWS;
 import kz.theeurasia.esbdproxy.services.ejbimpl.entity.SubjectCompanyEntityServiceWS;
@@ -74,6 +76,10 @@ public abstract class GeneralServiceTestCase {
 
     protected BranchServiceDAO getBranchServiceEntityWS() throws NamingException {
 	return (BranchServiceDAO) context.lookup(nameFor(BranchEntityServiceWS.class));
+    }
+
+    protected CityServiceDAO getCityService() throws NamingException {
+	return (CityServiceDAO) context.lookup(nameFor(CityEntityServiceWS.class));
     }
 
     protected CancelationReasonServiceDAO getCancelationReasonServiceEntityWS() throws NamingException {

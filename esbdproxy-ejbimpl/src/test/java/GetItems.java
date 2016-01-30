@@ -27,11 +27,11 @@ public class GetItems {
 	dumpCountryInfo();
 	dumpClassUsingTypes();
 	dumpBranchInfo();
-	dumpClientForm();
+	dumpEconomicsSector();
     }
 
-    private void dumpClientForm() {
-	dump("QQQ", "CLIENT_FORMS");
+    private void dumpEconomicsSector() {
+	dumpCodes("EconomicsSector", "ECONOMICS_SECTORS");
     }
 
     private void dumpCancelationReasonTypes() {
@@ -45,7 +45,7 @@ public class GetItems {
     private void dumpCountryInfo() {
 	dumpCodes("CountryInfo", "COUNTRIES");
     }
-    
+
     private void dumpBranchInfo() {
 	dumpCodes("BranchInfo", "OGPO_TRANSPORT_TYPES");
     }
@@ -77,7 +77,7 @@ public class GetItems {
 	while (i.hasNext()) {
 	    Item item = i.next();
 	    System.out.println("\tCOUNTRY_CODE_" + item.getCode() + "(" + item.getID()
-		    + ")" + (i.hasNext() ? "," : ";") + " //"
+		    + ", \"" + item.getCode() + "\")" + (i.hasNext() ? "," : ";") + " //"
 		    + item.getName());
 	}
 	System.out.println("}");

@@ -13,7 +13,7 @@ import kz.theeurasia.esbdproxy.domain.dict.CancelationReasonDict;
 import kz.theeurasia.esbdproxy.services.CancelationReasonServiceDAO;
 import kz.theeurasia.esbdproxy.services.NotFound;
 
-public class CancelationReasonServiceTestUnit extends GeneralServiceTestUnit {
+public class CancelationReasonServiceTestCase extends GeneralServiceTestCase {
 
     @Test
     public void testGetAll() throws NamingException {

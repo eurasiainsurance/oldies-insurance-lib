@@ -51,7 +51,7 @@ import kz.theeurasia.esbdproxy.services.osgpovts.InsuredAgeExpirienceClassServic
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleAgeClassServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleClassServiceDAO;
 
-public abstract class GeneralServiceTestUnit {
+public abstract class GeneralServiceTestCase {
     private static final String OPEN_EJB_CONTEXT_FACTORY = "org.apache.openejb.client.LocalInitialContextFactory";
 
     private static Context context;

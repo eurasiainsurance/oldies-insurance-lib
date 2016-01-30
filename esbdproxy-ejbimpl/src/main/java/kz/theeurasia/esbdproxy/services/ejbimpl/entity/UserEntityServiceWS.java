@@ -11,9 +11,9 @@ import kz.theeurasia.asb.esbd.jaxws.ArrayOfUser;
 import kz.theeurasia.asb.esbd.jaxws.User;
 import kz.theeurasia.esbdproxy.domain.entities.UserEntity;
 import kz.theeurasia.esbdproxy.services.BranchServiceDAO;
-import kz.theeurasia.esbdproxy.services.SubjectServiceDAO;
 import kz.theeurasia.esbdproxy.services.InsuranceCompanyServiceDAO;
 import kz.theeurasia.esbdproxy.services.NotFound;
+import kz.theeurasia.esbdproxy.services.SubjectServiceDAO;
 import kz.theeurasia.esbdproxy.services.UserServiceDAO;
 
 @Singleton
@@ -55,7 +55,7 @@ public class UserEntityServiceWS extends AbstractESBDEntityServiceWS implements 
 	for (UserEntity be : all)
 	    if (be.getId() == id)
 		return be;
-	throw new NotFound("Not found with ID = '" + id + "'");
+	throw new NotFound(UserEntity.class.getSimpleName() + " not found with ID = '" + id + "'");
     }
 
     void fillValues(User source, UserEntity target) {

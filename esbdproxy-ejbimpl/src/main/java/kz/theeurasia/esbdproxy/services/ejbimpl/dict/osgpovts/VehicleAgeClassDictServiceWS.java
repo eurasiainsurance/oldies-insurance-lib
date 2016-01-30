@@ -26,7 +26,7 @@ public class VehicleAgeClassDictServiceWS implements VehicleAgeClassServiceDAO {
     public VehicleAgeClassDict getById(Long id) throws NotFound {
 	VehicleAgeClassDict result = VehicleAgeClassDict.forId(id);
 	if (result == null)
-	    throw new NotFound("Not found with ID = '" + id + "'");
+	    throw new NotFound(VehicleAgeClassDict.class.getSimpleName() + " not found with ID = '" + id + "'");
 	return result;
     }
 

@@ -26,7 +26,7 @@ public class CountryDictServiceWS implements CountryServiceDAO {
     public CountryDict getById(Long id) throws NotFound {
 	CountryDict result = CountryDict.forId(id);
 	if (result == null)
-	    throw new NotFound("Not found with ID = '" + id + "'");
+	    throw new NotFound(CountryDict.class.getSimpleName() + " not found with ID = '" + id + "'");
 	return result;
     }
 

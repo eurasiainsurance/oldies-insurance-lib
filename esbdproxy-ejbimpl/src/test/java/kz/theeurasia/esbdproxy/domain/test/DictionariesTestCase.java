@@ -1,4 +1,4 @@
-package kz.theeurasia.test.esbdproxy.dict;
+package kz.theeurasia.esbdproxy.domain.test;
 
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;

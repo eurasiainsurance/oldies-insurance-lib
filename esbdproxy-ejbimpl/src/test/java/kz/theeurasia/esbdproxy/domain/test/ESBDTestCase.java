@@ -1,4 +1,4 @@
-package kz.theeurasia.test.esbdproxy.dict;
+package kz.theeurasia.esbdproxy.domain.test;
 
 import org.junit.BeforeClass;
 

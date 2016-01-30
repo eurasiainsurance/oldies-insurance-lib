@@ -30,7 +30,7 @@ public class CountryRegionDictServiceWS implements CountryRegionServiceDAO {
     public CountryRegionDict getById(Long id) throws NotFound {
 	CountryRegionDict result = CountryRegionDict.forId(id);
 	if (result == null)
-	    throw new NotFound("Not found with ID = '" + id + "'");
+	    throw new NotFound(CountryRegionDict.class.getSimpleName() + " not found with ID = '" + id + "'");
 	return result;
     }
 

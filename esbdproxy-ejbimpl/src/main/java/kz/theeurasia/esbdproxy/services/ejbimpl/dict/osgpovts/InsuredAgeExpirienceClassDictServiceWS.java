@@ -27,7 +27,8 @@ public class InsuredAgeExpirienceClassDictServiceWS
     public InsuredAgeExpirienceClassDict getById(Long id) throws NotFound {
 	InsuredAgeExpirienceClassDict result = InsuredAgeExpirienceClassDict.forId(id);
 	if (result == null)
-	    throw new NotFound("Not found with ID = '" + id + "'");
+	    throw new NotFound(
+		    InsuredAgeExpirienceClassDict.class.getSimpleName() + " not found with ID = '" + id + "'");
 	return result;
     }
 

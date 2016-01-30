@@ -51,7 +51,7 @@ public class VehicleModelEntityServiceWS extends AbstractESBDEntityServiceWS imp
 	for (VehicleModelEntity be : all)
 	    if (be.getId() == id)
 		return be;
-	throw new NotFound("Not found with ID = '" + id + "'");
+	throw new NotFound(VehicleModelEntity.class.getSimpleName() + " not found with ID = '" + id + "'");
     }
 
     void fillValues(Item source, VehicleModelEntity target) {

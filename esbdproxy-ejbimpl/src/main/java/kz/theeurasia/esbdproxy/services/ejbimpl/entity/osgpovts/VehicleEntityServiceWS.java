@@ -33,7 +33,7 @@ public class VehicleEntityServiceWS extends AbstractESBDEntityServiceWS implemen
 	tf.setTFID(new Long(id).intValue());
 	ArrayOfTF vehicles = getSoapService().getTFByKeyFields(getSessionId(), tf);
 	if (vehicles == null || vehicles.getTF() == null || vehicles.getTF().size() == 0)
-	    throw new NotFound("Not found with ID = '" + id + "'");
+	    throw new NotFound(VehicleEntity.class.getSimpleName() + " not found with ID = '" + id + "'");
 	if (vehicles.getTF().size() > 1)
 	    throw new DataCoruptionException("Too many (" + vehicles.getTF().size() + ") with ID = '" + id + "'");
 

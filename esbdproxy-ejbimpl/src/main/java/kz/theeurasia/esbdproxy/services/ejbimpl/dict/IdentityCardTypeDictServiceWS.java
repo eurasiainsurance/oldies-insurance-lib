@@ -26,7 +26,7 @@ public class IdentityCardTypeDictServiceWS implements IdentityCardTypeServiceDAO
     public IdentityCardTypeDict getById(Long id) throws NotFound {
 	IdentityCardTypeDict result = IdentityCardTypeDict.forId(id);
 	if (result == null)
-	    throw new NotFound("Not found with ID = '" + id + "'");
+	    throw new NotFound(IdentityCardTypeDict.class.getSimpleName() + " not found with ID = '" + id + "'");
 	return result;
     }
 

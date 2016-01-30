@@ -50,7 +50,7 @@ public class InsuranceCompanyEntityServiceWS extends AbstractESBDEntityServiceWS
 	for (InsuranceCompanyEntity be : all)
 	    if (be.getId() == id)
 		return be;
-	throw new NotFound("Not found with ID = '" + id + "'");
+	throw new NotFound(InsuranceCompanyEntity.class.getSimpleName() + " not found with ID = '" + id + "'");
     }
 
     void fillValues(Item source, InsuranceCompanyEntity target) {

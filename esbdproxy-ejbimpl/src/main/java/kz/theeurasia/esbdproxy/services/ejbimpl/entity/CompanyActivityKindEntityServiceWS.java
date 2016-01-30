@@ -51,7 +51,7 @@ public class CompanyActivityKindEntityServiceWS extends AbstractESBDEntityServic
 	for (CompanyActivityKindEntity be : all)
 	    if (be.getId() == id)
 		return be;
-	throw new NotFound("Not found with ID = '" + id + "'");
+	throw new NotFound(CompanyActivityKindEntity.class.getSimpleName() + " not found with ID = '" + id + "'");
     }
 
     void fillValues(Item source, CompanyActivityKindEntity target) {

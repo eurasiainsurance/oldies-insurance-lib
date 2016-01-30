@@ -24,19 +24,19 @@ import kz.theeurasia.esbdproxy.domain.infos.osgpovts.PensionerInfo;
 import kz.theeurasia.esbdproxy.domain.infos.osgpovts.PrivilegerInfo;
 import kz.theeurasia.esbdproxy.services.BranchServiceDAO;
 import kz.theeurasia.esbdproxy.services.CancelationReasonServiceDAO;
-import kz.theeurasia.esbdproxy.services.SubjectServiceDAO;
 import kz.theeurasia.esbdproxy.services.CountryRegionServiceDAO;
-import kz.theeurasia.esbdproxy.services.SubjectPersonServiceDAO;
 import kz.theeurasia.esbdproxy.services.InsuranceCompanyServiceDAO;
 import kz.theeurasia.esbdproxy.services.MaritalStatusServiceDAO;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.PolicyServiceDAO;
+import kz.theeurasia.esbdproxy.services.SubjectPersonServiceDAO;
+import kz.theeurasia.esbdproxy.services.SubjectServiceDAO;
 import kz.theeurasia.esbdproxy.services.UserServiceDAO;
 import kz.theeurasia.esbdproxy.services.VehicleServiceDAO;
 import kz.theeurasia.esbdproxy.services.ejbimpl.DataCoruptionException;
 import kz.theeurasia.esbdproxy.services.ejbimpl.entity.AbstractESBDEntityServiceWS;
-import kz.theeurasia.esbdproxy.services.osgpovts.InsuredAgeExpirienceClassServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.InsuranceClassTypeServiceDAO;
+import kz.theeurasia.esbdproxy.services.osgpovts.InsuredAgeExpirienceClassServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleAgeClassServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleClassServiceDAO;
 
@@ -87,7 +87,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	checkSession();
 	Policy source = getSoapService().getPolicyByID(getSessionId(), new Long(id).intValue());
 	if (source == null)
-	    throw new NotFound("Not found with ID = '" + id + "'");
+	    throw new NotFound(PolicyEntity.class.getSimpleName() + " not found with ID = '" + id + "'");
 	PolicyEntity target = new PolicyEntity();
 	fillValues(source, target);
 	return target;

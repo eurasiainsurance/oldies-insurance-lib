@@ -18,7 +18,7 @@ public class InsuranceClassTypeDictServiceWS extends AbstractESBDServiceWS imple
 	checkSession();
 	String classCode = getSoapService().getClassText(getSessionId(), new Long(id).intValue());
 	if (classCode == null || classCode.trim().equals(""))
-	    throw new NotFound("Not found with ID = '" + id + "'");
+	    throw new NotFound(InsuranceClassTypeDict.class.getSimpleName() + " not found with ID = '" + id + "'");
 	return getByCode(classCode);
     }
 
@@ -26,7 +26,7 @@ public class InsuranceClassTypeDictServiceWS extends AbstractESBDServiceWS imple
     public InsuranceClassTypeDict getByCode(String code) throws NotFound {
 	InsuranceClassTypeDict result = InsuranceClassTypeDict.forCode(code);
 	if (result == null)
-	    throw new NotFound("Not found with CODE = '" + code + "'");
+	    throw new NotFound(InsuranceClassTypeDict.class.getSimpleName() + " not found with CODE = '" + code + "'");
 	return result;
     }
 

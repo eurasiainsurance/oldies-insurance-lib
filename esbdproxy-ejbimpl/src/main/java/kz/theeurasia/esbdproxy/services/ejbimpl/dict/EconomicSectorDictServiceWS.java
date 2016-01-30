@@ -26,7 +26,7 @@ public class EconomicSectorDictServiceWS implements EconomicSectorServiceDAO {
     public EconomicSectorDict getById(Long id) throws NotFound {
 	EconomicSectorDict result = EconomicSectorDict.forId(id);
 	if (result == null)
-	    throw new NotFound("Not found with ID = '" + id + "'");
+	    throw new NotFound(EconomicSectorDict.class.getSimpleName() + " not found with ID = '" + id + "'");
 	return result;
     }
 

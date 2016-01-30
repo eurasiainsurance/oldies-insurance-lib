@@ -23,7 +23,6 @@
 		<dependency>
 			<groupId>kz.theeurasia.asb.esbd</groupId>
 			<artifactId>esbd-jax-ws-client</artifactId>
-			<version>1.0</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>

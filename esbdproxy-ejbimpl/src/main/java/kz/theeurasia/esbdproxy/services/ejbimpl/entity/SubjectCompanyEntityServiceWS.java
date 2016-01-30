@@ -35,7 +35,7 @@ public class SubjectCompanyEntityServiceWS extends SubjectEntityServiceWS implem
 
 	Client source = getSoapService().getClientByID(getSessionId(), id.intValue());
 	if (source == null)
-	    throw new NotFound("Not found with ID = '" + id + "'");
+	    throw new NotFound(SubjectCompanyEntity.class.getSimpleName() + " not found with ID = '" + id + "'");
 	SubjectCompanyEntity target = new SubjectCompanyEntity();
 	fillValues(source, (SubjectEntity) target);
 	fillValues(source, target);

@@ -31,7 +31,7 @@ public class SubjectEntityServiceWS extends AbstractESBDEntityServiceWS implemen
 
 	Client source = getSoapService().getClientByID(getSessionId(), id.intValue());
 	if (source == null)
-	    throw new NotFound("Not found with ID = '" + id + "'");
+	    throw new NotFound(SubjectEntity.class.getSimpleName() + " not found with ID = '" + id + "'");
 
 	if (source.getNaturalPersonBool() == 1) {
 	    // частник SubjectPerson

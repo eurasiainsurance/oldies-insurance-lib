@@ -26,7 +26,7 @@ public class SexDictServiceWS implements SexServiceDAO {
     public SexDict getById(Long id) throws NotFound {
 	SexDict result = SexDict.forId(id);
 	if (result == null)
-	    throw new NotFound("Not found with ID = '" + id + "'");
+	    throw new NotFound(SexDict.class.getSimpleName() + " not found with ID = '" + id + "'");
 	return result;
     }
 

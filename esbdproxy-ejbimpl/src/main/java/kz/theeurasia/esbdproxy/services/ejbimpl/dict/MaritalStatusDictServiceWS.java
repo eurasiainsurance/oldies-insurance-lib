@@ -26,7 +26,7 @@ public class MaritalStatusDictServiceWS implements MaritalStatusServiceDAO {
     public MaritalStatusDict getById(Long id) throws NotFound {
 	MaritalStatusDict result = MaritalStatusDict.forId(id);
 	if (result == null)
-	    throw new NotFound("Not found with ID = '" + id + "'");
+	    throw new NotFound(MaritalStatusDict.class.getSimpleName() + " not found with ID = '" + id + "'");
 	return result;
     }
 

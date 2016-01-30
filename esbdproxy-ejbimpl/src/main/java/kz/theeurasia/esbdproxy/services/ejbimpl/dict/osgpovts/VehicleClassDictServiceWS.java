@@ -27,7 +27,7 @@ public class VehicleClassDictServiceWS
     public VehicleClassDict getById(Long id) throws NotFound {
 	VehicleClassDict result = VehicleClassDict.forId(id);
 	if (result == null)
-	    throw new NotFound("Not found with ID = '" + id + "'");
+	    throw new NotFound(VehicleClassDict.class.getSimpleName() + " not found with ID = '" + id + "'");
 	return result;
     }
 

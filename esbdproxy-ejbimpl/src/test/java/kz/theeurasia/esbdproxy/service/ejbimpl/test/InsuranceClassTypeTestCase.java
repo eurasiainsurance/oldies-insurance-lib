@@ -18,7 +18,7 @@ public class InsuranceClassTypeTestCase extends GeneralServiceTestCase {
     private static final String INVALID_CLASS_TYPE_CODE = "QQ";
     private static final long INVALID_CLASS_TYPE_ID = 999999999999999l;
 
-    private static final long INVALID_CLIENT_ID = 999999999999999l;
+    private static final long INVALID_CLIENT_ID = 999999999l;
     private static final long CORRECT_CLIENT_ID = 14132412; // Evsyukovs ID
 
     @Test

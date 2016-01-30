@@ -19,6 +19,7 @@ public class CountryRegionDictServiceWS implements CountryRegionServiceDAO {
     @PostConstruct
     protected void init() {
 	all = new ArrayList<>();
+	regions = new ArrayList<>();
 	for (CountryRegionDict cd : CountryRegionDict.values()) {
 	    all.add(cd);
 	    if (cd.isRegion())

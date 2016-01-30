@@ -3,6 +3,7 @@ package kz.theeurasia.esbdproxy.services.ejbimpl.dict.osgpovts;
 import java.util.Calendar;
 
 import javax.ejb.Singleton;
+import javax.xml.ws.soap.SOAPFaultException;
 
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuranceClassTypeDict;
 import kz.theeurasia.esbdproxy.domain.entities.SubjectPersonEntity;
@@ -41,11 +42,17 @@ public class InsuranceClassTypeDictServiceWS extends AbstractESBDServiceWS imple
 	    throws NotFound {
 	checkSession();
 	String esbdDate = convertCalendarToESBDDate(date);
-	int aClassID = getSoapService().getClassId(getSessionId(), new Long(individual.getId()).intValue(), esbdDate,
-		0);
-	if (aClassID == 0)
-	    throw new NotFound("WS-call getClassId returned zero value for clientId = " + individual.getId()
-		    + " and date = " + esbdDate);
-	return getById(new Long(aClassID));
+	;
+	try {
+	    int aClassID = getSoapService().getClassId(getSessionId(), new Long(individual.getId()).intValue(),
+		    esbdDate, 0);
+	    if (aClassID == 0)
+		throw new NotFound("WS-call getClassId returned zero value for clientId = " + individual.getId()
+			+ " and date = " + esbdDate);
+	    return getById(new Long(aClassID));
+	} catch (SOAPFaultException e) {
+	    throw new NotFound("WS-call getClassId returned exception for clientId = " + individual.getId()
+		    + " and date = " + esbdDate, e);
+	}
     }
 }

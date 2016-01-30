@@ -28,6 +28,11 @@ public class GetItems {
 	dumpClassUsingTypes();
 	dumpEconomicsSector();
 	dumpCities();
+	dumpClassUsing();
+    }
+
+    private void dumpClassUsing() {
+	dumpCodes("CLASS_USING", "CLASS_USING", "CLASS_USING");
     }
 
     private void dumpCities() {

@@ -1,4 +1,4 @@
-package kz.theeurasia.esbdproxy.services.ejbimpl;
+package kz.theeurasia.esbdproxy.services.ejbimpl.entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.UserServiceDAO;
 
 @Singleton
-public class UserServiceWS extends ESBDServiceWS implements UserServiceDAO {
+public class UserEntityServiceWS extends AbstractESBDEntityServiceWS implements UserServiceDAO {
 
     @EJB
     private BranchServiceDAO branchService;

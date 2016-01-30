@@ -1,4 +1,4 @@
-package kz.theeurasia.esbdproxy.services.ejbimpl.osgpovts;
+package kz.theeurasia.esbdproxy.services.ejbimpl.dict.osgpovts;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,11 +8,10 @@ import javax.ejb.Singleton;
 
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuredAgeExpirienceClassDict;
 import kz.theeurasia.esbdproxy.services.NotFound;
-import kz.theeurasia.esbdproxy.services.ejbimpl.ESBDServiceWS;
 import kz.theeurasia.esbdproxy.services.osgpovts.InsuredAgeExpirienceClassServiceDAO;
 
 @Singleton
-public class InsuredAgeExpirienceClassServiceWS extends ESBDServiceWS
+public class InsuredAgeExpirienceClassDictServiceWS
 	implements InsuredAgeExpirienceClassServiceDAO {
 
     private List<InsuredAgeExpirienceClassDict> all;

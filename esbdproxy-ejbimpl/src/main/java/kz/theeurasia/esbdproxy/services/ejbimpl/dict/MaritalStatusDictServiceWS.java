@@ -1,4 +1,4 @@
-package kz.theeurasia.esbdproxy.services.ejbimpl;
+package kz.theeurasia.esbdproxy.services.ejbimpl.dict;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ import kz.theeurasia.esbdproxy.services.MaritalStatusServiceDAO;
 import kz.theeurasia.esbdproxy.services.NotFound;
 
 @Singleton
-public class MaritalStatusServiceWS extends ESBDServiceWS implements MaritalStatusServiceDAO {
+public class MaritalStatusDictServiceWS implements MaritalStatusServiceDAO {
 
     private List<MaritalStatusDict> all;
 

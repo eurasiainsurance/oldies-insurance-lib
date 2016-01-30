@@ -13,8 +13,7 @@ import javax.xml.ws.WebServiceRef;
 import kz.theeurasia.asb.esbd.jaxws.IICWebService;
 import kz.theeurasia.asb.esbd.jaxws.IICWebServiceSoap;
 
-public abstract class ESBDServiceWS {
-
+public abstract class AbstractESBDServiceWS {
     private static final String ESBD_DATE_FORMAT_PATTERN = "dd.MM.yyyy";
     private static final DateFormat ESBD_DATE_FORMATER = new SimpleDateFormat(ESBD_DATE_FORMAT_PATTERN);
 

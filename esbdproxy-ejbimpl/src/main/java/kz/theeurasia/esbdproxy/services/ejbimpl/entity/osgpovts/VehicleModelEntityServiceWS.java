@@ -1,4 +1,4 @@
-package kz.theeurasia.esbdproxy.services.ejbimpl;
+package kz.theeurasia.esbdproxy.services.ejbimpl.entity.osgpovts;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,16 +8,17 @@ import javax.ejb.Singleton;
 
 import kz.theeurasia.asb.esbd.jaxws.ArrayOfItem;
 import kz.theeurasia.asb.esbd.jaxws.Item;
-import kz.theeurasia.esbdproxy.domain.entities.InsuranceCompanyEntity;
-import kz.theeurasia.esbdproxy.services.InsuranceCompanyServiceDAO;
+import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleModelEntity;
 import kz.theeurasia.esbdproxy.services.NotFound;
+import kz.theeurasia.esbdproxy.services.VehicleModelServiceDAO;
+import kz.theeurasia.esbdproxy.services.ejbimpl.entity.AbstractESBDEntityServiceWS;
 
 @Singleton
-public class InsuranceCompanyServiceWS extends ESBDServiceWS implements InsuranceCompanyServiceDAO {
+public class VehicleModelEntityServiceWS extends AbstractESBDEntityServiceWS implements VehicleModelServiceDAO {
 
-    private static final String DICT_NAME = "INSURANCE_COMPANIES";
+    private static final String DICT_NAME = "VOITURE_MODELS";
 
-    private List<InsuranceCompanyEntity> all;
+    private List<VehicleModelEntity> all;
 
     @PostConstruct
     protected void init() {
@@ -32,28 +33,28 @@ public class InsuranceCompanyServiceWS extends ESBDServiceWS implements Insuranc
 	if (items == null)
 	    return;
 	for (Item i : items.getItem()) {
-	    InsuranceCompanyEntity e = new InsuranceCompanyEntity();
+	    VehicleModelEntity e = new VehicleModelEntity();
 	    fillValues(i, e);
 	    all.add(e);
 	}
     }
 
     @Override
-    public List<InsuranceCompanyEntity> getAll() {
+    public List<VehicleModelEntity> getAll() {
 	lazyInit();
 	return all;
     }
 
     @Override
-    public InsuranceCompanyEntity getById(Long id) throws NotFound {
+    public VehicleModelEntity getById(Long id) throws NotFound {
 	lazyInit();
-	for (InsuranceCompanyEntity be : all)
+	for (VehicleModelEntity be : all)
 	    if (be.getId() == id)
 		return be;
 	throw new NotFound("Not found with ID = '" + id + "'");
     }
 
-    void fillValues(Item source, InsuranceCompanyEntity target) {
+    void fillValues(Item source, VehicleModelEntity target) {
 	target.setId(source.getID());
 	target.setCode(source.getCode());
 	target.setName(source.getName());

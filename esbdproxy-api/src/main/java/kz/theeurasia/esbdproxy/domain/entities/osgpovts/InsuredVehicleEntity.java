@@ -3,7 +3,6 @@ package kz.theeurasia.esbdproxy.domain.entities.osgpovts;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleAgeClassDict;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
 import kz.theeurasia.esbdproxy.domain.entities.InsuranceCompanyEntity;
-import kz.theeurasia.esbdproxy.domain.entities.VehicleEntity;
 import kz.theeurasia.esbdproxy.domain.infos.RecordOperationInfo;
 import kz.theeurasia.esbdproxy.domain.infos.VehicleCertificateInfo;
 

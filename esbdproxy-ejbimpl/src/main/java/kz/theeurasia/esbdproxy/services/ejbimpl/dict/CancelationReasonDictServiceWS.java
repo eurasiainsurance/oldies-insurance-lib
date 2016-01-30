@@ -1,13 +1,13 @@
-package kz.theeurasia.esbdproxy.services.ejbimpl;
+package kz.theeurasia.esbdproxy.services.ejbimpl.dict;
 
 import javax.ejb.Singleton;
 
 import kz.theeurasia.esbdproxy.domain.dict.CancelationReasonDict;
-import kz.theeurasia.esbdproxy.services.CancelationReasonTypeServiceDAO;
+import kz.theeurasia.esbdproxy.services.CancelationReasonServiceDAO;
 import kz.theeurasia.esbdproxy.services.NotFound;
 
 @Singleton
-public class CancelationReasonTypeServiceWS extends ESBDServiceWS implements CancelationReasonTypeServiceDAO {
+public class CancelationReasonDictServiceWS implements CancelationReasonServiceDAO {
 
     @Override
     public CancelationReasonDict getById(Long id) throws NotFound {

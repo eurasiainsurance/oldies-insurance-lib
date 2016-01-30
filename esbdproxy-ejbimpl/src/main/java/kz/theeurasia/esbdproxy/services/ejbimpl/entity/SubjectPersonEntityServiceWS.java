@@ -1,4 +1,4 @@
-package kz.theeurasia.esbdproxy.services.ejbimpl;
+package kz.theeurasia.esbdproxy.services.ejbimpl.entity;
 
 import javax.ejb.EJB;
 import javax.ejb.Singleton;
@@ -17,7 +17,7 @@ import kz.theeurasia.esbdproxy.services.SexServiceDAO;
 import kz.theeurasia.esbdproxy.services.SubjectPersonServiceDAO;
 
 @Singleton
-public class SubjectPersonServiceWS extends SubjectServiceWS implements SubjectPersonServiceDAO {
+public class SubjectPersonEntityServiceWS extends SubjectEntityServiceWS implements SubjectPersonServiceDAO {
 
     @EJB
     private IdentityCardTypeServiceDAO identityCardTypeService;
@@ -39,7 +39,6 @@ public class SubjectPersonServiceWS extends SubjectServiceWS implements SubjectP
     }
 
     void fillValues(Client source, SubjectPersonEntity target) {
-
 	// First_Name s:string Имя (для физ. лица)
 	// Last_Name s:string Фамилия (для физ. лица)
 	// Middle_Name s:string Отчество (для физ. лица)

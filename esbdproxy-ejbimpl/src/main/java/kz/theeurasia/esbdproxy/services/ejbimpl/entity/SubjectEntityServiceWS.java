@@ -1,4 +1,4 @@
-package kz.theeurasia.esbdproxy.services.ejbimpl;
+package kz.theeurasia.esbdproxy.services.ejbimpl.entity;
 
 import javax.ejb.EJB;
 import javax.ejb.Singleton;
@@ -15,7 +15,7 @@ import kz.theeurasia.esbdproxy.services.SubjectPersonServiceDAO;
 import kz.theeurasia.esbdproxy.services.SubjectServiceDAO;
 
 @Singleton
-public class SubjectServiceWS extends ESBDServiceWS implements SubjectServiceDAO {
+public class SubjectEntityServiceWS extends AbstractESBDEntityServiceWS implements SubjectServiceDAO {
 
     @EJB
     private SubjectPersonServiceDAO subjectPersonService;

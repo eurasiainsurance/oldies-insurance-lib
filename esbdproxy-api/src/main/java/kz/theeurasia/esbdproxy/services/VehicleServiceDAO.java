@@ -1,6 +1,6 @@
 package kz.theeurasia.esbdproxy.services;
 
-import kz.theeurasia.esbdproxy.domain.entities.VehicleEntity;
+import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleEntity;
 
 public interface VehicleServiceDAO extends AbstractServiceDAO<VehicleEntity, Long> {
     VehicleEntity getByVINCode(String vinCode) throws NotFound;

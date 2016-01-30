@@ -1,4 +1,4 @@
-package kz.theeurasia.esbdproxy.services.ejbimpl.osgpovts;
+package kz.theeurasia.esbdproxy.services.ejbimpl.entity.osgpovts;
 
 import java.util.Calendar;
 
@@ -8,17 +8,17 @@ import javax.ejb.Singleton;
 import kz.theeurasia.asb.esbd.jaxws.ArrayOfTF;
 import kz.theeurasia.asb.esbd.jaxws.TF;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
-import kz.theeurasia.esbdproxy.domain.entities.VehicleEntity;
+import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleEntity;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.SteeringWheelLocationEnum;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.VehicleModelServiceDAO;
 import kz.theeurasia.esbdproxy.services.VehicleServiceDAO;
 import kz.theeurasia.esbdproxy.services.ejbimpl.DataCoruptionException;
-import kz.theeurasia.esbdproxy.services.ejbimpl.ESBDServiceWS;
+import kz.theeurasia.esbdproxy.services.ejbimpl.entity.AbstractESBDEntityServiceWS;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleClassServiceDAO;
 
 @Singleton
-public class VehicleServiceWS extends ESBDServiceWS implements VehicleServiceDAO {
+public class VehicleEntityServiceWS extends AbstractESBDEntityServiceWS implements VehicleServiceDAO {
 
     @EJB
     private VehicleClassServiceDAO vehicleClassService;

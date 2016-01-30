@@ -1,4 +1,4 @@
-package kz.theeurasia.esbdproxy.services.ejbimpl;
+package kz.theeurasia.esbdproxy.services.ejbimpl.entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ import kz.theeurasia.esbdproxy.services.BranchServiceDAO;
 import kz.theeurasia.esbdproxy.services.NotFound;
 
 @Singleton
-public class BranchServiceWS extends ESBDServiceWS implements BranchServiceDAO {
+public class BranchEntityServiceWS extends AbstractESBDEntityServiceWS implements BranchServiceDAO {
 
     private static final String DICT_NAME = "BRANCHES";
 

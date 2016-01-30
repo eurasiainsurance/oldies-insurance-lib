@@ -1,4 +1,4 @@
-package kz.theeurasia.esbdproxy.services.ejbimpl;
+package kz.theeurasia.esbdproxy.services.ejbimpl.entity;
 
 import javax.ejb.EJB;
 import javax.ejb.Singleton;
@@ -12,9 +12,10 @@ import kz.theeurasia.esbdproxy.services.IdentityCardTypeServiceDAO;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.SexServiceDAO;
 import kz.theeurasia.esbdproxy.services.SubjectCompanyServiceDAO;
+import kz.theeurasia.esbdproxy.services.ejbimpl.DataCoruptionException;
 
 @Singleton
-public class SubjectCompanyServiceWS extends SubjectServiceWS implements SubjectCompanyServiceDAO {
+public class SubjectCompanyEntityServiceWS extends SubjectEntityServiceWS implements SubjectCompanyServiceDAO {
 
     @EJB
     private IdentityCardTypeServiceDAO identityCardTypeService;

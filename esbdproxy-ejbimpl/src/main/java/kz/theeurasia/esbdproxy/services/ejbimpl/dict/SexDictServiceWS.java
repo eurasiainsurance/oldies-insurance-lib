@@ -1,4 +1,4 @@
-package kz.theeurasia.esbdproxy.services.ejbimpl;
+package kz.theeurasia.esbdproxy.services.ejbimpl.dict;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.SexServiceDAO;
 
 @Singleton
-public class SexServiceWS extends ESBDServiceWS implements SexServiceDAO {
+public class SexDictServiceWS implements SexServiceDAO {
 
     private List<SexDict> all;
 

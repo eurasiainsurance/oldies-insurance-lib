@@ -1,4 +1,4 @@
-package kz.theeurasia.esbdproxy.services.ejbimpl.osgpovts;
+package kz.theeurasia.esbdproxy.services.ejbimpl.dict.osgpovts;
 
 import java.util.Calendar;
 
@@ -7,11 +7,11 @@ import javax.ejb.Singleton;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuranceClassTypeDict;
 import kz.theeurasia.esbdproxy.domain.entities.SubjectPersonEntity;
 import kz.theeurasia.esbdproxy.services.NotFound;
-import kz.theeurasia.esbdproxy.services.ejbimpl.ESBDServiceWS;
+import kz.theeurasia.esbdproxy.services.ejbimpl.AbstractESBDServiceWS;
 import kz.theeurasia.esbdproxy.services.osgpovts.InsuranceClassTypeServiceDAO;
 
 @Singleton
-public class InsuranceClassTypeServiceWS extends ESBDServiceWS implements InsuranceClassTypeServiceDAO {
+public class InsuranceClassTypeDictServiceWS extends AbstractESBDServiceWS implements InsuranceClassTypeServiceDAO {
 
     @Override
     public InsuranceClassTypeDict getById(Long id) throws NotFound {
@@ -37,7 +37,8 @@ public class InsuranceClassTypeServiceWS extends ESBDServiceWS implements Insura
     }
 
     @Override
-    public InsuranceClassTypeDict getForIndividualOnDate(SubjectPersonEntity individual, Calendar date) throws NotFound {
+    public InsuranceClassTypeDict getForIndividualOnDate(SubjectPersonEntity individual, Calendar date)
+	    throws NotFound {
 	checkSession();
 	String esbdDate = convertCalendarToESBDDate(date);
 	int aClassID = getSoapService().getClassId(getSessionId(), new Long(individual.getId()).intValue(), esbdDate,

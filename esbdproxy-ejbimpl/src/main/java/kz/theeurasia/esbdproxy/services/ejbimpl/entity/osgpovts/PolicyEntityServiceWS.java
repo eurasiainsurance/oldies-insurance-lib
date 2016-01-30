@@ -1,4 +1,4 @@
-package kz.theeurasia.esbdproxy.services.ejbimpl;
+package kz.theeurasia.esbdproxy.services.ejbimpl.entity.osgpovts;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +23,7 @@ import kz.theeurasia.esbdproxy.domain.infos.osgpovts.InvalidInfo;
 import kz.theeurasia.esbdproxy.domain.infos.osgpovts.PensionerInfo;
 import kz.theeurasia.esbdproxy.domain.infos.osgpovts.PrivilegerInfo;
 import kz.theeurasia.esbdproxy.services.BranchServiceDAO;
-import kz.theeurasia.esbdproxy.services.CancelationReasonTypeServiceDAO;
+import kz.theeurasia.esbdproxy.services.CancelationReasonServiceDAO;
 import kz.theeurasia.esbdproxy.services.SubjectServiceDAO;
 import kz.theeurasia.esbdproxy.services.CountryRegionServiceDAO;
 import kz.theeurasia.esbdproxy.services.SubjectPersonServiceDAO;
@@ -33,13 +33,15 @@ import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.PolicyServiceDAO;
 import kz.theeurasia.esbdproxy.services.UserServiceDAO;
 import kz.theeurasia.esbdproxy.services.VehicleServiceDAO;
+import kz.theeurasia.esbdproxy.services.ejbimpl.DataCoruptionException;
+import kz.theeurasia.esbdproxy.services.ejbimpl.entity.AbstractESBDEntityServiceWS;
 import kz.theeurasia.esbdproxy.services.osgpovts.InsuredAgeExpirienceClassServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.InsuranceClassTypeServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleAgeClassServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleClassServiceDAO;
 
 @Singleton
-public class PolicyServiceWS extends ESBDServiceWS implements PolicyServiceDAO {
+public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implements PolicyServiceDAO {
 
     @EJB
     private InsuranceCompanyServiceDAO insuranceCompanyService;
@@ -48,7 +50,7 @@ public class PolicyServiceWS extends ESBDServiceWS implements PolicyServiceDAO {
     private SubjectServiceDAO subjectService;
 
     @EJB
-    private CancelationReasonTypeServiceDAO cancelationReasonTypeService;
+    private CancelationReasonServiceDAO cancelationReasonTypeService;
 
     @EJB
     private BranchServiceDAO branchService;

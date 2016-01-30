@@ -1,4 +1,4 @@
-package kz.theeurasia.esbdproxy.services.ejbimpl;
+package kz.theeurasia.esbdproxy.services.ejbimpl.dict;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ import kz.theeurasia.esbdproxy.services.IdentityCardTypeServiceDAO;
 import kz.theeurasia.esbdproxy.services.NotFound;
 
 @Singleton
-public class IdentityCardTypeServiceWS extends ESBDServiceWS implements IdentityCardTypeServiceDAO {
+public class IdentityCardTypeDictServiceWS implements IdentityCardTypeServiceDAO {
 
     private List<IdentityCardTypeDict> all;
 

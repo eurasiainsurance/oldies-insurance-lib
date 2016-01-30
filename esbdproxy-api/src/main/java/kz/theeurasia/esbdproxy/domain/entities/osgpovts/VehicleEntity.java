@@ -1,9 +1,8 @@
-package kz.theeurasia.esbdproxy.domain.entities;
+package kz.theeurasia.esbdproxy.domain.entities.osgpovts;
 
 import java.util.Calendar;
 
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
-import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleModelEntity;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.SteeringWheelLocationEnum;
 
 public class VehicleEntity {

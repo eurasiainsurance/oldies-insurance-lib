@@ -1,4 +1,4 @@
-package kz.theeurasia.esbdproxy.services.ejbimpl;
+package kz.theeurasia.esbdproxy.services.ejbimpl.dict;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ import kz.theeurasia.esbdproxy.services.CountryRegionServiceDAO;
 import kz.theeurasia.esbdproxy.services.NotFound;
 
 @Singleton
-public class CountryRegionServiceWS extends ESBDServiceWS implements CountryRegionServiceDAO {
+public class CountryRegionDictServiceWS implements CountryRegionServiceDAO {
 
     private List<CountryRegionDict> all;
     private List<CountryRegionDict> regions;

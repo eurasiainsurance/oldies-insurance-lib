@@ -8,20 +8,12 @@ import kz.theeurasia.esbdproxy.domain.entities.SubjectCompanyEntity;
 import kz.theeurasia.esbdproxy.domain.entities.SubjectEntity;
 import kz.theeurasia.esbdproxy.services.CompanyActivityKindServiceDAO;
 import kz.theeurasia.esbdproxy.services.EconomicSectorServiceDAO;
-import kz.theeurasia.esbdproxy.services.IdentityCardTypeServiceDAO;
 import kz.theeurasia.esbdproxy.services.NotFound;
-import kz.theeurasia.esbdproxy.services.SexServiceDAO;
 import kz.theeurasia.esbdproxy.services.SubjectCompanyServiceDAO;
 import kz.theeurasia.esbdproxy.services.ejbimpl.DataCoruptionException;
 
 @Singleton
 public class SubjectCompanyEntityServiceWS extends SubjectEntityServiceWS implements SubjectCompanyServiceDAO {
-
-    @EJB
-    private IdentityCardTypeServiceDAO identityCardTypeService;
-
-    @EJB
-    private SexServiceDAO sexService;
 
     @EJB
     private CompanyActivityKindServiceDAO companyActivityKindService;

@@ -7,12 +7,10 @@ import kz.theeurasia.esbdproxy.domain.entities.SubjectPersonEntity;
 import kz.theeurasia.esbdproxy.services.AbstractServiceDAO;
 import kz.theeurasia.esbdproxy.services.NotFound;
 
-public interface InsuranceClassTypeServiceDAO extends AbstractServiceDAO<InsuranceClassTypeDict, Long> {
+public interface InsuranceClassTypeServiceDAO extends AbstractServiceDAO<InsuranceClassTypeDict, Long>{
     InsuranceClassTypeDict getByCode(String code) throws NotFound;
 
-    InsuranceClassTypeDict getForIndividualOnToday(SubjectPersonEntity individual) throws NotFound;
+    InsuranceClassTypeDict getForSubjcect(SubjectPersonEntity individual) throws NotFound;
 
-    InsuranceClassTypeDict getForIndividualOnDate(SubjectPersonEntity individual, Calendar date) throws NotFound;
-
-    InsuranceClassTypeDict getDefault();
+    InsuranceClassTypeDict getForSubjcect(SubjectPersonEntity individual, Calendar date) throws NotFound;
 }

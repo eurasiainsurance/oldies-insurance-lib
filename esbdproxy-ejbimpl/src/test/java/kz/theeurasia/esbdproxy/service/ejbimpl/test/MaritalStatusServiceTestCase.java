@@ -9,29 +9,29 @@ import javax.naming.NamingException;
 
 import org.junit.Test;
 
-import kz.theeurasia.esbdproxy.domain.dict.CancelationReasonDict;
-import kz.theeurasia.esbdproxy.services.CancelationReasonServiceDAO;
+import kz.theeurasia.esbdproxy.domain.dict.MaritalStatusDict;
+import kz.theeurasia.esbdproxy.services.MaritalStatusServiceDAO;
 import kz.theeurasia.esbdproxy.services.NotFound;
 
-public class CancelationReasonServiceTestCase extends GeneralServiceTestCase {
+public class MaritalStatusServiceTestCase extends GeneralServiceTestCase {
 
     @Test
     public void testGetAll() throws NamingException {
-	CancelationReasonServiceDAO service = getCancelationReasonService();
-	List<CancelationReasonDict> all = service.getAll();
+	MaritalStatusServiceDAO service = getMaritalStatusServiceEntityWS();
+	List<MaritalStatusDict> all = service.getAll();
 	assertThat(all,
 		allOf(
 			not(nullValue()),
-			contains(CancelationReasonDict.values())));
+			contains(MaritalStatusDict.values())));
     }
 
     @Test
     public void testGetById() throws NamingException {
-	CancelationReasonServiceDAO service = getCancelationReasonService();
-	CancelationReasonDict[] list = CancelationReasonDict.values();
-	for (CancelationReasonDict i : list) {
+	MaritalStatusServiceDAO service = getMaritalStatusServiceEntityWS();
+	MaritalStatusDict[] list = MaritalStatusDict.values();
+	for (MaritalStatusDict i : list) {
 	    try {
-		CancelationReasonDict res = service.getById(i.getId());
+		MaritalStatusDict res = service.getById(i.getId());
 		assertThat(res, allOf(not(nullValue()), equalTo(i)));
 	    } catch (NotFound e) {
 		fail(e.getMessage());
@@ -41,7 +41,7 @@ public class CancelationReasonServiceTestCase extends GeneralServiceTestCase {
 
     @Test(expected = NotFound.class)
     public void testGetById_NotFound() throws NamingException, NotFound {
-	CancelationReasonServiceDAO service = getCancelationReasonService();
+	MaritalStatusServiceDAO service = getMaritalStatusServiceEntityWS();
 	service.getById(-99999l);
     }
 

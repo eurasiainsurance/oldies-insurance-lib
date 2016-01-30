@@ -9,29 +9,29 @@ import javax.naming.NamingException;
 
 import org.junit.Test;
 
-import kz.theeurasia.esbdproxy.domain.dict.CancelationReasonDict;
-import kz.theeurasia.esbdproxy.services.CancelationReasonServiceDAO;
+import kz.theeurasia.esbdproxy.domain.dict.IdentityCardTypeDict;
+import kz.theeurasia.esbdproxy.services.IdentityCardTypeServiceDAO;
 import kz.theeurasia.esbdproxy.services.NotFound;
 
-public class CancelationReasonServiceTestCase extends GeneralServiceTestCase {
+public class IdentityCardTypeServiceTestCase extends GeneralServiceTestCase {
 
     @Test
     public void testGetAll() throws NamingException {
-	CancelationReasonServiceDAO service = getCancelationReasonService();
-	List<CancelationReasonDict> all = service.getAll();
+	IdentityCardTypeServiceDAO service = getIdentityCardTypeServiceEntityWS();
+	List<IdentityCardTypeDict> all = service.getAll();
 	assertThat(all,
 		allOf(
 			not(nullValue()),
-			contains(CancelationReasonDict.values())));
+			contains(IdentityCardTypeDict.values())));
     }
 
     @Test
     public void testGetById() throws NamingException {
-	CancelationReasonServiceDAO service = getCancelationReasonService();
-	CancelationReasonDict[] list = CancelationReasonDict.values();
-	for (CancelationReasonDict i : list) {
+	IdentityCardTypeServiceDAO service = getIdentityCardTypeServiceEntityWS();
+	IdentityCardTypeDict[] list = IdentityCardTypeDict.values();
+	for (IdentityCardTypeDict i : list) {
 	    try {
-		CancelationReasonDict res = service.getById(i.getId());
+		IdentityCardTypeDict res = service.getById(i.getId());
 		assertThat(res, allOf(not(nullValue()), equalTo(i)));
 	    } catch (NotFound e) {
 		fail(e.getMessage());
@@ -41,7 +41,7 @@ public class CancelationReasonServiceTestCase extends GeneralServiceTestCase {
 
     @Test(expected = NotFound.class)
     public void testGetById_NotFound() throws NamingException, NotFound {
-	CancelationReasonServiceDAO service = getCancelationReasonService();
+	IdentityCardTypeServiceDAO service = getIdentityCardTypeServiceEntityWS();
 	service.getById(-99999l);
     }
 

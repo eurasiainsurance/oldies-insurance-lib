@@ -31,13 +31,13 @@ public class InsuranceClassTypeDictServiceWS extends AbstractESBDServiceWS imple
     }
 
     @Override
-    public InsuranceClassTypeDict getForIndividualOnToday(SubjectPersonEntity individual) throws NotFound {
+    public InsuranceClassTypeDict getForSubjcect(SubjectPersonEntity individual) throws NotFound {
 	Calendar today = Calendar.getInstance();
-	return getForIndividualOnDate(individual, today);
+	return getForSubjcect(individual, today);
     }
 
     @Override
-    public InsuranceClassTypeDict getForIndividualOnDate(SubjectPersonEntity individual, Calendar date)
+    public InsuranceClassTypeDict getForSubjcect(SubjectPersonEntity individual, Calendar date)
 	    throws NotFound {
 	checkSession();
 	String esbdDate = convertCalendarToESBDDate(date);
@@ -48,11 +48,4 @@ public class InsuranceClassTypeDictServiceWS extends AbstractESBDServiceWS imple
 		    + " and date = " + esbdDate);
 	return getById(new Long(aClassID));
     }
-
-    @Override
-    public InsuranceClassTypeDict getDefault() {
-	// По умолчанию присваивается 3 класс
-	return InsuranceClassTypeDict.CLASS_3;
-    }
-
 }

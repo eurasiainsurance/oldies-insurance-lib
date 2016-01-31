@@ -38,20 +38,20 @@ public class InsuranceClassTypeDictServiceWS extends AbstractESBDServiceWS imple
     }
 
     @Override
-    public InsuranceClassTypeDict getForSubjcect(SubjectPersonEntity individual, Calendar date)
+    public InsuranceClassTypeDict getForSubjcect(SubjectPersonEntity subjectPerson, Calendar date)
 	    throws NotFound {
 	checkSession();
 	String esbdDate = convertCalendarToESBDDate(date);
 	;
 	try {
-	    int aClassID = getSoapService().getClassId(getSessionId(), new Long(individual.getId()).intValue(),
+	    int aClassID = getSoapService().getClassId(getSessionId(), new Long(subjectPerson.getId()).intValue(),
 		    esbdDate, 0);
 	    if (aClassID == 0)
-		throw new NotFound("WS-call getClassId returned zero value for clientId = " + individual.getId()
+		throw new NotFound("WS-call getClassId returned zero value for CLIENT_ID = " + subjectPerson.getId()
 			+ " and date = " + esbdDate);
 	    return getById(new Long(aClassID));
 	} catch (SOAPFaultException e) {
-	    throw new NotFound("WS-call getClassId returned exception for clientId = " + individual.getId()
+	    throw new NotFound("WS-call getClassId returned exception for CLIENT_ID = " + subjectPerson.getId()
 		    + " and date = " + esbdDate, e);
 	}
     }

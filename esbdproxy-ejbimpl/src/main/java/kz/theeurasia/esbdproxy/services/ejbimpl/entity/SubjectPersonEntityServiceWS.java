@@ -96,7 +96,7 @@ public class SubjectPersonEntityServiceWS extends SubjectEntityServiceWS impleme
 	requestClient.setRESIDENTBOOL(0);
 	clients = getSoapService().getClientsByKeyFields(getSessionId(), requestClient);
 	if (clients == null || clients.getClient() == null || clients.getClient().size() == 0)
-	    throw new NotFound();
+	    throw new NotFound(SubjectPersonEntity.class.getSimpleName() + " not found with IDNumber = '" + iin + "'");
 	return clients.getClient().iterator().next();
     }
 }

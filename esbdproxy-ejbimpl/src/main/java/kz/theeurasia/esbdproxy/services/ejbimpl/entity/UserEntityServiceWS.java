@@ -23,7 +23,7 @@ public class UserEntityServiceWS extends AbstractESBDEntityServiceWS implements 
     private BranchServiceDAO branchService;
 
     @EJB
-    private SubjectServiceDAO clientService;
+    private SubjectServiceDAO subjectService;
 
     @EJB
     private InsuranceCompanyServiceDAO insuranceCompanyService;

@@ -74,8 +74,8 @@ public class UserEntity {
 	return subject;
     }
 
-    public void setSubject(SubjectEntity client) {
-	this.subject = client;
+    public void setSubject(SubjectEntity subject) {
+	this.subject = subject;
     }
 
     public InsuranceCompanyEntity getOrganization() {

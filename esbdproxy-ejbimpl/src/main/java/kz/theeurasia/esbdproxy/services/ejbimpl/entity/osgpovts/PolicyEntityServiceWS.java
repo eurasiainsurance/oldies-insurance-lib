@@ -169,7 +169,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 
 	// Drivers tns:ArrayOfDriver Водители (обязательно)
 	ArrayOfDriver drivers = source.getDrivers();
-	if (drivers == null)
+	if (drivers == null || drivers.getDriver() == null || drivers.getDriver().isEmpty())
 	    throw new DataCoruptionException(
 		    "Error while fetching Policy ID = '" + source.getPOLICYID() + "' from ESBD. Drivers list is empty");
 	List<InsuredDriverEntity> insuredDrivers = new ArrayList<>();
@@ -183,7 +183,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	// PoliciesTF tns:ArrayOfPolicies_TF Транспортные средства полиса
 	// (обязательно)
 	ArrayOfPoliciesTF vehicles = source.getPoliciesTF();
-	if (vehicles == null)
+	if (vehicles == null || vehicles.getPoliciesTF() == null || vehicles.getPoliciesTF().isEmpty())
 	    throw new DataCoruptionException(
 		    "Error while fetching Policy ID = '" + source.getPOLICYID()
 			    + "' from ESBD. Insured vehicle list is empty");

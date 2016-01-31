@@ -79,11 +79,7 @@ public class UserEntityServiceWS extends AbstractESBDEntityServiceWS implements 
 	}
 
 	// CLIENT_ID s:int Клиент пользователя (справочник CLIENTS)
-	try {
-	    target.setClient(clientService.getById(new Long(source.getCLIENTID())));
-	} catch (NotFound e) {
-	    // non mandatory field
-	}
+	target.setSubjectId(new Long(source.getCLIENTID()));
 
 	// SYSTEM_DELIMITER_ID s:int Разделитель учета (справочник
 	// SYSTEM_DELIMITER)

@@ -21,6 +21,7 @@ public class SubjectCompanyEntity extends SubjectEntity {
     private String accountantName;
 
     // ACTIVITY_KIND_ID s:int Вид деятельности (справочник ACTIVITY_KINDS)
+    private long companyActivityKindId;
     private CompanyActivityKindEntity companyActivityKind;
 
     // ECONOMICS_SECTOR_ID s:int Сектор экономики (справочник ECONOMICS_SECTORS)
@@ -44,43 +45,50 @@ public class SubjectCompanyEntity extends SubjectEntity {
     // GENERATED
 
     public String getCompanyName() {
-	return companyName;
+        return companyName;
     }
 
-    public void setCompanyName(String name) {
-	this.companyName = name;
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
     public String getHeadName() {
-	return headName;
+        return headName;
     }
 
     public void setHeadName(String headName) {
-	this.headName = headName;
+        this.headName = headName;
     }
 
     public String getAccountantName() {
-	return accountantName;
+        return accountantName;
     }
 
     public void setAccountantName(String accountantName) {
-	this.accountantName = accountantName;
+        this.accountantName = accountantName;
+    }
+
+    public long getCompanyActivityKindId() {
+        return companyActivityKindId;
+    }
+
+    public void setCompanyActivityKindId(long companyActivityKindId) {
+        this.companyActivityKindId = companyActivityKindId;
     }
 
     public CompanyActivityKindEntity getCompanyActivityKind() {
-	return companyActivityKind;
+        return companyActivityKind;
     }
 
     public void setCompanyActivityKind(CompanyActivityKindEntity companyActivityKind) {
-	this.companyActivityKind = companyActivityKind;
+        this.companyActivityKind = companyActivityKind;
     }
 
     public EconomicSectorDict getEconomicsSector() {
-	return economicsSector;
+        return economicsSector;
     }
 
     public void setEconomicsSector(EconomicSectorDict economicsSector) {
-	this.economicsSector = economicsSector;
+        this.economicsSector = economicsSector;
     }
-
 }

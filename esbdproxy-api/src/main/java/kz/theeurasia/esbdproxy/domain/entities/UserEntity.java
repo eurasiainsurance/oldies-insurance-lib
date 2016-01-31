@@ -11,7 +11,8 @@ public class UserEntity {
     private BranchEntity branch;
 
     // CLIENT_ID s:int Клиент пользователя (справочник CLIENTS)
-    private SubjectEntity client;
+    private long subjectId;
+    private SubjectEntity subject;
 
     // SYSTEM_DELIMITER_ID s:int Разделитель учета (справочник SYSTEM_DELIMITER)
     private InsuranceCompanyEntity organization;
@@ -61,12 +62,20 @@ public class UserEntity {
 	this.branch = branch;
     }
 
-    public SubjectEntity getClient() {
-	return client;
+    public long getSubjectId() {
+	return subjectId;
     }
 
-    public void setClient(SubjectEntity client) {
-	this.client = client;
+    public void setSubjectId(long subjectId) {
+	this.subjectId = subjectId;
+    }
+
+    public SubjectEntity getSubject() {
+	return subject;
+    }
+
+    public void setSubject(SubjectEntity client) {
+	this.subject = client;
     }
 
     public InsuranceCompanyEntity getOrganization() {
@@ -92,5 +101,4 @@ public class UserEntity {
     public void setLastSesionId(String lastSesionId) {
 	this.lastSesionId = lastSesionId;
     }
-
 }

@@ -45,15 +45,11 @@ public class SubjectCompanyEntityServiceWS extends SubjectEntityServiceWS implem
 	target.setAccountantName(source.getMAINACCOUNTANT());
 
 	// ACTIVITY_KIND_ID s:int Вид деятельности (справочник ACTIVITY_KINDS)
+	target.setCompanyActivityKindId(new Long(source.getACTIVITYKINDID()));
 	try {
 	    target.setCompanyActivityKind(companyActivityKindService.getById(new Long(source.getACTIVITYKINDID())));
 	} catch (NotFound e) {
-	    // mandatory field
-	    throw new DataCoruptionException(
-		    "Error while fetching Company Client ID = '" + source.getID()
-			    + "' from ESBD. CompanyActivityKind ID = '"
-			    + source.getACTIVITYKINDID() + "' not found",
-		    e);
+	    // non mandatory field
 	}
 
 	// ECONOMICS_SECTOR_ID s:int Сектор экономики (справочник

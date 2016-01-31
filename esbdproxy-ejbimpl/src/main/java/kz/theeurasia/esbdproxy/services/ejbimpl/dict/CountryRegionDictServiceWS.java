@@ -37,12 +37,12 @@ public class CountryRegionDictServiceWS implements CountryRegionServiceDAO {
 
     @Override
     public List<CountryRegionDict> getAll() {
-	return all;
+	return new ArrayList<>(all);
     }
 
     @Override
     public List<CountryRegionDict> getRegions() {
-	return regions;
+	return new ArrayList<>(regions);
     }
 
 }

@@ -32,7 +32,7 @@ public class CountryDictServiceWS implements CountryServiceDAO {
 
     @Override
     public List<CountryDict> getAll() {
-	return all;
+	return new ArrayList<>(all);
     }
 
 }

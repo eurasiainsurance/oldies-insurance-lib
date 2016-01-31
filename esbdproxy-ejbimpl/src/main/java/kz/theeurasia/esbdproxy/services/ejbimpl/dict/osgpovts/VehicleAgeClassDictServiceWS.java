@@ -32,7 +32,7 @@ public class VehicleAgeClassDictServiceWS implements VehicleAgeClassServiceDAO {
 
     @Override
     public List<VehicleAgeClassDict> getAll() {
-	return all;
+	return new ArrayList<>(all);
     }
 
 }

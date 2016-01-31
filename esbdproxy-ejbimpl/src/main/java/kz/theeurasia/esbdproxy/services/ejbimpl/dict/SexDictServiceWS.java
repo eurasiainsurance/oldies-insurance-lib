@@ -32,7 +32,7 @@ public class SexDictServiceWS implements SexServiceDAO {
 
     @Override
     public List<SexDict> getAll() {
-	return all;
+	return new ArrayList<>(all);
     }
 
 }

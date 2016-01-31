@@ -42,7 +42,7 @@ public class CompanyActivityKindEntityServiceWS extends AbstractESBDEntityServic
     @Override
     public List<CompanyActivityKindEntity> getAll() {
 	lazyInit();
-	return all;
+	return new ArrayList<>(all);
     }
 
     @Override

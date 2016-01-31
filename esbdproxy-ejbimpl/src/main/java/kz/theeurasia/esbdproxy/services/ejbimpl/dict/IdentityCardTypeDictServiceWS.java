@@ -32,7 +32,7 @@ public class IdentityCardTypeDictServiceWS implements IdentityCardTypeServiceDAO
 
     @Override
     public List<IdentityCardTypeDict> getAll() {
-	return all;
+	return new ArrayList<>(all);
     }
 
 }

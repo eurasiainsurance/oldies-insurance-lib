@@ -50,6 +50,12 @@ public class UserEntityServiceWS extends AbstractESBDEntityServiceWS implements 
     }
 
     @Override
+    public List<UserEntity> getAll() {
+	lazyInit();
+	return new ArrayList<>(all);
+    }
+
+    @Override
     public UserEntity getById(Long id) throws NotFound {
 	lazyInit();
 	for (UserEntity be : all)

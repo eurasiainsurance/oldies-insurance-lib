@@ -32,7 +32,7 @@ public class MaritalStatusDictServiceWS implements MaritalStatusServiceDAO {
 
     @Override
     public List<MaritalStatusDict> getAll() {
-	return all;
+	return new ArrayList<>(all);
     }
 
 }

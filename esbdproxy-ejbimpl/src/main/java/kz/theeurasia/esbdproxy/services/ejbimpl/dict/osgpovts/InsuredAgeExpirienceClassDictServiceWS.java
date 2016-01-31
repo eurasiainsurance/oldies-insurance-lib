@@ -34,7 +34,7 @@ public class InsuredAgeExpirienceClassDictServiceWS
 
     @Override
     public List<InsuredAgeExpirienceClassDict> getAll() {
-	return all;
+	return new ArrayList<>(all);
     }
 
 }

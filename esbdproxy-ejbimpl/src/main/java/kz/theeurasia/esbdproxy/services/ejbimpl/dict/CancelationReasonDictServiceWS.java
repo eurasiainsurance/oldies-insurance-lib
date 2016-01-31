@@ -32,6 +32,6 @@ public class CancelationReasonDictServiceWS implements CancelationReasonServiceD
 
     @Override
     public List<CancelationReasonDict> getAll() {
-	return all;
+	return new ArrayList<>(all);
     }
 }

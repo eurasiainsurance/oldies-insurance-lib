@@ -42,7 +42,7 @@ public class VehicleModelEntityServiceWS extends AbstractESBDEntityServiceWS imp
     @Override
     public List<VehicleModelEntity> getAll() {
 	lazyInit();
-	return all;
+	return new ArrayList<>(all);
     }
 
     @Override

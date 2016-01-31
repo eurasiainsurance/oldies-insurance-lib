@@ -42,7 +42,7 @@ public class CityEntityServiceWS extends AbstractESBDEntityServiceWS
     @Override
     public List<CityEntity> getAll() {
 	lazyInit();
-	return all;
+	return new ArrayList<>(all);
     }
 
     @Override

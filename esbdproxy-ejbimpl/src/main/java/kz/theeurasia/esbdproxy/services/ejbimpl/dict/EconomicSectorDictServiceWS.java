@@ -32,7 +32,7 @@ public class EconomicSectorDictServiceWS implements EconomicSectorServiceDAO {
 
     @Override
     public List<EconomicSectorDict> getAll() {
-	return all;
+	return new ArrayList<>(all);
     }
 
 }

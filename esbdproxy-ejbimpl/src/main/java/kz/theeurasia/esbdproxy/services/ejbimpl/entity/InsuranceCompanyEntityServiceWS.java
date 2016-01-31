@@ -41,7 +41,7 @@ public class InsuranceCompanyEntityServiceWS extends AbstractESBDEntityServiceWS
     @Override
     public List<InsuranceCompanyEntity> getAll() {
 	lazyInit();
-	return all;
+	return new ArrayList<>(all);
     }
 
     @Override

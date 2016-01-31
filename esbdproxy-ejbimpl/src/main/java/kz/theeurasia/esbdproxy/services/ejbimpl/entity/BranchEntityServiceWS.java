@@ -21,6 +21,11 @@ public class BranchEntityServiceWS extends AbstractESBDEntityServiceWS implement
 
     @PostConstruct
     protected void init() {
+    }
+
+    private void lazyInit() {
+	if (all != null)
+	    return;
 	checkSession();
 	all = new ArrayList<>();
 	ArrayOfItem items = getSoapService().getItems(getSessionId(), DICT_NAME);
@@ -35,6 +40,7 @@ public class BranchEntityServiceWS extends AbstractESBDEntityServiceWS implement
 
     @Override
     public BranchEntity getById(Long id) throws NotFound {
+	lazyInit();
 	for (BranchEntity be : all)
 	    if (be.getId() == id)
 		return be;
@@ -45,6 +51,12 @@ public class BranchEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	target.setId(source.getID());
 	target.setCode(source.getCode());
 	target.setName(source.getName());
+    }
+
+    @Override
+    public List<BranchEntity> getAll() {
+	lazyInit();
+	return new ArrayList<BranchEntity>(all);
     }
 
 }

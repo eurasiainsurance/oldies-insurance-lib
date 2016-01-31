@@ -33,7 +33,7 @@ public class VehicleClassDictServiceWS
 
     @Override
     public List<VehicleClassDict> getAll() {
-	return all;
+	return new ArrayList<>(all);
     }
 
 }

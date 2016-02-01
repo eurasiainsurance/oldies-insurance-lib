@@ -8,50 +8,52 @@ import javax.naming.NamingException;
 
 import org.junit.BeforeClass;
 
-import kz.theeurasia.esbdproxy.services.BranchServiceDAO;
-import kz.theeurasia.esbdproxy.services.CancelationReasonServiceDAO;
-import kz.theeurasia.esbdproxy.services.CityServiceDAO;
-import kz.theeurasia.esbdproxy.services.CompanyActivityKindServiceDAO;
-import kz.theeurasia.esbdproxy.services.CountryRegionServiceDAO;
-import kz.theeurasia.esbdproxy.services.CountryServiceDAO;
-import kz.theeurasia.esbdproxy.services.EconomicSectorServiceDAO;
-import kz.theeurasia.esbdproxy.services.IdentityCardTypeServiceDAO;
-import kz.theeurasia.esbdproxy.services.InsuranceCompanyServiceDAO;
-import kz.theeurasia.esbdproxy.services.MaritalStatusServiceDAO;
-import kz.theeurasia.esbdproxy.services.PolicyServiceDAO;
-import kz.theeurasia.esbdproxy.services.SexServiceDAO;
-import kz.theeurasia.esbdproxy.services.SubjectCompanyServiceDAO;
-import kz.theeurasia.esbdproxy.services.SubjectPersonServiceDAO;
-import kz.theeurasia.esbdproxy.services.SubjectServiceDAO;
-import kz.theeurasia.esbdproxy.services.UserServiceDAO;
-import kz.theeurasia.esbdproxy.services.VehicleModelServiceDAO;
-import kz.theeurasia.esbdproxy.services.VehicleServiceDAO;
-import kz.theeurasia.esbdproxy.services.ejbimpl.dict.CancelationReasonDictServiceWS;
-import kz.theeurasia.esbdproxy.services.ejbimpl.dict.CountryDictServiceWS;
-import kz.theeurasia.esbdproxy.services.ejbimpl.dict.CountryRegionDictServiceWS;
-import kz.theeurasia.esbdproxy.services.ejbimpl.dict.EconomicSectorDictServiceWS;
-import kz.theeurasia.esbdproxy.services.ejbimpl.dict.IdentityCardTypeDictServiceWS;
-import kz.theeurasia.esbdproxy.services.ejbimpl.dict.MaritalStatusDictServiceWS;
-import kz.theeurasia.esbdproxy.services.ejbimpl.dict.SexDictServiceWS;
+import kz.theeurasia.esbdproxy.services.ejbimpl.dict.general.CancelationReasonDictServiceWS;
+import kz.theeurasia.esbdproxy.services.ejbimpl.dict.general.CountryDictServiceWS;
+import kz.theeurasia.esbdproxy.services.ejbimpl.dict.general.CountryRegionDictServiceWS;
+import kz.theeurasia.esbdproxy.services.ejbimpl.dict.general.EconomicSectorDictServiceWS;
+import kz.theeurasia.esbdproxy.services.ejbimpl.dict.general.IdentityCardTypeDictServiceWS;
+import kz.theeurasia.esbdproxy.services.ejbimpl.dict.general.MaritalStatusDictServiceWS;
+import kz.theeurasia.esbdproxy.services.ejbimpl.dict.general.SexDictServiceWS;
 import kz.theeurasia.esbdproxy.services.ejbimpl.dict.osgpovts.InsuranceClassTypeDictServiceWS;
 import kz.theeurasia.esbdproxy.services.ejbimpl.dict.osgpovts.InsuredAgeExpirienceClassDictServiceWS;
 import kz.theeurasia.esbdproxy.services.ejbimpl.dict.osgpovts.VehicleAgeClassDictServiceWS;
 import kz.theeurasia.esbdproxy.services.ejbimpl.dict.osgpovts.VehicleClassDictServiceWS;
-import kz.theeurasia.esbdproxy.services.ejbimpl.entity.BranchEntityServiceWS;
-import kz.theeurasia.esbdproxy.services.ejbimpl.entity.CityEntityServiceWS;
-import kz.theeurasia.esbdproxy.services.ejbimpl.entity.CompanyActivityKindEntityServiceWS;
-import kz.theeurasia.esbdproxy.services.ejbimpl.entity.InsuranceCompanyEntityServiceWS;
-import kz.theeurasia.esbdproxy.services.ejbimpl.entity.SubjectCompanyEntityServiceWS;
-import kz.theeurasia.esbdproxy.services.ejbimpl.entity.SubjectEntityServiceWS;
-import kz.theeurasia.esbdproxy.services.ejbimpl.entity.SubjectPersonEntityServiceWS;
-import kz.theeurasia.esbdproxy.services.ejbimpl.entity.UserEntityServiceWS;
+import kz.theeurasia.esbdproxy.services.ejbimpl.entity.general.BranchEntityServiceWS;
+import kz.theeurasia.esbdproxy.services.ejbimpl.entity.general.CityEntityServiceWS;
+import kz.theeurasia.esbdproxy.services.ejbimpl.entity.general.CompanyActivityKindEntityServiceWS;
+import kz.theeurasia.esbdproxy.services.ejbimpl.entity.general.InsuranceCompanyEntityServiceWS;
+import kz.theeurasia.esbdproxy.services.ejbimpl.entity.general.SubjectCompanyEntityServiceWS;
+import kz.theeurasia.esbdproxy.services.ejbimpl.entity.general.SubjectEntityServiceWS;
+import kz.theeurasia.esbdproxy.services.ejbimpl.entity.general.SubjectPersonEntityServiceWS;
+import kz.theeurasia.esbdproxy.services.ejbimpl.entity.general.UserEntityServiceWS;
 import kz.theeurasia.esbdproxy.services.ejbimpl.entity.osgpovts.PolicyEntityServiceWS;
 import kz.theeurasia.esbdproxy.services.ejbimpl.entity.osgpovts.VehicleEntityServiceWS;
+import kz.theeurasia.esbdproxy.services.ejbimpl.entity.osgpovts.VehicleManufacturerEntityServiceWS;
 import kz.theeurasia.esbdproxy.services.ejbimpl.entity.osgpovts.VehicleModelEntityServiceWS;
+import kz.theeurasia.esbdproxy.services.general.BranchServiceDAO;
+import kz.theeurasia.esbdproxy.services.general.CancelationReasonServiceDAO;
+import kz.theeurasia.esbdproxy.services.general.CityServiceDAO;
+import kz.theeurasia.esbdproxy.services.general.CompanyActivityKindServiceDAO;
+import kz.theeurasia.esbdproxy.services.general.CountryRegionServiceDAO;
+import kz.theeurasia.esbdproxy.services.general.CountryServiceDAO;
+import kz.theeurasia.esbdproxy.services.general.EconomicSectorServiceDAO;
+import kz.theeurasia.esbdproxy.services.general.IdentityCardTypeServiceDAO;
+import kz.theeurasia.esbdproxy.services.general.InsuranceCompanyServiceDAO;
+import kz.theeurasia.esbdproxy.services.general.MaritalStatusServiceDAO;
+import kz.theeurasia.esbdproxy.services.general.PolicyServiceDAO;
+import kz.theeurasia.esbdproxy.services.general.SexServiceDAO;
+import kz.theeurasia.esbdproxy.services.general.SubjectCompanyServiceDAO;
+import kz.theeurasia.esbdproxy.services.general.SubjectPersonServiceDAO;
+import kz.theeurasia.esbdproxy.services.general.SubjectServiceDAO;
+import kz.theeurasia.esbdproxy.services.general.UserServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.InsuranceClassTypeServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.InsuredAgeExpirienceClassServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleAgeClassServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleClassServiceDAO;
+import kz.theeurasia.esbdproxy.services.osgpovts.VehicleManufacturerServiceDAO;
+import kz.theeurasia.esbdproxy.services.osgpovts.VehicleModelServiceDAO;
+import kz.theeurasia.esbdproxy.services.osgpovts.VehicleServiceDAO;
 
 public abstract class GeneralServiceTestCase {
     private static final String OPEN_EJB_CONTEXT_FACTORY = "org.apache.openejb.client.LocalInitialContextFactory";
@@ -136,6 +138,10 @@ public abstract class GeneralServiceTestCase {
 
     protected UserServiceDAO getUserServiceEntityWS() throws NamingException {
 	return (UserServiceDAO) context.lookup(nameFor(UserEntityServiceWS.class));
+    }
+
+    protected VehicleManufacturerServiceDAO getVehicleManufacturerServiceEntityWS() throws NamingException {
+	return (VehicleManufacturerServiceDAO) context.lookup(nameFor(VehicleManufacturerEntityServiceWS.class));
     }
 
     protected VehicleModelServiceDAO getVehicleModelServiceEntityWS() throws NamingException {

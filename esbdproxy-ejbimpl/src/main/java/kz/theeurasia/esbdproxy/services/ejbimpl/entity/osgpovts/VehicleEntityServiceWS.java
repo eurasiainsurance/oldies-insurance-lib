@@ -11,11 +11,11 @@ import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
 import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleEntity;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.SteeringWheelLocationEnum;
 import kz.theeurasia.esbdproxy.services.NotFound;
-import kz.theeurasia.esbdproxy.services.VehicleModelServiceDAO;
-import kz.theeurasia.esbdproxy.services.VehicleServiceDAO;
 import kz.theeurasia.esbdproxy.services.ejbimpl.DataCoruptionException;
-import kz.theeurasia.esbdproxy.services.ejbimpl.entity.AbstractESBDEntityServiceWS;
+import kz.theeurasia.esbdproxy.services.ejbimpl.entity.general.AbstractESBDEntityServiceWS;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleClassServiceDAO;
+import kz.theeurasia.esbdproxy.services.osgpovts.VehicleModelServiceDAO;
+import kz.theeurasia.esbdproxy.services.osgpovts.VehicleServiceDAO;
 
 @Singleton
 public class VehicleEntityServiceWS extends AbstractESBDEntityServiceWS implements VehicleServiceDAO {
@@ -35,8 +35,9 @@ public class VehicleEntityServiceWS extends AbstractESBDEntityServiceWS implemen
 	if (vehicles == null || vehicles.getTF() == null || vehicles.getTF().isEmpty())
 	    throw new NotFound(VehicleEntity.class.getSimpleName() + " not found with ID = '" + id + "'");
 	if (vehicles.getTF().size() > 1)
-	    throw new DataCoruptionException("Too many (" + vehicles.getTF().size() + ") with ID = '" + id + "'");
-
+	    throw new DataCoruptionException(
+		    "Too many " + VehicleEntity.class.getSimpleName() + " ("
+			    + vehicles.getTF().size() + ") with ID = '" + id + "'");
 	VehicleEntity vehicle = new VehicleEntity();
 	fillValues(vehicles.getTF().iterator().next(), vehicle);
 	return vehicle;
@@ -49,8 +50,9 @@ public class VehicleEntityServiceWS extends AbstractESBDEntityServiceWS implemen
 	if (vehicles == null || vehicles.getTF() == null || vehicles.getTF().size() == 0)
 	    throw new NotFound("Not found with VIN = '" + vinCode + "'");
 	if (vehicles.getTF().size() > 1)
-	    throw new DataCoruptionException("Too many (" + vehicles.getTF().size() + ") with VIN = '" + vinCode + "'");
-
+	    throw new DataCoruptionException(
+		    "Too many " + VehicleEntity.class.getSimpleName() + " ("
+			    + vehicles.getTF().size() + ") with VIN = '" + vinCode + "'");
 	VehicleEntity vehicle = new VehicleEntity();
 	fillValues(vehicles.getTF().iterator().next(), vehicle);
 	return vehicle;

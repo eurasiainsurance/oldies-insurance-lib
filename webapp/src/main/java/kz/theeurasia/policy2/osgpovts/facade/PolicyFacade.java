@@ -3,11 +3,11 @@ package kz.theeurasia.policy2.osgpovts.facade;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
-import kz.theeurasia.esbdproxy.domain.dict.CountryRegionDict;
+import kz.theeurasia.esbdproxy.domain.dict.general.CountryRegionDict;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuredAgeExpirienceClassDict;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleAgeClassDict;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
-import kz.theeurasia.esbdproxy.domain.entities.SubjectPersonEntity;
+import kz.theeurasia.esbdproxy.domain.entities.general.SubjectPersonEntity;
 import kz.theeurasia.esbdproxy.domain.entities.osgpovts.InsuredDriverEntity;
 import kz.theeurasia.esbdproxy.domain.entities.osgpovts.InsuredVehicleEntity;
 import kz.theeurasia.esbdproxy.domain.entities.osgpovts.PolicyEntity;

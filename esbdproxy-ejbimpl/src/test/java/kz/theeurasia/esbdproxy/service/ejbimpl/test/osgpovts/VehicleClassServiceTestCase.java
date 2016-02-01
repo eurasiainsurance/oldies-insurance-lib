@@ -1,5 +1,6 @@
 package kz.theeurasia.esbdproxy.service.ejbimpl.test.osgpovts;
 
+import static kz.theeurasia.esbdproxy.service.ejbimpl.test.TestConstants.*;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
@@ -15,8 +16,6 @@ import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleClassServiceDAO;
 
 public class VehicleClassServiceTestCase extends GeneralServiceTestCase {
-
-    private static final long INVALID_ID = -99999l;
 
     @Test
     public void testGetAll() throws NamingException {
@@ -45,7 +44,7 @@ public class VehicleClassServiceTestCase extends GeneralServiceTestCase {
     @Test(expected = NotFound.class)
     public void testGetById_NotFound() throws NamingException, NotFound {
 	VehicleClassServiceDAO service = getVehicleClassServiceEntityWS();
-	service.getById(INVALID_ID);
+	service.getById(INVALID_VEHICLE_CLASS_ID);
     }
 
 }

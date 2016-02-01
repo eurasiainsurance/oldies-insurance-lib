@@ -1,5 +1,6 @@
 package kz.theeurasia.esbdproxy.service.ejbimpl.test.osgpovts;
 
+import static kz.theeurasia.esbdproxy.service.ejbimpl.test.TestConstants.*;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
@@ -10,13 +11,9 @@ import org.junit.Test;
 import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleEntity;
 import kz.theeurasia.esbdproxy.service.ejbimpl.test.GeneralServiceTestCase;
 import kz.theeurasia.esbdproxy.services.NotFound;
-import kz.theeurasia.esbdproxy.services.VehicleServiceDAO;
+import kz.theeurasia.esbdproxy.services.osgpovts.VehicleServiceDAO;
 
 public class VehicleServiceTestCase extends GeneralServiceTestCase {
-
-    private static final long INVALID_ID = -99999l;
-    private static final String VALID_VIN_CODE = "JN1TANS51U0303376";
-    private static final String INVALID_VIN_CODE = "QASDA";
 
     @Test
     public void testGetByByVIN() throws NamingException {

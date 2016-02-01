@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import kz.theeurasia.esbdproxy.domain.dict.CancelationReasonDict;
-import kz.theeurasia.esbdproxy.domain.entities.BranchEntity;
-import kz.theeurasia.esbdproxy.domain.entities.SubjectEntity;
-import kz.theeurasia.esbdproxy.domain.entities.InsuranceCompanyEntity;
-import kz.theeurasia.esbdproxy.domain.infos.RecordOperationInfo;
+import kz.theeurasia.esbdproxy.domain.dict.general.CancelationReasonDict;
+import kz.theeurasia.esbdproxy.domain.entities.general.BranchEntity;
+import kz.theeurasia.esbdproxy.domain.entities.general.InsuranceCompanyEntity;
+import kz.theeurasia.esbdproxy.domain.entities.general.SubjectEntity;
+import kz.theeurasia.esbdproxy.domain.infos.general.RecordOperationInfo;
 
 public class PolicyEntity {
     // POLICY_ID s:int Идентификатор полиса (обязательно)

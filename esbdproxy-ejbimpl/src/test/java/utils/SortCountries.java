@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import kz.theeurasia.esbdproxy.domain.dict.CountryDict;
+import kz.theeurasia.esbdproxy.domain.dict.general.CountryDict;
 
 public class SortCountries {
     public static void main(String[] args) {

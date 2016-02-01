@@ -3,7 +3,7 @@ package kz.theeurasia.esbdproxy.services.osgpovts;
 import java.util.Calendar;
 
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuranceClassTypeDict;
-import kz.theeurasia.esbdproxy.domain.entities.SubjectPersonEntity;
+import kz.theeurasia.esbdproxy.domain.entities.general.SubjectPersonEntity;
 import kz.theeurasia.esbdproxy.services.AbstractServiceDAO;
 import kz.theeurasia.esbdproxy.services.NotFound;
 

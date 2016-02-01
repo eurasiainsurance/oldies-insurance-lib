@@ -1,13 +1,13 @@
 package kz.theeurasia.esbdproxy.domain.entities.osgpovts;
 
-import kz.theeurasia.esbdproxy.domain.dict.MaritalStatusDict;
+import kz.theeurasia.esbdproxy.domain.dict.general.MaritalStatusDict;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuranceClassTypeDict;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuredAgeExpirienceClassDict;
-import kz.theeurasia.esbdproxy.domain.entities.SubjectPersonEntity;
-import kz.theeurasia.esbdproxy.domain.entities.InsuranceCompanyEntity;
+import kz.theeurasia.esbdproxy.domain.entities.general.InsuranceCompanyEntity;
+import kz.theeurasia.esbdproxy.domain.entities.general.SubjectPersonEntity;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredAgeClassEnum;
-import kz.theeurasia.esbdproxy.domain.infos.RecordOperationInfo;
+import kz.theeurasia.esbdproxy.domain.infos.general.RecordOperationInfo;
 import kz.theeurasia.esbdproxy.domain.infos.osgpovts.DriverLicenseInfo;
 import kz.theeurasia.esbdproxy.domain.infos.osgpovts.GPWParticipantInfo;
 import kz.theeurasia.esbdproxy.domain.infos.osgpovts.InvalidInfo;

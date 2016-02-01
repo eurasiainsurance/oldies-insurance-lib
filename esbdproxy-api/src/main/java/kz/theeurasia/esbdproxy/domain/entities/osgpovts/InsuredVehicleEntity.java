@@ -2,9 +2,9 @@ package kz.theeurasia.esbdproxy.domain.entities.osgpovts;
 
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleAgeClassDict;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
-import kz.theeurasia.esbdproxy.domain.entities.InsuranceCompanyEntity;
-import kz.theeurasia.esbdproxy.domain.infos.RecordOperationInfo;
-import kz.theeurasia.esbdproxy.domain.infos.VehicleCertificateInfo;
+import kz.theeurasia.esbdproxy.domain.entities.general.InsuranceCompanyEntity;
+import kz.theeurasia.esbdproxy.domain.infos.general.RecordOperationInfo;
+import kz.theeurasia.esbdproxy.domain.infos.general.VehicleCertificateInfo;
 
 public class InsuredVehicleEntity {
 

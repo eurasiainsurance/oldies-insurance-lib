@@ -1,7 +1,7 @@
 package kz.theeurasia.esbdproxy.services.general;
 
-import kz.theeurasia.esbdproxy.services.AbstractServiceDAO;
+import kz.theeurasia.esbdproxy.services.GeneralServiceDAO;
 
-public interface DictServiceDAO<T, L> extends AbstractServiceDAO<T, L> {
+public interface DictServiceDAO<T, L> extends GeneralServiceDAO<T, L> {
 
 }

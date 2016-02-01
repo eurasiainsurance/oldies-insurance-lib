@@ -7,12 +7,10 @@ import javax.naming.NamingException;
 
 import org.junit.Test;
 
-import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleAgeClassDict;
 import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleEntity;
 import kz.theeurasia.esbdproxy.service.ejbimpl.test.GeneralServiceTestCase;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.VehicleServiceDAO;
-import kz.theeurasia.esbdproxy.services.osgpovts.VehicleAgeClassServiceDAO;
 
 public class VehicleServiceTestCase extends GeneralServiceTestCase {
 

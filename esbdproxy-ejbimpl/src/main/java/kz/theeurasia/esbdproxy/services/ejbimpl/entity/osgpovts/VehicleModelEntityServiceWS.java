@@ -7,57 +7,66 @@ import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 
 import kz.theeurasia.asb.esbd.jaxws.ArrayOfItem;
+import kz.theeurasia.asb.esbd.jaxws.ArrayOfVOITUREMODEL;
 import kz.theeurasia.asb.esbd.jaxws.Item;
+import kz.theeurasia.asb.esbd.jaxws.VOITUREMODEL;
+import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleEntity;
+import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleManufacturerEntity;
 import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleModelEntity;
+import kz.theeurasia.esbdproxy.services.AbstractServiceDAO;
 import kz.theeurasia.esbdproxy.services.NotFound;
+import kz.theeurasia.esbdproxy.services.VehicleManufacturerServiceDAO;
 import kz.theeurasia.esbdproxy.services.VehicleModelServiceDAO;
+import kz.theeurasia.esbdproxy.services.ejbimpl.DataCoruptionException;
 import kz.theeurasia.esbdproxy.services.ejbimpl.entity.AbstractESBDEntityServiceWS;
 
 @Singleton
 public class VehicleModelEntityServiceWS extends AbstractESBDEntityServiceWS implements VehicleModelServiceDAO {
 
-    private static final String DICT_NAME = "VOITURE_MODELS";
-
-    private List<VehicleModelEntity> all;
-
-    @PostConstruct
-    protected void init() {
-    }
-
-    private void lazyInit() {
-	if (all != null)
-	    return;
-	checkSession();
-	all = new ArrayList<>();
-	ArrayOfItem items = getSoapService().getItems(getSessionId(), DICT_NAME);
-	if (items == null)
-	    return;
-	for (Item i : items.getItem()) {
-	    VehicleModelEntity e = new VehicleModelEntity();
-	    fillValues(i, e);
-	    all.add(e);
-	}
-    }
-
-    @Override
-    public List<VehicleModelEntity> getAll() {
-	lazyInit();
-	return new ArrayList<>(all);
-    }
+    private VehicleManufacturerServiceDAO vehicleManufacturerService;
 
     @Override
     public VehicleModelEntity getById(Long id) throws NotFound {
-	lazyInit();
-	for (VehicleModelEntity be : all)
-	    if (be.getId() == id)
-		return be;
-	throw new NotFound(VehicleModelEntity.class.getSimpleName() + " not found with ID = '" + id + "'");
+	VOITUREMODEL m = new VOITUREMODEL();
+	m.setID(new Long(id).intValue());
+	ArrayOfVOITUREMODEL models = getSoapService().getVoitureModels(getSessionId(), m);
+	if (models == null || models.getVOITUREMODEL() == null || models.getVOITUREMODEL().isEmpty())
+	    throw new NotFound(VehicleModelEntity.class.getSimpleName() + " not found with ID = '" + id + "'");
+	if (models.getVOITUREMODEL().size() > 1)
+	    throw new DataCoruptionException(
+		    "Too many (" + models.getVOITUREMODEL().size() + ") with ID = '" + id + "'");
+
+	VehicleModelEntity vehicle = new VehicleModelEntity();
+	fillValues(models.getVOITUREMODEL().iterator().next(), vehicle);
+	return vehicle;
+
     }
 
-    void fillValues(Item source, VehicleModelEntity target) {
+    @Override
+    public List<VehicleModelEntity> getByName(String name) {
+	// TODO Auto-generated method stub
+	return null;
+    }
+
+    @Override
+    public List<VehicleModelEntity> getByManufacturer(VehicleManufacturerEntity manufacturer) {
+	// TODO Auto-generated method stub
+	return null;
+    }
+
+    private void fillValues(VOITUREMODEL source, VehicleModelEntity target) {
 	target.setId(source.getID());
-	target.setCode(source.getCode());
-	target.setName(source.getName());
+	target.setName(source.getNAME());
+	try {
+	    target.setManufacturer(vehicleManufacturerService.getById(new Long(source.getVOITUREMARKID())));
+	} catch (NotFound e) {
+	    // mandatory field
+	    throw new DataCoruptionException(
+		    "Error while fetching Vehicle Manufacturer ID = '" + source.getID()
+			    + "' from ESBD. Vehicle Manufacturer ID = '" + source.getVOITUREMARKID()
+			    + "' not found",
+		    e);
+	}
     }
 
 }

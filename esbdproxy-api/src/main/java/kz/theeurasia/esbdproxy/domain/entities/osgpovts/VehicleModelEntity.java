@@ -1,9 +1,14 @@
 package kz.theeurasia.esbdproxy.domain.entities.osgpovts;
 
 public class VehicleModelEntity {
+    // ID s:int Идентификатор модели
     private long id;
-    private String code;
+
+    // NAME s:string Наименование модели
     private String name;
+
+    // VOITURE_MARK_ID s:int Идентификатор марки ТС
+    private VehicleManufacturerEntity manufacturer;
 
     @Override
     public int hashCode() {
@@ -25,19 +30,19 @@ public class VehicleModelEntity {
 	this.id = id;
     }
 
-    public String getCode() {
-	return code;
-    }
-
-    public void setCode(String code) {
-	this.code = code;
-    }
-
     public String getName() {
 	return name;
     }
 
     public void setName(String name) {
 	this.name = name;
+    }
+
+    public VehicleManufacturerEntity getManufacturer() {
+	return manufacturer;
+    }
+
+    public void setManufacturer(VehicleManufacturerEntity manufacturer) {
+	this.manufacturer = manufacturer;
     }
 }

@@ -27,7 +27,6 @@ public class SubjectServiceTestCase extends GeneralServiceTestCase {
 		SubjectEntity res = service.getById(validSubjectId);
 		assertThat(res, allOf(not(nullValue()), instanceOf(validSubjectClass)));
 		assertThat(res.getSubjectType(), allOf(not(nullValue()), is(validSubjectType)));
-		System.out.println(res.getId() + " " + res.getIdNumber());
 	    }
 	} catch (NotFound e) {
 	    fail(e.getMessage());

@@ -7,6 +7,7 @@ import kz.theeurasia.asb.esbd.jaxws.ArrayOfClient;
 import kz.theeurasia.asb.esbd.jaxws.Client;
 import kz.theeurasia.esbdproxy.domain.dict.general.IdentityCardTypeDict;
 import kz.theeurasia.esbdproxy.domain.dict.general.SexDict;
+import kz.theeurasia.esbdproxy.domain.entities.general.SubjectCompanyEntity;
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectEntity;
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectPersonEntity;
 import kz.theeurasia.esbdproxy.domain.infos.general.IdentityCardInfo;
@@ -32,10 +33,41 @@ public class SubjectPersonEntityServiceWS extends SubjectEntityServiceWS impleme
 	Client source = getSoapService().getClientByID(getSessionId(), id.intValue());
 	if (source == null)
 	    throw new NotFound(SubjectPersonEntity.class.getSimpleName() + " not found with ID = '" + id + "'");
+	boolean isNotPerson = source.getNaturalPersonBool() == 0;
+	if (isNotPerson)
+	    throw new NotFound(SubjectPersonEntity.class.getSimpleName() + " not found with ID = '" + id
+		    + "'. It was a " + SubjectCompanyEntity.class.getName());
 	SubjectPersonEntity target = new SubjectPersonEntity();
 	fillValues(source, (SubjectEntity) target);
 	fillValues(source, target);
 	return target;
+    }
+
+    @Override
+    public SubjectPersonEntity getByIDNumber(String idNumber) throws NotFound {
+	Client source = fetchClientByIINorDie(idNumber);
+	SubjectPersonEntity target = new SubjectPersonEntity();
+	fillValues(source, target);
+	return target;
+    }
+
+    private Client fetchClientByIINorDie(String iin) throws NotFound {
+	Client requestClient = new Client();
+	requestClient.setNaturalPersonBool(1);
+	requestClient.setIIN(iin);
+
+	// ищем среди резидентов
+	requestClient.setRESIDENTBOOL(1);
+	ArrayOfClient clients = getSoapService().getClientsByKeyFields(getSessionId(), requestClient);
+	if (clients != null && clients.getClient() != null && clients.getClient().size() > 0)
+	    return clients.getClient().iterator().next();
+
+	// если не нашли, то ищем среди нерезидентов
+	requestClient.setRESIDENTBOOL(0);
+	clients = getSoapService().getClientsByKeyFields(getSessionId(), requestClient);
+	if (clients == null || clients.getClient() == null || clients.getClient().size() == 0)
+	    throw new NotFound(SubjectPersonEntity.class.getSimpleName() + " not found with IDNumber = '" + iin + "'");
+	return clients.getClient().iterator().next();
     }
 
     void fillValues(Client source, SubjectPersonEntity target) {
@@ -71,32 +103,5 @@ public class SubjectPersonEntityServiceWS extends SubjectEntityServiceWS impleme
 	} catch (NotFound e) {
 	    di.setIdentityCardType(IdentityCardTypeDict.UNSPECIFIED);
 	}
-    }
-
-    @Override
-    public SubjectPersonEntity getByIDNumber(String idNumber) throws NotFound {
-	Client source = fetchClientByIINorDie(idNumber);
-	SubjectPersonEntity target = new SubjectPersonEntity();
-	fillValues(source, target);
-	return target;
-    }
-
-    private Client fetchClientByIINorDie(String iin) throws NotFound {
-	Client requestClient = new Client();
-	requestClient.setNaturalPersonBool(1);
-	requestClient.setIIN(iin);
-
-	// ищем среди резидентов
-	requestClient.setRESIDENTBOOL(1);
-	ArrayOfClient clients = getSoapService().getClientsByKeyFields(getSessionId(), requestClient);
-	if (clients != null && clients.getClient() != null && clients.getClient().size() > 0)
-	    return clients.getClient().iterator().next();
-
-	// если не нашли, то ищем среди нерезидентов
-	requestClient.setRESIDENTBOOL(0);
-	clients = getSoapService().getClientsByKeyFields(getSessionId(), requestClient);
-	if (clients == null || clients.getClient() == null || clients.getClient().size() == 0)
-	    throw new NotFound(SubjectPersonEntity.class.getSimpleName() + " not found with IDNumber = '" + iin + "'");
-	return clients.getClient().iterator().next();
     }
 }

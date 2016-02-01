@@ -9,7 +9,9 @@ import kz.theeurasia.esbdproxy.domain.entities.general.SubjectEntity;
 import kz.theeurasia.esbdproxy.domain.infos.general.ContactInfo;
 import kz.theeurasia.esbdproxy.domain.infos.general.OriginInfo;
 import kz.theeurasia.esbdproxy.services.NotFound;
+import kz.theeurasia.esbdproxy.services.ejbimpl.DataCoruptionException;
 import kz.theeurasia.esbdproxy.services.general.CountryServiceDAO;
+import kz.theeurasia.esbdproxy.services.general.EconomicSectorServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.SubjectCompanyServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.SubjectPersonServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.SubjectServiceDAO;
@@ -25,6 +27,9 @@ public class SubjectEntityServiceWS extends AbstractESBDEntityServiceWS implemen
 
     @EJB
     private CountryServiceDAO countryService;
+
+    @EJB
+    private EconomicSectorServiceDAO econimicsSectorService;
 
     public SubjectEntity getById(Long id) throws NotFound {
 	checkSession();
@@ -80,6 +85,19 @@ public class SubjectEntityServiceWS extends AbstractESBDEntityServiceWS implemen
 
 	// IIN s:string ИИН/БИН
 	target.setIdNumber(source.getIIN());
+
+	// ECONOMICS_SECTOR_ID s:int Сектор экономики (справочник
+	// ECONOMICS_SECTORS)
+	try {
+	    target.setEconomicsSector(econimicsSectorService.getById(new Long(source.getECONOMICSSECTORID())));
+	} catch (NotFound e) {
+	    // mandatory field
+	    throw new DataCoruptionException(
+		    "Error while fetching Company Client ID = '" + source.getID()
+			    + "' from ESBD. Economics Sector ID = '"
+			    + source.getECONOMICSSECTORID() + "' not found",
+		    e);
+	}
     }
 
 }

@@ -1,5 +1,6 @@
 package kz.theeurasia.esbdproxy.domain.entities.general;
 
+import kz.theeurasia.esbdproxy.domain.dict.general.EconomicSectorDict;
 import kz.theeurasia.esbdproxy.domain.enums.general.SubjectTypeEnum;
 import kz.theeurasia.esbdproxy.domain.infos.general.ContactInfo;
 import kz.theeurasia.esbdproxy.domain.infos.general.OriginInfo;
@@ -43,6 +44,9 @@ public abstract class SubjectEntity {
     private String idNumber;
 
     // BANKS tns:ArrayOfCLIENTBANK Содержит реквизиты банка клиента.
+
+    // ECONOMICS_SECTOR_ID s:int Сектор экономики (справочник ECONOMICS_SECTORS)
+    private EconomicSectorDict economicsSector = EconomicSectorDict.UNSPECIFIED;
 
     public abstract int hashCode();
 
@@ -104,6 +108,14 @@ public abstract class SubjectEntity {
 
     public void setIdNumber(String idNumber) {
 	this.idNumber = idNumber;
+    }
+
+    public EconomicSectorDict getEconomicsSector() {
+	return economicsSector;
+    }
+
+    public void setEconomicsSector(EconomicSectorDict economicsSector) {
+	this.economicsSector = economicsSector;
     }
 
 }

@@ -6,10 +6,9 @@ import javax.ejb.Singleton;
 import kz.theeurasia.asb.esbd.jaxws.Client;
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectCompanyEntity;
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectEntity;
+import kz.theeurasia.esbdproxy.domain.entities.general.SubjectPersonEntity;
 import kz.theeurasia.esbdproxy.services.NotFound;
-import kz.theeurasia.esbdproxy.services.ejbimpl.DataCoruptionException;
 import kz.theeurasia.esbdproxy.services.general.CompanyActivityKindServiceDAO;
-import kz.theeurasia.esbdproxy.services.general.EconomicSectorServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.SubjectCompanyServiceDAO;
 
 @Singleton
@@ -18,9 +17,6 @@ public class SubjectCompanyEntityServiceWS extends SubjectEntityServiceWS implem
     @EJB
     private CompanyActivityKindServiceDAO companyActivityKindService;
 
-    @EJB
-    private EconomicSectorServiceDAO econimicsSectorService;
-
     @Override
     public SubjectCompanyEntity getById(Long id) throws NotFound {
 	checkSession();
@@ -28,6 +24,10 @@ public class SubjectCompanyEntityServiceWS extends SubjectEntityServiceWS implem
 	Client source = getSoapService().getClientByID(getSessionId(), id.intValue());
 	if (source == null)
 	    throw new NotFound(SubjectCompanyEntity.class.getSimpleName() + " not found with ID = '" + id + "'");
+	boolean isNotPerson = source.getNaturalPersonBool() == 0;
+	if (!isNotPerson)
+	    throw new NotFound(SubjectCompanyEntity.class.getSimpleName() + " not found with ID = '" + id
+		    + "'. It was a " + SubjectPersonEntity.class.getName());
 	SubjectCompanyEntity target = new SubjectCompanyEntity();
 	fillValues(source, (SubjectEntity) target);
 	fillValues(source, target);
@@ -50,19 +50,6 @@ public class SubjectCompanyEntityServiceWS extends SubjectEntityServiceWS implem
 	    target.setCompanyActivityKind(companyActivityKindService.getById(new Long(source.getACTIVITYKINDID())));
 	} catch (NotFound e) {
 	    // non mandatory field
-	}
-
-	// ECONOMICS_SECTOR_ID s:int Сектор экономики (справочник
-	// ECONOMICS_SECTORS)
-	try {
-	    target.setEconomicsSector(econimicsSectorService.getById(new Long(source.getECONOMICSSECTORID())));
-	} catch (NotFound e) {
-	    // mandatory field
-	    throw new DataCoruptionException(
-		    "Error while fetching Company Client ID = '" + source.getID()
-			    + "' from ESBD. Economics Sector ID = '"
-			    + source.getECONOMICSSECTORID() + "' not found",
-		    e);
 	}
     }
 }

@@ -40,7 +40,6 @@ public class VehicleServiceTestCase extends GeneralServiceTestCase {
 	    VehicleEntity entity = service.getByVINCode(VALID_VEHICLE_VIN_CODE);
 	    assertThat(entity, not(nullValue()));
 	    assertThat(entity.getVinCode(), is(VALID_VEHICLE_VIN_CODE));
-	    System.out.println(entity.getId());
 	} catch (NotFound e) {
 	    fail(e.getMessage());
 	}

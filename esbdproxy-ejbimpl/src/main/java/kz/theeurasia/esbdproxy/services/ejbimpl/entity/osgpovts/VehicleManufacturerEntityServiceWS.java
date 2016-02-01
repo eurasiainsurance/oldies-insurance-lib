@@ -26,6 +26,7 @@ public class VehicleManufacturerEntityServiceWS extends AbstractESBDEntityServic
     public VehicleManufacturerEntity getById(Long id) throws NotFound {
 	if (id <= 0)
 	    throw new InvalidParameterException("ID must be greater than zero");
+	checkSession();
 	VOITUREMARK m = new VOITUREMARK();
 	m.setID(new Long(id).intValue());
 	ArrayOfVOITUREMARK manufacturers = getSoapService().getVoitureMarks(getSessionId(), m);

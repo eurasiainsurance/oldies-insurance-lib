@@ -2,6 +2,7 @@ package kz.theeurasia.esbdproxy.services.ejbimpl.entity.osgpovts;
 
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -9,6 +10,7 @@ import javax.ejb.Singleton;
 
 import kz.theeurasia.asb.esbd.jaxws.ArrayOfDriver;
 import kz.theeurasia.asb.esbd.jaxws.ArrayOfPoliciesTF;
+import kz.theeurasia.asb.esbd.jaxws.ArrayOfPolicy;
 import kz.theeurasia.asb.esbd.jaxws.Driver;
 import kz.theeurasia.asb.esbd.jaxws.PoliciesTF;
 import kz.theeurasia.asb.esbd.jaxws.Policy;
@@ -24,6 +26,7 @@ import kz.theeurasia.esbdproxy.domain.infos.osgpovts.InvalidInfo;
 import kz.theeurasia.esbdproxy.domain.infos.osgpovts.PensionerInfo;
 import kz.theeurasia.esbdproxy.domain.infos.osgpovts.PrivilegerInfo;
 import kz.theeurasia.esbdproxy.services.NotFound;
+import kz.theeurasia.esbdproxy.services.TooMany;
 import kz.theeurasia.esbdproxy.services.ejbimpl.DataCoruptionException;
 import kz.theeurasia.esbdproxy.services.ejbimpl.entity.general.AbstractESBDEntityServiceWS;
 import kz.theeurasia.esbdproxy.services.general.BranchServiceDAO;
@@ -31,18 +34,20 @@ import kz.theeurasia.esbdproxy.services.general.CancelationReasonServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.CountryRegionServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.InsuranceCompanyServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.MaritalStatusServiceDAO;
-import kz.theeurasia.esbdproxy.services.general.PolicyServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.SubjectPersonServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.SubjectServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.UserServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.InsuranceClassTypeServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.InsuredAgeExpirienceClassServiceDAO;
+import kz.theeurasia.esbdproxy.services.osgpovts.PolicyServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleAgeClassServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleClassServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleServiceDAO;
 
 @Singleton
 public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implements PolicyServiceDAO {
+
+    private static final int MAX_POLICIES_PER_REQUEST = 500;
 
     @EJB
     private InsuranceCompanyServiceDAO insuranceCompanyService;
@@ -94,6 +99,47 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	PolicyEntity target = new PolicyEntity();
 	fillValues(source, target);
 	return target;
+    }
+
+    @Override
+    public PolicyEntity getByNumber(String number) throws NotFound {
+	if (number == null || number.trim().isEmpty())
+	    throw new InvalidParameterException("Policy 'number' must not be an empty string");
+	checkSession();
+	ArrayOfPolicy policies = getSoapService().getPoliciesByNumber(getSessionId(), number);
+	if (policies == null || policies.getPolicy() == null || policies.getPolicy().isEmpty())
+	    throw new NotFound(PolicyEntity.class.getSimpleName() + " not found with NUMBER = '" + number + "'");
+	if (policies.getPolicy().size() > 1)
+	    throw new DataCoruptionException(
+		    "Too many " + PolicyEntity.class.getSimpleName() + " ("
+			    + policies.getPolicy().size() + ") with NUMBER = '" + number + "'");
+
+	PolicyEntity policy = new PolicyEntity();
+	fillValues(policies.getPolicy().iterator().next(), policy);
+	return policy;
+    }
+
+    @Override
+    public List<PolicyEntity> getByPeriodOfDateOfIssue(Calendar from, Calendar till) throws TooMany {
+	if (from == null || till == null)
+	    throw new InvalidParameterException(
+		    "Policy selection dates of period 'from' and 'till' must not be null values");
+	checkSession();
+	ArrayOfPolicy policies = getSoapService().getPoliciesByPolicyDate(getSessionId(),
+		convertCalendarToESBDDate(from), convertCalendarToESBDDate(till));
+	List<PolicyEntity> res = new ArrayList<>();
+	if (policies == null || policies.getPolicy() == null || policies.getPolicy().isEmpty())
+	    return res;
+	if (policies.getPolicy().size() > MAX_POLICIES_PER_REQUEST)
+	    throw new TooMany("Too many policies per request returned ('" + policies.getPolicy().size()
+		    + "') due the server maximum settings. Max policies per request must be not greater than '"
+		    + MAX_POLICIES_PER_REQUEST + "'. Please check your search conditions.");
+	for (Policy source : policies.getPolicy()) {
+	    PolicyEntity e = new PolicyEntity();
+	    fillValues(source, e);
+	    res.add(e);
+	}
+	return res;
     }
 
     void fillValues(Policy source, PolicyEntity target) {

@@ -1,8 +1,12 @@
 package kz.theeurasia.esbdproxy.services.ejbimpl.entity.general;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.ejb.EJB;
 import javax.ejb.Singleton;
 
+import kz.theeurasia.asb.esbd.jaxws.ArrayOfClient;
 import kz.theeurasia.asb.esbd.jaxws.Client;
 import kz.theeurasia.esbdproxy.domain.dict.general.CountryDict;
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectEntity;
@@ -33,7 +37,6 @@ public class SubjectEntityServiceWS extends AbstractESBDEntityServiceWS implemen
 
     public SubjectEntity getById(Long id) throws NotFound {
 	checkSession();
-
 	Client source = getSoapService().getClientByID(getSessionId(), id.intValue());
 	if (source == null)
 	    throw new NotFound(SubjectEntity.class.getSimpleName() + " not found with ID = '" + id + "'");
@@ -45,6 +48,42 @@ public class SubjectEntityServiceWS extends AbstractESBDEntityServiceWS implemen
 	    // юрлицо SubjectCompany
 	    return subjectCompanyService.getById(id);
 	}
+    }
+
+    @Override
+    public SubjectEntity getByIdNumber(String idNumber) throws NotFound {
+	checkSession();
+	Client source = fetchClientByIdNumber(idNumber, true, true);
+	if (source == null)
+	    throw new NotFound(SubjectEntity.class.getSimpleName() + " not found with IDNumber = '" + idNumber + "'");
+	if (source.getNaturalPersonBool() == 1) {
+	    // частник SubjectPerson
+	    return subjectPersonService.getByIIN(idNumber);
+	} else {
+	    // юрлицо SubjectCompany
+	    return subjectCompanyService.getByBIN(idNumber);
+	}
+    }
+
+    protected Client fetchClientByIdNumber(String idNumber, boolean fetchNaturals, boolean fetchCompanies) {
+	int[] residentBools = new int[] { 1, 0 };
+	List<Integer> naturalPersonBools = new ArrayList<>();
+	if (fetchNaturals)
+	    naturalPersonBools.add(1);
+	if (fetchCompanies)
+	    naturalPersonBools.add(0);
+	for (int residentBool : residentBools) {
+	    for (int naturalPersonBool : naturalPersonBools) {
+		Client requestClient = new Client();
+		requestClient.setIIN(idNumber);
+		requestClient.setNaturalPersonBool(naturalPersonBool);
+		requestClient.setRESIDENTBOOL(residentBool);
+		ArrayOfClient clients = getSoapService().getClientsByKeyFields(getSessionId(), requestClient);
+		if (clients != null && clients.getClient() != null && clients.getClient().size() > 0)
+		    return clients.getClient().iterator().next();
+	    }
+	}
+	return null;
     }
 
     void fillValues(Client source, SubjectEntity target) {

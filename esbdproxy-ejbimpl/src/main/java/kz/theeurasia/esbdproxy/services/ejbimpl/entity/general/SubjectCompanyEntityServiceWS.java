@@ -20,7 +20,6 @@ public class SubjectCompanyEntityServiceWS extends SubjectEntityServiceWS implem
     @Override
     public SubjectCompanyEntity getById(Long id) throws NotFound {
 	checkSession();
-
 	Client source = getSoapService().getClientByID(getSessionId(), id.intValue());
 	if (source == null)
 	    throw new NotFound(SubjectCompanyEntity.class.getSimpleName() + " not found with ID = '" + id + "'");
@@ -29,12 +28,28 @@ public class SubjectCompanyEntityServiceWS extends SubjectEntityServiceWS implem
 	    throw new NotFound(SubjectCompanyEntity.class.getSimpleName() + " not found with ID = '" + id
 		    + "'. It was a " + SubjectPersonEntity.class.getName());
 	SubjectCompanyEntity target = new SubjectCompanyEntity();
-	fillValues(source, (SubjectEntity) target);
+	fillValues(source, target);
+	return target;
+    }
+
+    @Override
+    public SubjectCompanyEntity getByBIN(String idNumber) throws NotFound {
+	Client source = fetchClientByIdNumber(idNumber, false, true);
+	if (source == null)
+	    throw new NotFound(
+		    SubjectCompanyEntity.class.getSimpleName() + " not found with IDNumber = '" + idNumber + "'");
+	boolean isNotPerson = source.getNaturalPersonBool() == 0;
+	if (!isNotPerson)
+	    throw new NotFound(SubjectCompanyEntity.class.getSimpleName() + " not found with IDNumber = '" + idNumber
+		    + "'. It was a " + SubjectPersonEntity.class.getName());
+	SubjectCompanyEntity target = new SubjectCompanyEntity();
 	fillValues(source, target);
 	return target;
     }
 
     void fillValues(Client source, SubjectCompanyEntity target) {
+	fillValues(source, (SubjectEntity) target);
+
 	// Juridical_Person_Name s:string Наименование (для юр. лица)
 	target.setCompanyName(source.getJuridicalPersonName());
 

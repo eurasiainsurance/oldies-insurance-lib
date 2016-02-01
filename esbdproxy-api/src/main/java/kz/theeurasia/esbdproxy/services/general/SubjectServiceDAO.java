@@ -5,4 +5,5 @@ import kz.theeurasia.esbdproxy.services.NotFound;
 
 public interface SubjectServiceDAO {
     SubjectEntity getById(Long id) throws NotFound;
+    SubjectEntity getByIdNumber(String idNumber) throws NotFound;
 }

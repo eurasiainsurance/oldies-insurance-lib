@@ -8,19 +8,19 @@ import javax.naming.NamingException;
 
 import org.junit.Test;
 
-import kz.theeurasia.esbdproxy.domain.entities.general.SubjectCompanyEntity;
+import kz.theeurasia.esbdproxy.domain.entities.general.SubjectPersonEntity;
 import kz.theeurasia.esbdproxy.service.ejbimpl.test.GeneralServiceTestCase;
 import kz.theeurasia.esbdproxy.services.NotFound;
-import kz.theeurasia.esbdproxy.services.general.SubjectCompanyServiceDAO;
+import kz.theeurasia.esbdproxy.services.general.SubjectPersonServiceDAO;
 
-public class SubjectCompanyServiceTestCase extends GeneralServiceTestCase {
+public class SubjectPersonServiceTestCase extends GeneralServiceTestCase {
 
     @Test
     public void testGetById() throws NamingException {
-	SubjectCompanyServiceDAO service = getSubjectCompanyServiceEntityWS();
+	SubjectPersonServiceDAO service = getSubjectPersonServiceEntityWS();
 	try {
-	    for (long valid : VALID_SUBJECT_COMPANY_IDS) {
-		SubjectCompanyEntity res = service.getById(valid);
+	    for (long valid : VALID_SUBJECT_PERSON_IDS) {
+		SubjectPersonEntity res = service.getById(valid);
 		assertThat(res, not(nullValue()));
 	    }
 	} catch (NotFound e) {
@@ -30,8 +30,8 @@ public class SubjectCompanyServiceTestCase extends GeneralServiceTestCase {
 
     @Test
     public void testGetById_NotFound() throws NamingException {
-	SubjectCompanyServiceDAO service = getSubjectCompanyServiceEntityWS();
-	for (long invalid : INVALID_SUBJECT_COMPANY_IDS) {
+	SubjectPersonServiceDAO service = getSubjectPersonServiceEntityWS();
+	for (long invalid : INVALID_SUBJECT_PERSON_IDS) {
 	    try {
 		service.getById(invalid);
 		fail("Not found exception Expected");
@@ -41,11 +41,11 @@ public class SubjectCompanyServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test
-    public void testGetByBIN() throws NamingException {
-	SubjectCompanyServiceDAO service = getSubjectCompanyServiceEntityWS();
+    public void testGetByIIN() throws NamingException {
+	SubjectPersonServiceDAO service = getSubjectPersonServiceEntityWS();
 	try {
-	    for (String valid : VALID_SUBJECT_COMPANY_BINS) {
-		SubjectCompanyEntity res = service.getByBIN(valid);
+	    for (String valid : VALID_SUBJECT_PERSON_IINS) {
+		SubjectPersonEntity res = service.getByIIN(valid);
 		assertThat(res, not(nullValue()));
 	    }
 	} catch (NotFound e) {
@@ -54,14 +54,15 @@ public class SubjectCompanyServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test
-    public void testGetByBIN_NotFound() throws NamingException {
-	SubjectCompanyServiceDAO service = getSubjectCompanyServiceEntityWS();
-	for (String invalid : INVALID_SUBJECT_COMPANY_BINS) {
+    public void testGetByIIN_NotFound() throws NamingException {
+	SubjectPersonServiceDAO service = getSubjectPersonServiceEntityWS();
+	for (String invalid : INVALID_SUBJECT_PERSON_IINS) {
 	    try {
-		service.getByBIN(invalid);
+		service.getByIIN(invalid);
 		fail("Not found exception Expected");
 	    } catch (NotFound e) {
 	    }
 	}
     }
+
 }

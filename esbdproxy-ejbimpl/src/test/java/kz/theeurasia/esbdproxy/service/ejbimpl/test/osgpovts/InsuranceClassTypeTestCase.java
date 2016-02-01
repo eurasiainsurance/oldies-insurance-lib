@@ -20,7 +20,7 @@ public class InsuranceClassTypeTestCase extends GeneralServiceTestCase {
     public void testGetById() throws NamingException {
 	InsuranceClassTypeServiceDAO service = getInsuranceClassTypeServiceEntityWS();
 	try {
-	    InsuranceClassTypeDict res = service.getById(VALID_CLASS_TYPE_ID);
+	    InsuranceClassTypeDict res = service.getById(VALID_INSURANCE_CLASS_TYPE_ID);
 	    assertThat(res, allOf(not(nullValue()), equalTo(InsuranceClassTypeDict.CLASS_12)));
 	} catch (NotFound e) {
 	    fail(e.getMessage());
@@ -30,7 +30,7 @@ public class InsuranceClassTypeTestCase extends GeneralServiceTestCase {
     @Test(expected = NotFound.class)
     public void testGetById_NotFound() throws NamingException, NotFound {
 	InsuranceClassTypeServiceDAO service = getInsuranceClassTypeServiceEntityWS();
-	service.getById(INVALID_CLASS_TYPE_ID);
+	service.getById(INVALID_INSURANCE_CLASS_TYPE_ID);
     }
 
     @Test
@@ -50,7 +50,7 @@ public class InsuranceClassTypeTestCase extends GeneralServiceTestCase {
     @Test(expected = NotFound.class)
     public void testGetByCode_NotFound() throws NamingException, NotFound {
 	InsuranceClassTypeServiceDAO service = getInsuranceClassTypeServiceEntityWS();
-	service.getByCode(INVALID_CLASS_TYPE_CODE);
+	service.getByCode(INVALID_INSURANCE_CLASS_TYPE_CODE);
     }
 
     @Test
@@ -58,7 +58,7 @@ public class InsuranceClassTypeTestCase extends GeneralServiceTestCase {
 	InsuranceClassTypeServiceDAO service = getInsuranceClassTypeServiceEntityWS();
 	try {
 	    SubjectPersonEntity e = new SubjectPersonEntity();
-	    e.setId(VALID_CLIENT_ID);
+	    e.setId(VALID_SUBJECT_PERSON_ID);
 	    InsuranceClassTypeDict res = service.getForSubjcect(e);
 	    assertThat(res, allOf(not(nullValue()), equalTo(VALID_CLASS_TYPE_FOR_CLIENT)));
 	} catch (NotFound e) {
@@ -70,7 +70,7 @@ public class InsuranceClassTypeTestCase extends GeneralServiceTestCase {
     public void testGetForSubject_NotFound() throws NamingException, NotFound {
 	InsuranceClassTypeServiceDAO service = getInsuranceClassTypeServiceEntityWS();
 	SubjectPersonEntity e = new SubjectPersonEntity();
-	e.setId(INVALID_CLIENT_ID);
+	e.setId(INVALID_SUBJECT_PERSON_ID);
 	service.getForSubjcect(e);
     }
 

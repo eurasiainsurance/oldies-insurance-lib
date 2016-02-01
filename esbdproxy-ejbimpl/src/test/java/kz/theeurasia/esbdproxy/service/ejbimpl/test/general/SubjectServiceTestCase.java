@@ -13,7 +13,6 @@ import kz.theeurasia.esbdproxy.domain.enums.general.SubjectTypeEnum;
 import kz.theeurasia.esbdproxy.service.ejbimpl.test.GeneralServiceTestCase;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.general.SubjectServiceDAO;
-import kz.theeurasia.esbdproxy.services.general.UserServiceDAO;
 
 public class SubjectServiceTestCase extends GeneralServiceTestCase {
 
@@ -28,6 +27,7 @@ public class SubjectServiceTestCase extends GeneralServiceTestCase {
 		SubjectEntity res = service.getById(validSubjectId);
 		assertThat(res, allOf(not(nullValue()), instanceOf(validSubjectClass)));
 		assertThat(res.getSubjectType(), allOf(not(nullValue()), is(validSubjectType)));
+		System.out.println(res.getId() + " " + res.getIdNumber());
 	    }
 	} catch (NotFound e) {
 	    fail(e.getMessage());
@@ -36,7 +36,33 @@ public class SubjectServiceTestCase extends GeneralServiceTestCase {
 
     @Test(expected = NotFound.class)
     public void testGetById_NotFound() throws NamingException, NotFound {
-	UserServiceDAO service = getUserServiceEntityWS();
+	SubjectServiceDAO service = getSubjectServiceEntityWS();
 	service.getById(INVALID_SUBJECT_ID);
     }
+
+    @Test
+    public void testGetByIDNumber() throws NamingException {
+	SubjectServiceDAO service = getSubjectServiceEntityWS();
+	try {
+	    for (int i = 0; i < VALID_SUBJECT_ID_NUMBERS.length; i++) {
+		String subjecdIdNumber = VALID_SUBJECT_ID_NUMBERS[i];
+		SubjectTypeEnum validSubjectType = VALID_SUBJECT_TYPES[i];
+		Class<?> validSubjectClass = VALID_SUBJECT_CLASSES[i];
+		SubjectEntity res = service.getByIdNumber(subjecdIdNumber);
+		assertThat(res, allOf(not(nullValue()), instanceOf(validSubjectClass)));
+		assertThat(res.getSubjectType(), allOf(not(nullValue()),
+			is(validSubjectType)));
+		assertThat(res.getIdNumber(), allOf(not(nullValue()), equalTo(subjecdIdNumber)));
+	    }
+	} catch (NotFound e) {
+	    fail(e.getMessage());
+	}
+    }
+
+    @Test(expected = NotFound.class)
+    public void testGetByIDNumber_NotFound() throws NamingException, NotFound {
+	SubjectServiceDAO service = getSubjectServiceEntityWS();
+	service.getByIdNumber(INVALID_SUBJECT_ID_NUMBER);
+    }
+
 }

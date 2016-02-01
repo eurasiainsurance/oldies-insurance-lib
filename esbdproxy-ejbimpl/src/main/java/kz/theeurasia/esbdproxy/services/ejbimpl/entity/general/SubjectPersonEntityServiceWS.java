@@ -3,7 +3,6 @@ package kz.theeurasia.esbdproxy.services.ejbimpl.entity.general;
 import javax.ejb.EJB;
 import javax.ejb.Singleton;
 
-import kz.theeurasia.asb.esbd.jaxws.ArrayOfClient;
 import kz.theeurasia.asb.esbd.jaxws.Client;
 import kz.theeurasia.esbdproxy.domain.dict.general.IdentityCardTypeDict;
 import kz.theeurasia.esbdproxy.domain.dict.general.SexDict;
@@ -29,7 +28,6 @@ public class SubjectPersonEntityServiceWS extends SubjectEntityServiceWS impleme
     @Override
     public SubjectPersonEntity getById(Long id) throws NotFound {
 	checkSession();
-
 	Client source = getSoapService().getClientByID(getSessionId(), id.intValue());
 	if (source == null)
 	    throw new NotFound(SubjectPersonEntity.class.getSimpleName() + " not found with ID = '" + id + "'");
@@ -38,39 +36,28 @@ public class SubjectPersonEntityServiceWS extends SubjectEntityServiceWS impleme
 	    throw new NotFound(SubjectPersonEntity.class.getSimpleName() + " not found with ID = '" + id
 		    + "'. It was a " + SubjectCompanyEntity.class.getName());
 	SubjectPersonEntity target = new SubjectPersonEntity();
-	fillValues(source, (SubjectEntity) target);
 	fillValues(source, target);
 	return target;
     }
 
     @Override
-    public SubjectPersonEntity getByIDNumber(String idNumber) throws NotFound {
-	Client source = fetchClientByIINorDie(idNumber);
+    public SubjectPersonEntity getByIIN(String idNumber) throws NotFound {
+	Client source = fetchClientByIdNumber(idNumber, true, false);
+	if (source == null)
+	    throw new NotFound(
+		    SubjectPersonEntity.class.getSimpleName() + " not found with IDNumber = '" + idNumber + "'");
+	boolean isNotPerson = source.getNaturalPersonBool() == 0;
+	if (isNotPerson)
+	    throw new NotFound(SubjectPersonEntity.class.getSimpleName() + " not found with IDNumber = '" + idNumber
+		    + "'. It was a " + SubjectCompanyEntity.class.getName());
 	SubjectPersonEntity target = new SubjectPersonEntity();
 	fillValues(source, target);
 	return target;
     }
 
-    private Client fetchClientByIINorDie(String iin) throws NotFound {
-	Client requestClient = new Client();
-	requestClient.setNaturalPersonBool(1);
-	requestClient.setIIN(iin);
-
-	// ищем среди резидентов
-	requestClient.setRESIDENTBOOL(1);
-	ArrayOfClient clients = getSoapService().getClientsByKeyFields(getSessionId(), requestClient);
-	if (clients != null && clients.getClient() != null && clients.getClient().size() > 0)
-	    return clients.getClient().iterator().next();
-
-	// если не нашли, то ищем среди нерезидентов
-	requestClient.setRESIDENTBOOL(0);
-	clients = getSoapService().getClientsByKeyFields(getSessionId(), requestClient);
-	if (clients == null || clients.getClient() == null || clients.getClient().size() == 0)
-	    throw new NotFound(SubjectPersonEntity.class.getSimpleName() + " not found with IDNumber = '" + iin + "'");
-	return clients.getClient().iterator().next();
-    }
-
     void fillValues(Client source, SubjectPersonEntity target) {
+	fillValues(source, (SubjectEntity) target);
+
 	// First_Name s:string Имя (для физ. лица)
 	// Last_Name s:string Фамилия (для физ. лица)
 	// Middle_Name s:string Отчество (для физ. лица)

@@ -42,7 +42,6 @@ public class InsuranceClassTypeDictServiceWS extends AbstractESBDServiceWS imple
 	    throws NotFound {
 	checkSession();
 	String esbdDate = convertCalendarToESBDDate(date);
-	;
 	try {
 	    int aClassID = getSoapService().getClassId(getSessionId(), new Long(subjectPerson.getId()).intValue(),
 		    esbdDate, 0);

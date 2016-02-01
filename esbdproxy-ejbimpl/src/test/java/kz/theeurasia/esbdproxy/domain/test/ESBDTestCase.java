@@ -21,7 +21,7 @@ public class ESBDTestCase {
 	User user = soap.authenticateUser(ESBD_WS_USER_NAME, ESBD_WS_USER_PASSWORD);
 	sessionId = user.getSessionID();
     }
-    
+
     protected static String getSessionId() {
 	return sessionId;
     }

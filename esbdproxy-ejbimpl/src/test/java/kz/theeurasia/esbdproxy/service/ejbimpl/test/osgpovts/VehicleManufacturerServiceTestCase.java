@@ -37,7 +37,7 @@ public class VehicleManufacturerServiceTestCase extends GeneralServiceTestCase {
     @Test
     public void testGetByName() throws NamingException {
 	VehicleManufacturerServiceDAO service = getVehicleManufacturerServiceEntityWS();
-	List<VehicleManufacturerEntity> list = service.getByName(VALID_VEHICLE_MANUFACTURER_NAME);
+	List<VehicleManufacturerEntity> list = service.getByName("INFINITI FX");
 	assertThat(list, allOf(not(nullValue()), not(empty())));
 	for (VehicleManufacturerEntity e : list) {
 	    assertThat(e, not(nullValue()));

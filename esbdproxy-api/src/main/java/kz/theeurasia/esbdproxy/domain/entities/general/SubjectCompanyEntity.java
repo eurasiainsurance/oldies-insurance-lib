@@ -45,50 +45,50 @@ public class SubjectCompanyEntity extends SubjectEntity {
     // GENERATED
 
     public String getCompanyName() {
-        return companyName;
+	return companyName;
     }
 
     public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+	this.companyName = companyName;
     }
 
     public String getHeadName() {
-        return headName;
+	return headName;
     }
 
     public void setHeadName(String headName) {
-        this.headName = headName;
+	this.headName = headName;
     }
 
     public String getAccountantName() {
-        return accountantName;
+	return accountantName;
     }
 
     public void setAccountantName(String accountantName) {
-        this.accountantName = accountantName;
+	this.accountantName = accountantName;
     }
 
     public long getCompanyActivityKindId() {
-        return companyActivityKindId;
+	return companyActivityKindId;
     }
 
     public void setCompanyActivityKindId(long companyActivityKindId) {
-        this.companyActivityKindId = companyActivityKindId;
+	this.companyActivityKindId = companyActivityKindId;
     }
 
     public CompanyActivityKindEntity getCompanyActivityKind() {
-        return companyActivityKind;
+	return companyActivityKind;
     }
 
     public void setCompanyActivityKind(CompanyActivityKindEntity companyActivityKind) {
-        this.companyActivityKind = companyActivityKind;
+	this.companyActivityKind = companyActivityKind;
     }
 
     public EconomicSectorDict getEconomicsSector() {
-        return economicsSector;
+	return economicsSector;
     }
 
     public void setEconomicsSector(EconomicSectorDict economicsSector) {
-        this.economicsSector = economicsSector;
+	this.economicsSector = economicsSector;
     }
 }

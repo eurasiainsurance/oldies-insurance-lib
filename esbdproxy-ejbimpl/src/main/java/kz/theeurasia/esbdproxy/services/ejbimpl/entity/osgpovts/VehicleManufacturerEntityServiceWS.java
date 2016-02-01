@@ -1,5 +1,6 @@
 package kz.theeurasia.esbdproxy.services.ejbimpl.entity.osgpovts;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +24,8 @@ public class VehicleManufacturerEntityServiceWS extends AbstractESBDEntityServic
 
     @Override
     public VehicleManufacturerEntity getById(Long id) throws NotFound {
+	if (id <= 0)
+	    throw new InvalidParameterException("ID must be greater than zero");
 	VOITUREMARK m = new VOITUREMARK();
 	m.setID(new Long(id).intValue());
 	ArrayOfVOITUREMARK manufacturers = getSoapService().getVoitureMarks(getSessionId(), m);
@@ -47,8 +50,9 @@ public class VehicleManufacturerEntityServiceWS extends AbstractESBDEntityServic
 	if (manufacturers == null || manufacturers.getVOITUREMARK() == null || manufacturers.getVOITUREMARK().isEmpty())
 	    return res;
 	for (VOITUREMARK source : manufacturers.getVOITUREMARK()) {
-	    VehicleManufacturerEntity manufacturer = new VehicleManufacturerEntity();
-	    fillValues(source, manufacturer);
+	    VehicleManufacturerEntity e = new VehicleManufacturerEntity();
+	    fillValues(source, e);
+	    res.add(e);
 	}
 	return res;
     }
@@ -56,6 +60,6 @@ public class VehicleManufacturerEntityServiceWS extends AbstractESBDEntityServic
     private void fillValues(VOITUREMARK source, VehicleManufacturerEntity target) {
 	target.setId(source.getID());
 	target.setName(source.getNAME());
-	target.setForeign(source.getISFOREIGNBOOL() == 1);
+	target.setForeign(source.getISFOREIGNBOOL() != 0);
     }
 }

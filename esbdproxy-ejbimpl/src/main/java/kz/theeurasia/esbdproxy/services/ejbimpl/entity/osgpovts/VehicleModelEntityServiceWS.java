@@ -1,5 +1,7 @@
 package kz.theeurasia.esbdproxy.services.ejbimpl.entity.osgpovts;
 
+import java.security.InvalidParameterException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -23,6 +25,9 @@ public class VehicleModelEntityServiceWS extends AbstractESBDEntityServiceWS imp
 
     @Override
     public VehicleModelEntity getById(Long id) throws NotFound {
+	if (id <= 0)
+	    throw new InvalidParameterException("ID must be greater than zero");
+	// VOITURE_MODEL_ID, NAME, VOITURE_MARK_ID
 	VOITUREMODEL m = new VOITUREMODEL();
 	m.setID(new Long(id).intValue());
 	ArrayOfVOITUREMODEL models = getSoapService().getVoitureModels(getSessionId(), m);
@@ -39,14 +44,43 @@ public class VehicleModelEntityServiceWS extends AbstractESBDEntityServiceWS imp
 
     @Override
     public List<VehicleModelEntity> getByName(String name) {
-	// TODO Auto-generated method stub
-	return null;
+	// VOITURE_MODEL_ID, NAME, VOITURE_MARK_ID
+	List<VehicleModelEntity> res = new ArrayList<>();
+	VOITUREMODEL m = new VOITUREMODEL();
+	m.setNAME(name);
+	ArrayOfVOITUREMODEL reslist = getSoapService().getVoitureModels(getSessionId(), m);
+	if (reslist == null || reslist.getVOITUREMODEL() == null || reslist.getVOITUREMODEL().isEmpty())
+	    return res;
+	for (VOITUREMODEL source : reslist.getVOITUREMODEL()) {
+	    VehicleModelEntity e = new VehicleModelEntity();
+	    fillValues(source, e);
+	    res.add(e);
+	}
+	return res;
     }
 
     @Override
     public List<VehicleModelEntity> getByManufacturer(VehicleManufacturerEntity manufacturer) {
-	// TODO Auto-generated method stub
-	return null;
+	// VOITURE_MODEL_ID, NAME, VOITURE_MARK_ID
+	List<VehicleModelEntity> res = new ArrayList<>();
+	VOITUREMODEL m = new VOITUREMODEL();
+	m.setVOITUREMARKID(new Long(manufacturer.getId()).intValue());
+	ArrayOfVOITUREMODEL reslist = getSoapService().getVoitureModels(getSessionId(), m);
+	if (reslist == null || reslist.getVOITUREMODEL() == null || reslist.getVOITUREMODEL().isEmpty())
+	    return res;
+	for (VOITUREMODEL source : reslist.getVOITUREMODEL()) {
+	    VehicleModelEntity e = new VehicleModelEntity();
+	    fillValues(source, e, manufacturer);
+	    res.add(e);
+	}
+	return res;
+    }
+
+    private void fillValues(VOITUREMODEL source, VehicleModelEntity target,
+	    VehicleManufacturerEntity defaultManufacturer) {
+	target.setId(source.getID());
+	target.setName(source.getNAME());
+	target.setManufacturer(defaultManufacturer);
     }
 
     private void fillValues(VOITUREMODEL source, VehicleModelEntity target) {

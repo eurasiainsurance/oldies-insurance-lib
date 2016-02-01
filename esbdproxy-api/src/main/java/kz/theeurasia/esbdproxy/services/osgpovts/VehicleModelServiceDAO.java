@@ -8,5 +8,6 @@ import kz.theeurasia.esbdproxy.services.AbstractServiceDAO;
 
 public interface VehicleModelServiceDAO extends AbstractServiceDAO<VehicleModelEntity, Long> {
     List<VehicleModelEntity> getByName(String name);
+
     List<VehicleModelEntity> getByManufacturer(VehicleManufacturerEntity manufacturer);
 }

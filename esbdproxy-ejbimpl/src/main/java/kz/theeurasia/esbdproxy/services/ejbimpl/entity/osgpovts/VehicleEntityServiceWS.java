@@ -1,5 +1,6 @@
 package kz.theeurasia.esbdproxy.services.ejbimpl.entity.osgpovts;
 
+import java.security.InvalidParameterException;
 import java.util.Calendar;
 
 import javax.ejb.EJB;
@@ -28,6 +29,8 @@ public class VehicleEntityServiceWS extends AbstractESBDEntityServiceWS implemen
 
     @Override
     public VehicleEntity getById(Long id) throws NotFound {
+	if (id <= 0)
+	    throw new InvalidParameterException("ID must be greater than zero");
 	checkSession();
 	TF tf = new TF();
 	tf.setTFID(new Long(id).intValue());

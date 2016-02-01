@@ -1,5 +1,6 @@
 package kz.theeurasia.esbdproxy.services.ejbimpl.entity.osgpovts;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -84,6 +85,8 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 
     @Override
     public PolicyEntity getById(Long id) throws NotFound {
+	if (id <= 0)
+	    throw new InvalidParameterException("ID must be greater than zero");
 	checkSession();
 	Policy source = getSoapService().getPolicyByID(getSessionId(), new Long(id).intValue());
 	if (source == null)

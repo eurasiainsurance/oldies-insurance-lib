@@ -46,7 +46,7 @@ public class VehicleModelServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test
-    public void testGetByManufacturer() throws NamingException {
+    public void testGetByManufacturer() throws NamingException, NotFound {
 	VehicleModelServiceDAO service = getVehicleModelServiceEntityWS();
 	VehicleManufacturerEntity validManufacturer = new VehicleManufacturerEntity();
 	validManufacturer.setId(VALID_VEHICLE_MANUFACTURER_ID);

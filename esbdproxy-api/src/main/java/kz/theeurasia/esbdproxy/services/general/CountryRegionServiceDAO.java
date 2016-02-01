@@ -7,5 +7,6 @@ import kz.theeurasia.esbdproxy.services.AbstractServiceDAO;
 
 public interface CountryRegionServiceDAO extends AbstractServiceDAO<CountryRegionDict, Long> {
     List<CountryRegionDict> getAll();
+
     List<CountryRegionDict> getRegions();
 }

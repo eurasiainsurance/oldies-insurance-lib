@@ -1,7 +1,7 @@
 package kz.theeurasia.esbdproxy.domain.dict.osgpovts;
 
-import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredAgeClassEnum;
+import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
 
 public enum InsuredAgeExpirienceClassDict {
     OVER25_MORE2(4, InsuredAgeClassEnum.OVER25, InsuredExpirienceClassEnum.MORE2), //

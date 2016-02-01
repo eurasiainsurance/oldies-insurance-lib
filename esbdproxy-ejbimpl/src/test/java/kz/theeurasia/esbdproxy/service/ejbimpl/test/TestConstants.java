@@ -1,6 +1,9 @@
 package kz.theeurasia.esbdproxy.service.ejbimpl.test;
 
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuranceClassTypeDict;
+import kz.theeurasia.esbdproxy.domain.entities.general.SubjectCompanyEntity;
+import kz.theeurasia.esbdproxy.domain.entities.general.SubjectPersonEntity;
+import kz.theeurasia.esbdproxy.domain.enums.general.SubjectTypeEnum;
 
 public final class TestConstants {
     public static final long INVALID_BRANCH_ID = 999999999l;
@@ -46,4 +49,13 @@ public final class TestConstants {
     public static final Long VALID_VEHICLE_MODEL_ID = 143827l;
     public static final String VALID_VEHICLE_MODEL_NAME = "INFINITI FX35";
     public static final Long ININVALID_VEHICLE_MODEL_ID = 999999999l;
+
+    public static final long[] VALID_SUBJECT_IDS = new long[] { 1, 100 };
+    public static final SubjectTypeEnum[] VALID_SUBJECT_TYPES = new SubjectTypeEnum[] {
+	    SubjectTypeEnum.COMPANY,
+	    SubjectTypeEnum.PERSON };
+    public static final Class<?>[] VALID_SUBJECT_CLASSES = new Class<?>[] {
+	    SubjectCompanyEntity.class,
+	    SubjectPersonEntity.class };
+    public static final Long INVALID_SUBJECT_ID = -1l;
 }

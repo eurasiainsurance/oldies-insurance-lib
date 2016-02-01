@@ -25,8 +25,8 @@ public class VehicleModelEntityServiceWS extends AbstractESBDEntityServiceWS imp
 
     @Override
     public VehicleModelEntity getById(Long id) throws NotFound {
-	if (id <= 0)
-	    throw new InvalidParameterException("ID must be greater than zero");
+	if (id == null)
+	    throw new InvalidParameterException("ID must be not null");
 	// VOITURE_MODEL_ID, NAME, VOITURE_MARK_ID
 	VOITUREMODEL m = new VOITUREMODEL();
 	m.setID(new Long(id).intValue());
@@ -44,6 +44,8 @@ public class VehicleModelEntityServiceWS extends AbstractESBDEntityServiceWS imp
 
     @Override
     public List<VehicleModelEntity> getByName(String name) {
+	if (name == null || name.trim().isEmpty())
+	    throw new InvalidParameterException("'name' must be not an empty string");
 	// VOITURE_MODEL_ID, NAME, VOITURE_MARK_ID
 	List<VehicleModelEntity> res = new ArrayList<>();
 	VOITUREMODEL m = new VOITUREMODEL();
@@ -61,6 +63,8 @@ public class VehicleModelEntityServiceWS extends AbstractESBDEntityServiceWS imp
 
     @Override
     public List<VehicleModelEntity> getByManufacturer(VehicleManufacturerEntity manufacturer) {
+	if (manufacturer == null)
+	    throw new InvalidParameterException("'manufacturer' must be not a null value");
 	// VOITURE_MODEL_ID, NAME, VOITURE_MARK_ID
 	List<VehicleModelEntity> res = new ArrayList<>();
 	VOITUREMODEL m = new VOITUREMODEL();

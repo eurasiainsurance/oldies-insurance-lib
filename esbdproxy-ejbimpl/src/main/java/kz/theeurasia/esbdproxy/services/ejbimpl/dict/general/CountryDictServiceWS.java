@@ -1,5 +1,6 @@
 package kz.theeurasia.esbdproxy.services.ejbimpl.dict.general;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +25,8 @@ public class CountryDictServiceWS implements CountryServiceDAO {
 
     @Override
     public CountryDict getById(Long id) throws NotFound {
+	if (id == null)
+	    throw new InvalidParameterException("ID must be not null");
 	CountryDict result = CountryDict.forId(id);
 	if (result == null)
 	    throw new NotFound(CountryDict.class.getSimpleName() + " not found with ID = '" + id + "'");

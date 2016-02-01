@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ejb.Singleton;
+import javax.xml.ws.soap.SOAPFaultException;
 
 import kz.theeurasia.asb.esbd.jaxws.ArrayOfDriver;
 import kz.theeurasia.asb.esbd.jaxws.ArrayOfPoliciesTF;
@@ -90,10 +91,16 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 
     @Override
     public PolicyEntity getById(Long id) throws NotFound {
-	if (id <= 0)
-	    throw new InvalidParameterException("ID must be greater than zero");
+	if (id == null)
+	    throw new InvalidParameterException("ID must be not null");
 	checkSession();
-	Policy source = getSoapService().getPolicyByID(getSessionId(), new Long(id).intValue());
+
+	Policy source = null;
+	try {
+	    source = getSoapService().getPolicyByID(getSessionId(), new Long(id).intValue());
+	} catch (SOAPFaultException e) {
+	    source = null;
+	}
 	if (source == null)
 	    throw new NotFound(PolicyEntity.class.getSimpleName() + " not found with ID = '" + id + "'");
 	PolicyEntity target = new PolicyEntity();
@@ -104,7 +111,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
     @Override
     public PolicyEntity getByNumber(String number) throws NotFound {
 	if (number == null || number.trim().isEmpty())
-	    throw new InvalidParameterException("Policy 'number' must not be an empty string");
+	    throw new InvalidParameterException("'number' must not be an empty string");
 	checkSession();
 	ArrayOfPolicy policies = getSoapService().getPoliciesByNumber(getSessionId(), number);
 	if (policies == null || policies.getPolicy() == null || policies.getPolicy().isEmpty())

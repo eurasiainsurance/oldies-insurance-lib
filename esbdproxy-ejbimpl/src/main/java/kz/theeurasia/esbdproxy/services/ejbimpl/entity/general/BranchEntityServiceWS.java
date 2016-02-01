@@ -1,5 +1,6 @@
 package kz.theeurasia.esbdproxy.services.ejbimpl.entity.general;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +41,8 @@ public class BranchEntityServiceWS extends AbstractESBDEntityServiceWS implement
 
     @Override
     public BranchEntity getById(Long id) throws NotFound {
+	if (id == null)
+	    throw new InvalidParameterException("ID must be not null");
 	lazyInit();
 	for (BranchEntity be : all)
 	    if (be.getId() == id)

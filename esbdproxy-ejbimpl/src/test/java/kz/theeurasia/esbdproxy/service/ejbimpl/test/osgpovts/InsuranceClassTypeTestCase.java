@@ -59,7 +59,7 @@ public class InsuranceClassTypeTestCase extends GeneralServiceTestCase {
 	try {
 	    SubjectPersonEntity e = new SubjectPersonEntity();
 	    e.setId(VALID_SUBJECT_PERSON_ID);
-	    InsuranceClassTypeDict res = service.getForSubjcect(e);
+	    InsuranceClassTypeDict res = service.getForSubject(e);
 	    assertThat(res, allOf(not(nullValue()), equalTo(VALID_CLASS_TYPE_FOR_CLIENT)));
 	} catch (NotFound e) {
 	    fail(e.getMessage());
@@ -71,7 +71,7 @@ public class InsuranceClassTypeTestCase extends GeneralServiceTestCase {
 	InsuranceClassTypeServiceDAO service = getInsuranceClassTypeServiceEntityWS();
 	SubjectPersonEntity e = new SubjectPersonEntity();
 	e.setId(INVALID_SUBJECT_PERSON_ID);
-	service.getForSubjcect(e);
+	service.getForSubject(e);
     }
 
 }

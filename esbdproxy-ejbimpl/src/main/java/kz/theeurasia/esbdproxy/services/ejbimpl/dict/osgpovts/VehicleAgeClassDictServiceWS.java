@@ -1,5 +1,6 @@
 package kz.theeurasia.esbdproxy.services.ejbimpl.dict.osgpovts;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +25,8 @@ public class VehicleAgeClassDictServiceWS implements VehicleAgeClassServiceDAO {
 
     @Override
     public VehicleAgeClassDict getById(Long id) throws NotFound {
+	if (id == null)
+	    throw new InvalidParameterException("ID must be not null");
 	VehicleAgeClassDict result = VehicleAgeClassDict.forId(id);
 	if (result == null)
 	    throw new NotFound(VehicleAgeClassDict.class.getSimpleName() + " not found with ID = '" + id + "'");

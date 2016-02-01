@@ -1,5 +1,6 @@
 package kz.theeurasia.esbdproxy.services.ejbimpl.dict.osgpovts;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +26,8 @@ public class VehicleClassDictServiceWS
 
     @Override
     public VehicleClassDict getById(Long id) throws NotFound {
+	if (id == null)
+	    throw new InvalidParameterException("ID must be not null and greater than zero");
 	VehicleClassDict result = VehicleClassDict.forId(id);
 	if (result == null)
 	    throw new NotFound(VehicleClassDict.class.getSimpleName() + " not found with ID = '" + id + "'");

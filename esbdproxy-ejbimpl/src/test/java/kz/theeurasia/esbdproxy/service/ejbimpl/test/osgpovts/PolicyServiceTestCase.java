@@ -1,5 +1,6 @@
 package kz.theeurasia.esbdproxy.service.ejbimpl.test.osgpovts;
 
+import static kz.theeurasia.esbdproxy.service.ejbimpl.test.TestConstants.*;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
@@ -13,11 +14,6 @@ import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.osgpovts.PolicyServiceDAO;
 
 public class PolicyServiceTestCase extends GeneralServiceTestCase {
-
-    private static final Long VALID_POLICY_ID = null;
-    private static final Long INVALID_POLICY_ID = null;
-    private static final String VALID_POLICY_NUMBER = "0088851";
-    private static final String INVALID_POLICY_NUMBER = "ZZZ";
 
     @Test
     public void testGetById() throws NamingException {

@@ -108,4 +108,10 @@ public final class TestConstants {
     public static final String[] VALID_SUBJECT_PERSON_IINS = new String[] { "581114350286", "870622300359" };
     public static final String[] INVALID_SUBJECT_PERSON_IINS = new String[] { "930840000071", "ZZZZ" };
 
+    // Policy
+    public static final Long VALID_POLICY_ID = 31571176l;
+    public static final Long INVALID_POLICY_ID = 1l;
+    public static final String VALID_POLICY_NUMBER = "0088851";
+    public static final String INVALID_POLICY_NUMBER = "ZZZ";
+
 }

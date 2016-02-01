@@ -1,5 +1,6 @@
 package kz.theeurasia.esbdproxy.services.ejbimpl.dict.osgpovts;
 
+import java.security.InvalidParameterException;
 import java.util.Calendar;
 
 import javax.ejb.Singleton;
@@ -16,6 +17,8 @@ public class InsuranceClassTypeDictServiceWS extends AbstractESBDServiceWS imple
 
     @Override
     public InsuranceClassTypeDict getById(Long id) throws NotFound {
+	if (id == null)
+	    throw new InvalidParameterException("ID must be not null");
 	checkSession();
 	String classCode = getSoapService().getClassText(getSessionId(), new Long(id).intValue());
 	if (classCode == null || classCode.trim().equals(""))
@@ -32,14 +35,16 @@ public class InsuranceClassTypeDictServiceWS extends AbstractESBDServiceWS imple
     }
 
     @Override
-    public InsuranceClassTypeDict getForSubjcect(SubjectPersonEntity individual) throws NotFound {
+    public InsuranceClassTypeDict getForSubject(SubjectPersonEntity individual) throws NotFound {
 	Calendar today = Calendar.getInstance();
-	return getForSubjcect(individual, today);
+	return getForSubject(individual, today);
     }
 
     @Override
-    public InsuranceClassTypeDict getForSubjcect(SubjectPersonEntity subjectPerson, Calendar date)
+    public InsuranceClassTypeDict getForSubject(SubjectPersonEntity subjectPerson, Calendar date)
 	    throws NotFound {
+	if (subjectPerson == null || date == null)
+	    throw new InvalidParameterException("'subjectPerson' and 'date' must not be null values");
 	checkSession();
 	String esbdDate = convertCalendarToESBDDate(date);
 	try {

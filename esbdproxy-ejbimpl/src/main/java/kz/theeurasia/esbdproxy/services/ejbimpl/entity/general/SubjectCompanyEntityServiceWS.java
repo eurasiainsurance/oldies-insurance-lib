@@ -1,5 +1,7 @@
 package kz.theeurasia.esbdproxy.services.ejbimpl.entity.general;
 
+import java.security.InvalidParameterException;
+
 import javax.ejb.EJB;
 import javax.ejb.Singleton;
 
@@ -19,6 +21,8 @@ public class SubjectCompanyEntityServiceWS extends SubjectEntityServiceWS implem
 
     @Override
     public SubjectCompanyEntity getById(Long id) throws NotFound {
+	if (id == null)
+	    throw new InvalidParameterException("ID must be not null");
 	checkSession();
 	Client source = getSoapService().getClientByID(getSessionId(), id.intValue());
 	if (source == null)
@@ -33,14 +37,16 @@ public class SubjectCompanyEntityServiceWS extends SubjectEntityServiceWS implem
     }
 
     @Override
-    public SubjectCompanyEntity getByBIN(String idNumber) throws NotFound {
-	Client source = fetchClientByIdNumber(idNumber, false, true);
+    public SubjectCompanyEntity getByBIN(String bin) throws NotFound {
+	if (bin == null || bin.trim().isEmpty())
+	    throw new InvalidParameterException("'bin' must be not an empty string");
+	Client source = fetchClientByIdNumber(bin, false, true);
 	if (source == null)
 	    throw new NotFound(
-		    SubjectCompanyEntity.class.getSimpleName() + " not found with IDNumber = '" + idNumber + "'");
+		    SubjectCompanyEntity.class.getSimpleName() + " not found with 'bin' = '" + bin + "'");
 	boolean isNotPerson = source.getNaturalPersonBool() == 0;
 	if (!isNotPerson)
-	    throw new NotFound(SubjectCompanyEntity.class.getSimpleName() + " not found with IDNumber = '" + idNumber
+	    throw new NotFound(SubjectCompanyEntity.class.getSimpleName() + " not found with 'bin' = '" + bin
 		    + "'. It was a " + SubjectPersonEntity.class.getName());
 	SubjectCompanyEntity target = new SubjectCompanyEntity();
 	fillValues(source, target);

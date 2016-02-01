@@ -1,5 +1,6 @@
 package kz.theeurasia.esbdproxy.services.ejbimpl.entity.general;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,6 +58,8 @@ public class UserEntityServiceWS extends AbstractESBDEntityServiceWS implements 
 
     @Override
     public UserEntity getById(Long id) throws NotFound {
+	if (id == null)
+	    throw new InvalidParameterException("ID must be not null");
 	lazyInit();
 	for (UserEntity be : all)
 	    if (be.getId() == id)

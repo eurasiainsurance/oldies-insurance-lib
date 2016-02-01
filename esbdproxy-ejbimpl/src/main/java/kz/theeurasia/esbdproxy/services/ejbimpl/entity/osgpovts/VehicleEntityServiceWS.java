@@ -29,8 +29,8 @@ public class VehicleEntityServiceWS extends AbstractESBDEntityServiceWS implemen
 
     @Override
     public VehicleEntity getById(Long id) throws NotFound {
-	if (id <= 0)
-	    throw new InvalidParameterException("ID must be greater than zero");
+	if (id == null)
+	    throw new InvalidParameterException("ID must be not null");
 	checkSession();
 	TF tf = new TF();
 	tf.setTFID(new Long(id).intValue());
@@ -48,6 +48,8 @@ public class VehicleEntityServiceWS extends AbstractESBDEntityServiceWS implemen
 
     @Override
     public VehicleEntity getByVINCode(String vinCode) throws NotFound {
+	if (vinCode == null || vinCode.trim().isEmpty())
+	    throw new InvalidParameterException("'vinCode' must be not an empty string");
 	checkSession();
 	ArrayOfTF vehicles = getSoapService().getTFByVIN(getSessionId(), vinCode);
 	if (vehicles == null || vehicles.getTF() == null || vehicles.getTF().size() == 0)

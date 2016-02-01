@@ -1,5 +1,6 @@
 package kz.theeurasia.esbdproxy.services.ejbimpl.entity.general;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,6 +47,8 @@ public class InsuranceCompanyEntityServiceWS extends AbstractESBDEntityServiceWS
 
     @Override
     public InsuranceCompanyEntity getById(Long id) throws NotFound {
+	if (id == null)
+	    throw new InvalidParameterException("ID must be not null");
 	lazyInit();
 	for (InsuranceCompanyEntity be : all)
 	    if (be.getId() == id)

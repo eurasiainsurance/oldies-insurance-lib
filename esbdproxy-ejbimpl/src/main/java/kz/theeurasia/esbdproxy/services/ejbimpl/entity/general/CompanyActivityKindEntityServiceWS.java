@@ -1,5 +1,6 @@
 package kz.theeurasia.esbdproxy.services.ejbimpl.entity.general;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,6 +48,8 @@ public class CompanyActivityKindEntityServiceWS extends AbstractESBDEntityServic
 
     @Override
     public CompanyActivityKindEntity getById(Long id) throws NotFound {
+	if (id == null)
+	    throw new InvalidParameterException("ID must be not null");
 	lazyInit();
 	for (CompanyActivityKindEntity be : all)
 	    if (be.getId() == id)

@@ -1,5 +1,6 @@
 package kz.theeurasia.esbdproxy.services.ejbimpl.dict.general;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +25,8 @@ public class MaritalStatusDictServiceWS implements MaritalStatusServiceDAO {
 
     @Override
     public MaritalStatusDict getById(Long id) throws NotFound {
+	if (id == null)
+	    throw new InvalidParameterException("ID must be not null");
 	MaritalStatusDict result = MaritalStatusDict.forId(id);
 	if (result == null)
 	    throw new NotFound(MaritalStatusDict.class.getSimpleName() + " not found with ID = '" + id + "'");

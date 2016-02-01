@@ -17,7 +17,7 @@ public enum InsuranceClassTypeDict {
     CLASS_12("12"),
     CLASS_13("13"),
     CLASS_M("М"),
-    UNSPECIFIED("");
+    UNSPECIFIED("UNPSECIFIED");
 
     private final String code;
 

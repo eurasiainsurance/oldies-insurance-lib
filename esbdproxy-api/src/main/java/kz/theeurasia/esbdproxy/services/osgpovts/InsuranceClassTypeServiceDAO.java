@@ -10,7 +10,7 @@ import kz.theeurasia.esbdproxy.services.NotFound;
 public interface InsuranceClassTypeServiceDAO extends GeneralServiceDAO<InsuranceClassTypeDict, Long> {
     InsuranceClassTypeDict getByCode(String code) throws NotFound;
 
-    InsuranceClassTypeDict getForSubjcect(SubjectPersonEntity individual) throws NotFound;
+    InsuranceClassTypeDict getForSubject(SubjectPersonEntity individual) throws NotFound;
 
-    InsuranceClassTypeDict getForSubjcect(SubjectPersonEntity individual, Calendar date) throws NotFound;
+    InsuranceClassTypeDict getForSubject(SubjectPersonEntity individual, Calendar date) throws NotFound;
 }

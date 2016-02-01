@@ -1,5 +1,7 @@
 package kz.theeurasia.esbdproxy.services.ejbimpl.entity.general;
 
+import java.security.InvalidParameterException;
+
 import javax.ejb.EJB;
 import javax.ejb.Singleton;
 
@@ -27,6 +29,8 @@ public class SubjectPersonEntityServiceWS extends SubjectEntityServiceWS impleme
 
     @Override
     public SubjectPersonEntity getById(Long id) throws NotFound {
+	if (id == null)
+	    throw new InvalidParameterException("ID must be not null");
 	checkSession();
 	Client source = getSoapService().getClientByID(getSessionId(), id.intValue());
 	if (source == null)
@@ -41,14 +45,16 @@ public class SubjectPersonEntityServiceWS extends SubjectEntityServiceWS impleme
     }
 
     @Override
-    public SubjectPersonEntity getByIIN(String idNumber) throws NotFound {
-	Client source = fetchClientByIdNumber(idNumber, true, false);
+    public SubjectPersonEntity getByIIN(String iin) throws NotFound {
+	if (iin == null || iin.trim().isEmpty())
+	    throw new InvalidParameterException("'iin' must be not an empty string");
+	Client source = fetchClientByIdNumber(iin, true, false);
 	if (source == null)
 	    throw new NotFound(
-		    SubjectPersonEntity.class.getSimpleName() + " not found with IDNumber = '" + idNumber + "'");
+		    SubjectPersonEntity.class.getSimpleName() + " not found with 'iin' = '" + iin + "'");
 	boolean isNotPerson = source.getNaturalPersonBool() == 0;
 	if (isNotPerson)
-	    throw new NotFound(SubjectPersonEntity.class.getSimpleName() + " not found with IDNumber = '" + idNumber
+	    throw new NotFound(SubjectPersonEntity.class.getSimpleName() + " not found with 'iin' = '" + iin
 		    + "'. It was a " + SubjectCompanyEntity.class.getName());
 	SubjectPersonEntity target = new SubjectPersonEntity();
 	fillValues(source, target);

@@ -1,5 +1,10 @@
 package kz.theeurasia.esbdproxy.service.ejbimpl.test;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Properties;
 
 import javax.naming.Context;
@@ -56,6 +61,9 @@ import kz.theeurasia.esbdproxy.services.osgpovts.VehicleModelServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleServiceDAO;
 
 public abstract class GeneralServiceTestCase {
+    private static final String ESBD_DATE_FORMAT_PATTERN = "dd.MM.yyyy";
+    private static final DateFormat ESBD_DATE_FORMATER = new SimpleDateFormat(ESBD_DATE_FORMAT_PATTERN);
+
     private static final String OPEN_EJB_CONTEXT_FACTORY = "org.apache.openejb.client.LocalInitialContextFactory";
 
     private static Context context;
@@ -167,5 +175,41 @@ public abstract class GeneralServiceTestCase {
 
     protected VehicleClassServiceDAO getVehicleClassServiceEntityWS() throws NamingException {
 	return (VehicleClassServiceDAO) context.lookup(nameFor(VehicleClassDictServiceWS.class));
+    }
+
+    protected Calendar convertESBDDateToCalendar(String esbdDate) {
+	if (esbdDate == null || esbdDate.trim().equals(""))
+	    return null;
+	try {
+	    Calendar date = Calendar.getInstance();
+	    date.setTime(ESBD_DATE_FORMATER.parse(esbdDate));
+	    return date;
+	} catch (ParseException e) {
+	    e.printStackTrace();
+	    return null;
+	}
+    }
+
+    protected Date convertESBDDateToDate(String esbdDate) {
+	if (esbdDate == null || esbdDate.trim().equals(""))
+	    return null;
+	try {
+	    return ESBD_DATE_FORMATER.parse(esbdDate);
+	} catch (ParseException e) {
+	    e.printStackTrace();
+	    return null;
+	}
+    }
+
+    protected String convertCalendarToESBDDate(Calendar calendar) {
+	if (calendar == null)
+	    return null;
+	return convertDateToESBDDate(calendar.getTime());
+    }
+
+    protected String convertDateToESBDDate(Date date) {
+	if (date == null)
+	    return null;
+	return ESBD_DATE_FORMATER.format(date);
     }
 }

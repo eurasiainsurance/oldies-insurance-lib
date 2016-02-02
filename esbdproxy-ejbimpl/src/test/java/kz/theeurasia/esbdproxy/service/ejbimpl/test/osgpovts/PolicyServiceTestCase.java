@@ -50,5 +50,4 @@ public class PolicyServiceTestCase extends GeneralServiceTestCase {
 	PolicyServiceDAO service = getPolicyServiceEntityWS();
 	service.getByNumber(INVALID_POLICY_NUMBER);
     }
-
 }

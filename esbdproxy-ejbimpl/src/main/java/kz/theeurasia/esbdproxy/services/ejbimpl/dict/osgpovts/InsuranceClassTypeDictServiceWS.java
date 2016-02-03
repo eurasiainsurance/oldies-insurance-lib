@@ -59,4 +59,9 @@ public class InsuranceClassTypeDictServiceWS extends AbstractESBDServiceWS imple
 		    + " and date = " + esbdDate, e);
 	}
     }
+
+    @Override
+    public InsuranceClassTypeDict getDefault() {
+	return InsuranceClassTypeDict.CLASS_3;
+    }
 }

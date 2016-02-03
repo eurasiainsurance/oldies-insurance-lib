@@ -5,7 +5,7 @@ import javax.faces.bean.ManagedBean;
 
 import kz.theeurasia.services.domain.osgpovts.VehicleClass;
 
-@ManagedBean(eager = true)
+@ManagedBean(eager = true,name="QSADSD")
 @ApplicationScoped
 public class VehicleClassService {
 

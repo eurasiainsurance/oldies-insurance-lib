@@ -13,4 +13,6 @@ public interface InsuranceClassTypeServiceDAO extends GeneralServiceDAO<Insuranc
     InsuranceClassTypeDict getForSubject(SubjectPersonEntity individual) throws NotFound;
 
     InsuranceClassTypeDict getForSubject(SubjectPersonEntity individual, Calendar date) throws NotFound;
+
+    InsuranceClassTypeDict getDefault();
 }

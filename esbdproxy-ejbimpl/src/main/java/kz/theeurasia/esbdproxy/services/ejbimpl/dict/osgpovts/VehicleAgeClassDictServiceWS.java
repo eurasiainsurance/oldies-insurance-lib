@@ -38,4 +38,11 @@ public class VehicleAgeClassDictServiceWS implements VehicleAgeClassServiceDAO {
 	return new ArrayList<>(all);
     }
 
+    @Override
+    public List<VehicleAgeClassDict> getApplicableForOSGPOVTS() {
+	List<VehicleAgeClassDict> res = new ArrayList<>();
+	res.add(VehicleAgeClassDict.OVER7);
+	res.add(VehicleAgeClassDict.UNDER7);
+	return res;
+    }
 }

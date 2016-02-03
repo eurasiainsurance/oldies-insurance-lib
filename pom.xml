@@ -44,7 +44,7 @@
 			<dependency>
 				<groupId>kz.theeurasia.asb.esbd</groupId>
 				<artifactId>esbd-jax-ws-client</artifactId>
-				<version>1.1</version>
+				<version>1.0</version>
 			</dependency>
 			<dependency>
 				<groupId>org.primefaces</groupId>

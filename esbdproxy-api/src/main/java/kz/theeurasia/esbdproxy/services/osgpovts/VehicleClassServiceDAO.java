@@ -7,4 +7,6 @@ import kz.theeurasia.esbdproxy.services.GeneralServiceDAO;
 
 public interface VehicleClassServiceDAO extends GeneralServiceDAO<VehicleClassDict, Long> {
     List<VehicleClassDict> getAll();
+
+    List<VehicleClassDict> getApplicableForOSGPOVTS();
 }

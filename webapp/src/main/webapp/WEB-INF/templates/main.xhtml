@@ -14,15 +14,15 @@
 	<f:view>
 		<h:graphicImage alt="#{glb['name.eurasia.full']}" library="images"
 			name="eurasia_logo.png" />
+		<p:growl autoUpdate="true" />
 		<br />
 		<br />
-		<br />
+		<p:overlayPanel widgetVar="statusDialog" id="statusDialog">
+			<p:graphicImage library="images" name="loading.gif" />
+		</p:overlayPanel>
 		<ui:insert name="page-content" />
-		<p:ajaxStatus>
-			<f:facet name="start">
-				<p:graphicImage library="images" name="loading.gif" />
-			</f:facet>
-		</p:ajaxStatus>
+		<p:ajaxStatus onstart="PF('statusDialog').show()"
+			onsuccess="PF('statusDialog').hide()" />
 
 	</f:view>
 </h:body>

@@ -5,7 +5,7 @@ import javax.faces.bean.ManagedBean;
 
 import kz.theeurasia.services.domain.osgpovts.InsuredAgeClass;
 
-@ManagedBean(eager = true)
+@ManagedBean(eager = true,name="QQQ")
 @ApplicationScoped
 public class InsuredAgeClassService {
 

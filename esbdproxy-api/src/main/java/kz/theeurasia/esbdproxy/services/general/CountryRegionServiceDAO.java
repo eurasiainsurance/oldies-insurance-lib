@@ -9,4 +9,6 @@ public interface CountryRegionServiceDAO extends GeneralServiceDAO<CountryRegion
     List<CountryRegionDict> getAll();
 
     List<CountryRegionDict> getRegions();
+
+    CountryRegionDict getDefaultRegion();
 }

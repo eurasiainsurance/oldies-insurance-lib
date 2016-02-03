@@ -9,16 +9,12 @@ import javax.faces.bean.ManagedBean;
 
 import kz.theeurasia.policy.osgpovts.domain.Insured;
 import kz.theeurasia.policy.osgpovts.domain.Vehicle;
-import kz.theeurasia.services.domain.esbd.ClientInfo;
-import kz.theeurasia.services.domain.global.IdNumber;
-import kz.theeurasia.services.domain.global.InsuranceClassType;
 import kz.theeurasia.services.domain.osgpovts.InsuredInfo;
 import kz.theeurasia.services.domain.osgpovts.PolicyTermClass;
 import kz.theeurasia.services.domain.osgpovts.VehicleInfo;
 import kz.theeurasia.services.services.ESBDAccess;
 import kz.theeurasia.services.services.ESBDException;
 import kz.theeurasia.services.services.ESBDFaultException;
-import kz.theeurasia.services.services.NotFound;
 import kz.theeurasia.services.services.OSGPOVTSCalculator;
 
 @ManagedBean

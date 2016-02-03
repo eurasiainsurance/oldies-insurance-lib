@@ -47,7 +47,7 @@ public class VehicleEntity {
     public boolean equals(Object obj) {
 	return obj != null && this.getClass().isInstance(obj) && getId() == this.getClass().cast(obj).getId();
     }
-
+    
     // GENERATED
 
     public long getId() {

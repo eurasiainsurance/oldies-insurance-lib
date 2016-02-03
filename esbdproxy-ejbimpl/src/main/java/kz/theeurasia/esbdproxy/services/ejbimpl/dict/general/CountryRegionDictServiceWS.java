@@ -48,4 +48,8 @@ public class CountryRegionDictServiceWS implements CountryRegionServiceDAO {
 	return new ArrayList<>(regions);
     }
 
+    @Override
+    public CountryRegionDict getDefaultRegion() {
+	return CountryRegionDict.GALM;
+    }
 }

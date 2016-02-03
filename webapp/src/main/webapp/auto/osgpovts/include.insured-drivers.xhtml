@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<h:panelGroup xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:comp="http://xmlns.jcp.org/jsf/composite"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+	<p:dataGrid var="driver" value="#{osgpovtsView.policy.insuredDrivers}"
+		layout="grid" columns="2">
+
+		<p:panel>
+			<f:facet name="header">
+				<h:outputText rendered="#{empty driver.displayName}"
+					value="#{gpovts['title.insuted-driver.default-name']}" />
+				<h:outputText rendered="#{not empty driver.displayName}"
+					value="#{driver.displayName}" />
+				<p:outputLabel
+					rendered="#{not empty driver.insuranceClassType and driver.insuranceClassType ne 'UNSPECIFIED'}"
+					value=" - #{gpovts['label.si.insurance-class.' += driver.insuranceClassType]}" />
+			</f:facet>
+			<f:facet name="actions">
+				<p:commandLink
+					styleClass="ui-panel-titlebar-icon ui-corner-all ui-state-default"
+					rendered="#{fn:length(osgpovtsView.policy.insuredDrivers) gt 1}"
+					action="#{osgpovtsView.removeInsuredDriver(driver)}"
+					process="@this" update="@form">
+					<h:outputText styleClass="ui-icon ui-icon-close" />
+				</p:commandLink>
+			</f:facet>
+
+			<h:panelGrid columns="1">
+
+				<p:outputLabel value="#{gpovts['label.input.insured.id-number']}" />
+				<p:inputMask mask="999999999999" value="#{driver.idNumber}"
+					onchange="rcIdNumberChanged()">
+					<pe:keyFilter regEx="/[0-9A-Z]/i" preventPaste="false" />
+				</p:inputMask>
+				<p:remoteCommand name="rcIdNumberChanged"
+					actionListener="#{osgpovtsView.onIdNumberChanged(driver)}"
+					update="@form" />
+
+				<p:outputLabel
+					value="#{gpovts['label.input.insured.insured-age-class']}" />
+				<p:selectOneMenu value="#{driver.ageClass}"
+					disabled="#{driver.fetched}">
+					<p:ajax event="change" process="@this" update="@form"
+						listener="#{osgpovtsView.doCalculatePolicyCost}" />
+					<f:selectItems value="#{insuredAgeClassService.validItems}"
+						var="insuredAgeClass" itemValue="#{insuredAgeClass}"
+						itemLabel="#{gpovts['label.si.insured-age-class.' += insuredAgeClass]}" />
+				</p:selectOneMenu>
+
+				<p:outputLabel
+					value="#{gpovts['label.input.insured.driver-expirience-class']}" />
+				<p:selectOneMenu value="#{driver.expirienceClass}">
+					<p:ajax event="change" process="@this" update="@form"
+						listener="#{osgpovtsView.doCalculatePolicyCost}" />
+					<f:selectItems value="#{insuredExpirienceClassService.validItems}"
+						var="insuredExpirienceClass" itemValue="#{insuredExpirienceClass}"
+						itemLabel="#{gpovts['label.si.insured-expirience-class.' += insuredExpirienceClass]}" />
+				</p:selectOneMenu>
+
+			</h:panelGrid>
+
+			<h:panelGrid columns="2">
+				<p:outputPanel>
+					<p:selectBooleanCheckbox value="#{driver.hasAnyPrivilege}">
+						<p:ajax event="change" process="@this" update="@form"
+							listener="#{osgpovtsView.doCalculatePolicyCost}" />
+					</p:selectBooleanCheckbox>
+					<p:outputLabel
+						value="#{gpovts['label.input.insured.has-privilege']}" />
+				</p:outputPanel>
+			</h:panelGrid>
+
+		</p:panel>
+
+	</p:dataGrid>
+
+	<p:commandButton value="#{gpovts['command.add-insured']}"
+		action="#{osgpovtsView.addInsuredDriver}" process="@this"
+		update="@form"
+		rendered="#{fn:length(osgpovtsView.policy.insuredVehicles) eq 1}" />
+
+</h:panelGroup>

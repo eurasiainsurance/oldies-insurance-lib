@@ -17,8 +17,9 @@ public enum CountryRegionDict {
     OPVL(8, "14", true), // Павлодарская область - код 14
     OSK(6, "15", true), // Северо-Казахстанская область - код 15
     OVK(3, "16", true), // Восточно-Казахстанская область - код 16
-    UNSPECIFIED1(18, "", false), // Временная регистрация?!
-    UNSPECIFIED2(17, "", false), // Временная въезд?!
+    TEMPORARY_REGISTRATION(18, "Временная регистрация", false), // Временная
+								// регистрация?!
+    TEMPORARY_ENTRY(17, "Временная въезд", false), // Временная въезд?!
     UNSPECIFIED(0, "", false);
 
     private final long id;

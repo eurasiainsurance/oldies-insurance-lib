@@ -1,4 +1,4 @@
-package kz.theeurasia.policy2.osgpovts;
+package kz.theeurasia.policy.osgpovts;
 
 public enum MessageBundleCode {
 

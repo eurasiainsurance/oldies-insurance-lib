@@ -1,4 +1,4 @@
-package kz.theeurasia.policy2.osgpovts.services;
+package kz.theeurasia.policy.osgpovts.services;
 
 import java.util.ArrayList;
 import java.util.List;

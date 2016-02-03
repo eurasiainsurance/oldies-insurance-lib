@@ -1,4 +1,4 @@
-package kz.theeurasia.policy2;
+package kz.theeurasia.policy;
 
 public enum GlobalMessageBundleCode {
 

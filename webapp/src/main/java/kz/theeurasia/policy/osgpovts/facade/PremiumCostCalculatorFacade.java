@@ -1,4 +1,4 @@
-package kz.theeurasia.policy2.osgpovts.facade;
+package kz.theeurasia.policy.osgpovts.facade;
 
 import java.security.InvalidParameterException;
 
@@ -6,13 +6,13 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
-import kz.theeurasia.policy2.osgpovts.MessageBundleCode;
-import kz.theeurasia.policy2.osgpovts.ValidationException;
-import kz.theeurasia.policy2.osgpovts.domain.InsuredDriver;
-import kz.theeurasia.policy2.osgpovts.domain.InsuredVehicle;
-import kz.theeurasia.policy2.osgpovts.domain.PolicyRequest;
-import kz.theeurasia.policy2.osgpovts.domain.PolicyTermClass;
-import kz.theeurasia.policy2.osgpovts.services.PremiumCostCalculatorRatesService;
+import kz.theeurasia.policy.osgpovts.MessageBundleCode;
+import kz.theeurasia.policy.osgpovts.ValidationException;
+import kz.theeurasia.policy.osgpovts.domain.InsuredDriver;
+import kz.theeurasia.policy.osgpovts.domain.InsuredVehicle;
+import kz.theeurasia.policy.osgpovts.domain.PolicyRequest;
+import kz.theeurasia.policy.osgpovts.domain.PolicyTermClass;
+import kz.theeurasia.policy.osgpovts.services.PremiumCostCalculatorRatesService;
 
 @ManagedBean
 @ViewScoped

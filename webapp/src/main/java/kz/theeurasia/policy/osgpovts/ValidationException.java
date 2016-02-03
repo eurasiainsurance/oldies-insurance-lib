@@ -1,4 +1,4 @@
-package kz.theeurasia.policy2.osgpovts;
+package kz.theeurasia.policy.osgpovts;
 
 public class ValidationException extends Exception {
     private static final long serialVersionUID = 8019870113991394429L;

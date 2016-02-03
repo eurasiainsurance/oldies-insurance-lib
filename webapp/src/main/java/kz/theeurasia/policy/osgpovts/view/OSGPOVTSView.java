@@ -1,4 +1,4 @@
-package kz.theeurasia.policy2.osgpovts.view;
+package kz.theeurasia.policy.osgpovts.view;
 
 import java.io.Serializable;
 import java.util.ResourceBundle;
@@ -10,13 +10,13 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
-import kz.theeurasia.policy2.GlobalMessageBundleCode;
-import kz.theeurasia.policy2.osgpovts.ValidationException;
-import kz.theeurasia.policy2.osgpovts.domain.InsuredDriver;
-import kz.theeurasia.policy2.osgpovts.domain.InsuredVehicle;
-import kz.theeurasia.policy2.osgpovts.domain.PolicyRequest;
-import kz.theeurasia.policy2.osgpovts.facade.PolicyRequestFacade;
-import kz.theeurasia.policy2.osgpovts.facade.PremiumCostCalculatorFacade;
+import kz.theeurasia.policy.GlobalMessageBundleCode;
+import kz.theeurasia.policy.osgpovts.ValidationException;
+import kz.theeurasia.policy.osgpovts.domain.InsuredDriver;
+import kz.theeurasia.policy.osgpovts.domain.InsuredVehicle;
+import kz.theeurasia.policy.osgpovts.domain.PolicyRequest;
+import kz.theeurasia.policy.osgpovts.facade.PolicyRequestFacade;
+import kz.theeurasia.policy.osgpovts.facade.PremiumCostCalculatorFacade;
 
 @ManagedBean(name = "osgpovtsView")
 @ViewScoped

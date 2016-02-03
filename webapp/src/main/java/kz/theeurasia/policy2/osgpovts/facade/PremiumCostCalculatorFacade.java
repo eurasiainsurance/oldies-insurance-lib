@@ -11,8 +11,8 @@ import kz.theeurasia.policy2.osgpovts.ValidationException;
 import kz.theeurasia.policy2.osgpovts.domain.InsuredDriver;
 import kz.theeurasia.policy2.osgpovts.domain.InsuredVehicle;
 import kz.theeurasia.policy2.osgpovts.domain.PolicyRequest;
+import kz.theeurasia.policy2.osgpovts.domain.PolicyTermClass;
 import kz.theeurasia.policy2.osgpovts.services.PremiumCostCalculatorRatesService;
-import kz.theeurasia.services.domain.osgpovts.PolicyTermClass;
 
 @ManagedBean
 @ViewScoped

@@ -14,7 +14,7 @@ import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleAgeClassDict;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredAgeClassEnum;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
-import kz.theeurasia.services.domain.osgpovts.PolicyTermClass;
+import kz.theeurasia.policy2.osgpovts.domain.PolicyTermClass;
 
 @ManagedBean
 @ApplicationScoped

@@ -1,4 +1,4 @@
-package kz.theeurasia.services.domain.osgpovts;
+package kz.theeurasia.policy2.osgpovts.domain;
 
 public enum PolicyTermClass {
     YEAR, // 1 год

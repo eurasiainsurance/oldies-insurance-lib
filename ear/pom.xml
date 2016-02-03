@@ -22,12 +22,6 @@
 		</dependency>
 		<dependency>
 			<groupId>kz.theeurasia.policy</groupId>
-			<artifactId>policyservices-ejbimpl</artifactId>
-			<version>1.0-SNAPSHOT</version>
-			<type>ejb</type>
-		</dependency>
-		<dependency>
-			<groupId>kz.theeurasia.policy</groupId>
 			<artifactId>esbdproxy-ejbimpl</artifactId>
 			<version>1.0-SNAPSHOT</version>
 			<type>ejb</type>

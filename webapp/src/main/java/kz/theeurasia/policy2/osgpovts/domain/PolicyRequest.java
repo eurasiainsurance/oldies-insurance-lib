@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import kz.theeurasia.services.domain.osgpovts.PolicyTermClass;
-
 public class PolicyRequest {
     private final UUID id = UUID.randomUUID();
 

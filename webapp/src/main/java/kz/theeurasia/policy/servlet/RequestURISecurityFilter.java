@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebFilter(urlPatterns = { "*.html", "*.xhtml" })
-public class SecurityFilter implements Filter {
+public class RequestURISecurityFilter implements Filter {
+
+    private static final String[] PROHIBITED_URI_ENDS = new String[] { ".include.html", ".include.xhtml" };
 
     @Override
     public void destroy() {
@@ -25,10 +27,13 @@ public class SecurityFilter implements Filter {
 	HttpServletRequest httpServletRequest = (HttpServletRequest) request;
 	HttpServletResponse httpServletResponse = (HttpServletResponse) response;
 	String requestURI = httpServletRequest.getRequestURI();
-	if (requestURI.endsWith(".include.html") || requestURI.endsWith(".include.xhtml"))
-	    httpServletResponse.sendRedirect("/");
-	else
-	    chain.doFilter(request, response);
+	for (String prohibitedURIEnd : PROHIBITED_URI_ENDS) {
+	    if (requestURI.endsWith(prohibitedURIEnd)) {
+		httpServletResponse.sendRedirect("/");
+		return;
+	    }
+	}
+	chain.doFilter(request, response);
     }
 
     @Override

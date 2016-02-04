@@ -53,6 +53,10 @@ public class InsuredVehicle {
 	return fetchedEntity != null;
     }
 
+    public String getSafeId() {
+	return id.toString().replaceAll("-", "_");
+    }
+
     // GENERATED
 
     public UUID getId() {

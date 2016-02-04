@@ -15,8 +15,9 @@ import kz.theeurasia.policy.osgpovts.ValidationException;
 import kz.theeurasia.policy.osgpovts.domain.InsuredDriver;
 import kz.theeurasia.policy.osgpovts.domain.InsuredVehicle;
 import kz.theeurasia.policy.osgpovts.domain.PolicyRequest;
-import kz.theeurasia.policy.osgpovts.facade.PolicyRequestFacade;
-import kz.theeurasia.policy.osgpovts.facade.PremiumCostCalculatorFacade;
+import kz.theeurasia.policy.osgpovts.facade.DriverFacade;
+import kz.theeurasia.policy.osgpovts.facade.PolicyFacade;
+import kz.theeurasia.policy.osgpovts.facade.VehicleFacade;
 
 @ManagedBean(name = "osgpovtsView")
 @ViewScoped
@@ -30,18 +31,23 @@ public class OSGPOVTSView implements Serializable {
     @ManagedProperty("#{gpovts}")
     private ResourceBundle gpovts;
 
-    @ManagedProperty("#{policyRequestFacade}")
-    private PolicyRequestFacade policyRequestFacade;
+    @ManagedProperty("#{policyFacade}")
+    private PolicyFacade policyFacade;
 
-    @ManagedProperty("#{premiumCostCalculatorFacade}")
-    private PremiumCostCalculatorFacade premiumCostCalculatorFacade;
+    @ManagedProperty("#{driverFacade}")
+    private DriverFacade driverFacade;
+
+    @ManagedProperty("#{vehicleFacade}")
+    private VehicleFacade vehicleFacade;
 
     private PolicyRequest policy;
 
     @PostConstruct
     public void init() {
 	try {
-	    this.policy = policyRequestFacade.initNew();
+	    this.policy = policyFacade.initNew();
+	    driverFacade.add(policy);
+	    vehicleFacade.add(policy);
 	} catch (ValidationException e) {
 	    FacesContext
 		    .getCurrentInstance()
@@ -56,8 +62,7 @@ public class OSGPOVTSView implements Serializable {
 
     public void addInsuredDriver() {
 	try {
-	    policyRequestFacade.addInsuredDriver(policy);
-	    premiumCostCalculatorFacade.calculatePremiumCost(policy);
+	    driverFacade.add(policy);
 	} catch (ValidationException e) {
 	    FacesContext
 		    .getCurrentInstance()
@@ -65,13 +70,16 @@ public class OSGPOVTSView implements Serializable {
 			    new FacesMessage(FacesMessage.SEVERITY_WARN,
 				    gpovts.getString(e.getMessageCode().getMessageBundleCode()),
 				    gpovts.getString(e.getDescriptionCode().getMessageBundleCode())));
+	}
+	try {
+	    policyFacade.calculatePremiumCost(policy);
+	} catch (ValidationException e) {
 	}
     }
 
     public void removeInsuredDriver(InsuredDriver driver) {
 	try {
-	    policyRequestFacade.removeInsuredDriver(policy, driver);
-	    premiumCostCalculatorFacade.calculatePremiumCost(policy);
+	    driverFacade.remove(policy, driver);
 	} catch (ValidationException e) {
 	    FacesContext
 		    .getCurrentInstance()
@@ -79,13 +87,16 @@ public class OSGPOVTSView implements Serializable {
 			    new FacesMessage(FacesMessage.SEVERITY_WARN,
 				    gpovts.getString(e.getMessageCode().getMessageBundleCode()),
 				    gpovts.getString(e.getDescriptionCode().getMessageBundleCode())));
+	}
+	try {
+	    policyFacade.calculatePremiumCost(policy);
+	} catch (ValidationException e) {
 	}
     }
 
     public void addInsuredVehicle() {
 	try {
-	    policyRequestFacade.addInsuredVehicle(policy);
-	    premiumCostCalculatorFacade.calculatePremiumCost(policy);
+	    vehicleFacade.add(policy);
 	} catch (ValidationException e) {
 	    FacesContext
 		    .getCurrentInstance()
@@ -93,13 +104,16 @@ public class OSGPOVTSView implements Serializable {
 			    new FacesMessage(FacesMessage.SEVERITY_WARN,
 				    gpovts.getString(e.getMessageCode().getMessageBundleCode()),
 				    gpovts.getString(e.getDescriptionCode().getMessageBundleCode())));
+	}
+	try {
+	    policyFacade.calculatePremiumCost(policy);
+	} catch (ValidationException e) {
 	}
     }
 
     public void removeInsuredVehicle(InsuredVehicle insuredVehicle) {
 	try {
-	    policyRequestFacade.removeInsuredVehicle(policy, insuredVehicle);
-	    premiumCostCalculatorFacade.calculatePremiumCost(policy);
+	    vehicleFacade.remove(policy, insuredVehicle);
 	} catch (ValidationException e) {
 	    FacesContext
 		    .getCurrentInstance()
@@ -107,72 +121,54 @@ public class OSGPOVTSView implements Serializable {
 			    new FacesMessage(FacesMessage.SEVERITY_WARN,
 				    gpovts.getString(e.getMessageCode().getMessageBundleCode()),
 				    gpovts.getString(e.getDescriptionCode().getMessageBundleCode())));
+	}
+	try {
+	    policyFacade.calculatePremiumCost(policy);
+	} catch (ValidationException e) {
 	}
     }
 
     public void doCalculatePolicyCost() {
 	try {
-	    premiumCostCalculatorFacade.calculatePremiumCost(policy);
+	    policyFacade.calculatePremiumCost(policy);
 	} catch (ValidationException e) {
-	    FacesContext
-		    .getCurrentInstance()
-		    .addMessage(null,
-			    new FacesMessage(FacesMessage.SEVERITY_WARN,
-				    gpovts.getString(e.getMessageCode().getMessageBundleCode()),
-				    gpovts.getString(e.getDescriptionCode().getMessageBundleCode())));
 	}
     }
 
-    public void onIdNumberChanged(InsuredDriver insuredDriver) {
+    public void onDriverIdNumberChanged(InsuredDriver insuredDriver) {
 	try {
-	    policyRequestFacade.clearInsuredDriverFetchedInfo(policy, insuredDriver);
-	    policyRequestFacade.fetchInsuredDriver(policy, insuredDriver);
+	    driverFacade.fetchInfo(policy, insuredDriver);
 	} catch (ValidationException e) {
-	    FacesContext
-		    .getCurrentInstance()
-		    .addMessage(null,
-			    new FacesMessage(FacesMessage.SEVERITY_WARN,
-				    gpovts.getString(e.getMessageCode().getMessageBundleCode()),
-				    gpovts.getString(e.getDescriptionCode().getMessageBundleCode())));
 	}
 	try {
-	    premiumCostCalculatorFacade.calculatePremiumCost(policy);
+	    policyFacade.calculatePremiumCost(policy);
 	} catch (ValidationException e) {
-	    FacesContext
-		    .getCurrentInstance()
-		    .addMessage(null,
-			    new FacesMessage(FacesMessage.SEVERITY_WARN,
-				    gpovts.getString(e.getMessageCode().getMessageBundleCode()),
-				    gpovts.getString(e.getDescriptionCode().getMessageBundleCode())));
 	}
     }
 
-    public void onVinCodeChanged(InsuredVehicle insuredVehicle) {
+    public void onFormChanged() {
 	try {
-	    policyRequestFacade.clearInsuredVehicleFetchedInfo(policy, insuredVehicle);
-	    policyRequestFacade.fetchInsuredVehicle(policy, insuredVehicle);
-	    premiumCostCalculatorFacade.calculatePremiumCost(policy);
+	    policyFacade.calculatePremiumCost(policy);
 	} catch (ValidationException e) {
-	    FacesContext
-		    .getCurrentInstance()
-		    .addMessage(null,
-			    new FacesMessage(FacesMessage.SEVERITY_WARN,
-				    gpovts.getString(e.getMessageCode().getMessageBundleCode()),
-				    gpovts.getString(e.getDescriptionCode().getMessageBundleCode())));
+	}
+    }
+
+    public void onVehicleVinCodeChanged(InsuredVehicle insuredVehicle) {
+	try {
+	    vehicleFacade.fetchInfo(policy, insuredVehicle);
+	} catch (ValidationException e) {
+	}
+	try {
+	    policyFacade.calculatePremiumCost(policy);
+	} catch (ValidationException e) {
 	}
     }
 
     public void onVehicleRegionChanged(InsuredVehicle insuredVehicle) {
+	vehicleFacade.evaluateMajorCity(insuredVehicle);
 	try {
-	    policyRequestFacade.evaluateMajorCity(insuredVehicle);
-	    premiumCostCalculatorFacade.calculatePremiumCost(policy);
+	    policyFacade.calculatePremiumCost(policy);
 	} catch (ValidationException e) {
-	    FacesContext
-		    .getCurrentInstance()
-		    .addMessage(null,
-			    new FacesMessage(FacesMessage.SEVERITY_WARN,
-				    gpovts.getString(e.getMessageCode().getMessageBundleCode()),
-				    gpovts.getString(e.getDescriptionCode().getMessageBundleCode())));
 	}
     }
 
@@ -182,12 +178,16 @@ public class OSGPOVTSView implements Serializable {
 	this.glb = glb;
     }
 
-    public void setPolicyRequestFacade(PolicyRequestFacade policyRequestFacade) {
-	this.policyRequestFacade = policyRequestFacade;
+    public void setPolicyFacade(PolicyFacade policyFacade) {
+	this.policyFacade = policyFacade;
     }
 
-    public void setPremiumCostCalculatorFacade(PremiumCostCalculatorFacade premiumCostCalculatorFacade) {
-	this.premiumCostCalculatorFacade = premiumCostCalculatorFacade;
+    public void setDriverFacade(DriverFacade driverFacade) {
+	this.driverFacade = driverFacade;
+    }
+
+    public void setVehicleFacade(VehicleFacade vehicleFacade) {
+	this.vehicleFacade = vehicleFacade;
     }
 
     public void setGpovts(ResourceBundle gpovts) {

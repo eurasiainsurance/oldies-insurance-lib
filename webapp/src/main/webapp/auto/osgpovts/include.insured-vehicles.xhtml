@@ -8,8 +8,15 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
 
 	<p:dataGrid var="vehicle"
-		value="#{osgpovtsView.policy.insuredVehicles}"
-		layout="grid" columns="2">
+		value="#{osgpovtsView.policy.insuredVehicles}" layout="grid"
+		columns="2">
+
+		<f:facet name="header">
+			<p:commandButton value="#{gpovts['command.add-vehicle']}"
+				action="#{osgpovtsView.addInsuredVehicle}" process="@this"
+				update="@form"
+				rendered="#{fn:length(osgpovtsView.policy.insuredDrivers) eq 1}" />
+		</f:facet>
 
 		<p:panel>
 			<f:facet name="header">
@@ -28,20 +35,21 @@
 				</p:commandLink>
 			</f:facet>
 
+
 			<h:panelGrid columns="1">
 				<p:outputLabel value="#{gpovts['label.input.vehicle.vin-code']}" />
 				<p:inputMask mask="*****************" value="#{vehicle.vinCode}"
-					onchange="rcVinCodeChanged()">
-					<pe:keyFilter regEx="/[0-9A-Z]/i" preventPaste="fakse" />
+					onchange="rcVehicle_VinCodeChanged#{vehicle.safeId}()">
+					<pe:keyFilter regEx="/[0123456789ABCDEFGHJKLMNPRSTUVWXYZ]/i" preventPaste="false" />
 				</p:inputMask>
-				<p:remoteCommand name="rcVinCodeChanged"
-					actionListener="#{osgpovtsView.onVinCodeChanged(vehicle)}"
+				<p:remoteCommand name="rcVehicle_VinCodeChanged#{vehicle.safeId}"
+					actionListener="#{osgpovtsView.onVehicleVinCodeChanged(vehicle)}"
 					update="@form" />
 				<p:outputLabel value="#{gpovts['label.input.vehicle-age-class']}" />
 				<p:selectOneMenu value="#{vehicle.vehicleAgeClass}"
 					disabled="#{vehicle.fetched}">
 					<p:ajax event="change" process="@this" update="@form"
-						listener="#{osgpovtsView.doCalculatePolicyCost}" />
+						listener="#{osgpovtsView.onFormChanged}" />
 					<f:selectItems value="#{vehicleAgeClassService.validItems}"
 						var="vehicleAgeClass" itemValue="#{vehicleAgeClass}"
 						itemLabel="#{gpovts['label.si.vehicle-age-class.' += vehicleAgeClass]}" />
@@ -50,7 +58,7 @@
 				<p:selectOneMenu value="#{vehicle.vehicleClass}"
 					disabled="#{vehicle.fetched}">
 					<p:ajax event="change" process="@this" update="@form"
-						listener="#{osgpovtsView.doCalculatePolicyCost}" />
+						listener="#{osgpovtsView.onFormChanged}" />
 					<f:selectItems value="#{vehicleClassService.validItems}"
 						var="vehicleClass" itemValue="#{vehicleClass}"
 						itemLabel="#{gpovts['label.si.vehicle-class.' += vehicleClass]}" />
@@ -70,7 +78,7 @@
 					<p:selectBooleanCheckbox value="#{vehicle.majorCity}"
 						disabled="#{vehicle.forcedMajorCity}">
 						<p:ajax event="change" process="@this" update="@form"
-							listener="#{osgpovtsView.doCalculatePolicyCost}" />
+							listener="#{osgpovtsView.onFormChanged}" />
 					</p:selectBooleanCheckbox>
 					<p:outputLabel value="#{gpovts['label.input.vehicle.major-city']}" />
 				</p:outputPanel>
@@ -79,10 +87,5 @@
 		</p:panel>
 
 	</p:dataGrid>
-
-	<p:commandButton value="#{gpovts['command.add-vehicle']}"
-		action="#{osgpovtsView.addInsuredVehicle}" process="@this"
-		update="@form"
-		rendered="#{fn:length(osgpovtsView.policy.insuredDrivers) eq 1}" />
 
 </h:panelGroup>

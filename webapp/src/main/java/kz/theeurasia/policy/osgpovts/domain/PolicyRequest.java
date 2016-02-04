@@ -23,6 +23,10 @@ public class PolicyRequest {
 	return obj != null && this.getClass().isInstance(obj) && getId().equals((this.getClass().cast(obj)).getId());
     }
 
+    public String getSafeId() {
+	return id.toString().replaceAll("-", "_");
+    }
+
     // GENERATED
 
     public UUID getId() {

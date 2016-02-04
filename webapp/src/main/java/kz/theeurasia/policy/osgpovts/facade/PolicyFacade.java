@@ -16,10 +16,15 @@ import kz.theeurasia.policy.osgpovts.services.PremiumCostCalculatorRatesService;
 
 @ManagedBean
 @ViewScoped
-public class PremiumCostCalculatorFacade {
+public class PolicyFacade {
 
     @ManagedProperty("#{premiumCostCalculatorRatesService}")
     private PremiumCostCalculatorRatesService rates;
+
+    public PolicyRequest initNew() throws ValidationException {
+	PolicyRequest policy = new PolicyRequest();
+	return policy;
+    }
 
     public void calculatePremiumCost(PolicyRequest policy) throws ValidationException {
 	try {
@@ -64,5 +69,4 @@ public class PremiumCostCalculatorFacade {
     public void setRates(PremiumCostCalculatorRatesService rates) {
 	this.rates = rates;
     }
-
 }

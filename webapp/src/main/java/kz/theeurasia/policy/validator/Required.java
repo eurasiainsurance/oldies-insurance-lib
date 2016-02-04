@@ -11,13 +11,15 @@ import javax.validation.Payload;
 
 @Target({ METHOD, FIELD, ANNOTATION_TYPE })
 @Retention(RUNTIME)
-@Constraint(validatedBy = IdNumberConstraintValidator.class)
-public @interface IdNumber {
+@Constraint(validatedBy = RequiredConstraintValidator.class)
+public @interface Required {
 
-    String message() default "{kz.theeurasia.policy.validator.IdNumber.message}";
+    String message() default "{kz.theeurasia.policy.validator.Required.message}";
 
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
+
+    boolean trimSpaces() default true;
 
 }

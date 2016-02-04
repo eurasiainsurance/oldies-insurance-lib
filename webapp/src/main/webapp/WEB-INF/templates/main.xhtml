@@ -14,7 +14,7 @@
 	<f:view>
 		<h:graphicImage alt="#{glb['name.eurasia.full']}" library="images"
 			name="eurasia_logo.png" />
-		<p:growl autoUpdate="true" />
+		<p:growl autoUpdate="true" globalOnly="true" />
 		<br />
 		<br />
 		<p:overlayPanel widgetVar="statusDialog" id="statusDialog">
@@ -23,7 +23,7 @@
 		<ui:insert name="page-content" />
 		<p:ajaxStatus onstart="PF('statusDialog').show()"
 			onsuccess="PF('statusDialog').hide()" />
-
+		<p:log />
 	</f:view>
 </h:body>
 </html>

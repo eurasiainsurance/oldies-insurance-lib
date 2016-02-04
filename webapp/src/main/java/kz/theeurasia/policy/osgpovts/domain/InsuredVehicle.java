@@ -11,6 +11,8 @@ import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleAgeClassDict;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
 import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleEntity;
 import kz.theeurasia.esbdproxy.domain.infos.general.VehicleCertificateInfo;
+import kz.theeurasia.policy.validator.Required;
+import kz.theeurasia.policy.validator.VINCode;
 
 public class InsuredVehicle {
     private final UUID id = UUID.randomUUID();
@@ -18,8 +20,12 @@ public class InsuredVehicle {
     private VehicleClassDict vehicleClass = VehicleClassDict.UNSPECIFIED;
     private VehicleAgeClassDict vehicleAgeClass = VehicleAgeClassDict.UNSPECIFIED;
 
+    @Required
+    @VINCode
     private String vinCode = "";
+
     private String vehicleModel = "";
+
     private String vehicleManufacturer = "";
 
     private VehicleCertificateInfo certificateInfo = new VehicleCertificateInfo();

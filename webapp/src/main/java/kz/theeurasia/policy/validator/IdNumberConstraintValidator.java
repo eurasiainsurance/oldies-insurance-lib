@@ -9,7 +9,7 @@ public class IdNumberConstraintValidator implements ConstraintValidator<IdNumber
 
     private Pattern pattern;
 
-    private static final String ID_NUMBER_PATTERN = "^[0-9]{12}$";
+    private static final String ID_NUMBER_PATTERN = "^[0-9]{12}?$";
 
     public void initialize(IdNumber a) {
 	pattern = Pattern.compile(ID_NUMBER_PATTERN);
@@ -18,7 +18,7 @@ public class IdNumberConstraintValidator implements ConstraintValidator<IdNumber
     public boolean isValid(String value, ConstraintValidatorContext cvc) {
 	if (value == null)
 	    return true;
-	else
-	    return pattern.matcher(value.toString()).matches();
+	return pattern.matcher(value.toString()).matches();
     }
+
 }

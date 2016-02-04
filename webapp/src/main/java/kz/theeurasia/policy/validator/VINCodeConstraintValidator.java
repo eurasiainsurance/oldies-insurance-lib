@@ -5,14 +5,14 @@ import java.util.regex.Pattern;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class VinCodeConstraintValidator implements ConstraintValidator<VinCode, String> {
+public class VINCodeConstraintValidator implements ConstraintValidator<VINCode, String> {
 
-    private static final String VIN_CODE_PATTERN = "^[0123456789ABCDEFGHJKLMNPRSTUVWXYZ]{12}$";
+    private static final String VIN_CODE_PATTERN = "^[0123456789ABCDEFGHJKLMNPRSTUVWXYZ]{17}$";
     private Pattern pattern;
 
     @Override
-    public void initialize(VinCode constraintAnnotation) {
-	pattern = Pattern.compile(VIN_CODE_PATTERN);
+    public void initialize(VINCode constraintAnnotation) {
+	pattern = Pattern.compile(VIN_CODE_PATTERN, Pattern.CASE_INSENSITIVE);
     }
 
     @Override

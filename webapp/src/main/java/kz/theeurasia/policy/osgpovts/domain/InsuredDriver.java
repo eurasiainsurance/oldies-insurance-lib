@@ -2,7 +2,10 @@ package kz.theeurasia.policy.osgpovts.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.UUID;
+
+import javax.faces.bean.ManagedProperty;
 
 import org.primefaces.model.UploadedFile;
 
@@ -18,12 +21,18 @@ import kz.theeurasia.esbdproxy.domain.infos.osgpovts.GPWParticipantInfo;
 import kz.theeurasia.esbdproxy.domain.infos.osgpovts.InvalidInfo;
 import kz.theeurasia.esbdproxy.domain.infos.osgpovts.PensionerInfo;
 import kz.theeurasia.esbdproxy.domain.infos.osgpovts.PrivilegerInfo;
+import kz.theeurasia.policy.validator.IdNumber;
+import kz.theeurasia.policy.validator.Required;
 
 public class InsuredDriver {
     private final UUID id = UUID.randomUUID();
 
     private InsuranceClassTypeDict insuranceClassType = InsuranceClassTypeDict.UNSPECIFIED;
+    @ManagedProperty("#{glb}")
+    private ResourceBundle glb;
 
+    @Required
+    @IdNumber
     private String idNumber = "";
     private String taxPayerNumber = "";
 

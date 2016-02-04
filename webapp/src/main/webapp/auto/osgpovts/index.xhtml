@@ -16,15 +16,13 @@
 				nextLabel="#{glb['label.command.wizard.next']}"
 				backLabel="#{glb['label.command.wizard.prev']}">
 				<p:tab id="calculator" title="#{gpovts['title.wizard.calculator']}">
-					<ui:include src="include.premium-cost.xhtml" />
-					<ui:include src="include.insured-drivers.xhtml" />
-					<ui:include src="include.insured-vehicles.xhtml" />
+					<ui:include src="premium-cost.include.xhtml" />
+					<ui:include src="insured-drivers.include.xhtml" />
+					<ui:include src="insured-vehicles.include.xhtml" />
 				</p:tab>
-				<p:tab disabled="true" id="policyForm"
-					title="#{gpovts['title.wizard.policy-form']}">
+				<p:tab id="form" title="#{gpovts['title.wizard.policy-form']}">
 				</p:tab>
 			</p:wizard>
-
 		</h:form>
 	</ui:define>
 </ui:composition>

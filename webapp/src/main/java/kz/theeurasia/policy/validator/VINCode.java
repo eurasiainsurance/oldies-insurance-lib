@@ -9,14 +9,12 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-import kz.theeurasia.policy.osgpovts.MessageBundleCode;
-
 @Target({ METHOD, FIELD, ANNOTATION_TYPE })
 @Retention(RUNTIME)
-@Constraint(validatedBy = VinCodeConstraintValidator.class)
-public @interface VinCode {
+@Constraint(validatedBy = VINCodeConstraintValidator.class)
+public @interface VINCode {
 
-    MessageBundleCode messageCode() default MessageBundleCode.VIN_CODE_CANT_BE_EMPTY;
+    String message() default "{kz.theeurasia.policy.validator.VINCode.message}";
 
     Class<?>[] groups() default {};
 

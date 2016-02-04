@@ -12,6 +12,7 @@ import org.junit.Test;
 
 import kz.theeurasia.esbdproxy.domain.entities.general.BranchEntity;
 import kz.theeurasia.esbdproxy.service.ejbimpl.test.GeneralServiceTestCase;
+import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.general.BranchServiceDAO;
 
@@ -28,7 +29,7 @@ public class BranchServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test
-    public void testGetById() throws NamingException {
+    public void testGetById() throws NamingException, InvalidInputParameter {
 	BranchServiceDAO service = getBranchServiceEntityWS();
 	List<BranchEntity> list = service.getAll();
 	for (BranchEntity i : list) {
@@ -42,7 +43,7 @@ public class BranchServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test(expected = NotFound.class)
-    public void testGetById_NotFound() throws NamingException, NotFound {
+    public void testGetById_NotFound() throws NamingException, NotFound, InvalidInputParameter {
 	BranchServiceDAO service = getBranchServiceEntityWS();
 	service.getById(INVALID_BRANCH_ID);
     }

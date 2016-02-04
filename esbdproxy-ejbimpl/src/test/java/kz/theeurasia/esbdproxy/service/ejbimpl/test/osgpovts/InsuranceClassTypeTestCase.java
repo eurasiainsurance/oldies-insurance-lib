@@ -11,13 +11,14 @@ import org.junit.Test;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuranceClassTypeDict;
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectPersonEntity;
 import kz.theeurasia.esbdproxy.service.ejbimpl.test.GeneralServiceTestCase;
+import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.osgpovts.InsuranceClassTypeServiceDAO;
 
 public class InsuranceClassTypeTestCase extends GeneralServiceTestCase {
 
     @Test
-    public void testGetById() throws NamingException {
+    public void testGetById() throws NamingException, InvalidInputParameter {
 	InsuranceClassTypeServiceDAO service = getInsuranceClassTypeServiceEntityWS();
 	try {
 	    InsuranceClassTypeDict res = service.getById(VALID_INSURANCE_CLASS_TYPE_ID);
@@ -28,13 +29,13 @@ public class InsuranceClassTypeTestCase extends GeneralServiceTestCase {
     }
 
     @Test(expected = NotFound.class)
-    public void testGetById_NotFound() throws NamingException, NotFound {
+    public void testGetById_NotFound() throws NamingException, NotFound, InvalidInputParameter {
 	InsuranceClassTypeServiceDAO service = getInsuranceClassTypeServiceEntityWS();
 	service.getById(INVALID_INSURANCE_CLASS_TYPE_ID);
     }
 
     @Test
-    public void testGetByCode() throws NamingException {
+    public void testGetByCode() throws NamingException, InvalidInputParameter {
 	InsuranceClassTypeServiceDAO service = getInsuranceClassTypeServiceEntityWS();
 	InsuranceClassTypeDict[] list = InsuranceClassTypeDict.values();
 	for (InsuranceClassTypeDict i : list) {
@@ -48,13 +49,13 @@ public class InsuranceClassTypeTestCase extends GeneralServiceTestCase {
     }
 
     @Test(expected = NotFound.class)
-    public void testGetByCode_NotFound() throws NamingException, NotFound {
+    public void testGetByCode_NotFound() throws NamingException, NotFound, InvalidInputParameter {
 	InsuranceClassTypeServiceDAO service = getInsuranceClassTypeServiceEntityWS();
 	service.getByCode(INVALID_INSURANCE_CLASS_TYPE_CODE);
     }
 
     @Test
-    public void testGetForSubject() throws NamingException {
+    public void testGetForSubject() throws NamingException, InvalidInputParameter {
 	InsuranceClassTypeServiceDAO service = getInsuranceClassTypeServiceEntityWS();
 	try {
 	    SubjectPersonEntity e = new SubjectPersonEntity();
@@ -67,7 +68,7 @@ public class InsuranceClassTypeTestCase extends GeneralServiceTestCase {
     }
 
     @Test(expected = NotFound.class)
-    public void testGetForSubject_NotFound() throws NamingException, NotFound {
+    public void testGetForSubject_NotFound() throws NamingException, NotFound, InvalidInputParameter {
 	InsuranceClassTypeServiceDAO service = getInsuranceClassTypeServiceEntityWS();
 	SubjectPersonEntity e = new SubjectPersonEntity();
 	e.setId(INVALID_SUBJECT_PERSON_ID);

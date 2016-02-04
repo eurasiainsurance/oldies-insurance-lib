@@ -10,13 +10,14 @@ import org.junit.Test;
 
 import kz.theeurasia.esbdproxy.domain.entities.osgpovts.PolicyEntity;
 import kz.theeurasia.esbdproxy.service.ejbimpl.test.GeneralServiceTestCase;
+import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.osgpovts.PolicyServiceDAO;
 
 public class PolicyServiceTestCase extends GeneralServiceTestCase {
 
     @Test
-    public void testGetById() throws NamingException {
+    public void testGetById() throws NamingException, InvalidInputParameter {
 	PolicyServiceDAO service = getPolicyServiceEntityWS();
 	try {
 	    PolicyEntity entity = service.getById(VALID_POLICY_ID);
@@ -28,13 +29,13 @@ public class PolicyServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test(expected = NotFound.class)
-    public void testGetById_NotFound() throws NamingException, NotFound {
+    public void testGetById_NotFound() throws NamingException, NotFound, InvalidInputParameter {
 	PolicyServiceDAO service = getPolicyServiceEntityWS();
 	service.getById(INVALID_POLICY_ID);
     }
 
     @Test
-    public void testGetByPolicyNumber() throws NamingException {
+    public void testGetByPolicyNumber() throws NamingException, InvalidInputParameter {
 	PolicyServiceDAO service = getPolicyServiceEntityWS();
 	try {
 	    PolicyEntity entity = service.getByNumber(VALID_POLICY_NUMBER);
@@ -46,7 +47,7 @@ public class PolicyServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test(expected = NotFound.class)
-    public void testGetByPolicyNumber_NotFound() throws NamingException, NotFound {
+    public void testGetByPolicyNumber_NotFound() throws NamingException, NotFound, InvalidInputParameter {
 	PolicyServiceDAO service = getPolicyServiceEntityWS();
 	service.getByNumber(INVALID_POLICY_NUMBER);
     }

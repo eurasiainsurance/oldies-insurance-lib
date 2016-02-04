@@ -1,6 +1,5 @@
 package kz.theeurasia.esbdproxy.services.ejbimpl.entity.general;
 
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +10,7 @@ import javax.ejb.Singleton;
 import kz.theeurasia.asb.esbd.jaxws.ArrayOfUser;
 import kz.theeurasia.asb.esbd.jaxws.User;
 import kz.theeurasia.esbdproxy.domain.entities.general.UserEntity;
+import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.general.BranchServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.InsuranceCompanyServiceDAO;
@@ -57,9 +57,9 @@ public class UserEntityServiceWS extends AbstractESBDEntityServiceWS implements 
     }
 
     @Override
-    public UserEntity getById(Long id) throws NotFound {
+    public UserEntity getById(Long id) throws NotFound, InvalidInputParameter {
 	if (id == null)
-	    throw new InvalidParameterException("ID must be not null");
+	    throw new InvalidInputParameter("ID must be not null");
 	lazyInit();
 	for (UserEntity be : all)
 	    if (be.getId() == id)
@@ -77,7 +77,7 @@ public class UserEntityServiceWS extends AbstractESBDEntityServiceWS implements 
 	// Branch_ID s:int Филиал пользователя (справочник BRANCHES)
 	try {
 	    target.setBranch(branchService.getById(new Long(source.getBranchID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    // mandatory field
 	}
 
@@ -88,7 +88,7 @@ public class UserEntityServiceWS extends AbstractESBDEntityServiceWS implements 
 	// SYSTEM_DELIMITER)
 	try {
 	    target.setOrganization(insuranceCompanyService.getById(new Long(source.getSYSTEMDELIMITERID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    // non mandatory field
 	}
 

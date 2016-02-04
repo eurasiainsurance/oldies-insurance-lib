@@ -1,6 +1,5 @@
 package kz.theeurasia.esbdproxy.services.ejbimpl.entity.general;
 
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +12,7 @@ import kz.theeurasia.esbdproxy.domain.dict.general.CountryDict;
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectEntity;
 import kz.theeurasia.esbdproxy.domain.infos.general.ContactInfo;
 import kz.theeurasia.esbdproxy.domain.infos.general.OriginInfo;
+import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.ejbimpl.DataCoruptionException;
 import kz.theeurasia.esbdproxy.services.general.CountryServiceDAO;
@@ -36,9 +36,9 @@ public class SubjectEntityServiceWS extends AbstractESBDEntityServiceWS implemen
     @EJB
     private EconomicSectorServiceDAO econimicsSectorService;
 
-    public SubjectEntity getById(Long id) throws NotFound {
+    public SubjectEntity getById(Long id) throws NotFound, InvalidInputParameter {
 	if (id == null)
-	    throw new InvalidParameterException("ID must be not null");
+	    throw new InvalidInputParameter("ID must be not null");
 	checkSession();
 	Client source = getSoapService().getClientByID(getSessionId(), id.intValue());
 	if (source == null)
@@ -54,9 +54,9 @@ public class SubjectEntityServiceWS extends AbstractESBDEntityServiceWS implemen
     }
 
     @Override
-    public SubjectEntity getByIdNumber(String idNumber) throws NotFound {
+    public SubjectEntity getByIdNumber(String idNumber) throws NotFound, InvalidInputParameter {
 	if (idNumber == null || idNumber.trim().isEmpty())
-	    throw new InvalidParameterException("'idNumber' must be not an empty string");
+	    throw new InvalidInputParameter("'idNumber' must be not an empty string");
 	checkSession();
 	Client source = fetchClientByIdNumber(idNumber, true, true);
 	if (source == null)
@@ -103,7 +103,7 @@ public class SubjectEntityServiceWS extends AbstractESBDEntityServiceWS implemen
 	oi.setResident(source.getRESIDENTBOOL() == 1);
 	try {
 	    oi.setCountry(countryService.getById(new Long(source.getCOUNTRYID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    oi.setCountry(CountryDict.UNSPECIFIED);
 	}
 
@@ -134,7 +134,7 @@ public class SubjectEntityServiceWS extends AbstractESBDEntityServiceWS implemen
 	// ECONOMICS_SECTORS)
 	try {
 	    target.setEconomicsSector(econimicsSectorService.getById(new Long(source.getECONOMICSSECTORID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    // mandatory field
 	    throw new DataCoruptionException(
 		    "Error while fetching Company Client ID = '" + source.getID()

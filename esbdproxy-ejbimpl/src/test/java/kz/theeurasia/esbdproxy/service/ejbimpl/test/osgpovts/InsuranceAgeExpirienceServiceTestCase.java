@@ -12,6 +12,7 @@ import org.junit.Test;
 
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuredAgeExpirienceClassDict;
 import kz.theeurasia.esbdproxy.service.ejbimpl.test.GeneralServiceTestCase;
+import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.osgpovts.InsuredAgeExpirienceClassServiceDAO;
 
@@ -28,7 +29,7 @@ public class InsuranceAgeExpirienceServiceTestCase extends GeneralServiceTestCas
     }
 
     @Test
-    public void testGetById() throws NamingException {
+    public void testGetById() throws NamingException, InvalidInputParameter {
 	InsuredAgeExpirienceClassServiceDAO service = getInsuredAgeExpirienceClassServiceEntityWS();
 	InsuredAgeExpirienceClassDict[] list = InsuredAgeExpirienceClassDict.values();
 	for (InsuredAgeExpirienceClassDict i : list) {
@@ -42,7 +43,7 @@ public class InsuranceAgeExpirienceServiceTestCase extends GeneralServiceTestCas
     }
 
     @Test(expected = NotFound.class)
-    public void testGetById_NotFound() throws NamingException, NotFound {
+    public void testGetById_NotFound() throws NamingException, NotFound, InvalidInputParameter {
 	InsuredAgeExpirienceClassServiceDAO service = getInsuredAgeExpirienceClassServiceEntityWS();
 	service.getById(INVALID_INSURANCE_AGE_EXPIRIENCE_ID);
     }

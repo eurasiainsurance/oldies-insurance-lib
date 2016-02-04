@@ -12,6 +12,7 @@ import org.junit.Test;
 
 import kz.theeurasia.esbdproxy.domain.entities.general.UserEntity;
 import kz.theeurasia.esbdproxy.service.ejbimpl.test.GeneralServiceTestCase;
+import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.general.UserServiceDAO;
 
@@ -28,7 +29,7 @@ public class UserServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test
-    public void testGetById() throws NamingException {
+    public void testGetById() throws NamingException, InvalidInputParameter {
 	UserServiceDAO service = getUserServiceEntityWS();
 	List<UserEntity> list = service.getAll();
 	for (UserEntity i : list) {
@@ -42,7 +43,7 @@ public class UserServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test(expected = NotFound.class)
-    public void testGetById_NotFound() throws NamingException, NotFound {
+    public void testGetById_NotFound() throws NamingException, NotFound, InvalidInputParameter {
 	UserServiceDAO service = getUserServiceEntityWS();
 	service.getById(INVALID_USER_ID);
     }

@@ -9,6 +9,7 @@ import kz.theeurasia.asb.esbd.jaxws.Client;
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectCompanyEntity;
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectEntity;
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectPersonEntity;
+import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.general.CompanyActivityKindServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.SubjectCompanyServiceDAO;
@@ -69,7 +70,7 @@ public class SubjectCompanyEntityServiceWS extends SubjectEntityServiceWS implem
 	target.setCompanyActivityKindId(new Long(source.getACTIVITYKINDID()));
 	try {
 	    target.setCompanyActivityKind(companyActivityKindService.getById(new Long(source.getACTIVITYKINDID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    // non mandatory field
 	}
     }

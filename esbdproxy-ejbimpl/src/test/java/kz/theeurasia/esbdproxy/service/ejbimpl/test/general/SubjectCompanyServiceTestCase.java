@@ -10,13 +10,14 @@ import org.junit.Test;
 
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectCompanyEntity;
 import kz.theeurasia.esbdproxy.service.ejbimpl.test.GeneralServiceTestCase;
+import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.general.SubjectCompanyServiceDAO;
 
 public class SubjectCompanyServiceTestCase extends GeneralServiceTestCase {
 
     @Test
-    public void testGetById() throws NamingException {
+    public void testGetById() throws NamingException, InvalidInputParameter {
 	SubjectCompanyServiceDAO service = getSubjectCompanyServiceEntityWS();
 	try {
 	    for (long valid : VALID_SUBJECT_COMPANY_IDS) {
@@ -29,7 +30,7 @@ public class SubjectCompanyServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test
-    public void testGetById_NotFound() throws NamingException {
+    public void testGetById_NotFound() throws NamingException, InvalidInputParameter {
 	SubjectCompanyServiceDAO service = getSubjectCompanyServiceEntityWS();
 	for (long invalid : INVALID_SUBJECT_COMPANY_IDS) {
 	    try {
@@ -41,7 +42,7 @@ public class SubjectCompanyServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test
-    public void testGetByBIN() throws NamingException {
+    public void testGetByBIN() throws NamingException, InvalidInputParameter {
 	SubjectCompanyServiceDAO service = getSubjectCompanyServiceEntityWS();
 	try {
 	    for (String valid : VALID_SUBJECT_COMPANY_BINS) {
@@ -54,7 +55,7 @@ public class SubjectCompanyServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test
-    public void testGetByBIN_NotFound() throws NamingException {
+    public void testGetByBIN_NotFound() throws NamingException, InvalidInputParameter {
 	SubjectCompanyServiceDAO service = getSubjectCompanyServiceEntityWS();
 	for (String invalid : INVALID_SUBJECT_COMPANY_BINS) {
 	    try {

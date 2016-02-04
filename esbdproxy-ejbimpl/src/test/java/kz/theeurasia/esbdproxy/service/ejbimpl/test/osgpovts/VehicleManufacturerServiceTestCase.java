@@ -12,13 +12,14 @@ import org.junit.Test;
 
 import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleManufacturerEntity;
 import kz.theeurasia.esbdproxy.service.ejbimpl.test.GeneralServiceTestCase;
+import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleManufacturerServiceDAO;
 
 public class VehicleManufacturerServiceTestCase extends GeneralServiceTestCase {
 
     @Test
-    public void testGetById() throws NamingException {
+    public void testGetById() throws NamingException, InvalidInputParameter {
 	VehicleManufacturerServiceDAO service = getVehicleManufacturerServiceEntityWS();
 	try {
 	    VehicleManufacturerEntity res = service.getById(VALID_VEHICLE_MANUFACTURER_ID);
@@ -29,7 +30,7 @@ public class VehicleManufacturerServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test(expected = NotFound.class)
-    public void testGetById_NotFound() throws NamingException, NotFound {
+    public void testGetById_NotFound() throws NamingException, NotFound, InvalidInputParameter {
 	VehicleManufacturerServiceDAO service = getVehicleManufacturerServiceEntityWS();
 	service.getById(ININVALID_VEHICLE_MANUFACTURER_ID);
     }

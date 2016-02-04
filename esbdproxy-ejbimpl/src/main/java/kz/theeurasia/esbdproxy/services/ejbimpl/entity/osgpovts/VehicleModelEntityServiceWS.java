@@ -11,6 +11,7 @@ import kz.theeurasia.asb.esbd.jaxws.ArrayOfVOITUREMODEL;
 import kz.theeurasia.asb.esbd.jaxws.VOITUREMODEL;
 import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleManufacturerEntity;
 import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleModelEntity;
+import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.ejbimpl.DataCoruptionException;
 import kz.theeurasia.esbdproxy.services.ejbimpl.entity.general.AbstractESBDEntityServiceWS;
@@ -24,9 +25,9 @@ public class VehicleModelEntityServiceWS extends AbstractESBDEntityServiceWS imp
     private VehicleManufacturerServiceDAO vehicleManufacturerService;
 
     @Override
-    public VehicleModelEntity getById(Long id) throws NotFound {
+    public VehicleModelEntity getById(Long id) throws NotFound, InvalidInputParameter {
 	if (id == null)
-	    throw new InvalidParameterException("ID must be not null");
+	    throw new InvalidInputParameter("ID must be not null");
 	// VOITURE_MODEL_ID, NAME, VOITURE_MARK_ID
 	VOITUREMODEL m = new VOITUREMODEL();
 	m.setID(new Long(id).intValue());
@@ -43,9 +44,9 @@ public class VehicleModelEntityServiceWS extends AbstractESBDEntityServiceWS imp
     }
 
     @Override
-    public List<VehicleModelEntity> getByName(String name) {
+    public List<VehicleModelEntity> getByName(String name) throws InvalidInputParameter {
 	if (name == null || name.trim().isEmpty())
-	    throw new InvalidParameterException("'name' must be not an empty string");
+	    throw new InvalidInputParameter("'name' must be not an empty string");
 	// VOITURE_MODEL_ID, NAME, VOITURE_MARK_ID
 	List<VehicleModelEntity> res = new ArrayList<>();
 	VOITUREMODEL m = new VOITUREMODEL();
@@ -92,7 +93,7 @@ public class VehicleModelEntityServiceWS extends AbstractESBDEntityServiceWS imp
 	target.setName(source.getNAME());
 	try {
 	    target.setManufacturer(vehicleManufacturerService.getById(new Long(source.getVOITUREMARKID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    // mandatory field
 	    throw new DataCoruptionException(
 		    "Error while fetching Vehicle Manufacturer ID = '" + source.getID()

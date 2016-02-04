@@ -12,6 +12,7 @@ import org.junit.Test;
 
 import kz.theeurasia.esbdproxy.domain.entities.general.CompanyActivityKindEntity;
 import kz.theeurasia.esbdproxy.service.ejbimpl.test.GeneralServiceTestCase;
+import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.general.CompanyActivityKindServiceDAO;
 
@@ -28,7 +29,7 @@ public class CompanyActivityKindServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test
-    public void testGetById() throws NamingException {
+    public void testGetById() throws NamingException, InvalidInputParameter {
 	CompanyActivityKindServiceDAO service = getCompanyActivityKindServiceEntityWS();
 	List<CompanyActivityKindEntity> list = service.getAll();
 	for (CompanyActivityKindEntity i : list) {
@@ -42,7 +43,7 @@ public class CompanyActivityKindServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test(expected = NotFound.class)
-    public void testGetById_NotFound() throws NamingException, NotFound {
+    public void testGetById_NotFound() throws NamingException, NotFound, InvalidInputParameter {
 	CompanyActivityKindServiceDAO service = getCompanyActivityKindServiceEntityWS();
 	service.getById(INVALID_COMPANY_ACTIVITY_KIND_ID);
     }

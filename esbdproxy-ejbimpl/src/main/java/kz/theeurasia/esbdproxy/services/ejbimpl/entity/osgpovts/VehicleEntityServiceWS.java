@@ -1,6 +1,5 @@
 package kz.theeurasia.esbdproxy.services.ejbimpl.entity.osgpovts;
 
-import java.security.InvalidParameterException;
 import java.util.Calendar;
 
 import javax.ejb.EJB;
@@ -11,6 +10,7 @@ import kz.theeurasia.asb.esbd.jaxws.TF;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
 import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleEntity;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.SteeringWheelLocationEnum;
+import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.ejbimpl.DataCoruptionException;
 import kz.theeurasia.esbdproxy.services.ejbimpl.entity.general.AbstractESBDEntityServiceWS;
@@ -28,9 +28,9 @@ public class VehicleEntityServiceWS extends AbstractESBDEntityServiceWS implemen
     private VehicleModelServiceDAO vehicleModelService;
 
     @Override
-    public VehicleEntity getById(Long id) throws NotFound {
+    public VehicleEntity getById(Long id) throws NotFound, InvalidInputParameter {
 	if (id == null)
-	    throw new InvalidParameterException("ID must be not null");
+	    throw new InvalidInputParameter("ID must be not null");
 	checkSession();
 	TF tf = new TF();
 	tf.setTFID(new Long(id).intValue());
@@ -47,9 +47,9 @@ public class VehicleEntityServiceWS extends AbstractESBDEntityServiceWS implemen
     }
 
     @Override
-    public VehicleEntity getByVINCode(String vinCode) throws NotFound {
+    public VehicleEntity getByVINCode(String vinCode) throws NotFound, InvalidInputParameter {
 	if (vinCode == null || vinCode.trim().isEmpty())
-	    throw new InvalidParameterException("'vinCode' must be not an empty string");
+	    throw new InvalidInputParameter("'vinCode' must be not an empty string");
 	checkSession();
 	ArrayOfTF vehicles = getSoapService().getTFByVIN(getSessionId(), vinCode);
 	if (vehicles == null || vehicles.getTF() == null || vehicles.getTF().size() == 0)
@@ -70,7 +70,7 @@ public class VehicleEntityServiceWS extends AbstractESBDEntityServiceWS implemen
 	// TF_TYPE_ID s:int Тип ТС (справочник TF_TYPES)
 	try {
 	    target.setVehicleClass(vehicleClassService.getById(new Long(source.getTFTYPEID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    // non mandatory field
 	    target.setVehicleClass(VehicleClassDict.UNSPECIFIED);
 	}
@@ -81,7 +81,7 @@ public class VehicleEntityServiceWS extends AbstractESBDEntityServiceWS implemen
 	// MODEL_ID s:int Марка\Модель (справочник VOITURE_MODELS) (обязательно)
 	try {
 	    target.setVehicleModel(vehicleModelService.getById(new Long(source.getMODELID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    // mandatory field
 	    throw new DataCoruptionException(
 		    "Error while fetching Vehicle ID = '" + source.getTFID()

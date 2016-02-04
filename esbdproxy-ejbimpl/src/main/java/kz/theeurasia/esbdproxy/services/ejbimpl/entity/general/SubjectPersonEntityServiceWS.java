@@ -1,7 +1,5 @@
 package kz.theeurasia.esbdproxy.services.ejbimpl.entity.general;
 
-import java.security.InvalidParameterException;
-
 import javax.ejb.EJB;
 import javax.ejb.Singleton;
 
@@ -13,6 +11,7 @@ import kz.theeurasia.esbdproxy.domain.entities.general.SubjectEntity;
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectPersonEntity;
 import kz.theeurasia.esbdproxy.domain.infos.general.IdentityCardInfo;
 import kz.theeurasia.esbdproxy.domain.infos.general.PersonalInfo;
+import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.general.IdentityCardTypeServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.SexServiceDAO;
@@ -28,9 +27,9 @@ public class SubjectPersonEntityServiceWS extends SubjectEntityServiceWS impleme
     private SexServiceDAO sexService;
 
     @Override
-    public SubjectPersonEntity getById(Long id) throws NotFound {
+    public SubjectPersonEntity getById(Long id) throws NotFound, InvalidInputParameter {
 	if (id == null)
-	    throw new InvalidParameterException("ID must be not null");
+	    throw new InvalidInputParameter("ID must be not null");
 	checkSession();
 	Client source = getSoapService().getClientByID(getSessionId(), id.intValue());
 	if (source == null)
@@ -45,9 +44,9 @@ public class SubjectPersonEntityServiceWS extends SubjectEntityServiceWS impleme
     }
 
     @Override
-    public SubjectPersonEntity getByIIN(String iin) throws NotFound {
+    public SubjectPersonEntity getByIIN(String iin) throws NotFound, InvalidInputParameter {
 	if (iin == null || iin.trim().isEmpty())
-	    throw new InvalidParameterException("'iin' must be not an empty string");
+	    throw new InvalidInputParameter("'iin' must be not an empty string");
 	Client source = fetchClientByIdNumber(iin, true, false);
 	if (source == null)
 	    throw new NotFound(
@@ -77,7 +76,7 @@ public class SubjectPersonEntityServiceWS extends SubjectEntityServiceWS impleme
 	pi.setDayOfBirth(convertESBDDateToCalendar(source.getBorn()));
 	try {
 	    pi.setSex(sexService.getById(new Long(source.getSexID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    pi.setSex(SexDict.UNSPECIFIED);
 	}
 
@@ -93,7 +92,7 @@ public class SubjectPersonEntityServiceWS extends SubjectEntityServiceWS impleme
 	try {
 	    di.setIdentityCardType(identityCardTypeService
 		    .getById(new Integer(source.getDOCUMENTTYPEID()).longValue()));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    di.setIdentityCardType(IdentityCardTypeDict.UNSPECIFIED);
 	}
     }

@@ -12,6 +12,7 @@ import org.junit.Test;
 
 import kz.theeurasia.esbdproxy.domain.dict.general.EconomicSectorDict;
 import kz.theeurasia.esbdproxy.service.ejbimpl.test.GeneralServiceTestCase;
+import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.general.EconomicSectorServiceDAO;
 
@@ -28,7 +29,7 @@ public class EconomicsSectorServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test
-    public void testGetById() throws NamingException {
+    public void testGetById() throws NamingException, InvalidInputParameter {
 	EconomicSectorServiceDAO service = getEconomicSectorServiceEntityWS();
 	EconomicSectorDict[] list = EconomicSectorDict.values();
 	for (EconomicSectorDict i : list) {
@@ -42,7 +43,7 @@ public class EconomicsSectorServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test(expected = NotFound.class)
-    public void testGetById_NotFound() throws NamingException, NotFound {
+    public void testGetById_NotFound() throws NamingException, NotFound, InvalidInputParameter {
 	EconomicSectorServiceDAO service = getEconomicSectorServiceEntityWS();
 	service.getById(INVALID_ECONOMICS_SECTOR_ID);
     }

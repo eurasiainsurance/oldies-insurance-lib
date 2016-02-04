@@ -12,6 +12,7 @@ import org.junit.Test;
 
 import kz.theeurasia.esbdproxy.domain.dict.general.SexDict;
 import kz.theeurasia.esbdproxy.service.ejbimpl.test.GeneralServiceTestCase;
+import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.general.SexServiceDAO;
 
@@ -28,7 +29,7 @@ public class SexServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test
-    public void testGetById() throws NamingException {
+    public void testGetById() throws NamingException, InvalidInputParameter {
 	SexServiceDAO service = getSexServiceEntityWS();
 	SexDict[] list = SexDict.values();
 	for (SexDict i : list) {
@@ -42,7 +43,7 @@ public class SexServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test(expected = NotFound.class)
-    public void testGetById_NotFound() throws NamingException, NotFound {
+    public void testGetById_NotFound() throws NamingException, NotFound, InvalidInputParameter {
 	SexServiceDAO service = getSexServiceEntityWS();
 	service.getById(INVALID_SEX_ID);
     }

@@ -12,6 +12,7 @@ import org.junit.Test;
 
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleAgeClassDict;
 import kz.theeurasia.esbdproxy.service.ejbimpl.test.GeneralServiceTestCase;
+import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleAgeClassServiceDAO;
 
@@ -28,7 +29,7 @@ public class VehicleAgeClassServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test
-    public void testGetById() throws NamingException {
+    public void testGetById() throws NamingException, InvalidInputParameter {
 	VehicleAgeClassServiceDAO service = getVehicleAgeClassServiceEntityWS();
 	VehicleAgeClassDict[] list = VehicleAgeClassDict.values();
 	for (VehicleAgeClassDict i : list) {
@@ -42,7 +43,7 @@ public class VehicleAgeClassServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test(expected = NotFound.class)
-    public void testGetById_NotFound() throws NamingException, NotFound {
+    public void testGetById_NotFound() throws NamingException, NotFound, InvalidInputParameter {
 	VehicleAgeClassServiceDAO service = getVehicleAgeClassServiceEntityWS();
 	service.getById(INVALID_VEHICLE_AGE_CLASS_ID);
     }

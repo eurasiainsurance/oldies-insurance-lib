@@ -12,6 +12,7 @@ import org.junit.Test;
 
 import kz.theeurasia.esbdproxy.domain.dict.general.IdentityCardTypeDict;
 import kz.theeurasia.esbdproxy.service.ejbimpl.test.GeneralServiceTestCase;
+import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.general.IdentityCardTypeServiceDAO;
 
@@ -28,7 +29,7 @@ public class IdentityCardTypeServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test
-    public void testGetById() throws NamingException {
+    public void testGetById() throws NamingException, InvalidInputParameter {
 	IdentityCardTypeServiceDAO service = getIdentityCardTypeServiceEntityWS();
 	IdentityCardTypeDict[] list = IdentityCardTypeDict.values();
 	for (IdentityCardTypeDict i : list) {
@@ -42,7 +43,7 @@ public class IdentityCardTypeServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test(expected = NotFound.class)
-    public void testGetById_NotFound() throws NamingException, NotFound {
+    public void testGetById_NotFound() throws NamingException, NotFound, InvalidInputParameter {
 	IdentityCardTypeServiceDAO service = getIdentityCardTypeServiceEntityWS();
 	service.getById(INVALID_IDENTITY_CARD_TYPE_ID);
     }

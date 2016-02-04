@@ -12,6 +12,7 @@ import org.junit.Test;
 
 import kz.theeurasia.esbdproxy.domain.dict.general.CountryRegionDict;
 import kz.theeurasia.esbdproxy.service.ejbimpl.test.GeneralServiceTestCase;
+import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.general.CountryRegionServiceDAO;
 
@@ -28,7 +29,7 @@ public class CountryRegionServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test
-    public void testGetById() throws NamingException {
+    public void testGetById() throws NamingException, InvalidInputParameter {
 	CountryRegionServiceDAO service = getCountryRegionServiceEntityWS();
 	CountryRegionDict[] list = CountryRegionDict.values();
 	for (CountryRegionDict i : list) {
@@ -42,7 +43,7 @@ public class CountryRegionServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test(expected = NotFound.class)
-    public void testGetById_NotFound() throws NamingException, NotFound {
+    public void testGetById_NotFound() throws NamingException, NotFound, InvalidInputParameter {
 	CountryRegionServiceDAO service = getCountryRegionServiceEntityWS();
 	service.getById(INVALID_COUNTRY_REGION_ID);
     }

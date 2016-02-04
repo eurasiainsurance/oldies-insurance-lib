@@ -1,6 +1,5 @@
 package kz.theeurasia.esbdproxy.services.ejbimpl.entity.osgpovts;
 
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +24,7 @@ import kz.theeurasia.esbdproxy.domain.infos.osgpovts.GPWParticipantInfo;
 import kz.theeurasia.esbdproxy.domain.infos.osgpovts.InvalidInfo;
 import kz.theeurasia.esbdproxy.domain.infos.osgpovts.PensionerInfo;
 import kz.theeurasia.esbdproxy.domain.infos.osgpovts.PrivilegerInfo;
+import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.ejbimpl.DataCoruptionException;
 import kz.theeurasia.esbdproxy.services.ejbimpl.entity.general.AbstractESBDEntityServiceWS;
@@ -86,9 +86,9 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
     private CountryRegionServiceDAO countryRegionService;
 
     @Override
-    public PolicyEntity getById(Long id) throws NotFound {
+    public PolicyEntity getById(Long id) throws NotFound, InvalidInputParameter {
 	if (id == null)
-	    throw new InvalidParameterException("ID must be not null");
+	    throw new InvalidInputParameter("ID must be not null");
 	checkSession();
 
 	Policy source = null;
@@ -105,9 +105,9 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
     }
 
     @Override
-    public PolicyEntity getByNumber(String number) throws NotFound {
+    public PolicyEntity getByNumber(String number) throws NotFound, InvalidInputParameter {
 	if (number == null || number.trim().isEmpty())
-	    throw new InvalidParameterException("'number' must not be an empty string");
+	    throw new InvalidInputParameter("'number' must not be an empty string");
 	checkSession();
 	ArrayOfPolicy policies = getSoapService().getPoliciesByNumber(getSessionId(), number);
 	if (policies == null || policies.getPolicy() == null || policies.getPolicy().isEmpty())
@@ -144,7 +144,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	// SYSTEM_DELIMITER_ID s:int Идентификатор страховой компании
 	try {
 	    target.setInsurer(insuranceCompanyService.getById(new Long(source.getSYSTEMDELIMITERID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    // mandatory field
 	    throw new DataCoruptionException(
 		    "Error while fetching Policy ID = '" + source.getPOLICYID()
@@ -156,7 +156,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	// CLIENT_ID s:int Идентификатор страхователя (обязательно)
 	try {
 	    target.setInsurant(subjectService.getById(new Long(source.getCLIENTID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    // mandatory field
 	    throw new DataCoruptionException(
 		    "Error while fetching Policy ID = '" + source.getPOLICYID() + "' from ESBD. Insurer ID = '"
@@ -174,14 +174,14 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	try {
 	    target.setCancelationReasonType(
 		    cancelationReasonTypeService.getById(new Long(source.getRESCINDINGREASONID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    target.setCancelationReasonType(CancelationReasonDict.UNSPECIFIED);
 	}
 
 	// BRANCH_ID s:int Филиал (обязательно)
 	try {
 	    target.setBranch(branchService.getById(new Long(source.getBRANCHID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    // mandatory field
 	    throw new DataCoruptionException(
 		    "Error while fetching Policy from ESBD. Branch ID = '" + source.getBRANCHID() + "' not found", e);
@@ -231,7 +231,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	created.setDate(convertESBDDateToCalendar(source.getINPUTDATE()));
 	try {
 	    created.setAuthor(userService.getById(new Long(source.getCREATEDBYUSERID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    throw new DataCoruptionException(
 		    "Error while fetching Policy ID = '" + source.getPOLICYID()
 			    + "' from ESBD. User created ID = '" + source.getCREATEDBYUSERID()
@@ -249,7 +249,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	if (modified.getDate() != null)
 	    try {
 		modified.setAuthor(userService.getById(new Long(source.getCHANGEDBYUSERID())));
-	    } catch (NotFound e) {
+	    } catch (NotFound | InvalidInputParameter e) {
 		throw new DataCoruptionException(
 			"Error while fetching Policy ID = '" + source.getPOLICYID()
 				+ "' from ESBD. User modified ID = '" + source.getCHANGEDBYUSERID()
@@ -279,7 +279,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	else {
 	    try {
 		target.setPolicy(getById(new Long(source.getPOLICYID())));
-	    } catch (NotFound e) {
+	    } catch (NotFound | InvalidInputParameter e) {
 		throw new DataCoruptionException(
 			"Error while fetching Driver ID = '" + source.getDRIVERID()
 				+ "' at Policy ID = '" + source.getPOLICYID()
@@ -290,7 +290,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	// CLIENT_ID s:int Идентификатор клиента (обязательно)
 	try {
 	    target.setInsuredPerson(subjectPersonService.getById(new Long(source.getCLIENTID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    throw new DataCoruptionException(
 		    "Error while fetching Driver ID = '" + source.getDRIVERID()
 			    + "' at Policy ID = '" + source.getPOLICYID()
@@ -302,7 +302,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	// HOUSEHOLD_POSITION_ID s:int Идентификатор семейного положения
 	try {
 	    target.setMaritalStatus(maritalStatusService.getById(new Long(source.getHOUSEHOLDPOSITIONID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    throw new DataCoruptionException(
 		    "Error while fetching Driver ID = '" + source.getDRIVERID()
 			    + "' at Policy ID = '" + source.getPOLICYID()
@@ -315,7 +315,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	try {
 	    target.setInsuredAgeExpirienceClass(
 		    driverExpirienceClassificationService.getById(new Long(source.getAGEEXPERIENCEID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    throw new DataCoruptionException(
 		    "Error while fetching Driver ID = '" + source.getDRIVERID()
 			    + "' at Policy ID = '" + source.getPOLICYID()
@@ -336,7 +336,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	// getClassId
 	try {
 	    target.setInsuraceClassType(insuranceClassTypeService.getById(new Long(source.getClassId())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    // mandatory field
 	    throw new DataCoruptionException(
 		    "Error while fetching Driver ID = '" + source.getDRIVERID()
@@ -404,7 +404,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	created.setDate(convertESBDDateToCalendar(source.getINPUTDATE()));
 	try {
 	    created.setAuthor(userService.getById(new Long(source.getCREATEDBYUSERID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    throw new DataCoruptionException(
 		    "Error while fetching Driver ID = '" + source.getDRIVERID()
 			    + "' at Policy ID = '" + source.getPOLICYID()
@@ -422,7 +422,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	if (modified.getDate() != null)
 	    try {
 		modified.setAuthor(userService.getById(new Long(source.getCHANGEDBYUSERID())));
-	    } catch (NotFound e) {
+	    } catch (NotFound | InvalidInputParameter e) {
 		throw new DataCoruptionException(
 			"Error while fetching Driver ID = '" + source.getDRIVERID()
 				+ "' at Policy ID = '" + source.getPOLICYID()
@@ -434,7 +434,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	// SYSTEM_DELIMITER_ID s:int Идентификатор страховой компании
 	try {
 	    target.setInsurer(insuranceCompanyService.getById(new Long(source.getSYSTEMDELIMITERID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    throw new DataCoruptionException(
 		    "Error while fetching Driver ID = '" + source.getDRIVERID()
 			    + "' at Policy ID = '" + source.getPOLICYID()
@@ -455,7 +455,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	else {
 	    try {
 		target.setPolicy(getById(new Long(source.getPOLICYID())));
-	    } catch (NotFound e) {
+	    } catch (NotFound | InvalidInputParameter e) {
 		throw new DataCoruptionException(
 			"Error while fetching InsuredVehicle ID = '" + source.getPOLICYTFID()
 				+ "' at Policy ID = '" + source.getPOLICYID()
@@ -467,7 +467,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	// TF_ID s:int Идентификатор ТС
 	try {
 	    target.setVehicle(vehicleService.getById(new Long(source.getTFID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    // TODO is mandatory?
 	    throw new DataCoruptionException(
 		    "Error while fetching InsuredVehicle ID = '" + source.getPOLICYTFID()
@@ -479,7 +479,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	// TF_TYPE_ID s:int Идентификатор типа ТС (обязательно)
 	try {
 	    target.setVehicleClass(vehicleClassService.getById(new Long(source.getTFTYPEID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    throw new DataCoruptionException(
 		    "Error while fetching InsuredVehicle ID = '" + source.getPOLICYTFID()
 			    + "' at Policy ID = '" + source.getPOLICYID()
@@ -490,7 +490,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	// TF_AGE_ID s:int Идентификатор возраста ТС (обязательно)
 	try {
 	    target.setVehicleAgeClass(vehicleAgeClassService.getById(new Long(source.getTFAGEID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    throw new DataCoruptionException(
 		    "Error while fetching InsuredVehicle ID = '" + source.getPOLICYTFID()
 			    + "' at Policy ID = '" + source.getPOLICYID()
@@ -512,7 +512,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	vci.setMajorCity(source.getBIGCITYBOOL() == 1);
 	try {
 	    vci.setRegistrationRegion(countryRegionService.getById(new Long(source.getREGIONID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    throw new DataCoruptionException(
 		    "Error while fetching InsuredVehicle ID = '" + source.getPOLICYTFID()
 			    + "' at Policy ID = '" + source.getPOLICYID()
@@ -535,7 +535,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	created.setDate(convertESBDDateToCalendar(source.getINPUTDATE()));
 	try {
 	    created.setAuthor(userService.getById(new Long(source.getCREATEDBYUSERID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    throw new DataCoruptionException(
 		    "Error while fetching InsuredVehicle ID = '" + source.getPOLICYTFID()
 			    + "' at Policy ID = '" + source.getPOLICYID()
@@ -553,7 +553,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	if (modified.getDate() != null)
 	    try {
 		modified.setAuthor(userService.getById(new Long(source.getCHANGEDBYUSERID())));
-	    } catch (NotFound e) {
+	    } catch (NotFound | InvalidInputParameter e) {
 		throw new DataCoruptionException(
 			"Error while fetching InsuredVehicle ID = '" + source.getPOLICYTFID()
 				+ "' at Policy ID = '" + source.getPOLICYID()
@@ -565,7 +565,7 @@ public class PolicyEntityServiceWS extends AbstractESBDEntityServiceWS implement
 	// SYSTEM_DELIMITER_ID s:int Идентификатор страховой компании
 	try {
 	    target.setInsurer(insuranceCompanyService.getById(new Long(source.getSYSTEMDELIMITERID())));
-	} catch (NotFound e) {
+	} catch (NotFound | InvalidInputParameter e) {
 	    throw new DataCoruptionException(
 		    "Error while fetching InsuredVehicle ID = '" + source.getPOLICYTFID()
 			    + "' at Policy ID = '" + source.getPOLICYID()

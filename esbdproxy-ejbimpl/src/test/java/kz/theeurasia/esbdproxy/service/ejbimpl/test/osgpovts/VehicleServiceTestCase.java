@@ -10,13 +10,14 @@ import org.junit.Test;
 
 import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleEntity;
 import kz.theeurasia.esbdproxy.service.ejbimpl.test.GeneralServiceTestCase;
+import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleServiceDAO;
 
 public class VehicleServiceTestCase extends GeneralServiceTestCase {
 
     @Test
-    public void testGetById() throws NamingException {
+    public void testGetById() throws NamingException, InvalidInputParameter {
 	VehicleServiceDAO service = getVehicleServiceEntityWS();
 	try {
 	    VehicleEntity entity = service.getById(VALID_VEHICLE_ID);
@@ -28,13 +29,13 @@ public class VehicleServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test(expected = NotFound.class)
-    public void testGetById_NotFound() throws NamingException, NotFound {
+    public void testGetById_NotFound() throws NamingException, NotFound, InvalidInputParameter {
 	VehicleServiceDAO service = getVehicleServiceEntityWS();
 	service.getById(INVALID_VEHICLE_ID);
     }
 
     @Test
-    public void testGetByVIN() throws NamingException {
+    public void testGetByVIN() throws NamingException, InvalidInputParameter {
 	VehicleServiceDAO service = getVehicleServiceEntityWS();
 	try {
 	    VehicleEntity entity = service.getByVINCode(VALID_VEHICLE_VIN_CODE);
@@ -46,7 +47,7 @@ public class VehicleServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test(expected = NotFound.class)
-    public void testGetByVIN_NotFound() throws NamingException, NotFound {
+    public void testGetByVIN_NotFound() throws NamingException, NotFound, InvalidInputParameter {
 	VehicleServiceDAO service = getVehicleServiceEntityWS();
 	service.getByVINCode(INVALID_VEHICLE_VIN_CODE);
     }

@@ -11,13 +11,14 @@ import org.junit.Test;
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectEntity;
 import kz.theeurasia.esbdproxy.domain.enums.general.SubjectTypeEnum;
 import kz.theeurasia.esbdproxy.service.ejbimpl.test.GeneralServiceTestCase;
+import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.general.SubjectServiceDAO;
 
 public class SubjectServiceTestCase extends GeneralServiceTestCase {
 
     @Test
-    public void testGetById() throws NamingException {
+    public void testGetById() throws NamingException, InvalidInputParameter {
 	SubjectServiceDAO service = getSubjectServiceEntityWS();
 	try {
 	    for (int i = 0; i < VALID_SUBJECT_IDS.length; i++) {
@@ -34,13 +35,13 @@ public class SubjectServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test(expected = NotFound.class)
-    public void testGetById_NotFound() throws NamingException, NotFound {
+    public void testGetById_NotFound() throws NamingException, NotFound, InvalidInputParameter {
 	SubjectServiceDAO service = getSubjectServiceEntityWS();
 	service.getById(INVALID_SUBJECT_ID);
     }
 
     @Test
-    public void testGetByIDNumber() throws NamingException {
+    public void testGetByIDNumber() throws NamingException, InvalidInputParameter {
 	SubjectServiceDAO service = getSubjectServiceEntityWS();
 	try {
 	    for (int i = 0; i < VALID_SUBJECT_ID_NUMBERS.length; i++) {
@@ -59,7 +60,7 @@ public class SubjectServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test(expected = NotFound.class)
-    public void testGetByIDNumber_NotFound() throws NamingException, NotFound {
+    public void testGetByIDNumber_NotFound() throws NamingException, NotFound, InvalidInputParameter {
 	SubjectServiceDAO service = getSubjectServiceEntityWS();
 	service.getByIdNumber(INVALID_SUBJECT_ID_NUMBER);
     }

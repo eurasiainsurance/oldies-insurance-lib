@@ -12,6 +12,7 @@ import org.junit.Test;
 
 import kz.theeurasia.esbdproxy.domain.entities.general.InsuranceCompanyEntity;
 import kz.theeurasia.esbdproxy.service.ejbimpl.test.GeneralServiceTestCase;
+import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.general.InsuranceCompanyServiceDAO;
 
@@ -28,7 +29,7 @@ public class InsuranceCompanyServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test
-    public void testGetById() throws NamingException {
+    public void testGetById() throws NamingException, InvalidInputParameter {
 	InsuranceCompanyServiceDAO service = getInsuranceCompanyServiceEntityWS();
 	List<InsuranceCompanyEntity> list = service.getAll();
 	for (InsuranceCompanyEntity i : list) {
@@ -42,7 +43,7 @@ public class InsuranceCompanyServiceTestCase extends GeneralServiceTestCase {
     }
 
     @Test(expected = NotFound.class)
-    public void testGetById_NotFound() throws NamingException, NotFound {
+    public void testGetById_NotFound() throws NamingException, NotFound, InvalidInputParameter {
 	InsuranceCompanyServiceDAO service = getInsuranceCompanyServiceEntityWS();
 	service.getById(INVALID_INSURANCE_COMPANY_ID);
     }

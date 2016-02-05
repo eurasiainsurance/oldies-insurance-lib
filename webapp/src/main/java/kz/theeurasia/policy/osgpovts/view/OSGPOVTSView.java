@@ -71,10 +71,7 @@ public class OSGPOVTSView implements Serializable {
 				    gpovts.getString(e.getMessageCode().getMessageBundleCode()),
 				    gpovts.getString(e.getDescriptionCode().getMessageBundleCode())));
 	}
-	try {
-	    policyFacade.calculatePremiumCost(policy);
-	} catch (ValidationException e) {
-	}
+	policyFacade.calculatePremiumCost(policy);
     }
 
     public void removeInsuredDriver(InsuredDriver driver) {
@@ -88,10 +85,7 @@ public class OSGPOVTSView implements Serializable {
 				    gpovts.getString(e.getMessageCode().getMessageBundleCode()),
 				    gpovts.getString(e.getDescriptionCode().getMessageBundleCode())));
 	}
-	try {
-	    policyFacade.calculatePremiumCost(policy);
-	} catch (ValidationException e) {
-	}
+	policyFacade.calculatePremiumCost(policy);
     }
 
     public void addInsuredVehicle() {
@@ -105,10 +99,7 @@ public class OSGPOVTSView implements Serializable {
 				    gpovts.getString(e.getMessageCode().getMessageBundleCode()),
 				    gpovts.getString(e.getDescriptionCode().getMessageBundleCode())));
 	}
-	try {
-	    policyFacade.calculatePremiumCost(policy);
-	} catch (ValidationException e) {
-	}
+	policyFacade.calculatePremiumCost(policy);
     }
 
     public void removeInsuredVehicle(InsuredVehicle insuredVehicle) {
@@ -122,17 +113,11 @@ public class OSGPOVTSView implements Serializable {
 				    gpovts.getString(e.getMessageCode().getMessageBundleCode()),
 				    gpovts.getString(e.getDescriptionCode().getMessageBundleCode())));
 	}
-	try {
-	    policyFacade.calculatePremiumCost(policy);
-	} catch (ValidationException e) {
-	}
+	policyFacade.calculatePremiumCost(policy);
     }
 
     public void doCalculatePolicyCost() {
-	try {
-	    policyFacade.calculatePremiumCost(policy);
-	} catch (ValidationException e) {
-	}
+	policyFacade.calculatePremiumCost(policy);
     }
 
     public void onDriverIdNumberChanged(InsuredDriver insuredDriver) {
@@ -140,17 +125,11 @@ public class OSGPOVTSView implements Serializable {
 	    driverFacade.fetchInfo(policy, insuredDriver);
 	} catch (ValidationException e) {
 	}
-	try {
-	    policyFacade.calculatePremiumCost(policy);
-	} catch (ValidationException e) {
-	}
+	policyFacade.calculatePremiumCost(policy);
     }
 
     public void onFormChanged() {
-	try {
-	    policyFacade.calculatePremiumCost(policy);
-	} catch (ValidationException e) {
-	}
+	policyFacade.calculatePremiumCost(policy);
     }
 
     public void onVehicleVinCodeChanged(InsuredVehicle insuredVehicle) {
@@ -158,18 +137,12 @@ public class OSGPOVTSView implements Serializable {
 	    vehicleFacade.fetchInfo(policy, insuredVehicle);
 	} catch (ValidationException e) {
 	}
-	try {
-	    policyFacade.calculatePremiumCost(policy);
-	} catch (ValidationException e) {
-	}
+	policyFacade.calculatePremiumCost(policy);
     }
 
     public void onVehicleRegionChanged(InsuredVehicle insuredVehicle) {
 	vehicleFacade.evaluateMajorCity(insuredVehicle);
-	try {
-	    policyFacade.calculatePremiumCost(policy);
-	} catch (ValidationException e) {
-	}
+	policyFacade.calculatePremiumCost(policy);
     }
 
     // GENERATED

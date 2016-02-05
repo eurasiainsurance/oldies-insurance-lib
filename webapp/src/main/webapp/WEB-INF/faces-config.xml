@@ -10,11 +10,11 @@
 			<supported-locale>ru_RU</supported-locale>
 		</locale-config>
 		<resource-bundle>
-			<base-name>kz.theeurasia.policy.i18n.global</base-name>
+			<base-name>GlobalMessages</base-name>
 			<var>glb</var>
 		</resource-bundle>
 		<resource-bundle>
-			<base-name>kz.theeurasia.policy.i18n.osgpovts</base-name>
+			<base-name>OSGPOVTSMessages</base-name>
 			<var>gpovts</var>
 		</resource-bundle>
 	</application>

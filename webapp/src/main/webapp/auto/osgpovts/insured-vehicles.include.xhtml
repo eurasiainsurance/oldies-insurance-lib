@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<h:panelGroup xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:comp="http://xmlns.jcp.org/jsf/composite"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+	<p:dataGrid var="vehicle"
+		value="#{osgpovtsView.policy.insuredVehicles}" layout="grid"
+		columns="2">
+
+		<f:facet name="header">
+			<p:commandButton value="#{gpovts['command.add-vehicle']}"
+				action="#{osgpovtsView.addInsuredVehicle}" process="@this"
+				update="@form"
+				rendered="#{fn:length(osgpovtsView.policy.insuredDrivers) eq 1}" />
+		</f:facet>
+
+		<p:panel id="currentVehiclePanel">
+			<f:facet name="header">
+				<h:outputText rendered="#{empty vehicle.displayName}"
+					value="#{gpovts['title.insuted-vehicle.default-name']}" />
+				<h:outputText rendered="#{not empty vehicle.displayName}"
+					value="#{vehicle.displayName}" />
+			</f:facet>
+			<f:facet name="actions">
+				<p:commandLink
+					styleClass="ui-panel-titlebar-icon ui-corner-all ui-state-default"
+					rendered="#{fn:length(osgpovtsView.policy.insuredVehicles) gt 1}"
+					action="#{osgpovtsView.removeInsuredVehicle(vehicle)}"
+					process="@this" update="@form">
+					<h:outputText styleClass="ui-icon ui-icon-close" />
+				</p:commandLink>
+			</f:facet>
+
+
+			<h:panelGrid columns="1">
+
+				<p:outputLabel value="#{gpovts['label.input.vehicle.vin-code']}" />
+				<h:panelGrid columns="2">
+					<p:inputMask id="vinCode" value="#{vehicle.vinCode}"
+						mask="*****************"
+						onchange="rcVehicle_VinCodeChanged#{vehicle.safeId}()">
+						<pe:keyFilter regEx="/[0123456789ABCDEFGHJKLMNPRSTUVWXYZ]/i"
+							preventPaste="false" />
+					</p:inputMask>
+					<p:message for="vinCode" display="icon" />
+					<p:remoteCommand
+						name="
+						rcVehicle_VinCodeChanged#{vehicle.safeId}"
+						actionListener="#{osgpovtsView.onVehicleVinCodeChanged(vehicle)}"
+						update="@form" process="@this,vinCode" />
+				</h:panelGrid>
+				<p:outputLabel value="#{gpovts['label.input.vehicle-age-class']}" />
+				<p:selectOneMenu value="#{vehicle.vehicleAgeClass}"
+					disabled="#{vehicle.fetched}" required="true">
+					<p:ajax event="change" process="@this" update="@form"
+						listener="#{osgpovtsView.onFormChanged}" />
+					<f:selectItems value="#{vehicleAgeClassService.validItems}"
+						var="vehicleAgeClass" itemValue="#{vehicleAgeClass}"
+						itemLabel="#{gpovts['label.si.vehicle-age-class.' += vehicleAgeClass]}" />
+				</p:selectOneMenu>
+				<p:outputLabel value="#{gpovts['label.input.vehicle-class']}" />
+				<p:selectOneMenu value="#{vehicle.vehicleClass}"
+					disabled="#{vehicle.fetched}" required="true">
+					<p:ajax event="change" process="@this" update="@form"
+						listener="#{osgpovtsView.onFormChanged}" />
+					<f:selectItems value="#{vehicleClassService.validItems}"
+						var="vehicleClass" itemValue="#{vehicleClass}"
+						itemLabel="#{gpovts['label.si.vehicle-class.' += vehicleClass]}" />
+				</p:selectOneMenu>
+				<p:outputLabel value="#{gpovts['label.input.vehicle-region']}" />
+				<p:selectOneMenu value="#{vehicle.region}" required="true">
+					<p:ajax event="change" process="@this" update="@form"
+						listener="#{osgpovtsView.onVehicleRegionChanged(vehicle)}" />
+					<f:selectItems value="#{countryRegionService.validItems}"
+						var="countryRegion" itemValue="#{countryRegion}"
+						itemLabel="#{glb['label.si.country-region.' += countryRegion]}" />
+				</p:selectOneMenu>
+			</h:panelGrid>
+
+			<h:panelGrid columns="2">
+				<p:outputPanel>
+					<p:selectBooleanCheckbox widgetVar="w_majorCityCheckbox"
+						value="#{vehicle.majorCity}" disabled="#{vehicle.forcedMajorCity}"
+						required="true">
+						<p:ajax event="change" process="@this" update="@form"
+							listener="#{osgpovtsView.onFormChanged}" />
+					</p:selectBooleanCheckbox>
+					<p:outputLabel value="#{gpovts['label.input.vehicle.major-city']}"
+						onclick="if (!PF('w_majorCityCheckbox').disabled) {PF('w_majorCityCheckbox').toggle();}" />
+				</p:outputPanel>
+			</h:panelGrid>
+
+		</p:panel>
+
+	</p:dataGrid>
+
+</h:panelGroup>

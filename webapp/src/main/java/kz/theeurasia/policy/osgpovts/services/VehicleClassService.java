@@ -1,15 +1,26 @@
 package kz.theeurasia.policy.osgpovts.services;
 
+import java.util.List;
+
+import javax.ejb.EJB;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 
-import kz.theeurasia.services.domain.osgpovts.VehicleClass;
+import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
+import kz.theeurasia.esbdproxy.services.osgpovts.VehicleClassServiceDAO;
 
-@ManagedBean(eager = true)
+@ManagedBean
 @ApplicationScoped
 public class VehicleClassService {
 
-    public VehicleClass[] getVehicleClasses() {
-	return VehicleClass.values();
+    @EJB
+    private VehicleClassServiceDAO vehicleClassServiceDAO;
+
+    public List<VehicleClassDict> getAllItems() {
+	return vehicleClassServiceDAO.getAll();
+    }
+
+    public List<VehicleClassDict> getValidItems() {
+	return vehicleClassServiceDAO.getApplicableForOSGPOVTS();
     }
 }

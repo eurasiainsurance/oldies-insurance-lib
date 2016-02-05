@@ -14,10 +14,16 @@
 	<f:view>
 		<h:graphicImage alt="#{glb['name.eurasia.full']}" library="images"
 			name="eurasia_logo.png" />
+		<p:growl autoUpdate="true" globalOnly="true" />
 		<br />
 		<br />
-		<br />
+		<p:overlayPanel widgetVar="statusDialog" id="statusDialog">
+			<p:graphicImage library="images" name="loading.gif" />
+		</p:overlayPanel>
 		<ui:insert name="page-content" />
+		<p:ajaxStatus onstart="PF('statusDialog').show()"
+			onsuccess="PF('statusDialog').hide()" />
+		<p:log />
 	</f:view>
 </h:body>
 </html>

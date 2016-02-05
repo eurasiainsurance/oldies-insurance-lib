@@ -4,6 +4,7 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:comp="http://xmlns.jcp.org/jsf/composite"
 	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	template="/WEB-INF/templates/main.xhtml">
 
@@ -11,152 +12,17 @@
 
 	<ui:define name="page-content">
 		<h:form>
-			<p:wizard style="width: 1200px; align: center"
+			<p:wizard style="width: 100%"
 				nextLabel="#{glb['label.command.wizard.next']}"
 				backLabel="#{glb['label.command.wizard.prev']}">
 				<p:tab id="calculator" title="#{gpovts['title.wizard.calculator']}">
-					<p:panel>
-
-
-						<p:panel id="insuredList"
-							header="#{gpovts['title.calculator.insured']}">
-							<ui:repeat var="insured" value="#{calculatorView.insuredList}"
-								varStatus="status">
-								<h:panelGrid columns="2">
-									<h:panelGroup>
-										<h:panelGrid columns="3">
-											<p:outputLabel
-												value="#{gpovts['label.input.insured.insured-age-class']}" />
-											<p:outputLabel
-												value="#{gpovts['label.input.insured.driver-expirience-class']}" />
-											<p:outputLabel
-												value="#{gpovts['label.input.insured.id-number']}" />
-											<p:selectOneMenu value="#{insured.insuredAgeClass}">
-												<f:selectItems
-													value="#{insuredAgeClassService.insuredAgeClasses}"
-													var="insuredAgeClass" itemValue="#{insuredAgeClass}"
-													itemLabel="#{gpovts['label.si.insured-age-class.' += insuredAgeClass]}" />
-											</p:selectOneMenu>
-											<p:selectOneMenu value="#{insured.driverExpirienceClass}">
-												<f:selectItems
-													value="#{driverExpirienceClassService.driverExpirienceClasses}"
-													var="driverExpirienceClass"
-													itemValue="#{driverExpirienceClass}"
-													itemLabel="#{gpovts['label.si.driver-expirience-class.' += driverExpirienceClass]}" />
-											</p:selectOneMenu>
-											<p:inputMask id="idNumber" mask="999999999999"
-												value="#{insured.idNumber}" />
-										</h:panelGrid>
-										<h:panelGrid columns="2">
-											<p:outputPanel>
-												<p:selectBooleanCheckbox value="#{insured.hasPrivilege}" />
-												<p:outputLabel
-													value="#{gpovts['label.input.insured.has-privilege']}" />
-											</p:outputPanel>
-										</h:panelGrid>
-										<p:panel rendered="#{not empty insured.clientInfo}"
-											id="clientInfo">
-											<p:outputLabel
-												value="#{insured.clientInfo.lastName} #{insured.clientInfo.firstName} #{insured.clientInfo.middleName} - #{gpovts['label.si.insurance-class.' += insured.insuranceClassType]}" />
-										</p:panel>
-									</h:panelGroup>
-									<h:panelGroup>
-										<p:commandButton value="#{gpovts['command.remove-insured']}"
-											action="#{calculatorView.removeInsured(insured)}"
-											rendered="#{not status.first}"
-											update="@form:vehicleList,@form:insuredList" />
-										<p:commandButton value="#{gpovts['command.add-insured']}"
-											action="#{calculatorView.addInsured}"
-											update="@form:vehicleList,@form:insuredList"
-											rendered="#{status.first and fn:length(calculatorView.vehicleList) eq 1}" />
-									</h:panelGroup>
-								</h:panelGrid>
-							</ui:repeat>
-						</p:panel>
-
-						<br />
-
-						<p:panel id="vehicleList"
-							header="#{gpovts['title.calculator.vehicles']}">
-							<ui:repeat var="vehicle" value="#{calculatorView.vehicleList}"
-								varStatus="status">
-								<h:panelGrid columns="2">
-									<h:panelGroup>
-										<h:panelGrid columns="3">
-											<p:outputLabel
-												value="#{gpovts['label.input.vehicle-region']}" />
-											<p:outputLabel
-												value="#{gpovts['label.input.vehicle-age-class']}" />
-											<p:outputLabel value="#{gpovts['label.input.vehicle-class']}" />
-											<p:selectOneMenu value="#{vehicle.region}">
-												<p:ajax event="change"
-													listener="#{calculatorView.checkMajorCityForced(vehicle)}"
-													process="@form:vehicleList" update="@form:vehicleList" />
-												<f:selectItems
-													value="#{countryRegionService.countryRegions}"
-													var="countryRegion" itemValue="#{countryRegion}"
-													itemLabel="#{glb['label.si.country-region.' += countryRegion]}" />
-											</p:selectOneMenu>
-											<p:selectOneMenu value="#{vehicle.ageClass}">
-												<f:selectItems
-													value="#{vehicleAgeClassService.vehicleAgeClasses}"
-													var="vehicleAgeClass" itemValue="#{vehicleAgeClass}"
-													itemLabel="#{gpovts['label.si.vehicle-age-class.' += vehicleAgeClass]}" />
-											</p:selectOneMenu>
-											<p:selectOneMenu value="#{vehicle.vehicleClass}">
-												<f:selectItems value="#{vehicleClassService.vehicleClasses}"
-													var="vehicleClass" itemValue="#{vehicleClass}"
-													itemLabel="#{gpovts['label.si.vehicle-class.' += vehicleClass]}" />
-											</p:selectOneMenu>
-										</h:panelGrid>
-										<h:panelGrid columns="2">
-											<p:outputPanel>
-												<p:selectBooleanCheckbox value="#{vehicle.majorCity}"
-													disabled="#{vehicle.majorCityTrueForced}" />
-												<p:outputLabel
-													value="#{gpovts['label.input.vehicle.major-city']}" />
-											</p:outputPanel>
-										</h:panelGrid>
-									</h:panelGroup>
-									<h:panelGroup>
-										<p:commandButton value="#{gpovts['command.remove-vehicle']}"
-											action="#{calculatorView.removeVehicle(vehicle)}"
-											rendered="#{not status.first}"
-											update="@form:vehicleList,@form:insuredList" />
-										<p:commandButton value="#{gpovts['command.add-vehicle']}"
-											action="#{calculatorView.addVehicle}"
-											update="@form:vehicleList,@form:insuredList"
-											rendered="#{status.first and fn:length(calculatorView.insuredList) eq 1}" />
-									</h:panelGroup>
-								</h:panelGrid>
-							</ui:repeat>
-						</p:panel>
-
-						<br />
-
-						<p:panel id="premiumCost"
-							header="#{gpovts['title.calculator.results']}"
-							rendered="#{calculatorView.premiumCost &gt; 0}">
-							<h:panelGrid columns="2">
-								<p:outputLabel value="#{gpovts['label.output.policy-cost']}" />
-								<p:outputLabel style="font-weight: bold;"
-									value="#{calculatorView.premiumCost}">
-									<f:convertNumber type="currency" currencySymbol="&#8376;" />
-								</p:outputLabel>
-							</h:panelGrid>
-						</p:panel>
-						<br />
-						<p:commandButton action="#{calculatorView.doCalculate}"
-							value="#{gpovts['command.calculate-premium-cost']}"
-							update="@form" />
-					</p:panel>
+					<ui:include src="premium-cost.include.xhtml" />
+					<ui:include src="insured-drivers.include.xhtml" />
+					<ui:include src="insured-vehicles.include.xhtml" />
 				</p:tab>
-				<p:tab id="policyForm" title="#{gpovts['title.wizard.policy-form']}">
-					<p:panel>
-					</p:panel>
+				<p:tab id="form" title="#{gpovts['title.wizard.policy-form']}">
 				</p:tab>
 			</p:wizard>
-
 		</h:form>
 	</ui:define>
 </ui:composition>

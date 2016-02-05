@@ -7,6 +7,7 @@ import javax.faces.bean.ViewScoped;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuranceClassTypeDict;
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectPersonEntity;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredAgeClassEnum;
+import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
 import kz.theeurasia.esbdproxy.domain.infos.general.IdentityCardInfo;
 import kz.theeurasia.esbdproxy.domain.infos.general.OriginInfo;
 import kz.theeurasia.esbdproxy.domain.infos.general.PersonalInfo;
@@ -69,6 +70,7 @@ public class DriverFacade {
 
     private void _reset(PolicyRequest policy, InsuredDriver driver) {
 	_resetFetchedInfo(policy, driver);
+	driver.setExpirienceClass(InsuredExpirienceClassEnum.MORE2);
     }
 
     private void _resetFetchedInfo(PolicyRequest policy, InsuredDriver driver) {

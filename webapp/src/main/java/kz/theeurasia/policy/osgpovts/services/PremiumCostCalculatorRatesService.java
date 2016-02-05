@@ -1,6 +1,5 @@
 package kz.theeurasia.policy.osgpovts.services;
 
-import java.security.InvalidParameterException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -113,9 +112,9 @@ public class PremiumCostCalculatorRatesService {
 	return BASE_RATE;
     }
 
-    public double getRegionRate(CountryRegionDict region) {
+    public double getRegionRate(CountryRegionDict region) throws InvalidParameter {
 	if (!REGION_RATES.containsKey(region))
-	    throw new InvalidParameterException();
+	    throw new InvalidParameter();
 	return REGION_RATES.get(region);
     }
 
@@ -123,40 +122,40 @@ public class PremiumCostCalculatorRatesService {
 	return (isMajorCity ? MAJOR_CITY_CORRECTION_RATE : NON_MAJOR_CITY_CORRECTION_RATE);
     }
 
-    public double getVehicleTypeRate(VehicleClassDict vehicleType) {
+    public double getVehicleTypeRate(VehicleClassDict vehicleType) throws InvalidParameter {
 	if (!VEHICLE_TYPE_RATES.containsKey(vehicleType))
-	    throw new InvalidParameterException();
+	    throw new InvalidParameter();
 	return VEHICLE_TYPE_RATES.get(vehicleType);
     }
 
     public double getDriverExpirienceTypeRate(InsuredAgeClassEnum ageClass,
-	    InsuredExpirienceClassEnum driverExpirienceClass) {
+	    InsuredExpirienceClassEnum driverExpirienceClass) throws InvalidParameter {
 	if (!DRIVER_EXPIRIENCE_CLASS_RATES.containsKey(ageClass))
-	    throw new InvalidParameterException("Can't calculate ratio. Invalid parameter " + ageClass);
+	    throw new InvalidParameter("Can't calculate ratio. Invalid parameter " + ageClass);
 	if (!DRIVER_EXPIRIENCE_CLASS_RATES.get(ageClass).containsKey(driverExpirienceClass))
-	    throw new InvalidParameterException("Can't calculate ratio. Invalid parameter " + driverExpirienceClass);
+	    throw new InvalidParameter("Can't calculate ratio. Invalid parameter " + driverExpirienceClass);
 	return DRIVER_EXPIRIENCE_CLASS_RATES.get(ageClass).get(driverExpirienceClass);
     }
 
-    public double getVehicleAgeTypeRate(VehicleAgeClassDict vehicleAgeType) {
+    public double getVehicleAgeTypeRate(VehicleAgeClassDict vehicleAgeType) throws InvalidParameter {
 	if (!VEHICLE_AGE_RATES.containsKey(vehicleAgeType))
-	    throw new InvalidParameterException();
+	    throw new InvalidParameter();
 	return VEHICLE_AGE_RATES.get(vehicleAgeType);
     }
 
-    public double getInsuranceClassTypeRate(InsuranceClassTypeDict insuranceClassType) {
+    public double getInsuranceClassTypeRate(InsuranceClassTypeDict insuranceClassType) throws InvalidParameter {
 	if (!INSURANCE_CLASS_TYPES_RATES.containsKey(insuranceClassType))
-	    throw new InvalidParameterException();
+	    throw new InvalidParameter();
 	return INSURANCE_CLASS_TYPES_RATES.get(insuranceClassType);
     }
 
-    public double getPolicyTermClassRate(PolicyTermClass policyTermClass) {
+    public double getPolicyTermClassRate(PolicyTermClass policyTermClass) throws InvalidParameter {
 	if (!POLICY_TERM_RATES.containsKey(policyTermClass))
-	    throw new InvalidParameterException();
+	    throw new InvalidParameter();
 	return POLICY_TERM_RATES.get(policyTermClass);
     }
 
-    public double getPrivilegeRate(boolean hasPrivilege) {
+    public double getPrivilegeRate(boolean hasPrivilege) throws InvalidParameter {
 	return (hasPrivilege ? HAS_PRIVILEGE_RATE : HAS_NO_PRIVILEGE_RATE);
     }
 }

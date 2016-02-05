@@ -1,7 +1,5 @@
 package kz.theeurasia.policy.osgpovts.facade;
 
-import java.security.InvalidParameterException;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
@@ -12,6 +10,7 @@ import kz.theeurasia.policy.osgpovts.domain.InsuredDriver;
 import kz.theeurasia.policy.osgpovts.domain.InsuredVehicle;
 import kz.theeurasia.policy.osgpovts.domain.PolicyRequest;
 import kz.theeurasia.policy.osgpovts.domain.PolicyTermClass;
+import kz.theeurasia.policy.osgpovts.services.InvalidParameter;
 import kz.theeurasia.policy.osgpovts.services.PremiumCostCalculatorRatesService;
 
 @ManagedBean
@@ -31,23 +30,19 @@ public class PolicyFacade {
 	    double maximumCost = 0d;
 	    for (InsuredDriver driver : policy.getInsuredDrivers())
 		for (InsuredVehicle vehicle : policy.getInsuredVehicles()) {
-		    try {
-			double cost = _calculatePremiumCostVariant(driver, vehicle, policy.getTermClass());
-			if (maximumCost < cost)
-			    maximumCost = cost;
-		    } catch (Exception e) {
-			e.printStackTrace();
-		    }
+		    double cost = _calculatePremiumCostVariant(driver, vehicle, policy.getTermClass());
+		    if (maximumCost < cost)
+			maximumCost = cost;
 		}
 	    policy.setCalculatedPremiumCost(maximumCost);
-	} catch (InvalidParameterException e) {
+	} catch (InvalidParameter e) {
 	    throw new ValidationException(MessageBundleCode.CANT_CALCULATE_PREMIUM_COST,
-		    MessageBundleCode.CANT_CALCULATE_PREMIUM_COST_DESCRIPTION);
+		    MessageBundleCode.CANT_CALCULATE_PREMIUM_COST_DESCRIPTION, e.getMessage(), e);
 	}
     }
 
     private double _calculatePremiumCostVariant(InsuredDriver insured, InsuredVehicle vehicle,
-	    PolicyTermClass policyTermClass) {
+	    PolicyTermClass policyTermClass) throws InvalidParameter {
 	double premium = rates.getBase();
 	premium = premium * rates.getBaseRate();
 	premium = premium * rates.getRegionRate(vehicle.getRegion());

@@ -18,11 +18,11 @@
 	<distributionManagement>
 		<repository>
 			<id>archiva.releases</id>
-			<url>http://mvnrepo/repository/releases/</url>
+			<url>http://mvnrepo.theeurasia.kz/repository/releases/</url>
 		</repository>
 		<snapshotRepository>
 			<id>archiva.snapshots</id>
-			<url>http://mvnrepo/repository/snapshots/</url>
+			<url>http://mvnrepo.theeurasia.kz/repository/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
 

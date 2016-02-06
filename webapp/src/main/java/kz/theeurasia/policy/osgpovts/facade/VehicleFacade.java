@@ -28,7 +28,7 @@ public class VehicleFacade {
     private VehicleServiceDAO vehicleService;
 
     public InsuredVehicle add(PolicyRequest policy) throws ValidationException {
-	if (policy.getInsuredDrivers().size() > 1)
+	if (policy.getInsuredVehicles().size() > 0 && policy.getInsuredDrivers().size() > 1)
 	    throw new ValidationException(MessageBundleCode.ONLY_ONE_VEHICLE_ALLOWED);
 	InsuredVehicle e = new InsuredVehicle();
 	policy.getInsuredVehicles().add(e);

@@ -45,9 +45,36 @@ public class OSGPOVTSView implements Serializable {
     @PostConstruct
     public void init() {
 	try {
+	    // TODO changed for test purposes
+	    // this.policy = policyFacade.initNew();
+	    // driverFacade.add(policy);
+	    // vehicleFacade.add(policy);
+
 	    this.policy = policyFacade.initNew();
-	    driverFacade.add(policy);
-	    vehicleFacade.add(policy);
+
+	    InsuredDriver drv1 = driverFacade.add(policy);
+	    drv1.setIdNumber("570325300699");
+	    driverFacade.fetchInfo(policy, drv1);
+
+	    InsuredDriver drv2 = driverFacade.add(policy);
+	    drv2.setIdNumber("870622300359");
+	    driverFacade.fetchInfo(policy, drv2);
+
+	    InsuredDriver drv3 = driverFacade.add(policy);
+	    drv3.setIdNumber("111111111111");
+	    driverFacade.fetchInfo(policy, drv3);
+
+	    InsuredDriver drv4 = driverFacade.add(policy);
+	    drv4.setIdNumber("860401402685");
+	    driverFacade.fetchInfo(policy, drv4);
+
+	    InsuredVehicle vhc1 = vehicleFacade.add(policy);
+	    vhc1.setVinCode("BWAFA11050LC25377");
+	    vehicleFacade.fetchInfo(policy, vhc1);
+	    vehicleFacade.evaluateMajorCity(vhc1);
+
+	    policyFacade.calculatePremiumCost(policy);
+
 	} catch (ValidationException e) {
 	    FacesContext
 		    .getCurrentInstance()

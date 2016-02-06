@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:comp="http://xmlns.jcp.org/jsf/composite"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+	<ui:repeat var="driver" value="#{osgpovtsView.policy.insuredDrivers}">
+		<p:panel>
+			<h:panelGrid columns="3">
+				<f:facet name="header">
+					<ui:insert name="header" />
+				</f:facet>
+				<p:outputLabel value="LASTNAME" />
+				<p:outputLabel value="FIRSTNAME" />
+				<p:outputLabel value="PATRONYMIC" />
+				<p:inputText value="#{driver.personal.surename}"
+					readonly="#{driver.fetched}" disabled="#{driver.fetched}" />
+				<p:inputText value="#{driver.personal.name}"
+					readonly="#{driver.fetched}" disabled="#{driver.fetched}" />
+				<p:inputText value="#{driver.personal.patronymic}"
+					readonly="#{driver.fetched}" disabled="#{driver.fetched}" />
+				<p:outputLabel value="DOB" />
+				<p:outputLabel value="SEX" />
+				<f:verbatim />
+				<p:calendar value="#{driver.personal.dayOfBirth.time}"
+					locale="#{localeService.locale}" readonly="#{driver.fetched}"
+					disabled="#{driver.fetched}" />
+				<p:selectOneButton value="#{driver.personal.sex}"
+					readonly="#{driver.fetched}" disabled="#{driver.fetched}">
+					<f:selectItems value="#{sexService.validItems}" />
+				</p:selectOneButton>
+				<f:verbatim />
+			</h:panelGrid>
+		</p:panel>
+	</ui:repeat>
+
+</ui:composition>

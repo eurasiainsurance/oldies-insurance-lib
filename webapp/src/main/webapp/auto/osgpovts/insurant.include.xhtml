@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:comp="http://xmlns.jcp.org/jsf/composite"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+	<p:panelGrid columns="1">
+		<f:facet name="header">STRAHOVATEL</f:facet>
+		<ui:decorate template="personal-info.include.xhtml">
+			<ui:define name="header">
+				<h:outputText value="Personal Info" />
+			</ui:define>
+			<ui:param name="personal"
+				value="#{osgpovtsView.policy.insurant.personal}" />
+		</ui:decorate>
+	</p:panelGrid>
+
+</ui:composition>

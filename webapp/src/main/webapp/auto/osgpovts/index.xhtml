@@ -17,11 +17,12 @@
 				backLabel="#{glb['label.command.wizard.prev']}">
 				<p:tab id="calculator" title="#{gpovts['title.wizard.calculator']}">
 					<ui:decorate template="premium-cost.include.xhtml" />
-					<ui:decorate template="insured-drivers.include.xhtml" />
-					<ui:decorate template="insured-vehicles.include.xhtml" />
+					<ui:decorate template="calc.insured-drivers.include.xhtml" />
+					<ui:decorate template="calc.insured-vehicles.include.xhtml" />
 				</p:tab>
 				<p:tab id="form" title="#{gpovts['title.wizard.policy-form']}">
 					<ui:decorate template="premium-cost.include.xhtml" />
+					<ui:decorate template="form.insured-drivers.include.xhtml" />
 				</p:tab>
 			</p:wizard>
 		</h:form>

@@ -17,23 +17,23 @@
 		<p:growl autoUpdate="true" globalOnly="true" />
 		<br />
 		<br />
-		<p:overlayPanel widgetVar="statusDialog" id="statusDialog">
+
+		<p:dialog widgetVar="ajaxStatusDialog" modal="true" draggable="false"
+			closable="false" resizable="false" showHeader="false">
 			<p:graphicImage library="images" name="loading.gif" />
-		</p:overlayPanel>
+		</p:dialog>
+		<script type="text/javascript">
+			function onAjaxStart() {
+				ajaxDialogTimeout1 = setTimeout(
+						'PF(\'ajaxStatusDialog\').show()', 500);
+			}
+			function onAjaxComplete() {
+				clearTimeout(ajaxDialogTimeout1);
+				PF('ajaxStatusDialog').hide();
+			}
+		</script>
 		<ui:insert name="page-content" />
-		<p:ajaxStatus>
-			<f:facet name="start">
-				<script type="text/javascript">
-					timer1 = setTimeout('PF(\'statusDialog\').show()', 500);
-				</script>
-			</f:facet>
-			<f:facet name="complete">
-				<script type="text/javascript">
-					clearTimeout(timer1);
-					PF('statusDialog').hide();
-				</script>
-			</f:facet>
-		</p:ajaxStatus>
+		<p:ajaxStatus onstart="onAjaxStart()" oncomplete="onAjaxComplete()" />
 	</f:view>
 </h:body>
 </html>

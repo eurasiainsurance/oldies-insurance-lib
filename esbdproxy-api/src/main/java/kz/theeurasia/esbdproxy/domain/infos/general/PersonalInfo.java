@@ -14,13 +14,13 @@ import kz.theeurasia.esbdproxy.domain.dict.general.SexDict;
 public class PersonalInfo {
 
     // First_Name s:string Имя (для физ. лица)
-    private String firstName;
+    private String name;
 
     // Last_Name s:string Фамилия (для физ. лица)
-    private String lastName;
+    private String surename;
 
     // Middle_Name s:string Отчество (для физ. лица)
-    private String middleName;
+    private String patronymic;
 
     // Born s:string Дата рождения
     private Calendar dayOfBirth;
@@ -30,28 +30,28 @@ public class PersonalInfo {
 
     // GENERATED
 
-    public String getFirstName() {
-	return firstName;
+    public String getName() {
+	return name;
     }
 
-    public void setFirstName(String firstName) {
-	this.firstName = firstName;
+    public void setName(String name) {
+	this.name = name;
     }
 
-    public String getLastName() {
-	return lastName;
+    public String getSurename() {
+	return surename;
     }
 
-    public void setLastName(String lastName) {
-	this.lastName = lastName;
+    public void setSurename(String surename) {
+	this.surename = surename;
     }
 
-    public String getMiddleName() {
-	return middleName;
+    public String getPatronymic() {
+	return patronymic;
     }
 
-    public void setMiddleName(String middleName) {
-	this.middleName = middleName;
+    public void setPatronymic(String patronymic) {
+	this.patronymic = patronymic;
     }
 
     public Calendar getDayOfBirth() {

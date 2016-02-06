@@ -70,9 +70,9 @@ public class SubjectPersonEntityServiceWS extends SubjectEntityServiceWS impleme
 	// Sex_ID s:int Пол (справочник SEX)
 	PersonalInfo pi = new PersonalInfo();
 	target.setPersonal(pi);
-	pi.setFirstName(source.getFirstName());
-	pi.setLastName(source.getLastName());
-	pi.setMiddleName(source.getMiddleName());
+	pi.setName(source.getFirstName());
+	pi.setSurename(source.getLastName());
+	pi.setPatronymic(source.getMiddleName());
 	pi.setDayOfBirth(convertESBDDateToCalendar(source.getBorn()));
 	try {
 	    pi.setSex(sexService.getById(new Long(source.getSexID())));

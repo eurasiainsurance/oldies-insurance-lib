@@ -81,13 +81,13 @@ public class InsuredDriver {
     }
 
     public String getDisplayName() {
-	return (((getPersonal().getLastName() == null || getPersonal().getLastName().isEmpty()) ? ""
-		: (getPersonal().getLastName() + " ")) +
-		((getPersonal().getFirstName() == null || getPersonal().getFirstName().isEmpty()) ? ""
-			: (getPersonal().getFirstName() + " "))
+	return (((getPersonal().getSurename() == null || getPersonal().getSurename().isEmpty()) ? ""
+		: (getPersonal().getSurename() + " ")) +
+		((getPersonal().getName() == null || getPersonal().getName().isEmpty()) ? ""
+			: (getPersonal().getName() + " "))
 		+
-		((getPersonal().getMiddleName() == null || getPersonal().getMiddleName().isEmpty()) ? ""
-			: (getPersonal().getMiddleName() + " "))).trim();
+		((getPersonal().getPatronymic() == null || getPersonal().getPatronymic().isEmpty()) ? ""
+			: (getPersonal().getPatronymic() + " "))).trim();
     }
 
     public boolean isFetched() {

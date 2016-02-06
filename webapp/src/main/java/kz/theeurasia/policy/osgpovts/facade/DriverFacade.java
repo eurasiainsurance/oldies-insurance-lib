@@ -31,7 +31,7 @@ public class DriverFacade {
     private InsuranceClassTypeServiceDAO insuranceClassTypeService;
 
     public InsuredDriver add(PolicyRequest policy) throws ValidationException {
-	if (policy.getInsuredVehicles().size() > 1)
+	if (policy.getInsuredDrivers().size() > 0 && policy.getInsuredVehicles().size() > 1)
 	    throw new ValidationException(MessageBundleCode.ONLY_ONE_DRIVER_ALLOWED);
 	InsuredDriver e = new InsuredDriver();
 	policy.getInsuredDrivers().add(e);

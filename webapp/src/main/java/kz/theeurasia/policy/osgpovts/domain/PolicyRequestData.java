@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class PolicyRequest {
+public class PolicyRequestData {
     private final UUID id = UUID.randomUUID();
 
-    private Insurant insurant = new Insurant();
-    private List<InsuredDriver> insuredDrivers = new ArrayList<>();
-    private List<InsuredVehicle> insuredVehicles = new ArrayList<>();
+    private InsurantData insurant = new InsurantData();
+    private List<InsuredDriverData> insuredDrivers = new ArrayList<>();
+    private List<InsuredVehicleData> insuredVehicles = new ArrayList<>();
     private PolicyTermClass termClass = PolicyTermClass.YEAR;
     private double calculatedPremiumCost;
 
@@ -33,27 +33,27 @@ public class PolicyRequest {
 	return id;
     }
 
-    public Insurant getInsurant() {
+    public InsurantData getInsurant() {
 	return insurant;
     }
 
-    public void setInsurant(Insurant insurant) {
+    public void setInsurant(InsurantData insurant) {
 	this.insurant = insurant;
     }
 
-    public List<InsuredDriver> getInsuredDrivers() {
+    public List<InsuredDriverData> getInsuredDrivers() {
 	return insuredDrivers;
     }
 
-    public void setInsuredDrivers(List<InsuredDriver> insuredDrivers) {
+    public void setInsuredDrivers(List<InsuredDriverData> insuredDrivers) {
 	this.insuredDrivers = insuredDrivers;
     }
 
-    public List<InsuredVehicle> getInsuredVehicles() {
+    public List<InsuredVehicleData> getInsuredVehicles() {
 	return insuredVehicles;
     }
 
-    public void setInsuredVehicles(List<InsuredVehicle> insuredVehicles) {
+    public void setInsuredVehicles(List<InsuredVehicleData> insuredVehicles) {
 	this.insuredVehicles = insuredVehicles;
     }
 

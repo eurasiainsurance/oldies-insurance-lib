@@ -12,9 +12,9 @@ import javax.faces.context.FacesContext;
 
 import kz.theeurasia.policy.GlobalMessageBundleCode;
 import kz.theeurasia.policy.osgpovts.ValidationException;
-import kz.theeurasia.policy.osgpovts.domain.InsuredDriver;
-import kz.theeurasia.policy.osgpovts.domain.InsuredVehicle;
-import kz.theeurasia.policy.osgpovts.domain.PolicyRequest;
+import kz.theeurasia.policy.osgpovts.domain.InsuredDriverData;
+import kz.theeurasia.policy.osgpovts.domain.InsuredVehicleData;
+import kz.theeurasia.policy.osgpovts.domain.PolicyRequestData;
 import kz.theeurasia.policy.osgpovts.facade.DriverFacade;
 import kz.theeurasia.policy.osgpovts.facade.PolicyFacade;
 import kz.theeurasia.policy.osgpovts.facade.VehicleFacade;
@@ -40,7 +40,7 @@ public class OSGPOVTSView implements Serializable {
     @ManagedProperty("#{vehicleFacade}")
     private VehicleFacade vehicleFacade;
 
-    private PolicyRequest policy;
+    private PolicyRequestData policy;
 
     @PostConstruct
     public void init() {
@@ -52,23 +52,23 @@ public class OSGPOVTSView implements Serializable {
 
 	    this.policy = policyFacade.initNew();
 
-	    InsuredDriver drv1 = driverFacade.add(policy);
+	    InsuredDriverData drv1 = driverFacade.add(policy);
 	    drv1.setIdNumber("570325300699");
 	    driverFacade.fetchInfo(policy, drv1);
 
-	    InsuredDriver drv2 = driverFacade.add(policy);
+	    InsuredDriverData drv2 = driverFacade.add(policy);
 	    drv2.setIdNumber("870622300359");
 	    driverFacade.fetchInfo(policy, drv2);
 
-	    InsuredDriver drv3 = driverFacade.add(policy);
+	    InsuredDriverData drv3 = driverFacade.add(policy);
 	    drv3.setIdNumber("111111111111");
 	    driverFacade.fetchInfo(policy, drv3);
 
-	    InsuredDriver drv4 = driverFacade.add(policy);
+	    InsuredDriverData drv4 = driverFacade.add(policy);
 	    drv4.setIdNumber("860401402685");
 	    driverFacade.fetchInfo(policy, drv4);
 
-	    InsuredVehicle vhc1 = vehicleFacade.add(policy);
+	    InsuredVehicleData vhc1 = vehicleFacade.add(policy);
 	    vhc1.setVinCode("BWAFA11050LC25377");
 	    vehicleFacade.fetchInfo(policy, vhc1);
 	    vehicleFacade.evaluateMajorCity(vhc1);
@@ -101,7 +101,7 @@ public class OSGPOVTSView implements Serializable {
 	policyFacade.calculatePremiumCost(policy);
     }
 
-    public void removeInsuredDriver(InsuredDriver driver) {
+    public void removeInsuredDriver(InsuredDriverData driver) {
 	try {
 	    driverFacade.remove(policy, driver);
 	} catch (ValidationException e) {
@@ -129,7 +129,7 @@ public class OSGPOVTSView implements Serializable {
 	policyFacade.calculatePremiumCost(policy);
     }
 
-    public void removeInsuredVehicle(InsuredVehicle insuredVehicle) {
+    public void removeInsuredVehicle(InsuredVehicleData insuredVehicle) {
 	try {
 	    vehicleFacade.remove(policy, insuredVehicle);
 	} catch (ValidationException e) {
@@ -147,7 +147,7 @@ public class OSGPOVTSView implements Serializable {
 	policyFacade.calculatePremiumCost(policy);
     }
 
-    public void onDriverIdNumberChanged(InsuredDriver insuredDriver) {
+    public void onDriverIdNumberChanged(InsuredDriverData insuredDriver) {
 	try {
 	    driverFacade.fetchInfo(policy, insuredDriver);
 	} catch (ValidationException e) {
@@ -159,7 +159,7 @@ public class OSGPOVTSView implements Serializable {
 	policyFacade.calculatePremiumCost(policy);
     }
 
-    public void onVehicleVinCodeChanged(InsuredVehicle insuredVehicle) {
+    public void onVehicleVinCodeChanged(InsuredVehicleData insuredVehicle) {
 	try {
 	    vehicleFacade.fetchInfo(policy, insuredVehicle);
 	} catch (ValidationException e) {
@@ -167,7 +167,7 @@ public class OSGPOVTSView implements Serializable {
 	policyFacade.calculatePremiumCost(policy);
     }
 
-    public void onVehicleRegionChanged(InsuredVehicle insuredVehicle) {
+    public void onVehicleRegionChanged(InsuredVehicleData insuredVehicle) {
 	vehicleFacade.evaluateMajorCity(insuredVehicle);
 	policyFacade.calculatePremiumCost(policy);
     }
@@ -194,7 +194,7 @@ public class OSGPOVTSView implements Serializable {
 	this.gpovts = gpovts;
     }
 
-    public PolicyRequest getPolicy() {
+    public PolicyRequestData getPolicy() {
 	return policy;
     }
 }

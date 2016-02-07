@@ -14,7 +14,7 @@ import kz.theeurasia.esbdproxy.domain.infos.general.IdentityCardInfo;
 import kz.theeurasia.esbdproxy.domain.infos.general.OriginInfo;
 import kz.theeurasia.esbdproxy.domain.infos.general.PersonalInfo;
 
-public class Insurant {
+public class InsurantData {
     private final UUID id = UUID.randomUUID();
 
     private String idNumber = "";

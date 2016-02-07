@@ -14,8 +14,8 @@ import kz.theeurasia.esbdproxy.services.general.CountryRegionServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleServiceDAO;
 import kz.theeurasia.policy.osgpovts.MessageBundleCode;
 import kz.theeurasia.policy.osgpovts.ValidationException;
-import kz.theeurasia.policy.osgpovts.domain.InsuredVehicle;
-import kz.theeurasia.policy.osgpovts.domain.PolicyRequest;
+import kz.theeurasia.policy.osgpovts.domain.InsuredVehicleData;
+import kz.theeurasia.policy.osgpovts.domain.PolicyRequestData;
 
 @ManagedBean
 @ViewScoped
@@ -27,22 +27,22 @@ public class VehicleFacade {
     @EJB
     private VehicleServiceDAO vehicleService;
 
-    public InsuredVehicle add(PolicyRequest policy) throws ValidationException {
+    public InsuredVehicleData add(PolicyRequestData policy) throws ValidationException {
 	if (policy.getInsuredVehicles().size() > 0 && policy.getInsuredDrivers().size() > 1)
 	    throw new ValidationException(MessageBundleCode.ONLY_ONE_VEHICLE_ALLOWED);
-	InsuredVehicle e = new InsuredVehicle();
+	InsuredVehicleData e = new InsuredVehicleData();
 	policy.getInsuredVehicles().add(e);
 	_reset(policy, e);
 	return e;
     }
 
-    public void remove(PolicyRequest policy, InsuredVehicle vehicle) throws ValidationException {
+    public void remove(PolicyRequestData policy, InsuredVehicleData vehicle) throws ValidationException {
 	if (policy.getInsuredVehicles().size() <= 1)
 	    throw new ValidationException(MessageBundleCode.VEHICLES_LIST_CANT_BE_EMPTY);
 	policy.getInsuredVehicles().remove(vehicle);
     }
 
-    public void fetchInfo(PolicyRequest policy, InsuredVehicle vehicle) throws ValidationException {
+    public void fetchInfo(PolicyRequestData policy, InsuredVehicleData vehicle) throws ValidationException {
 	try {
 	    VehicleEntity fetched = vehicleService.getByVINCode(vehicle.getVinCode());
 	    vehicle.setFetchedEntity(fetched);
@@ -58,7 +58,7 @@ public class VehicleFacade {
 	}
     }
 
-    public void evaluateMajorCity(InsuredVehicle insuredVehicle) {
+    public void evaluateMajorCity(InsuredVehicleData insuredVehicle) {
 	insuredVehicle.setForcedMajorCity(
 		insuredVehicle.getRegion().equals(CountryRegionDict.GALM)
 			|| insuredVehicle.getRegion().equals(CountryRegionDict.GAST));
@@ -66,14 +66,14 @@ public class VehicleFacade {
 	    insuredVehicle.setMajorCity(true);
     }
 
-    private void _reset(PolicyRequest policy, InsuredVehicle vehicle) {
+    private void _reset(PolicyRequestData policy, InsuredVehicleData vehicle) {
 	_resetFetchedInfo(policy, vehicle);
 	vehicle.setVinCode("");
 	vehicle.setRegion(countryRegionService.getDefaultRegion());
 	evaluateMajorCity(vehicle);
     }
 
-    private void _resetFetchedInfo(PolicyRequest policy, InsuredVehicle vehicle) {
+    private void _resetFetchedInfo(PolicyRequestData policy, InsuredVehicleData vehicle) {
 	vehicle.setFetchedEntity(null);
 	vehicle.setVehicleClass(VehicleClassDict.CAR);
 	vehicle.setVehicleAgeClass(VehicleAgeClassDict.UNDER7);

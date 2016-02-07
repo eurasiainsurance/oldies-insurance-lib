@@ -1,6 +1,7 @@
 package kz.theeurasia.policy.osgpovts.facade;
 
 import java.util.Calendar;
+import java.util.Date;
 
 public final class CalculatorUtil {
     public static int calculateAgeByDOB(Calendar dob) {
@@ -13,5 +14,11 @@ public final class CalculatorUtil {
 	    age--;
 	}
 	return age;
+    }
+
+    public static int calculateAgeByDOB(Date dob) {
+	Calendar c = Calendar.getInstance();
+	c.setTime(dob);
+	return calculateAgeByDOB(c);
     }
 }

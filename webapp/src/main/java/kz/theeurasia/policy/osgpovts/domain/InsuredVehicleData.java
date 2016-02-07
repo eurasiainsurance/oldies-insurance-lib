@@ -10,11 +10,10 @@ import kz.theeurasia.esbdproxy.domain.dict.general.CountryRegionDict;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleAgeClassDict;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
 import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleEntity;
-import kz.theeurasia.esbdproxy.domain.infos.general.VehicleCertificateInfo;
 import kz.theeurasia.policy.validator.Required;
 import kz.theeurasia.policy.validator.VINCode;
 
-public class InsuredVehicle {
+public class InsuredVehicleData {
     private final UUID id = UUID.randomUUID();
 
     private VehicleClassDict vehicleClass = VehicleClassDict.UNSPECIFIED;
@@ -28,10 +27,10 @@ public class InsuredVehicle {
 
     private String vehicleManufacturer = "";
 
-    private VehicleCertificateInfo certificateInfo = new VehicleCertificateInfo();
+    private VehicleCertificateData certificateData = new VehicleCertificateData();
     private List<UploadedFile> certificateDocuments = new ArrayList<>();
 
-    private CountryRegionDict region;
+    private CountryRegionDict region = CountryRegionDict.UNSPECIFIED;
     private boolean majorCity;
     private boolean forcedMajorCity;
 
@@ -91,8 +90,6 @@ public class InsuredVehicle {
 
     public void setVinCode(String vinCode) {
 	this.vinCode = vinCode;
-	if (this.vinCode != null)
-	    this.vinCode = this.vinCode.toUpperCase();
     }
 
     public String getVehicleModel() {
@@ -111,12 +108,12 @@ public class InsuredVehicle {
 	this.vehicleManufacturer = vehicleManufacturer;
     }
 
-    public VehicleCertificateInfo getCertificateInfo() {
-	return certificateInfo;
+    public VehicleCertificateData getCertificateData() {
+	return certificateData;
     }
 
-    public void setCertificateInfo(VehicleCertificateInfo certificateInfo) {
-	this.certificateInfo = certificateInfo;
+    public void setCertificateData(VehicleCertificateData certificateData) {
+	this.certificateData = certificateData;
     }
 
     public List<UploadedFile> getCertificateDocuments() {
@@ -158,4 +155,5 @@ public class InsuredVehicle {
     public void setFetchedEntity(VehicleEntity fetchedEntity) {
 	this.fetchedEntity = fetchedEntity;
     }
+
 }

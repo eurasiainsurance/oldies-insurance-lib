@@ -4,9 +4,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
-import kz.theeurasia.policy.osgpovts.domain.InsuredDriver;
-import kz.theeurasia.policy.osgpovts.domain.InsuredVehicle;
-import kz.theeurasia.policy.osgpovts.domain.PolicyRequest;
+import kz.theeurasia.policy.osgpovts.domain.InsuredDriverData;
+import kz.theeurasia.policy.osgpovts.domain.InsuredVehicleData;
+import kz.theeurasia.policy.osgpovts.domain.PolicyRequestData;
 import kz.theeurasia.policy.osgpovts.domain.PolicyTermClass;
 import kz.theeurasia.policy.osgpovts.services.PremiumCostCalculatorRatesService;
 
@@ -17,15 +17,15 @@ public class PolicyFacade {
     @ManagedProperty("#{premiumCostCalculatorRatesService}")
     private PremiumCostCalculatorRatesService rates;
 
-    public PolicyRequest initNew() {
-	PolicyRequest policy = new PolicyRequest();
+    public PolicyRequestData initNew() {
+	PolicyRequestData policy = new PolicyRequestData();
 	return policy;
     }
 
-    public void calculatePremiumCost(PolicyRequest policy) {
+    public void calculatePremiumCost(PolicyRequestData policy) {
 	double maximumCost = 0d;
-	for (InsuredDriver driver : policy.getInsuredDrivers())
-	    for (InsuredVehicle vehicle : policy.getInsuredVehicles()) {
+	for (InsuredDriverData driver : policy.getInsuredDrivers())
+	    for (InsuredVehicleData vehicle : policy.getInsuredVehicles()) {
 		double cost = _calculatePremiumCostVariant(driver, vehicle, policy.getTermClass());
 		if (maximumCost < cost)
 		    maximumCost = cost;
@@ -33,7 +33,7 @@ public class PolicyFacade {
 	policy.setCalculatedPremiumCost(maximumCost);
     }
 
-    private double _calculatePremiumCostVariant(InsuredDriver insured, InsuredVehicle vehicle,
+    private double _calculatePremiumCostVariant(InsuredDriverData insured, InsuredVehicleData vehicle,
 	    PolicyTermClass policyTermClass) {
 	double premium = rates.getBase();
 	premium = premium * rates.getBaseRate();

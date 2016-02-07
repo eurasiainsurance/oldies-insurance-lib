@@ -48,8 +48,7 @@
 					</p:inputMask>
 					<p:message for="vinCode" display="icon" />
 					<p:remoteCommand
-						name="
-						rcVehicle_VinCodeChanged#{vehicle.safeId}"
+						name="rcVehicle_VinCodeChanged#{vehicle.safeId}"
 						actionListener="#{osgpovtsView.onVehicleVinCodeChanged(vehicle)}"
 						update="@form" process="@this,vinCode" />
 				</h:panelGrid>

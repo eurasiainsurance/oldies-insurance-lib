@@ -2,10 +2,7 @@ package kz.theeurasia.policy.osgpovts.domain;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
 import java.util.UUID;
-
-import javax.faces.bean.ManagedProperty;
 
 import org.primefaces.model.UploadedFile;
 
@@ -13,58 +10,51 @@ import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuranceClassTypeDict;
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectPersonEntity;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredAgeClassEnum;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
-import kz.theeurasia.esbdproxy.domain.infos.general.IdentityCardInfo;
-import kz.theeurasia.esbdproxy.domain.infos.general.OriginInfo;
-import kz.theeurasia.esbdproxy.domain.infos.general.PersonalInfo;
-import kz.theeurasia.esbdproxy.domain.infos.osgpovts.DriverLicenseInfo;
-import kz.theeurasia.esbdproxy.domain.infos.osgpovts.GPWParticipantInfo;
-import kz.theeurasia.esbdproxy.domain.infos.osgpovts.InvalidInfo;
-import kz.theeurasia.esbdproxy.domain.infos.osgpovts.PensionerInfo;
-import kz.theeurasia.esbdproxy.domain.infos.osgpovts.PrivilegerInfo;
+import kz.theeurasia.policy.general.domain.IdentityCardData;
+import kz.theeurasia.policy.general.domain.OriginData;
+import kz.theeurasia.policy.general.domain.PersonalData;
 import kz.theeurasia.policy.validator.IdNumber;
 import kz.theeurasia.policy.validator.Required;
 
-public class InsuredDriver {
+public class InsuredDriverData {
     private final UUID id = UUID.randomUUID();
 
     private InsuranceClassTypeDict insuranceClassType = InsuranceClassTypeDict.UNSPECIFIED;
-    @ManagedProperty("#{glb}")
-    private ResourceBundle glb;
 
     @Required
     @IdNumber
     private String idNumber = "";
     private String taxPayerNumber = "";
 
-    private PersonalInfo personal = new PersonalInfo();
-    private OriginInfo origin = new OriginInfo();
+    private PersonalData personalData = new PersonalData();
+    private OriginData originData = new OriginData();
 
-    private IdentityCardInfo identityCard = new IdentityCardInfo();
+    private IdentityCardData identityCardData = new IdentityCardData();
     private List<UploadedFile> identityCardDocuments = new ArrayList<>();
 
     private InsuredAgeClassEnum ageClass = InsuredAgeClassEnum.UNSPECIFIED;
     private InsuredExpirienceClassEnum expirienceClass = InsuredExpirienceClassEnum.UNSPECIFIED;
 
-    private DriverLicenseInfo driverLicense = new DriverLicenseInfo();
+    private DriverLicenseData driverLicenseData = new DriverLicenseData();
     private List<UploadedFile> driverLicenseDocuments = new ArrayList<>();
 
     // privileges
     private boolean hasAnyPrivilege = false;
 
     private boolean priveleger = false;
-    private PrivilegerInfo privilegerInfo = new PrivilegerInfo();
+    private PrivilegerData privilegerData = new PrivilegerData();
     private List<UploadedFile> privilegerDocuments = new ArrayList<>();
 
-    private boolean invalid = false;
-    private InvalidInfo invalidInfo = new InvalidInfo();
-    private List<UploadedFile> invalidDocuments = new ArrayList<>();
+    private boolean handicaped = false;
+    private HandicaptedData handicapedData = new HandicaptedData();
+    private List<UploadedFile> handicapedDocuments = new ArrayList<>();
 
     private boolean gpwParticipant = false;
-    private GPWParticipantInfo gpwParticipantInfo = new GPWParticipantInfo();
+    private GPWParticipantData gpwParticipantData = new GPWParticipantData();
     private List<UploadedFile> gpwParticipantDocuments = new ArrayList<>();
 
     private boolean pensioner = false;
-    private PensionerInfo pensionerInfo = new PensionerInfo();
+    private PensionerData pensionerData = new PensionerData();
     private List<UploadedFile> pensionerDocuments = new ArrayList<>();
 
     // esbd entities
@@ -81,13 +71,13 @@ public class InsuredDriver {
     }
 
     public String getDisplayName() {
-	return (((getPersonal().getSurename() == null || getPersonal().getSurename().isEmpty()) ? ""
-		: (getPersonal().getSurename() + " ")) +
-		((getPersonal().getName() == null || getPersonal().getName().isEmpty()) ? ""
-			: (getPersonal().getName() + " "))
+	return (((getPersonalData().getSurename() == null || getPersonalData().getSurename().isEmpty()) ? ""
+		: (getPersonalData().getSurename() + " ")) +
+		((getPersonalData().getName() == null || getPersonalData().getName().isEmpty()) ? ""
+			: (getPersonalData().getName() + " "))
 		+
-		((getPersonal().getPatronymic() == null || getPersonal().getPatronymic().isEmpty()) ? ""
-			: (getPersonal().getPatronymic() + " "))).trim();
+		((getPersonalData().getPatronymic() == null || getPersonalData().getPatronymic().isEmpty()) ? ""
+			: (getPersonalData().getPatronymic() + " "))).trim();
     }
 
     public boolean isFetched() {
@@ -128,28 +118,28 @@ public class InsuredDriver {
 	this.taxPayerNumber = taxPayerNumber;
     }
 
-    public PersonalInfo getPersonal() {
-	return personal;
+    public PersonalData getPersonalData() {
+	return personalData;
     }
 
-    public void setPersonal(PersonalInfo personal) {
-	this.personal = personal;
+    public void setPersonalData(PersonalData personalData) {
+	this.personalData = personalData;
     }
 
-    public OriginInfo getOrigin() {
-	return origin;
+    public OriginData getOriginData() {
+	return originData;
     }
 
-    public void setOrigin(OriginInfo origin) {
-	this.origin = origin;
+    public void setOriginData(OriginData originData) {
+	this.originData = originData;
     }
 
-    public IdentityCardInfo getIdentityCard() {
-	return identityCard;
+    public IdentityCardData getIdentityCardData() {
+	return identityCardData;
     }
 
-    public void setIdentityCard(IdentityCardInfo identityCard) {
-	this.identityCard = identityCard;
+    public void setIdentityCardData(IdentityCardData identityCardData) {
+	this.identityCardData = identityCardData;
     }
 
     public List<UploadedFile> getIdentityCardDocuments() {
@@ -176,12 +166,12 @@ public class InsuredDriver {
 	this.expirienceClass = expirienceClass;
     }
 
-    public DriverLicenseInfo getDriverLicense() {
-	return driverLicense;
+    public DriverLicenseData getDriverLicenseData() {
+	return driverLicenseData;
     }
 
-    public void setDriverLicense(DriverLicenseInfo driverLicense) {
-	this.driverLicense = driverLicense;
+    public void setDriverLicenseData(DriverLicenseData driverLicenseData) {
+	this.driverLicenseData = driverLicenseData;
     }
 
     public List<UploadedFile> getDriverLicenseDocuments() {
@@ -208,28 +198,44 @@ public class InsuredDriver {
 	this.priveleger = priveleger;
     }
 
-    public PrivilegerInfo getPrivilegerInfo() {
-	return privilegerInfo;
+    public PrivilegerData getPrivilegerData() {
+	return privilegerData;
     }
 
-    public void setPrivilegerInfo(PrivilegerInfo privilegerInfo) {
-	this.privilegerInfo = privilegerInfo;
+    public void setPrivilegerData(PrivilegerData privilegerData) {
+	this.privilegerData = privilegerData;
     }
 
-    public boolean isInvalid() {
-	return invalid;
+    public List<UploadedFile> getPrivilegerDocuments() {
+	return privilegerDocuments;
     }
 
-    public void setInvalid(boolean invalid) {
-	this.invalid = invalid;
+    public void setPrivilegerDocuments(List<UploadedFile> privilegerDocuments) {
+	this.privilegerDocuments = privilegerDocuments;
     }
 
-    public InvalidInfo getInvalidInfo() {
-	return invalidInfo;
+    public boolean isHandicaped() {
+	return handicaped;
     }
 
-    public void setInvalidInfo(InvalidInfo invalidInfo) {
-	this.invalidInfo = invalidInfo;
+    public void setHandicaped(boolean handicaped) {
+	this.handicaped = handicaped;
+    }
+
+    public HandicaptedData getHandicapedData() {
+	return handicapedData;
+    }
+
+    public void setHandicapedData(HandicaptedData handicapedData) {
+	this.handicapedData = handicapedData;
+    }
+
+    public List<UploadedFile> getHandicapedDocuments() {
+	return handicapedDocuments;
+    }
+
+    public void setHandicapedDocuments(List<UploadedFile> handicapedDocuments) {
+	this.handicapedDocuments = handicapedDocuments;
     }
 
     public boolean isGpwParticipant() {
@@ -240,12 +246,12 @@ public class InsuredDriver {
 	this.gpwParticipant = gpwParticipant;
     }
 
-    public GPWParticipantInfo getGpwParticipantInfo() {
-	return gpwParticipantInfo;
+    public GPWParticipantData getGpwParticipantData() {
+	return gpwParticipantData;
     }
 
-    public void setGpwParticipantInfo(GPWParticipantInfo gpwParticipantInfo) {
-	this.gpwParticipantInfo = gpwParticipantInfo;
+    public void setGpwParticipantData(GPWParticipantData gpwParticipantData) {
+	this.gpwParticipantData = gpwParticipantData;
     }
 
     public List<UploadedFile> getGpwParticipantDocuments() {
@@ -264,12 +270,12 @@ public class InsuredDriver {
 	this.pensioner = pensioner;
     }
 
-    public PensionerInfo getPensionerInfo() {
-	return pensionerInfo;
+    public PensionerData getPensionerData() {
+	return pensionerData;
     }
 
-    public void setPensionerInfo(PensionerInfo pensionerInfo) {
-	this.pensionerInfo = pensionerInfo;
+    public void setPensionerData(PensionerData pensionerData) {
+	this.pensionerData = pensionerData;
     }
 
     public List<UploadedFile> getPensionerDocuments() {
@@ -286,13 +292,5 @@ public class InsuredDriver {
 
     public void setFetchedEntity(SubjectPersonEntity fetchedEntity) {
 	this.fetchedEntity = fetchedEntity;
-    }
-
-    public List<UploadedFile> getPrivilegerDocuments() {
-	return privilegerDocuments;
-    }
-
-    public List<UploadedFile> getInvalidDocuments() {
-	return invalidDocuments;
     }
 }

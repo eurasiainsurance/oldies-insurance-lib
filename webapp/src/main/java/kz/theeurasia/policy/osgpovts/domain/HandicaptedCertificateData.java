@@ -6,10 +6,11 @@ import java.util.List;
 
 import org.primefaces.model.UploadedFile;
 
-public class DriverLicenseData {
+public class HandicaptedCertificateData {
 
     private String number;
-    private Date dateOfIssue;
+    private Date validFrom;
+    private Date validTill;
     private List<UploadedFile> scanFiles = new ArrayList<>();
 
     // GENERATED
@@ -22,20 +23,27 @@ public class DriverLicenseData {
 	this.number = number;
     }
 
-    public Date getDateOfIssue() {
-	return dateOfIssue;
+    public Date getValidFrom() {
+	return validFrom;
     }
 
-    public void setDateOfIssue(Date dateOfIssue) {
-	this.dateOfIssue = dateOfIssue;
+    public void setValidFrom(Date validFrom) {
+	this.validFrom = validFrom;
+    }
+
+    public Date getValidTill() {
+	return validTill;
+    }
+
+    public void setValidTill(Date validTill) {
+	this.validTill = validTill;
     }
 
     public List<UploadedFile> getScanFiles() {
-        return scanFiles;
+	return scanFiles;
     }
 
     public void setScanFiles(List<UploadedFile> scanFiles) {
-        this.scanFiles = scanFiles;
+	this.scanFiles = scanFiles;
     }
-
 }

@@ -1,38 +1,27 @@
 package kz.theeurasia.policy.osgpovts.domain;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
-import org.primefaces.model.UploadedFile;
-
 import kz.theeurasia.esbdproxy.domain.dict.general.EconomicSectorDict;
-import kz.theeurasia.esbdproxy.domain.dict.general.IdentityCardTypeDict;
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectPersonEntity;
-import kz.theeurasia.esbdproxy.domain.infos.general.ContactInfo;
-import kz.theeurasia.esbdproxy.domain.infos.general.IdentityCardInfo;
-import kz.theeurasia.esbdproxy.domain.infos.general.OriginInfo;
-import kz.theeurasia.esbdproxy.domain.infos.general.PersonalInfo;
+import kz.theeurasia.policy.general.domain.ContactData;
+import kz.theeurasia.policy.general.domain.IdentityCardData;
+import kz.theeurasia.policy.general.domain.OriginData;
+import kz.theeurasia.policy.general.domain.PersonalData;
 
 public class InsurantData {
     private final UUID id = UUID.randomUUID();
 
     private String idNumber = "";
-
-    private final PersonalInfo personal = new PersonalInfo();
-    private final OriginInfo origin = new OriginInfo();
-
-    private final IdentityCardInfo identityCard = new IdentityCardInfo();
-    private IdentityCardTypeDict identityCardType = IdentityCardTypeDict.ID_CARD;
-    private final List<UploadedFile> identityCardDocuments = new ArrayList<>();
-
-    private ContactInfo contact = new ContactInfo();
-
     private String taxPayerNumber = "";
 
-    private boolean resident;
+    private PersonalData personalData = new PersonalData();
+    private OriginData originData = new OriginData();
+    private ContactData contact = new ContactData();
 
-    private final EconomicSectorDict economicsSector = EconomicSectorDict.HOUSEHOLDS;
+    private IdentityCardData identityCardData = new IdentityCardData();
+
+    private EconomicSectorDict economicsSector = EconomicSectorDict.HOUSEHOLDS;
 
     // esbd entities
     private SubjectPersonEntity fetchedEntity;
@@ -65,22 +54,6 @@ public class InsurantData {
 	this.idNumber = idNumber;
     }
 
-    public IdentityCardTypeDict getIdentityCardType() {
-	return identityCardType;
-    }
-
-    public void setIdentityCardType(IdentityCardTypeDict identityCardType) {
-	this.identityCardType = identityCardType;
-    }
-
-    public ContactInfo getContact() {
-	return contact;
-    }
-
-    public void setContact(ContactInfo contact) {
-	this.contact = contact;
-    }
-
     public String getTaxPayerNumber() {
 	return taxPayerNumber;
     }
@@ -89,12 +62,44 @@ public class InsurantData {
 	this.taxPayerNumber = taxPayerNumber;
     }
 
-    public boolean isResident() {
-	return resident;
+    public PersonalData getPersonalData() {
+	return personalData;
     }
 
-    public void setResident(boolean resident) {
-	this.resident = resident;
+    public void setPersonalData(PersonalData personalData) {
+	this.personalData = personalData;
+    }
+
+    public OriginData getOriginData() {
+	return originData;
+    }
+
+    public void setOriginData(OriginData originData) {
+	this.originData = originData;
+    }
+
+    public ContactData getContact() {
+	return contact;
+    }
+
+    public void setContact(ContactData contact) {
+	this.contact = contact;
+    }
+
+    public IdentityCardData getIdentityCardData() {
+	return identityCardData;
+    }
+
+    public void setIdentityCardData(IdentityCardData identityCardData) {
+	this.identityCardData = identityCardData;
+    }
+
+    public EconomicSectorDict getEconomicsSector() {
+	return economicsSector;
+    }
+
+    public void setEconomicsSector(EconomicSectorDict economicsSector) {
+	this.economicsSector = economicsSector;
     }
 
     public SubjectPersonEntity getFetchedEntity() {
@@ -104,25 +109,4 @@ public class InsurantData {
     public void setFetchedEntity(SubjectPersonEntity fetchedEntity) {
 	this.fetchedEntity = fetchedEntity;
     }
-
-    public PersonalInfo getPersonal() {
-	return personal;
-    }
-
-    public OriginInfo getOrigin() {
-	return origin;
-    }
-
-    public IdentityCardInfo getIdentityCard() {
-	return identityCard;
-    }
-
-    public List<UploadedFile> getIdentityCardDocuments() {
-	return identityCardDocuments;
-    }
-
-    public EconomicSectorDict getEconomicsSector() {
-	return economicsSector;
-    }
-
 }

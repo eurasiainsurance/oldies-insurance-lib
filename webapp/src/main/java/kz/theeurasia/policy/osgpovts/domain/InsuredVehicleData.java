@@ -1,12 +1,7 @@
 package kz.theeurasia.policy.osgpovts.domain;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
-import org.primefaces.model.UploadedFile;
-
-import kz.theeurasia.esbdproxy.domain.dict.general.CountryRegionDict;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleAgeClassDict;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
 import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleEntity;
@@ -28,10 +23,9 @@ public class InsuredVehicleData {
     private String vehicleManufacturer = "";
 
     private VehicleCertificateData certificateData = new VehicleCertificateData();
-    private List<UploadedFile> certificateDocuments = new ArrayList<>();
 
-    private CountryRegionDict region = CountryRegionDict.UNSPECIFIED;
-    private boolean majorCity;
+//    private CountryRegionDict region = CountryRegionDict.UNSPECIFIED;
+//    private boolean majorCity;
     private boolean forcedMajorCity;
 
     // esbd entities
@@ -116,29 +110,21 @@ public class InsuredVehicleData {
 	this.certificateData = certificateData;
     }
 
-    public List<UploadedFile> getCertificateDocuments() {
-	return certificateDocuments;
-    }
+//    public CountryRegionDict getRegion() {
+//	return region;
+//    }
 
-    public void setCertificateDocuments(List<UploadedFile> certificateDocuments) {
-	this.certificateDocuments = certificateDocuments;
-    }
+//    public void setRegion(CountryRegionDict region) {
+//	this.region = region;
+//    }
 
-    public CountryRegionDict getRegion() {
-	return region;
-    }
+//    public boolean isMajorCity() {
+//	return majorCity;
+//    }
 
-    public void setRegion(CountryRegionDict region) {
-	this.region = region;
-    }
-
-    public boolean isMajorCity() {
-	return majorCity;
-    }
-
-    public void setMajorCity(boolean majorCity) {
-	this.majorCity = majorCity;
-    }
+//    public void setMajorCity(boolean majorCity) {
+//	this.majorCity = majorCity;
+//    }
 
     public boolean isForcedMajorCity() {
 	return forcedMajorCity;

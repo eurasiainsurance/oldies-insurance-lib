@@ -1,6 +1,10 @@
 package kz.theeurasia.policy.general.domain;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
+import org.primefaces.model.UploadedFile;
 
 import kz.theeurasia.esbdproxy.domain.dict.general.IdentityCardTypeDict;
 
@@ -12,6 +16,8 @@ public class IdentityCardData {
     private String number;
 
     private IdentityCardTypeDict identityCardType = IdentityCardTypeDict.UNSPECIFIED;
+
+    private List<UploadedFile> scanFiles = new ArrayList<>();
 
     // GENERATED
 
@@ -47,4 +53,11 @@ public class IdentityCardData {
 	this.identityCardType = identityCardType;
     }
 
+    public List<UploadedFile> getScanFiles() {
+	return scanFiles;
+    }
+
+    public void setScanFiles(List<UploadedFile> scanFiles) {
+	this.scanFiles = scanFiles;
+    }
 }

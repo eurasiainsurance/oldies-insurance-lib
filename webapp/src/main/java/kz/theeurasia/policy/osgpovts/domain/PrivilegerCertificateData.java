@@ -6,25 +6,20 @@ import java.util.List;
 
 import org.primefaces.model.UploadedFile;
 
-import kz.theeurasia.esbdproxy.domain.dict.general.CountryRegionDict;
-
-public class VehicleCertificateData {
-
-    private String vehicleRegisterNumber;
+public class PrivilegerCertificateData {
+    private String type;
     private String number;
     private Calendar dateOfIssue;
-    private CountryRegionDict region = CountryRegionDict.UNSPECIFIED;
-    private boolean majorCity;
     private List<UploadedFile> scanFiles = new ArrayList<>();
 
     // GENERATED
 
-    public String getVehicleRegisterNumber() {
-	return vehicleRegisterNumber;
+    public String getType() {
+	return type;
     }
 
-    public void setVehicleRegisterNumber(String vehicleRegisterNumber) {
-	this.vehicleRegisterNumber = vehicleRegisterNumber;
+    public void setType(String type) {
+	this.type = type;
     }
 
     public String getNumber() {
@@ -43,22 +38,6 @@ public class VehicleCertificateData {
 	this.dateOfIssue = dateOfIssue;
     }
 
-    public CountryRegionDict getRegion() {
-	return region;
-    }
-
-    public void setRegion(CountryRegionDict region) {
-	this.region = region;
-    }
-
-    public boolean isMajorCity() {
-	return majorCity;
-    }
-
-    public void setMajorCity(boolean majorCity) {
-	this.majorCity = majorCity;
-    }
-
     public List<UploadedFile> getScanFiles() {
 	return scanFiles;
     }
@@ -66,4 +45,5 @@ public class VehicleCertificateData {
     public void setScanFiles(List<UploadedFile> scanFiles) {
 	this.scanFiles = scanFiles;
     }
+
 }

@@ -47,8 +47,7 @@
 							preventPaste="false" />
 					</p:inputMask>
 					<p:message for="vinCode" display="icon" />
-					<p:remoteCommand
-						name="rcVehicle_VinCodeChanged#{vehicle.safeId}"
+					<p:remoteCommand name="rcVehicle_VinCodeChanged#{vehicle.safeId}"
 						actionListener="#{osgpovtsView.onVehicleVinCodeChanged(vehicle)}"
 						update="@form" process="@this,vinCode" />
 				</h:panelGrid>
@@ -71,7 +70,8 @@
 						itemLabel="#{gpovts['label.si.vehicle-class.' += vehicleClass]}" />
 				</p:selectOneMenu>
 				<p:outputLabel value="#{gpovts['label.input.vehicle-region']}" />
-				<p:selectOneMenu value="#{vehicle.region}" required="true">
+				<p:selectOneMenu value="#{vehicle.certificateData.region}"
+					required="true">
 					<p:ajax event="change" process="@this" update="@form"
 						listener="#{osgpovtsView.onVehicleRegionChanged(vehicle)}" />
 					<f:selectItems value="#{countryRegionService.validItems}"
@@ -83,8 +83,8 @@
 			<h:panelGrid columns="2">
 				<p:outputPanel>
 					<p:selectBooleanCheckbox widgetVar="w_majorCityCheckbox"
-						value="#{vehicle.majorCity}" disabled="#{vehicle.forcedMajorCity}"
-						required="true">
+						value="#{vehicle.certificateData.majorCity}"
+						disabled="#{vehicle.forcedMajorCity}" required="true">
 						<p:ajax event="change" process="@this" update="@form"
 							listener="#{osgpovtsView.onFormChanged}" />
 					</p:selectBooleanCheckbox>

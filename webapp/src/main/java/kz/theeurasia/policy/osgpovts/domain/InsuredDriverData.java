@@ -1,10 +1,6 @@
 package kz.theeurasia.policy.osgpovts.domain;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
-
-import org.primefaces.model.UploadedFile;
 
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuranceClassTypeDict;
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectPersonEntity;
@@ -28,34 +24,26 @@ public class InsuredDriverData {
 
     private PersonalData personalData = new PersonalData();
     private OriginData originData = new OriginData();
-
     private IdentityCardData identityCardData = new IdentityCardData();
-    private List<UploadedFile> identityCardDocuments = new ArrayList<>();
+    private DriverLicenseData driverLicenseData = new DriverLicenseData();
 
     private InsuredAgeClassEnum ageClass = InsuredAgeClassEnum.UNSPECIFIED;
     private InsuredExpirienceClassEnum expirienceClass = InsuredExpirienceClassEnum.UNSPECIFIED;
-
-    private DriverLicenseData driverLicenseData = new DriverLicenseData();
-    private List<UploadedFile> driverLicenseDocuments = new ArrayList<>();
 
     // privileges
     private boolean hasAnyPrivilege = false;
 
     private boolean priveleger = false;
-    private PrivilegerData privilegerData = new PrivilegerData();
-    private List<UploadedFile> privilegerDocuments = new ArrayList<>();
+    private PrivilegerCertificateData privilegerCertificateData = new PrivilegerCertificateData();
 
     private boolean handicaped = false;
-    private HandicaptedData handicapedData = new HandicaptedData();
-    private List<UploadedFile> handicapedDocuments = new ArrayList<>();
+    private HandicaptedCertificateData handicapedCertificateData = new HandicaptedCertificateData();
 
     private boolean gpwParticipant = false;
-    private GPWParticipantData gpwParticipantData = new GPWParticipantData();
-    private List<UploadedFile> gpwParticipantDocuments = new ArrayList<>();
+    private GPWParticipantCertificateData gpwParticipantCertificateData = new GPWParticipantCertificateData();
 
     private boolean pensioner = false;
-    private PensionerData pensionerData = new PensionerData();
-    private List<UploadedFile> pensionerDocuments = new ArrayList<>();
+    private PensionerCertificateData pensionerCertificateData = new PensionerCertificateData();
 
     // esbd entities
     private SubjectPersonEntity fetchedEntity;
@@ -142,12 +130,12 @@ public class InsuredDriverData {
 	this.identityCardData = identityCardData;
     }
 
-    public List<UploadedFile> getIdentityCardDocuments() {
-	return identityCardDocuments;
+    public DriverLicenseData getDriverLicenseData() {
+	return driverLicenseData;
     }
 
-    public void setIdentityCardDocuments(List<UploadedFile> identityCardDocuments) {
-	this.identityCardDocuments = identityCardDocuments;
+    public void setDriverLicenseData(DriverLicenseData driverLicenseData) {
+	this.driverLicenseData = driverLicenseData;
     }
 
     public InsuredAgeClassEnum getAgeClass() {
@@ -166,22 +154,6 @@ public class InsuredDriverData {
 	this.expirienceClass = expirienceClass;
     }
 
-    public DriverLicenseData getDriverLicenseData() {
-	return driverLicenseData;
-    }
-
-    public void setDriverLicenseData(DriverLicenseData driverLicenseData) {
-	this.driverLicenseData = driverLicenseData;
-    }
-
-    public List<UploadedFile> getDriverLicenseDocuments() {
-	return driverLicenseDocuments;
-    }
-
-    public void setDriverLicenseDocuments(List<UploadedFile> driverLicenseDocuments) {
-	this.driverLicenseDocuments = driverLicenseDocuments;
-    }
-
     public boolean isHasAnyPrivilege() {
 	return hasAnyPrivilege;
     }
@@ -198,20 +170,12 @@ public class InsuredDriverData {
 	this.priveleger = priveleger;
     }
 
-    public PrivilegerData getPrivilegerData() {
-	return privilegerData;
+    public PrivilegerCertificateData getPrivilegerCertificateData() {
+	return privilegerCertificateData;
     }
 
-    public void setPrivilegerData(PrivilegerData privilegerData) {
-	this.privilegerData = privilegerData;
-    }
-
-    public List<UploadedFile> getPrivilegerDocuments() {
-	return privilegerDocuments;
-    }
-
-    public void setPrivilegerDocuments(List<UploadedFile> privilegerDocuments) {
-	this.privilegerDocuments = privilegerDocuments;
+    public void setPrivilegerCertificateData(PrivilegerCertificateData privilegerCertificateData) {
+	this.privilegerCertificateData = privilegerCertificateData;
     }
 
     public boolean isHandicaped() {
@@ -222,20 +186,12 @@ public class InsuredDriverData {
 	this.handicaped = handicaped;
     }
 
-    public HandicaptedData getHandicapedData() {
-	return handicapedData;
+    public HandicaptedCertificateData getHandicapedCertificateData() {
+	return handicapedCertificateData;
     }
 
-    public void setHandicapedData(HandicaptedData handicapedData) {
-	this.handicapedData = handicapedData;
-    }
-
-    public List<UploadedFile> getHandicapedDocuments() {
-	return handicapedDocuments;
-    }
-
-    public void setHandicapedDocuments(List<UploadedFile> handicapedDocuments) {
-	this.handicapedDocuments = handicapedDocuments;
+    public void setHandicapedCertificateData(HandicaptedCertificateData handicapedCertificateData) {
+	this.handicapedCertificateData = handicapedCertificateData;
     }
 
     public boolean isGpwParticipant() {
@@ -246,20 +202,12 @@ public class InsuredDriverData {
 	this.gpwParticipant = gpwParticipant;
     }
 
-    public GPWParticipantData getGpwParticipantData() {
-	return gpwParticipantData;
+    public GPWParticipantCertificateData getGpwParticipantCertificateData() {
+	return gpwParticipantCertificateData;
     }
 
-    public void setGpwParticipantData(GPWParticipantData gpwParticipantData) {
-	this.gpwParticipantData = gpwParticipantData;
-    }
-
-    public List<UploadedFile> getGpwParticipantDocuments() {
-	return gpwParticipantDocuments;
-    }
-
-    public void setGpwParticipantDocuments(List<UploadedFile> gpwParticipantDocuments) {
-	this.gpwParticipantDocuments = gpwParticipantDocuments;
+    public void setGpwParticipantCertificateData(GPWParticipantCertificateData gpwParticipantCertificateData) {
+	this.gpwParticipantCertificateData = gpwParticipantCertificateData;
     }
 
     public boolean isPensioner() {
@@ -270,20 +218,12 @@ public class InsuredDriverData {
 	this.pensioner = pensioner;
     }
 
-    public PensionerData getPensionerData() {
-	return pensionerData;
+    public PensionerCertificateData getPensionerCertificateData() {
+	return pensionerCertificateData;
     }
 
-    public void setPensionerData(PensionerData pensionerData) {
-	this.pensionerData = pensionerData;
-    }
-
-    public List<UploadedFile> getPensionerDocuments() {
-	return pensionerDocuments;
-    }
-
-    public void setPensionerDocuments(List<UploadedFile> pensionerDocuments) {
-	this.pensionerDocuments = pensionerDocuments;
+    public void setPensionerCertificateData(PensionerCertificateData pensionerCertificateData) {
+	this.pensionerCertificateData = pensionerCertificateData;
     }
 
     public SubjectPersonEntity getFetchedEntity() {

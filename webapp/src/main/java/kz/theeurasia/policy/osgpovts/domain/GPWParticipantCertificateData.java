@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.primefaces.model.UploadedFile;
 
-public class DriverLicenseData {
+public class GPWParticipantCertificateData {
 
     private String number;
     private Date dateOfIssue;
@@ -31,11 +31,10 @@ public class DriverLicenseData {
     }
 
     public List<UploadedFile> getScanFiles() {
-        return scanFiles;
+	return scanFiles;
     }
 
     public void setScanFiles(List<UploadedFile> scanFiles) {
-        this.scanFiles = scanFiles;
+	this.scanFiles = scanFiles;
     }
-
 }

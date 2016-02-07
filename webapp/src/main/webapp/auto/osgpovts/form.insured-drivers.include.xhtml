@@ -9,30 +9,29 @@
 
 	<ui:repeat var="driver" value="#{osgpovtsView.policy.insuredDrivers}">
 		<p:panel>
-			<h:panelGrid columns="3">
-				<f:facet name="header">
-					<ui:insert name="header" />
-				</f:facet>
-				<p:outputLabel value="LASTNAME" />
-				<p:outputLabel value="FIRSTNAME" />
-				<p:outputLabel value="PATRONYMIC" />
-				<p:inputText value="#{driver.personal.surename}"
+			<h:panelGrid columns="5">
+				<p:outputLabel value="#{glb['label.personal-data.surename']}" />
+				<p:outputLabel value="#{glb['label.personal-data.name']}" />
+				<p:outputLabel value="#{glb['label.personal-data.patronymic']}" />
+				<p:outputLabel value="#{glb['label.personal-data.day-of-birth']}" />
+				<p:outputLabel value="#{glb['label.personal-data.sex']}" />
+
+				<p:inputText value="#{driver.personalData.surename}"
 					readonly="#{driver.fetched}" disabled="#{driver.fetched}" />
-				<p:inputText value="#{driver.personal.name}"
+				<p:inputText value="#{driver.personalData.name}"
 					readonly="#{driver.fetched}" disabled="#{driver.fetched}" />
-				<p:inputText value="#{driver.personal.patronymic}"
+				<p:inputText value="#{driver.personalData.patronymic}"
 					readonly="#{driver.fetched}" disabled="#{driver.fetched}" />
-				<p:outputLabel value="DOB" />
-				<p:outputLabel value="SEX" />
-				<f:verbatim />
-				<p:calendar value="#{driver.personal.dayOfBirth.time}"
+				<p:calendar value="#{driver.personalData.dayOfBirth}"
 					locale="#{localeService.locale}" readonly="#{driver.fetched}"
 					disabled="#{driver.fetched}" />
-				<p:selectOneButton value="#{driver.personal.sex}"
+				<p:selectOneRadio value="#{driver.personalData.sex}"
 					readonly="#{driver.fetched}" disabled="#{driver.fetched}">
-					<f:selectItems value="#{sexService.validItems}" />
-				</p:selectOneButton>
-				<f:verbatim />
+					<f:selectItems value="#{sexService.validItems}"
+						var="sexSI" itemValue="#{sexSI}"
+						itemLabel="#{glb['label.si.sex.' += sexSI]}" />
+				</p:selectOneRadio>
+
 			</h:panelGrid>
 		</p:panel>
 	</ui:repeat>

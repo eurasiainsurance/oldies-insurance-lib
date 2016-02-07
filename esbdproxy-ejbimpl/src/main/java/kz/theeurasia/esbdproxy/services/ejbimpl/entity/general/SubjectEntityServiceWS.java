@@ -57,7 +57,6 @@ public class SubjectEntityServiceWS extends AbstractESBDEntityServiceWS implemen
     public SubjectEntity getByIdNumber(String idNumber) throws NotFound, InvalidInputParameter {
 	if (idNumber == null || idNumber.trim().isEmpty())
 	    throw new InvalidInputParameter("'idNumber' must be not an empty string");
-	checkSession();
 	Client source = fetchClientByIdNumber(idNumber, true, true);
 	if (source == null)
 	    throw new NotFound(SubjectEntity.class.getSimpleName() + " not found with IDNumber = '" + idNumber + "'");
@@ -77,6 +76,7 @@ public class SubjectEntityServiceWS extends AbstractESBDEntityServiceWS implemen
 	    naturalPersonBools.add(1);
 	if (fetchCompanies)
 	    naturalPersonBools.add(0);
+	checkSession();
 	for (int residentBool : residentBools) {
 	    for (int naturalPersonBool : naturalPersonBools) {
 		Client requestClient = new Client();

@@ -24,8 +24,6 @@ public class InsuredVehicleData {
 
     private VehicleCertificateData certificateData = new VehicleCertificateData();
 
-//    private CountryRegionDict region = CountryRegionDict.UNSPECIFIED;
-//    private boolean majorCity;
     private boolean forcedMajorCity;
 
     // esbd entities
@@ -109,22 +107,6 @@ public class InsuredVehicleData {
     public void setCertificateData(VehicleCertificateData certificateData) {
 	this.certificateData = certificateData;
     }
-
-//    public CountryRegionDict getRegion() {
-//	return region;
-//    }
-
-//    public void setRegion(CountryRegionDict region) {
-//	this.region = region;
-//    }
-
-//    public boolean isMajorCity() {
-//	return majorCity;
-//    }
-
-//    public void setMajorCity(boolean majorCity) {
-//	this.majorCity = majorCity;
-//    }
 
     public boolean isForcedMajorCity() {
 	return forcedMajorCity;

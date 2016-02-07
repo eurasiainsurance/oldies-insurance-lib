@@ -9,7 +9,7 @@
 
 	<ui:repeat var="driver" value="#{osgpovtsView.policy.insuredDrivers}">
 		<p:panel>
-			<h:panelGrid columns="5">
+			<h:panelGrid columns="5" style="width: 100%;">
 				<p:outputLabel value="#{glb['label.personal-data.surename']}" />
 				<p:outputLabel value="#{glb['label.personal-data.name']}" />
 				<p:outputLabel value="#{glb['label.personal-data.patronymic']}" />
@@ -27,11 +27,9 @@
 					disabled="#{driver.fetched}" />
 				<p:selectOneRadio value="#{driver.personalData.sex}"
 					readonly="#{driver.fetched}" disabled="#{driver.fetched}">
-					<f:selectItems value="#{sexService.validItems}"
-						var="sexSI" itemValue="#{sexSI}"
-						itemLabel="#{glb['label.si.sex.' += sexSI]}" />
+					<f:selectItems value="#{sexService.validItems}" var="sexSI"
+						itemValue="#{sexSI}" itemLabel="#{glb['label.si.sex.' += sexSI]}" />
 				</p:selectOneRadio>
-
 			</h:panelGrid>
 		</p:panel>
 	</ui:repeat>

@@ -56,27 +56,21 @@
 					disabled="#{vehicle.fetched}" required="true">
 					<p:ajax event="change" process="@this" update="@form"
 						listener="#{osgpovtsView.onFormChanged}" />
-					<f:selectItems value="#{vehicleAgeClassService.validItems}"
-						var="vehicleAgeClassSI" itemValue="#{vehicleAgeClassSI}"
-						itemLabel="#{gpovts['label.si.vehicle-age-class.' += vehicleAgeClassSI]}" />
+					<f:selectItems value="#{vehicleAgeClassService.validItemsSI}" />
 				</p:selectOneMenu>
 				<p:outputLabel value="#{gpovts['label.input.vehicle-class']}" />
 				<p:selectOneMenu value="#{vehicle.vehicleClass}"
 					disabled="#{vehicle.fetched}" required="true">
 					<p:ajax event="change" process="@this" update="@form"
 						listener="#{osgpovtsView.onFormChanged}" />
-					<f:selectItems value="#{vehicleClassService.validItems}"
-						var="vehicleClassSI" itemValue="#{vehicleClassSI}"
-						itemLabel="#{gpovts['label.si.vehicle-class.' += vehicleClassSI]}" />
+					<f:selectItems value="#{vehicleClassService.validItemsSI}" />
 				</p:selectOneMenu>
 				<p:outputLabel value="#{gpovts['label.input.vehicle-region']}" />
 				<p:selectOneMenu value="#{vehicle.certificateData.region}"
 					required="true">
 					<p:ajax event="change" process="@this" update="@form"
 						listener="#{osgpovtsView.onVehicleRegionChanged(vehicle)}" />
-					<f:selectItems value="#{countryRegionService.validItems}"
-						var="countryRegionSI" itemValue="#{countryRegionSI}"
-						itemLabel="#{glb['label.si.country-region.' += countryRegionSI]}" />
+					<f:selectItems value="#{countryRegionService.validItemsSI}" />
 				</p:selectOneMenu>
 			</h:panelGrid>
 

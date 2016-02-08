@@ -57,9 +57,7 @@
 					disabled="#{driver.fetched}">
 					<p:ajax event="change" process="@this" update="@form"
 						listener="#{osgpovtsView.onFormChanged}" />
-					<f:selectItems value="#{insuredAgeClassService.validItems}"
-						var="insuredAgeClass" itemValue="#{insuredAgeClass}"
-						itemLabel="#{gpovts['label.si.insured-age-class.' += insuredAgeClass]}" />
+					<f:selectItems value="#{insuredAgeClassService.validItemsSI}" />
 				</p:selectOneMenu>
 
 				<p:outputLabel
@@ -67,10 +65,8 @@
 				<p:selectOneMenu value="#{driver.expirienceClass}">
 					<p:ajax event="change" process="@this" update="@form"
 						listener="#{osgpovtsView.onFormChanged}" />
-					<f:selectItems value="#{insuredExpirienceClassService.validItems}"
-						var="insuredExpirienceClassSI"
-						itemValue="#{insuredExpirienceClassSI}"
-						itemLabel="#{gpovts['label.si.insured-expirience-class.' += insuredExpirienceClassSI]}" />
+					<f:selectItems
+						value="#{insuredExpirienceClassService.validItemsSI}" />
 				</p:selectOneMenu>
 
 			</h:panelGrid>

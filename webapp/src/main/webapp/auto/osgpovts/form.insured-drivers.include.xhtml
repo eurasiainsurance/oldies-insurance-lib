@@ -27,8 +27,7 @@
 					disabled="#{driver.fetched}" />
 				<p:selectOneRadio value="#{driver.personalData.sex}"
 					readonly="#{driver.fetched}" disabled="#{driver.fetched}">
-					<f:selectItems value="#{sexService.validItems}" var="sexSI"
-						itemValue="#{sexSI}" itemLabel="#{glb['label.si.sex.' += sexSI]}" />
+					<f:selectItems value="#{sexService.validItemsSI}" />
 				</p:selectOneRadio>
 			</h:panelGrid>
 		</p:panel>

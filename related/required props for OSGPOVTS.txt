@@ -14,18 +14,27 @@
 Страна резидент
 
 -- Застрахованный --
-ФИО
-Дата рождения
-* Место жительства
-Тип документа
-Номер документа
-Документ выдан
-Дата выдачи
-Водительское удостоверение
+1 PersonalData *ФИО
+1 PersonalData *Дата рождения
+1 PersonalData Пол
+1 IdentityCardData Тип документа
+1 IdentityCardData Номер документа
+1 IdentityCardData Орган выдавши документ
+1 IdentityCardData Дата выдачи
+1 IdentityCardData СКАНЫ
+1 DriverLicenseData Водительское удостоверение номер
+1 DriverLicenseData Дата выдачи
+1 DriverLicenseData СКАНЫ
+
+
+OriginData Резидентство
+OriginData Страна резидентства
+ResidenceData * Место жительства
+
+
 
 ИИН
-Резидентство
-Страна резидентства
+
 
 -- Машина --
 Марка-модель

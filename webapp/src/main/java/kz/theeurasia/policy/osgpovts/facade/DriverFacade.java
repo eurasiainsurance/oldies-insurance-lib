@@ -56,12 +56,12 @@ public class DriverFacade {
 	    driver.getPersonalData().setSex(fetched.getPersonal().getSex());
 	    driver.getPersonalData().setDayOfBirth(fetched.getPersonal().getDayOfBirth().getTime());
 
-	    driver.getOriginData().setCity(fetched.getOrigin().getCity());
+	    driver.getResidenceData().setResident(fetched.getOrigin().isResident());
+	    driver.getResidenceData().setCity(fetched.getOrigin().getCity());
 	    driver.getOriginData().setCountry(fetched.getOrigin().getCountry());
-	    driver.getOriginData().setResident(fetched.getOrigin().isResident());
 
 	    driver.getIdentityCardData().setDateOfIssue(fetched.getIdentityCard().getDateOfIssue().getTime());
-	    driver.getIdentityCardData().setIdentityCardType(fetched.getIdentityCard().getIdentityCardType());
+	    driver.getIdentityCardData().setType(fetched.getIdentityCard().getIdentityCardType());
 	    driver.getIdentityCardData().setIssuingAuthority(fetched.getIdentityCard().getIssuingAuthority());
 	    driver.getIdentityCardData().setNumber(fetched.getIdentityCard().getNumber());
 
@@ -95,4 +95,5 @@ public class DriverFacade {
 	driver.setInsuranceClassType(insuranceClassTypeService.getDefault());
 	driver.setAgeClass(InsuredAgeClassEnum.OVER25);
     }
+
 }

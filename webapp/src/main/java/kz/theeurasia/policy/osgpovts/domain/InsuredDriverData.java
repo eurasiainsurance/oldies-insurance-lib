@@ -9,6 +9,7 @@ import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
 import kz.theeurasia.policy.general.domain.IdentityCardData;
 import kz.theeurasia.policy.general.domain.OriginData;
 import kz.theeurasia.policy.general.domain.PersonalData;
+import kz.theeurasia.policy.general.domain.ResidenceData;
 import kz.theeurasia.policy.validator.IdNumber;
 import kz.theeurasia.policy.validator.Required;
 
@@ -24,6 +25,7 @@ public class InsuredDriverData {
 
     private PersonalData personalData = new PersonalData();
     private OriginData originData = new OriginData();
+    private ResidenceData residenceData = new ResidenceData();
     private IdentityCardData identityCardData = new IdentityCardData();
     private DriverLicenseData driverLicenseData = new DriverLicenseData();
 
@@ -120,6 +122,14 @@ public class InsuredDriverData {
 
     public void setOriginData(OriginData originData) {
 	this.originData = originData;
+    }
+
+    public ResidenceData getResidenceData() {
+	return residenceData;
+    }
+
+    public void setResidenceData(ResidenceData residenceData) {
+	this.residenceData = residenceData;
     }
 
     public IdentityCardData getIdentityCardData() {

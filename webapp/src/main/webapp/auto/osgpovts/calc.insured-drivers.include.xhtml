@@ -56,7 +56,7 @@
 				<p:selectOneMenu value="#{driver.ageClass}"
 					disabled="#{driver.fetched}">
 					<p:ajax event="change" process="@this" update="@form"
-						listener="#{osgpovtsView.onFormChanged}" />
+						listener="#{osgpovtsView.onPolicyCostCalculationFormChanged}" />
 					<f:selectItems value="#{insuredAgeClassService.validItemsSI}" />
 				</p:selectOneMenu>
 
@@ -64,7 +64,7 @@
 					value="#{gpovts['label.input.insured.driver-expirience-class']}" />
 				<p:selectOneMenu value="#{driver.expirienceClass}">
 					<p:ajax event="change" process="@this" update="@form"
-						listener="#{osgpovtsView.onFormChanged}" />
+						listener="#{osgpovtsView.onPolicyCostCalculationFormChanged}" />
 					<f:selectItems
 						value="#{insuredExpirienceClassService.validItemsSI}" />
 				</p:selectOneMenu>
@@ -76,7 +76,7 @@
 					<p:selectBooleanCheckbox widgetVar="w_hasAnyPrivilegeCheckbox"
 						value="#{driver.hasAnyPrivilege}">
 						<p:ajax event="change" process="@this" update="@form"
-							listener="#{osgpovtsView.onFormChanged}" />
+							listener="#{osgpovtsView.onPolicyCostCalculationFormChanged}" />
 					</p:selectBooleanCheckbox>
 					<p:outputLabel
 						value="#{gpovts['label.input.insured.has-privilege']}"

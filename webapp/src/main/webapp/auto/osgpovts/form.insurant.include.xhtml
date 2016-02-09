@@ -7,15 +7,4 @@
 	xmlns:pe="http://primefaces.org/ui/extensions"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
 
-	<p:panelGrid columns="1">
-		<f:facet name="header">STRAHOVATEL</f:facet>
-		<ui:decorate template="personal-info.include.xhtml">
-			<ui:define name="header">
-				<h:outputText value="Personal Info" />
-			</ui:define>
-			<ui:param name="personal"
-				value="#{osgpovtsView.policy.insurant.personalData}" />
-		</ui:decorate>
-	</p:panelGrid>
-
 </ui:composition>

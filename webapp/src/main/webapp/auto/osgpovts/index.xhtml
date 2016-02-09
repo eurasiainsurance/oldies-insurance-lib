@@ -11,7 +11,7 @@
 	<ui:define name="page-title">#{glb['name.insurance.osgpovts.full']} - #{glb['name.eurasia.full']}</ui:define>
 
 	<ui:define name="page-content">
-		<h:form>
+		<h:form enctype="multipart/form-data">
 			<p:wizard style="width: 100%"
 				nextLabel="#{glb['label.command.wizard.next']}"
 				backLabel="#{glb['label.command.wizard.prev']}">
@@ -20,12 +20,20 @@
 					<ui:decorate template="calc.insured-drivers.include.xhtml" />
 					<ui:decorate template="calc.insured-vehicles.include.xhtml" />
 				</p:tab>
-				<p:tab id="form" title="#{gpovts['title.wizard.policy-form']}">
+				<p:tab id="insuredDriversForm"
+					title="#{gpovts['title.wizard.insured-drivers-form']}">
 					<ui:decorate template="premium-cost.include.xhtml" />
 					<ui:decorate template="form.insured-drivers.include.xhtml" />
 				</p:tab>
-				<p:tab id="contacts"
-					title="#{gpovts['title.wizard.insurer-contact-info']}">
+				<p:tab id="insuredVehiclesForm"
+					title="#{gpovts['title.wizard.insured-vehicles-form']}">
+					<ui:decorate template="premium-cost.include.xhtml" />
+					<ui:decorate template="form.insured-vehicles.include.xhtml" />
+				</p:tab>
+				<p:tab id="insurantForm"
+					title="#{gpovts['title.wizard.insurant-form']}">
+					<ui:decorate template="premium-cost.include.xhtml" />
+					<ui:decorate template="form.insurant.include.xhtml" />
 				</p:tab>
 			</p:wizard>
 		</h:form>

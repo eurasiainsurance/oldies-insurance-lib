@@ -1,0 +1,3 @@
+kz.theeurasia.policy.validator.IdNumber.message = ИИН не корректен
+kz.theeurasia.policy.validator.VINCode.message = VIN-код некорректен
+kz.theeurasia.policy.validator.Required.message = Это обязательное поле

@@ -6,8 +6,6 @@ public class ContactData {
 
     private String email;
 
-    private String homeAdress;
-
     private String siteUrl;
 
     // GENERATED
@@ -26,14 +24,6 @@ public class ContactData {
 
     public void setEmail(String email) {
 	this.email = email;
-    }
-
-    public String getHomeAdress() {
-	return homeAdress;
-    }
-
-    public void setHomeAdress(String postAdress) {
-	this.homeAdress = postAdress;
     }
 
     public String getSiteUrl() {

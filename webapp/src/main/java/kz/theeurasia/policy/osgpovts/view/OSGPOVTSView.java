@@ -11,12 +11,14 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 import kz.theeurasia.policy.GlobalMessageBundleCode;
+import kz.theeurasia.policy.general.domain.UploadedImage;
 import kz.theeurasia.policy.osgpovts.ValidationException;
 import kz.theeurasia.policy.osgpovts.domain.InsuredDriverData;
 import kz.theeurasia.policy.osgpovts.domain.InsuredVehicleData;
 import kz.theeurasia.policy.osgpovts.domain.PolicyRequestData;
 import kz.theeurasia.policy.osgpovts.facade.DriverFacade;
 import kz.theeurasia.policy.osgpovts.facade.PolicyFacade;
+import kz.theeurasia.policy.osgpovts.facade.UploadedImagesFacade;
 import kz.theeurasia.policy.osgpovts.facade.VehicleFacade;
 
 @ManagedBean(name = "osgpovtsView")
@@ -39,6 +41,9 @@ public class OSGPOVTSView implements Serializable {
 
     @ManagedProperty("#{vehicleFacade}")
     private VehicleFacade vehicleFacade;
+
+    @ManagedProperty("#{uploadedImagesFacade}")
+    private UploadedImagesFacade uploadedImagesFacade;
 
     private PolicyRequestData policy;
 
@@ -155,7 +160,7 @@ public class OSGPOVTSView implements Serializable {
 	policyFacade.calculatePremiumCost(policy);
     }
 
-    public void onFormChanged() {
+    public void onPolicyCostCalculationFormChanged() {
 	policyFacade.calculatePremiumCost(policy);
     }
 
@@ -170,6 +175,22 @@ public class OSGPOVTSView implements Serializable {
     public void onVehicleRegionChanged(InsuredVehicleData insuredVehicle) {
 	vehicleFacade.evaluateMajorCity(insuredVehicle);
 	policyFacade.calculatePremiumCost(policy);
+    }
+
+    public void onDriverIdentityCardImageUploaded(InsuredDriverData driver) {
+	uploadedImagesFacade.pickupIdentityCardImage(policy, driver);
+    }
+
+    public void removeDriverIdentityCardImage(InsuredDriverData driver, UploadedImage image) {
+	uploadedImagesFacade.removeIdentityCardImage(policy, driver, image);
+    }
+
+    public void onDriverLicenseImageUploaded(InsuredDriverData driver) {
+	uploadedImagesFacade.pickupDriverLicenseImage(policy, driver);
+    }
+
+    public void removeDriverLicenseImage(InsuredDriverData driver, UploadedImage image) {
+	uploadedImagesFacade.removeDriverLicenseImage(policy, driver, image);
     }
 
     // GENERATED
@@ -196,5 +217,9 @@ public class OSGPOVTSView implements Serializable {
 
     public PolicyRequestData getPolicy() {
 	return policy;
+    }
+
+    public void setUploadedImagesFacade(UploadedImagesFacade uploadedImagesFacade) {
+	this.uploadedImagesFacade = uploadedImagesFacade;
     }
 }

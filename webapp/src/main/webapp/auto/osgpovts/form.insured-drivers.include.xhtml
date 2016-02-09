@@ -7,30 +7,171 @@
 	xmlns:pe="http://primefaces.org/ui/extensions"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
 
-	<ui:repeat var="driver" value="#{osgpovtsView.policy.insuredDrivers}">
-		<p:panel>
-			<h:panelGrid columns="5" style="width: 100%;">
-				<p:outputLabel value="#{glb['label.personal-data.surename']}" />
-				<p:outputLabel value="#{glb['label.personal-data.name']}" />
-				<p:outputLabel value="#{glb['label.personal-data.patronymic']}" />
-				<p:outputLabel value="#{glb['label.personal-data.day-of-birth']}" />
-				<p:outputLabel value="#{glb['label.personal-data.sex']}" />
 
-				<p:inputText value="#{driver.personalData.surename}"
-					readonly="#{driver.fetched}" disabled="#{driver.fetched}" />
-				<p:inputText value="#{driver.personalData.name}"
-					readonly="#{driver.fetched}" disabled="#{driver.fetched}" />
-				<p:inputText value="#{driver.personalData.patronymic}"
-					readonly="#{driver.fetched}" disabled="#{driver.fetched}" />
-				<p:calendar value="#{driver.personalData.dayOfBirth}"
-					locale="#{localeService.locale}" readonly="#{driver.fetched}"
-					disabled="#{driver.fetched}" />
-				<p:selectOneRadio value="#{driver.personalData.sex}"
-					readonly="#{driver.fetched}" disabled="#{driver.fetched}">
-					<f:selectItems value="#{sexService.validItemsSI}" />
-				</p:selectOneRadio>
-			</h:panelGrid>
-		</p:panel>
-	</ui:repeat>
+	<p:accordionPanel value="#{osgpovtsView.policy.insuredDrivers}"
+		var="driver">
+		<p:tab
+			title="#{empty driver.displayName ? gpovts['title.insuted-driver.default-name'] : driver.displayName}">
+			<h:panelGroup id="currentDriverPanel">
+
+				<h:panelGrid columns="5" s1tyle="width: 100%;">
+					<p:outputLabel value="#{glb['label.personal-data.surename']}" />
+					<p:outputLabel value="#{glb['label.personal-data.name']}" />
+					<p:outputLabel value="#{glb['label.personal-data.patronymic']}" />
+					<p:outputLabel value="#{glb['label.personal-data.day-of-birth']}" />
+					<p:outputLabel value="#{glb['label.personal-data.sex']}" />
+
+					<p:inputText value="#{driver.personalData.surename}"
+						readonly="#{driver.fetched}" disabled="#{driver.fetched}">
+						<p:ajax event="change" process="@this"
+							update="@this, currentDriverPanel" />
+					</p:inputText>
+					<p:inputText value="#{driver.personalData.name}"
+						readonly="#{driver.fetched}" disabled="#{driver.fetched}">
+						<p:ajax event="change" process="@this"
+							update="@this, currentDriverPanel" />
+					</p:inputText>
+					<p:inputText value="#{driver.personalData.patronymic}"
+						readonly="#{driver.fetched}" disabled="#{driver.fetched}">
+						<p:ajax event="change" process="@this"
+							update="@this, currentDriverPanel" />
+					</p:inputText>
+					<p:calendar value="#{driver.personalData.dayOfBirth}"
+						locale="#{localeService.locale}" readonly="#{driver.fetched}"
+						disabled="#{driver.fetched}">
+						<p:ajax event="change" process="@this"
+							update="@this, currentDriverPanel" />
+					</p:calendar>
+					<p:selectOneRadio value="#{driver.personalData.sex}"
+						readonly="#{driver.fetched}" disabled="#{driver.fetched}">
+						<p:ajax event="change" process="@this"
+							update="@this, currentDriverPanel" />
+						<f:selectItems value="#{sexService.validItemsSI}" />
+					</p:selectOneRadio>
+				</h:panelGrid>
+				<p:panel header="#{glb['label.residence-data']}">
+					<h:panelGrid columns="2">
+						<p:outputLabel value="#{glb['label.residence-data.city']}" />
+						<p:outputLabel value="#{glb['label.residence-data.address']}" />
+						<p:selectOneMenu value="#{driver.residenceData.city}">
+						</p:selectOneMenu>
+						<p:inputText value="#{driver.residenceData.address}" />
+					</h:panelGrid>
+					<p:selectBooleanCheckbox widgetVar="w_isResident#{driver.safeId}"
+						value="#{driver.residenceData.resident}">
+						<p:ajax event="change" process="@this" update="@form"
+							listener="#{osgpovtsView.onPolicyCostCalculationFormChanged}" />
+					</p:selectBooleanCheckbox>
+					<p:outputLabel value="#{glb['label.residence-data.is-resident']}"
+						onclick="PF('w_isResident#{driver.safeId}').toggle()" />
+				</p:panel>
+
+				<p:panel header="#{glb['label.identity-card-data']}">
+					<h:panelGrid columns="4">
+						<p:outputLabel value="#{glb['label.identity-card-data.type']}" />
+						<p:outputLabel value="#{glb['label.identity-card-data.number']}" />
+						<p:outputLabel
+							value="#{glb['label.identity-card-data.issuing-authority']}" />
+						<p:outputLabel
+							value="#{glb['label.identity-card-data.date-of-issue']}" />
+						<p:selectOneMenu value="#{driver.identityCardData.type}">
+							<p:ajax event="change" process="@this"
+								update="@this, currentDriverPanel" />
+							<f:selectItems value="#{identityCardTypeService.validItemsSI}" />
+						</p:selectOneMenu>
+						<p:inputText value="#{driver.identityCardData.number}">
+							<p:ajax event="change" process="@this"
+								update="@this, currentDriverPanel" />
+						</p:inputText>
+						<p:inputText value="#{driver.identityCardData.issuingAuthority}">
+							<p:ajax event="change" process="@this"
+								update="@this, currentDriverPanel" />
+						</p:inputText>
+						<p:calendar value="#{driver.identityCardData.dateOfIssue}"
+							locale="#{localeService.locale}">
+							<p:ajax event="change" process="@this"
+								update="@this, currentDriverPanel" />
+						</p:calendar>
+					</h:panelGrid>
+					<p:outputLabel
+						value="#{glb['label.identity-card-data.scan-files']}" />
+					<p:panel id="identityCardGalleria" styleClass="ui-glr ui-widget">
+						<p:remoteCommand name="rc_NewIdentityCardUploaded#{driver.safeId}"
+							action="#{osgpovtsView.onDriverIdentityCardImageUploaded(driver)}"
+							process="@this" update="@this, identityCardGalleria" />
+						<ui:repeat var="image"
+							value="#{driver.identityCardData.scanFiles}">
+							<p:commandLink
+								action="#{osgpovtsView.removeDriverIdentityCardImage(driver, image)}"
+								ajax="true" process="@this"
+								update="@this, @form(identityCardGalleria)">
+								<p:graphicImage value="#{uploadedImageService.content}"
+									styleClass="ui-glr-image ui-glr-item ui-widget-content">
+									<f:param name="id" value="#{image.id}" />
+								</p:graphicImage>
+							</p:commandLink>
+						</ui:repeat>
+						<p:fileUpload mode="advanced"
+							styleClass="ui-glr-add ui-glr-item ui-widget-content"
+							allowTypes="/(\.|\/)(gif|jpe?g|png)$/" multiple="true"
+							sizeLimit="1000000" fileLimit="10" skinSimple="true" auto="true"
+							fileUploadListener="#{uploadedImageService.onImageUpload}"
+							oncomplete="rc_NewIdentityCardUploaded#{driver.safeId}()">
+						</p:fileUpload>
+					</p:panel>
+				</p:panel>
+
+				<p:panel header="#{gpovts['label.driver-license-data']}">
+					<h:panelGrid columns="2">
+						<p:outputLabel
+							value="#{gpovts['label.driver-license-data.number']}" />
+						<p:outputLabel
+							value="#{gpovts['label.driver-license-data.date-of-issue']}" />
+						<p:inputText value="#{driver.driverLicenseData.number}">
+							<p:ajax event="change" process="@this"
+								update="@this, currentDriverPanel" />
+						</p:inputText>
+						<p:calendar value="#{driver.driverLicenseData.dateOfIssue}"
+							locale="#{localeService.locale}">
+							<p:ajax event="change" process="@this"
+								update="@this, currentDriverPanel" />
+						</p:calendar>
+					</h:panelGrid>
+					<p:outputLabel
+						value="#{gpovts['label.driver-license-data.scan-files']}" />
+					<p:panel id="driverLicenseGalleria" styleClass="ui-glr ui-widget">
+						<p:remoteCommand
+							name="rc_NewDriverLicenseUploaded#{driver.safeId}"
+							action="#{osgpovtsView.onDriverLicenseImageUploaded(driver)}"
+							process="@this" update="@this, driverLicenseGalleria" />
+						<ui:repeat var="image"
+							value="#{driver.driverLicenseData.scanFiles}">
+							<p:commandLink
+								action="#{osgpovtsView.removeDriverLicenseImage(driver, image)}"
+								ajax="true" process="@this"
+								update="@this, @form(driverLicenseGalleria)">
+								<p:graphicImage value="#{uploadedImageService.content}"
+									styleClass="ui-glr-image ui-glr-item ui-widget-content">
+									<f:param name="id" value="#{image.id}" />
+								</p:graphicImage>
+							</p:commandLink>
+						</ui:repeat>
+						<p:fileUpload mode="advanced"
+							styleClass="ui-glr-add ui-glr-item ui-widget-content"
+							allowTypes="/(\.|\/)(gif|jpe?g|png)$/" multiple="true"
+							sizeLimit="1000000" fileLimit="10" skinSimple="true" auto="true"
+							fileUploadListener="#{uploadedImageService.onImageUpload}"
+							oncomplete="rc_NewDriverLicenseUploaded#{driver.safeId}()">
+						</p:fileUpload>
+					</p:panel>
+				</p:panel>
+
+
+
+
+			</h:panelGroup>
+		</p:tab>
+	</p:accordionPanel>
+
 
 </ui:composition>

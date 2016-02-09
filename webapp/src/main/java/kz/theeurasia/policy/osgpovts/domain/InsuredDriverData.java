@@ -10,17 +10,20 @@ import kz.theeurasia.policy.general.domain.IdentityCardData;
 import kz.theeurasia.policy.general.domain.OriginData;
 import kz.theeurasia.policy.general.domain.PersonalData;
 import kz.theeurasia.policy.general.domain.ResidenceData;
-import kz.theeurasia.policy.validator.IdNumber;
-import kz.theeurasia.policy.validator.Required;
+import kz.theeurasia.policy.validator.ValidIdNumber;
+import kz.theeurasia.policy.validator.ValidInsuranceAgeClass;
+import kz.theeurasia.policy.validator.ValidInsuranceExpirienceClass;
+import kz.theeurasia.policy.validator.NotNullValue;
 
 public class InsuredDriverData {
     private final UUID id = UUID.randomUUID();
 
     private InsuranceClassTypeDict insuranceClassType = InsuranceClassTypeDict.UNSPECIFIED;
 
-    @Required
-    @IdNumber
+    @NotNullValue
+    @ValidIdNumber
     private String idNumber = "";
+
     private String taxPayerNumber = "";
 
     private PersonalData personalData = new PersonalData();
@@ -29,7 +32,12 @@ public class InsuredDriverData {
     private IdentityCardData identityCardData = new IdentityCardData();
     private DriverLicenseData driverLicenseData = new DriverLicenseData();
 
+    @NotNullValue
+    @ValidInsuranceAgeClass
     private InsuredAgeClassEnum ageClass = InsuredAgeClassEnum.UNSPECIFIED;
+
+    @NotNullValue
+    @ValidInsuranceExpirienceClass
     private InsuredExpirienceClassEnum expirienceClass = InsuredExpirienceClassEnum.UNSPECIFIED;
 
     // privileges

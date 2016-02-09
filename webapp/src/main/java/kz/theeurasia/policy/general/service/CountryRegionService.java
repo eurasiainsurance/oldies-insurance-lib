@@ -33,9 +33,16 @@ public class CountryRegionService {
     }
 
     public List<SelectItem> getValidItemsSI() {
-	List<CountryRegionDict> validItems = getValidItems();
+	return _createSIFromList(getValidItems());
+    }
+
+    public List<SelectItem> getAllItemsSI() {
+	return _createSIFromList(getAllItems());
+    }
+
+    private List<SelectItem> _createSIFromList(List<CountryRegionDict> list) {
 	List<SelectItem> result = new ArrayList<>();
-	for (CountryRegionDict r : validItems) {
+	for (CountryRegionDict r : list) {
 	    SelectItem si = new SelectItem(r,
 		    glb.getString(
 			    GlobalMessageBundleCode.LABEL_SI_COUNTRY_REGION_PREFIX.getMessageBundleCode() + r.name()));

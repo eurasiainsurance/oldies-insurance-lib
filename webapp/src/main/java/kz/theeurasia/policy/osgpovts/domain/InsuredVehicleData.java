@@ -5,21 +5,33 @@ import java.util.UUID;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleAgeClassDict;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
 import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleEntity;
-import kz.theeurasia.policy.validator.Required;
-import kz.theeurasia.policy.validator.VINCode;
+import kz.theeurasia.policy.validator.NotEmptyString;
+import kz.theeurasia.policy.validator.NotNullValue;
+import kz.theeurasia.policy.validator.ValidVINCode;
+import kz.theeurasia.policy.validator.ValidVehicleAgeClass;
+import kz.theeurasia.policy.validator.ValidVehicleClass;
 
 public class InsuredVehicleData {
     private final UUID id = UUID.randomUUID();
 
-    private VehicleClassDict vehicleClass = VehicleClassDict.UNSPECIFIED;
-    private VehicleAgeClassDict vehicleAgeClass = VehicleAgeClassDict.UNSPECIFIED;
-
-    @Required
-    @VINCode
+    @NotNullValue
+    @ValidVINCode
     private String vinCode = "";
 
+    @NotNullValue
+    @ValidVehicleClass
+    private VehicleClassDict vehicleClass = VehicleClassDict.UNSPECIFIED;
+
+    @NotNullValue
+    @ValidVehicleAgeClass
+    private VehicleAgeClassDict vehicleAgeClass = VehicleAgeClassDict.UNSPECIFIED;
+
+    @NotNullValue
+    @NotEmptyString
     private String vehicleModel = "";
 
+    @NotNullValue
+    @NotEmptyString
     private String vehicleManufacturer = "";
 
     private VehicleCertificateData certificateData = new VehicleCertificateData();

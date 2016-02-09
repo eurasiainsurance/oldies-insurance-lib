@@ -26,6 +26,10 @@ public class SexService {
 	return result;
     }
 
+    public List<SelectItem> getAllItemsSI() {
+	return _createSIFromList(getAllItems());
+    }
+
     public List<SexDict> getValidItems() {
 	List<SexDict> result = new ArrayList<>();
 	for (SexDict r : SexDict.values())
@@ -35,9 +39,12 @@ public class SexService {
     }
 
     public List<SelectItem> getValidItemsSI() {
-	List<SexDict> validItems = getValidItems();
+	return _createSIFromList(getValidItems());
+    }
+
+    private List<SelectItem> _createSIFromList(List<SexDict> list) {
 	List<SelectItem> result = new ArrayList<>();
-	for (SexDict r : validItems) {
+	for (SexDict r : list) {
 	    SelectItem si = new SelectItem(r,
 		    glb.getString(GlobalMessageBundleCode.LABEL_SI_SEX_PREFIX.getMessageBundleCode() + r.name()));
 	    result.add(si);

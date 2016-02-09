@@ -5,14 +5,27 @@ import java.util.Date;
 import java.util.List;
 
 import kz.theeurasia.esbdproxy.domain.dict.general.IdentityCardTypeDict;
+import kz.theeurasia.policy.validator.NotEmptyString;
+import kz.theeurasia.policy.validator.NotNullValue;
+import kz.theeurasia.policy.validator.ValidDateOfIssue;
+import kz.theeurasia.policy.validator.ValidIdentityCardType;
 
 public class IdentityCardData {
+
+    @NotNullValue
+    @ValidDateOfIssue
     private Date dateOfIssue;
 
+    @NotNullValue
+    @NotEmptyString
     private String issuingAuthority;
 
+    @NotNullValue
+    @NotEmptyString
     private String number;
 
+    @NotNullValue
+    @ValidIdentityCardType
     private IdentityCardTypeDict type = IdentityCardTypeDict.UNSPECIFIED;
 
     private List<UploadedImage> scanFiles = new ArrayList<>();

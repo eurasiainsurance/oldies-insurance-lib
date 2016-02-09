@@ -26,6 +26,10 @@ public class InsuredExpirienceClassService {
 	return result;
     }
 
+    public List<SelectItem> getAllItemsSI() {
+	return _createSIFromList(getAllItems());
+    }
+
     public List<InsuredExpirienceClassEnum> getValidItems() {
 	List<InsuredExpirienceClassEnum> result = new ArrayList<>();
 	for (InsuredExpirienceClassEnum r : InsuredExpirienceClassEnum.values())
@@ -35,9 +39,12 @@ public class InsuredExpirienceClassService {
     }
 
     public List<SelectItem> getValidItemsSI() {
-	List<InsuredExpirienceClassEnum> validItems = getValidItems();
+	return _createSIFromList(getValidItems());
+    }
+
+    private List<SelectItem> _createSIFromList(List<InsuredExpirienceClassEnum> list) {
 	List<SelectItem> result = new ArrayList<>();
-	for (InsuredExpirienceClassEnum r : validItems) {
+	for (InsuredExpirienceClassEnum r : list) {
 	    SelectItem si = new SelectItem(r,
 		    gpovts.getString(
 			    MessageBundleCode.LABEL_INSURED_EXPIRIENCE_CLASS_PREFIX.getMessageBundleCode() + r.name()));

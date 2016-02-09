@@ -1,12 +1,18 @@
 package kz.theeurasia.policy.general.domain;
 
-import kz.theeurasia.esbdproxy.domain.entities.general.CityEntity;
+import kz.theeurasia.policy.validator.NotEmptyString;
+import kz.theeurasia.policy.validator.NotNullValue;
 
 public class ResidenceData {
+
     private boolean resident;
 
-    private CityEntity city;
+    @NotNullValue
+    @NotEmptyString
+    private String city;
 
+    @NotNullValue
+    @NotEmptyString
     private String address;
 
     // GENERATED
@@ -19,11 +25,11 @@ public class ResidenceData {
 	this.resident = resident;
     }
 
-    public CityEntity getCity() {
+    public String getCity() {
 	return city;
     }
 
-    public void setCity(CityEntity city) {
+    public void setCity(String city) {
 	this.city = city;
     }
 

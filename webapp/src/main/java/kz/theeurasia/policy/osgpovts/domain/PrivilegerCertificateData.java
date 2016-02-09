@@ -5,11 +5,24 @@ import java.util.Calendar;
 import java.util.List;
 
 import kz.theeurasia.policy.general.domain.UploadedImage;
+import kz.theeurasia.policy.validator.NotEmptyString;
+import kz.theeurasia.policy.validator.NotNullValue;
+import kz.theeurasia.policy.validator.ValidDateOfIssue;
 
 public class PrivilegerCertificateData {
+
+    @NotNullValue
+    @NotEmptyString
     private String type;
+
+    @NotNullValue
+    @NotEmptyString
     private String number;
+
+    @NotNullValue
+    @ValidDateOfIssue
     private Calendar dateOfIssue;
+
     private List<UploadedImage> scanFiles = new ArrayList<>();
 
     // GENERATED

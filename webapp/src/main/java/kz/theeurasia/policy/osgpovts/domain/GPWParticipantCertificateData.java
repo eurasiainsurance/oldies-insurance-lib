@@ -5,11 +5,20 @@ import java.util.Date;
 import java.util.List;
 
 import kz.theeurasia.policy.general.domain.UploadedImage;
+import kz.theeurasia.policy.validator.NotEmptyString;
+import kz.theeurasia.policy.validator.NotNullValue;
+import kz.theeurasia.policy.validator.ValidDateOfIssue;
 
 public class GPWParticipantCertificateData {
 
+    @NotNullValue
+    @NotEmptyString
     private String number;
+
+    @NotNullValue
+    @ValidDateOfIssue
     private Date dateOfIssue;
+
     private List<UploadedImage> scanFiles = new ArrayList<>();
 
     // GENERATED

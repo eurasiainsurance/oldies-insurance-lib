@@ -9,17 +9,19 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
+import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleAgeClassDict;
+
 @Target({ METHOD, FIELD, ANNOTATION_TYPE })
 @Retention(RUNTIME)
-@Constraint(validatedBy = RequiredConstraintValidator.class)
-public @interface Required {
+@Constraint(validatedBy = ValidVehicleAgeClassConstraintValidator.class)
+public @interface ValidVehicleAgeClass {
 
-    String message() default "{kz.theeurasia.policy.validator.Required.message}";
+    VehicleAgeClassDict[] invalidValues() default { VehicleAgeClassDict.UNSPECIFIED };
+
+    String message() default "{kz.theeurasia.policy.validator.ValidVehicleAgeClass.message}";
 
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
-
-    boolean trimSpaces() default true;
 
 }

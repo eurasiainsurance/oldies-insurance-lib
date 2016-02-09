@@ -26,6 +26,10 @@ public class InsuredAgeClassService {
 	return result;
     }
 
+    public List<SelectItem> getAllItemsSI() {
+	return _createSIFromList(getAllItems());
+    }
+
     public List<InsuredAgeClassEnum> getValidItems() {
 	List<InsuredAgeClassEnum> result = new ArrayList<>();
 	for (InsuredAgeClassEnum r : InsuredAgeClassEnum.values())
@@ -35,11 +39,15 @@ public class InsuredAgeClassService {
     }
 
     public List<SelectItem> getValidItemsSI() {
-	List<InsuredAgeClassEnum> validItems = getValidItems();
+	return _createSIFromList(getValidItems());
+    }
+
+    private List<SelectItem> _createSIFromList(List<InsuredAgeClassEnum> list) {
 	List<SelectItem> result = new ArrayList<>();
-	for (InsuredAgeClassEnum r : validItems) {
+	for (InsuredAgeClassEnum r : list) {
 	    SelectItem si = new SelectItem(r,
-		    gpovts.getString(MessageBundleCode.LABEL_INSURED_AGE_CLASS_PREFIX.getMessageBundleCode() + r.name()));
+		    gpovts.getString(
+			    MessageBundleCode.LABEL_INSURED_AGE_CLASS_PREFIX.getMessageBundleCode() + r.name()));
 	    result.add(si);
 	}
 	return result;

@@ -28,14 +28,21 @@ public class VehicleAgeClassService {
 	return vehicleAgeClassServiceDAO.getAll();
     }
 
+    public List<SelectItem> getAllItemsSI() {
+	return _createSIFromList(getAllItems());
+    }
+
     public List<VehicleAgeClassDict> getValidItems() {
 	return vehicleAgeClassServiceDAO.getApplicableForOSGPOVTS();
     }
 
     public List<SelectItem> getValidItemsSI() {
-	List<VehicleAgeClassDict> validItems = getValidItems();
+	return _createSIFromList(getValidItems());
+    }
+
+    private List<SelectItem> _createSIFromList(List<VehicleAgeClassDict> list) {
 	List<SelectItem> result = new ArrayList<>();
-	for (VehicleAgeClassDict r : validItems) {
+	for (VehicleAgeClassDict r : list) {
 	    SelectItem si = new SelectItem(r,
 		    gpovts.getString(
 			    MessageBundleCode.LABEL_VEHICLE_AGE_CLASS_PREFIX.getMessageBundleCode() + r.name()));

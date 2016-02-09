@@ -57,7 +57,8 @@ public class DriverFacade {
 	    driver.getPersonalData().setDayOfBirth(fetched.getPersonal().getDayOfBirth().getTime());
 
 	    driver.getResidenceData().setResident(fetched.getOrigin().isResident());
-	    driver.getResidenceData().setCity(fetched.getOrigin().getCity());
+	    if (fetched.getOrigin().getCity() != null)
+		driver.getResidenceData().setCity(fetched.getOrigin().getCity().getName());
 	    driver.getOriginData().setCountry(fetched.getOrigin().getCountry());
 
 	    driver.getIdentityCardData().setDateOfIssue(fetched.getIdentityCard().getDateOfIssue().getTime());

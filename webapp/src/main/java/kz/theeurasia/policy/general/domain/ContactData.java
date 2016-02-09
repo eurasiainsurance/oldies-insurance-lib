@@ -1,11 +1,18 @@
 package kz.theeurasia.policy.general.domain;
 
+import kz.theeurasia.policy.validator.ValidEmail;
+import kz.theeurasia.policy.validator.ValidPhoneNumber;
+import kz.theeurasia.policy.validator.ValidURL;
+
 public class ContactData {
 
+    @ValidPhoneNumber
     private String phone;
 
+    @ValidEmail
     private String email;
 
+    @ValidURL
     private String siteUrl;
 
     // GENERATED

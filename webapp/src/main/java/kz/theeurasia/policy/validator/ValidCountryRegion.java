@@ -9,12 +9,17 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
+import kz.theeurasia.esbdproxy.domain.dict.general.CountryRegionDict;
+
 @Target({ METHOD, FIELD, ANNOTATION_TYPE })
 @Retention(RUNTIME)
-@Constraint(validatedBy = IdNumberConstraintValidator.class)
-public @interface IdNumber {
+@Constraint(validatedBy = ValidCountryRegionConstraintValidator.class)
+public @interface ValidCountryRegion {
 
-    String message() default "{kz.theeurasia.policy.validator.IdNumber.message}";
+    CountryRegionDict[] invalidValues() default { CountryRegionDict.TEMPORARY_ENTRY,
+	    CountryRegionDict.TEMPORARY_REGISTRATION, CountryRegionDict.UNSPECIFIED };
+
+    String message() default "{kz.theeurasia.policy.validator.ValidCountryRegion.message}";
 
     Class<?>[] groups() default {};
 

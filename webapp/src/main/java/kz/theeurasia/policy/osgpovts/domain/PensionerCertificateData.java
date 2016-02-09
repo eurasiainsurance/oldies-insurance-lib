@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.primefaces.model.UploadedFile;
+import kz.theeurasia.policy.general.domain.UploadedImage;
 
 public class PensionerCertificateData {
 
     private String number;
     private Date dateOfIssue;
-    private List<UploadedFile> scanFiles = new ArrayList<>();
+    private List<UploadedImage> scanFiles = new ArrayList<>();
 
     // GENERATED
 
@@ -30,11 +30,11 @@ public class PensionerCertificateData {
 	this.dateOfIssue = dateOfIssue;
     }
 
-    public List<UploadedFile> getScanFiles() {
+    public List<UploadedImage> getScanFiles() {
 	return scanFiles;
     }
 
-    public void setScanFiles(List<UploadedFile> scanFiles) {
+    public void setScanFiles(List<UploadedImage> scanFiles) {
 	this.scanFiles = scanFiles;
     }
 

@@ -4,9 +4,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import org.primefaces.model.UploadedFile;
-
 import kz.theeurasia.esbdproxy.domain.dict.general.CountryRegionDict;
+import kz.theeurasia.policy.general.domain.UploadedImage;
 
 public class VehicleCertificateData {
 
@@ -15,7 +14,7 @@ public class VehicleCertificateData {
     private Calendar dateOfIssue;
     private CountryRegionDict region = CountryRegionDict.UNSPECIFIED;
     private boolean majorCity;
-    private List<UploadedFile> scanFiles = new ArrayList<>();
+    private List<UploadedImage> scanFiles = new ArrayList<>();
 
     // GENERATED
 
@@ -59,11 +58,11 @@ public class VehicleCertificateData {
 	this.majorCity = majorCity;
     }
 
-    public List<UploadedFile> getScanFiles() {
+    public List<UploadedImage> getScanFiles() {
 	return scanFiles;
     }
 
-    public void setScanFiles(List<UploadedFile> scanFiles) {
+    public void setScanFiles(List<UploadedImage> scanFiles) {
 	this.scanFiles = scanFiles;
     }
 }

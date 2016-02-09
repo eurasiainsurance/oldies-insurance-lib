@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.primefaces.model.UploadedFile;
-
 import kz.theeurasia.esbdproxy.domain.dict.general.IdentityCardTypeDict;
 
 public class IdentityCardData {
@@ -15,9 +13,9 @@ public class IdentityCardData {
 
     private String number;
 
-    private IdentityCardTypeDict identityCardType = IdentityCardTypeDict.UNSPECIFIED;
+    private IdentityCardTypeDict type = IdentityCardTypeDict.UNSPECIFIED;
 
-    private List<UploadedFile> scanFiles = new ArrayList<>();
+    private List<UploadedImage> scanFiles = new ArrayList<>();
 
     // GENERATED
 
@@ -45,19 +43,19 @@ public class IdentityCardData {
 	this.number = number;
     }
 
-    public IdentityCardTypeDict getIdentityCardType() {
-	return identityCardType;
+    public IdentityCardTypeDict getType() {
+	return type;
     }
 
-    public void setIdentityCardType(IdentityCardTypeDict identityCardType) {
-	this.identityCardType = identityCardType;
+    public void setType(IdentityCardTypeDict type) {
+	this.type = type;
     }
 
-    public List<UploadedFile> getScanFiles() {
+    public List<UploadedImage> getScanFiles() {
 	return scanFiles;
     }
 
-    public void setScanFiles(List<UploadedFile> scanFiles) {
+    public void setScanFiles(List<UploadedImage> scanFiles) {
 	this.scanFiles = scanFiles;
     }
 }

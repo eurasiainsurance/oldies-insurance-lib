@@ -8,11 +8,16 @@ import kz.theeurasia.policy.general.domain.ContactData;
 import kz.theeurasia.policy.general.domain.IdentityCardData;
 import kz.theeurasia.policy.general.domain.OriginData;
 import kz.theeurasia.policy.general.domain.PersonalData;
+import kz.theeurasia.policy.validator.ValidIdNumber;
+import kz.theeurasia.policy.validator.NotNullValue;
 
 public class InsurantData {
     private final UUID id = UUID.randomUUID();
 
+    @NotNullValue
+    @ValidIdNumber
     private String idNumber = "";
+
     private String taxPayerNumber = "";
 
     private PersonalData personalData = new PersonalData();

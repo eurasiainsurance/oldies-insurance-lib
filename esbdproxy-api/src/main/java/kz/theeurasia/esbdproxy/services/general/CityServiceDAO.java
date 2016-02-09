@@ -7,4 +7,5 @@ import kz.theeurasia.esbdproxy.services.GeneralServiceDAO;
 
 public interface CityServiceDAO extends GeneralServiceDAO<CityEntity, Long> {
     List<CityEntity> getAll();
+    List<CityEntity> getBySearchPattern(String pattern);
 }

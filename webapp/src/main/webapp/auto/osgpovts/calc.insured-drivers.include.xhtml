@@ -41,33 +41,40 @@
 
 				<p:outputLabel value="#{gpovts['label.input.insured.id-number']}" />
 				<h:panelGrid columns="2">
-					<p:inputMask id="idNumber" value="#{driver.idNumber}"
+					<p:inputMask id="driverIdNumber" value="#{driver.idNumber}"
 						mask="999999999999"
 						onchange="rcDriver_IdNumberChanged#{driver.safeId}()">
 						<pe:keyFilter regEx="/[0123456789]/i" preventPaste="false" />
 					</p:inputMask>
-					<p:message for="idNumber" display="icon" />
+					<p:message for="driverIdNumber" display="icon" />
 					<p:remoteCommand name="rcDriver_IdNumberChanged#{driver.safeId}"
 						actionListener="#{osgpovtsView.onDriverIdNumberChanged(driver)}"
-						update="@form" process="@this,idNumber" />
+						update="@form" process="@this,driverIdNumber" />
 				</h:panelGrid>
 				<p:outputLabel
 					value="#{gpovts['label.input.insured.insured-age-class']}" />
-				<p:selectOneMenu value="#{driver.ageClass}"
-					disabled="#{driver.fetched}">
-					<p:ajax event="change" process="@this" update="@form"
-						listener="#{osgpovtsView.onPolicyCostCalculationFormChanged}" />
-					<f:selectItems value="#{insuredAgeClassService.validItemsSI}" />
-				</p:selectOneMenu>
+
+				<h:panelGrid columns="2">
+					<p:selectOneMenu id="driverAgeClass" value="#{driver.ageClass}"
+						disabled="#{driver.fetched}">
+						<p:ajax event="change" process="@this" update="@form"
+							listener="#{osgpovtsView.onPolicyCostCalculationFormChanged}" />
+						<f:selectItems value="#{insuredAgeClassService.allItemsSI}" />
+					</p:selectOneMenu>
+					<p:message for="driverAgeClass" display="icon" />
+				</h:panelGrid>
 
 				<p:outputLabel
 					value="#{gpovts['label.input.insured.driver-expirience-class']}" />
-				<p:selectOneMenu value="#{driver.expirienceClass}">
-					<p:ajax event="change" process="@this" update="@form"
-						listener="#{osgpovtsView.onPolicyCostCalculationFormChanged}" />
-					<f:selectItems
-						value="#{insuredExpirienceClassService.validItemsSI}" />
-				</p:selectOneMenu>
+				<h:panelGrid columns="2">
+					<p:selectOneMenu id="driverExpirienceClass"
+						value="#{driver.expirienceClass}">
+						<p:ajax event="change" process="@this" update="@form"
+							listener="#{osgpovtsView.onPolicyCostCalculationFormChanged}" />
+						<f:selectItems value="#{insuredExpirienceClassService.allItemsSI}" />
+					</p:selectOneMenu>
+					<p:message for="driverExpirienceClass" display="icon" />
+				</h:panelGrid>
 
 			</h:panelGrid>
 

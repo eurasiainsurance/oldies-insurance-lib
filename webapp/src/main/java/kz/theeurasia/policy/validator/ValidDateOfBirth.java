@@ -11,13 +11,11 @@ import javax.validation.Payload;
 
 @Target({ METHOD, FIELD, ANNOTATION_TYPE })
 @Retention(RUNTIME)
-@Constraint(validatedBy = VINCodeConstraintValidator.class)
-public @interface VINCode {
-
-    String message() default "{kz.theeurasia.policy.validator.VINCode.message}";
+@Constraint(validatedBy = ValidDateOfBirthConstraintValidator.class)
+public @interface ValidDateOfBirth {
+    String message() default "{kz.theeurasia.policy.validator.ValidDateOfBirth.message}";
 
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
-
 }

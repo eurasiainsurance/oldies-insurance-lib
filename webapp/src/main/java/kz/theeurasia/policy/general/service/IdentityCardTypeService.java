@@ -26,6 +26,10 @@ public class IdentityCardTypeService {
 	return result;
     }
 
+    public List<SelectItem> getAllItemsSI() {
+	return _createSIFromList(getAllItems());
+    }
+
     public List<IdentityCardTypeDict> getValidItems() {
 	List<IdentityCardTypeDict> result = new ArrayList<>();
 	for (IdentityCardTypeDict r : IdentityCardTypeDict.values())
@@ -35,9 +39,12 @@ public class IdentityCardTypeService {
     }
 
     public List<SelectItem> getValidItemsSI() {
-	List<IdentityCardTypeDict> validItems = getValidItems();
+	return _createSIFromList(getValidItems());
+    }
+
+    private List<SelectItem> _createSIFromList(List<IdentityCardTypeDict> list) {
 	List<SelectItem> result = new ArrayList<>();
-	for (IdentityCardTypeDict r : validItems) {
+	for (IdentityCardTypeDict r : list) {
 	    SelectItem si = new SelectItem(r,
 		    glb.getString(GlobalMessageBundleCode.LABEL_SI_IDENTITY_CARD_TYPE_PREFIX.getMessageBundleCode()
 			    + r.name()));

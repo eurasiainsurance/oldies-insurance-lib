@@ -5,13 +5,13 @@ import java.util.regex.Pattern;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class VINCodeConstraintValidator implements ConstraintValidator<VINCode, String> {
+public class ValidVINCodeConstraintValidator implements ConstraintValidator<ValidVINCode, String> {
 
     private static final String VIN_CODE_PATTERN = "^[0123456789ABCDEFGHJKLMNPRSTUVWXYZ]{17}$";
     private Pattern pattern;
 
     @Override
-    public void initialize(VINCode constraintAnnotation) {
+    public void initialize(ValidVINCode constraintAnnotation) {
 	pattern = Pattern.compile(VIN_CODE_PATTERN, Pattern.CASE_INSENSITIVE);
     }
 
@@ -19,7 +19,7 @@ public class VINCodeConstraintValidator implements ConstraintValidator<VINCode, 
     public boolean isValid(String value, ConstraintValidatorContext context) {
 	if (value == null)
 	    return true;
+	// TODO реализовать проверку VIN-кода
 	return pattern.matcher(value).matches();
     }
-
 }

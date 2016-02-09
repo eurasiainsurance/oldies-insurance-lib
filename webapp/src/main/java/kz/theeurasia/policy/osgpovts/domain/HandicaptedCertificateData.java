@@ -5,12 +5,21 @@ import java.util.Date;
 import java.util.List;
 
 import kz.theeurasia.policy.general.domain.UploadedImage;
+import kz.theeurasia.policy.validator.NotEmptyString;
+import kz.theeurasia.policy.validator.NotNullValue;
 
 public class HandicaptedCertificateData {
 
+    @NotNullValue
+    @NotEmptyString
     private String number;
+
+    @NotNullValue
     private Date validFrom;
+
+    @NotNullValue
     private Date validTill;
+    
     private List<UploadedImage> scanFiles = new ArrayList<>();
 
     // GENERATED

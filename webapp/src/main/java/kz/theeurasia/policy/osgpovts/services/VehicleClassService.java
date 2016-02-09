@@ -28,14 +28,21 @@ public class VehicleClassService {
 	return vehicleClassServiceDAO.getAll();
     }
 
+    public List<SelectItem> getAllItemsSI() {
+	return _createSIFromList(getAllItems());
+    }
+
     public List<VehicleClassDict> getValidItems() {
 	return vehicleClassServiceDAO.getApplicableForOSGPOVTS();
     }
 
     public List<SelectItem> getValidItemsSI() {
-	List<VehicleClassDict> validItems = getValidItems();
+	return _createSIFromList(getValidItems());
+    }
+
+    private List<SelectItem> _createSIFromList(List<VehicleClassDict> list) {
 	List<SelectItem> result = new ArrayList<>();
-	for (VehicleClassDict r : validItems) {
+	for (VehicleClassDict r : list) {
 	    SelectItem si = new SelectItem(r,
 		    gpovts.getString(MessageBundleCode.LABEL_VEHICLE_CLASS_PREFIX.getMessageBundleCode() + r.name()));
 	    result.add(si);

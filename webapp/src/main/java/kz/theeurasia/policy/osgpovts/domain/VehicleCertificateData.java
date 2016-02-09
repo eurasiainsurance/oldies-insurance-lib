@@ -1,19 +1,38 @@
 package kz.theeurasia.policy.osgpovts.domain;
 
 import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import kz.theeurasia.esbdproxy.domain.dict.general.CountryRegionDict;
 import kz.theeurasia.policy.general.domain.UploadedImage;
+import kz.theeurasia.policy.validator.NotEmptyString;
+import kz.theeurasia.policy.validator.NotNullValue;
+import kz.theeurasia.policy.validator.ValidCountryRegion;
+import kz.theeurasia.policy.validator.ValidDateOfIssue;
+import kz.theeurasia.policy.validator.ValidVehicleRegistrationNumber;
 
 public class VehicleCertificateData {
 
+    @NotNullValue
+    @NotEmptyString
+    @ValidVehicleRegistrationNumber
     private String vehicleRegisterNumber;
+
+    @NotNullValue
+    @NotEmptyString
     private String number;
-    private Calendar dateOfIssue;
+
+    @NotNullValue
+    @ValidDateOfIssue
+    private Date dateOfIssue;
+
+    @NotNullValue
+    @ValidCountryRegion
     private CountryRegionDict region = CountryRegionDict.UNSPECIFIED;
+
     private boolean majorCity;
+
     private List<UploadedImage> scanFiles = new ArrayList<>();
 
     // GENERATED
@@ -34,11 +53,11 @@ public class VehicleCertificateData {
 	this.number = number;
     }
 
-    public Calendar getDateOfIssue() {
+    public Date getDateOfIssue() {
 	return dateOfIssue;
     }
 
-    public void setDateOfIssue(Calendar dateOfIssue) {
+    public void setDateOfIssue(Date dateOfIssue) {
 	this.dateOfIssue = dateOfIssue;
     }
 

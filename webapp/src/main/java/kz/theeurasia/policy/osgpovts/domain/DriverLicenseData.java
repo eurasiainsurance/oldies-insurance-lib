@@ -5,11 +5,20 @@ import java.util.Date;
 import java.util.List;
 
 import kz.theeurasia.policy.general.domain.UploadedImage;
+import kz.theeurasia.policy.validator.ValidDateOfIssue;
+import kz.theeurasia.policy.validator.NotEmptyString;
+import kz.theeurasia.policy.validator.NotNullValue;
 
 public class DriverLicenseData {
 
+    @NotNullValue
+    @NotEmptyString
     private String number;
+
+    @NotNullValue
+    @ValidDateOfIssue
     private Date dateOfIssue;
+
     private List<UploadedImage> scanFiles = new ArrayList<>();
 
     // GENERATED
@@ -31,11 +40,11 @@ public class DriverLicenseData {
     }
 
     public List<UploadedImage> getScanFiles() {
-        return scanFiles;
+	return scanFiles;
     }
 
     public void setScanFiles(List<UploadedImage> scanFiles) {
-        this.scanFiles = scanFiles;
+	this.scanFiles = scanFiles;
     }
 
 }

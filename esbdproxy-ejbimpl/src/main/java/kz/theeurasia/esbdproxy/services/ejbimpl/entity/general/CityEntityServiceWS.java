@@ -3,6 +3,8 @@ package kz.theeurasia.esbdproxy.services.ejbimpl.entity.general;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
@@ -44,6 +46,25 @@ public class CityEntityServiceWS extends AbstractESBDEntityServiceWS
     public List<CityEntity> getAll() {
 	lazyInit();
 	return new ArrayList<>(all);
+    }
+
+    @Override
+    public List<CityEntity> getBySearchPattern(String pattern) {
+	lazyInit();
+
+	List<CityEntity> res = new ArrayList<>();
+	Pattern p = null;
+	try {
+	    p = Pattern.compile(".*" + pattern.toLowerCase() + ".*", Pattern.CASE_INSENSITIVE);
+	} catch (PatternSyntaxException e1) {
+	}
+	for (CityEntity e : all) {
+	    if (p != null && (p.matcher(e.getName().toLowerCase()).matches())) {
+		res.add(e);
+		continue;
+	    }
+	}
+	return res;
     }
 
     @Override

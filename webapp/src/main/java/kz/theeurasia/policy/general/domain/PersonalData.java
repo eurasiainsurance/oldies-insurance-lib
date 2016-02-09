@@ -3,16 +3,31 @@ package kz.theeurasia.policy.general.domain;
 import java.util.Date;
 
 import kz.theeurasia.esbdproxy.domain.dict.general.SexDict;
+import kz.theeurasia.policy.validator.ValidDateOfBirth;
+import kz.theeurasia.policy.validator.NotEmptyString;
+import kz.theeurasia.policy.validator.NotNullValue;
+import kz.theeurasia.policy.validator.ValidSex;
 
 public class PersonalData {
+
+    @NotNullValue
+    @NotEmptyString
     private String name;
 
+    @NotNullValue
+    @NotEmptyString
     private String surename;
 
+    @NotNullValue
+    @NotEmptyString
     private String patronymic;
 
+    @NotNullValue
+    @ValidDateOfBirth
     private Date dayOfBirth;
 
+    @NotNullValue
+    @ValidSex
     private SexDict sex = SexDict.UNSPECIFIED;
 
     // GENERATED
@@ -56,6 +71,5 @@ public class PersonalData {
     public void setSex(SexDict sex) {
 	this.sex = sex;
     }
-
 
 }

@@ -70,21 +70,25 @@ public class DriverFacade {
 	    try {
 		InsuranceClassTypeDict insuranceClassType = insuranceClassTypeService.getForSubject(fetched);
 		driver.setInsuranceClassType(insuranceClassType);
-	    } catch (NotFound e) {
+	    } catch (NotFound | InvalidInputParameter e) {
 		driver.setInsuranceClassType(insuranceClassTypeService.getDefault());
 	    }
 	    if (fetched.getPersonal().getDayOfBirth() != null) {
 		int years = CalculatorUtil.calculateAgeByDOB(driver.getPersonalData().getDayOfBirth());
 		driver.setAgeClass(years > 25 ? InsuredAgeClassEnum.OVER25 : InsuredAgeClassEnum.UNDER25);
 	    }
-	} catch (NotFound | InvalidInputParameter e) {
+	} catch (NotFound e) {
 	    _resetFetchedInfo(policy, driver);
+	    driver.setInsuranceClassType(insuranceClassTypeService.getDefault());
+	} catch (InvalidInputParameter e1) {
+	    _resetFetchedInfo(policy, driver);
+	    throw new ValidationException(MessageBundleCode.ID_NUMBER_CANT_BE_EMPTY);
 	}
     }
 
     private void _reset(PolicyRequestData policy, InsuredDriverData driver) {
 	_resetFetchedInfo(policy, driver);
-	driver.setExpirienceClass(InsuredExpirienceClassEnum.MORE2);
+	driver.setExpirienceClass(InsuredExpirienceClassEnum.UNSPECIFIED);
     }
 
     private void _resetFetchedInfo(PolicyRequestData policy, InsuredDriverData driver) {
@@ -92,9 +96,9 @@ public class DriverFacade {
 	driver.setPersonalData(new PersonalData());
 	driver.setOriginData(new OriginData());
 	driver.setIdentityCardData(new IdentityCardData());
-	driver.setTaxPayerNumber("");
-	driver.setInsuranceClassType(insuranceClassTypeService.getDefault());
-	driver.setAgeClass(InsuredAgeClassEnum.OVER25);
+	driver.setTaxPayerNumber(null);
+	driver.setInsuranceClassType(InsuranceClassTypeDict.UNSPECIFIED);
+	driver.setAgeClass(InsuredAgeClassEnum.UNSPECIFIED);
     }
 
 }

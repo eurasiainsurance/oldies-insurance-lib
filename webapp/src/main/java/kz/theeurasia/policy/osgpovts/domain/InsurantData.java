@@ -16,9 +16,9 @@ public class InsurantData {
 
     @NotNullValue
     @ValidIdNumber
-    private String idNumber = "";
+    private String idNumber;
 
-    private String taxPayerNumber = "";
+    private String taxPayerNumber;
 
     private PersonalData personalData = new PersonalData();
     private OriginData originData = new OriginData();

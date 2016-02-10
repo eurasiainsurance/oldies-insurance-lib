@@ -1,5 +1,6 @@
 package kz.theeurasia.policy.osgpovts.domain;
 
+import java.util.Locale;
 import java.util.UUID;
 
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleAgeClassDict;
@@ -16,7 +17,7 @@ public class InsuredVehicleData {
 
     @NotNullValue
     @ValidVINCode
-    private String vinCode = "";
+    private String vinCode;
 
     @NotNullValue
     @ValidVehicleClass
@@ -28,11 +29,11 @@ public class InsuredVehicleData {
 
     @NotNullValue
     @NotEmptyString
-    private String vehicleModel = "";
+    private String vehicleModel;
 
     @NotNullValue
     @NotEmptyString
-    private String vehicleManufacturer = "";
+    private String vehicleManufacturer;
 
     private VehicleCertificateData certificateData = new VehicleCertificateData();
 
@@ -66,6 +67,12 @@ public class InsuredVehicleData {
 	return id.toString().replaceAll("-", "_");
     }
 
+    public void setVinCode(String vinCode) {
+	this.vinCode = vinCode;
+	if (this.vinCode != null)
+	    this.vinCode = this.vinCode.toUpperCase(Locale.ENGLISH);
+    }
+
     // GENERATED
 
     public UUID getId() {
@@ -90,10 +97,6 @@ public class InsuredVehicleData {
 
     public String getVinCode() {
 	return vinCode;
-    }
-
-    public void setVinCode(String vinCode) {
-	this.vinCode = vinCode;
     }
 
     public String getVehicleModel() {

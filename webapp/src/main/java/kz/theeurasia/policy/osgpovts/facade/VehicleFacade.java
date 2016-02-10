@@ -68,17 +68,17 @@ public class VehicleFacade {
 
     private void _reset(PolicyRequestData policy, InsuredVehicleData vehicle) {
 	_resetFetchedInfo(policy, vehicle);
-	vehicle.setVinCode("");
-	vehicle.getCertificateData().setRegion(countryRegionService.getDefaultRegion());
+	vehicle.setVinCode(null);
+	vehicle.getCertificateData().setRegion(CountryRegionDict.UNSPECIFIED);
 	evaluateMajorCity(vehicle);
     }
 
     private void _resetFetchedInfo(PolicyRequestData policy, InsuredVehicleData vehicle) {
 	vehicle.setFetchedEntity(null);
-	vehicle.setVehicleClass(VehicleClassDict.CAR);
-	vehicle.setVehicleAgeClass(VehicleAgeClassDict.UNDER7);
-	vehicle.setVehicleModel("");
-	vehicle.setVehicleManufacturer("");
+	vehicle.setVehicleClass(VehicleClassDict.UNSPECIFIED);
+	vehicle.setVehicleAgeClass(VehicleAgeClassDict.UNSPECIFIED);
+	vehicle.setVehicleModel(null);
+	vehicle.setVehicleManufacturer(null);
     }
 
 }

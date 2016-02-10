@@ -114,7 +114,7 @@ public class PremiumCostCalculatorRatesService {
 
     public double getRegionRate(CountryRegionDict region) {
 	if (!REGION_RATES.containsKey(region))
-	    return -1;
+	    return 0;
 	return REGION_RATES.get(region);
     }
 
@@ -124,34 +124,34 @@ public class PremiumCostCalculatorRatesService {
 
     public double getVehicleTypeRate(VehicleClassDict vehicleType) {
 	if (!VEHICLE_TYPE_RATES.containsKey(vehicleType))
-	    return -1;
+	    return 0;
 	return VEHICLE_TYPE_RATES.get(vehicleType);
     }
 
     public double getDriverExpirienceTypeRate(InsuredAgeClassEnum ageClass,
 	    InsuredExpirienceClassEnum driverExpirienceClass) {
 	if (!DRIVER_EXPIRIENCE_CLASS_RATES.containsKey(ageClass))
-	    return -1;
+	    return 0;
 	if (!DRIVER_EXPIRIENCE_CLASS_RATES.get(ageClass).containsKey(driverExpirienceClass))
-	    return -1;
+	    return 0;
 	return DRIVER_EXPIRIENCE_CLASS_RATES.get(ageClass).get(driverExpirienceClass);
     }
 
     public double getVehicleAgeTypeRate(VehicleAgeClassDict vehicleAgeType) {
 	if (!VEHICLE_AGE_RATES.containsKey(vehicleAgeType))
-	    return -1;
+	    return 0;
 	return VEHICLE_AGE_RATES.get(vehicleAgeType);
     }
 
     public double getInsuranceClassTypeRate(InsuranceClassTypeDict insuranceClassType) {
 	if (!INSURANCE_CLASS_TYPES_RATES.containsKey(insuranceClassType))
-	    return -1;
+	    return 0;
 	return INSURANCE_CLASS_TYPES_RATES.get(insuranceClassType);
     }
 
     public double getPolicyTermClassRate(PolicyTermClass policyTermClass) {
 	if (!POLICY_TERM_RATES.containsKey(policyTermClass))
-	    return -1;
+	    return 0;
 	return POLICY_TERM_RATES.get(policyTermClass);
     }
 

@@ -39,7 +39,25 @@ label.driver-license-data = Водительское удостоверение
 label.driver-license-data.number = Номер документа
 label.driver-license-data.date-of-issue = Дата выдачи
 label.driver-license-data.scan-files = Копии документа
-
+label.privileges = Льготные условия
+label.privileges.handicaped = является инвалидом
+label.privileges.handicaped-certificate.number = Номер удостоверения инвалида
+label.privileges.handicaped-certificate.valid-from = Дата начала действия удостоверения
+label.privileges.handicaped-certificate.valid-till = Дата окончания действия удостоверения
+label.privileges.handicaped-certificate.scan-files = Скан-копии удостоверения инвалида
+label.privileges.gpw-participant = является участником ВОВ
+label.privileges.gpw-participant-certificate.number = Номер удостоверения участника ВОВ
+label.privileges.gpw-participant-certificate.date-of-issue = Дата выдачи удостоверения участника ВОВ
+label.privileges.gpw-participant-certificate.scan-files = Скан-копии удостоверения участника ВОВ
+label.privileges.pensioner = является пенсионером 
+label.privileges.pensioner-certificate.number = Номер удостоверения пенсионера
+label.privileges.pensioner-certificate.date-of-issue = Дата выдачи удостоверения пенсионера
+label.privileges.pensioner-certificate.scan-files = Скан-копии удостоверения пенсионера
+label.privileges.privileger = является льготником
+label.privileges.privileger-certificate.type = Тип льготы
+label.privileges.privileger-certificate.number = Номер документа
+label.privileges.privileger-certificate.date-of-issue = Дата выдачи документа
+label.privileges.privileger-certificate.scan-files = Скан-копии удостоверения пенсионера
 
 # Text labels for select items on select inputs
 label.si.insured-age-class.OVER25 = 25 лет и старше

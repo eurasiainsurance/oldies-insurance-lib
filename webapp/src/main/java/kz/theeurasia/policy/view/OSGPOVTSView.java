@@ -71,9 +71,9 @@ public class OSGPOVTSView implements Serializable {
 	    drv1.setIdNumber("570325300699");
 	    driverFacade.fetchInfo(policy, drv1);
 	    drv1.setExpirienceClass(InsuredExpirienceClassEnum.MORE2);
-//	    InsuredDriverData drv2 = driverFacade.add(policy);
-//	    drv2.setIdNumber("870622300359");
-//	    driverFacade.fetchInfo(policy, drv2);
+	    // InsuredDriverData drv2 = driverFacade.add(policy);
+	    // drv2.setIdNumber("870622300359");
+	    // driverFacade.fetchInfo(policy, drv2);
 
 	    InsuredDriverData drv3 = driverFacade.add(policy);
 	    drv3.setIdNumber("800225000319");
@@ -81,9 +81,9 @@ public class OSGPOVTSView implements Serializable {
 	    drv3.setAgeClass(InsuredAgeClassEnum.OVER25);
 	    drv3.setExpirienceClass(InsuredExpirienceClassEnum.MORE2);
 
-	    //	    InsuredDriverData drv4 = driverFacade.add(policy);
-//	    drv4.setIdNumber("860401402685");
-//	    driverFacade.fetchInfo(policy, drv4);
+	    // InsuredDriverData drv4 = driverFacade.add(policy);
+	    // drv4.setIdNumber("860401402685");
+	    // driverFacade.fetchInfo(policy, drv4);
 
 	    InsuredVehicleData vhc1 = vehicleFacade.add(policy);
 	    vhc1.setVinCode("JN1TANS51U0303376");
@@ -203,6 +203,38 @@ public class OSGPOVTSView implements Serializable {
 
     public void removeDriverLicenseImage(InsuredDriverData driver, UploadedImage image) {
 	uploadedImagesFacade.removeDriverLicenseImage(policy, driver, image);
+    }
+
+    public void onHandicapedCertificateImageUploaded(InsuredDriverData driver) {
+	uploadedImagesFacade.pickupHandicapedCertificateImage(policy, driver);
+    }
+
+    public void removeHandicapedCertificateImage(InsuredDriverData driver, UploadedImage image) {
+	uploadedImagesFacade.removeHandicapedCertificateImage(policy, driver, image);
+    }
+
+    public void onGPWParticipantCertificateImageUploaded(InsuredDriverData driver) {
+	uploadedImagesFacade.pickupGPWParticipantCertificateImage(policy, driver);
+    }
+
+    public void removeGPWParticipantCertificateImage(InsuredDriverData driver, UploadedImage image) {
+	uploadedImagesFacade.removeGPWParticipantCertificateImage(policy, driver, image);
+    }
+
+    public void onPensionerCertificateImageUploaded(InsuredDriverData driver) {
+	uploadedImagesFacade.pickupPensionerCertificateImage(policy, driver);
+    }
+
+    public void removePensionerCertificateImage(InsuredDriverData driver, UploadedImage image) {
+	uploadedImagesFacade.removePensionerCertificateImage(policy, driver, image);
+    }
+
+    public void onPrivilegerCertificateImageUploaded(InsuredDriverData driver) {
+	uploadedImagesFacade.pickupPrivilegerCertificateImage(policy, driver);
+    }
+
+    public void removePrivilegerCertificateImage(InsuredDriverData driver, UploadedImage image) {
+	uploadedImagesFacade.removePrivilegerCertificateImage(policy, driver, image);
     }
 
     public List<CountryDict> completeCountry(String query) {

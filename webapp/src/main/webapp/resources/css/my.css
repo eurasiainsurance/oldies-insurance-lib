@@ -3,12 +3,9 @@
 	margin-bottom: 10px;
 }
 
-.ui-panel-content {
-	
-}
-
-.ui-widget {
-	
+.ui-calendar INPUT {
+	width: 5em;
+	text-align: center;
 }
 
 .ui-datagrid {
@@ -21,18 +18,43 @@
 	display: block;
 }
 
-.ui-glr-item {
-	width: 80px;
-	height: 80px;
-	margin: 5px 5px 5px 5px;
-	padding: 5px 5px 5px 5px;
+.ui-glr .ui-glr-item {
+	width: 3em;
+	height: 3em;
+	margin: .2em .2em .2em .2em;
+	padding: .2em .2em .2em .2em;
 }
 
-.ui-glr-add {
+.ui-glr A.ui-commandlink {
+	display: inline-block;
+	text-decoration: none;
+}
+
+.ui-glr .ui-fileupload {
 	display: inline-block;
 	vertical-align: top;
 }
 
-.ui-glr .ui-fileupload-content {
+.ui-glr .ui-fileupload .ui-fileupload-content {
 	display: none;
+}
+
+.ui-glr .ui-fileupload .ui-fileupload-buttonbar {
+	display: inline-block;
+	vertical-align: top;
+	height: 3em;
+	padding: .2em .2em .2em .2em;
+	margin: .2em .2em .2em .2em;
+}
+
+.ui-glr .ui-fileupload .ui-fileupload-buttonbar .ui-button {
+	height: 3em;
+}
+
+.ui-glr .ui-fileupload .ui-fileupload-buttonbar .ui-button .ui-icon {
+	display: none;
+}
+
+.ui-glr .ui-fileupload .ui-fileupload-buttonbar .ui-button .ui-button-text {
+	padding: .3em .3em .3em .3em;
 }

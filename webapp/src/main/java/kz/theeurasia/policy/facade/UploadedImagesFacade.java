@@ -32,6 +32,47 @@ public class UploadedImagesFacade {
 	driver.getDriverLicenseData().getScanFiles().remove(image);
     }
 
+    public void pickupHandicapedCertificateImage(PolicyRequestData policy, InsuredDriverData driver) {
+	driver.getHandicapedCertificateData().getScanFiles().addAll(uploadedImageService.pickUpLast());
+    }
+
+    public void removeHandicapedCertificateImage(PolicyRequestData policy, InsuredDriverData driver,
+	    UploadedImage image) {
+	driver.getHandicapedCertificateData().getScanFiles().remove(image);
+    }
+
+    public void pickupGPWParticipantCertificateImage(PolicyRequestData policy, InsuredDriverData driver) {
+	driver.getGpwParticipantCertificateData().getScanFiles().addAll(uploadedImageService.pickUpLast());
+
+    }
+
+    public void removeGPWParticipantCertificateImage(PolicyRequestData policy, InsuredDriverData driver,
+	    UploadedImage image) {
+	driver.getGpwParticipantCertificateData().getScanFiles().remove(image);
+    }
+
+    public void pickupPensionerCertificateImage(PolicyRequestData policy, InsuredDriverData driver) {
+	driver.getPensionerCertificateData().getScanFiles().addAll(uploadedImageService.pickUpLast());
+
+    }
+
+    public void removePensionerCertificateImage(PolicyRequestData policy, InsuredDriverData driver,
+	    UploadedImage image) {
+	driver.getPensionerCertificateData().getScanFiles().remove(image);
+
+    }
+
+    public void pickupPrivilegerCertificateImage(PolicyRequestData policy, InsuredDriverData driver) {
+	driver.getPrivilegerCertificateData().getScanFiles().addAll(uploadedImageService.pickUpLast());
+
+    }
+
+    public void removePrivilegerCertificateImage(PolicyRequestData policy, InsuredDriverData driver,
+	    UploadedImage image) {
+	driver.getPrivilegerCertificateData().getScanFiles().remove(image);
+
+    }
+
     // GENERATED
 
     public void setUploadedImageService(UploadedImageService uploadedImageService) {

@@ -174,7 +174,9 @@
 					</h:panelGrid>
 					<p:outputLabel
 						value="#{glb['label.identity-card-data.scan-files']}" />
-					<p:panel id="identityCardGalleria" styleClass="ui-glr ui-widget">
+
+
+					<p:panel id="identityCardGalleria" styleClass="ui-glr">
 						<p:remoteCommand name="rc_NewIdentityCardUploaded#{driver.safeId}"
 							action="#{osgpovtsView.onDriverIdentityCardImageUploaded(driver)}"
 							process="@this" update="@this, identityCardGalleria" />
@@ -185,13 +187,13 @@
 								ajax="true" process="@this"
 								update="@this, @form(identityCardGalleria)">
 								<p:graphicImage value="#{uploadedImageService.content}"
-									styleClass="ui-glr-image ui-glr-item ui-widget-content">
+									styleClass="ui-glr-item ui-widget-content">
 									<f:param name="id" value="#{image.id}" />
 								</p:graphicImage>
 							</p:commandLink>
 						</ui:repeat>
 						<p:fileUpload mode="advanced"
-							styleClass="ui-glr-add ui-glr-item ui-widget-content"
+							label="#{glb['label.command.add-image']}"
 							allowTypes="/(\.|\/)(gif|jpe?g|png)$/" multiple="true"
 							sizeLimit="1000000" fileLimit="10" skinSimple="true" auto="true"
 							fileUploadListener="#{uploadedImageService.onImageUpload}"
@@ -226,7 +228,7 @@
 					</h:panelGrid>
 					<p:outputLabel
 						value="#{gpovts['label.driver-license-data.scan-files']}" />
-					<p:panel id="driverLicenseGalleria" styleClass="ui-glr ui-widget">
+					<p:panel id="driverLicenseGalleria" styleClass="ui-glr">
 						<p:remoteCommand
 							name="rc_NewDriverLicenseUploaded#{driver.safeId}"
 							action="#{osgpovtsView.onDriverLicenseImageUploaded(driver)}"
@@ -238,19 +240,31 @@
 								ajax="true" process="@this"
 								update="@this, @form(driverLicenseGalleria)">
 								<p:graphicImage value="#{uploadedImageService.content}"
-									styleClass="ui-glr-image ui-glr-item ui-widget-content">
+									styleClass="ui-glr-item ui-widget-content">
 									<f:param name="id" value="#{image.id}" />
 								</p:graphicImage>
 							</p:commandLink>
 						</ui:repeat>
 						<p:fileUpload mode="advanced"
-							styleClass="ui-glr-add ui-glr-item ui-widget-content"
+							label="#{glb['label.command.add-image']}"
 							allowTypes="/(\.|\/)(gif|jpe?g|png)$/" multiple="true"
 							sizeLimit="1000000" fileLimit="10" skinSimple="true" auto="true"
 							fileUploadListener="#{uploadedImageService.onImageUpload}"
 							oncomplete="rc_NewDriverLicenseUploaded#{driver.safeId}()">
 						</p:fileUpload>
 					</p:panel>
+				</p:panel>
+
+				<p:panel header="#{gpovts['label.privileges']}"
+					rendered="#{driver.hasAnyPrivilege}" id="privilegesPanel">
+					<ui:decorate
+						template="form.insured-drivers.handicaped.include.xhtml" />
+					<ui:decorate
+						template="form.insured-drivers.gpw-participant.include.xhtml" />
+					<ui:decorate
+						template="form.insured-drivers.pensioner.include.xhtml" />
+					<ui:decorate
+						template="form.insured-drivers.privileger.include.xhtml" />
 				</p:panel>
 
 			</h:panelGroup>

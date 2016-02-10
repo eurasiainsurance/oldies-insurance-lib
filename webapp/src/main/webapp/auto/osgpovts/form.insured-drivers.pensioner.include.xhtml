@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:comp="http://xmlns.jcp.org/jsf/composite"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+	<h:panelGrid columns="2">
+		<p:selectBooleanCheckbox value="#{driver.pensioner}"
+			widgetVar="w_isPensionerCheckbox#{driver.safeId}">
+			<p:ajax process="@this" update="privilegesPanel" />
+		</p:selectBooleanCheckbox>
+		<p:outputLabel value="#{gpovts['label.privileges.pensioner']}"
+			onclick="PF('w_isPensionerCheckbox#{driver.safeId}').toggle()" />
+	</h:panelGrid>
+
+	<p:panel rendered="#{driver.pensioner}">
+		<p:outputLabel
+			value="#{gpovts['label.privileges.pensioner-certificate.number']}" />
+		<h:panelGrid columns="2">
+			<p:inputText id="pensionerCertificateNumber"
+				value="#{driver.pensionerCertificateData.number}">
+				<p:ajax event="change" process="@this" update="privilegesPanel" />
+			</p:inputText>
+			<p:message for="pensionerCertificateNumber" />
+		</h:panelGrid>
+		<p:outputLabel
+			value="#{gpovts['label.privileges.pensioner-certificate.date-of-issue']}" />
+		<h:panelGrid columns="2">
+			<p:calendar id="pensionerCertificateDateOfIssue"
+				value="#{driver.pensionerCertificateData.dateOfIssue}">
+				<p:ajax event="change" process="@this" update="privilegesPanel" />
+				<p:ajax event="dateSelect" process="@this" update="privilegesPanel" />
+			</p:calendar>
+			<p:message for="pensionerCertificateDateOfIssue" />
+		</h:panelGrid>
+
+		<p:outputLabel
+			value="#{gpovts['label.privileges.pensioner-certificate.scan-files']}" />
+		<p:panel id="pensionerCertificateGalleria" styleClass="ui-glr">
+			<p:remoteCommand
+				name="rc_NewPensionerCertificateUploaded#{driver.safeId}"
+				action="#{osgpovtsView.onPensionerCertificateImageUploaded(driver)}"
+				process="@this" update="@this, pensionerCertificateGalleria" />
+			<ui:repeat var="image"
+				value="#{driver.pensionerCertificateData.scanFiles}">
+				<p:commandLink
+					action="#{osgpovtsView.removePensionerCertificateImage(driver, image)}"
+					ajax="true" process="@this"
+					update="@this, @form(pensionerCertificateGalleria)">
+					<p:graphicImage value="#{uploadedImageService.content}"
+						styleClass="ui-glr-item ui-widget-content">
+						<f:param name="id" value="#{image.id}" />
+					</p:graphicImage>
+				</p:commandLink>
+			</ui:repeat>
+			<p:fileUpload mode="advanced"
+				label="#{glb['label.command.add-image']}"
+				allowTypes="/(\.|\/)(gif|jpe?g|png)$/" multiple="true"
+				sizeLimit="1000000" fileLimit="10" skinSimple="true" auto="true"
+				fileUploadListener="#{uploadedImageService.onImageUpload}"
+				oncomplete="rc_NewPensionerCertificateUploaded#{driver.safeId}()">
+			</p:fileUpload>
+		</p:panel>
+	</p:panel>
+
+</ui:composition>

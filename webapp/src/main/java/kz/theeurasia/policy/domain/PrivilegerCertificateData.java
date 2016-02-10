@@ -1,7 +1,7 @@
 package kz.theeurasia.policy.domain;
 
 import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import kz.theeurasia.policy.validator.NotEmptyString;
@@ -20,7 +20,7 @@ public class PrivilegerCertificateData {
 
     @NotNullValue
     @ValidDateOfIssue
-    private Calendar dateOfIssue;
+    private Date dateOfIssue;
 
     private List<UploadedImage> scanFiles = new ArrayList<>();
 
@@ -42,11 +42,11 @@ public class PrivilegerCertificateData {
 	this.number = number;
     }
 
-    public Calendar getDateOfIssue() {
+    public Date getDateOfIssue() {
 	return dateOfIssue;
     }
 
-    public void setDateOfIssue(Calendar dateOfIssue) {
+    public void setDateOfIssue(Date dateOfIssue) {
 	this.dateOfIssue = dateOfIssue;
     }
 

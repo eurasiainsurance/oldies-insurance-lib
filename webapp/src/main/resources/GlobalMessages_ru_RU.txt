@@ -61,3 +61,4 @@ label.si.identity-card-type.UNSPECIFIED = Не указано
 # Text labels for command buttons & links
 label.command.wizard.next = Далее
 label.command.wizard.prev = Назад
+label.command.add-image = Загрузить

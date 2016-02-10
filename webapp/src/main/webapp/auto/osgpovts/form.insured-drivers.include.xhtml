@@ -23,7 +23,7 @@
 						<p:inputText id="surename" value="#{driver.personalData.surename}"
 							disabled="#{driver.fetched and not empty driver.personalData.surename}">
 							<p:ajax event="change" process="@this"
-								update="@this, currentDriverPanel" />
+								update="@this,currentDriverPanel" />
 						</p:inputText>
 						<p:message for="surename" display="icon" />
 					</h:panelGrid>
@@ -31,7 +31,7 @@
 						<p:inputText id="name" value="#{driver.personalData.name}"
 							disabled="#{driver.fetched and not empty driver.personalData.name}">
 							<p:ajax event="change" process="@this"
-								update="@this, currentDriverPanel" />
+								update="@this,currentDriverPanel" />
 						</p:inputText>
 						<p:message for="name" display="icon" />
 					</h:panelGrid>
@@ -40,7 +40,7 @@
 							value="#{driver.personalData.patronymic}"
 							disabled="#{driver.fetched and not empty driver.personalData.patronymic}">
 							<p:ajax event="change" process="@this"
-								update="@this, currentDriverPanel" />
+								update="@this,currentDriverPanel" />
 						</p:inputText>
 						<p:message for="patronymic" display="icon" />
 					</h:panelGrid>
@@ -49,7 +49,9 @@
 							value="#{driver.personalData.dayOfBirth}"
 							disabled="#{driver.fetched and not empty driver.personalData.dayOfBirth}">
 							<p:ajax event="change" process="@this"
-								update="@this, currentDriverPanel" />
+								update="@this,currentDriverPanel" />
+							<p:ajax event="dateSelect" process="@this"
+								update="@this,currentDriverPanel" />
 						</p:calendar>
 						<p:message for="dayOfBirth" display="icon" />
 					</h:panelGrid>
@@ -57,7 +59,7 @@
 						<p:selectOneRadio id="sex" value="#{driver.personalData.sex}"
 							disabled="#{driver.fetched and not empty driver.personalData.sex and driver.personalData.sex ne 'UNSPECIFIED'}">
 							<p:ajax event="change" process="@this"
-								update="@this, currentDriverPanel" />
+								update="@this,currentDriverPanel" />
 							<f:selectItems value="#{sexService.validItemsSI}" />
 						</p:selectOneRadio>
 						<p:message for="sex" display="icon" />
@@ -79,14 +81,14 @@
 									<h:outputText value="#{c.rusname}" />
 								</p:column>
 								<p:ajax event="change" process="@this"
-									update="@this, currentDriverPanel" />
+									update="@this,currentDriverPanel" />
 							</p:selectOneMenu>
 							<p:message for="city" display="icon" />
 						</h:panelGrid>
 						<h:panelGrid columns="2">
 							<p:inputText id="address" value="#{driver.residenceData.address}">
 								<p:ajax event="change" process="@this"
-									update="@this, currentDriverPanel" />
+									update="@this,currentDriverPanel" />
 							</p:inputText>
 							<p:message for="address" display="icon" />
 						</h:panelGrid>
@@ -95,7 +97,7 @@
 					<p:selectBooleanCheckbox widgetVar="w_isResident#{driver.safeId}"
 						value="#{driver.residenceData.resident}">
 						<p:ajax event="change" process="@this"
-							update="@this, currentDriverPanel" />
+							update="@this,currentDriverPanel" />
 					</p:selectBooleanCheckbox>
 					<p:outputLabel value="#{glb['label.residence-data.is-resident']}"
 						onclick="PF('w_isResident#{driver.safeId}').toggle()" />
@@ -118,7 +120,7 @@
 									<h:outputText value="#{c.rusname}" />
 								</p:column>
 								<p:ajax event="change" process="@this"
-									update="@this, currentDriverPanel" />
+									update="@this,currentDriverPanel" />
 							</p:selectOneMenu>
 							<p:message for="country" display="icon" />
 						</h:panelGrid>
@@ -137,7 +139,7 @@
 							<p:selectOneMenu id="identityCardDataType"
 								value="#{driver.identityCardData.type}">
 								<p:ajax event="change" process="@this"
-									update="@this, currentDriverPanel" />
+									update="@this,currentDriverPanel" />
 								<f:selectItems value="#{identityCardTypeService.allItemsSI}" />
 							</p:selectOneMenu>
 							<p:message for="identityCardDataType" display="icon" />
@@ -146,7 +148,7 @@
 							<p:inputText id="identityCardDataNumber"
 								value="#{driver.identityCardData.number}">
 								<p:ajax event="change" process="@this"
-									update="@this, currentDriverPanel" />
+									update="@this,currentDriverPanel" />
 							</p:inputText>
 							<p:message for="identityCardDataNumber" display="icon" />
 						</h:panelGrid>
@@ -154,7 +156,7 @@
 							<p:inputText id="identityCardIssuingAuthority"
 								value="#{driver.identityCardData.issuingAuthority}">
 								<p:ajax event="change" process="@this"
-									update="@this, currentDriverPanel" />
+									update="@this,currentDriverPanel" />
 							</p:inputText>
 							<p:message for="identityCardIssuingAuthority" display="icon" />
 						</h:panelGrid>
@@ -163,7 +165,9 @@
 								value="#{driver.identityCardData.dateOfIssue}"
 								locale="#{localeService.locale}">
 								<p:ajax event="change" process="@this"
-									update="@this, currentDriverPanel" />
+									update="@this,currentDriverPanel" />
+								<p:ajax event="dateSelect" process="@this"
+									update="@this,currentDriverPanel" />
 							</p:calendar>
 							<p:message for="identityCardDateOfIssue" display="icon" />
 						</h:panelGrid>
@@ -204,7 +208,7 @@
 							<p:inputText id="driverLicenseNumber"
 								value="#{driver.driverLicenseData.number}">
 								<p:ajax event="change" process="@this"
-									update="@this, currentDriverPanel" />
+									update="@this,currentDriverPanel" />
 							</p:inputText>
 							<p:message for="driverLicenseNumber" display="icon" />
 						</h:panelGrid>
@@ -213,7 +217,9 @@
 								value="#{driver.driverLicenseData.dateOfIssue}"
 								locale="#{localeService.locale}">
 								<p:ajax event="change" process="@this"
-									update="@this, currentDriverPanel" />
+									update="@this,currentDriverPanel" />
+								<p:ajax event="dateSelect" process="@this"
+									update="@this,currentDriverPanel" />
 							</p:calendar>
 							<p:message for="driverLicenseDateOfIssue" display="icon" />
 						</h:panelGrid>

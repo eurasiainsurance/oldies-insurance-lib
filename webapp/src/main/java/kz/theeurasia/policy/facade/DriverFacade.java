@@ -10,6 +10,7 @@ import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredAgeClassEnum;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
 import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
+import kz.theeurasia.esbdproxy.services.general.KZCityServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.SubjectPersonServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.InsuranceClassTypeServiceDAO;
 import kz.theeurasia.policy.domain.IdentityCardData;
@@ -29,6 +30,9 @@ public class DriverFacade {
 
     @EJB
     private InsuranceClassTypeServiceDAO insuranceClassTypeService;
+
+    @EJB
+    KZCityServiceDAO kzCityServiceDAO;
 
     public InsuredDriverData add(PolicyRequestData policy) throws ValidationException {
 	if (policy.getInsuredDrivers().size() > 0 && policy.getInsuredVehicles().size() > 1)
@@ -57,8 +61,10 @@ public class DriverFacade {
 	    driver.getPersonalData().setDayOfBirth(fetched.getPersonal().getDayOfBirth().getTime());
 
 	    driver.getResidenceData().setResident(fetched.getOrigin().isResident());
+
+	    //TODO Здесь потенциальная проблема связанная с тем несоответстием мапирования
 	    if (fetched.getOrigin().getCity() != null)
-		driver.getResidenceData().setCity(fetched.getOrigin().getCity().getName());
+		driver.getResidenceData().setCity(kzCityServiceDAO.getById(fetched.getOrigin().getCity().getId()));
 	    driver.getOriginData().setCountry(fetched.getOrigin().getCountry());
 
 	    driver.getIdentityCardData().setDateOfIssue(fetched.getIdentityCard().getDateOfIssue().getTime());

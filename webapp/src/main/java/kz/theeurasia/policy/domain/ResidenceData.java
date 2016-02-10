@@ -1,15 +1,17 @@
 package kz.theeurasia.policy.domain;
 
+import kz.theeurasia.esbdproxy.domain.dict.general.KZCityDict;
 import kz.theeurasia.policy.validator.NotEmptyString;
 import kz.theeurasia.policy.validator.NotNullValue;
+import kz.theeurasia.policy.validator.ValidKZCity;
 
 public class ResidenceData {
 
     private boolean resident;
 
     @NotNullValue
-    @NotEmptyString
-    private String city;
+    @ValidKZCity
+    private KZCityDict city = KZCityDict.UNSPECIFIED;
 
     @NotNullValue
     @NotEmptyString
@@ -25,11 +27,11 @@ public class ResidenceData {
 	this.resident = resident;
     }
 
-    public String getCity() {
+    public KZCityDict getCity() {
 	return city;
     }
 
-    public void setCity(String city) {
+    public void setCity(KZCityDict city) {
 	this.city = city;
     }
 

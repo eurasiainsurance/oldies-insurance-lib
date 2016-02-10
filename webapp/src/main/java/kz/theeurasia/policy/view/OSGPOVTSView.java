@@ -1,7 +1,6 @@
 package kz.theeurasia.policy.view;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.ResourceBundle;
 
 import javax.annotation.PostConstruct;
@@ -11,7 +10,6 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
-import kz.theeurasia.esbdproxy.domain.dict.general.CountryDict;
 import kz.theeurasia.esbdproxy.domain.dict.general.CountryRegionDict;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredAgeClassEnum;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
@@ -23,8 +21,6 @@ import kz.theeurasia.policy.facade.DriverFacade;
 import kz.theeurasia.policy.facade.PolicyFacade;
 import kz.theeurasia.policy.facade.UploadedImagesFacade;
 import kz.theeurasia.policy.facade.VehicleFacade;
-import kz.theeurasia.policy.services.CountryService;
-import kz.theeurasia.policy.services.KZCityService;
 
 @ManagedBean(name = "osgpovtsView")
 @ViewScoped
@@ -50,13 +46,7 @@ public class OSGPOVTSView implements Serializable {
     @ManagedProperty("#{uploadedImagesFacade}")
     private UploadedImagesFacade uploadedImagesFacade;
 
-    @ManagedProperty("#{countryService}")
-    private CountryService countryService;
-
     private PolicyRequestData policy;
-
-    @ManagedProperty("#{kzCityService}")
-    private KZCityService kzCityService;
 
     @PostConstruct
     public void init() {
@@ -237,14 +227,6 @@ public class OSGPOVTSView implements Serializable {
 	uploadedImagesFacade.removePrivilegerCertificateImage(policy, driver, image);
     }
 
-    public List<CountryDict> completeCountry(String query) {
-	return countryService.getCountriesByQuery(query);
-    }
-
-    public List<String> completeCity(String query) {
-	return kzCityService.getCitiNamesByQuery(query);
-    }
-
     // GENERATED
 
     public void setGlb(ResourceBundle glb) {
@@ -269,14 +251,6 @@ public class OSGPOVTSView implements Serializable {
 
     public PolicyRequestData getPolicy() {
 	return policy;
-    }
-
-    public void setCountryService(CountryService countryService) {
-	this.countryService = countryService;
-    }
-
-    public void setKzCityService(KZCityService kzCityService) {
-	this.kzCityService = kzCityService;
     }
 
     public void setUploadedImagesFacade(UploadedImagesFacade uploadedImagesFacade) {

@@ -2,27 +2,31 @@ package kz.theeurasia.policy.services;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
+import java.util.ResourceBundle;
 
+import javax.ejb.EJB;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.model.SelectItem;
 
-import kz.theeurasia.policy.domain.KZCity;
+import kz.theeurasia.esbdproxy.domain.dict.general.KZCityDict;
+import kz.theeurasia.esbdproxy.services.general.KZCityServiceDAO;
 
 @ManagedBean(name = "kzCityService")
 @ApplicationScoped
 public class KZCityService {
+    @ManagedProperty("#{glb}")
+    private ResourceBundle glb;
 
-    public List<KZCity> getAllItems() {
-	List<KZCity> result = new ArrayList<>();
-	for (KZCity r : KZCity.values())
-	    result.add(r);
-	return result;
+    @EJB
+    private KZCityServiceDAO kzCityServiceDAO;
+
+    public List<KZCityDict> getAllItems() {
+	return kzCityServiceDAO.getAll();
     }
 
-    public List<KZCity> getValidItems() {
+    public List<KZCityDict> getValidItems() {
 	return getAllItems();
     }
 
@@ -34,29 +38,27 @@ public class KZCityService {
 	return _createSIFromList(getValidItems());
     }
 
-    private List<SelectItem> _createSIFromList(List<KZCity> list) {
+    public List<KZCityDict> getByQuery(String query) {
+	return kzCityServiceDAO.getBySearchPattern(query);
+    }
+
+    public List<SelectItem> getByQuerySI(String query) {
+	return _createSIFromList(getByQuery(query));
+    }
+
+    private List<SelectItem> _createSIFromList(List<KZCityDict> list) {
 	List<SelectItem> result = new ArrayList<>();
-	for (KZCity r : list) {
+	for (KZCityDict r : list) {
 	    SelectItem si = new SelectItem(r, r.getRusname());
 	    result.add(si);
 	}
 	return result;
     }
 
-    public List<String> getCitiNamesByQuery(String query) {
-	List<String> res = new ArrayList<>();
-	Pattern p = null;
-	try {
-	    p = Pattern.compile(".*" + query.toLowerCase() + ".*", Pattern.CASE_INSENSITIVE);
-	} catch (PatternSyntaxException e1) {
-	}
-	for (KZCity e : KZCity.values()) {
-	    if (p != null && (p.matcher(e.getRusname().toLowerCase()).matches()
-		    || p.matcher(e.getKazname().toLowerCase()).matches())) {
-		res.add(e.getRusname());
-		continue;
-	    }
-	}
-	return res;
+    // GENERATED
+
+    public void setGlb(ResourceBundle glb) {
+	this.glb = glb;
     }
+
 }

@@ -31,12 +31,12 @@ public class CountryService {
 	return _createSIFromList(getAllItems());
     }
 
-    public List<CountryDict> getValidItems() {
-	return countryServiceDAO.getCountries();
+    public List<CountryDict> getSelectableItems() {
+	return countryServiceDAO.getSelectable();
     }
 
-    public List<SelectItem> getValidItemsSI() {
-	return _createSIFromList(getValidItems());
+    public List<SelectItem> getSelectableItemsSI() {
+	return _createSIFromList(getSelectableItems());
     }
 
     public List<CountryDict> getCountriesByQuery(String query) {

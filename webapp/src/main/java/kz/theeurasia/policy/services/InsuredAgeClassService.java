@@ -30,16 +30,15 @@ public class InsuredAgeClassService {
 	return _createSIFromList(getAllItems());
     }
 
-    public List<InsuredAgeClassEnum> getValidItems() {
+    public List<InsuredAgeClassEnum> getSelectableItems() {
 	List<InsuredAgeClassEnum> result = new ArrayList<>();
 	for (InsuredAgeClassEnum r : InsuredAgeClassEnum.values())
-	    if (!r.equals(InsuredAgeClassEnum.UNSPECIFIED))
-		result.add(r);
+	    result.add(r);
 	return result;
     }
 
-    public List<SelectItem> getValidItemsSI() {
-	return _createSIFromList(getValidItems());
+    public List<SelectItem> getSelectableItemsSI() {
+	return _createSIFromList(getSelectableItems());
     }
 
     private List<SelectItem> _createSIFromList(List<InsuredAgeClassEnum> list) {

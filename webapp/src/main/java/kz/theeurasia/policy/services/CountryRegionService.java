@@ -28,16 +28,16 @@ public class CountryRegionService {
 	return countryRegionServiceDAO.getAll();
     }
 
-    public List<CountryRegionDict> getValidItems() {
-	return countryRegionServiceDAO.getRegions();
-    }
-
-    public List<SelectItem> getValidItemsSI() {
-	return _createSIFromList(getValidItems());
-    }
-
     public List<SelectItem> getAllItemsSI() {
 	return _createSIFromList(getAllItems());
+    }
+
+    public List<CountryRegionDict> getSelectableItems() {
+	return countryRegionServiceDAO.getSelectable();
+    }
+
+    public List<SelectItem> getSelectableItemsSI() {
+	return _createSIFromList(getSelectableItems());
     }
 
     private List<SelectItem> _createSIFromList(List<CountryRegionDict> list) {

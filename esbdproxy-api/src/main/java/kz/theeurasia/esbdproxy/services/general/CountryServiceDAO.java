@@ -10,5 +10,5 @@ public interface CountryServiceDAO extends GeneralServiceDAO<CountryDict, Long> 
     List<CountryDict> getAll();
     List<CountryDict> getBySearchPattern(String pattern);
     CountryDict getOneByName(String value) throws NotFound;
-    List<CountryDict> getCountries();
+    List<CountryDict> getSelectable();
 }

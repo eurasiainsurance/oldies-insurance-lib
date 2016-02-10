@@ -24,12 +24,12 @@ public enum KZAreaDict {
 
     private final String code;
     private final long[] ids;
-    private final boolean isSelectable;
+    private final boolean selectable;
 
-    KZAreaDict(String code, boolean isSelectable, long... ids) {
+    KZAreaDict(String code, boolean selectable, long... ids) {
 	this.ids = ids;
 	this.code = code;
-	this.isSelectable = isSelectable;
+	this.selectable = selectable;
     }
 
     public long getId() {
@@ -65,7 +65,7 @@ public enum KZAreaDict {
     }
 
     public boolean isSelectable() {
-	return isSelectable;
+	return selectable;
     }
 
 }

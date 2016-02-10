@@ -40,6 +40,11 @@ public class KZCityDictServiceWS implements KZCityServiceDAO {
     }
 
     @Override
+    public List<KZCityDict> getSelectable() {
+	return getAll();
+    }
+
+    @Override
     public List<KZCityDict> getBySearchPattern(String pattern) {
 	List<KZCityDict> res = new ArrayList<>();
 	Pattern p = null;
@@ -57,4 +62,5 @@ public class KZCityDictServiceWS implements KZCityServiceDAO {
 	}
 	return res;
     }
+
 }

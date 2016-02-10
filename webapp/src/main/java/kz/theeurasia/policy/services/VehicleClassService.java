@@ -32,12 +32,12 @@ public class VehicleClassService {
 	return _createSIFromList(getAllItems());
     }
 
-    public List<VehicleClassDict> getValidItems() {
+    public List<VehicleClassDict> getSelectableItems() {
 	return vehicleClassServiceDAO.getApplicableForOSGPOVTS();
     }
 
-    public List<SelectItem> getValidItemsSI() {
-	return _createSIFromList(getValidItems());
+    public List<SelectItem> getSelectableItemsSI() {
+	return _createSIFromList(getSelectableItems());
     }
 
     private List<SelectItem> _createSIFromList(List<VehicleClassDict> list) {

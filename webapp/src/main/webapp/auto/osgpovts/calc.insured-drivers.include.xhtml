@@ -58,7 +58,7 @@
 						disabled="#{driver.fetched}">
 						<p:ajax event="change" process="@this" update="@form"
 							listener="#{osgpovtsView.onPolicyCostCalculationFormChanged}" />
-						<f:selectItems value="#{insuredAgeClassService.allItemsSI}" />
+						<f:selectItems value="#{insuredAgeClassService.selectableItemsSI}" />
 					</p:selectOneMenu>
 					<p:message for="driverAgeClass" display="icon" />
 				</h:panelGrid>
@@ -70,7 +70,7 @@
 						value="#{driver.expirienceClass}">
 						<p:ajax event="change" process="@this" update="@form"
 							listener="#{osgpovtsView.onPolicyCostCalculationFormChanged}" />
-						<f:selectItems value="#{insuredExpirienceClassService.allItemsSI}" />
+						<f:selectItems value="#{insuredExpirienceClassService.selectableItemsSI}" />
 					</p:selectOneMenu>
 					<p:message for="driverExpirienceClass" display="icon" />
 				</h:panelGrid>

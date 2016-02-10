@@ -60,7 +60,7 @@
 							disabled="#{driver.fetched and not empty driver.personalData.sex and driver.personalData.sex ne 'UNSPECIFIED'}">
 							<p:ajax event="change" process="@this"
 								update="@this,currentDriverPanel" />
-							<f:selectItems value="#{sexService.validItemsSI}" />
+							<f:selectItems value="#{sexService.selectableItemsSI}" />
 						</p:selectOneRadio>
 						<p:message for="sex" display="icon" />
 					</h:panelGrid>
@@ -73,7 +73,7 @@
 						<h:panelGrid columns="2">
 							<p:selectOneMenu id="city" value="#{driver.residenceData.city}"
 								filter="true" filterMatchMode="contains" var="c">
-								<f:selectItems value="#{kzCityService.allItemsSI}" />
+								<f:selectItems value="#{kzCityService.selectableItemsSI}" />
 								<p:column>
 									<h:outputText value="#{c}" />
 								</p:column>
@@ -109,7 +109,7 @@
 							<p:selectOneMenu id="country"
 								value="#{driver.originData.country}" filter="true"
 								filterMatchMode="contains" var="c">
-								<f:selectItems value="#{countryService.validItemsSI}" />
+								<f:selectItems value="#{countryService.selectableItemsSI}" />
 								<p:column>
 									<h:outputText value="#{c}" />
 								</p:column>
@@ -140,7 +140,8 @@
 								value="#{driver.identityCardData.type}">
 								<p:ajax event="change" process="@this"
 									update="@this,currentDriverPanel" />
-								<f:selectItems value="#{identityCardTypeService.allItemsSI}" />
+								<f:selectItems
+									value="#{identityCardTypeService.selectableItemsSI}" />
 							</p:selectOneMenu>
 							<p:message for="identityCardDataType" display="icon" />
 						</h:panelGrid>

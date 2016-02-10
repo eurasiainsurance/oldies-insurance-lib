@@ -57,7 +57,7 @@
 						value="#{vehicle.vehicleAgeClass}" disabled="#{vehicle.fetched}">
 						<p:ajax event="change" process="@this" update="@form"
 							listener="#{osgpovtsView.onPolicyCostCalculationFormChanged}" />
-						<f:selectItems value="#{vehicleAgeClassService.allItemsSI}" />
+						<f:selectItems value="#{vehicleAgeClassService.selectableItemsSI}" />
 					</p:selectOneMenu>
 					<p:message for="vehicleAgeClass" display="icon" />
 				</h:panelGrid>
@@ -67,7 +67,7 @@
 						disabled="#{vehicle.fetched}">
 						<p:ajax event="change" process="@this" update="@form"
 							listener="#{osgpovtsView.onPolicyCostCalculationFormChanged}" />
-						<f:selectItems value="#{vehicleClassService.allItemsSI}" />
+						<f:selectItems value="#{vehicleClassService.selectableItemsSI}" />
 					</p:selectOneMenu>
 					<p:message for="vehicleClass" display="icon" />
 				</h:panelGrid>
@@ -77,7 +77,7 @@
 						value="#{vehicle.certificateData.region}">
 						<p:ajax event="change" process="@this" update="@form"
 							listener="#{osgpovtsView.onVehicleRegionChanged(vehicle)}" />
-						<f:selectItems value="#{countryRegionService.allItemsSI}" />
+						<f:selectItems value="#{countryRegionService.selectableItemsSI}" />
 					</p:selectOneMenu>
 					<p:message for="cehicleRegion" display="icon" />
 				</h:panelGrid>

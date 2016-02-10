@@ -49,6 +49,11 @@ public class CityEntityServiceWS extends AbstractESBDEntityServiceWS
     }
 
     @Override
+    public List<CityEntity> getSelectable() {
+	return getAll();
+    }
+
+    @Override
     public List<CityEntity> getBySearchPattern(String pattern) {
 	lazyInit();
 
@@ -82,5 +87,4 @@ public class CityEntityServiceWS extends AbstractESBDEntityServiceWS
 	target.setId(source.getID());
 	target.setName(source.getName());
     }
-
 }

@@ -26,16 +26,16 @@ public class KZCityService {
 	return kzCityServiceDAO.getAll();
     }
 
-    public List<KZCityDict> getValidItems() {
-	return getAllItems();
+    public List<KZCityDict> getSelectableItems() {
+	return kzCityServiceDAO.getSelectable();
     }
 
     public List<SelectItem> getAllItemsSI() {
 	return _createSIFromList(getAllItems());
     }
 
-    public List<SelectItem> getValidItemsSI() {
-	return _createSIFromList(getValidItems());
+    public List<SelectItem> getSelectableItemsSI() {
+	return _createSIFromList(getSelectableItems());
     }
 
     public List<KZCityDict> getByQuery(String query) {

@@ -20,16 +20,16 @@ public enum CountryRegionDict {
     TEMPORARY_REGISTRATION("Временная регистрация", false, 18), // Временная
 								// регистрация?!
     TEMPORARY_ENTRY("Временная въезд", false, 17), // Временная въезд?!
-    UNSPECIFIED("", false, 0);
+    UNSPECIFIED("", true, 0);
 
     private final long id;
     private final String code;
-    private final boolean region;
+    private final boolean selectable;
 
-    CountryRegionDict(String code, boolean region, long id) {
+    CountryRegionDict(String code, boolean selectable, long id) {
 	this.id = id;
 	this.code = code;
-	this.region = region;
+	this.selectable = selectable;
     }
 
     public static CountryRegionDict forId(long id) {
@@ -56,8 +56,8 @@ public enum CountryRegionDict {
 	return code;
     }
 
-    public boolean isRegion() {
-	return region;
+    public boolean isSelectable() {
+	return selectable;
     }
 
 }

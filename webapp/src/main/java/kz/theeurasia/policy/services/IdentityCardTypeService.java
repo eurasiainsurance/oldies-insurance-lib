@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import javax.ejb.EJB;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.model.SelectItem;
 
 import kz.theeurasia.esbdproxy.domain.dict.general.IdentityCardTypeDict;
+import kz.theeurasia.esbdproxy.services.general.IdentityCardTypeServiceDAO;
 import kz.theeurasia.policy.view.GlobalMessageBundleCode;
 
 @ManagedBean
@@ -19,27 +21,23 @@ public class IdentityCardTypeService {
     @ManagedProperty("#{glb}")
     private ResourceBundle glb;
 
+    @EJB
+    private IdentityCardTypeServiceDAO identityCardTypeServiceDAO;
+
     public List<IdentityCardTypeDict> getAllItems() {
-	List<IdentityCardTypeDict> result = new ArrayList<>();
-	for (IdentityCardTypeDict r : IdentityCardTypeDict.values())
-	    result.add(r);
-	return result;
+	return identityCardTypeServiceDAO.getAll();
     }
 
     public List<SelectItem> getAllItemsSI() {
 	return _createSIFromList(getAllItems());
     }
 
-    public List<IdentityCardTypeDict> getValidItems() {
-	List<IdentityCardTypeDict> result = new ArrayList<>();
-	for (IdentityCardTypeDict r : IdentityCardTypeDict.values())
-	    if (!r.equals(IdentityCardTypeDict.UNSPECIFIED))
-		result.add(r);
-	return result;
+    public List<IdentityCardTypeDict> getSelectableItems() {
+	return identityCardTypeServiceDAO.getAll();
     }
 
-    public List<SelectItem> getValidItemsSI() {
-	return _createSIFromList(getValidItems());
+    public List<SelectItem> getSelectableItemsSI() {
+	return _createSIFromList(getSelectableItems());
     }
 
     private List<SelectItem> _createSIFromList(List<IdentityCardTypeDict> list) {

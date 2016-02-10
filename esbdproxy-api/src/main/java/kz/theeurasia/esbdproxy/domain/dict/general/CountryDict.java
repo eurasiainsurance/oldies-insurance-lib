@@ -311,19 +311,19 @@ public enum CountryDict {
 							       // (ЮАР)
     ZMB(894, "Замбия", "Zambia", true, 74), // Замбия
     ZWE(716, "Зимбабве", "Zimbabwe", true, 76), // Зимбабве
-    UNSPECIFIED(0, "", "", false, 0);
+    UNSPECIFIED(0, "", "", true, 0);
 
     private final long[] ids;
     private final int isoCode;
     private final String rusname;
     private final String engname;
-    private final boolean country;
+    private final boolean selectable;
 
-    CountryDict(int isoCode, String rusname, String engname, boolean country, long... ids) {
+    CountryDict(int isoCode, String rusname, String engname, boolean selectable, long... ids) {
 	this.isoCode = isoCode;
 	this.rusname = rusname;
 	this.engname = engname;
-	this.country = country;
+	this.selectable = selectable;
 	this.ids = ids;
     }
 
@@ -376,8 +376,8 @@ public enum CountryDict {
 	return engname;
     }
 
-    public boolean isCountry() {
-	return country;
+    public boolean isSelectable() {
+	return selectable;
     }
 
 }

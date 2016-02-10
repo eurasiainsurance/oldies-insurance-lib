@@ -7,8 +7,5 @@ import kz.theeurasia.esbdproxy.services.GeneralServiceDAO;
 
 public interface CountryRegionServiceDAO extends GeneralServiceDAO<CountryRegionDict, Long> {
     List<CountryRegionDict> getAll();
-
-    List<CountryRegionDict> getRegions();
-
-    CountryRegionDict getDefaultRegion();
+    List<CountryRegionDict> getSelectable();
 }

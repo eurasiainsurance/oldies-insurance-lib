@@ -30,16 +30,15 @@ public class InsuredExpirienceClassService {
 	return _createSIFromList(getAllItems());
     }
 
-    public List<InsuredExpirienceClassEnum> getValidItems() {
+    public List<InsuredExpirienceClassEnum> getSelectableItems() {
 	List<InsuredExpirienceClassEnum> result = new ArrayList<>();
 	for (InsuredExpirienceClassEnum r : InsuredExpirienceClassEnum.values())
-	    if (!r.equals(InsuredExpirienceClassEnum.UNSPECIFIED))
-		result.add(r);
+	    result.add(r);
 	return result;
     }
 
-    public List<SelectItem> getValidItemsSI() {
-	return _createSIFromList(getValidItems());
+    public List<SelectItem> getSelectableItemsSI() {
+	return _createSIFromList(getSelectableItems());
     }
 
     private List<SelectItem> _createSIFromList(List<InsuredExpirienceClassEnum> list) {

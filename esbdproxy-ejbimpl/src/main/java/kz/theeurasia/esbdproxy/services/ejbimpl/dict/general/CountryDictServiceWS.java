@@ -17,14 +17,14 @@ import kz.theeurasia.esbdproxy.services.general.CountryServiceDAO;
 public class CountryDictServiceWS implements CountryServiceDAO {
 
     private List<CountryDict> all = new ArrayList<>();
-    private List<CountryDict> countries = new ArrayList<>();
+    private List<CountryDict> selectable = new ArrayList<>();
 
     @PostConstruct
     protected void init() {
 	for (CountryDict cd : CountryDict.values()) {
 	    all.add(cd);
-	    if (cd.isCountry())
-		countries.add(cd);
+	    if (cd.isSelectable())
+		selectable.add(cd);
 	}
     }
 
@@ -44,8 +44,8 @@ public class CountryDictServiceWS implements CountryServiceDAO {
     }
 
     @Override
-    public List<CountryDict> getCountries() {
-	return new ArrayList<>(countries);
+    public List<CountryDict> getSelectable() {
+	return new ArrayList<>(selectable);
     }
 
     @Override

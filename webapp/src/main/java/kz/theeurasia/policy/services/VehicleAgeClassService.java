@@ -32,12 +32,12 @@ public class VehicleAgeClassService {
 	return _createSIFromList(getAllItems());
     }
 
-    public List<VehicleAgeClassDict> getValidItems() {
+    public List<VehicleAgeClassDict> getSelectableItems() {
 	return vehicleAgeClassServiceDAO.getApplicableForOSGPOVTS();
     }
 
-    public List<SelectItem> getValidItemsSI() {
-	return _createSIFromList(getValidItems());
+    public List<SelectItem> getSelectableItemsSI() {
+	return _createSIFromList(getSelectableItems());
     }
 
     private List<SelectItem> _createSIFromList(List<VehicleAgeClassDict> list) {

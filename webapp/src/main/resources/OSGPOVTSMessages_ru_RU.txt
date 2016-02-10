@@ -57,7 +57,7 @@ label.privileges.privileger = является льготником
 label.privileges.privileger-certificate.type = Тип льготы
 label.privileges.privileger-certificate.number = Номер документа
 label.privileges.privileger-certificate.date-of-issue = Дата выдачи документа
-label.privileges.privileger-certificate.scan-files = Скан-копии удостоверения пенсионера
+label.privileges.privileger-certificate.scan-files = Скан-копии документа
 
 # Text labels for select items on select inputs
 label.si.insured-age-class.OVER25 = 25 лет и старше

@@ -20,14 +20,16 @@
 					<p:outputLabel value="#{glb['label.personal-data.day-of-birth']}" />
 					<p:outputLabel value="#{glb['label.personal-data.sex']}" />
 					<h:panelGrid columns="2">
-						<p:inputText id="surename" value="#{driver.personalData.surename}">
+						<p:inputText id="surename" value="#{driver.personalData.surename}"
+							disabled="#{driver.fetched and not empty driver.personalData.surename}">
 							<p:ajax event="change" process="@this"
 								update="@this, currentDriverPanel" />
 						</p:inputText>
 						<p:message for="surename" display="icon" />
 					</h:panelGrid>
 					<h:panelGrid columns="2">
-						<p:inputText id="name" value="#{driver.personalData.name}">
+						<p:inputText id="name" value="#{driver.personalData.name}"
+							disabled="#{driver.fetched and not empty driver.personalData.name}">
 							<p:ajax event="change" process="@this"
 								update="@this, currentDriverPanel" />
 						</p:inputText>
@@ -35,7 +37,8 @@
 					</h:panelGrid>
 					<h:panelGrid columns="2">
 						<p:inputText id="patronymic"
-							value="#{driver.personalData.patronymic}">
+							value="#{driver.personalData.patronymic}"
+							disabled="#{driver.fetched and not empty driver.personalData.patronymic}">
 							<p:ajax event="change" process="@this"
 								update="@this, currentDriverPanel" />
 						</p:inputText>
@@ -44,7 +47,7 @@
 					<h:panelGrid columns="2">
 						<p:calendar id="dayOfBirth"
 							value="#{driver.personalData.dayOfBirth}"
-							disabled="#{driver.fetched}">
+							disabled="#{driver.fetched and not empty driver.personalData.dayOfBirth}">
 							<p:ajax event="change" process="@this"
 								update="@this, currentDriverPanel" />
 						</p:calendar>
@@ -52,7 +55,7 @@
 					</h:panelGrid>
 					<h:panelGrid columns="2">
 						<p:selectOneRadio id="sex" value="#{driver.personalData.sex}"
-							readonly="#{driver.fetched}" disabled="#{driver.fetched}">
+							disabled="#{driver.fetched and not empty driver.personalData.sex and driver.personalData.sex ne 'UNSPECIFIED'}">
 							<p:ajax event="change" process="@this"
 								update="@this, currentDriverPanel" />
 							<f:selectItems value="#{sexService.validItemsSI}" />

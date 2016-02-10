@@ -54,8 +54,7 @@
 				<p:outputLabel value="#{gpovts['label.input.vehicle-age-class']}" />
 				<h:panelGrid columns="2">
 					<p:selectOneMenu id="vehicleAgeClass"
-						value="#{vehicle.vehicleAgeClass}" disabled="#{vehicle.fetched}"
-						required="true">
+						value="#{vehicle.vehicleAgeClass}" disabled="#{vehicle.fetched}">
 						<p:ajax event="change" process="@this" update="@form"
 							listener="#{osgpovtsView.onPolicyCostCalculationFormChanged}" />
 						<f:selectItems value="#{vehicleAgeClassService.allItemsSI}" />
@@ -65,7 +64,7 @@
 				<p:outputLabel value="#{gpovts['label.input.vehicle-class']}" />
 				<h:panelGrid columns="2">
 					<p:selectOneMenu id="vehicleClass" value="#{vehicle.vehicleClass}"
-						disabled="#{vehicle.fetched}" required="true">
+						disabled="#{vehicle.fetched}">
 						<p:ajax event="change" process="@this" update="@form"
 							listener="#{osgpovtsView.onPolicyCostCalculationFormChanged}" />
 						<f:selectItems value="#{vehicleClassService.allItemsSI}" />
@@ -88,7 +87,7 @@
 				<p:outputPanel>
 					<p:selectBooleanCheckbox widgetVar="w_majorCityCheckbox"
 						value="#{vehicle.certificateData.majorCity}"
-						disabled="#{vehicle.forcedMajorCity}" required="true">
+						disabled="#{vehicle.forcedMajorCity}">
 						<p:ajax event="change" process="@this" update="@form"
 							listener="#{osgpovtsView.onPolicyCostCalculationFormChanged}" />
 					</p:selectBooleanCheckbox>

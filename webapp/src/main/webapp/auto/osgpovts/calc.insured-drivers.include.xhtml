@@ -80,14 +80,15 @@
 
 			<h:panelGrid columns="2">
 				<p:outputPanel>
-					<p:selectBooleanCheckbox widgetVar="w_hasAnyPrivilegeCheckbox"
+					<p:selectBooleanCheckbox
+						widgetVar="w_hasAnyPrivilegeCheckbox#{driver.safeId}"
 						value="#{driver.hasAnyPrivilege}">
 						<p:ajax event="change" process="@this" update="@form"
 							listener="#{osgpovtsView.onPolicyCostCalculationFormChanged}" />
 					</p:selectBooleanCheckbox>
 					<p:outputLabel
 						value="#{gpovts['label.input.insured.has-privilege']}"
-						onclick="PF('w_hasAnyPrivilegeCheckbox').toggle()" />
+						onclick="PF('w_hasAnyPrivilegeCheckbox#{driver.safeId}').toggle()" />
 				</p:outputPanel>
 			</h:panelGrid>
 

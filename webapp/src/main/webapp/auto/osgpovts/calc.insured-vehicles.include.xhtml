@@ -85,14 +85,15 @@
 
 			<h:panelGrid columns="2">
 				<p:outputPanel>
-					<p:selectBooleanCheckbox widgetVar="w_majorCityCheckbox"
+					<p:selectBooleanCheckbox
+						widgetVar="w_majorCityCheckbox#{vehicle.safeId}"
 						value="#{vehicle.certificateData.majorCity}"
 						disabled="#{vehicle.forcedMajorCity}">
 						<p:ajax event="change" process="@this" update="@form"
 							listener="#{osgpovtsView.onPolicyCostCalculationFormChanged}" />
 					</p:selectBooleanCheckbox>
 					<p:outputLabel value="#{gpovts['label.input.vehicle.major-city']}"
-						onclick="if (!PF('w_majorCityCheckbox').disabled) {PF('w_majorCityCheckbox').toggle();}" />
+						onclick="if (!PF('w_majorCityCheckbox#{vehicle.safeId}').disabled) {PF('w_majorCityCheckbox#{vehicle.safeId}').toggle();}" />
 				</p:outputPanel>
 			</h:panelGrid>
 

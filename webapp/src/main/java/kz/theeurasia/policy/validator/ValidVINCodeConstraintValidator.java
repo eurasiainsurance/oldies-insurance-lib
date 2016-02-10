@@ -15,9 +15,12 @@ public class ValidVINCodeConstraintValidator implements ConstraintValidator<Vali
 
     @Override
     public void initialize(ValidVINCode constraintAnnotation) {
-	pattern = Pattern.compile(VIN_CODE_PATTERN, Pattern.CASE_INSENSITIVE);
 	checkDigit = constraintAnnotation.checkDigit();
 	caseSensitive = constraintAnnotation.caseSensitive();
+	if (caseSensitive)
+	    pattern = Pattern.compile(VIN_CODE_PATTERN);
+	else
+	    pattern = Pattern.compile(VIN_CODE_PATTERN, Pattern.CASE_INSENSITIVE);
     }
 
     @Override

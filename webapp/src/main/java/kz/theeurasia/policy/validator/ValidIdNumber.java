@@ -14,6 +14,8 @@ import javax.validation.Payload;
 @Constraint(validatedBy = ValidIdNumberConstraintValidator.class)
 public @interface ValidIdNumber {
 
+    boolean checkDigit() default true;
+
     String message() default "{kz.theeurasia.policy.validator.ValidIdNumber.message}";
 
     Class<?>[] groups() default {};

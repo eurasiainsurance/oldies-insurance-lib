@@ -14,10 +14,13 @@ import javax.validation.Payload;
 @Constraint(validatedBy = ValidVINCodeConstraintValidator.class)
 public @interface ValidVINCode {
 
+    boolean checkDigit() default true;
+
+    boolean caseSensitive() default false;
+
     String message() default "{kz.theeurasia.policy.validator.ValidVINCode.message}";
 
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
-
 }

@@ -9,10 +9,13 @@ public class ValidIdNumberConstraintValidator implements ConstraintValidator<Val
 
     private Pattern pattern;
 
+    private boolean checkDigit;
+
     private static final String ID_NUMBER_PATTERN = "^[0-9]{12}?$";
 
-    public void initialize(ValidIdNumber a) {
+    public void initialize(ValidIdNumber constraintAnnotation) {
 	pattern = Pattern.compile(ID_NUMBER_PATTERN);
+	checkDigit = constraintAnnotation.checkDigit();
     }
 
     public boolean isValid(String value, ConstraintValidatorContext cvc) {
@@ -20,10 +23,12 @@ public class ValidIdNumberConstraintValidator implements ConstraintValidator<Val
 	    return true;
 	if (!pattern.matcher(value.toString()).matches())
 	    return false;
-	return validIIN(value);
+	if (!checkDigit)
+	    return true;
+	return checkDigit(value);
     }
 
-    /**
+    /*
      * 5. Алгоритм расчета значения контрольного разряда
      * 
      * В целях осуществления контроля и снижения ошибок клавиатурного ввода в
@@ -57,7 +62,7 @@ public class ValidIdNumberConstraintValidator implements ConstraintValidator<Val
 	    new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 },
 	    new byte[] { 3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 2 } };
 
-    private static boolean validIIN(String value) {
+    private boolean checkDigit(String value) {
 	byte[] iin = new byte[12];
 	for (int i = 0; i < 12; i++)
 	    iin[i] = Byte.parseByte(Character.toString(value.charAt(i)));

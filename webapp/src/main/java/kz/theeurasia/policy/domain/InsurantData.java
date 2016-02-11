@@ -4,8 +4,8 @@ import java.util.UUID;
 
 import kz.theeurasia.esbdproxy.domain.dict.general.EconomicSectorDict;
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectPersonEntity;
-import kz.theeurasia.policy.validator.ValidIdNumber;
 import kz.theeurasia.policy.validator.NotNullValue;
+import kz.theeurasia.policy.validator.ValidIdNumber;
 
 public class InsurantData {
     private final UUID id = UUID.randomUUID();
@@ -18,14 +18,19 @@ public class InsurantData {
 
     private PersonalData personalData = new PersonalData();
     private OriginData originData = new OriginData();
+    private ResidenceData residenceData = new ResidenceData();
     private ContactData contact = new ContactData();
 
     private IdentityCardData identityCardData = new IdentityCardData();
 
     private EconomicSectorDict economicsSector = EconomicSectorDict.HOUSEHOLDS;
 
-    // esbd entities
+    private boolean insurantADriver;
+    private InsuredDriverData driverAsInsurant;
+
     private SubjectPersonEntity fetchedEntity;
+
+    private boolean readyToFill;
 
     @Override
     public int hashCode() {
@@ -103,6 +108,38 @@ public class InsurantData {
 	this.economicsSector = economicsSector;
     }
 
+    public boolean isInsurantADriver() {
+	return insurantADriver;
+    }
+
+    public void setInsurantADriver(boolean insurantADriver) {
+	this.insurantADriver = insurantADriver;
+    }
+
+    public InsuredDriverData getDriverAsInsurant() {
+	return driverAsInsurant;
+    }
+
+    public void setDriverAsInsurant(InsuredDriverData driverAsInsurant) {
+	this.driverAsInsurant = driverAsInsurant;
+    }
+
+    public ResidenceData getResidenceData() {
+	return residenceData;
+    }
+
+    public void setResidenceData(ResidenceData residenceData) {
+	this.residenceData = residenceData;
+    }
+
+    public boolean isReadyToFill() {
+	return readyToFill;
+    }
+
+    public void setReadyToFill(boolean readyToFill) {
+	this.readyToFill = readyToFill;
+    }
+
     public SubjectPersonEntity getFetchedEntity() {
 	return fetchedEntity;
     }
@@ -110,4 +147,5 @@ public class InsurantData {
     public void setFetchedEntity(SubjectPersonEntity fetchedEntity) {
 	this.fetchedEntity = fetchedEntity;
     }
+
 }

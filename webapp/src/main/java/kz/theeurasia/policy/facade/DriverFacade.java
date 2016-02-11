@@ -18,6 +18,7 @@ import kz.theeurasia.policy.domain.InsuredDriverData;
 import kz.theeurasia.policy.domain.OriginData;
 import kz.theeurasia.policy.domain.PersonalData;
 import kz.theeurasia.policy.domain.PolicyRequestData;
+import kz.theeurasia.policy.domain.ResidenceData;
 import kz.theeurasia.policy.view.MessageBundleCode;
 import kz.theeurasia.policy.view.ValidationException;
 
@@ -61,8 +62,10 @@ public class DriverFacade {
 	    driver.getPersonalData().setDayOfBirth(fetched.getPersonal().getDayOfBirth().getTime());
 
 	    driver.getResidenceData().setResident(fetched.getOrigin().isResident());
+	    driver.getResidenceData().setAddress(fetched.getContact().getHomeAdress());
 
-	    //TODO Здесь потенциальная проблема связанная с тем несоответстием мапирования
+	    // TODO Здесь потенциальная проблема связанная с тем несоответстием
+	    // мапирования
 	    if (fetched.getOrigin().getCity() != null)
 		driver.getResidenceData().setCity(kzCityServiceDAO.getById(fetched.getOrigin().getCity().getId()));
 	    driver.getOriginData().setCountry(fetched.getOrigin().getCountry());
@@ -83,12 +86,12 @@ public class DriverFacade {
 		int years = CalculatorUtil.calculateAgeByDOB(driver.getPersonalData().getDayOfBirth());
 		driver.setAgeClass(years > 25 ? InsuredAgeClassEnum.OVER25 : InsuredAgeClassEnum.UNDER25);
 	    }
+
 	} catch (NotFound e) {
 	    _resetFetchedInfo(policy, driver);
 	    driver.setInsuranceClassType(insuranceClassTypeService.getDefault());
 	} catch (InvalidInputParameter e1) {
 	    _resetFetchedInfo(policy, driver);
-	    throw new ValidationException(MessageBundleCode.ID_NUMBER_CANT_BE_EMPTY);
 	}
     }
 
@@ -100,6 +103,7 @@ public class DriverFacade {
     private void _resetFetchedInfo(PolicyRequestData policy, InsuredDriverData driver) {
 	driver.setFetchedEntity(null);
 	driver.setPersonalData(new PersonalData());
+	driver.setResidenceData(new ResidenceData());
 	driver.setOriginData(new OriginData());
 	driver.setIdentityCardData(new IdentityCardData());
 	driver.setTaxPayerNumber(null);

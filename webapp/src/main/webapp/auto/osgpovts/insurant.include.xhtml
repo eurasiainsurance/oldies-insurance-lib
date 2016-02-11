@@ -7,6 +7,54 @@
 	xmlns:pe="http://primefaces.org/ui/extensions"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
 
+	<p:panel header="STRAHOVATEL" id="insurantChoisePanel">
+
+		<p:outputLabel value="STRAHOVATEL IS ONE OF THE DRIVERS ?" />
+		<p:selectBooleanButton
+			value="#{osgpovtsView.policy.insurant.insurantADriver}"
+			offLabel="YES" onLabel="NO">
+			<p:ajax listener="#{osgpovtsView.onInsurantADriverChecked}"
+				event="change" process="@this" update="insurantPanel" />
+		</p:selectBooleanButton>
+
+		<h:panelGroup
+			rendered="#{osgpovtsView.policy.insurant.insurantADriver}">
+			<p:outputLabel value="CHOOSE DRIVER WHO IS INSURANTS" />
+
+			<p:selectOneRadio
+				value="#{osgpovtsView.policy.insurant.driverAsInsurant}" var="c"
+				converter="#{insuredDriverDataConverter}" layout="grid" columns="1">
+				<f:selectItems value="#{osgpovtsView.policy.insuredDrivers}"
+					var="drv"
+					itemLabel="#{drv.personalData.displayName} IIN: #{drv.idNumber}"
+					itemValue="#{drv}" />
+				<p:ajax listener="#{osgpovtsView.onDriverAsInsurantSelected}"
+					process="@this" update="insurantPanel" />
+			</p:selectOneRadio>
+		</h:panelGroup>
+	</p:panel>
+
+	<p:panel id="insurantPanel"
+		rendered="#{osgpovtsView.policy.insurant.readyToFill}">
+
+		<h:panelGrid columns="1">
+
+			<p:outputLabel value="#{gpovts['label.input.insurant.id-number']}" />
+			<h:panelGrid columns="2">
+				<p:inputMask id="insurantIdNumber" value="#{osgpovtsView.policy.insurant.idNumber}"
+					mask="999999999999"
+					onchange="rcInsurantIdNumberChanged()">
+					<pe:keyFilter regEx="/[0123456789]/i" preventPaste="false" />
+				</p:inputMask>
+				<p:message for="insurantIdNumber" display="icon" />
+				<p:remoteCommand name="rcInsurantIdNumberChanged"
+					actionListener="#{osgpovtsView.onInsurantIdNumberChanged}"
+					update="@form" process="@this,insurantPanel" />
+			</h:panelGrid>
+		</h:panelGrid>
+		
+	
+	</p:panel>
 
 
 </ui:composition>

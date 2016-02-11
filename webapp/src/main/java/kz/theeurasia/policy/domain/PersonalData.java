@@ -30,6 +30,12 @@ public class PersonalData {
     @ValidSex
     private SexDict sex = SexDict.UNSPECIFIED;
 
+    public String getDisplayName() {
+	return (((surename == null || surename.isEmpty()) ? "" : (surename + " "))
+		+ ((name == null || name.isEmpty()) ? "" : (name + " "))
+		+ ((patronymic == null || patronymic.isEmpty()) ? "" : (patronymic + " "))).trim();
+    }
+
     // GENERATED
 
     public String getName() {
@@ -71,5 +77,4 @@ public class PersonalData {
     public void setSex(SexDict sex) {
 	this.sex = sex;
     }
-
 }

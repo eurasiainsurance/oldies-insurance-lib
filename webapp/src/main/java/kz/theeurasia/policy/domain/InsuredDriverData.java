@@ -65,13 +65,7 @@ public class InsuredDriverData {
     }
 
     public String getDisplayName() {
-	return (((getPersonalData().getSurename() == null || getPersonalData().getSurename().isEmpty()) ? ""
-		: (getPersonalData().getSurename() + " ")) +
-		((getPersonalData().getName() == null || getPersonalData().getName().isEmpty()) ? ""
-			: (getPersonalData().getName() + " "))
-		+
-		((getPersonalData().getPatronymic() == null || getPersonalData().getPatronymic().isEmpty()) ? ""
-			: (getPersonalData().getPatronymic() + " "))).trim();
+	return personalData.getDisplayName();
     }
 
     public boolean isFetched() {

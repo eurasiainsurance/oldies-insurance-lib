@@ -11,6 +11,7 @@ messages.server_fatal_error.caption = Ошибка
 messages.server_fatal_error.description = Внутренняя ошибка сервера. Обратитесь к администратору системы
 
 # Text labels for inputs
+label.personal-data = Персональные данные
 label.personal-data.name = Имя
 label.personal-data.surename = Фамилия
 label.personal-data.patronymic = Отчество
@@ -21,7 +22,7 @@ label.identity-card-data.type = Тип документа
 label.identity-card-data.number = Номер документа
 label.identity-card-data.date-of-issue = Дата выдачи
 label.identity-card-data.issuing-authority = Орган выдавший документ
-label.identity-card-data.scan-files = Копии документа
+label.identity-card-data.scan-files = Скан-копии документа удостоверяющего личность
 label.residence-data = Местопроживания в РК
 label.residence-data.is-resident = является резидентом РК
 label.residence-data.city = Город проживания

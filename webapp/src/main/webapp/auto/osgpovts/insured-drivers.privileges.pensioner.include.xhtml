@@ -36,34 +36,6 @@
 			</p:calendar>
 			<p:message for="pensionerCertificateDateOfIssue" />
 		</h:panelGrid>
-
-		<p:outputLabel
-			value="#{gpovts['label.privileges.pensioner-certificate.scan-files']}" />
-		<p:panel id="pensionerCertificateGalleria" styleClass="ui-glr">
-			<p:remoteCommand
-				name="rc_NewPensionerCertificateUploaded#{driver.safeId}"
-				action="#{osgpovtsView.onPensionerCertificateImageUploaded(driver)}"
-				process="@this" update="@this, pensionerCertificateGalleria" />
-			<ui:repeat var="image"
-				value="#{driver.pensionerCertificateData.scanFiles}">
-				<p:commandLink
-					action="#{osgpovtsView.removePensionerCertificateImage(driver, image)}"
-					ajax="true" process="@this"
-					update="@this, @form(pensionerCertificateGalleria)">
-					<p:graphicImage value="#{uploadedImageService.content}"
-						styleClass="ui-glr-item ui-widget-content">
-						<f:param name="id" value="#{image.id}" />
-					</p:graphicImage>
-				</p:commandLink>
-			</ui:repeat>
-			<p:fileUpload mode="advanced"
-				label="#{glb['label.command.add-image']}"
-				allowTypes="/(\.|\/)(gif|jpe?g|png)$/" multiple="true"
-				sizeLimit="1000000" fileLimit="10" skinSimple="true" auto="true"
-				fileUploadListener="#{uploadedImageService.onImageUpload}"
-				oncomplete="rc_NewPensionerCertificateUploaded#{driver.safeId}()">
-			</p:fileUpload>
-		</p:panel>
 	</p:panel>
 
 </ui:composition>

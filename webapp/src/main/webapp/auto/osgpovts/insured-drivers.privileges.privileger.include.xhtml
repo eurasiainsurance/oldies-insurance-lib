@@ -45,34 +45,6 @@
 			</p:calendar>
 			<p:message for="privilegerCertificateDateOfIssue" />
 		</h:panelGrid>
-
-		<p:outputLabel
-			value="#{gpovts['label.privileges.privileger-certificate.scan-files']}" />
-		<p:panel id="privilegerCertificateGalleria" styleClass="ui-glr">
-			<p:remoteCommand
-				name="rc_NewPrivilegerCertificateUploaded#{driver.safeId}"
-				action="#{osgpovtsView.onPrivilegerCertificateImageUploaded(driver)}"
-				process="@this" update="@this, privilegerCertificateGalleria" />
-			<ui:repeat var="image"
-				value="#{driver.privilegerCertificateData.scanFiles}">
-				<p:commandLink
-					action="#{osgpovtsView.removePrivilegerCertificateImage(driver, image)}"
-					ajax="true" process="@this"
-					update="@this, @form(privilegerCertificateGalleria)">
-					<p:graphicImage value="#{uploadedImageService.content}"
-						styleClass="ui-glr-item ui-widget-content">
-						<f:param name="id" value="#{image.id}" />
-					</p:graphicImage>
-				</p:commandLink>
-			</ui:repeat>
-			<p:fileUpload mode="advanced"
-				label="#{glb['label.command.add-image']}"
-				allowTypes="/(\.|\/)(gif|jpe?g|png)$/" multiple="true"
-				sizeLimit="1000000" fileLimit="10" skinSimple="true" auto="true"
-				fileUploadListener="#{uploadedImageService.onImageUpload}"
-				oncomplete="rc_NewPrivilegerCertificateUploaded#{driver.safeId}()">
-			</p:fileUpload>
-		</p:panel>
 	</p:panel>
 
 </ui:composition>

@@ -15,6 +15,7 @@ import kz.theeurasia.esbdproxy.domain.infos.general.OriginInfo;
 import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.ejbimpl.DataCoruptionException;
+import kz.theeurasia.esbdproxy.services.general.CityServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.CountryServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.EconomicSectorServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.SubjectCompanyServiceDAO;
@@ -35,6 +36,9 @@ public class SubjectEntityServiceWS extends AbstractESBDEntityServiceWS implemen
 
     @EJB
     private EconomicSectorServiceDAO econimicsSectorService;
+
+    @EJB
+    private CityServiceDAO cityService;
 
     public SubjectEntity getById(Long id) throws NotFound, InvalidInputParameter {
 	if (id == null)

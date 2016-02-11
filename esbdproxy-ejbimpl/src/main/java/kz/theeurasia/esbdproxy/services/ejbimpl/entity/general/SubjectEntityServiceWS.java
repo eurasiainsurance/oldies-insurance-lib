@@ -106,6 +106,11 @@ public class SubjectEntityServiceWS extends AbstractESBDEntityServiceWS implemen
 	} catch (NotFound | InvalidInputParameter e) {
 	    oi.setCountry(CountryDict.UNSPECIFIED);
 	}
+	try {
+	    oi.setCity(cityService.getById(new Long(source.getSETTLEMENTID())));
+	} catch (NotFound | InvalidInputParameter e) {
+	    // non mandatory field
+	}
 
 	// PHONES s:string Номера телефонов
 	// EMAIL s:string Адрес электронной почты

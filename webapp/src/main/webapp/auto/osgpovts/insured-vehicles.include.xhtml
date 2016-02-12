@@ -7,4 +7,16 @@
 	xmlns:pe="http://primefaces.org/ui/extensions"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
 
+	<p:accordionPanel value="#{osgpovtsView.policy.insuredVehicles}"
+		var="vehicle">
+		<p:tab
+			title="#{empty vehicle.displayName ? gpovts['title.insuted-vehicle.default-name'] : vehicle.displayName}">
+			<h:panelGroup id="currentVehiclePanel">
+				<ui:decorate template="insured-vehicles.vehicle-data.include.xhtml" />
+				<ui:decorate
+					template="insured-vehicles.vehicle-certificate-data.include.xhtml" />
+			</h:panelGroup>
+		</p:tab>
+	</p:accordionPanel>
+
 </ui:composition>

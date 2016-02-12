@@ -91,7 +91,7 @@ public class OSGPOVTSView implements Serializable {
 
     private void setContactData() {
 	policy.getInsurant().getContactData().setEmail("vadim.o.isaev@gmail.com");
-	policy.getInsurant().getContactData().setPhone("+7 (701) 937-79-79"); 
+	policy.getInsurant().getContactData().setPhone("+7 (701) 937-79-79");
     }
 
     private void buildTestDataManyVehicles() throws ValidationException {
@@ -340,6 +340,14 @@ public class OSGPOVTSView implements Serializable {
 
     public void removePrivilegerCertificateImage(InsuredDriverData driver, UploadedImage image) {
 	uploadedImagesFacade.removePrivilegerCertificateImage(policy, driver, image);
+    }
+
+    public void onDriverVehicleCertificateImageUploaded(InsuredVehicleData vehicle) {
+	uploadedImagesFacade.pickupVehicleCertificateImage(policy, vehicle);
+    }
+
+    public void removeVehicleCertificateImage(InsuredVehicleData vehicle, UploadedImage image) {
+	uploadedImagesFacade.removeVehicleCertificateImage(policy, vehicle, image);
     }
 
     public void onWhoIsInsurantChanged() {

@@ -8,7 +8,7 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
 
 	<p:accordionPanel value="#{osgpovtsView.policy.insuredDrivers}"
-		var="driver">
+		var="driver" multiple="true">
 		<p:tab title="#{driver.displayName}">
 
 			<p:panel header="#{glb['label.identity-card-data.scan-files']}"
@@ -176,8 +176,38 @@
 				</p:fileUpload>
 			</p:panel>
 
+		</p:tab>
+	</p:accordionPanel>
+	<p:accordionPanel value="#{osgpovtsView.policy.insuredVehicles}"
+		var="vehicle" multiple="true">
+		<p:tab title="#{vehicle.displayName}">
+
+			<p:panel header="#{glb['label.vehicle-certificate.scan-files']}"
+				id="vehicleCertificateGalleria" styleClass="ui-glr">
+				<p:remoteCommand
+					name="rc_NewVehicleCertificateUploaded#{vehicle.safeId}"
+					action="#{osgpovtsView.onDriverVehicleCertificateImageUploaded(vehicle)}"
+					process="@this" update="@this, vehicleCertificateGalleria" />
+				<ui:repeat var="image"
+					value="#{vehicle.vehicleCertificateData.scanFiles}">
+					<p:commandLink
+						action="#{osgpovtsView.removeDriverVehicleCertificateImage(vehicle, image)}"
+						ajax="true" process="@this"
+						update="@this, @form(vehicleCertificateGalleria)">
+						<p:graphicImage value="#{uploadedImageService.content}"
+							styleClass="ui-glr-item ui-widget-content">
+							<f:param name="id" value="#{image.id}" />
+						</p:graphicImage>
+					</p:commandLink>
+				</ui:repeat>
+				<p:fileUpload mode="advanced"
+					label="#{glb['label.command.add-image']}"
+					allowTypes="/(\.|\/)(gif|jpe?g|png)$/" multiple="true"
+					sizeLimit="1000000" fileLimit="10" skinSimple="true" auto="true"
+					fileUploadListener="#{uploadedImageService.onImageUpload}"
+					oncomplete="rc_NewVehicleCertificateUploaded#{vehicle.safeId}()" />
+			</p:panel>
 
 		</p:tab>
 	</p:accordionPanel>
-
 </ui:composition>

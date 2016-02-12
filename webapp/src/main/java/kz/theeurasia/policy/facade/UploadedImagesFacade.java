@@ -5,6 +5,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
 import kz.theeurasia.policy.domain.InsuredDriverData;
+import kz.theeurasia.policy.domain.InsuredVehicleData;
 import kz.theeurasia.policy.domain.PolicyRequestData;
 import kz.theeurasia.policy.domain.UploadedImage;
 import kz.theeurasia.policy.services.UploadedImageService;
@@ -71,6 +72,15 @@ public class UploadedImagesFacade {
 	    UploadedImage image) {
 	driver.getPrivilegerCertificateData().getScanFiles().remove(image);
 
+    }
+
+    public void pickupVehicleCertificateImage(PolicyRequestData policy, InsuredVehicleData vehicle) {
+	vehicle.getVehicleCertificateData().getScanFiles().addAll(uploadedImageService.pickUpLast());
+    }
+
+    public void removeVehicleCertificateImage(PolicyRequestData policy, InsuredVehicleData vehicle,
+	    UploadedImage image) {
+	vehicle.getVehicleCertificateData().getScanFiles().remove(image);
     }
 
     // GENERATED

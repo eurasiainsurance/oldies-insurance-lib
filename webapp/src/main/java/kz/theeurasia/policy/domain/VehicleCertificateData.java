@@ -16,7 +16,7 @@ public class VehicleCertificateData {
     @NotNullValue
     @NotEmptyString
     @ValidVehicleRegistrationNumber
-    private String vehicleRegisterNumber;
+    private String vehicleRegistrationNumber;
 
     @NotNullValue
     @NotEmptyString
@@ -35,14 +35,6 @@ public class VehicleCertificateData {
     private List<UploadedImage> scanFiles = new ArrayList<>();
 
     // GENERATED
-
-    public String getVehicleRegisterNumber() {
-	return vehicleRegisterNumber;
-    }
-
-    public void setVehicleRegisterNumber(String vehicleRegisterNumber) {
-	this.vehicleRegisterNumber = vehicleRegisterNumber;
-    }
 
     public String getNumber() {
 	return number;
@@ -76,6 +68,14 @@ public class VehicleCertificateData {
 	this.majorCity = majorCity;
     }
 
+    public String getVehicleRegistrationNumber() {
+	return vehicleRegistrationNumber;
+    }
+
+    public void setVehicleRegistrationNumber(String vehicleRegistrationNumber) {
+	this.vehicleRegistrationNumber = vehicleRegistrationNumber;
+    }
+
     public List<UploadedImage> getScanFiles() {
 	return scanFiles;
     }
@@ -83,4 +83,5 @@ public class VehicleCertificateData {
     public void setScanFiles(List<UploadedImage> scanFiles) {
 	this.scanFiles = scanFiles;
     }
+
 }

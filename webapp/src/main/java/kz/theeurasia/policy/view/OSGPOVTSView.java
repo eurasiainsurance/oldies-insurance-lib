@@ -8,7 +8,6 @@ import java.util.ResourceBundle;
 import javax.annotation.PostConstruct;
 import javax.faces.application.Application;
 import javax.faces.application.FacesMessage;
-import javax.faces.application.ProjectStage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
@@ -70,6 +69,7 @@ public class OSGPOVTSView implements Serializable {
 	    case Development:
 		// buildTestDataManyDrivers();
 		buildTestDataManyVehicles();
+		setContactData();
 		break;
 	    case Production:
 	    default:
@@ -89,6 +89,11 @@ public class OSGPOVTSView implements Serializable {
 	}
     }
 
+    private void setContactData() {
+	policy.getInsurant().getContactData().setEmail("vadim.o.isaev@gmail.com");
+	policy.getInsurant().getContactData().setPhone("+7 (701) 937-79-79"); 
+    }
+
     private void buildTestDataManyVehicles() throws ValidationException {
 	this.policy = policyFacade.initNew();
 
@@ -104,14 +109,14 @@ public class OSGPOVTSView implements Serializable {
 	InsuredVehicleData vhc1 = vehicleFacade.add(policy);
 	vhc1.getVehicleData().setVinCode("JN1TANS51U0303376");
 	vehicleFacade.fetchInfo(policy, vhc1);
-	vhc1.getCertificateData().setRegion(CountryRegionDict.GALM);
+	vhc1.getVehicleCertificateData().setRegion(CountryRegionDict.GALM);
 	vehicleFacade.evaluateMajorCity(vhc1);
 	policyFacade.calculatePremiumCost(policy);
 
 	InsuredVehicleData vhc2 = vehicleFacade.add(policy);
 	vhc2.getVehicleData().setVinCode("WDB2030421F503751");
 	vehicleFacade.fetchInfo(policy, vhc2);
-	vhc2.getCertificateData().setRegion(CountryRegionDict.GALM);
+	vhc2.getVehicleCertificateData().setRegion(CountryRegionDict.GALM);
 	vehicleFacade.evaluateMajorCity(vhc2);
 	policyFacade.calculatePremiumCost(policy);
     }
@@ -199,7 +204,7 @@ public class OSGPOVTSView implements Serializable {
 	InsuredVehicleData vhc1 = vehicleFacade.add(policy);
 	vhc1.getVehicleData().setVinCode("JN1TANS51U0303376");
 	vehicleFacade.fetchInfo(policy, vhc1);
-	vhc1.getCertificateData().setRegion(CountryRegionDict.GALM);
+	vhc1.getVehicleCertificateData().setRegion(CountryRegionDict.GALM);
 	vehicleFacade.evaluateMajorCity(vhc1);
 	policyFacade.calculatePremiumCost(policy);
     }

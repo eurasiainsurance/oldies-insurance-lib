@@ -16,7 +16,7 @@ public class VehicleCertificateData {
     @NotNullValue
     @NotEmptyString
     @ValidVehicleRegistrationNumber
-    private String vehicleRegistrationNumber;
+    private String registrationNumber;
 
     @NotNullValue
     @NotEmptyString
@@ -68,12 +68,12 @@ public class VehicleCertificateData {
 	this.majorCity = majorCity;
     }
 
-    public String getVehicleRegistrationNumber() {
-	return vehicleRegistrationNumber;
+    public String getRegistrationNumber() {
+	return registrationNumber;
     }
 
-    public void setVehicleRegistrationNumber(String vehicleRegistrationNumber) {
-	this.vehicleRegistrationNumber = vehicleRegistrationNumber;
+    public void setRegistrationNumber(String registrationNumber) {
+	this.registrationNumber = registrationNumber;
     }
 
     public List<UploadedImage> getScanFiles() {

@@ -22,7 +22,7 @@ public class InsuredVehicleData {
     @ValidVehicleAgeClass
     private VehicleAgeClassDict vehicleAgeClass = VehicleAgeClassDict.UNSPECIFIED;
 
-    private VehicleCertificateData certificateData = new VehicleCertificateData();
+    private VehicleCertificateData vehicleCertificateData = new VehicleCertificateData();
 
     private boolean forcedMajorCity;
 
@@ -73,12 +73,12 @@ public class InsuredVehicleData {
 	this.vehicleAgeClass = vehicleAgeClass;
     }
 
-    public VehicleCertificateData getCertificateData() {
-	return certificateData;
+    public VehicleCertificateData getVehicleCertificateData() {
+	return vehicleCertificateData;
     }
 
-    public void setCertificateData(VehicleCertificateData certificateData) {
-	this.certificateData = certificateData;
+    public void setVehicleCertificateData(VehicleCertificateData vehicleCertificateData) {
+	this.vehicleCertificateData = vehicleCertificateData;
     }
 
     public boolean isForcedMajorCity() {

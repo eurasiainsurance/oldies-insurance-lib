@@ -37,8 +37,8 @@ public class PolicyFacade {
 	    PolicyTermClass policyTermClass) {
 	double premium = rates.getBase();
 	premium = premium * rates.getBaseRate();
-	premium = premium * rates.getRegionRate(vehicle.getCertificateData().getRegion());
-	premium = premium * rates.getIsMajorCityCorrectionRate(vehicle.getCertificateData().isMajorCity());
+	premium = premium * rates.getRegionRate(vehicle.getVehicleCertificateData().getRegion());
+	premium = premium * rates.getIsMajorCityCorrectionRate(vehicle.getVehicleCertificateData().isMajorCity());
 	premium = premium * rates.getVehicleTypeRate(vehicle.getVehicleClass());
 	premium = premium
 		* rates.getDriverExpirienceTypeRate(insured.getAgeClass(),

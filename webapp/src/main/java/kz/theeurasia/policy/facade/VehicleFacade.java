@@ -65,16 +65,16 @@ public class VehicleFacade {
 
     public void evaluateMajorCity(InsuredVehicleData insuredVehicle) {
 	insuredVehicle.setForcedMajorCity(
-		insuredVehicle.getCertificateData().getRegion().equals(CountryRegionDict.GALM)
-			|| insuredVehicle.getCertificateData().getRegion().equals(CountryRegionDict.GAST));
+		insuredVehicle.getVehicleCertificateData().getRegion().equals(CountryRegionDict.GALM)
+			|| insuredVehicle.getVehicleCertificateData().getRegion().equals(CountryRegionDict.GAST));
 	if (insuredVehicle.isForcedMajorCity())
-	    insuredVehicle.getCertificateData().setMajorCity(true);
+	    insuredVehicle.getVehicleCertificateData().setMajorCity(true);
     }
 
     private void _reset(PolicyRequestData policy, InsuredVehicleData vehicle) {
 	_resetFetchedInfo(policy, vehicle);
 	vehicle.getVehicleData().setVinCode(null);
-	vehicle.getCertificateData().setRegion(CountryRegionDict.UNSPECIFIED);
+	vehicle.getVehicleCertificateData().setRegion(CountryRegionDict.UNSPECIFIED);
 	evaluateMajorCity(vehicle);
     }
 

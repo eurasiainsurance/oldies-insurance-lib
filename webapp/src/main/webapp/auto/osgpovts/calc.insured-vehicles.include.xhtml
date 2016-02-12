@@ -74,7 +74,7 @@
 				<p:outputLabel value="#{gpovts['label.input.vehicle-region']}" />
 				<h:panelGrid columns="2">
 					<p:selectOneMenu id="cehicleRegion"
-						value="#{vehicle.certificateData.region}">
+						value="#{vehicle.vehicleCertificateData.region}">
 						<p:ajax event="change" process="@this" update="@form"
 							listener="#{osgpovtsView.onVehicleRegionChanged(vehicle)}" />
 						<f:selectItems value="#{countryRegionService.selectableItemsSI}" />
@@ -87,7 +87,7 @@
 				<p:outputPanel>
 					<p:selectBooleanCheckbox
 						widgetVar="w_majorCityCheckbox#{vehicle.safeId}"
-						value="#{vehicle.certificateData.majorCity}"
+						value="#{vehicle.vehicleCertificateData.majorCity}"
 						disabled="#{vehicle.forcedMajorCity}">
 						<p:ajax event="change" process="@this" update="@form"
 							listener="#{osgpovtsView.onPolicyCostCalculationFormChanged}" />

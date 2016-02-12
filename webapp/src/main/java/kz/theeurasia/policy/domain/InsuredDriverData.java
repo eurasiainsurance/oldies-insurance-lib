@@ -27,6 +27,7 @@ public class InsuredDriverData {
     private ResidenceData residenceData = new ResidenceData();
     private IdentityCardData identityCardData = new IdentityCardData();
     private DriverLicenseData driverLicenseData = new DriverLicenseData();
+    private ContactData contactData = new ContactData();
 
     @NotNullValue
     @ValidInsuranceAgeClass
@@ -234,6 +235,14 @@ public class InsuredDriverData {
 	this.pensionerCertificateData = pensionerCertificateData;
     }
 
+    public ContactData getContactData() {
+	return contactData;
+    }
+
+    public void setContactData(ContactData contactData) {
+	this.contactData = contactData;
+    }
+
     public SubjectPersonEntity getFetchedEntity() {
 	return fetchedEntity;
     }
@@ -241,4 +250,5 @@ public class InsuredDriverData {
     public void setFetchedEntity(SubjectPersonEntity fetchedEntity) {
 	this.fetchedEntity = fetchedEntity;
     }
+
 }

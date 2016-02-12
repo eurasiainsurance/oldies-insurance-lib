@@ -13,6 +13,7 @@ import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.general.KZCityServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.SubjectPersonServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.InsuranceClassTypeServiceDAO;
+import kz.theeurasia.policy.domain.ContactData;
 import kz.theeurasia.policy.domain.IdentityCardData;
 import kz.theeurasia.policy.domain.InsuredDriverData;
 import kz.theeurasia.policy.domain.OriginData;
@@ -76,6 +77,11 @@ public class DriverFacade {
 	    driver.getIdentityCardData().setNumber(fetched.getIdentityCard().getNumber());
 
 	    driver.setTaxPayerNumber(fetched.getTaxPayerNumber());
+
+	    driver.getContactData().setEmail(fetched.getContact().getEmail());
+	    driver.getContactData().setPhone(fetched.getContact().getPhone());
+	    driver.getContactData().setSiteUrl(fetched.getContact().getSiteUrl());
+
 	    try {
 		InsuranceClassTypeDict insuranceClassType = insuranceClassTypeService.getForSubject(fetched);
 		driver.setInsuranceClassType(insuranceClassType);
@@ -107,6 +113,7 @@ public class DriverFacade {
 	driver.setOriginData(new OriginData());
 	driver.setIdentityCardData(new IdentityCardData());
 	driver.setTaxPayerNumber(null);
+	driver.setContactData(new ContactData());
 	driver.setInsuranceClassType(InsuranceClassTypeDict.UNSPECIFIED);
 	driver.setAgeClass(InsuredAgeClassEnum.UNSPECIFIED);
     }

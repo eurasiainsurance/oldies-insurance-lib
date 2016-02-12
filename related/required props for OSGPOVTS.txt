@@ -1,17 +1,17 @@
 ﻿-- Страхователь --
-ФИО
-Дата рождения 
-Место жительства
+PersonalData * ФИО
+PersonalData * Дата рождения 
+ResidenceData * Место жительства
 
-Тип документа
-Номер документа
-Документ выдан
-Дата выдачи
+IdentityCardData * Тип документа
+IdentityCardData * Номер документа
+IdentityCardData * Документ выдан
+IdentityCardData * Дата выдачи
 
-ИИН
-Мобильный
-Резидентство
-Страна резидент
+InsurantData * ИИН
+ContactData * Мобильный
+ResidenceData * Резидентство
+OriginData * Страна резидент
 
 -- Застрахованный --
 1 PersonalData *ФИО

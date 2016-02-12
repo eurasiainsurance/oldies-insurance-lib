@@ -97,10 +97,10 @@ public class OSGPOVTSView implements Serializable {
 	    drv2.setIdNumber("870622300359");
 	    driverFacade.fetchInfo(policy, drv2);
 	    drv2.setExpirienceClass(InsuredExpirienceClassEnum.MORE2);
-//	    drv2.getResidenceData().setCity(KZCityDict.ALM);
-//	    drv2.getResidenceData().setAddress("Джамбула, 231");
-//	    drv2.getResidenceData().setResident(true);
-//	    drv2.getOriginData().setCountry(CountryDict.KAZ);
+	    drv2.getResidenceData().setCity(KZCityDict.ALM);
+	    // drv2.getResidenceData().setAddress("Джамбула, 231");
+	    // drv2.getResidenceData().setResident(true);
+	    // drv2.getOriginData().setCountry(CountryDict.KAZ);
 	    drv2.getDriverLicenseData().setNumber("123");
 	    drv2.getDriverLicenseData().setDateOfIssue(new Date());
 	    drv2.setHasAnyPrivilege(false);
@@ -230,7 +230,7 @@ public class OSGPOVTSView implements Serializable {
 	}
 	policyFacade.calculatePremiumCost(policy);
     }
-    
+
     public void onPolicyCostCalculationFormChanged() {
 	policyFacade.calculatePremiumCost(policy);
     }
@@ -296,16 +296,16 @@ public class OSGPOVTSView implements Serializable {
 	uploadedImagesFacade.removePrivilegerCertificateImage(policy, driver, image);
     }
 
-    public void onInsurantADriverChecked() {
-	insurantFacade.checkAndClearDriverData(policy, policy.getInsurant());
+    public void onWhoIsInsurantChanged() {
+	insurantFacade.handleWhoIsInsurantChange(policy, policy.getInsurant());
     }
-    
+
     public void onDriverAsInsurantSelected() {
-	insurantFacade.copyDriverDataIntoInsurant(policy, policy.getInsurant());
+	insurantFacade.copyDriverAsInsurantData(policy, policy.getInsurant());
     }
 
     public void onInsurantIdNumberChanged() {
-	insurantFacade.fetchInfo(policy.getInsurant());
+	insurantFacade.fetchInfo(policy.getInsurant(), policy);
     }
 
     // GENERATED

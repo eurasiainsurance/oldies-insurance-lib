@@ -11,6 +11,8 @@ messages.server_fatal_error.caption = Ошибка
 messages.server_fatal_error.description = Внутренняя ошибка сервера. Обратитесь к администратору системы
 
 # Text labels for inputs
+label.input.id-number = ИИН
+label.input.tax-payer-number = РНН
 label.personal-data = Персональные данные
 label.personal-data.name = Имя
 label.personal-data.surename = Фамилия
@@ -29,6 +31,10 @@ label.residence-data.city = Город проживания
 label.residence-data.address = Адрес проживания
 label.origin-data = Происхождение (для иностранцев)
 label.origin-data.country = Страна резидентсва
+title.contact-data = Контактные данные
+label.input.contact-data.phone = Номер телефона
+label.input.contact-data.email = Адрес e-mail
+label.input.contact-data.site-url = Адрес веб-сайта
 
 # Text labels for select items on select inputs
 label.si.country-region.GAST = город Астана

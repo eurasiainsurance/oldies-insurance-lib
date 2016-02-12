@@ -27,29 +27,34 @@ public class InsurantFacade {
     @EJB
     KZCityServiceDAO kzCityServiceDAO;
 
-    public void copyDriverDataIntoInsurant(PolicyRequestData policy, InsurantData insurant) {
+    public void copyDriverAsInsurantData(PolicyRequestData policy, InsurantData insurant) {
 	InsuredDriverData drv = insurant.getDriverAsInsurant();
-	// insurant.setContact(contact);
-	insurant.setIdentityCardData(drv.getIdentityCardData());
 	insurant.setIdNumber(drv.getIdNumber());
-	insurant.setOriginData(drv.getOriginData());
-	insurant.setPersonalData(drv.getPersonalData());
+
+	insurant.getPersonalData().setName(drv.getPersonalData().getName());
+	insurant.getPersonalData().setSurename(drv.getPersonalData().getSurename());
+	insurant.getPersonalData().setPatronymic(drv.getPersonalData().getPatronymic());
+	insurant.getPersonalData().setDayOfBirth(drv.getPersonalData().getDayOfBirth());
+	insurant.getPersonalData().setSex(drv.getPersonalData().getSex());
+
+	insurant.getResidenceData().setResident(drv.getResidenceData().isResident());
+	insurant.getResidenceData().setAddress(drv.getResidenceData().getAddress());
+	insurant.getResidenceData().setCity(drv.getResidenceData().getCity());
+
+	insurant.getOriginData().setCountry(drv.getOriginData().getCountry());
+
+	insurant.setIdentityCardData(drv.getIdentityCardData());
+	insurant.getIdentityCardData().setDateOfIssue(drv.getIdentityCardData().getDateOfIssue());
+	insurant.getIdentityCardData().setIssuingAuthority(drv.getIdentityCardData().getIssuingAuthority());
+	insurant.getIdentityCardData().setNumber(drv.getIdentityCardData().getNumber());
+	insurant.getIdentityCardData().setType(drv.getIdentityCardData().getType());
+
 	insurant.setTaxPayerNumber(drv.getTaxPayerNumber());
-	insurant.setResidenceData(drv.getResidenceData());
-	// insurant.setEconomicsSector();
-	insurant.setReadyToFill(true);
     }
 
-    public void checkAndClearDriverData(PolicyRequestData policy, InsurantData insurant) {
-	if (insurant.isInsurantADriver()) {
-	    insurant.setReadyToFill(false);
-	    return;
-	}
-	clearInsurantFromDriverData(insurant);
-	insurant.setReadyToFill(true);
-    }
+    public void clearDriverAsInsurantData(InsurantData insurant) {
+	insurant.setDriverAsInsurant(null);
 
-    public void clearInsurantFromDriverData(InsurantData insurant) {
 	insurant.setIdentityCardData(new IdentityCardData());
 	insurant.setIdNumber(null);
 	insurant.setOriginData(new OriginData());
@@ -58,7 +63,7 @@ public class InsurantFacade {
 	insurant.setResidenceData(new ResidenceData());
     }
 
-    public void fetchInfo(InsurantData insurant) {
+    public void fetchInfo(InsurantData insurant, PolicyRequestData policy) {
 	try {
 	    SubjectPersonEntity fetched = subjectPersonService.getByIIN(insurant.getIdNumber());
 	    insurant.setFetchedEntity(fetched);
@@ -71,11 +76,9 @@ public class InsurantFacade {
 
 	    insurant.getResidenceData().setResident(fetched.getOrigin().isResident());
 	    insurant.getResidenceData().setAddress(fetched.getContact().getHomeAdress());
-
-	    // TODO Здесь потенциальная проблема связанная с тем несоответстием
-	    // мапирования
 	    if (fetched.getOrigin().getCity() != null)
 		insurant.getResidenceData().setCity(kzCityServiceDAO.getById(fetched.getOrigin().getCity().getId()));
+
 	    insurant.getOriginData().setCountry(fetched.getOrigin().getCountry());
 
 	    insurant.getIdentityCardData().setDateOfIssue(fetched.getIdentityCard().getDateOfIssue().getTime());
@@ -85,9 +88,9 @@ public class InsurantFacade {
 
 	    insurant.setTaxPayerNumber(fetched.getTaxPayerNumber());
 
-	    insurant.getContact().setEmail(fetched.getContact().getEmail());
-	    insurant.getContact().setPhone(fetched.getContact().getPhone());
-	    insurant.getContact().setSiteUrl(fetched.getContact().getSiteUrl());
+	    insurant.getContactData().setEmail(fetched.getContact().getEmail());
+	    insurant.getContactData().setPhone(fetched.getContact().getPhone());
+	    insurant.getContactData().setSiteUrl(fetched.getContact().getSiteUrl());
 
 	} catch (NotFound | InvalidInputParameter e) {
 	    _resetFetchedInfo(insurant);
@@ -101,6 +104,25 @@ public class InsurantFacade {
 	insurant.setOriginData(new OriginData());
 	insurant.setIdentityCardData(new IdentityCardData());
 	insurant.setTaxPayerNumber(null);
-	insurant.setContact(new ContactData());
+	insurant.setContactData(new ContactData());
+    }
+
+    public void handleWhoIsInsurantChange(PolicyRequestData policy, InsurantData insurant) {
+	switch (insurant.getWhoIsInsurant()) {
+	case DRIVER:
+	    clearDriverAsInsurantData(insurant);
+	    if (policy.getInsuredDrivers().size() == 1) {
+		// если в списке застрахованных водил только один, то он и
+		// является страхователем
+		insurant.setDriverAsInsurant(policy.getInsuredDrivers().get(0));
+		copyDriverAsInsurantData(policy, insurant);
+	    }
+	    break;
+	case OTHER:
+	    clearDriverAsInsurantData(insurant);
+	    break;
+	case UNSPECIFIED:
+	default:
+	}
     }
 }

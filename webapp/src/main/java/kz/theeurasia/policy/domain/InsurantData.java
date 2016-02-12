@@ -5,6 +5,7 @@ import java.util.UUID;
 import kz.theeurasia.esbdproxy.domain.dict.general.EconomicSectorDict;
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectPersonEntity;
 import kz.theeurasia.policy.validator.NotNullValue;
+import kz.theeurasia.policy.validator.ValidEnumerationValue;
 import kz.theeurasia.policy.validator.ValidIdNumber;
 
 public class InsurantData {
@@ -19,18 +20,20 @@ public class InsurantData {
     private PersonalData personalData = new PersonalData();
     private OriginData originData = new OriginData();
     private ResidenceData residenceData = new ResidenceData();
-    private ContactData contact = new ContactData();
+    private ContactData contactData = new ContactData();
 
     private IdentityCardData identityCardData = new IdentityCardData();
 
     private EconomicSectorDict economicsSector = EconomicSectorDict.HOUSEHOLDS;
 
-    private boolean insurantADriver;
+    @NotNullValue(message = "{kz.theeurasia.policy.validator.custom.DriverAsInsurant.message}")
     private InsuredDriverData driverAsInsurant;
 
-    private SubjectPersonEntity fetchedEntity;
+    @NotNullValue(message = "{kz.theeurasia.policy.validator.custom.WhoIsInsurant.message}")
+    @ValidEnumerationValue(message = "{kz.theeurasia.policy.validator.custom.WhoIsInsurant.message}")
+    private WhoIsInsurant whoIsInsurant = WhoIsInsurant.UNSPECIFIED;
 
-    private boolean readyToFill;
+    private SubjectPersonEntity fetchedEntity;
 
     @Override
     public int hashCode() {
@@ -44,6 +47,10 @@ public class InsurantData {
 
     public String getSafeId() {
 	return id.toString().replaceAll("-", "_");
+    }
+
+    public boolean isFetched() {
+	return fetchedEntity != null;
     }
 
     // GENERATED
@@ -84,12 +91,12 @@ public class InsurantData {
 	this.originData = originData;
     }
 
-    public ContactData getContact() {
-	return contact;
+    public ContactData getContactData() {
+	return contactData;
     }
 
-    public void setContact(ContactData contact) {
-	this.contact = contact;
+    public void setContactData(ContactData contactData) {
+	this.contactData = contactData;
     }
 
     public IdentityCardData getIdentityCardData() {
@@ -108,14 +115,6 @@ public class InsurantData {
 	this.economicsSector = economicsSector;
     }
 
-    public boolean isInsurantADriver() {
-	return insurantADriver;
-    }
-
-    public void setInsurantADriver(boolean insurantADriver) {
-	this.insurantADriver = insurantADriver;
-    }
-
     public InsuredDriverData getDriverAsInsurant() {
 	return driverAsInsurant;
     }
@@ -132,20 +131,20 @@ public class InsurantData {
 	this.residenceData = residenceData;
     }
 
-    public boolean isReadyToFill() {
-	return readyToFill;
-    }
-
-    public void setReadyToFill(boolean readyToFill) {
-	this.readyToFill = readyToFill;
-    }
-
     public SubjectPersonEntity getFetchedEntity() {
 	return fetchedEntity;
     }
 
     public void setFetchedEntity(SubjectPersonEntity fetchedEntity) {
 	this.fetchedEntity = fetchedEntity;
+    }
+
+    public WhoIsInsurant getWhoIsInsurant() {
+	return whoIsInsurant;
+    }
+
+    public void setWhoIsInsurant(WhoIsInsurant whoIsInsurant) {
+	this.whoIsInsurant = whoIsInsurant;
     }
 
 }

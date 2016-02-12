@@ -9,6 +9,8 @@ title.calculator.vehicles = Список транспортных средств
 title.policy-cost = Стоимость полиса ОС ГПО ВТС
 title.insuted-driver.default-name = По умолчанию
 title.insuted-vehicle.default-name = Новое ТС
+title.insurant.personal-data = Данные о страхователе
+title.insurant.who-is-insurant = Кто будет являться страхователем по договору?
 
 # Messages
 messages.driver-list.cant-be-empty = Должен присутствовать как минимум один застрахованный водитель
@@ -27,9 +29,9 @@ command.remove-vehicle = Убрать ТС
 label.output.policy-cost = Стоимость полиса на 12 месяцев —
 
 # Text labels for inputs
+label.input.insured.id-number = ИИН застрахованного
 label.input.insured.insured-age-class = Возраст застрахованного
 label.input.insured.driver-expirience-class = Стаж вождения
-label.input.insured.id-number = ИИН застрахованного
 label.input.insured.has-privilege = (льготные условия — инвалиды, пенсионеры, участники ВОВ)
 label.input.vehicle.vin-code = VIN код
 label.input.vehicle-region = Территория регистрации ТС
@@ -59,8 +61,13 @@ label.privileges.privileger-certificate.type = Тип льготы
 label.privileges.privileger-certificate.number = Номер документа
 label.privileges.privileger-certificate.date-of-issue = Дата выдачи документа
 label.privileges.privileger-certificate.scan-files = Скан-копии документа
+label.input.insurant.id-number = ИИН страхователя
+label.input.insurant.driver-as-insurant = Выберите страхователя из списка застрахованных водителей ниже
 
 # Text labels for select items on select inputs
+label.si.who-is-insurant.DRIVER = Страхователем является один из застрахованных водителей
+label.si.who-is-insurant.OTHER = Страхователем является другое лицо
+label.si.who-is-insurant.UNSPECIFIED = Не указано
 label.si.insured-age-class.OVER25 = 25 лет и старше
 label.si.insured-age-class.UNDER25 = Менее 25 лет
 label.si.insured-age-class.UNSPECIFIED = Не определено

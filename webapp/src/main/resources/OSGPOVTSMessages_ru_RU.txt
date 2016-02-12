@@ -11,6 +11,8 @@ title.insuted-driver.default-name = По умолчанию
 title.insuted-vehicle.default-name = Новое ТС
 title.insurant.personal-data = Данные о страхователе
 title.insurant.who-is-insurant = Кто будет являться страхователем по договору?
+title.vehicle-data = Сведения о ТС
+title.vehicle-certificate-data = Свидиетельство о регистрации ТС
 
 # Messages
 messages.driver-list.cant-be-empty = Должен присутствовать как минимум один застрахованный водитель
@@ -63,6 +65,13 @@ label.privileges.privileger-certificate.date-of-issue = Дата выдачи д
 label.privileges.privileger-certificate.scan-files = Скан-копии документа
 label.input.insurant.id-number = ИИН страхователя
 label.input.insurant.driver-as-insurant = Выберите страхователя из списка застрахованных водителей ниже
+label.input.vehicle-data.model = Модель ТС
+label.input.vehicle-data.manufacturer = Производитель ТС
+label.input.vehicle-data.color = Цвет ТС
+label.input.vehicle-data.year-of-issue = Год выпуска ТС
+label.input.vehicle-certificate-data.number = Номер свидиетельства о регистрации ТС
+label.input.vehicle-certificate-data.date-of-issue = Дата выдачи свидетельства о регистрации ТС
+label.input.vehicle-certificate-data.registration-number = Регистрационный номер ТС
 
 # Text labels for select items on select inputs
 label.si.who-is-insurant.DRIVER = Страхователем является один из застрахованных водителей

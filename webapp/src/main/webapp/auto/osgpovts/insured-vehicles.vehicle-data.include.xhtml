@@ -6,16 +6,19 @@
 	xmlns:pe="http://primefaces.org/ui/extensions"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
 
-	<p:panel header="#{gpovts['label.vehicle-data']}">
+	<p:panel header="#{gpovts['title.vehicle-data']}">
 		<h:panelGrid columns="4">
-			<p:outputLabel value="#{gpovts['label.vehicle-data.model']}" />
-			<p:outputLabel value="#{gpovts['label.vehicle-data.manufacturer']}" />
-			<p:outputLabel value="#{gpovts['label.vehicle-data.color']}" />
-			<p:outputLabel value="#{gpovts['label.vehicle-data.year-of-issue']}" />
+			<p:outputLabel value="#{gpovts['label.input.vehicle-data.model']}" />
+			<p:outputLabel
+				value="#{gpovts['label.input.vehicle-data.manufacturer']}" />
+			<p:outputLabel value="#{gpovts['label.input.vehicle-data.color']}" />
+			<p:outputLabel
+				value="#{gpovts['label.input.vehicle-data.year-of-issue']}" />
 
 			<h:panelGrid columns="2">
 				<p:inputText id="vehicleDataModel"
-					value="#{vehicle.vehicleData.model}">
+					value="#{vehicle.vehicleData.model}"
+					disabled="#{vehicle.fetched and not empty vehicle.vehicleData.model}">
 					<p:ajax event="change" process="@this"
 						update="@this,currentVehiclePanel" />
 				</p:inputText>
@@ -23,7 +26,8 @@
 			</h:panelGrid>
 			<h:panelGrid columns="2">
 				<p:inputText id="vehicleDataManufacturer"
-					value="#{vehicle.vehicleData.manufacturer}">
+					value="#{vehicle.vehicleData.manufacturer}"
+					disabled="#{vehicle.fetched and not empty vehicle.vehicleData.manufacturer}">
 					<p:ajax event="change" process="@this"
 						update="@this,currentVehiclePanel" />
 				</p:inputText>
@@ -31,7 +35,8 @@
 			</h:panelGrid>
 			<h:panelGrid columns="2">
 				<p:inputText id="vehicleDataColor"
-					value="#{vehicle.vehicleData.color}">
+					value="#{vehicle.vehicleData.color}"
+					disabled="#{vehicle.fetched and not empty vehicle.vehicleData.color}">
 					<p:ajax event="change" process="@this"
 						update="@this,currentVehiclePanel" />
 				</p:inputText>
@@ -39,7 +44,8 @@
 			</h:panelGrid>
 			<h:panelGrid columns="2">
 				<p:spinner id="vehicleDataYearOfIssue"
-					value="#{vehicle.vehicleData.yearOfIssue}">
+					value="#{vehicle.vehicleData.yearOfIssue}"
+					disabled="#{vehicle.fetched and not empty vehicle.vehicleData.yearOfIssue}">
 					<p:ajax process="@this" update="@this,currentVehiclePanel" />
 				</p:spinner>
 				<p:message for="vehicleDataYearOfIssue" display="icon" />

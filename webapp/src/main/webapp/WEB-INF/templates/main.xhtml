@@ -15,7 +15,8 @@
 	<f:view>
 		<h:graphicImage alt="#{glb['name.eurasia.full']}" library="images"
 			name="eurasia_logo.png" />
-		<p:growl autoUpdate="true" globalOnly="false" showDetail="false" />
+		<p:growl autoUpdate="true" globalOnly="false" showDetail="false"
+			rendered="#{facesContext.application.projectStage eq 'Development'}" />
 		<br />
 		<br />
 

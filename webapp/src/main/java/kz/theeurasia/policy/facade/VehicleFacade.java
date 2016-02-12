@@ -53,6 +53,7 @@ public class VehicleFacade {
 	    }
 	    vehicle.setVehicleModel(fetched.getVehicleModel().getName());
 	    vehicle.setVehicleManufacturer(fetched.getVehicleModel().getManufacturer().getName());
+	    vehicle.setVehicleColor(fetched.getColor());
 	} catch (NotFound | InvalidInputParameter e) {
 	    _resetFetchedInfo(policy, vehicle);
 	}
@@ -79,6 +80,7 @@ public class VehicleFacade {
 	vehicle.setVehicleAgeClass(VehicleAgeClassDict.UNSPECIFIED);
 	vehicle.setVehicleModel(null);
 	vehicle.setVehicleManufacturer(null);
+	vehicle.setVehicleColor(null);
     }
 
 }

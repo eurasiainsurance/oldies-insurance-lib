@@ -35,6 +35,10 @@ public class InsuredVehicleData {
     @NotEmptyString
     private String vehicleManufacturer;
 
+    @NotNullValue
+    @NotEmptyString
+    private String vehicleColor;
+
     private VehicleCertificateData certificateData = new VehicleCertificateData();
 
     private boolean forcedMajorCity;
@@ -139,4 +143,11 @@ public class InsuredVehicleData {
 	this.fetchedEntity = fetchedEntity;
     }
 
+    public String getVehicleColor() {
+	return vehicleColor;
+    }
+
+    public void setVehicleColor(String vehicleColor) {
+	this.vehicleColor = vehicleColor;
+    }
 }

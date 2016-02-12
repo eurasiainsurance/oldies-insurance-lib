@@ -1,17 +1,22 @@
 package kz.theeurasia.policy.view;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.ResourceBundle;
 
 import javax.annotation.PostConstruct;
+import javax.faces.FacesException;
 import javax.faces.application.Application;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
+
+import com.lapsa.mailutil.InvalidMessageException;
+import com.lapsa.mailutil.MailException;
 
 import kz.theeurasia.esbdproxy.domain.dict.general.CountryDict;
 import kz.theeurasia.esbdproxy.domain.dict.general.CountryRegionDict;
@@ -26,6 +31,7 @@ import kz.theeurasia.policy.domain.PolicyRequestData;
 import kz.theeurasia.policy.domain.UploadedImage;
 import kz.theeurasia.policy.facade.DriverFacade;
 import kz.theeurasia.policy.facade.InsurantFacade;
+import kz.theeurasia.policy.facade.MailFacade;
 import kz.theeurasia.policy.facade.PolicyFacade;
 import kz.theeurasia.policy.facade.UploadedImagesFacade;
 import kz.theeurasia.policy.facade.VehicleFacade;
@@ -53,6 +59,9 @@ public class OSGPOVTSView implements Serializable {
 
     @ManagedProperty("#{insurantFacade}")
     private InsurantFacade insurantFacade;
+
+    @ManagedProperty("#{mailFacade}")
+    private MailFacade mailFacade;
 
     @ManagedProperty("#{uploadedImagesFacade}")
     private UploadedImagesFacade uploadedImagesFacade;
@@ -362,6 +371,14 @@ public class OSGPOVTSView implements Serializable {
 	insurantFacade.fetchInfo(policy.getInsurant(), policy);
     }
 
+    public void doSendMessage() {
+	try {
+	    mailFacade.sendNotice(policy);
+	} catch (MailException | IOException | InvalidMessageException e) {
+	    throw new FacesException(e.getMessage(), e);
+	}
+    }
+
     // GENERATED
 
     public void setGlb(ResourceBundle glb) {
@@ -396,4 +413,7 @@ public class OSGPOVTSView implements Serializable {
 	this.uploadedImagesFacade = uploadedImagesFacade;
     }
 
+    public void setMailFacade(MailFacade mailFacade) {
+	this.mailFacade = mailFacade;
+    }
 }

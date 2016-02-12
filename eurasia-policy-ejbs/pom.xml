@@ -8,26 +8,33 @@
 		<version>1.0-RC1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>policyservices-ejbimpl</artifactId>
+	<artifactId>eurasia-policy-ejbs</artifactId>
 	<packaging>ejb</packaging>
 
-	<name>Eurasia policy services : Implementation Enterprise Java-Beans</name>
+	<name>Eurasia policy : Enterprise Java-Beans</name>
 
 	<dependencies>
 		<dependency>
-			<groupId>kz.theeurasia.policy</groupId>
-			<artifactId>policyservices-api</artifactId>
-			<version>1.0-RC1-SNAPSHOT</version>
+			<groupId>com.lapsa.mail-helper</groupId>
+			<artifactId>mail-helper-impl</artifactId>
+			<version>1.5-SNAPSHOT</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>kz.theeurasia.asb.esbd</groupId>
-			<artifactId>esbd-jax-ws-client</artifactId>
+			<groupId>com.lapsa.mail-helper</groupId>
+			<artifactId>mail-helper-impl</artifactId>
+			<version>1.5-SNAPSHOT</version>
 			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.ejb</groupId>
 			<artifactId>javax.ejb-api</artifactId>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 

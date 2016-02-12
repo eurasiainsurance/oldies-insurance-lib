@@ -11,7 +11,7 @@
 		var="driver" multiple="true">
 		<p:tab title="#{driver.displayName}">
 
-			<p:panel header="#{glb['label.identity-card-data.scan-files']}"
+			<p:panel header="#{glb['label.input.identity-card-data.scan-files']}"
 				id="identityCardGalleria" styleClass="ui-glr">
 				<p:remoteCommand name="rc_NewIdentityCardUploaded#{driver.safeId}"
 					action="#{osgpovtsView.onDriverIdentityCardImageUploaded(driver)}"
@@ -35,7 +35,8 @@
 					oncomplete="rc_NewIdentityCardUploaded#{driver.safeId}()" />
 			</p:panel>
 
-			<p:panel header="#{gpovts['label.driver-license-data.scan-files']}"
+			<p:panel
+				header="#{gpovts['label.input.driver-license-data.scan-files']}"
 				id="driverLicenseGalleria" styleClass="ui-glr">
 				<p:remoteCommand name="rc_NewDriverLicenseUploaded#{driver.safeId}"
 					action="#{osgpovtsView.onDriverLicenseImageUploaded(driver)}"
@@ -61,7 +62,7 @@
 			</p:panel>
 
 			<p:panel
-				header="#{gpovts['label.privileges.handicaped-certificate.scan-files']}"
+				header="#{gpovts['label.input.handicaped-certificate.scan-files']}"
 				rendered="#{driver.handicaped}" id="handicapedCertificateGalleria"
 				styleClass="ui-glr">
 				<p:remoteCommand
@@ -90,7 +91,7 @@
 			</p:panel>
 
 			<p:panel
-				header="#{gpovts['label.privileges.gpw-participant-certificate.scan-files']}"
+				header="#{gpovts['label.input.gpw-participant-certificate.scan-files']}"
 				rendered="#{driver.gpwParticipant}"
 				id="gpwParticipantCertificateGalleria" styleClass="ui-glr">
 				<p:remoteCommand
@@ -119,7 +120,7 @@
 			</p:panel>
 
 			<p:panel
-				header="#{gpovts['label.privileges.pensioner-certificate.scan-files']}"
+				header="#{gpovts['label.input.pensioner-certificate.scan-files']}"
 				rendered="#{driver.pensioner}" id="pensionerCertificateGalleria"
 				styleClass="ui-glr">
 				<p:remoteCommand
@@ -148,7 +149,7 @@
 			</p:panel>
 
 			<p:panel
-				header="#{gpovts['label.privileges.privileger-certificate.scan-files']}"
+				header="#{gpovts['label.input.privileger-certificate.scan-files']}"
 				rendered="#{driver.priveleger}" id="privilegerCertificateGalleria"
 				styleClass="ui-glr">
 				<p:remoteCommand
@@ -182,7 +183,8 @@
 		var="vehicle" multiple="true">
 		<p:tab title="#{vehicle.displayName}">
 
-			<p:panel header="#{glb['label.vehicle-certificate.scan-files']}"
+			<p:panel
+				header="#{gpovts['label.input.vehicle-certificate.scan-files']}"
 				id="vehicleCertificateGalleria" styleClass="ui-glr">
 				<p:remoteCommand
 					name="rc_NewVehicleCertificateUploaded#{vehicle.safeId}"

@@ -1,5 +1,7 @@
 package kz.theeurasia.policy.facade;
 
+import java.util.Calendar;
+
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -54,6 +56,7 @@ public class VehicleFacade {
 	    vehicle.setVehicleModel(fetched.getVehicleModel().getName());
 	    vehicle.setVehicleManufacturer(fetched.getVehicleModel().getManufacturer().getName());
 	    vehicle.setVehicleColor(fetched.getColor());
+	    vehicle.setYearOfIssue(fetched.getRealeaseDate().get(Calendar.YEAR));
 	} catch (NotFound | InvalidInputParameter e) {
 	    _resetFetchedInfo(policy, vehicle);
 	}
@@ -81,6 +84,7 @@ public class VehicleFacade {
 	vehicle.setVehicleModel(null);
 	vehicle.setVehicleManufacturer(null);
 	vehicle.setVehicleColor(null);
+	vehicle.setYearOfIssue(0);
     }
 
 }

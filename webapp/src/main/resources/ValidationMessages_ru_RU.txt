@@ -18,6 +18,7 @@ kz.theeurasia.policy.validator.ValidURL.message = Некорректный ад�
 kz.theeurasia.policy.validator.ValidVehicleAgeClass.message = Указан некорректный срок эксплуатации ТС
 kz.theeurasia.policy.validator.ValidVehicleClass.message = Указан некорректный класс ТС
 kz.theeurasia.policy.validator.ValidVehicleRegistrationNumber.message = Неверный номер регистрации ТС
+kz.theeurasia.policy.validator.ValidVehicleYearOfIssue.message = Год выпуска ТС некорректен
 kz.theeurasia.policy.validator.ValidVINCode.message = VIN-код некорректен
 
 # custom validation messages

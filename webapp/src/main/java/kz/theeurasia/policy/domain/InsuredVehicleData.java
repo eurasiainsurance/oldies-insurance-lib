@@ -11,6 +11,7 @@ import kz.theeurasia.policy.validator.NotNullValue;
 import kz.theeurasia.policy.validator.ValidVINCode;
 import kz.theeurasia.policy.validator.ValidVehicleAgeClass;
 import kz.theeurasia.policy.validator.ValidVehicleClass;
+import kz.theeurasia.policy.validator.ValidVehicleYearOfIssue;
 
 public class InsuredVehicleData {
     private final UUID id = UUID.randomUUID();
@@ -38,6 +39,9 @@ public class InsuredVehicleData {
     @NotNullValue
     @NotEmptyString
     private String vehicleColor;
+
+    @ValidVehicleYearOfIssue
+    private int yearOfIssue;
 
     private VehicleCertificateData certificateData = new VehicleCertificateData();
 
@@ -150,4 +154,13 @@ public class InsuredVehicleData {
     public void setVehicleColor(String vehicleColor) {
 	this.vehicleColor = vehicleColor;
     }
+
+    public int getYearOfIssue() {
+	return yearOfIssue;
+    }
+
+    public void setYearOfIssue(int yearOfIssue) {
+	this.yearOfIssue = yearOfIssue;
+    }
+
 }

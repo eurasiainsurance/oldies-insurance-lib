@@ -145,7 +145,7 @@ public class OSGPOVTSView implements Serializable {
 	    drv4.setHasAnyPrivilege(false);
 
 	    InsuredVehicleData vhc1 = vehicleFacade.add(policy);
-	    vhc1.setVinCode("JN1TANS51U0303376");
+	    vhc1.getVehicleData().setVinCode("JN1TANS51U0303376");
 	    vehicleFacade.fetchInfo(policy, vhc1);
 	    vhc1.getCertificateData().setRegion(CountryRegionDict.GALM);
 	    vehicleFacade.evaluateMajorCity(vhc1);

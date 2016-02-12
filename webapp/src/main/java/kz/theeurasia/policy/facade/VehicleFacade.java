@@ -16,6 +16,7 @@ import kz.theeurasia.esbdproxy.services.general.CountryRegionServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleServiceDAO;
 import kz.theeurasia.policy.domain.InsuredVehicleData;
 import kz.theeurasia.policy.domain.PolicyRequestData;
+import kz.theeurasia.policy.domain.VehicleData;
 import kz.theeurasia.policy.view.MessageBundleCode;
 import kz.theeurasia.policy.view.ValidationException;
 
@@ -46,17 +47,17 @@ public class VehicleFacade {
 
     public void fetchInfo(PolicyRequestData policy, InsuredVehicleData vehicle) throws ValidationException {
 	try {
-	    VehicleEntity fetched = vehicleService.getByVINCode(vehicle.getVinCode());
+	    VehicleEntity fetched = vehicleService.getByVINCode(vehicle.getVehicleData().getVinCode());
 	    vehicle.setFetchedEntity(fetched);
 	    vehicle.setVehicleClass(fetched.getVehicleClass());
 	    if (fetched.getRealeaseDate() != null) {
 		int age = CalculatorUtil.calculateAgeByDOB(fetched.getRealeaseDate());
 		vehicle.setVehicleAgeClass(age > 7 ? VehicleAgeClassDict.OVER7 : VehicleAgeClassDict.UNDER7);
 	    }
-	    vehicle.setVehicleModel(fetched.getVehicleModel().getName());
-	    vehicle.setVehicleManufacturer(fetched.getVehicleModel().getManufacturer().getName());
-	    vehicle.setVehicleColor(fetched.getColor());
-	    vehicle.setYearOfIssue(fetched.getRealeaseDate().get(Calendar.YEAR));
+	    vehicle.getVehicleData().setColor(fetched.getColor());
+	    vehicle.getVehicleData().setManufacturer(fetched.getVehicleModel().getManufacturer().getName());
+	    vehicle.getVehicleData().setModel(fetched.getVehicleModel().getName());
+	    vehicle.getVehicleData().setYearOfIssue(fetched.getRealeaseDate().get(Calendar.YEAR));
 	} catch (NotFound | InvalidInputParameter e) {
 	    _resetFetchedInfo(policy, vehicle);
 	}
@@ -72,7 +73,7 @@ public class VehicleFacade {
 
     private void _reset(PolicyRequestData policy, InsuredVehicleData vehicle) {
 	_resetFetchedInfo(policy, vehicle);
-	vehicle.setVinCode(null);
+	vehicle.getVehicleData().setVinCode(null);
 	vehicle.getCertificateData().setRegion(CountryRegionDict.UNSPECIFIED);
 	evaluateMajorCity(vehicle);
     }
@@ -81,10 +82,7 @@ public class VehicleFacade {
 	vehicle.setFetchedEntity(null);
 	vehicle.setVehicleClass(VehicleClassDict.UNSPECIFIED);
 	vehicle.setVehicleAgeClass(VehicleAgeClassDict.UNSPECIFIED);
-	vehicle.setVehicleModel(null);
-	vehicle.setVehicleManufacturer(null);
-	vehicle.setVehicleColor(null);
-	vehicle.setYearOfIssue(0);
+	vehicle.setVehicleData(new VehicleData());
     }
 
 }

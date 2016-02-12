@@ -46,6 +46,7 @@ public class MailFacade {
 	mm.addPart(body);
 
 	UploadedImage im = policy.getInsuredDrivers().get(0).getDriverLicenseData().getScanFiles().get(0);
+
 	MailMessagePart attach = builder.createStreamPart("DOC_SCAN", im.getFile().getContentType(),
 		im.getFile().getInputstream());
 	mm.addPart(attach);

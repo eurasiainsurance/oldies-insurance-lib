@@ -37,16 +37,20 @@ ResidenceData * Место жительства
 
 
 -- Машина --
-Марка-модель
-Госномер
-VIN
-Тип транспортнго срдества
-Год выпуска
-Цвет
-Номер свидетельства ТС
-Дата выдачи свидетельства ТС
+InsuredVehicleData.vinCode * VIN
+InsuredVehicleData.vehicleManufacturer * Марка
+InsuredVehicleData.vehicleModel * Модель
+InsuredVehicleData.vehicleClass * Тип транспортнго срдества
+InsuredVehicleData.yearOfIssue * Год выпуска
+
+VehicleCertificateData.vehicleRegistrationNumber * Госномер
+VehicleCertificateData.number * Номер свидетельства о регистрации ТС
+VehicleCertificateData.dateOfIssue * Дата выдачи свидетельства о регистрации ТС
+VehicleCertificateData.scanFiles * Скан-копия свидетельства о регистрации ТС
 
 
-Скан-копия документ
-Скан-копия водительтское удостоверения
-Скан-копия свидетельства о регистрации ТС
+
+
+
+
+

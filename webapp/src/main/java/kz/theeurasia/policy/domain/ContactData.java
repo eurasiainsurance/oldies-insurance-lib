@@ -1,14 +1,17 @@
 package kz.theeurasia.policy.domain;
 
+import kz.theeurasia.policy.validator.NotNullValue;
 import kz.theeurasia.policy.validator.ValidEmail;
 import kz.theeurasia.policy.validator.ValidPhoneNumber;
 import kz.theeurasia.policy.validator.ValidURL;
 
 public class ContactData {
 
+    @NotNullValue
     @ValidPhoneNumber
     private String phone;
 
+    @NotNullValue
     @ValidEmail
     private String email;
 

@@ -18,6 +18,7 @@ import kz.theeurasia.esbdproxy.services.ejbimpl.dict.general.CountryDictServiceW
 import kz.theeurasia.esbdproxy.services.ejbimpl.dict.general.CountryRegionDictServiceWS;
 import kz.theeurasia.esbdproxy.services.ejbimpl.dict.general.EconomicSectorDictServiceWS;
 import kz.theeurasia.esbdproxy.services.ejbimpl.dict.general.IdentityCardTypeDictServiceWS;
+import kz.theeurasia.esbdproxy.services.ejbimpl.dict.general.KZCityDictServiceWS;
 import kz.theeurasia.esbdproxy.services.ejbimpl.dict.general.MaritalStatusDictServiceWS;
 import kz.theeurasia.esbdproxy.services.ejbimpl.dict.general.SexDictServiceWS;
 import kz.theeurasia.esbdproxy.services.ejbimpl.dict.osgpovts.InsuranceClassTypeDictServiceWS;
@@ -45,6 +46,7 @@ import kz.theeurasia.esbdproxy.services.general.CountryServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.EconomicSectorServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.IdentityCardTypeServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.InsuranceCompanyServiceDAO;
+import kz.theeurasia.esbdproxy.services.general.KZCityServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.MaritalStatusServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.SexServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.SubjectCompanyServiceDAO;
@@ -106,6 +108,10 @@ public abstract class GeneralServiceTestCase {
 
     protected CountryServiceDAO getCountryServiceEntityWS() throws NamingException {
 	return (CountryServiceDAO) context.lookup(nameFor(CountryDictServiceWS.class));
+    }
+
+    protected KZCityServiceDAO getKZCityServiceDictWS() throws NamingException {
+	return (KZCityServiceDAO) context.lookup(nameFor(KZCityDictServiceWS.class));
     }
 
     protected EconomicSectorServiceDAO getEconomicSectorServiceEntityWS() throws NamingException {

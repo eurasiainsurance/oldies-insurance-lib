@@ -14,6 +14,8 @@ import kz.theeurasia.esbdproxy.domain.dict.general.CountryDict;
 import kz.theeurasia.esbdproxy.domain.dict.general.CountryRegionDict;
 import kz.theeurasia.esbdproxy.domain.dict.general.EconomicSectorDict;
 import kz.theeurasia.esbdproxy.domain.dict.general.IdentityCardTypeDict;
+import kz.theeurasia.esbdproxy.domain.dict.general.KZAreaDict;
+import kz.theeurasia.esbdproxy.domain.dict.general.KZCityDict;
 import kz.theeurasia.esbdproxy.domain.dict.general.MaritalStatusDict;
 import kz.theeurasia.esbdproxy.domain.dict.general.SexDict;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuredAgeExpirienceClassDict;
@@ -32,6 +34,8 @@ public class DictionariesTestCase extends ESBDTestCase {
     private static final String DICT_DRIVER_EXPIRIENCE_CLASSIFICATION = "AGE_EXPERIENCE";
     private static final String DICT_VEHICLE_AGE_CLASS = "TF_AGE";
     private static final String DICT_VEHICLE_CLASS = "TF_TYPES";
+    private static final String DICT_KZ_CITY = "SETTLEMENTS";
+    private static final String DICT_KZ_AREA = "REGIONS";
 
     @Test
     public void testCancelationReasonDictMapping() {
@@ -205,6 +209,38 @@ public class DictionariesTestCase extends ESBDTestCase {
 		    + item.getCode()
 		    + "' and id = '" + item.getID() + "' present, but "
 		    + VehicleClassDict.class.getSimpleName() + " enum variable is missing", dict,
+		    not(nullValue()));
+	}
+    }
+
+    @Test
+    public void testKZCityDictMapping() {
+	ArrayOfItem items = getSoap().getItems(getSessionId(), DICT_KZ_CITY);
+	assertThat(items, not(nullValue()));
+	Iterator<Item> i = items.getItem().iterator();
+	while (i.hasNext()) {
+	    Item item = i.next();
+	    KZCityDict dict = KZCityDict.forId(item.getID());
+	    assertThat("ESBD  dictionary '" + DICT_KZ_CITY + "' name = '" + item.getName() + "' with code = '"
+		    + item.getCode()
+		    + "' and id = '" + item.getID() + "' present, but "
+		    + KZCityDict.class.getSimpleName() + " enum variable is missing", dict,
+		    not(nullValue()));
+	}
+    }
+
+    @Test
+    public void testKZAreaDictMapping() {
+	ArrayOfItem items = getSoap().getItems(getSessionId(), DICT_KZ_AREA);
+	assertThat(items, not(nullValue()));
+	Iterator<Item> i = items.getItem().iterator();
+	while (i.hasNext()) {
+	    Item item = i.next();
+	    KZAreaDict dict = KZAreaDict.forId(item.getID());
+	    assertThat("ESBD  dictionary '" + DICT_KZ_AREA + "' name = '" + item.getName() + "' with code = '"
+		    + item.getCode()
+		    + "' and id = '" + item.getID() + "' present, but "
+		    + KZAreaDict.class.getSimpleName() + " enum variable is missing", dict,
 		    not(nullValue()));
 	}
     }

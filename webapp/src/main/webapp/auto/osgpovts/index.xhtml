@@ -11,17 +11,34 @@
 	<ui:define name="page-title">#{glb['name.insurance.osgpovts.full']} - #{glb['name.eurasia.full']}</ui:define>
 
 	<ui:define name="page-content">
-		<h:form>
+		<h:form enctype="multipart/form-data">
 			<p:wizard style="width: 100%"
 				nextLabel="#{glb['label.command.wizard.next']}"
 				backLabel="#{glb['label.command.wizard.prev']}">
 				<p:tab id="calculator" title="#{gpovts['title.wizard.calculator']}">
 					<ui:decorate template="premium-cost.include.xhtml" />
+					<ui:decorate template="calc.insured-drivers.include.xhtml" />
+					<ui:decorate template="calc.insured-vehicles.include.xhtml" />
+				</p:tab>
+				<p:tab id="insuredDriversForm"
+					title="#{gpovts['title.wizard.insured-drivers-form']}">
 					<ui:decorate template="insured-drivers.include.xhtml" />
+				</p:tab>
+				<p:tab id="insurantForm"
+					title="#{gpovts['title.wizard.insurant-form']}">
+					<ui:decorate template="insurant.include.xhtml" />
+				</p:tab>
+				<p:tab id="insuredVehiclesForm"
+					title="#{gpovts['title.wizard.insured-vehicles-form']}">
 					<ui:decorate template="insured-vehicles.include.xhtml" />
 				</p:tab>
-				<p:tab id="form" title="#{gpovts['title.wizard.policy-form']}">
-					<ui:decorate template="premium-cost.include.xhtml" />
+				<p:tab id="scanCopies"
+					title="#{gpovts['title.wizard.scan-copies-upload']}">
+					<ui:decorate template="scan-copies.include.xhtml" />
+				</p:tab>
+				<p:tab id="complete"
+					title="#{gpovts['title.wizard.complete']}">
+					<ui:decorate template="complete.include.xhtml" />
 				</p:tab>
 			</p:wizard>
 		</h:form>

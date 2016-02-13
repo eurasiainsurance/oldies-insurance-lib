@@ -1,35 +1,35 @@
 package kz.theeurasia.esbdproxy.domain.dict.general;
 
 public enum CountryRegionDict {
-    GAST(16, "01", true), // Астана - код 01
-    GALM(15, "02", true), // Алматы - код 02
-    OAKM(7, "03", true), // Акмолинская область - код 03
-    OAKT(10, "04", true), // Актюбинская область - код 04
-    OALM(1, "05", true), // Алматинская область - код 05
-    OATY(13, "06", true), // Атырауская область - код 06
-    OZK(11, "07", true), // Западно-Казахстанская область - код 07
-    OZHM(9, "08", true), // Жамбылская область - код 08
-    OKGD(5, "09", true), // Карагандинская область - код 09
-    OKST(4, "10", true), // Костанайская область - код 10
-    OKZL(12, "11", true), // Кызылординская область - код 11
-    OMNG(14, "12", true), // Мангистауская область - код 12
-    OUK(2, "13", true), // Южно-Казахстанская область - код 13
-    OPVL(8, "14", true), // Павлодарская область - код 14
-    OSK(6, "15", true), // Северо-Казахстанская область - код 15
-    OVK(3, "16", true), // Восточно-Казахстанская область - код 16
-    TEMPORARY_REGISTRATION(18, "Временная регистрация", false), // Временная
+    GAST("01", true, 16), // Астана - код 01
+    GALM("02", true, 15), // Алматы - код 02
+    OAKM("03", true, 7), // Акмолинская область - код 03
+    OAKT("04", true, 10), // Актюбинская область - код 04
+    OALM("05", true, 1), // Алматинская область - код 05
+    OATY("06", true, 13), // Атырауская область - код 06
+    OZK("07", true, 11), // Западно-Казахстанская область - код 07
+    OZHM("08", true, 9), // Жамбылская область - код 08
+    OKGD("09", true, 5), // Карагандинская область - код 09
+    OKST("10", true, 4), // Костанайская область - код 10
+    OKZL("11", true, 12), // Кызылординская область - код 11
+    OMNG("12", true, 14), // Мангистауская область - код 12
+    OUK("13", true, 2), // Южно-Казахстанская область - код 13
+    OPVL("14", true, 8), // Павлодарская область - код 14
+    OSK("15", true, 6), // Северо-Казахстанская область - код 15
+    OVK("16", true, 3), // Восточно-Казахстанская область - код 16
+    TEMPORARY_REGISTRATION("Временная регистрация", false, 18), // Временная
 								// регистрация?!
-    TEMPORARY_ENTRY(17, "Временная въезд", false), // Временная въезд?!
-    UNSPECIFIED(0, "", false);
+    TEMPORARY_ENTRY("Временная въезд", false, 17), // Временная въезд?!
+    UNSPECIFIED("", true, 0);
 
     private final long id;
     private final String code;
-    private final boolean region;
+    private final boolean selectable;
 
-    CountryRegionDict(long id, String code, boolean region) {
+    CountryRegionDict(String code, boolean selectable, long id) {
 	this.id = id;
 	this.code = code;
-	this.region = region;
+	this.selectable = selectable;
     }
 
     public static CountryRegionDict forId(long id) {
@@ -56,8 +56,8 @@ public enum CountryRegionDict {
 	return code;
     }
 
-    public boolean isRegion() {
-	return region;
+    public boolean isSelectable() {
+	return selectable;
     }
 
 }

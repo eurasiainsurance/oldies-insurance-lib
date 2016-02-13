@@ -3,6 +3,8 @@ package kz.theeurasia.esbdproxy.services.ejbimpl.entity.general;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
@@ -47,6 +49,30 @@ public class CityEntityServiceWS extends AbstractESBDEntityServiceWS
     }
 
     @Override
+    public List<CityEntity> getSelectable() {
+	return getAll();
+    }
+
+    @Override
+    public List<CityEntity> getBySearchPattern(String pattern) {
+	lazyInit();
+
+	List<CityEntity> res = new ArrayList<>();
+	Pattern p = null;
+	try {
+	    p = Pattern.compile(".*" + pattern.toLowerCase() + ".*", Pattern.CASE_INSENSITIVE);
+	} catch (PatternSyntaxException e1) {
+	}
+	for (CityEntity e : all) {
+	    if (p != null && (p.matcher(e.getName().toLowerCase()).matches())) {
+		res.add(e);
+		continue;
+	    }
+	}
+	return res;
+    }
+
+    @Override
     public CityEntity getById(Long id) throws NotFound {
 	if (id == null)
 	    throw new InvalidParameterException("ID must be not null");
@@ -61,5 +87,4 @@ public class CityEntityServiceWS extends AbstractESBDEntityServiceWS
 	target.setId(source.getID());
 	target.setName(source.getName());
     }
-
 }

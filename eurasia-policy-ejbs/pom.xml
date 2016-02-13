@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>kz.theeurasia.policy</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.0-RC1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>eurasia-policy-ejbs</artifactId>
+	<packaging>ejb</packaging>
+
+	<name>Eurasia policy : Enterprise Java-Beans</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.lapsa.mail-helper</groupId>
+			<artifactId>mail-helper-impl</artifactId>
+			<version>1.5-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.lapsa.mail-helper</groupId>
+			<artifactId>mail-helper-impl</artifactId>
+			<version>1.5-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.ejb</groupId>
+			<artifactId>javax.ejb-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+</project>

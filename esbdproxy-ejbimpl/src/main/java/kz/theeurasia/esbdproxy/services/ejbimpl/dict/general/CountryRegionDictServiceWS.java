@@ -15,16 +15,16 @@ import kz.theeurasia.esbdproxy.services.general.CountryRegionServiceDAO;
 public class CountryRegionDictServiceWS implements CountryRegionServiceDAO {
 
     private List<CountryRegionDict> all;
-    private List<CountryRegionDict> regions;
+    private List<CountryRegionDict> selectable;
 
     @PostConstruct
     protected void init() {
 	all = new ArrayList<>();
-	regions = new ArrayList<>();
+	selectable = new ArrayList<>();
 	for (CountryRegionDict cd : CountryRegionDict.values()) {
 	    all.add(cd);
-	    if (cd.isRegion())
-		regions.add(cd);
+	    if (cd.isSelectable())
+		selectable.add(cd);
 	}
     }
 
@@ -44,12 +44,8 @@ public class CountryRegionDictServiceWS implements CountryRegionServiceDAO {
     }
 
     @Override
-    public List<CountryRegionDict> getRegions() {
-	return new ArrayList<>(regions);
+    public List<CountryRegionDict> getSelectable() {
+	return new ArrayList<>(selectable);
     }
 
-    @Override
-    public CountryRegionDict getDefaultRegion() {
-	return CountryRegionDict.GALM;
-    }
 }

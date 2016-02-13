@@ -12,7 +12,7 @@ public enum VehicleClassDict {
     AIRCRAFT(12, false), // Воздушный транспорт
     RAILWAY(14, false), // Железнодорожный транспорт
     SPECIAL(15, false), // Спец.техника
-    UNSPECIFIED(0, false);
+    UNSPECIFIED(0, true);
 
     private final long id;
     private final boolean applicableForOSGPOVTS;

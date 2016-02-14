@@ -12,6 +12,5 @@ pom.xml.next
 release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
-# Sybase PowerDesigner Backup
-*.oob
-*.pdb
+# Mac OS X service directories
+.DS_Store

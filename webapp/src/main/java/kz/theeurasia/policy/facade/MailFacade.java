@@ -1,10 +1,21 @@
 package kz.theeurasia.policy.facade;
 
 import java.io.IOException;
+import java.io.StringWriter;
+import java.io.Writer;
+import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
+
+import org.apache.velocity.Template;
+import org.apache.velocity.VelocityContext;
+import org.apache.velocity.app.VelocityEngine;
+import org.apache.velocity.runtime.RuntimeConstants;
+import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
 
 import com.lapsa.mailutil.InvalidMessageException;
 import com.lapsa.mailutil.MailException;
@@ -14,18 +25,33 @@ import com.lapsa.mailutil.MailMessagePart;
 import com.lapsa.mailutil.MailSender;
 import com.lapsa.mailutil.MailService;
 
+import kz.theeurasia.policy.domain.InsuredDriverData;
+import kz.theeurasia.policy.domain.InsuredVehicleData;
 import kz.theeurasia.policy.domain.PolicyRequestData;
 import kz.theeurasia.policy.domain.UploadedImage;
 
 @ManagedBean
-@ViewScoped
+@SessionScoped
 public class MailFacade {
 
+    private static final String TEMPLATE_NAME = "/emailTemplates/PolicyReuest.html";
     private static final String DEFAULT_SUBJECT = "Получена новая заявка на полис ОС ГПО ВТС";
     private static final String DEFAULT_TO_RECIPIENTS = "vadim.isaev@theeurasia.kz";
 
     @EJB
     private MailService mailHelper;
+
+    private Template mailReuestTemplate;
+
+    @PostConstruct
+    public void initTemplate() {
+	VelocityEngine ve = new VelocityEngine();
+	ve.setProperty(RuntimeConstants.RESOURCE_LOADER, "classpath");
+	ve.setProperty("classpath.resource.loader.class", ClasspathResourceLoader.class.getName());
+	ve.setProperty("input.encoding", "UTF-8");
+	ve.init();
+	mailReuestTemplate = ve.getTemplate(TEMPLATE_NAME, "UTF-8");
+    }
 
     public void sendNotice(PolicyRequestData policy) throws MailException, IOException, InvalidMessageException {
 	MailMessageBuilder builder = mailHelper.createBuilder();
@@ -42,15 +68,48 @@ public class MailFacade {
 	mm.addTORecipient(builder.createAddress(DEFAULT_TO_RECIPIENTS));
 	mm.setSubject(DEFAULT_SUBJECT);
 
-	MailMessagePart body = builder.createTextPart("This is a request");
+	String htmlBody = getMessageBody(policy);
+
+	MailMessagePart body = builder.createHTMLPart(htmlBody);
 	mm.addPart(body);
-
-	UploadedImage im = policy.getInsuredDrivers().get(0).getDriverLicenseData().getScanFiles().get(0);
-
-	MailMessagePart attach = builder.createStreamPart("DOC_SCAN.JPG", im.getFile().getContentType(),
-		im.getFile().getInputstream());
-	mm.addPart(attach);
+	addImagesParts(mm, builder, policy);
 
 	return mm;
+    }
+
+    private String getMessageBody(PolicyRequestData policy) {
+	VelocityContext context = new VelocityContext();
+	context.put("policy", policy);
+	Writer w = new StringWriter();
+	mailReuestTemplate.merge(context, w);
+	return w.toString();
+    }
+
+    private MailMessagePart createFromUploaded(MailMessageBuilder builder, UploadedImage image)
+	    throws MailException, IOException {
+	MailMessagePart part = builder.createStreamPart(image.getFile().getFileName(), image.getFile().getContentType(),
+		image.getFile().getInputstream(), image.getSafeId());
+	return part;
+    }
+
+    private void addUploadedImagesList(MailMessage message, MailMessageBuilder builder, List<UploadedImage> images)
+	    throws MailException, IOException {
+	for (UploadedImage image : images)
+	    message.addPart(createFromUploaded(builder, image));
+    }
+
+    private void addImagesParts(MailMessage message, MailMessageBuilder builder, PolicyRequestData policy)
+	    throws MailException, IOException {
+	addUploadedImagesList(message, builder, policy.getInsurant().getIdentityCardData().getScanFiles());
+	for (InsuredDriverData driver : policy.getInsuredDrivers()) {
+	    addUploadedImagesList(message, builder, driver.getDriverLicenseData().getScanFiles());
+	    addUploadedImagesList(message, builder, driver.getIdentityCardData().getScanFiles());
+	    addUploadedImagesList(message, builder, driver.getGpwParticipantCertificateData().getScanFiles());
+	    addUploadedImagesList(message, builder, driver.getHandicapedCertificateData().getScanFiles());
+	    addUploadedImagesList(message, builder, driver.getPensionerCertificateData().getScanFiles());
+	    addUploadedImagesList(message, builder, driver.getPrivilegerCertificateData().getScanFiles());
+	}
+	for (InsuredVehicleData vehicle : policy.getInsuredVehicles())
+	    addUploadedImagesList(message, builder, vehicle.getVehicleCertificateData().getScanFiles());
     }
 }

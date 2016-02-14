@@ -31,9 +31,7 @@
 	</properties>
 
 	<modules>
-		<module>esbdproxy-api</module>
-		<module>esbdproxy-ejbimpl</module>
-		<module>eurasia-policy-ejbs</module>
+		<module>ejbs</module>
 		<module>webapp</module>
 		<module>ear</module>
 	</modules>
@@ -44,6 +42,16 @@
 				<groupId>kz.theeurasia.asb.esbd</groupId>
 				<artifactId>esbd-jax-ws-client</artifactId>
 				<version>1.0</version>
+			</dependency>
+			<dependency>
+				<groupId>kz.theeurasia.esbdproxy</groupId>
+				<artifactId>esbdproxy-api</artifactId>
+				<version>1.0-RC1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>kz.theeurasia.esbdproxy</groupId>
+				<artifactId>esbdproxy-ejbimpl</artifactId>
+				<version>1.0-RC1-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>org.primefaces</groupId>

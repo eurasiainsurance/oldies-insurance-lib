@@ -8,7 +8,7 @@
 		<version>1.0-RC1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>eurasia-policy-ejbs</artifactId>
+	<artifactId>policy-ejbs</artifactId>
 	<packaging>ejb</packaging>
 
 	<name>Eurasia policy : Enterprise Java-Beans</name>

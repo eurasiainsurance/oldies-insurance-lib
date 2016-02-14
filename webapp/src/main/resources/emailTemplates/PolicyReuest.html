@@ -12,153 +12,36 @@ BODY {
 }
 
 H1 {
-	font-size: 1.2em;
+	font-size: 2em;
 	color: menutext;
 	text-transform: uppercase;
-}
-
-.ui-datatable {
-	width: 100%;
-	b1order: 1px solid buttonface;
-}
-
-.ui-datatable TD, .ui-datatable TH {
-	border-top: 1px solid buttonface;
-	border-bottom: 1px solid buttonface;
-	padding: .2em;
-	margin: .2em;
-}
-
-.ui-datatable TH {
-	background-color: highlight;
-	color: highlighttext;
-}
-
-.ui-scans {
-	display: block;
-	padding: .2em;
-	background-color: infobackground;
-}
-
-.ui-img-container {
-	display: inline-block;
-	padding: .2em;
-	margin: .2em;
-	border: activeborder;
-}
-
-.ui-img {
-	width: 20em;
 }
 </style>
 </head>
 <body>
-
 	<h1>Общие сведения</h1>
 
 	<h1>Страхователь</h1>
-	<table class="ui-datatable">
-		<tr>
-			<th>ИИН</th>
-			<th>РНН</th>
-			<th>ФИО</th>
-			<th>Дата рождения</th>
-			<th>Пол</th>
-		</tr>
-		<tr>
-			<td>$policy.insurant.idNumber</td>
-			<td>$policy.insurant.taxPayerNumber</td>
-			<td>$policy.insurant.personalData.displayName</td>
-			<td>$policy.insurant.personalData.dayOfBirth.get('dd.MM.yyyy')</td>
-			<td>$policy.insurant.personalData.sex</td>
-		</tr>
-	</table>
-
-
+	<h2>$policy.insurant.displayName</h2>
+	#set( $personalData = $policy.insurant.personalData)
+	#include( "/emailTemplates/personalData.vm" )
 
 	<h1>Застрахованные водители</h1>
-
 	#foreach( $driver in $policy.insuredDrivers )
-	<table class="ui-datatable">
-		<tr>
-			<th>ИИН</th>
-			<th>РНН</th>
-			<th>ФИО</th>
-			<th>Дата рождения</th>
-			<th>Пол</th>
-		</tr>
-		<tr>
-			<td>$driver.idNumber</td>
-			<td>$driver.taxPayerNumber</td>
-			<td>$driver.personalData.displayName</td>
-			<td>$driver.personalData.dayOfBirth.get('dd.MM.yyyy')</td>
-			<td>$driver.personalData.sex</td>
-		</tr>
-	</table>
-	<table class="ui-datatable">
-		<tr>
-			<th>ИИН</th>
-			<th>РНН</th>
-			<th>ФИО</th>
-			<th>Дата рождения</th>
-			<th>Пол</th>
-		</tr>
-		<tr>
-			<td>$driver.idNumber</td>
-			<td>$driver.taxPayerNumber</td>
-			<td>$driver.personalData.displayName</td>
-			<td>$driver.personalData.dayOfBirth.get('dd.MM.yyyy')</td>
-			<td>$driver.personalData.sex</td>
-		</tr>
-	</table>
+		<h2>$driver.displayName</h2>
+		#set( $personalData = $driver.personalData)
+		#include( "/emailTemplates/personalData.vm" )
 	#end
-
-
 
 	<h1>Застрахованные ТС</h1>
 	#foreach( $vehicle in $policy.insuredVehicles )
-	<table class="ui-datatable">
-		<tr>
-			<th>VIN</th>
-			<th>Марка</th>
-			<th>Модель</th>
-			<th>Цвет</th>
-			<th>Год выпуска ТС</th>
-		</tr>
-		<tr>
-			<td>$vehicle.vehicleData.vinCode</td>
-			<td>$vehicle.vehicleData.manufacturer</td>
-			<td>$vehicle.vehicleData.model</td>
-			<td>$vehicle.vehicleData.color</td>
-			<td>$vehicle.vehicleData.yearOfIssue</td>
-		</tr>
-	</table>
-	<h2>Свидиетельсвто о регистрации ТС</h2>
-	<table class="ui-datatable">
-		<tr>
-			<th>Номер</th>
-			<th>Дата выдачи</th>
-			<th>Рег.номер ТС</th>
-			<th>Регион регистрации ТС</th>
-			<th>Является городом областного значения</th>
-		</tr>
-		<tr>
-			<td>$vehicle.vehicleCertificateData.number</td>
-			<td>$vehicle.vehicleCertificateData.dateOfIssue</td>
-			<td>$vehicle.vehicleCertificateData.registrationNumber</td>
-			<td>$vehicle.vehicleCertificateData.region</td>
-			<td>$vehicle.vehicleCertificateData.majorCity</td>
-		</tr>
-	</table>
-	<div class="ui-scans">
-		#foreach( $scan in $vehicle.vehicleCertificateData.scanFiles )
-		<span
-			class="ui-img-container"><img src="cid:$scan.safeId"
-			class="ui-img" /></span>
-		#end
-	</div>
-
+		<h2>$vehicle.displayName</h2>
+		#set( $vehicleData = $vehicle.vehicleData)
+		#include( "/emailTemplates/vehicleData.vm" )
+		#set( $vehicleCertificateData = $vehicle.vehicleCertificateData)
+		#include( "/emailTemplates/vehicleCertificateData.vm" )
+		#set( $scanFiles = $vehicle.vehicleCertificateData.scanFiles )
+		#include( "/emailTemplates/scanFiles.vm" )
 	#end
-
 </body>
 </html>

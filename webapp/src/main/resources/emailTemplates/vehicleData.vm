@@ -1,0 +1,17 @@
+<table cellpadding="3" cellspacing="3" border="0" width="100%">
+		<tr>
+			<th style="background-color: gray; color: white; border-style: solid; border-color: gray">VIN</th>
+			<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Марка</th>
+			<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Модель</th>
+			<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Цвет</th>
+			<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Год
+				выпуска ТС</th>
+		</tr>
+		<tr>
+			<td>$vehicleData.vinCode</td>
+			<td>$vehicleData.manufacturer</td>
+			<td>$vehicleData.model</td>
+			<td>$vehicleData.color</td>
+			<td>$vehicleData.yearOfIssue</td>
+		</tr>
+</table>

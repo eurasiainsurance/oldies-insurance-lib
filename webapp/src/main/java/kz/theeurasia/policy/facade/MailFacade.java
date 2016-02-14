@@ -8,7 +8,6 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 
 import org.apache.velocity.Template;
@@ -31,7 +30,7 @@ import kz.theeurasia.policy.domain.PolicyRequestData;
 import kz.theeurasia.policy.domain.UploadedImage;
 
 @ManagedBean
-@SessionScoped
+@ViewScoped
 public class MailFacade {
 
     private static final String TEMPLATE_NAME = "/emailTemplates/PolicyReuest.html";
@@ -41,16 +40,15 @@ public class MailFacade {
     @EJB
     private MailService mailHelper;
 
-    private Template mailReuestTemplate;
+    private VelocityEngine ve;
 
     @PostConstruct
     public void initTemplate() {
-	VelocityEngine ve = new VelocityEngine();
+	ve = new VelocityEngine();
 	ve.setProperty(RuntimeConstants.RESOURCE_LOADER, "classpath");
 	ve.setProperty("classpath.resource.loader.class", ClasspathResourceLoader.class.getName());
 	ve.setProperty("input.encoding", "UTF-8");
 	ve.init();
-	mailReuestTemplate = ve.getTemplate(TEMPLATE_NAME, "UTF-8");
     }
 
     public void sendNotice(PolicyRequestData policy) throws MailException, IOException, InvalidMessageException {
@@ -81,7 +79,8 @@ public class MailFacade {
 	VelocityContext context = new VelocityContext();
 	context.put("policy", policy);
 	Writer w = new StringWriter();
-	mailReuestTemplate.merge(context, w);
+	Template t = ve.getTemplate(TEMPLATE_NAME, "UTF-8");
+	t.merge(context, w);
 	return w.toString();
     }
 

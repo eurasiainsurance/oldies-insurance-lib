@@ -1,0 +1,18 @@
+<h3>Документ удостоверяющи личность</h3>
+<table cellpadding="3" cellspacing="3" border="0" width="100%">
+	<tr>
+		<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Тип</th>
+		<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Номер</th>
+		<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Дата выдачи</th>
+		<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Орган выдачи</th>
+	</tr>
+	<tr>
+		<td>$identityCardData.type</td>
+		<td>$identityCardData.number</td>
+		<td>$identityCardData.dateOfIssue</td>
+		<td>$identityCardData.issuingAuthority</td>
+	</tr>
+</table>
+#set( $scanFiles = $identityCardData.scanFiles )
+#include( "/emailTemplates/scanFiles.vm" )
+	

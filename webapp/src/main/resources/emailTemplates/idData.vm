@@ -1,0 +1,12 @@
+<h2>$idData.displayName</h2>
+<table cellpadding="3" cellspacing="3" border="0" width="100%">
+	<tr>
+		<th style="background-color: gray; color: white; border-style: solid; border-color: gray">ИИН</th>
+		<th style="background-color: gray; color: white; border-style: solid; border-color: gray">РНН</th>
+	</tr>
+	<tr>
+		<td>$idData.idNumber</td>
+		<td>$idData.taPayerNumber</td>
+	</tr>
+</table>
+	

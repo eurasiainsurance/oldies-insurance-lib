@@ -33,7 +33,7 @@ import kz.theeurasia.policy.domain.UploadedImage;
 @ViewScoped
 public class MailFacade {
 
-    private static final String TEMPLATE_NAME = "/emailTemplates/PolicyReuest.html";
+    private static final String TEMPLATE_NAME = "/emailTemplates/PolicyReuest.vm";
     private static final String DEFAULT_SUBJECT = "Получена новая заявка на полис ОС ГПО ВТС";
     private static final String DEFAULT_TO_RECIPIENTS = "vadim.isaev@theeurasia.kz";
 

@@ -22,15 +22,33 @@ H1 {
 	<h1>Общие сведения</h1>
 
 	<h1>Страхователь</h1>
-	<h2>$policy.insurant.displayName</h2>
+	#set( $idData = $policy.insurant)
+	#include( "/emailTemplates/idData.vm" )
 	#set( $personalData = $policy.insurant.personalData)
 	#include( "/emailTemplates/personalData.vm" )
+	#set( $identityCardData = $policy.insurant.identityCardData)
+	#include( "/emailTemplates/identityCardData.vm" )
+
+	#set( $residenceData = $policy.insurant.residenceData )
+	#set( $originData = $policy.insurant.originData )
+	#include( "/emailTemplates/residenceAndOriginData.vm" )
+	
+	#set( $contactData = $policy.insurant.contactData )
+	#include( "/emailTemplates/contactData.vm" )
 
 	<h1>Застрахованные водители</h1>
 	#foreach( $driver in $policy.insuredDrivers )
-		<h2>$driver.displayName</h2>
+		#set( $idData = $driver)
+		#include( "/emailTemplates/idData.vm" )
 		#set( $personalData = $driver.personalData)
 		#include( "/emailTemplates/personalData.vm" )
+		#set( $identityCardData = $driver.identityCardData)
+		#include( "/emailTemplates/identityCardData.vm" )
+		#set( $residenceData = $driver.residenceData )
+		#set( $originData = $driver.originData )
+		#include( "/emailTemplates/residenceAndOriginData.vm" )
+		#set( $driverLicenseData = $driver.driverLicenseData )
+		#include( "/emailTemplates/driverLicenseData.vm" )
 	#end
 
 	<h1>Застрахованные ТС</h1>
@@ -40,8 +58,6 @@ H1 {
 		#include( "/emailTemplates/vehicleData.vm" )
 		#set( $vehicleCertificateData = $vehicle.vehicleCertificateData)
 		#include( "/emailTemplates/vehicleCertificateData.vm" )
-		#set( $scanFiles = $vehicle.vehicleCertificateData.scanFiles )
-		#include( "/emailTemplates/scanFiles.vm" )
 	#end
 </body>
 </html>

@@ -1,18 +1,13 @@
 <table cellpadding="3" cellspacing="3" border="0" width="100%">
-		<tr>
-			<th style="background-color: gray; color: white; border-style: solid; border-color: gray">ИИН</th>
-			<th style="background-color: gray; color: white; border-style: solid; border-color: gray">РНН</th>
-			<th style="background-color: gray; color: white; border-style: solid; border-color: gray">ФИО</th>
-			<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Дата
-				рождения</th>
-			<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Пол</th>
-		</tr>
-		<tr>
-			<td>$personalData.idNumber</td>
-			<td>$personalData.taxPayerNumber</td>
-			<td>$personalData.displayName</td>
-			<td>$personalData.dayOfBirth.get('dd.MM.yyyy')</td>
-			<td>$personalData.sex</td>
-		</tr>
-	</table>
-	
+	<tr>
+		<th style="background-color: gray; color: white; border-style: solid; border-color: gray">ФИО</th>
+		<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Дата
+			рождения</th>
+		<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Пол</th>
+	</tr>
+	<tr>
+		<td>$personalData.displayName</td>
+		<td>$personalData.dayOfBirth.get('dd.MM.yyyy')</td>
+		<td>$personalData.sex</td>
+	</tr>
+</table>

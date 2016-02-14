@@ -15,7 +15,7 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>kz.theeurasia.policy</groupId>
+			<groupId>kz.theeurasia.esbdproxy</groupId>
 			<artifactId>esbdproxy-api</artifactId>
 			<version>1.0-RC1-SNAPSHOT</version>
 		</dependency>

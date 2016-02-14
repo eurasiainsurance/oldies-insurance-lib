@@ -7,7 +7,7 @@
 	</tr>
 	<tr>
 		<td>$personalData.displayName</td>
-		<td>$personalData.dayOfBirth.get('dd.MM.yyyy')</td>
+		<td>$date.format('dd.MM.yyyy', $personalData.dayOfBirth)</td>
 		<td>$personalData.sex</td>
 	</tr>
 </table>

@@ -1,13 +1,13 @@
-<h3>Данные водительского удостоверения</h3>
+<h3>Удостоверение участника ВОВ</h3>
 <table cellpadding="3" cellspacing="3" border="0" width="100%">
 	<tr>
 		<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Номер</th>
 		<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Дата выдачи</th>
 	</tr>
 	<tr>
-		<td>$driverLicenseData.number</td>
-		<td>$date.format('dd.MM.yyyy', $driverLicenseData.dateOfIssue)</td>
+		<td>$gpwParticipantCertificateData.number</td>
+		<td>$date.format('dd.MM.yyyy', $gpwParticipantCertificateData.dateOfIssue)</td>
 	</tr>
 </table>
-#set( $scanFiles = $driverLicenseData.scanFiles )
+#set( $scanFiles = $gpwParticipantCertificateData.scanFiles )
 #parse( "/emailTemplates/scanFiles.vm" )

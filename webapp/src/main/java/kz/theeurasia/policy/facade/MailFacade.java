@@ -15,6 +15,7 @@ import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 import org.apache.velocity.runtime.RuntimeConstants;
 import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
+import org.apache.velocity.tools.generic.DateTool;
 
 import com.lapsa.mailutil.InvalidMessageException;
 import com.lapsa.mailutil.MailException;
@@ -78,6 +79,9 @@ public class MailFacade {
     private String getMessageBody(PolicyRequestData policy) {
 	VelocityContext context = new VelocityContext();
 	context.put("policy", policy);
+
+	context.put("date", new DateTool());
+
 	Writer w = new StringWriter();
 	Template t = ve.getTemplate(TEMPLATE_NAME, "UTF-8");
 	t.merge(context, w);

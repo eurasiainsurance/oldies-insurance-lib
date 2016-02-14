@@ -13,12 +13,12 @@
 	</tr>
 	<tr>
 		<td>$vehicleCertificateData.number</td>
-		<td>$vehicleCertificateData.dateOfIssue</td>
+		<td>$date.format('dd.MM.yyyy', $vehicleCertificateData.dateOfIssue)</td>
 		<td>$vehicleCertificateData.registrationNumber</td>
 		<td>$vehicleCertificateData.region</td>
 		<td>$vehicleCertificateData.majorCity</td>
 	</tr>
 </table>
 #set( $scanFiles = $vehicleCertificateData.scanFiles )
-#include( "/emailTemplates/scanFiles.vm" )
+#parse( "/emailTemplates/scanFiles.vm" )
 	

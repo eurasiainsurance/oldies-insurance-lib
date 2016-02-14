@@ -22,42 +22,62 @@ H1 {
 	<h1>Общие сведения</h1>
 
 	<h1>Страхователь</h1>
-	#set( $idData = $policy.insurant)
-	#include( "/emailTemplates/idData.vm" )
-	#set( $personalData = $policy.insurant.personalData)
-	#include( "/emailTemplates/personalData.vm" )
-	#set( $identityCardData = $policy.insurant.identityCardData)
-	#include( "/emailTemplates/identityCardData.vm" )
+	<h2>$policy.insurant.personalData.displayName</h2>
+	#set( $idData = $policy.insurant )
+	#parse( "/emailTemplates/idData.vm" )
+	#set( $personalData = $policy.insurant.personalData )
+	#parse( "/emailTemplates/personalData.vm" )
+	#set( $identityCardData = $policy.insurant.identityCardData )
+	#parse( "/emailTemplates/identityCardData.vm" )
 
 	#set( $residenceData = $policy.insurant.residenceData )
 	#set( $originData = $policy.insurant.originData )
-	#include( "/emailTemplates/residenceAndOriginData.vm" )
+	#parse( "/emailTemplates/residenceAndOriginData.vm" )
 	
 	#set( $contactData = $policy.insurant.contactData )
-	#include( "/emailTemplates/contactData.vm" )
+	#parse( "/emailTemplates/contactData.vm" )
 
 	<h1>Застрахованные водители</h1>
 	#foreach( $driver in $policy.insuredDrivers )
-		#set( $idData = $driver)
-		#include( "/emailTemplates/idData.vm" )
-		#set( $personalData = $driver.personalData)
-		#include( "/emailTemplates/personalData.vm" )
-		#set( $identityCardData = $driver.identityCardData)
-		#include( "/emailTemplates/identityCardData.vm" )
+		<h2>$driver.personalData.displayName</h2>
+	    private InsuredAgeClassEnum ageClass = InsuredAgeClassEnum.UNSPECIFIED;
+	    private InsuredExpirienceClassEnum expirienceClass = InsuredExpirienceClassEnum.UNSPECIFIED;
+	
+		#set( $idData = $driver )
+		#parse( "/emailTemplates/idData.vm" )
+		#set( $personalData = $driver.personalData )
+		#parse( "/emailTemplates/personalData.vm" )
+		#set( $identityCardData = $driver.identityCardData )
+		#parse( "/emailTemplates/identityCardData.vm" )
 		#set( $residenceData = $driver.residenceData )
 		#set( $originData = $driver.originData )
-		#include( "/emailTemplates/residenceAndOriginData.vm" )
+		#parse( "/emailTemplates/residenceAndOriginData.vm" )
 		#set( $driverLicenseData = $driver.driverLicenseData )
-		#include( "/emailTemplates/driverLicenseData.vm" )
+		#parse( "/emailTemplates/driverLicenseData.vm" )
+		#if( $driver.priveleger )
+			#set( $privilegerCertificateData = $driver.privilegerCertificateData )
+			#parse( "/emailTemplates/privilegerCertificateData.vm" )
+		#end
+		#if( $driver.handicaped )
+			#set( $handicapedCertificateData = $driver.handicapedCertificateData )
+			#parse( "/emailTemplates/handicapedCertificateData.vm" )
+		#end
+		#if( $driver.gpwParticipant )
+			#set( $gpwParticipantCertificateData = $driver.gpwParticipantCertificateData )
+			#parse( "/emailTemplates/gpwParticipantCertificateData.vm" )
+		#end
+		#if( $driver.pensioner )
+			#set( $pensionerCertificateData = $driver.pensionerCertificateData )
+			#parse( "/emailTemplates/pensionerCertificateData.vm" )
+		#end
 	#end
 
 	<h1>Застрахованные ТС</h1>
 	#foreach( $vehicle in $policy.insuredVehicles )
-		<h2>$vehicle.displayName</h2>
 		#set( $vehicleData = $vehicle.vehicleData)
-		#include( "/emailTemplates/vehicleData.vm" )
+		#parse( "/emailTemplates/vehicleData.vm" )
 		#set( $vehicleCertificateData = $vehicle.vehicleCertificateData)
-		#include( "/emailTemplates/vehicleCertificateData.vm" )
+		#parse( "/emailTemplates/vehicleCertificateData.vm" )
 	#end
 </body>
 </html>

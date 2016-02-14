@@ -1,18 +1,15 @@
-<h3>Документ удостоверяющи личность</h3>
+<h3>Документ удостовреюящий право на привелегии</h3>
 <table cellpadding="3" cellspacing="3" border="0" width="100%">
 	<tr>
 		<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Тип</th>
 		<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Номер</th>
 		<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Дата выдачи</th>
-		<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Орган выдачи</th>
 	</tr>
 	<tr>
-		<td>$identityCardData.type</td>
-		<td>$identityCardData.number</td>
-		<td>$date.format('dd.MM.yyyy', $identityCardData.dateOfIssue)</td>
-		<td>$identityCardData.issuingAuthority</td>
+		<td>$privilegerCertificateData.type</td>
+		<td>$privilegerCertificateData.number</td>
+		<td>$date.format('dd.MM.yyyy', $privilegerCertificateData.dateOfIssue)</td>
 	</tr>
 </table>
-#set( $scanFiles = $identityCardData.scanFiles )
+#set( $scanFiles = $privilegerCertificateData.scanFiles )
 #parse( "/emailTemplates/scanFiles.vm" )
-	

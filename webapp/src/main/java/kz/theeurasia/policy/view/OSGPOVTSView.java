@@ -68,11 +68,14 @@ public class OSGPOVTSView implements Serializable {
 
     private PolicyRequestData policy;
 
+    private boolean requestSent = false;
+
     @PostConstruct
     public void init() {
 	try {
 	    FacesContext facesContext = FacesContext.getCurrentInstance();
 	    Application application = facesContext.getApplication();
+	    this.policy = policyFacade.initNew();
 
 	    switch (application.getProjectStage()) {
 	    case Development:
@@ -82,7 +85,6 @@ public class OSGPOVTSView implements Serializable {
 		break;
 	    case Production:
 	    default:
-		this.policy = policyFacade.initNew();
 		driverFacade.add(policy);
 		vehicleFacade.add(policy);
 	    }
@@ -104,8 +106,6 @@ public class OSGPOVTSView implements Serializable {
     }
 
     private void buildTestDataManyVehicles() throws ValidationException {
-	this.policy = policyFacade.initNew();
-
 	InsuredDriverData drv2 = driverFacade.add(policy);
 	drv2.setIdNumber("870622300359");
 	driverFacade.fetchInfo(policy, drv2);
@@ -131,8 +131,6 @@ public class OSGPOVTSView implements Serializable {
     }
 
     public void buildTestDataManyDrivers() throws ValidationException {
-	this.policy = policyFacade.initNew();
-
 	InsuredDriverData drv1 = driverFacade.add(policy);
 	drv1.setIdNumber("570325300699");
 	driverFacade.fetchInfo(policy, drv1);
@@ -374,6 +372,7 @@ public class OSGPOVTSView implements Serializable {
     public void doSendMessage() {
 	try {
 	    mailFacade.sendNotice(policy);
+	    requestSent = true;
 	} catch (MailException | IOException | InvalidMessageException e) {
 	    throw new FacesException(e.getMessage(), e);
 	}
@@ -415,5 +414,9 @@ public class OSGPOVTSView implements Serializable {
 
     public void setMailFacade(MailFacade mailFacade) {
 	this.mailFacade = mailFacade;
+    }
+
+    public boolean isRequestSent() {
+	return requestSent;
     }
 }

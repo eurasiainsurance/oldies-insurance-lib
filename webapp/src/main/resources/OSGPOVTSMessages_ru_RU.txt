@@ -20,6 +20,7 @@ messages.driver-list.cant-be-empty = Должен присутствовать �
 messages.insured-driver.id-number.cant-be-empty = ИИН должен быть указан
 messages.vehicle-list.cant-be-empty = Должно присутствовать как минимум одно транспортное средство 
 messages.insured-vehicle.vin-code.cant-be-empty = VIN-код автомобиля обязательное поле
+messages.request-sent = Ваша заявка отправлена. В ближайшее время наши менеджеры свяжутся с Вами
 
 # Text labels for command buttons & links
 command.calculate-premium-cost = Расчитать премию
@@ -27,6 +28,8 @@ command.add-insured = Добавить водителя
 command.remove-insured = Убрать водителя
 command.add-vehicle = Добавить ТС
 command.remove-vehicle = Убрать ТС
+command.send-request = Отправить заявку в страховую компанию
+
 
 # Text labels for outputs
 label.output.policy-cost = Стоимость полиса на 12 месяцев —

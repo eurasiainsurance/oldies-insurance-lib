@@ -7,7 +7,18 @@
 	xmlns:pe="http://primefaces.org/ui/extensions"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
 
-	<p:commandButton action="#{osgpovtsView.doSendMessage}" ajax="true"
-		value="SEND A REQUEST" process="@this" update="@form"
-		style="width: 100px; height: 100px" />
+	<p:panel id="completePanel" style="width: 100%; height: 300px;">
+
+		<p:commandButton action="#{osgpovtsView.doSendMessage}" ajax="true"
+			value="#{gpovts['command.send-request']}" process="@this"
+			update="completePanel"
+			style="width: 250px; height: 100px; vertical-align: middle;"
+			rendered="#{not osgpovtsView.requestSent}" />
+
+		<p:outputLabel rendered="#{osgpovtsView.requestSent}"
+			value="#{gpovts['messages.request-sent']}"
+			style="vertical-align: middle;" />
+
+	</p:panel>
+
 </ui:composition>

@@ -10,7 +10,7 @@ import kz.theeurasia.policy.validator.ValidVehicleYearOfIssue;
 public class VehicleData {
 
     @NotNullValue
-    @ValidVINCode
+    @ValidVINCode(checkDigit = false)
     private String vinCode;
 
     @NotNullValue

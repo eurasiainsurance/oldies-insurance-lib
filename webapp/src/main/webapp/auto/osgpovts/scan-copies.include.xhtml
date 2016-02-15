@@ -30,7 +30,7 @@
 				<p:fileUpload mode="advanced"
 					label="#{glb['label.command.add-image']}"
 					allowTypes="/(\.|\/)(gif|jpe?g|png)$/" multiple="true"
-					sizeLimit="1000000" fileLimit="10" skinSimple="true" auto="true"
+					sizeLimit="2097152" fileLimit="10" skinSimple="true" auto="true"
 					fileUploadListener="#{uploadedImageService.onImageUpload}"
 					oncomplete="rc_NewIdentityCardUploaded#{driver.safeId}()" />
 			</p:panel>
@@ -55,7 +55,7 @@
 				<p:fileUpload mode="advanced"
 					label="#{glb['label.command.add-image']}"
 					allowTypes="/(\.|\/)(gif|jpe?g|png)$/" multiple="true"
-					sizeLimit="1000000" fileLimit="10" skinSimple="true" auto="true"
+					sizeLimit="2097152" fileLimit="10" skinSimple="true" auto="true"
 					fileUploadListener="#{uploadedImageService.onImageUpload}"
 					oncomplete="rc_NewDriverLicenseUploaded#{driver.safeId}()">
 				</p:fileUpload>
@@ -84,7 +84,7 @@
 				<p:fileUpload mode="advanced"
 					label="#{glb['label.command.add-image']}"
 					allowTypes="/(\.|\/)(gif|jpe?g|png)$/" multiple="true"
-					sizeLimit="1000000" fileLimit="10" skinSimple="true" auto="true"
+					sizeLimit="2097152" fileLimit="10" skinSimple="true" auto="true"
 					fileUploadListener="#{uploadedImageService.onImageUpload}"
 					oncomplete="rc_NewHandicapedCertificateUploaded#{driver.safeId}()">
 				</p:fileUpload>
@@ -113,7 +113,7 @@
 				<p:fileUpload mode="advanced"
 					label="#{glb['label.command.add-image']}"
 					allowTypes="/(\.|\/)(gif|jpe?g|png)$/" multiple="true"
-					sizeLimit="1000000" fileLimit="10" skinSimple="true" auto="true"
+					sizeLimit="2097152" fileLimit="10" skinSimple="true" auto="true"
 					fileUploadListener="#{uploadedImageService.onImageUpload}"
 					oncomplete="rc_NewGPWParticipantCertificateUploaded#{driver.safeId}()">
 				</p:fileUpload>
@@ -142,7 +142,7 @@
 				<p:fileUpload mode="advanced"
 					label="#{glb['label.command.add-image']}"
 					allowTypes="/(\.|\/)(gif|jpe?g|png)$/" multiple="true"
-					sizeLimit="1000000" fileLimit="10" skinSimple="true" auto="true"
+					sizeLimit="2097152" fileLimit="10" skinSimple="true" auto="true"
 					fileUploadListener="#{uploadedImageService.onImageUpload}"
 					oncomplete="rc_NewPensionerCertificateUploaded#{driver.safeId}()">
 				</p:fileUpload>
@@ -171,7 +171,7 @@
 				<p:fileUpload mode="advanced"
 					label="#{glb['label.command.add-image']}"
 					allowTypes="/(\.|\/)(gif|jpe?g|png)$/" multiple="true"
-					sizeLimit="1000000" fileLimit="10" skinSimple="true" auto="true"
+					sizeLimit="2097152" fileLimit="10" skinSimple="true" auto="true"
 					fileUploadListener="#{uploadedImageService.onImageUpload}"
 					oncomplete="rc_NewPrivilegerCertificateUploaded#{driver.safeId}()">
 				</p:fileUpload>
@@ -193,7 +193,7 @@
 				<ui:repeat var="image"
 					value="#{vehicle.vehicleCertificateData.scanFiles}">
 					<p:commandLink
-						action="#{osgpovtsView.removeDriverVehicleCertificateImage(vehicle, image)}"
+						action="#{osgpovtsView.removeVehicleCertificateImage(vehicle, image)}"
 						ajax="true" process="@this"
 						update="@this, @form(vehicleCertificateGalleria)">
 						<p:graphicImage value="#{uploadedImageService.content}"
@@ -205,7 +205,7 @@
 				<p:fileUpload mode="advanced"
 					label="#{glb['label.command.add-image']}"
 					allowTypes="/(\.|\/)(gif|jpe?g|png)$/" multiple="true"
-					sizeLimit="1000000" fileLimit="10" skinSimple="true" auto="true"
+					sizeLimit="2097152" fileLimit="10" skinSimple="true" auto="true"
 					fileUploadListener="#{uploadedImageService.onImageUpload}"
 					oncomplete="rc_NewVehicleCertificateUploaded#{vehicle.safeId}()" />
 			</p:panel>

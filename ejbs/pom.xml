@@ -14,18 +14,18 @@
 	<name>Eurasia policy : Enterprise Java-Beans</name>
 
 	<dependencies>
+		<!-- internal -->
 		<dependency>
 			<groupId>com.lapsa.mail-helper</groupId>
-			<artifactId>mail-helper-impl</artifactId>
-			<version>1.5-SNAPSHOT</version>
+			<artifactId>mail-helper-api</artifactId>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.lapsa.mail-helper</groupId>
 			<artifactId>mail-helper-impl</artifactId>
-			<version>1.5-SNAPSHOT</version>
 			<scope>compile</scope>
 		</dependency>
+		<!-- JavaEE -->
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>

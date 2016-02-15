@@ -1,12 +1,15 @@
 <table cellpadding="3" cellspacing="3" border="0" width="100%">
 	<tr>
-		<th style="background-color: gray; color: white; border-style: solid; border-color: gray">ФИО</th>
-		<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Дата
-			рождения</th>
-		<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Пол</th>
+		<th style="background-color: gray; color: white">Фамилия</th>
+		<th style="background-color: gray; color: white">Имя</th>
+		<th style="background-color: gray; color: white">Отчетсво</th>
+		<th style="background-color: gray; color: white">Дата рождения</th>
+		<th style="background-color: gray; color: white">Пол</th>
 	</tr>
 	<tr>
-		<td>$personalData.displayName</td>
+		<td>$personalData.surename</td>
+		<td>$personalData.name</td>
+		<td>$personalData.patronymic</td>
 		<td>$date.format('dd.MM.yyyy', $personalData.dayOfBirth)</td>
 		<td>$personalData.sex</td>
 	</tr>

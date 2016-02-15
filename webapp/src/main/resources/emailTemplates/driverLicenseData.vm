@@ -1,8 +1,7 @@
-<h3>Данные водительского удостоверения</h3>
 <table cellpadding="3" cellspacing="3" border="0" width="100%">
 	<tr>
-		<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Номер</th>
-		<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Дата выдачи</th>
+		<th style="background-color: gray; color: white">Номер</th>
+		<th style="background-color: gray; color: white">Дата выдачи</th>
 	</tr>
 	<tr>
 		<td>$driverLicenseData.number</td>

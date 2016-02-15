@@ -35,8 +35,8 @@ import kz.theeurasia.policy.domain.UploadedImage;
 public class MailFacade {
 
     private static final String TEMPLATE_NAME = "/emailTemplates/PolicyReuest.vm";
-    private static final String DEFAULT_SUBJECT = "Получена новая заявка на полис ОС ГПО ВТС";
-    private static final String DEFAULT_TO_RECIPIENTS = "vadim.isaev@theeurasia.kz";
+    private static final String DEFAULT_SUBJECT = "Заявка на полис ОС ГПО ВТС";
+    private static final String DEFAULT_TO_RECIPIENTS = "policy-request@theeurasia.kz";
 
     @EJB
     private MailService mailHelper;
@@ -65,7 +65,8 @@ public class MailFacade {
 
 	MailMessage mm = builder.createMessage();
 	mm.addTORecipient(builder.createAddress(DEFAULT_TO_RECIPIENTS));
-	mm.setSubject(DEFAULT_SUBJECT);
+	mm.setSubject(DEFAULT_SUBJECT + " от " + policy.getInsurant().getPersonalData().getDisplayName() + " ИИН "
+		+ policy.getInsurant().getIdNumber());
 
 	String htmlBody = getMessageBody(policy);
 

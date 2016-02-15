@@ -68,6 +68,8 @@ public class OSGPOVTSView implements Serializable {
 
     private PolicyRequestData policy;
 
+    private boolean requestSent = false;
+
     @PostConstruct
     public void init() {
 	try {
@@ -77,7 +79,7 @@ public class OSGPOVTSView implements Serializable {
 
 	    switch (application.getProjectStage()) {
 	    case Development:
-//		buildTestDataManyDrivers();
+		// buildTestDataManyDrivers();
 		buildTestDataManyVehicles();
 		setContactData();
 		break;
@@ -370,6 +372,7 @@ public class OSGPOVTSView implements Serializable {
     public void doSendMessage() {
 	try {
 	    mailFacade.sendNotice(policy);
+	    requestSent = true;
 	} catch (MailException | IOException | InvalidMessageException e) {
 	    throw new FacesException(e.getMessage(), e);
 	}
@@ -411,5 +414,9 @@ public class OSGPOVTSView implements Serializable {
 
     public void setMailFacade(MailFacade mailFacade) {
 	this.mailFacade = mailFacade;
+    }
+
+    public boolean isRequestSent() {
+	return requestSent;
     }
 }

@@ -1,13 +1,10 @@
-<h3>Контактные данные</h3>
 <table cellpadding="3" cellspacing="3" border="0" width="100%">
 	<tr>
-		<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Телефон</th>
-		<th style="background-color: gray; color: white; border-style: solid; border-color: gray">E-mail</th>
-		<th style="background-color: gray; color: white; border-style: solid; border-color: gray">Адрес www</th>
+		<th style="background-color: gray; color: white">Телефон</th>
+		<th style="background-color: gray; color: white">E-mail</th>
 	</tr>
 	<tr>
 		<td>$contactData.phone</td>
 		<td>$contactData.email</td>
-		<td>$contactData.siteUrl</td>
 	</tr>
 </table>

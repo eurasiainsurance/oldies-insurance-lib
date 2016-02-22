@@ -47,12 +47,12 @@
 			<dependency>
 				<groupId>kz.theeurasia.esbdproxy</groupId>
 				<artifactId>esbdproxy-api</artifactId>
-				<version>1.0-RC1-SNAPSHOT</version>
+				<version>1.0-RC1</version>
 			</dependency>
 			<dependency>
 				<groupId>kz.theeurasia.esbdproxy</groupId>
 				<artifactId>esbdproxy-ejbimpl</artifactId>
-				<version>1.0-RC1-SNAPSHOT</version>
+				<version>1.0-RC1</version>
 			</dependency>
 			<dependency>
 				<groupId>com.lapsa.mail-helper</groupId>

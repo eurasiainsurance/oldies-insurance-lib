@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>kz.theeurasia.policy</groupId>
 		<artifactId>parent</artifactId>
-		<version>1.0-RC1</version>
+		<version>1.0-RC2-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>policy-ear</artifactId>
@@ -17,7 +17,7 @@
 		<dependency>
 			<groupId>kz.theeurasia.policy</groupId>
 			<artifactId>policy-webapp</artifactId>
-			<version>1.0-RC1</version>
+			<version>1.0-RC2-SNAPSHOT</version>
 			<type>war</type>
 		</dependency>
 		<dependency>
@@ -28,7 +28,7 @@
 		<dependency>
 			<groupId>kz.theeurasia.policy</groupId>
 			<artifactId>policy-ejbs</artifactId>
-			<version>1.0-RC1</version>
+			<version>1.0-RC2-SNAPSHOT</version>
 			<type>ejb</type>
 		</dependency>
 	</dependencies>

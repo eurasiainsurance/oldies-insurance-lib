@@ -53,6 +53,7 @@
 				<groupId>kz.theeurasia.esbdproxy</groupId>
 				<artifactId>esbdproxy-ejbimpl</artifactId>
 				<version>1.0-RC1</version>
+				<type>ejb</type>
 			</dependency>
 			<dependency>
 				<groupId>com.lapsa.mail-helper</groupId>

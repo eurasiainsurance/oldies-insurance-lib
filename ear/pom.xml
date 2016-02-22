@@ -24,7 +24,6 @@
 		<dependency>
 			<groupId>kz.theeurasia.esbdproxy</groupId>
 			<artifactId>esbdproxy-ejbimpl</artifactId>
-			<version>1.0-RC1-SNAPSHOT</version>
 			<type>ejb</type>
 		</dependency>
 		<dependency>

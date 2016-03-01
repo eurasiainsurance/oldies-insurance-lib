@@ -4,24 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import javax.ejb.EJB;
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
+import javax.enterprise.context.ApplicationScoped;
 import javax.faces.model.SelectItem;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleClassServiceDAO;
 import kz.theeurasia.policy.view.MessageBundleCode;
 
-@ManagedBean
+@Named
 @ApplicationScoped
 public class VehicleClassService {
 
-    @ManagedProperty("#{gpovts}")
+    @Inject
     private ResourceBundle gpovts;
 
-    @EJB
+    @Inject
     private VehicleClassServiceDAO vehicleClassServiceDAO;
 
     public List<VehicleClassDict> getAllItems() {
@@ -48,11 +47,5 @@ public class VehicleClassService {
 	    result.add(si);
 	}
 	return result;
-    }
-
-    // GENERATED
-
-    public void setGpovts(ResourceBundle gpovts) {
-	this.gpovts = gpovts;
     }
 }

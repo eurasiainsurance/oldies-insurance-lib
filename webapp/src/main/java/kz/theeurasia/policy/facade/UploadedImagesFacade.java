@@ -1,8 +1,8 @@
 package kz.theeurasia.policy.facade;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import kz.theeurasia.policy.domain.InsuredDriverData;
 import kz.theeurasia.policy.domain.InsuredVehicleData;
@@ -10,11 +10,11 @@ import kz.theeurasia.policy.domain.PolicyRequestData;
 import kz.theeurasia.policy.domain.UploadedImage;
 import kz.theeurasia.policy.services.UploadedImageService;
 
-@ManagedBean
+@Named
 @ViewScoped
 public class UploadedImagesFacade {
 
-    @ManagedProperty("#{uploadedImageService}")
+    @Inject
     private UploadedImageService uploadedImageService;
 
     public void pickupIdentityCardImage(PolicyRequestData policy, InsuredDriverData driver) {
@@ -81,12 +81,6 @@ public class UploadedImagesFacade {
     public void removeVehicleCertificateImage(PolicyRequestData policy, InsuredVehicleData vehicle,
 	    UploadedImage image) {
 	vehicle.getVehicleCertificateData().getScanFiles().remove(image);
-    }
-
-    // GENERATED
-
-    public void setUploadedImageService(UploadedImageService uploadedImageService) {
-	this.uploadedImageService = uploadedImageService;
     }
 
 }

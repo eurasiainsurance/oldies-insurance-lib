@@ -40,7 +40,7 @@
 				<artifactId>maven-ear-plugin</artifactId>
 				<configuration>
 					<defaultLibBundleDir>lib</defaultLibBundleDir>
-					<fileNameMapping>no-version-for-ejb</fileNameMapping>
+					<fileNameMapping>no-version</fileNameMapping>
 					<skinnyWars>true</skinnyWars>
 					<modules>
 						<webModule>

@@ -1,8 +1,8 @@
 package kz.theeurasia.policy.facade;
 
-import javax.ejb.EJB;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuranceClassTypeDict;
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectPersonEntity;
@@ -23,18 +23,18 @@ import kz.theeurasia.policy.domain.ResidenceData;
 import kz.theeurasia.policy.view.MessageBundleCode;
 import kz.theeurasia.policy.view.ValidationException;
 
-@ManagedBean
+@Named
 @ViewScoped
 public class DriverFacade {
 
-    @EJB
+    @Inject
     private SubjectPersonServiceDAO subjectPersonService;
 
-    @EJB
+    @Inject
     private InsuranceClassTypeServiceDAO insuranceClassTypeService;
 
-    @EJB
-    KZCityServiceDAO kzCityServiceDAO;
+    @Inject
+    private KZCityServiceDAO kzCityServiceDAO;
 
     public InsuredDriverData add(PolicyRequestData policy) throws ValidationException {
 	if (policy.getInsuredDrivers().size() > 0 && policy.getInsuredVehicles().size() > 1)

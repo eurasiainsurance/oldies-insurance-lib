@@ -4,19 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
+import javax.enterprise.context.ApplicationScoped;
 import javax.faces.model.SelectItem;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
 import kz.theeurasia.policy.view.MessageBundleCode;
 
-@ManagedBean
+@Named
 @ApplicationScoped
 public class InsuredExpirienceClassService {
 
-    @ManagedProperty("#{gpovts}")
+    @Inject
     private ResourceBundle gpovts;
 
     public List<InsuredExpirienceClassEnum> getAllItems() {
@@ -44,18 +44,10 @@ public class InsuredExpirienceClassService {
     private List<SelectItem> _createSIFromList(List<InsuredExpirienceClassEnum> list) {
 	List<SelectItem> result = new ArrayList<>();
 	for (InsuredExpirienceClassEnum r : list) {
-	    SelectItem si = new SelectItem(r,
-		    gpovts.getString(
-			    MessageBundleCode.LABEL_INSURED_EXPIRIENCE_CLASS_PREFIX.getMessageBundleCode() + r.name()));
+	    SelectItem si = new SelectItem(r, gpovts.getString(
+		    MessageBundleCode.LABEL_INSURED_EXPIRIENCE_CLASS_PREFIX.getMessageBundleCode() + r.name()));
 	    result.add(si);
 	}
 	return result;
     }
-
-    // GENERATED
-
-    public void setGpovts(ResourceBundle gpovts) {
-	this.gpovts = gpovts;
-    }
-
 }

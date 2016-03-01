@@ -4,24 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import javax.ejb.EJB;
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
+import javax.enterprise.context.ApplicationScoped;
 import javax.faces.model.SelectItem;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleAgeClassDict;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleAgeClassServiceDAO;
 import kz.theeurasia.policy.view.MessageBundleCode;
 
-@ManagedBean
+@Named
 @ApplicationScoped
 public class VehicleAgeClassService {
 
-    @ManagedProperty("#{gpovts}")
+    @Inject
     private ResourceBundle gpovts;
 
-    @EJB
+    @Inject
     private VehicleAgeClassServiceDAO vehicleAgeClassServiceDAO;
 
     public List<VehicleAgeClassDict> getAllItems() {
@@ -43,17 +42,10 @@ public class VehicleAgeClassService {
     private List<SelectItem> _createSIFromList(List<VehicleAgeClassDict> list) {
 	List<SelectItem> result = new ArrayList<>();
 	for (VehicleAgeClassDict r : list) {
-	    SelectItem si = new SelectItem(r,
-		    gpovts.getString(
-			    MessageBundleCode.LABEL_VEHICLE_AGE_CLASS_PREFIX.getMessageBundleCode() + r.name()));
+	    SelectItem si = new SelectItem(r, gpovts
+		    .getString(MessageBundleCode.LABEL_VEHICLE_AGE_CLASS_PREFIX.getMessageBundleCode() + r.name()));
 	    result.add(si);
 	}
 	return result;
-    }
-
-    // GENERATED
-
-    public void setGpovts(ResourceBundle gpovts) {
-	this.gpovts = gpovts;
     }
 }

@@ -4,24 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import javax.ejb.EJB;
 import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.model.SelectItem;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import kz.theeurasia.esbdproxy.domain.dict.general.SexDict;
 import kz.theeurasia.esbdproxy.services.general.SexServiceDAO;
 import kz.theeurasia.policy.view.GlobalMessageBundleCode;
 
-@ManagedBean
+@Named
 @ApplicationScoped
 public class SexService {
 
-    @ManagedProperty("#{glb}")
+    @Inject
     private ResourceBundle glb;
 
-    @EJB
+    @Inject
     private SexServiceDAO sexServiceDAO;
 
     public List<SexDict> getAllItems() {
@@ -51,11 +50,4 @@ public class SexService {
 	}
 	return result;
     }
-
-    // GENERATED
-
-    public void setGlb(ResourceBundle glb) {
-	this.glb = glb;
-    }
-
 }

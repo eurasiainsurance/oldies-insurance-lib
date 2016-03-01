@@ -2,24 +2,20 @@ package kz.theeurasia.policy.services;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
 
-import javax.ejb.EJB;
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
+import javax.enterprise.context.ApplicationScoped;
 import javax.faces.model.SelectItem;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import kz.theeurasia.esbdproxy.domain.dict.general.KZCityDict;
 import kz.theeurasia.esbdproxy.services.general.KZCityServiceDAO;
 
-@ManagedBean(name = "kzCityService")
+@Named("kzCityService")
 @ApplicationScoped
 public class KZCityService {
-    @ManagedProperty("#{glb}")
-    private ResourceBundle glb;
 
-    @EJB
+    @Inject
     private KZCityServiceDAO kzCityServiceDAO;
 
     public List<KZCityDict> getAllItems() {
@@ -54,11 +50,4 @@ public class KZCityService {
 	}
 	return result;
     }
-
-    // GENERATED
-
-    public void setGlb(ResourceBundle glb) {
-	this.glb = glb;
-    }
-
 }

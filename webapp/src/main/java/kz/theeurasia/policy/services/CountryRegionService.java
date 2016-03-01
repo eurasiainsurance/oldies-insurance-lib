@@ -4,24 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import javax.ejb.EJB;
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
+import javax.enterprise.context.ApplicationScoped;
 import javax.faces.model.SelectItem;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import kz.theeurasia.esbdproxy.domain.dict.general.CountryRegionDict;
 import kz.theeurasia.esbdproxy.services.general.CountryRegionServiceDAO;
 import kz.theeurasia.policy.view.GlobalMessageBundleCode;
 
-@ManagedBean
+@Named
 @ApplicationScoped
 public class CountryRegionService {
 
-    @ManagedProperty("#{glb}")
+    @Inject
     private ResourceBundle glb;
 
-    @EJB
+    @Inject
     private CountryRegionServiceDAO countryRegionServiceDAO;
 
     public List<CountryRegionDict> getAllItems() {
@@ -43,18 +42,10 @@ public class CountryRegionService {
     private List<SelectItem> _createSIFromList(List<CountryRegionDict> list) {
 	List<SelectItem> result = new ArrayList<>();
 	for (CountryRegionDict r : list) {
-	    SelectItem si = new SelectItem(r,
-		    glb.getString(
-			    GlobalMessageBundleCode.LABEL_SI_COUNTRY_REGION_PREFIX.getMessageBundleCode() + r.name()));
+	    SelectItem si = new SelectItem(r, glb.getString(
+		    GlobalMessageBundleCode.LABEL_SI_COUNTRY_REGION_PREFIX.getMessageBundleCode() + r.name()));
 	    result.add(si);
 	}
 	return result;
     }
-
-    // GENERATED
-
-    public void setGlb(ResourceBundle glb) {
-	this.glb = glb;
-    }
-
 }

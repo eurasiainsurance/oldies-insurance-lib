@@ -6,9 +6,9 @@ import java.io.Writer;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.ejb.EJB;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
@@ -30,7 +30,7 @@ import kz.theeurasia.policy.domain.InsuredVehicleData;
 import kz.theeurasia.policy.domain.PolicyRequestData;
 import kz.theeurasia.policy.domain.UploadedImage;
 
-@ManagedBean
+@Named
 @ViewScoped
 public class MailFacade {
 
@@ -38,7 +38,7 @@ public class MailFacade {
     private static final String DEFAULT_SUBJECT = "Заявка на полис ОС ГПО ВТС";
     private static final String DEFAULT_TO_RECIPIENTS = "policy-request@theeurasia.kz";
 
-    @EJB
+    @Inject
     private MailService mailHelper;
 
     private VelocityEngine ve;

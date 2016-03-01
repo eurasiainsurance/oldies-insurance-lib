@@ -1,8 +1,8 @@
 package kz.theeurasia.policy.facade;
 
-import javax.ejb.EJB;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectPersonEntity;
 import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
@@ -18,14 +18,15 @@ import kz.theeurasia.policy.domain.PersonalData;
 import kz.theeurasia.policy.domain.PolicyRequestData;
 import kz.theeurasia.policy.domain.ResidenceData;
 
-@ManagedBean
+@Named
 @ViewScoped
 public class InsurantFacade {
 
-    @EJB
+    @Inject
     private SubjectPersonServiceDAO subjectPersonService;
-    @EJB
-    KZCityServiceDAO kzCityServiceDAO;
+
+    @Inject
+    private KZCityServiceDAO kzCityServiceDAO;
 
     public void copyDriverAsInsurantData(PolicyRequestData policy, InsurantData insurant) {
 	InsuredDriverData drv = insurant.getDriverAsInsurant();

@@ -9,10 +9,10 @@ import java.util.Map;
 import java.util.UUID;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.PhaseId;
+import javax.inject.Named;
 
 import org.primefaces.event.FileUploadEvent;
 import org.primefaces.model.DefaultStreamedContent;
@@ -20,7 +20,7 @@ import org.primefaces.model.StreamedContent;
 
 import kz.theeurasia.policy.domain.UploadedImage;
 
-@ManagedBean
+@Named
 @SessionScoped
 public class UploadedImageService implements Serializable {
     private static final long serialVersionUID = 4795788265713605816L;

@@ -1,8 +1,8 @@
 package kz.theeurasia.policy.facade;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import kz.theeurasia.policy.domain.InsuredDriverData;
 import kz.theeurasia.policy.domain.InsuredVehicleData;
@@ -10,11 +10,11 @@ import kz.theeurasia.policy.domain.PolicyRequestData;
 import kz.theeurasia.policy.domain.PolicyTermClass;
 import kz.theeurasia.policy.services.PremiumCostCalculatorRatesService;
 
-@ManagedBean
+@Named
 @ViewScoped
 public class PolicyFacade {
 
-    @ManagedProperty("#{premiumCostCalculatorRatesService}")
+    @Inject
     private PremiumCostCalculatorRatesService rates;
 
     public PolicyRequestData initNew() {
@@ -40,20 +40,12 @@ public class PolicyFacade {
 	premium = premium * rates.getRegionRate(vehicle.getVehicleCertificateData().getRegion());
 	premium = premium * rates.getIsMajorCityCorrectionRate(vehicle.getVehicleCertificateData().isMajorCity());
 	premium = premium * rates.getVehicleTypeRate(vehicle.getVehicleClass());
-	premium = premium
-		* rates.getDriverExpirienceTypeRate(insured.getAgeClass(),
-			insured.getExpirienceClass());
+	premium = premium * rates.getDriverExpirienceTypeRate(insured.getAgeClass(), insured.getExpirienceClass());
 	premium = premium * rates.getVehicleAgeTypeRate(vehicle.getVehicleAgeClass());
 	premium = premium * rates.getInsuranceClassTypeRate(insured.getInsuranceClassType());
 	premium = premium * rates.getPolicyTermClassRate(policyTermClass);
 	premium = premium * rates.getPrivilegeRate(insured.isHasAnyPrivilege());
 	premium = Math.round(premium * 100) / 100; // округляем до "копеек"
 	return premium;
-    }
-
-    // GENERATED
-
-    public void setRates(PremiumCostCalculatorRatesService rates) {
-	this.rates = rates;
     }
 }

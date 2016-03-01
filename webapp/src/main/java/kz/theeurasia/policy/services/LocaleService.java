@@ -3,13 +3,14 @@ package kz.theeurasia.policy.services;
 import java.util.Locale;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Named;
 
-@ManagedBean
+@Named
 @SessionScoped
 public class LocaleService {
+
     private Locale currentLocale;
 
     @PostConstruct

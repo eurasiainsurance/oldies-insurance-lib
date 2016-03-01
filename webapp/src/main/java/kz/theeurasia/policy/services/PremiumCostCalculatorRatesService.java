@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Named;
 
 import kz.theeurasia.esbdproxy.domain.dict.general.CountryRegionDict;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuranceClassTypeDict;
@@ -15,7 +15,7 @@ import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredAgeClassEnum;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
 import kz.theeurasia.policy.domain.PolicyTermClass;
 
-@ManagedBean
+@Named
 @ApplicationScoped
 public class PremiumCostCalculatorRatesService {
     private final double MRP = 2121;

@@ -2,25 +2,20 @@ package kz.theeurasia.policy.services;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
 
-import javax.ejb.EJB;
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
+import javax.enterprise.context.ApplicationScoped;
 import javax.faces.model.SelectItem;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import kz.theeurasia.esbdproxy.domain.dict.general.CountryDict;
 import kz.theeurasia.esbdproxy.services.general.CountryServiceDAO;
 
-@ManagedBean
+@Named
 @ApplicationScoped
 public class CountryService {
 
-    @ManagedProperty("#{glb}")
-    private ResourceBundle glb;
-
-    @EJB
+    @Inject
     private CountryServiceDAO countryServiceDAO;
 
     public List<CountryDict> getAllItems() {
@@ -55,11 +50,4 @@ public class CountryService {
 	}
 	return result;
     }
-
-    // GENERATED
-
-    public void setGlb(ResourceBundle glb) {
-	this.glb = glb;
-    }
-
 }

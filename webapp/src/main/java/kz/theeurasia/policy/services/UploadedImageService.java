@@ -23,7 +23,8 @@ import kz.theeurasia.policy.domain.UploadedImage;
 @Named
 @SessionScoped
 public class UploadedImageService implements Serializable {
-    private static final long serialVersionUID = 4795788265713605816L;
+
+    private static final long serialVersionUID = 1L;
 
     private Map<UUID, UploadedImage> filesMap;
     private List<UploadedImage> filesList;
@@ -36,7 +37,7 @@ public class UploadedImageService implements Serializable {
 	last = new ArrayList<>();
     }
 
-    public final void onImageUpload(FileUploadEvent event) {
+    public void onImageUpload(FileUploadEvent event) {
 	UploadedImage im = new UploadedImage(event.getFile());
 	filesMap.put(im.getId(), im);
 	filesList.add(im);
@@ -55,11 +56,11 @@ public class UploadedImageService implements Serializable {
 	last.remove(image);
     }
 
-    public final List<UploadedImage> getAllImages() {
+    public List<UploadedImage> getAllImages() {
 	return new ArrayList<>(filesList);
     }
 
-    public final StreamedContent getContent() throws IOException {
+    public StreamedContent getContent() throws IOException {
 	FacesContext context = FacesContext.getCurrentInstance();
 	if (context.getCurrentPhaseId() == PhaseId.RENDER_RESPONSE)
 	    return new DefaultStreamedContent();

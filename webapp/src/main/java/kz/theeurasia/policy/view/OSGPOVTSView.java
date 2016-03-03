@@ -40,12 +40,10 @@ import kz.theeurasia.policy.facade.VehicleFacade;
 @ViewScoped
 public class OSGPOVTSView implements Serializable {
 
-    private static final long serialVersionUID = 6605204552704504011L;
+    private static final long serialVersionUID = 1L;
 
-    @Inject
     private ResourceBundle glb;
 
-    @Inject
     private ResourceBundle gpovts;
 
     @Inject
@@ -72,6 +70,8 @@ public class OSGPOVTSView implements Serializable {
 
     @PostConstruct
     public void init() {
+	glb = ResourceBundle.getBundle(GlobalMessageBundleCode.BUNDLE_BASE_NAME);
+	gpovts = ResourceBundle.getBundle(MessageBundleCode.BUNDLE_BASE_NAME);
 	try {
 	    FacesContext facesContext = FacesContext.getCurrentInstance();
 	    Application application = facesContext.getApplication();

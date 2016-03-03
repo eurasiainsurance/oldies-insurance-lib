@@ -1,5 +1,6 @@
 package kz.theeurasia.policy.facade;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
 import javax.faces.view.ViewScoped;
@@ -21,7 +22,9 @@ import kz.theeurasia.policy.view.ValidationException;
 
 @Named
 @ViewScoped
-public class VehicleFacade {
+public class VehicleFacade implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Inject
     private VehicleServiceDAO vehicleService;

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import javax.faces.model.SelectItem;
 import javax.inject.Inject;
@@ -18,10 +19,14 @@ import kz.theeurasia.policy.view.GlobalMessageBundleCode;
 public class CountryRegionService {
 
     @Inject
+    private CountryRegionServiceDAO countryRegionServiceDAO;
+
     private ResourceBundle glb;
 
-    @Inject
-    private CountryRegionServiceDAO countryRegionServiceDAO;
+    @PostConstruct
+    public void init() {
+	glb = ResourceBundle.getBundle(GlobalMessageBundleCode.BUNDLE_BASE_NAME);
+    }
 
     public List<CountryRegionDict> getAllItems() {
 	return countryRegionServiceDAO.getAll();

@@ -1,5 +1,7 @@
 package kz.theeurasia.policy.facade;
 
+import java.io.Serializable;
+
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -12,7 +14,9 @@ import kz.theeurasia.policy.services.PremiumCostCalculatorRatesService;
 
 @Named
 @ViewScoped
-public class PolicyFacade {
+public class PolicyFacade implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Inject
     private PremiumCostCalculatorRatesService rates;

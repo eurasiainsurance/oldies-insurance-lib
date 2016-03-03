@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import javax.faces.model.SelectItem;
-import javax.inject.Inject;
 import javax.inject.Named;
 
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredAgeClassEnum;
@@ -16,8 +16,12 @@ import kz.theeurasia.policy.view.MessageBundleCode;
 @ApplicationScoped
 public class InsuredAgeClassService {
 
-    @Inject
     private ResourceBundle gpovts;
+
+    @PostConstruct
+    public void init() {
+	gpovts = ResourceBundle.getBundle(MessageBundleCode.BUNDLE_BASE_NAME);
+    }
 
     public List<InsuredAgeClassEnum> getAllItems() {
 	List<InsuredAgeClassEnum> result = new ArrayList<>();

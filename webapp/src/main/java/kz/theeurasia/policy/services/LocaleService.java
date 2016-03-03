@@ -1,5 +1,6 @@
 package kz.theeurasia.policy.services;
 
+import java.io.Serializable;
 import java.util.Locale;
 
 import javax.annotation.PostConstruct;
@@ -9,7 +10,9 @@ import javax.inject.Named;
 
 @Named
 @SessionScoped
-public class LocaleService {
+public class LocaleService implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private Locale currentLocale;
 

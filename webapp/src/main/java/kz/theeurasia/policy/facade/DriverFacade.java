@@ -1,5 +1,7 @@
 package kz.theeurasia.policy.facade;
 
+import java.io.Serializable;
+
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -25,7 +27,9 @@ import kz.theeurasia.policy.view.ValidationException;
 
 @Named
 @ViewScoped
-public class DriverFacade {
+public class DriverFacade implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Inject
     private SubjectPersonServiceDAO subjectPersonService;

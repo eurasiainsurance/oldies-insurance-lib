@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import javax.faces.model.SelectItem;
 import javax.inject.Inject;
@@ -17,8 +18,12 @@ import kz.theeurasia.policy.view.GlobalMessageBundleCode;
 @ApplicationScoped
 public class IdentityCardTypeService {
 
-    @Inject
     private ResourceBundle glb;
+
+    @PostConstruct
+    public void init() {
+	glb = ResourceBundle.getBundle(GlobalMessageBundleCode.BUNDLE_BASE_NAME);
+    }
 
     @Inject
     private IdentityCardTypeServiceDAO identityCardTypeServiceDAO;

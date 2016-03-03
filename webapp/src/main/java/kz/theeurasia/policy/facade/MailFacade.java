@@ -1,6 +1,7 @@
 package kz.theeurasia.policy.facade;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.List;
@@ -32,7 +33,9 @@ import kz.theeurasia.policy.domain.UploadedImage;
 
 @Named
 @ViewScoped
-public class MailFacade {
+public class MailFacade implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private static final String TEMPLATE_NAME = "/emailTemplates/PolicyReuest.vm";
     private static final String DEFAULT_SUBJECT = "Заявка на полис ОС ГПО ВТС";

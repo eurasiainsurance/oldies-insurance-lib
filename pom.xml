@@ -8,7 +8,7 @@
 	<version>1.0-RC2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>Eurasia policy : Parent</name>
+	<name>Policy : Parent</name>
 
 	<organization>
 		<name>Eurasia Insurance Company</name>
@@ -32,9 +32,8 @@
 
 	<modules>
 		<module>core</module>
-		<module>eurasia36-ejbs</module>
-		<module>eurasia36-webapp</module>
-		<module>eurasia36-ear</module>
+		<module>calc</module>
+		<module>eurasia36</module>
 	</modules>
 
 	<dependencyManagement>
@@ -97,7 +96,13 @@
 				<groupId>javax</groupId>
 				<artifactId>javaee-api</artifactId>
 				<version>7.0</version>
-				<scope>import</scope>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-web-api</artifactId>
+				<version>7.0</version>
+				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>javax.enterprise</groupId>

@@ -11,7 +11,7 @@
 	<artifactId>policy-core</artifactId>
 	<packaging>jar</packaging>
 
-	<name>Eurasia policy : Core &amp; API</name>
+	<name>Policy : Policy Core &amp; API</name>
 
 	<dependencies>
 		<!-- internal -->

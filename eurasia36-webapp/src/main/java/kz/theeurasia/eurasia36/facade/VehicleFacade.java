@@ -1,4 +1,4 @@
-package kz.theeurasia.policy.facade;
+package kz.theeurasia.eurasia36.facade;
 
 import java.io.Serializable;
 import java.util.Calendar;
@@ -14,11 +14,11 @@ import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleEntity;
 import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleServiceDAO;
+import kz.theeurasia.eurasia36.bean.MessageBundleCode;
+import kz.theeurasia.eurasia36.bean.ValidationException;
 import kz.theeurasia.policy.domain.InsuredVehicleData;
 import kz.theeurasia.policy.domain.PolicyRequestData;
 import kz.theeurasia.policy.domain.VehicleData;
-import kz.theeurasia.policy.view.MessageBundleCode;
-import kz.theeurasia.policy.view.ValidationException;
 
 @Named
 @ViewScoped

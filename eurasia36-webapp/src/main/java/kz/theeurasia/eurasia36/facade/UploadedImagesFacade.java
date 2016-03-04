@@ -1,4 +1,4 @@
-package kz.theeurasia.policy.facade;
+package kz.theeurasia.eurasia36.facade;
 
 import java.io.Serializable;
 
@@ -6,11 +6,11 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import kz.theeurasia.eurasia36.services.UploadedImageService;
 import kz.theeurasia.policy.domain.InsuredDriverData;
 import kz.theeurasia.policy.domain.InsuredVehicleData;
 import kz.theeurasia.policy.domain.PolicyRequestData;
 import kz.theeurasia.policy.domain.UploadedImage;
-import kz.theeurasia.policy.services.UploadedImageService;
 
 @Named
 @ViewScoped

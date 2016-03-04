@@ -1,4 +1,4 @@
-package kz.theeurasia.policy.services;
+package kz.theeurasia.eurasia36.services;
 
 import java.io.IOException;
 import java.io.Serializable;

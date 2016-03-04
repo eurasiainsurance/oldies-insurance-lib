@@ -1,4 +1,4 @@
-package kz.theeurasia.policy.servlet;
+package kz.theeurasia.servlet;
 
 import java.io.IOException;
 

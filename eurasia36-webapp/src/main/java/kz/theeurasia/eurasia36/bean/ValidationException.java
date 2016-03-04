@@ -1,4 +1,4 @@
-package kz.theeurasia.policy.view;
+package kz.theeurasia.eurasia36.bean;
 
 public class ValidationException extends Exception {
 

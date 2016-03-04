@@ -4,7 +4,7 @@
 
 	<groupId>kz.theeurasia.policy</groupId>
 	<artifactId>parent</artifactId>
-	<version>1.0-RC3-SNAPSHOT</version>
+	<version>1.0-RC3</version>
 	<packaging>pom</packaging>
 
 	<name>Policy : Parent</name>
@@ -233,7 +233,7 @@
 	<scm>
 		<connection>scm:git:https://gitrepo.theeurasia.kz/eurasia/eurasia-policy.git</connection>
 		<developerConnection>scm:git:https://gitrepo.theeurasia.kz/eurasia/eurasia-policy.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>v1.0-RC3</tag>
 	</scm>
 
 

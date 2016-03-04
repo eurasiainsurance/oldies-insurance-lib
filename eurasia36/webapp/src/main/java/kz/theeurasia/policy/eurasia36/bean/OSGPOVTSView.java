@@ -35,6 +35,7 @@ import kz.theeurasia.policy.eurasia36.facade.MailFacade;
 import kz.theeurasia.policy.eurasia36.facade.PolicyFacade;
 import kz.theeurasia.policy.eurasia36.facade.UploadedImagesFacade;
 import kz.theeurasia.policy.eurasia36.facade.VehicleFacade;
+import kz.theeurasia.policy.services.LocaleService;
 
 @Named("osgpovtsView")
 @ViewScoped
@@ -64,14 +65,17 @@ public class OSGPOVTSView implements Serializable {
     @Inject
     private UploadedImagesFacade uploadedImagesFacade;
 
+    @Inject
+    private LocaleService localeService;
+
     private PolicyRequestData policy;
 
     private boolean requestSent = false;
 
     @PostConstruct
     public void init() {
-	glb = ResourceBundle.getBundle(GlobalMessageBundleCode.BUNDLE_BASE_NAME);
-	gpovts = ResourceBundle.getBundle(MessageBundleCode.BUNDLE_BASE_NAME);
+	glb = ResourceBundle.getBundle(GlobalMessageBundleCode.BUNDLE_BASE_NAME, localeService.getLocale());
+	gpovts = ResourceBundle.getBundle(MessageBundleCode.BUNDLE_BASE_NAME, localeService.getLocale());
 	try {
 	    FacesContext facesContext = FacesContext.getCurrentInstance();
 	    Application application = facesContext.getApplication();

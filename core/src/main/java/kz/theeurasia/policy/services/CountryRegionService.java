@@ -20,11 +20,14 @@ public class CountryRegionService {
     @Inject
     private CountryRegionServiceDAO countryRegionServiceDAO;
 
+    @Inject
+    private LocaleService localeService;
+
     private ResourceBundle msg;
 
     @PostConstruct
     public void init() {
-	msg = ResourceBundle.getBundle(Messages.BUNDLE_BASE_NAME);
+	msg = ResourceBundle.getBundle(Messages.BUNDLE_BASE_NAME, localeService.getLocale());
     }
 
     public List<CountryRegionDict> getAllItems() {

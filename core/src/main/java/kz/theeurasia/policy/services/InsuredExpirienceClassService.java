@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import javax.faces.model.SelectItem;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
@@ -17,9 +18,12 @@ public class InsuredExpirienceClassService {
 
     private ResourceBundle gpovts;
 
+    @Inject
+    private LocaleService localeService;
+
     @PostConstruct
     public void init() {
-	gpovts = ResourceBundle.getBundle(Messages.BUNDLE_BASE_NAME);
+	gpovts = ResourceBundle.getBundle(Messages.BUNDLE_BASE_NAME, localeService.getLocale());
     }
 
     public List<InsuredExpirienceClassEnum> getAllItems() {

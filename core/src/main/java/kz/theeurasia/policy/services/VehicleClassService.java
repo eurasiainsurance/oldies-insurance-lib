@@ -19,9 +19,12 @@ public class VehicleClassService {
 
     private ResourceBundle msg;
 
+    @Inject
+    private LocaleService localeService;
+
     @PostConstruct
     public void init() {
-	msg = ResourceBundle.getBundle(Messages.BUNDLE_BASE_NAME);
+	msg = ResourceBundle.getBundle(Messages.BUNDLE_BASE_NAME, localeService.getLocale());
     }
 
     @Inject

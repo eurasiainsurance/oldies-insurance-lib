@@ -29,6 +29,7 @@ import kz.theeurasia.policy.calc.facade.ValidationException;
 import kz.theeurasia.policy.calc.facade.VehicleFacade;
 import kz.theeurasia.policy.domain.InsuredDriverData;
 import kz.theeurasia.policy.domain.InsuredVehicleData;
+import kz.theeurasia.policy.services.LocaleService;
 
 @Named("calculationController")
 @ViewScoped
@@ -52,24 +53,27 @@ public class CalculatorController implements Serializable {
     @Inject
     private CalculationData data;
 
+    @Inject
+    private LocaleService localeService;
+
     public String doVoid() {
 	return "";
     }
 
     @PostConstruct
     public void init() {
-	glb = ResourceBundle.getBundle(GlobalMessageBundleCode.BUNDLE_BASE_NAME);
-	gpovts = ResourceBundle.getBundle(MessageBundleCode.BUNDLE_BASE_NAME);
+	glb = ResourceBundle.getBundle(GlobalMessageBundleCode.BUNDLE_BASE_NAME, localeService.getLocale());
+	gpovts = ResourceBundle.getBundle(MessageBundleCode.BUNDLE_BASE_NAME, localeService.getLocale());
 	try {
 	    FacesContext facesContext = FacesContext.getCurrentInstance();
 	    Application application = facesContext.getApplication();
 
 	    switch (application.getProjectStage()) {
 	    case Development:
-		 buildTestDataManyDrivers();
-		 buildTestDataManyVehicles();
-//		driverFacade.add(data);
-//		vehicleFacade.add(data);
+		buildTestDataManyDrivers();
+		buildTestDataManyVehicles();
+		// driverFacade.add(data);
+		// vehicleFacade.add(data);
 		break;
 	    case Production:
 	    default:

@@ -1,4 +1,4 @@
-package kz.theeurasia.policy.eurasia36.services;
+package kz.theeurasia.policy.services;
 
 import java.io.Serializable;
 import java.util.Locale;

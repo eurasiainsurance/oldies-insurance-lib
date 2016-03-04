@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.model.SelectItem;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import kz.theeurasia.policy.domain.WhoIsInsurant;
@@ -17,9 +18,12 @@ public class WhoIsInsuranceService {
 
     private ResourceBundle msg;
 
+    @Inject
+    private LocaleService localeService;
+
     @PostConstruct
     public void init() {
-	msg = ResourceBundle.getBundle(Messages.BUNDLE_BASE_NAME);
+	msg = ResourceBundle.getBundle(Messages.BUNDLE_BASE_NAME, localeService.getLocale());
     }
 
     public List<WhoIsInsurant> getAllItems() {

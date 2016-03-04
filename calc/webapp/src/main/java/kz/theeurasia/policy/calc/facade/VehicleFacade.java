@@ -3,7 +3,7 @@ package kz.theeurasia.policy.calc.facade;
 import java.io.Serializable;
 import java.util.Calendar;
 
-import javax.faces.view.ViewScoped;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -14,14 +14,12 @@ import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleEntity;
 import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleServiceDAO;
-import kz.theeurasia.policy.calc.bean.MessageBundleCode;
-import kz.theeurasia.policy.calc.bean.ValidationException;
+import kz.theeurasia.policy.calc.bean.CalculationData;
 import kz.theeurasia.policy.domain.InsuredVehicleData;
-import kz.theeurasia.policy.domain.PolicyRequestData;
 import kz.theeurasia.policy.domain.VehicleData;
 
 @Named
-@ViewScoped
+@ApplicationScoped
 public class VehicleFacade implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -29,7 +27,7 @@ public class VehicleFacade implements Serializable {
     @Inject
     private VehicleServiceDAO vehicleService;
 
-    public InsuredVehicleData add(PolicyRequestData policy) throws ValidationException {
+    public InsuredVehicleData add(CalculationData policy) throws ValidationException {
 	if (policy.getInsuredVehicles().size() > 0 && policy.getInsuredDrivers().size() > 1)
 	    throw new ValidationException(MessageBundleCode.ONLY_ONE_VEHICLE_ALLOWED);
 	InsuredVehicleData e = new InsuredVehicleData();
@@ -38,13 +36,13 @@ public class VehicleFacade implements Serializable {
 	return e;
     }
 
-    public void remove(PolicyRequestData policy, InsuredVehicleData vehicle) throws ValidationException {
+    public void remove(CalculationData policy, InsuredVehicleData vehicle) throws ValidationException {
 	if (policy.getInsuredVehicles().size() <= 1)
 	    throw new ValidationException(MessageBundleCode.VEHICLES_LIST_CANT_BE_EMPTY);
 	policy.getInsuredVehicles().remove(vehicle);
     }
 
-    public void fetchInfo(PolicyRequestData policy, InsuredVehicleData vehicle) throws ValidationException {
+    public void fetchInfo(CalculationData policy, InsuredVehicleData vehicle) throws ValidationException {
 	try {
 	    VehicleEntity fetched = vehicleService.getByVINCode(vehicle.getVehicleData().getVinCode());
 	    vehicle.setFetchedEntity(fetched);
@@ -70,14 +68,14 @@ public class VehicleFacade implements Serializable {
 	    insuredVehicle.getVehicleCertificateData().setMajorCity(true);
     }
 
-    private void _reset(PolicyRequestData policy, InsuredVehicleData vehicle) {
+    private void _reset(CalculationData policy, InsuredVehicleData vehicle) {
 	_resetFetchedInfo(policy, vehicle);
 	vehicle.getVehicleData().setVinCode(null);
 	vehicle.getVehicleCertificateData().setRegion(CountryRegionDict.UNSPECIFIED);
 	evaluateMajorCity(vehicle);
     }
 
-    private void _resetFetchedInfo(PolicyRequestData policy, InsuredVehicleData vehicle) {
+    private void _resetFetchedInfo(CalculationData policy, InsuredVehicleData vehicle) {
 	vehicle.setFetchedEntity(null);
 	vehicle.setVehicleClass(VehicleClassDict.UNSPECIFIED);
 	vehicle.setVehicleAgeClass(VehicleAgeClassDict.UNSPECIFIED);

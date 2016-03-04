@@ -8,8 +8,8 @@ import javax.inject.Named;
 
 import kz.theeurasia.policy.domain.InsuredDriverData;
 import kz.theeurasia.policy.domain.InsuredVehicleData;
-import kz.theeurasia.policy.domain.PolicyRequestData;
 import kz.theeurasia.policy.domain.UploadedImage;
+import kz.theeurasia.policy.eurasia36.domain.PolicyRequestData;
 import kz.theeurasia.policy.eurasia36.services.UploadedImageService;
 
 @Named

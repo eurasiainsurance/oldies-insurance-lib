@@ -2,7 +2,7 @@ package kz.theeurasia.policy.calc.facade;
 
 import java.io.Serializable;
 
-import javax.faces.view.ViewScoped;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -15,18 +15,16 @@ import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.general.KZCityServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.SubjectPersonServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.InsuranceClassTypeServiceDAO;
-import kz.theeurasia.policy.calc.bean.MessageBundleCode;
-import kz.theeurasia.policy.calc.bean.ValidationException;
+import kz.theeurasia.policy.calc.bean.CalculationData;
 import kz.theeurasia.policy.domain.ContactData;
 import kz.theeurasia.policy.domain.IdentityCardData;
 import kz.theeurasia.policy.domain.InsuredDriverData;
 import kz.theeurasia.policy.domain.OriginData;
 import kz.theeurasia.policy.domain.PersonalData;
-import kz.theeurasia.policy.domain.PolicyRequestData;
 import kz.theeurasia.policy.domain.ResidenceData;
 
 @Named
-@ViewScoped
+@ApplicationScoped
 public class DriverFacade implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -40,7 +38,7 @@ public class DriverFacade implements Serializable {
     @Inject
     private KZCityServiceDAO kzCityServiceDAO;
 
-    public InsuredDriverData add(PolicyRequestData policy) throws ValidationException {
+    public InsuredDriverData add(CalculationData policy) throws ValidationException {
 	if (policy.getInsuredDrivers().size() > 0 && policy.getInsuredVehicles().size() > 1)
 	    throw new ValidationException(MessageBundleCode.ONLY_ONE_DRIVER_ALLOWED);
 	InsuredDriverData e = new InsuredDriverData();
@@ -49,13 +47,13 @@ public class DriverFacade implements Serializable {
 	return e;
     }
 
-    public void remove(PolicyRequestData policy, InsuredDriverData driver) throws ValidationException {
+    public void remove(CalculationData policy, InsuredDriverData driver) throws ValidationException {
 	if (policy.getInsuredDrivers().size() <= 1)
 	    throw new ValidationException(MessageBundleCode.DRIVER_LIST_CANT_BE_EMPTY);
 	policy.getInsuredDrivers().remove(driver);
     }
 
-    public void fetchInfo(PolicyRequestData policy, InsuredDriverData driver) throws ValidationException {
+    public void fetchInfo(CalculationData policy, InsuredDriverData driver) throws ValidationException {
 	try {
 	    SubjectPersonEntity fetched = subjectPersonService.getByIIN(driver.getIdNumber());
 	    driver.setFetchedEntity(fetched);
@@ -105,12 +103,12 @@ public class DriverFacade implements Serializable {
 	}
     }
 
-    private void _reset(PolicyRequestData policy, InsuredDriverData driver) {
+    private void _reset(CalculationData policy, InsuredDriverData driver) {
 	_resetFetchedInfo(policy, driver);
 	driver.setExpirienceClass(InsuredExpirienceClassEnum.UNSPECIFIED);
     }
 
-    private void _resetFetchedInfo(PolicyRequestData policy, InsuredDriverData driver) {
+    private void _resetFetchedInfo(CalculationData policy, InsuredDriverData driver) {
 	driver.setFetchedEntity(null);
 	driver.setPersonalData(new PersonalData());
 	driver.setResidenceData(new ResidenceData());

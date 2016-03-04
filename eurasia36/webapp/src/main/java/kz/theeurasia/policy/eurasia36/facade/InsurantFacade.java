@@ -17,8 +17,8 @@ import kz.theeurasia.policy.domain.InsurantData;
 import kz.theeurasia.policy.domain.InsuredDriverData;
 import kz.theeurasia.policy.domain.OriginData;
 import kz.theeurasia.policy.domain.PersonalData;
-import kz.theeurasia.policy.domain.PolicyRequestData;
 import kz.theeurasia.policy.domain.ResidenceData;
+import kz.theeurasia.policy.eurasia36.domain.PolicyRequestData;
 
 @Named
 @ViewScoped

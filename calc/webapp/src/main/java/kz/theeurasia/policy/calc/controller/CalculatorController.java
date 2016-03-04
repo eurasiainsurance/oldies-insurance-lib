@@ -1,4 +1,4 @@
-package kz.theeurasia.policy.calc.bean;
+package kz.theeurasia.policy.calc.controller;
 
 import java.io.Serializable;
 import java.util.Calendar;
@@ -20,16 +20,19 @@ import kz.theeurasia.esbdproxy.domain.dict.general.KZCityDict;
 import kz.theeurasia.esbdproxy.domain.dict.general.SexDict;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredAgeClassEnum;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
+import kz.theeurasia.policy.calc.bean.CalculationData;
+import kz.theeurasia.policy.calc.facade.CalculationFacade;
 import kz.theeurasia.policy.calc.facade.DriverFacade;
-import kz.theeurasia.policy.calc.facade.PolicyFacade;
+import kz.theeurasia.policy.calc.facade.GlobalMessageBundleCode;
+import kz.theeurasia.policy.calc.facade.MessageBundleCode;
+import kz.theeurasia.policy.calc.facade.ValidationException;
 import kz.theeurasia.policy.calc.facade.VehicleFacade;
 import kz.theeurasia.policy.domain.InsuredDriverData;
 import kz.theeurasia.policy.domain.InsuredVehicleData;
-import kz.theeurasia.policy.domain.PolicyRequestData;
 
-@Named("calculator")
+@Named("calculationController")
 @ViewScoped
-public class OSGPOVTSView implements Serializable {
+public class CalculatorController implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -38,17 +41,20 @@ public class OSGPOVTSView implements Serializable {
     private ResourceBundle gpovts;
 
     @Inject
-    private PolicyFacade policyFacade;
-
-    @Inject
     private DriverFacade driverFacade;
 
     @Inject
     private VehicleFacade vehicleFacade;
 
-    private PolicyRequestData policy;
+    @Inject
+    private CalculationFacade calculationFacade;
 
-    private boolean requestSent = false;
+    @Inject
+    private CalculationData data;
+
+    public String doVoid() {
+	return "";
+    }
 
     @PostConstruct
     public void init() {
@@ -57,18 +63,18 @@ public class OSGPOVTSView implements Serializable {
 	try {
 	    FacesContext facesContext = FacesContext.getCurrentInstance();
 	    Application application = facesContext.getApplication();
-	    this.policy = policyFacade.initNew();
 
 	    switch (application.getProjectStage()) {
 	    case Development:
-		// buildTestDataManyDrivers();
-		buildTestDataManyVehicles();
-		setContactData();
+		 buildTestDataManyDrivers();
+		 buildTestDataManyVehicles();
+//		driverFacade.add(data);
+//		vehicleFacade.add(data);
 		break;
 	    case Production:
 	    default:
-		driverFacade.add(policy);
-		vehicleFacade.add(policy);
+		driverFacade.add(data);
+		vehicleFacade.add(data);
 	    }
 	} catch (ValidationException e) {
 	    FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL,
@@ -78,40 +84,35 @@ public class OSGPOVTSView implements Serializable {
 	}
     }
 
-    private void setContactData() {
-	policy.getInsurant().getContactData().setEmail("vadim.o.isaev@gmail.com");
-	policy.getInsurant().getContactData().setPhone("+7 (701) 937-79-79");
-    }
-
     private void buildTestDataManyVehicles() throws ValidationException {
-	InsuredDriverData drv2 = driverFacade.add(policy);
+	InsuredDriverData drv2 = driverFacade.add(data);
 	drv2.setIdNumber("870622300359");
-	driverFacade.fetchInfo(policy, drv2);
+	driverFacade.fetchInfo(data, drv2);
 	drv2.setExpirienceClass(InsuredExpirienceClassEnum.MORE2);
 	drv2.getResidenceData().setCity(KZCityDict.ALM);
 	drv2.getDriverLicenseData().setNumber("123");
 	drv2.getDriverLicenseData().setDateOfIssue(new Date());
 	drv2.setHasAnyPrivilege(false);
 
-	InsuredVehicleData vhc1 = vehicleFacade.add(policy);
+	InsuredVehicleData vhc1 = vehicleFacade.add(data);
 	vhc1.getVehicleData().setVinCode("JN1TANS51U0303376");
-	vehicleFacade.fetchInfo(policy, vhc1);
+	vehicleFacade.fetchInfo(data, vhc1);
 	vhc1.getVehicleCertificateData().setRegion(CountryRegionDict.GALM);
 	vehicleFacade.evaluateMajorCity(vhc1);
-	policyFacade.calculatePremiumCost(policy);
+	calculationFacade.calculatePremiumCost(data);
 
-	InsuredVehicleData vhc2 = vehicleFacade.add(policy);
+	InsuredVehicleData vhc2 = vehicleFacade.add(data);
 	vhc2.getVehicleData().setVinCode("WDB2030421F503751");
-	vehicleFacade.fetchInfo(policy, vhc2);
+	vehicleFacade.fetchInfo(data, vhc2);
 	vhc2.getVehicleCertificateData().setRegion(CountryRegionDict.GALM);
 	vehicleFacade.evaluateMajorCity(vhc2);
-	policyFacade.calculatePremiumCost(policy);
+	calculationFacade.calculatePremiumCost(data);
     }
 
     public void buildTestDataManyDrivers() throws ValidationException {
-	InsuredDriverData drv1 = driverFacade.add(policy);
+	InsuredDriverData drv1 = driverFacade.add(data);
 	drv1.setIdNumber("570325300699");
-	driverFacade.fetchInfo(policy, drv1);
+	driverFacade.fetchInfo(data, drv1);
 	drv1.setExpirienceClass(InsuredExpirienceClassEnum.MORE2);
 	drv1.getResidenceData().setCity(KZCityDict.ALM);
 	drv1.getResidenceData().setAddress("Джамбула, 231");
@@ -135,9 +136,9 @@ public class OSGPOVTSView implements Serializable {
 	drv1.getPrivilegerCertificateData().setNumber("123");
 	drv1.getPrivilegerCertificateData().setDateOfIssue(new Date());
 
-	InsuredDriverData drv2 = driverFacade.add(policy);
+	InsuredDriverData drv2 = driverFacade.add(data);
 	drv2.setIdNumber("870622300359");
-	driverFacade.fetchInfo(policy, drv2);
+	driverFacade.fetchInfo(data, drv2);
 	drv2.setExpirienceClass(InsuredExpirienceClassEnum.MORE2);
 	drv2.getResidenceData().setCity(KZCityDict.ALM);
 	// drv2.getResidenceData().setAddress("Джамбула, 231");
@@ -147,9 +148,9 @@ public class OSGPOVTSView implements Serializable {
 	drv2.getDriverLicenseData().setDateOfIssue(new Date());
 	drv2.setHasAnyPrivilege(false);
 
-	InsuredDriverData drv3 = driverFacade.add(policy);
+	InsuredDriverData drv3 = driverFacade.add(data);
 	drv3.setIdNumber("800225000319");
-	driverFacade.fetchInfo(policy, drv3);
+	driverFacade.fetchInfo(data, drv3);
 	drv3.setAgeClass(InsuredAgeClassEnum.OVER25);
 	drv3.setExpirienceClass(InsuredExpirienceClassEnum.MORE2);
 	drv3.getPersonalData().setName("Вадим");
@@ -171,9 +172,9 @@ public class OSGPOVTSView implements Serializable {
 	drv3.getDriverLicenseData().setDateOfIssue(new Date());
 	drv3.setHasAnyPrivilege(false);
 
-	InsuredDriverData drv4 = driverFacade.add(policy);
+	InsuredDriverData drv4 = driverFacade.add(data);
 	drv4.setIdNumber("860401402685");
-	driverFacade.fetchInfo(policy, drv4);
+	driverFacade.fetchInfo(data, drv4);
 	drv4.setExpirienceClass(InsuredExpirienceClassEnum.MORE2);
 	drv4.getPersonalData().setSex(SexDict.FEMALE);
 	drv4.getIdentityCardData().setIssuingAuthority("МВД РК");
@@ -186,98 +187,88 @@ public class OSGPOVTSView implements Serializable {
 	drv4.getDriverLicenseData().setDateOfIssue(new Date());
 	drv4.setHasAnyPrivilege(false);
 
-	InsuredVehicleData vhc1 = vehicleFacade.add(policy);
+	InsuredVehicleData vhc1 = vehicleFacade.add(data);
 	vhc1.getVehicleData().setVinCode("JN1TANS51U0303376");
-	vehicleFacade.fetchInfo(policy, vhc1);
+	vehicleFacade.fetchInfo(data, vhc1);
 	vhc1.getVehicleCertificateData().setRegion(CountryRegionDict.GALM);
 	vehicleFacade.evaluateMajorCity(vhc1);
-	policyFacade.calculatePremiumCost(policy);
+	calculationFacade.calculatePremiumCost(data);
     }
 
     public void addInsuredDriver() {
 	try {
-	    driverFacade.add(policy);
+	    driverFacade.add(data);
 	} catch (ValidationException e) {
 	    FacesContext.getCurrentInstance().addMessage(null,
 		    new FacesMessage(FacesMessage.SEVERITY_WARN,
 			    gpovts.getString(e.getMessageCode().getMessageBundleCode()),
 			    gpovts.getString(e.getDescriptionCode().getMessageBundleCode())));
 	}
-	policyFacade.calculatePremiumCost(policy);
+	calculationFacade.calculatePremiumCost(data);
     }
 
     public void removeInsuredDriver(InsuredDriverData driver) {
 	try {
-	    driverFacade.remove(policy, driver);
+	    driverFacade.remove(data, driver);
 	} catch (ValidationException e) {
 	    FacesContext.getCurrentInstance().addMessage(null,
 		    new FacesMessage(FacesMessage.SEVERITY_WARN,
 			    gpovts.getString(e.getMessageCode().getMessageBundleCode()),
 			    gpovts.getString(e.getDescriptionCode().getMessageBundleCode())));
 	}
-	policyFacade.calculatePremiumCost(policy);
+	calculationFacade.calculatePremiumCost(data);
     }
 
     public void addInsuredVehicle() {
 	try {
-	    vehicleFacade.add(policy);
+	    vehicleFacade.add(data);
 	} catch (ValidationException e) {
 	    FacesContext.getCurrentInstance().addMessage(null,
 		    new FacesMessage(FacesMessage.SEVERITY_WARN,
 			    gpovts.getString(e.getMessageCode().getMessageBundleCode()),
 			    gpovts.getString(e.getDescriptionCode().getMessageBundleCode())));
 	}
-	policyFacade.calculatePremiumCost(policy);
+	calculationFacade.calculatePremiumCost(data);
     }
 
     public void removeInsuredVehicle(InsuredVehicleData insuredVehicle) {
 	try {
-	    vehicleFacade.remove(policy, insuredVehicle);
+	    vehicleFacade.remove(data, insuredVehicle);
 	} catch (ValidationException e) {
 	    FacesContext.getCurrentInstance().addMessage(null,
 		    new FacesMessage(FacesMessage.SEVERITY_WARN,
 			    gpovts.getString(e.getMessageCode().getMessageBundleCode()),
 			    gpovts.getString(e.getDescriptionCode().getMessageBundleCode())));
 	}
-	policyFacade.calculatePremiumCost(policy);
+	calculationFacade.calculatePremiumCost(data);
     }
 
     public void doCalculatePolicyCost() {
-	policyFacade.calculatePremiumCost(policy);
+	calculationFacade.calculatePremiumCost(data);
     }
 
     public void onDriverIdNumberChanged(InsuredDriverData insuredDriver) {
 	try {
-	    driverFacade.fetchInfo(policy, insuredDriver);
+	    driverFacade.fetchInfo(data, insuredDriver);
 	} catch (ValidationException e) {
 	}
-	policyFacade.calculatePremiumCost(policy);
+	calculationFacade.calculatePremiumCost(data);
     }
 
     public void onPolicyCostCalculationFormChanged() {
-	policyFacade.calculatePremiumCost(policy);
+	calculationFacade.calculatePremiumCost(data);
     }
 
     public void onVehicleVinCodeChanged(InsuredVehicleData insuredVehicle) {
 	try {
-	    vehicleFacade.fetchInfo(policy, insuredVehicle);
+	    vehicleFacade.fetchInfo(data, insuredVehicle);
 	} catch (ValidationException e) {
 	}
-	policyFacade.calculatePremiumCost(policy);
+	calculationFacade.calculatePremiumCost(data);
     }
 
     public void onVehicleRegionChanged(InsuredVehicleData insuredVehicle) {
 	vehicleFacade.evaluateMajorCity(insuredVehicle);
-	policyFacade.calculatePremiumCost(policy);
-    }
-
-    // GENERATED
-
-    public PolicyRequestData getPolicy() {
-	return policy;
-    }
-
-    public boolean isRequestSent() {
-	return requestSent;
+	calculationFacade.calculatePremiumCost(data);
     }
 }

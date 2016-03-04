@@ -1,17 +1,31 @@
-package kz.theeurasia.policy.domain;
+package kz.theeurasia.policy.calc.bean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class PolicyRequestData {
+import javax.annotation.PostConstruct;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
+
+import kz.theeurasia.policy.domain.InsuredDriverData;
+import kz.theeurasia.policy.domain.InsuredVehicleData;
+import kz.theeurasia.policy.domain.PolicyTermClass;
+
+@Named("calculationData")
+@ViewScoped
+public class CalculationData implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     private final UUID id = UUID.randomUUID();
 
-    private InsurantData insurant = new InsurantData();
     private List<InsuredDriverData> insuredDrivers = new ArrayList<>();
     private List<InsuredVehicleData> insuredVehicles = new ArrayList<>();
     private PolicyTermClass termClass = PolicyTermClass.YEAR;
     private double calculatedPremiumCost;
+    private boolean applyDiscount;
 
     @Override
     public int hashCode() {
@@ -23,6 +37,11 @@ public class PolicyRequestData {
 	return obj != null && this.getClass().isInstance(obj) && getId().equals((this.getClass().cast(obj)).getId());
     }
 
+    @PostConstruct
+    public void init() {
+
+    }
+
     public String getSafeId() {
 	return id.toString().replaceAll("-", "_");
     }
@@ -31,14 +50,6 @@ public class PolicyRequestData {
 
     public UUID getId() {
 	return id;
-    }
-
-    public InsurantData getInsurant() {
-	return insurant;
-    }
-
-    public void setInsurant(InsurantData insurant) {
-	this.insurant = insurant;
     }
 
     public List<InsuredDriverData> getInsuredDrivers() {
@@ -71,5 +82,13 @@ public class PolicyRequestData {
 
     public void setCalculatedPremiumCost(double calculatedPremiumCost) {
 	this.calculatedPremiumCost = calculatedPremiumCost;
+    }
+
+    public boolean isApplyDiscount() {
+	return applyDiscount;
+    }
+
+    public void setApplyDiscount(boolean applyDiscount) {
+	this.applyDiscount = applyDiscount;
     }
 }

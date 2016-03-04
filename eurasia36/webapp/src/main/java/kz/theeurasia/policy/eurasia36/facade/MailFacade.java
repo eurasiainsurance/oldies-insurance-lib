@@ -28,8 +28,8 @@ import com.lapsa.mailutil.MailService;
 
 import kz.theeurasia.policy.domain.InsuredDriverData;
 import kz.theeurasia.policy.domain.InsuredVehicleData;
-import kz.theeurasia.policy.domain.PolicyRequestData;
 import kz.theeurasia.policy.domain.UploadedImage;
+import kz.theeurasia.policy.eurasia36.domain.PolicyRequestData;
 
 @Named
 @ViewScoped

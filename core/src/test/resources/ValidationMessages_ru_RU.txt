@@ -1,6 +1,6 @@
 # default validation messages for validators
-kz.theeurasia.policy.validator.NotEmptyString.message = Это обязательное поле
-kz.theeurasia.policy.validator.NotNullValue.message = Выберите значение
+kz.theeurasia.policy.validator.NotEmptyString.message = Обязательное поле
+kz.theeurasia.policy.validator.NotNullValue.message = Обязательное поле
 kz.theeurasia.policy.validator.ValidCountry.message = Некорректно указана страна
 kz.theeurasia.policy.validator.ValidCountryRegion.message = Регион некорректен
 kz.theeurasia.policy.validator.ValidDateOfBirth.message = Некорректная дата рождения
@@ -24,3 +24,4 @@ kz.theeurasia.policy.validator.ValidVINCode.message = VIN-код некорре�
 # custom validation messages
 kz.theeurasia.policy.validator.custom.WhoIsInsurant.message = Уточните пожалуйста, кто будет являться страхователем по договору?
 kz.theeurasia.policy.validator.custom.DriverAsInsurant.message = Выберите пожалуйста страхователя по договору из представленного списка ниже
+kz.theeurasia.policy.validator.custom.EmptyIdNumber.message = Укажите ИИН

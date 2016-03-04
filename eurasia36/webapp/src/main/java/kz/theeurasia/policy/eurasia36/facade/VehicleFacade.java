@@ -15,10 +15,10 @@ import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.osgpovts.VehicleServiceDAO;
 import kz.theeurasia.policy.domain.InsuredVehicleData;
-import kz.theeurasia.policy.domain.PolicyRequestData;
 import kz.theeurasia.policy.domain.VehicleData;
 import kz.theeurasia.policy.eurasia36.bean.MessageBundleCode;
 import kz.theeurasia.policy.eurasia36.bean.ValidationException;
+import kz.theeurasia.policy.eurasia36.domain.PolicyRequestData;
 
 @Named
 @ViewScoped

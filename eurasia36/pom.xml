@@ -9,7 +9,7 @@
 	</parent>
 
 	<groupId>kz.theeurasia.policy.eurasia36</groupId>
-	<artifactId>parent</artifactId>
+	<artifactId>eurasia36-parent</artifactId>
 	<version>1.0-RC1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 

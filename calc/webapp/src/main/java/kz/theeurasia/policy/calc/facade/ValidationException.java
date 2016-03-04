@@ -1,4 +1,4 @@
-package kz.theeurasia.policy.calc.bean;
+package kz.theeurasia.policy.calc.facade;
 
 public class ValidationException extends Exception {
 

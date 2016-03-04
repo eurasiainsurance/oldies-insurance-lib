@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<ui:composition xmlns:h="http://xmlns.jcp.org/jsf/html"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:comp="http://xmlns.jcp.org/jsf/composite"
@@ -7,15 +8,46 @@
 	xmlns:pe="http://primefaces.org/ui/extensions"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
 
-	<p:panel header="#{gpovts['title.policy-cost']}"
-		rendered="#{osgpovtsView.policy.calculatedPremiumCost gt 0}">
-		<h:panelGrid columns="2">
-			<p:outputLabel value="#{gpovts['label.output.policy-cost']}" />
-			<p:outputLabel style="font-weight: bold"
-				value="#{osgpovtsView.policy.calculatedPremiumCost}">
-				<f:convertNumber type="currency" currencySymbol="&#8376;" />
+	<h:panelGrid columns="2">
+		<p:commandButton value="#{gpovts['command.calculate-cost']}"
+			process="@form" update="@form"
+			oncomplete="handleDialogShow(xhr, status, args, PF('costDialog'))" />
+		<h:panelGroup>
+			<p:selectBooleanCheckbox widgetVar="applyDiscount"
+				value="#{calculationData.applyDiscount}">
+				<p:ajax event="change" process="@this" update="@form"
+					listener="#{calculationController.onPolicyCostCalculationFormChanged}" />
+			</p:selectBooleanCheckbox>
+			<p:outputLabel onclick="PF('applyDiscount').toggle()">
+				<h:outputText value="#{gpovts['label.input.discount']} " />
+				<h:outputText value="#{discountData.discountValue}"
+					style="font-weight: bold;">
+					<f:convertNumber type="percent" />
+				</h:outputText>
 			</p:outputLabel>
-		</h:panelGrid>
-	</p:panel>
+		</h:panelGroup>
+	</h:panelGrid>
+
+	<p:dialog header="#{gpovts['title.policy-cost']}"
+		widgetVar="costDialog" resizable="false" modal="true" width="400"
+		height="300" closeOnEscape="true" id="costDialog">
+		<h:panelGroup styleClass="policyCostLabel">
+			<h:outputText value="#{gpovts['label.output.policy-cost']}" />
+			<h:outputText rendered="#{calculationData.applyDiscount}"
+				value=" #{gpovts['label.output.policy-cost-with-discount']} " />
+			<h:outputText style="font-weight: bold"
+				rendered="#{calculationData.applyDiscount}"
+				value="#{discountData.discountValue}">
+				<f:convertNumber type="percent" />
+			</h:outputText>
+		</h:panelGroup>
+		<h:outputText styleClass="policyCost"
+			value="#{calculationData.calculatedPremiumCost}">
+			<f:convertNumber type="currency" currencySymbol="&#8376;" />
+		</h:outputText>
+	</p:dialog>
+	<!-- 		<script type="text/javascript"> -->
+	<!--  			PF('costDialog').show(); -->
+	<!-- 		</script> -->
 
 </ui:composition>

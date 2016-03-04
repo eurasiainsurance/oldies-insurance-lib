@@ -7,15 +7,14 @@
 	xmlns:pe="http://primefaces.org/ui/extensions"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
 
-	<p:dataGrid var="vehicle"
-		value="#{osgpovtsView.policy.insuredVehicles}" layout="grid"
-		columns="3">
+	<p:dataGrid var="vehicle" value="#{calculationData.insuredVehicles}"
+		layout="grid" columns="1">
 
 		<f:facet name="header">
 			<p:commandButton value="#{gpovts['command.add-vehicle']}"
-				action="#{osgpovtsView.addInsuredVehicle}" process="@this"
+				action="#{calculationController.addInsuredVehicle}" process="@this"
 				update="@form"
-				rendered="#{fn:length(osgpovtsView.policy.insuredDrivers) eq 1}" />
+				disabled="#{fn:length(calculationData.insuredDrivers) gt 1}" />
 		</f:facet>
 
 		<p:panel id="currentVehiclePanel">
@@ -28,8 +27,8 @@
 			<f:facet name="actions">
 				<p:commandLink
 					styleClass="ui-panel-titlebar-icon ui-corner-all ui-state-default"
-					rendered="#{fn:length(osgpovtsView.policy.insuredVehicles) gt 1}"
-					action="#{osgpovtsView.removeInsuredVehicle(vehicle)}"
+					rendered="#{fn:length(calculationData.insuredVehicles) gt 1}"
+					action="#{calculationController.removeInsuredVehicle(vehicle)}"
 					process="@this" update="@form">
 					<h:outputText styleClass="ui-icon ui-icon-close" />
 				</p:commandLink>
@@ -38,48 +37,49 @@
 
 			<h:panelGrid columns="1">
 
-				<p:outputLabel value="#{gpovts['label.input.vehicle.vin-code']}" />
-				<h:panelGrid columns="2">
-					<p:inputMask id="vehicleVINCode" value="#{vehicle.vehicleData.vinCode}"
-						mask="*****************"
-						onchange="rcVehicle_VinCodeChanged#{vehicle.safeId}()">
-						<pe:keyFilter regEx="/[0123456789ABCDEFGHJKLMNPRSTUVWXYZ]/i"
-							preventPaste="false" />
-					</p:inputMask>
-					<p:message for="vehicleVINCode" display="icon" />
-					<p:remoteCommand name="rcVehicle_VinCodeChanged#{vehicle.safeId}"
-						actionListener="#{osgpovtsView.onVehicleVinCodeChanged(vehicle)}"
-						update="@form" process="@this,vehicleVINCode" />
-				</h:panelGrid>
+				<!-- 				<p:outputLabel value="#{gpovts['label.input.vehicle.vin-code']}" /> -->
+				<!-- 				<h:panelGrid columns="2"> -->
+				<!-- 					<p:inputMask id="vehicleVINCode" value="#{vehicle.vehicleData.vinCode}" -->
+				<!-- 						mask="*****************" -->
+				<!-- 						onchange="rcVehicle_VinCodeChanged#{vehicle.safeId}()"> -->
+				<!-- 						<pe:keyFilter regEx="/[0123456789ABCDEFGHJKLMNPRSTUVWXYZ]/i" -->
+				<!-- 							preventPaste="false" /> -->
+				<!-- 					</p:inputMask> -->
+				<!-- 					<p:message for="vehicleVINCode" /> -->
+				<!-- 					<p:remoteCommand name="rcVehicle_VinCodeChanged#{vehicle.safeId}" -->
+				<!-- 						actionListener="#{calculationController.onVehicleVinCodeChanged(vehicle)}" -->
+				<!-- 						update="@form" process="@this,vehicleVINCode" /> -->
+				<!-- 				</h:panelGrid> -->
+
 				<p:outputLabel value="#{gpovts['label.input.vehicle-age-class']}" />
 				<h:panelGrid columns="2">
 					<p:selectOneMenu id="vehicleAgeClass"
 						value="#{vehicle.vehicleAgeClass}" disabled="#{vehicle.fetched}">
 						<p:ajax event="change" process="@this" update="@form"
-							listener="#{osgpovtsView.onPolicyCostCalculationFormChanged}" />
+							listener="#{calculationController.onPolicyCostCalculationFormChanged}" />
 						<f:selectItems value="#{vehicleAgeClassService.selectableItemsSI}" />
 					</p:selectOneMenu>
-					<p:message for="vehicleAgeClass" display="icon" />
+					<p:message for="vehicleAgeClass" />
 				</h:panelGrid>
 				<p:outputLabel value="#{gpovts['label.input.vehicle-class']}" />
 				<h:panelGrid columns="2">
 					<p:selectOneMenu id="vehicleClass" value="#{vehicle.vehicleClass}"
 						disabled="#{vehicle.fetched}">
 						<p:ajax event="change" process="@this" update="@form"
-							listener="#{osgpovtsView.onPolicyCostCalculationFormChanged}" />
+							listener="#{calculationController.onPolicyCostCalculationFormChanged}" />
 						<f:selectItems value="#{vehicleClassService.selectableItemsSI}" />
 					</p:selectOneMenu>
-					<p:message for="vehicleClass" display="icon" />
+					<p:message for="vehicleClass" />
 				</h:panelGrid>
 				<p:outputLabel value="#{gpovts['label.input.vehicle-region']}" />
 				<h:panelGrid columns="2">
 					<p:selectOneMenu id="cehicleRegion"
 						value="#{vehicle.vehicleCertificateData.region}">
 						<p:ajax event="change" process="@this" update="@form"
-							listener="#{osgpovtsView.onVehicleRegionChanged(vehicle)}" />
+							listener="#{calculationController.onVehicleRegionChanged(vehicle)}" />
 						<f:selectItems value="#{countryRegionService.selectableItemsSI}" />
 					</p:selectOneMenu>
-					<p:message for="cehicleRegion" display="icon" />
+					<p:message for="cehicleRegion" />
 				</h:panelGrid>
 			</h:panelGrid>
 
@@ -90,7 +90,7 @@
 						value="#{vehicle.vehicleCertificateData.majorCity}"
 						disabled="#{vehicle.forcedMajorCity}">
 						<p:ajax event="change" process="@this" update="@form"
-							listener="#{osgpovtsView.onPolicyCostCalculationFormChanged}" />
+							listener="#{calculationController.onPolicyCostCalculationFormChanged}" />
 					</p:selectBooleanCheckbox>
 					<p:outputLabel value="#{gpovts['label.input.vehicle.major-city']}"
 						onclick="if (!PF('w_majorCityCheckbox#{vehicle.safeId}').disabled) {PF('w_majorCityCheckbox#{vehicle.safeId}').toggle();}" />

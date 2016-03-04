@@ -1,40 +1,38 @@
-package kz.theeurasia.policy.calc.facade;
+package kz.theeurasia.policy.services;
 
 import java.io.Serializable;
+import java.util.List;
 
-import javax.faces.view.ViewScoped;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import kz.theeurasia.policy.domain.InsuredDriverData;
 import kz.theeurasia.policy.domain.InsuredVehicleData;
-import kz.theeurasia.policy.domain.PolicyRequestData;
 import kz.theeurasia.policy.domain.PolicyTermClass;
-import kz.theeurasia.policy.services.PremiumCostCalculatorRatesService;
 
 @Named
-@ViewScoped
-public class PolicyFacade implements Serializable {
+@ApplicationScoped
+public class CalculationService implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Inject
     private PremiumCostCalculatorRatesService rates;
 
-    public PolicyRequestData initNew() {
-	PolicyRequestData policy = new PolicyRequestData();
-	return policy;
-    }
-
-    public void calculatePremiumCost(PolicyRequestData policy) {
+    public double calculatePremiumCost(List<InsuredDriverData> drivers, List<InsuredVehicleData> vehicles,
+	    PolicyTermClass termClass) {
 	double maximumCost = 0d;
-	for (InsuredDriverData driver : policy.getInsuredDrivers())
-	    for (InsuredVehicleData vehicle : policy.getInsuredVehicles()) {
-		double cost = _calculatePremiumCostVariant(driver, vehicle, policy.getTermClass());
+	for (InsuredDriverData driver : drivers)
+	    for (InsuredVehicleData vehicle : vehicles) {
+		double cost = _calculatePremiumCostVariant(driver, vehicle, termClass);
+		if (cost == 0) {
+		    return 0;
+		}
 		if (maximumCost < cost)
 		    maximumCost = cost;
 	    }
-	policy.setCalculatedPremiumCost(maximumCost);
+	return maximumCost;
     }
 
     private double _calculatePremiumCostVariant(InsuredDriverData insured, InsuredVehicleData vehicle,

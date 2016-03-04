@@ -31,10 +31,10 @@
 	</properties>
 
 	<modules>
-		<module>api</module>
-		<module>ejbs</module>
-		<module>webapp</module>
-		<module>ear</module>
+		<module>core</module>
+		<module>eurasia36-ejbs</module>
+		<module>eurasia36-webapp</module>
+		<module>eurasia36-ear</module>
 	</modules>
 
 	<dependencyManagement>

@@ -1,4 +1,4 @@
-package kz.theeurasia.eurasia36.facade;
+package kz.theeurasia.policy.eurasia36.facade;
 
 import java.io.IOException;
 import java.io.Serializable;

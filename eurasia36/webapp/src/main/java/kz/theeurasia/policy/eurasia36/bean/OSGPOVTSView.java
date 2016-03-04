@@ -1,4 +1,4 @@
-package kz.theeurasia.eurasia36.bean;
+package kz.theeurasia.policy.eurasia36.bean;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -25,16 +25,16 @@ import kz.theeurasia.esbdproxy.domain.dict.general.KZCityDict;
 import kz.theeurasia.esbdproxy.domain.dict.general.SexDict;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredAgeClassEnum;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
-import kz.theeurasia.eurasia36.facade.DriverFacade;
-import kz.theeurasia.eurasia36.facade.InsurantFacade;
-import kz.theeurasia.eurasia36.facade.MailFacade;
-import kz.theeurasia.eurasia36.facade.PolicyFacade;
-import kz.theeurasia.eurasia36.facade.UploadedImagesFacade;
-import kz.theeurasia.eurasia36.facade.VehicleFacade;
 import kz.theeurasia.policy.domain.InsuredDriverData;
 import kz.theeurasia.policy.domain.InsuredVehicleData;
 import kz.theeurasia.policy.domain.PolicyRequestData;
 import kz.theeurasia.policy.domain.UploadedImage;
+import kz.theeurasia.policy.eurasia36.facade.DriverFacade;
+import kz.theeurasia.policy.eurasia36.facade.InsurantFacade;
+import kz.theeurasia.policy.eurasia36.facade.MailFacade;
+import kz.theeurasia.policy.eurasia36.facade.PolicyFacade;
+import kz.theeurasia.policy.eurasia36.facade.UploadedImagesFacade;
+import kz.theeurasia.policy.eurasia36.facade.VehicleFacade;
 
 @Named("osgpovtsView")
 @ViewScoped

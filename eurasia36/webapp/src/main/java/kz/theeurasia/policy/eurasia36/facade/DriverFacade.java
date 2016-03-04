@@ -1,4 +1,4 @@
-package kz.theeurasia.eurasia36.facade;
+package kz.theeurasia.policy.eurasia36.facade;
 
 import java.io.Serializable;
 
@@ -15,8 +15,6 @@ import kz.theeurasia.esbdproxy.services.NotFound;
 import kz.theeurasia.esbdproxy.services.general.KZCityServiceDAO;
 import kz.theeurasia.esbdproxy.services.general.SubjectPersonServiceDAO;
 import kz.theeurasia.esbdproxy.services.osgpovts.InsuranceClassTypeServiceDAO;
-import kz.theeurasia.eurasia36.bean.MessageBundleCode;
-import kz.theeurasia.eurasia36.bean.ValidationException;
 import kz.theeurasia.policy.domain.ContactData;
 import kz.theeurasia.policy.domain.IdentityCardData;
 import kz.theeurasia.policy.domain.InsuredDriverData;
@@ -24,6 +22,8 @@ import kz.theeurasia.policy.domain.OriginData;
 import kz.theeurasia.policy.domain.PersonalData;
 import kz.theeurasia.policy.domain.PolicyRequestData;
 import kz.theeurasia.policy.domain.ResidenceData;
+import kz.theeurasia.policy.eurasia36.bean.MessageBundleCode;
+import kz.theeurasia.policy.eurasia36.bean.ValidationException;
 
 @Named
 @ViewScoped

@@ -1,4 +1,4 @@
-package kz.theeurasia.eurasia36.services.ejb;
+package kz.theeurasia.policy.eurasia36.services.ejb;
 
 import javax.annotation.Resource;
 import javax.ejb.Stateless;

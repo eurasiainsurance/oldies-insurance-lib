@@ -1,4 +1,4 @@
-package kz.theeurasia.eurasia36.bean;
+package kz.theeurasia.policy.eurasia36.bean;
 
 public enum MessageBundleCode {
 

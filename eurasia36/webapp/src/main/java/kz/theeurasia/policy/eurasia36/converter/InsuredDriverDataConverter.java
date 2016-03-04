@@ -1,4 +1,4 @@
-package kz.theeurasia.eurasia36.converter;
+package kz.theeurasia.policy.eurasia36.converter;
 
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
@@ -7,8 +7,8 @@ import javax.faces.convert.ConverterException;
 import javax.faces.convert.FacesConverter;
 import javax.inject.Inject;
 
-import kz.theeurasia.eurasia36.bean.OSGPOVTSView;
 import kz.theeurasia.policy.domain.InsuredDriverData;
+import kz.theeurasia.policy.eurasia36.bean.OSGPOVTSView;
 
 @FacesConverter(forClass = InsuredDriverData.class)
 public class InsuredDriverDataConverter implements Converter {

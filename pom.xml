@@ -31,6 +31,7 @@
 	</properties>
 
 	<modules>
+		<module>api</module>
 		<module>ejbs</module>
 		<module>webapp</module>
 		<module>ear</module>

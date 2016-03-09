@@ -21,6 +21,11 @@
 			<artifactId>esbdproxy-api</artifactId>
 			<scope>compile</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.lapsa.international-helper</groupId>
+			<artifactId>international-api</artifactId>
+			<scope>compile</scope>
+		</dependency>
 		<!-- JavaEE -->
 		<dependency>
 			<groupId>javax</groupId>

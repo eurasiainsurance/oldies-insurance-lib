@@ -1,15 +1,17 @@
 package kz.theeurasia.policy.domain;
 
+import com.lapsa.phone.PhoneNumber;
+import com.lapsa.validators.ValidPhoneNumber;
+
 import kz.theeurasia.policy.validator.NotNullValue;
 import kz.theeurasia.policy.validator.ValidEmail;
-import kz.theeurasia.policy.validator.ValidPhoneNumber;
 import kz.theeurasia.policy.validator.ValidURL;
 
 public class ContactData {
 
     @NotNullValue
     @ValidPhoneNumber
-    private String phone;
+    private PhoneNumber phone;
 
     @NotNullValue
     @ValidEmail
@@ -20,11 +22,11 @@ public class ContactData {
 
     // GENERATED
 
-    public String getPhone() {
+    public PhoneNumber getPhone() {
 	return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(PhoneNumber phone) {
 	this.phone = phone;
     }
 

@@ -4,12 +4,12 @@
 	<parent>
 		<groupId>kz.theeurasia.policy</groupId>
 		<artifactId>parent</artifactId>
-		<version>1.0-RC4-SNAPSHOT</version>
+		<version>1.0-RC4.1-SNAPSHOT</version>
 	</parent>
 
 	<groupId>kz.theeurasia.policy.calc</groupId>
 	<artifactId>calc-parent</artifactId>
-	<version>1.0-RC4-SNAPSHOT</version>
+	<version>1.0-RC4.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Policy : Calc : Parent</name>

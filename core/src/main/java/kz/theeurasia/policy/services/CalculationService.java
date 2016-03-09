@@ -32,7 +32,6 @@ public class CalculationService implements Serializable {
 		if (maximumCost < cost)
 		    maximumCost = cost;
 	    }
-	maximumCost = Math.round(maximumCost);
 	return maximumCost;
     }
 

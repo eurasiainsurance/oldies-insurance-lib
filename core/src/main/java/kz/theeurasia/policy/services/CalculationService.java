@@ -22,6 +22,11 @@ public class CalculationService implements Serializable {
 
     public double calculatePremiumCost(List<InsuredDriverData> drivers, List<InsuredVehicleData> vehicles,
 	    PolicyTermClass termClass) {
+	return calculatePremiumCost(drivers, vehicles, termClass, false);
+    }
+
+    public double calculatePremiumCost(List<InsuredDriverData> drivers, List<InsuredVehicleData> vehicles,
+	    PolicyTermClass termClass, boolean rounded) {
 	double maximumCost = 0d;
 	for (InsuredDriverData driver : drivers)
 	    for (InsuredVehicleData vehicle : vehicles) {
@@ -32,6 +37,8 @@ public class CalculationService implements Serializable {
 		if (maximumCost < cost)
 		    maximumCost = cost;
 	    }
+	if (rounded)
+	    maximumCost = Math.round(maximumCost);
 	return maximumCost;
     }
 

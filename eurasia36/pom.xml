@@ -4,12 +4,12 @@
 	<parent>
 		<groupId>kz.theeurasia.policy</groupId>
 		<artifactId>parent</artifactId>
-		<version>1.0-RC4.1-SNAPSHOT</version>
+		<version>1.0-RC4-SNAPSHOT</version>
 	</parent>
 
 	<groupId>kz.theeurasia.policy.eurasia36</groupId>
 	<artifactId>eurasia36-parent</artifactId>
-	<version>1.0-RC4.1-SNAPSHOT</version>
+	<version>1.0-RC4-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Policy : Eurasia36 : Parent</name>

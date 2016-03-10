@@ -1,0 +1,26 @@
+# default validation messages for validators
+kz.theeurasia.policy.validator.NotEmptyString.message = Mandatory field
+kz.theeurasia.policy.validator.NotNullValue.message = Mandatory field
+kz.theeurasia.policy.validator.ValidCountry.message = Country is not set
+kz.theeurasia.policy.validator.ValidCountryRegion.message = Area is not set
+kz.theeurasia.policy.validator.ValidDateOfBirth.message = Invalid date of birth
+kz.theeurasia.policy.validator.ValidDateOfIssue.message = Invald date of issue
+kz.theeurasia.policy.validator.ValidEmail.message = Invalid email address
+kz.theeurasia.policy.validator.ValidEnumerationValue.message = Invalid value
+kz.theeurasia.policy.validator.ValidIdentityCardType.message = Invalid identity type
+kz.theeurasia.policy.validator.ValidIdNumber.message = ID-number is not valid
+kz.theeurasia.policy.validator.ValidInsuranceAgeClass.message = Invalid age category
+kz.theeurasia.policy.validator.ValidInsuranceExpirienceClass.message = Invalid expirience class
+kz.theeurasia.policy.validator.ValidKZCity.message = Invalid city
+kz.theeurasia.policy.validator.ValidSex.message = Invalid value
+kz.theeurasia.policy.validator.ValidURL.message = Invalid web-address
+kz.theeurasia.policy.validator.ValidVehicleAgeClass.message = Ivalid vehicle age category
+kz.theeurasia.policy.validator.ValidVehicleClass.message = Invalid vehicle class
+kz.theeurasia.policy.validator.ValidVehicleRegistrationNumber.message = Invalid vehicle registration number
+kz.theeurasia.policy.validator.ValidVehicleYearOfIssue.message = Invalid vehicle year of issue
+kz.theeurasia.policy.validator.ValidVINCode.message = Invalid VIN
+
+# custom validation messages
+kz.theeurasia.policy.validator.custom.WhoIsInsurant.message = Who is insurant?
+kz.theeurasia.policy.validator.custom.DriverAsInsurant.message = Please choose an insured in the list below
+kz.theeurasia.policy.validator.custom.IdNumber.empty.message = Please enter an ID-number

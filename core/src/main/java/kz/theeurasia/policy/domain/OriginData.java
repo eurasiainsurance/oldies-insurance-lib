@@ -1,6 +1,7 @@
 package kz.theeurasia.policy.domain;
 
-import kz.theeurasia.esbdproxy.domain.dict.general.CountryDict;
+import com.lapsa.country.Country;
+
 import kz.theeurasia.policy.validator.NotNullValue;
 import kz.theeurasia.policy.validator.ValidCountry;
 
@@ -8,15 +9,15 @@ public class OriginData {
 
     @NotNullValue
     @ValidCountry
-    private CountryDict country = CountryDict.UNSPECIFIED;
+    private Country country;
 
     // GENERATED
 
-    public CountryDict getCountry() {
+    public Country getCountry() {
 	return country;
     }
 
-    public void setCountry(CountryDict country) {
+    public void setCountry(Country country) {
 	this.country = country;
     }
 

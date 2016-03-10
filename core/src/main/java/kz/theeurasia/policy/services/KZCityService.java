@@ -34,14 +34,6 @@ public class KZCityService {
 	return _createSIFromList(getSelectableItems());
     }
 
-    public List<KZCityDict> getByQuery(String query) {
-	return kzCityServiceDAO.getBySearchPattern(query);
-    }
-
-    public List<SelectItem> getByQuerySI(String query) {
-	return _createSIFromList(getByQuery(query));
-    }
-
     private List<SelectItem> _createSIFromList(List<KZCityDict> list) {
 	List<SelectItem> result = new ArrayList<>();
 	for (KZCityDict r : list) {

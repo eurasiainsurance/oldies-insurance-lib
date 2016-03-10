@@ -3,12 +3,12 @@ package kz.theeurasia.policy.validator;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-import kz.theeurasia.esbdproxy.domain.dict.general.CountryDict;
+import com.lapsa.country.Country;
 
 public class ValidCountryConstraintValidator
-	implements ConstraintValidator<ValidCountry, CountryDict> {
+	implements ConstraintValidator<ValidCountry, Country> {
 
-    private CountryDict[] invalidTypes;
+    private Country[] invalidTypes;
 
     @Override
     public void initialize(ValidCountry constraintAnnotation) {
@@ -16,10 +16,10 @@ public class ValidCountryConstraintValidator
     }
 
     @Override
-    public boolean isValid(CountryDict value, ConstraintValidatorContext context) {
+    public boolean isValid(Country value, ConstraintValidatorContext context) {
 	if (value == null)
 	    return true;
-	for (CountryDict i : invalidTypes)
+	for (Country i : invalidTypes)
 	    if (i.equals(value))
 		return false;
 	return true;

@@ -2,52 +2,58 @@ package kz.theeurasia.policy.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import javax.faces.model.SelectItem;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import kz.theeurasia.esbdproxy.domain.dict.general.CountryDict;
-import kz.theeurasia.esbdproxy.services.general.CountryServiceDAO;
+import com.lapsa.country.Country;
 
 @Named
 @ApplicationScoped
 public class CountryService {
 
     @Inject
-    private CountryServiceDAO countryServiceDAO;
+    private LocaleService localeService;
 
-    public List<CountryDict> getAllItems() {
-	return countryServiceDAO.getAll();
+    private ResourceBundle resources;
+
+    @PostConstruct
+    public void init() {
+	resources = ResourceBundle.getBundle(Country.BUNDLE_BASENAME, localeService.getLocale());
+    }
+
+    public List<Country> getAllItems() {
+	return CollectionUtils.toList(Country.values());
     }
 
     public List<SelectItem> getAllItemsSI() {
 	return _createSIFromList(getAllItems());
     }
 
-    public List<CountryDict> getSelectableItems() {
-	return countryServiceDAO.getSelectable();
+    public List<Country> getSelectableItems() {
+	List<Country> ret = new ArrayList<>();
+	for (Country t : Country.values())
+	    if (t.isActual())
+		ret.add(t);
+	return ret;
     }
 
     public List<SelectItem> getSelectableItemsSI() {
 	return _createSIFromList(getSelectableItems());
     }
 
-    public List<CountryDict> getCountriesByQuery(String query) {
-	return countryServiceDAO.getBySearchPattern(query);
-    }
-
-    public List<SelectItem> getCountriesByQuerySI(String query) {
-	return _createSIFromList(countryServiceDAO.getBySearchPattern(query));
-    }
-
-    private List<SelectItem> _createSIFromList(List<CountryDict> list) {
+    private List<SelectItem> _createSIFromList(List<Country> list) {
 	List<SelectItem> result = new ArrayList<>();
-	for (CountryDict r : list) {
-	    SelectItem si = new SelectItem(r, r.getRusname());
+	for (Country r : list) {
+	    SelectItem si = new SelectItem(r,
+		    resources.getString(String.format("%1$s.%2$s", r.getClass().getName(), r.name())));
 	    result.add(si);
 	}
 	return result;
     }
+
 }

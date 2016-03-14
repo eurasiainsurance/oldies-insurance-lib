@@ -8,7 +8,7 @@ import kz.theeurasia.policy.validator.NotEmptyString;
 import kz.theeurasia.policy.validator.NotNullValue;
 import kz.theeurasia.policy.validator.ValidDateOfIssue;
 
-public class PrivilegerCertificateData {
+public class PrivilegerCertificateData implements ScanCopiedDocument {
 
     @NotNullValue
     @NotEmptyString
@@ -50,12 +50,24 @@ public class PrivilegerCertificateData {
 	this.dateOfIssue = dateOfIssue;
     }
 
+    @Override
     public List<UploadedImage> getScanFiles() {
 	return scanFiles;
     }
 
+    @Override
     public void setScanFiles(List<UploadedImage> scanFiles) {
 	this.scanFiles = scanFiles;
+    }
+
+    @Override
+    public void addScanFile(UploadedImage im) {
+	scanFiles.add(im);
+    }
+
+    @Override
+    public void removeScanFile(UploadedImage im) {
+	scanFiles.remove(im);
     }
 
 }

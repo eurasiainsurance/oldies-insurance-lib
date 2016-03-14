@@ -11,7 +11,7 @@ import kz.theeurasia.policy.validator.ValidCountryRegion;
 import kz.theeurasia.policy.validator.ValidDateOfIssue;
 import kz.theeurasia.policy.validator.ValidVehicleRegistrationNumber;
 
-public class VehicleCertificateData {
+public class VehicleCertificateData implements ScanCopiedDocument {
 
     @NotNullValue
     @NotEmptyString
@@ -76,12 +76,23 @@ public class VehicleCertificateData {
 	this.registrationNumber = registrationNumber;
     }
 
+    @Override
     public List<UploadedImage> getScanFiles() {
 	return scanFiles;
     }
 
+    @Override
     public void setScanFiles(List<UploadedImage> scanFiles) {
 	this.scanFiles = scanFiles;
     }
 
+    @Override
+    public void addScanFile(UploadedImage im) {
+	scanFiles.add(im);
+    }
+
+    @Override
+    public void removeScanFile(UploadedImage im) {
+	scanFiles.remove(im);
+    }
 }

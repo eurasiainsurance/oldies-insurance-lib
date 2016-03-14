@@ -10,7 +10,7 @@ import kz.theeurasia.policy.validator.NotNullValue;
 import kz.theeurasia.policy.validator.ValidDateOfIssue;
 import kz.theeurasia.policy.validator.ValidIdentityCardType;
 
-public class IdentityCardData {
+public class IdentityCardData implements ScanCopiedDocument {
 
     @NotNullValue
     @ValidDateOfIssue
@@ -64,11 +64,23 @@ public class IdentityCardData {
 	this.type = type;
     }
 
+    @Override
     public List<UploadedImage> getScanFiles() {
 	return scanFiles;
     }
 
+    @Override
     public void setScanFiles(List<UploadedImage> scanFiles) {
 	this.scanFiles = scanFiles;
+    }
+
+    @Override
+    public void addScanFile(UploadedImage im) {
+	scanFiles.add(im);
+    }
+
+    @Override
+    public void removeScanFile(UploadedImage im) {
+	scanFiles.remove(im);
     }
 }

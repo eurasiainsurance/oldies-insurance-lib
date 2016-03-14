@@ -7,7 +7,7 @@ import java.util.List;
 import kz.theeurasia.policy.validator.NotEmptyString;
 import kz.theeurasia.policy.validator.NotNullValue;
 
-public class HandicaptedCertificateData {
+public class HandicaptedCertificateData implements ScanCopiedDocument {
 
     @NotNullValue
     @NotEmptyString
@@ -18,7 +18,7 @@ public class HandicaptedCertificateData {
 
     @NotNullValue
     private Date validTill;
-    
+
     private List<UploadedImage> scanFiles = new ArrayList<>();
 
     // GENERATED
@@ -47,11 +47,23 @@ public class HandicaptedCertificateData {
 	this.validTill = validTill;
     }
 
+    @Override
     public List<UploadedImage> getScanFiles() {
 	return scanFiles;
     }
 
+    @Override
     public void setScanFiles(List<UploadedImage> scanFiles) {
 	this.scanFiles = scanFiles;
+    }
+
+    @Override
+    public void addScanFile(UploadedImage im) {
+	scanFiles.add(im);
+    }
+
+    @Override
+    public void removeScanFile(UploadedImage im) {
+	scanFiles.remove(im);
     }
 }

@@ -13,6 +13,8 @@ public class UploadedImage {
     private final byte[] content;
     private final long size;
 
+    private String comments;
+
     public UploadedImage(String fileName, String mimeType, byte[] content) {
 	this.fileName = fileName;
 	this.mimeType = mimeType;
@@ -67,4 +69,11 @@ public class UploadedImage {
 	return size;
     }
 
+    public String getComments() {
+	return comments;
+    }
+
+    public void setComments(String comments) {
+	this.comments = comments;
+    }
 }

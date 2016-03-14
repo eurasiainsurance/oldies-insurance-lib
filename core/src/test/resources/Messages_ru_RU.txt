@@ -74,3 +74,6 @@ label.si.insurance-class.UNSPECIFIED = Не определено
 label.si.who-is-insurant.DRIVER = Страхователем является один из застрахованных водителей
 label.si.who-is-insurant.OTHER = Страхователем является другое лицо
 label.si.who-is-insurant.UNSPECIFIED = Не указано
+
+label.si.scan-copies-transfer-method.ON_SITE = Загрузить на сайте
+label.si.scan-copies-transfer-method.BY_WHATSAPP = С помощью WhatsApp

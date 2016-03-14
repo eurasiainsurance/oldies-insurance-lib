@@ -9,7 +9,8 @@ public enum Messages {
     LABEL_SI_SEX_PREFIX("label.si.sex."),
     LABEL_SI_COUNTRY_REGION_PREFIX("label.si.country-region."),
     LABEL_SI_IDENTITY_CARD_TYPE_PREFIX("label.si.identity-card-type."),
-    LABEL_SI_WHO_IS_INSURANT_PREFIX("label.si.who-is-insurant.");
+    LABEL_SI_WHO_IS_INSURANT_PREFIX("label.si.who-is-insurant."),
+    LABEL_SI_SCAN_COPIES_TRANSFER_METHOD_PREFIX("label.si.scan-copies-transfer-method.");
 
     public static final String BUNDLE_BASE_NAME = "Messages";
 

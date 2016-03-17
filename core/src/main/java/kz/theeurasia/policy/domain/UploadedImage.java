@@ -6,8 +6,7 @@ import java.util.UUID;
 
 public class UploadedImage {
 
-    private final UUID id = UUID.randomUUID();
-
+    private final String id = UUID.randomUUID().toString();
     private final String fileName;
     private final String mimeType;
     private final byte[] content;
@@ -40,7 +39,7 @@ public class UploadedImage {
     }
 
     public String getSafeId() {
-	return id.toString().replaceAll("-", "_");
+	return id.replaceAll("-", "_");
     }
 
     public InputStream asStream() {
@@ -49,7 +48,7 @@ public class UploadedImage {
 
     // GENERATED
 
-    public UUID getId() {
+    public String getId() {
 	return id;
     }
 

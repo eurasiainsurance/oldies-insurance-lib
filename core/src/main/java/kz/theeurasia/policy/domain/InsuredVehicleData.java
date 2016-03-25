@@ -51,6 +51,12 @@ public class InsuredVehicleData {
 	return id.toString().replaceAll("-", "_");
     }
 
+    @Override
+    public String toString() {
+	return vehicleData.getDisplayName();
+    }
+
+
     // GENERATED
 
     public UUID getId() {

@@ -77,6 +77,11 @@ public class InsuredDriverData {
 	return id.toString().replaceAll("-", "_");
     }
 
+    @Override
+    public String toString() {
+	return personalData.getDisplayName();
+    }
+
     // GENERATED
 
     public UUID getId() {

@@ -53,6 +53,11 @@ public class InsurantData {
 	return fetchedEntity != null;
     }
 
+    @Override
+    public String toString() {
+	return personalData.getDisplayName();
+    }
+
     // GENERATED
 
     public UUID getId() {

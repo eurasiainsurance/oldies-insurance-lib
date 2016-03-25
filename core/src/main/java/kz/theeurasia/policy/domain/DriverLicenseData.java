@@ -57,5 +57,4 @@ public class DriverLicenseData implements ScanCopiedDocument {
     public void removeScanFile(UploadedImage im) {
 	scanFiles.remove(im);
     }
-
 }

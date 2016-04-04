@@ -9,17 +9,16 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-import kz.theeurasia.esbdproxy.domain.dict.general.CountryRegionDict;
+import com.lapsa.kz.country.KZArea;
 
 @Target({ METHOD, FIELD, ANNOTATION_TYPE })
 @Retention(RUNTIME)
-@Constraint(validatedBy = ValidCountryRegionConstraintValidator.class)
-public @interface ValidCountryRegion {
+@Constraint(validatedBy = ValidKZAreaConstraintValidator.class)
+public @interface ValidKZArea {
 
-    CountryRegionDict[] invalidValues() default { CountryRegionDict.TEMPORARY_ENTRY,
-	    CountryRegionDict.TEMPORARY_REGISTRATION, CountryRegionDict.UNSPECIFIED };
+    KZArea[] invalidValues() default {};
 
-    String message() default "{kz.theeurasia.policy.validator.ValidCountryRegion.message}";
+    String message() default "{kz.theeurasia.policy.validator.ValidKZArea.message}";
 
     Class<?>[] groups() default {};
 

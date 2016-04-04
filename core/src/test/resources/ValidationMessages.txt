@@ -2,7 +2,6 @@
 kz.theeurasia.policy.validator.NotEmptyString.message = Обязательное поле
 kz.theeurasia.policy.validator.NotNullValue.message = Обязательное поле
 kz.theeurasia.policy.validator.ValidCountry.message = Некорректно указана страна
-kz.theeurasia.policy.validator.ValidCountryRegion.message = Регион некорректен
 kz.theeurasia.policy.validator.ValidDateOfBirth.message = Некорректная дата рождения
 kz.theeurasia.policy.validator.ValidDateOfIssue.message = Некорректная дата выдачи
 kz.theeurasia.policy.validator.ValidEmail.message = Некорректный адрес e-mail
@@ -11,6 +10,7 @@ kz.theeurasia.policy.validator.ValidIdentityCardType.message = Некоррек�
 kz.theeurasia.policy.validator.ValidIdNumber.message = ИИН не корректен
 kz.theeurasia.policy.validator.ValidInsuranceAgeClass.message = Указана некорректная категория возраста
 kz.theeurasia.policy.validator.ValidInsuranceExpirienceClass.message = Указан некорректный стаж вождения 
+kz.theeurasia.policy.validator.ValidKZArea.message = Регион некорректен
 kz.theeurasia.policy.validator.ValidKZCity.message = Указанный город некоректен
 kz.theeurasia.policy.validator.ValidSex.message = Некорркетное значение
 kz.theeurasia.policy.validator.ValidURL.message = Некорректный адрес сайта

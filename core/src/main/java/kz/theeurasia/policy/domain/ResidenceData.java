@@ -1,6 +1,7 @@
 package kz.theeurasia.policy.domain;
 
-import kz.theeurasia.esbdproxy.domain.dict.general.KZCityDict;
+import com.lapsa.kz.country.KZCity;
+
 import kz.theeurasia.policy.validator.NotEmptyString;
 import kz.theeurasia.policy.validator.NotNullValue;
 import kz.theeurasia.policy.validator.ValidKZCity;
@@ -11,7 +12,7 @@ public class ResidenceData {
 
     @NotNullValue
     @ValidKZCity
-    private KZCityDict city = KZCityDict.UNSPECIFIED;
+    private KZCity city;
 
     @NotNullValue
     @NotEmptyString
@@ -27,11 +28,11 @@ public class ResidenceData {
 	this.resident = resident;
     }
 
-    public KZCityDict getCity() {
+    public KZCity getCity() {
 	return city;
     }
 
-    public void setCity(KZCityDict city) {
+    public void setCity(KZCity city) {
 	this.city = city;
     }
 

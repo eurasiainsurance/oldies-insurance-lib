@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import kz.theeurasia.esbdproxy.domain.dict.general.CountryRegionDict;
+import com.lapsa.kz.country.KZArea;
+
 import kz.theeurasia.policy.validator.NotEmptyString;
 import kz.theeurasia.policy.validator.NotNullValue;
-import kz.theeurasia.policy.validator.ValidCountryRegion;
+import kz.theeurasia.policy.validator.ValidKZArea;
 import kz.theeurasia.policy.validator.ValidDateOfIssue;
 import kz.theeurasia.policy.validator.ValidVehicleRegistrationNumber;
 
@@ -27,8 +28,8 @@ public class VehicleCertificateData implements ScanCopiedDocument {
     private Date dateOfIssue;
 
     @NotNullValue
-    @ValidCountryRegion
-    private CountryRegionDict region = CountryRegionDict.UNSPECIFIED;
+    @ValidKZArea
+    private KZArea region;
 
     private boolean majorCity;
 
@@ -52,11 +53,11 @@ public class VehicleCertificateData implements ScanCopiedDocument {
 	this.dateOfIssue = dateOfIssue;
     }
 
-    public CountryRegionDict getRegion() {
+    public KZArea getRegion() {
 	return region;
     }
 
-    public void setRegion(CountryRegionDict region) {
+    public void setRegion(KZArea region) {
 	this.region = region;
     }
 

@@ -7,7 +7,8 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 
-import kz.theeurasia.esbdproxy.domain.dict.general.CountryRegionDict;
+import com.lapsa.kz.country.KZArea;
+
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuranceClassTypeDict;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleAgeClassDict;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
@@ -21,7 +22,7 @@ public class PremiumCostCalculatorRatesService {
     private final double MRP = 2121;
     private final double BASE_RATE = 1.9;
 
-    private final Map<CountryRegionDict, Double> REGION_RATES = new HashMap<>();
+    private final Map<KZArea, Double> REGION_RATES = new HashMap<>();
     private final double MAJOR_CITY_CORRECTION_RATE = 1d;
     private final double NON_MAJOR_CITY_CORRECTION_RATE = 0.8d;
     private final Map<VehicleClassDict, Double> VEHICLE_TYPE_RATES = new HashMap<>();
@@ -34,22 +35,22 @@ public class PremiumCostCalculatorRatesService {
 
     @PostConstruct
     protected void initConstants() {
-	REGION_RATES.put(CountryRegionDict.GAST, 2.2d); // 01
-	REGION_RATES.put(CountryRegionDict.GALM, 2.96d); // 02
-	REGION_RATES.put(CountryRegionDict.OAKM, 1.32d); // 03
-	REGION_RATES.put(CountryRegionDict.OAKT, 1.35d); // 04
-	REGION_RATES.put(CountryRegionDict.OALM, 1.78d); // 05
-	REGION_RATES.put(CountryRegionDict.OATY, 2.69d); // 06
-	REGION_RATES.put(CountryRegionDict.OZK, 1.17d); // 07
-	REGION_RATES.put(CountryRegionDict.OZHM, 1d); // 08
-	REGION_RATES.put(CountryRegionDict.OKGD, 1.39d); // 09
-	REGION_RATES.put(CountryRegionDict.OKST, 1.95d); // 10
-	REGION_RATES.put(CountryRegionDict.OKZL, 1.09d); // 11
-	REGION_RATES.put(CountryRegionDict.OMNG, 1.15d); // 12
-	REGION_RATES.put(CountryRegionDict.OUK, 1.01d); // 13
-	REGION_RATES.put(CountryRegionDict.OPVL, 1.63d); // 14
-	REGION_RATES.put(CountryRegionDict.OSK, 1.33d); // 15
-	REGION_RATES.put(CountryRegionDict.OVK, 1.96d); // 16
+	REGION_RATES.put(KZArea.GAST, 2.2d); // 01
+	REGION_RATES.put(KZArea.GALM, 2.96d); // 02
+	REGION_RATES.put(KZArea.OAKM, 1.32d); // 03
+	REGION_RATES.put(KZArea.OAKT, 1.35d); // 04
+	REGION_RATES.put(KZArea.OALM, 1.78d); // 05
+	REGION_RATES.put(KZArea.OATY, 2.69d); // 06
+	REGION_RATES.put(KZArea.OZK, 1.17d); // 07
+	REGION_RATES.put(KZArea.OZHM, 1d); // 08
+	REGION_RATES.put(KZArea.OKGD, 1.39d); // 09
+	REGION_RATES.put(KZArea.OKST, 1.95d); // 10
+	REGION_RATES.put(KZArea.OKZL, 1.09d); // 11
+	REGION_RATES.put(KZArea.OMNG, 1.15d); // 12
+	REGION_RATES.put(KZArea.OUK, 1.01d); // 13
+	REGION_RATES.put(KZArea.OPVL, 1.63d); // 14
+	REGION_RATES.put(KZArea.OSK, 1.33d); // 15
+	REGION_RATES.put(KZArea.OVK, 1.96d); // 16
 
 	VEHICLE_TYPE_RATES.put(VehicleClassDict.BUS16, 3.26d);
 	VEHICLE_TYPE_RATES.put(VehicleClassDict.BUSOVR16, 3.45d);
@@ -112,7 +113,7 @@ public class PremiumCostCalculatorRatesService {
 	return BASE_RATE;
     }
 
-    public double getRegionRate(CountryRegionDict region) {
+    public double getRegionRate(KZArea region) {
 	if (!REGION_RATES.containsKey(region))
 	    return 0;
 	return REGION_RATES.get(region);

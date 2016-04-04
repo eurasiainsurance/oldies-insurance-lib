@@ -3,12 +3,11 @@ package kz.theeurasia.policy.validator;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-import kz.theeurasia.esbdproxy.domain.dict.general.KZCityDict;
+import com.lapsa.kz.country.KZCity;
 
-public class ValidKZCityConstraintValidator
-	implements ConstraintValidator<ValidKZCity, KZCityDict> {
+public class ValidKZCityConstraintValidator implements ConstraintValidator<ValidKZCity, KZCity> {
 
-    private KZCityDict[] invalidTypes;
+    private KZCity[] invalidTypes;
 
     @Override
     public void initialize(ValidKZCity constraintAnnotation) {
@@ -16,10 +15,10 @@ public class ValidKZCityConstraintValidator
     }
 
     @Override
-    public boolean isValid(KZCityDict value, ConstraintValidatorContext context) {
+    public boolean isValid(KZCity value, ConstraintValidatorContext context) {
 	if (value == null)
 	    return true;
-	for (KZCityDict i : invalidTypes)
+	for (KZCity i : invalidTypes)
 	    if (i.equals(value))
 		return false;
 	return true;

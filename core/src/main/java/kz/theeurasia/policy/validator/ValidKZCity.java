@@ -9,14 +9,14 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-import kz.theeurasia.esbdproxy.domain.dict.general.KZCityDict;
+import com.lapsa.kz.country.KZCity;
 
 @Target({ METHOD, FIELD, ANNOTATION_TYPE })
 @Retention(RUNTIME)
 @Constraint(validatedBy = ValidKZCityConstraintValidator.class)
 public @interface ValidKZCity {
 
-    KZCityDict[] invalidValues() default { KZCityDict.UNSPECIFIED };
+    KZCity[] invalidValues() default {};
 
     String message() default "{kz.theeurasia.policy.validator.ValidKZCity.message}";
 

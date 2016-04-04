@@ -2,7 +2,8 @@ package kz.theeurasia.policy.domain;
 
 import java.util.UUID;
 
-import kz.theeurasia.esbdproxy.domain.dict.general.EconomicSectorDict;
+import com.lapsa.kz.economic.KZEconomicSector;
+
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectPersonEntity;
 import kz.theeurasia.policy.validator.NotNullValue;
 import kz.theeurasia.policy.validator.ValidEnumerationValue;
@@ -24,7 +25,7 @@ public class InsurantData {
 
     private IdentityCardData identityCardData = new IdentityCardData();
 
-    private EconomicSectorDict economicsSector = EconomicSectorDict.HOUSEHOLDS;
+    private KZEconomicSector economicsSector = KZEconomicSector.HOUSEHOLDS;
 
     @NotNullValue(message = "{kz.theeurasia.policy.validator.custom.DriverAsInsurant.message}")
     private InsuredDriverData driverAsInsurant;
@@ -112,11 +113,11 @@ public class InsurantData {
 	this.identityCardData = identityCardData;
     }
 
-    public EconomicSectorDict getEconomicsSector() {
+    public KZEconomicSector getEconomicsSector() {
 	return economicsSector;
     }
 
-    public void setEconomicsSector(EconomicSectorDict economicsSector) {
+    public void setEconomicsSector(KZEconomicSector economicsSector) {
 	this.economicsSector = economicsSector;
     }
 

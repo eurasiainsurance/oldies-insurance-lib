@@ -29,7 +29,12 @@
 			<dependency>
 				<groupId>kz.theeurasia.esbdproxy</groupId>
 				<artifactId>esbdproxy-api</artifactId>
-				<version>1.1</version>
+				<version>1.2-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.lapsa.kzlib</groupId>
+				<artifactId>kzlib-core</artifactId>
+				<version>1.0-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>com.lapsa.international-helper</groupId>

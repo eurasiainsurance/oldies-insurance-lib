@@ -11,7 +11,7 @@ import javax.faces.model.SelectItem;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.lapsa.country.Country;
+import com.lapsa.kz.country.KZArea;
 import com.lapsa.kz.country.KZCity;
 
 @Named("kzCityService")
@@ -28,29 +28,37 @@ public class KZCityService {
 	resources = ResourceBundle.getBundle(KZCity.BUNDLE_BASENAME, localeService.getLocale());
     }
 
-    public List<Country> getAllItems() {
-	return CollectionUtils.toList(Country.values());
+    public List<KZCity> getAllItems() {
+	return CollectionUtils.toList(KZCity.values());
     }
 
     public List<SelectItem> getAllItemsSI() {
 	return _createSIFromList(getAllItems());
     }
 
-    public List<Country> getSelectableItems() {
-	List<Country> ret = new ArrayList<>();
-	for (Country t : Country.values())
-	    if (t.isActual())
-		ret.add(t);
-	return ret;
+    public List<KZCity> getSelectableItems() {
+	return new ArrayList<>(getAllItems());
     }
 
     public List<SelectItem> getSelectableItemsSI() {
 	return _createSIFromList(getSelectableItems());
     }
 
-    private List<SelectItem> _createSIFromList(List<Country> list) {
+    public List<KZCity> selectableItemsByArea(KZArea area) {
+	List<KZCity> result = new ArrayList<>();
+	for (KZCity city : KZCity.values())
+	    if (city.getArea().equals(area))
+		result.add(city);
+	return result;
+    }
+
+    public List<SelectItem> selectableItemsByAreaSI(KZArea area) {
+	return _createSIFromList(selectableItemsByArea(area));
+    }
+
+    private List<SelectItem> _createSIFromList(List<KZCity> list) {
 	List<SelectItem> result = new ArrayList<>();
-	for (Country r : list) {
+	for (KZCity r : list) {
 	    SelectItem si = new SelectItem(r,
 		    resources.getString(String.format("%1$s.%2$s", r.getClass().getName(), r.name())));
 	    result.add(si);

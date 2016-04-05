@@ -8,6 +8,8 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 
 import com.lapsa.kz.country.KZArea;
+import com.lapsa.kz.country.KZCity;
+import com.lapsa.kz.country.KZCityType;
 
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuranceClassTypeDict;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleAgeClassDict;
@@ -121,6 +123,13 @@ public class PremiumCostCalculatorRatesService {
 
     public double getIsMajorCityCorrectionRate(boolean isMajorCity) {
 	return (isMajorCity ? MAJOR_CITY_CORRECTION_RATE : NON_MAJOR_CITY_CORRECTION_RATE);
+    }
+
+    public double getIsMajorKZCityCorrectionRate(KZCity city) {
+	if (city == null)
+	    return 0;
+	return (city.getType().equals(KZCityType.MAJOR) || city.getType().equals(KZCityType.REGION_CENTER)
+		? MAJOR_CITY_CORRECTION_RATE : NON_MAJOR_CITY_CORRECTION_RATE);
     }
 
     public double getVehicleTypeRate(VehicleClassDict vehicleType) {

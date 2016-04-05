@@ -47,7 +47,7 @@ public class CalculationService implements Serializable {
 	double premium = rates.getBase();
 	premium = premium * rates.getBaseRate();
 	premium = premium * rates.getRegionRate(vehicle.getVehicleCertificateData().getRegion());
-	premium = premium * rates.getIsMajorCityCorrectionRate(vehicle.getVehicleCertificateData().isMajorCity());
+	premium = premium * rates.getIsMajorKZCityCorrectionRate(vehicle.getVehicleCertificateData().getCity());
 	premium = premium * rates.getVehicleTypeRate(vehicle.getVehicleClass());
 	premium = premium * rates.getDriverExpirienceTypeRate(insured.getAgeClass(), insured.getExpirienceClass());
 	premium = premium * rates.getVehicleAgeTypeRate(vehicle.getVehicleAgeClass());

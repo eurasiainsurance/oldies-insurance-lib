@@ -19,11 +19,14 @@ public class KZAreaService {
     @Inject
     private LocaleService localeService;
 
-    private ResourceBundle msg;
+    private ResourceBundle kzlibMessages;
+
+    private ResourceBundle messages;
 
     @PostConstruct
     public void init() {
-	msg = ResourceBundle.getBundle(KZArea.BUNDLE_BASENAME, localeService.getLocale());
+	kzlibMessages = ResourceBundle.getBundle(KZArea.BUNDLE_BASENAME, localeService.getLocale());
+	messages = ResourceBundle.getBundle(Messages.BUNDLE_BASE_NAME, localeService.getLocale());
     }
 
     public List<KZArea> getAllItems() {
@@ -31,7 +34,7 @@ public class KZAreaService {
     }
 
     public List<SelectItem> getAllItemsSI() {
-	return _createSIFromList(getAllItems());
+	return _createSIFromList(getAllItems(), true);
     }
 
     public List<KZArea> getSelectableItems() {
@@ -39,15 +42,18 @@ public class KZAreaService {
     }
 
     public List<SelectItem> getSelectableItemsSI() {
-	return _createSIFromList(getSelectableItems());
+	return _createSIFromList(getSelectableItems(), true);
     }
 
-    private List<SelectItem> _createSIFromList(List<KZArea> list) {
+    private List<SelectItem> _createSIFromList(List<KZArea> list, boolean addEmpty) {
 	List<SelectItem> result = new ArrayList<>();
 	for (KZArea r : list) {
-	    SelectItem si = new SelectItem(r, msg.getString(String.format("%s.%s", r.getClass().getName(), r.name())));
+	    SelectItem si = new SelectItem(r,
+		    kzlibMessages.getString(String.format("%s.%s", r.getClass().getName(), r.name())));
 	    result.add(si);
 	}
+	if (addEmpty)
+	    result.add(new SelectItem(null, messages.getString(Messages.LABEL_SI_UNSPECIFIED.getCode())));
 	return result;
     }
 }

@@ -21,11 +21,14 @@ public class KZCityService {
     @Inject
     private LocaleService localeService;
 
-    private ResourceBundle resources;
+    private ResourceBundle kzlibMessages;
+
+    private ResourceBundle messages;
 
     @PostConstruct
     public void init() {
-	resources = ResourceBundle.getBundle(KZCity.BUNDLE_BASENAME, localeService.getLocale());
+	kzlibMessages = ResourceBundle.getBundle(KZCity.BUNDLE_BASENAME, localeService.getLocale());
+	messages = ResourceBundle.getBundle(Messages.BUNDLE_BASE_NAME, localeService.getLocale());
     }
 
     public List<KZCity> getAllItems() {
@@ -33,7 +36,7 @@ public class KZCityService {
     }
 
     public List<SelectItem> getAllItemsSI() {
-	return _createSIFromList(getAllItems());
+	return _createSIFromList(getAllItems(), true);
     }
 
     public List<KZCity> getSelectableItems() {
@@ -41,7 +44,7 @@ public class KZCityService {
     }
 
     public List<SelectItem> getSelectableItemsSI() {
-	return _createSIFromList(getSelectableItems());
+	return _createSIFromList(getSelectableItems(), true);
     }
 
     public List<KZCity> selectableItemsByArea(KZArea area) {
@@ -53,16 +56,18 @@ public class KZCityService {
     }
 
     public List<SelectItem> selectableItemsByAreaSI(KZArea area) {
-	return _createSIFromList(selectableItemsByArea(area));
+	return _createSIFromList(selectableItemsByArea(area), true);
     }
 
-    private List<SelectItem> _createSIFromList(List<KZCity> list) {
+    private List<SelectItem> _createSIFromList(List<KZCity> list, boolean addEmpty) {
 	List<SelectItem> result = new ArrayList<>();
 	for (KZCity r : list) {
 	    SelectItem si = new SelectItem(r,
-		    resources.getString(String.format("%1$s.%2$s", r.getClass().getName(), r.name())));
+		    kzlibMessages.getString(String.format("%1$s.%2$s", r.getClass().getName(), r.name())));
 	    result.add(si);
 	}
+	if (addEmpty)
+	    result.add(new SelectItem(null, messages.getString(Messages.LABEL_SI_UNSPECIFIED.getCode())));
 	return result;
     }
 

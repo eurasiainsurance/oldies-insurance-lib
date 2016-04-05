@@ -38,16 +38,24 @@ public class CalculationService implements Serializable {
     private double _calculatePremiumCostVariant(InsuredDriverData insured, InsuredVehicleData vehicle,
 	    PolicyTermClass policyTermClass) {
 	double premium = rates.getBase();
-	premium = premium * rates.getBaseRate();
-	premium = premium * rates.getRegionRate(vehicle.getVehicleCertificateData().getRegion());
-	premium = premium * rates.getIsMajorKZCityCorrectionRate(vehicle.getVehicleCertificateData().getCity());
-	premium = premium * rates.getVehicleTypeRate(vehicle.getVehicleClass());
-	premium = premium * rates.getDriverExpirienceTypeRate(insured.getAgeClass(), insured.getExpirienceClass());
-	premium = premium * rates.getVehicleAgeTypeRate(vehicle.getVehicleAgeClass());
-	premium = premium * rates.getInsuranceClassTypeRate(insured.getInsuranceClassType());
-	premium = premium * rates.getPolicyTermClassRate(policyTermClass);
-	premium = premium * rates.getPrivilegeRate(insured.isHasAnyPrivilege());
-	premium = Math.round(premium * 100) / 100; // округляем до "копеек"
+	premium *= rates.getBaseRate();
+	premium *= rates.getRegionRate(vehicle.getVehicleCertificateData().getRegion());
+	premium *= rates.getIsMajorKZCityCorrectionRate(vehicle.getVehicleCertificateData().getCity());
+	premium *= rates.getVehicleTypeRate(vehicle.getVehicleClass());
+	premium *= rates.getDriverExpirienceTypeRate(insured.getAgeClass(), insured.getExpirienceClass());
+	premium *= rates.getVehicleAgeTypeRate(vehicle.getVehicleAgeClass());
+	premium *= rates.getInsuranceClassTypeRate(insured.getInsuranceClassType());
+	premium *= rates.getPolicyTermClassRate(policyTermClass);
+	premium *= rates.getPrivilegeRate(insured.isHasAnyPrivilege());
+	premium = roundMoney(premium); // округляем до "копеек"
 	return premium;
+    }
+
+    private static double roundMoney(final double input) {
+	double output = input;
+	output *= 100d;
+	output = Math.round(output);
+	output /= 100d;
+	return output;
     }
 }

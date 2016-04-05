@@ -40,7 +40,6 @@ public class SexService {
 
     public List<SexDict> getSelectableItems() {
 	List<SexDict> r = sexServiceDAO.getAll();
-	r.remove(SexDict.UNSPECIFIED);
 	return r;
     }
 

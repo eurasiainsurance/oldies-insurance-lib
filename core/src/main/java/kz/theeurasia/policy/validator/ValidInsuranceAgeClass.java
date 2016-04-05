@@ -16,7 +16,7 @@ import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredAgeClassEnum;
 @Constraint(validatedBy = ValidInsuranceAgeClassConstraintValidator.class)
 public @interface ValidInsuranceAgeClass {
 
-    InsuredAgeClassEnum[] invalidValues() default { InsuredAgeClassEnum.UNSPECIFIED };
+    InsuredAgeClassEnum[] invalidValues() default {};
 
     String message() default "{kz.theeurasia.policy.validator.ValidInsuranceAgeClass.message}";
 

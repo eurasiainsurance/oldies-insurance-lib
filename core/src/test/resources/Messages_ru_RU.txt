@@ -1,27 +1,22 @@
 # Text labels for select items on select inputs
-label.si.UNSPECIFIED = Не указан
+label.si.UNSPECIFIED = Не указано
 
 label.si.sex.MALE = Мужской
 label.si.sex.FEMALE = Женский
-label.si.sex.UNSPECIFIED = Не указан
 
 label.si.identity-card-type.ID_CARD = удостоверение личности
 label.si.identity-card-type.PASSPORT = паспорт
 label.si.identity-card-type.BIRTH_CERTIFICATE = свидетельство о рождении
 label.si.identity-card-type.RESIDENCE_PERMIT = вид на жительство иностранца
-label.si.identity-card-type.UNSPECIFIED = Не указано
 
 label.si.insured-age-class.OVER25 = 25 лет и старше
 label.si.insured-age-class.UNDER25 = Менее 25 лет
-label.si.insured-age-class.UNSPECIFIED = Не определено
 
 label.si.insured-expirience-class.MORE2 = более 2 лет
 label.si.insured-expirience-class.LESS2 = менее 2 лет
-label.si.insured-expirience-class.UNSPECIFIED = Не определено
 
 label.si.vehicle-age-class.UNDER7 = До 7 лет включительно
 label.si.vehicle-age-class.OVER7 = Свыше 7 лет
-label.si.vehicle-age-class.UNSPECIFIED = Не определено
 
 label.si.vehicle-class.BUS16 = Автобусы до 16 пассажирских мест включительно
 label.si.vehicle-class.BUSOVR16 = Автобусы свыше 16 пассажирских мест
@@ -34,7 +29,6 @@ label.si.vehicle-class.SEA = Морской транспорт
 label.si.vehicle-class.AIRCRAFT = Воздушный транспорт
 label.si.vehicle-class.RAILWAY = Железнодорожный транспорт
 label.si.vehicle-class.SPECIAL = Специализированная техника
-label.si.vehicle-class.UNSPECIFIED = Не определено
 
 label.si.insurance-class.CLASS_0 = Класс 0
 label.si.insurance-class.CLASS_1 = Класс 1
@@ -51,8 +45,6 @@ label.si.insurance-class.CLASS_11 = Класс 11
 label.si.insurance-class.CLASS_12 = Класс 12
 label.si.insurance-class.CLASS_13 = Класс 13
 label.si.insurance-class.CLASS_M = Класс М
-label.si.insurance-class.UNSPECIFIED = Не определено
 
 label.si.who-is-insurant.DRIVER = Страхователем является один из застрахованных водителей
 label.si.who-is-insurant.OTHER = Страхователем является другое лицо
-label.si.who-is-insurant.UNSPECIFIED = Не указано

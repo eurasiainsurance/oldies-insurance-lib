@@ -26,7 +26,7 @@ public class IdentityCardData implements ScanCopiedDocument {
 
     @NotNullValue
     @ValidIdentityCardType
-    private IdentityCardTypeDict type = IdentityCardTypeDict.UNSPECIFIED;
+    private IdentityCardTypeDict type;
 
     private List<UploadedImage> scanFiles = new ArrayList<>();
 

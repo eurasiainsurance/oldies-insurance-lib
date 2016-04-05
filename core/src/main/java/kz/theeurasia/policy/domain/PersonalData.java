@@ -28,7 +28,7 @@ public class PersonalData {
 
     @NotNullValue
     @ValidSex
-    private SexDict sex = SexDict.UNSPECIFIED;
+    private SexDict sex;
 
     public String getDisplayName() {
 	return (((surename == null || surename.isEmpty()) ? "" : (surename + " "))

@@ -14,7 +14,7 @@ import kz.theeurasia.policy.validator.NotNullValue;
 public class InsuredDriverData {
     private final UUID id = UUID.randomUUID();
 
-    private InsuranceClassTypeDict insuranceClassType = InsuranceClassTypeDict.UNSPECIFIED;
+    private InsuranceClassTypeDict insuranceClassType;
 
     @NotNullValue(message = "{kz.theeurasia.policy.validator.custom.IdNumber.empty.message}")
     @ValidIdNumber
@@ -31,11 +31,11 @@ public class InsuredDriverData {
 
     @NotNullValue
     @ValidInsuranceAgeClass
-    private InsuredAgeClassEnum ageClass = InsuredAgeClassEnum.UNSPECIFIED;
+    private InsuredAgeClassEnum ageClass;
 
     @NotNullValue
     @ValidInsuranceExpirienceClass
-    private InsuredExpirienceClassEnum expirienceClass = InsuredExpirienceClassEnum.UNSPECIFIED;
+    private InsuredExpirienceClassEnum expirienceClass;
 
     // privileges
     private boolean hasAnyPrivilege = false;

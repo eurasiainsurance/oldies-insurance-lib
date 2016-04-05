@@ -15,7 +15,7 @@ import kz.theeurasia.esbdproxy.domain.dict.general.IdentityCardTypeDict;
 @Retention(RUNTIME)
 @Constraint(validatedBy = ValidIdentityCardTypeConstraintValidator.class)
 public @interface ValidIdentityCardType {
-    IdentityCardTypeDict[] invalidValues() default { IdentityCardTypeDict.UNSPECIFIED };
+    IdentityCardTypeDict[] invalidValues() default {};
 
     String message() default "{kz.theeurasia.policy.validator.ValidIdentityCardType.message}";
 

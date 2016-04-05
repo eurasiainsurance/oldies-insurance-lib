@@ -16,7 +16,7 @@ import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleAgeClassDict;
 @Constraint(validatedBy = ValidVehicleAgeClassConstraintValidator.class)
 public @interface ValidVehicleAgeClass {
 
-    VehicleAgeClassDict[] invalidValues() default { VehicleAgeClassDict.UNSPECIFIED };
+    VehicleAgeClassDict[] invalidValues() default {};
 
     String message() default "{kz.theeurasia.policy.validator.ValidVehicleAgeClass.message}";
 

@@ -16,7 +16,7 @@ import kz.theeurasia.esbdproxy.domain.dict.general.SexDict;
 @Constraint(validatedBy = ValidSexConstraintValidator.class)
 public @interface ValidSex {
 
-    SexDict[] invalidValues() default { SexDict.UNSPECIFIED };
+    SexDict[] invalidValues() default {};
 
     String message() default "{kz.theeurasia.policy.validator.ValidSex.message}";
 

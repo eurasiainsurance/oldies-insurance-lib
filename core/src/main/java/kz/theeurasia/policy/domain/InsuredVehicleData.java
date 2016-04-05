@@ -16,11 +16,11 @@ public class InsuredVehicleData {
 
     @NotNullValue
     @ValidVehicleClass
-    private VehicleClassDict vehicleClass = VehicleClassDict.UNSPECIFIED;
+    private VehicleClassDict vehicleClass;
 
     @NotNullValue
     @ValidVehicleAgeClass
-    private VehicleAgeClassDict vehicleAgeClass = VehicleAgeClassDict.UNSPECIFIED;
+    private VehicleAgeClassDict vehicleAgeClass;
 
     private VehicleCertificateData vehicleCertificateData = new VehicleCertificateData();
 

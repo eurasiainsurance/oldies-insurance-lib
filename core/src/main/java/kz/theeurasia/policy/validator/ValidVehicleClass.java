@@ -16,7 +16,7 @@ import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
 @Constraint(validatedBy = ValidVehicleClassConstraintValidator.class)
 public @interface ValidVehicleClass {
 
-    VehicleClassDict[] invalidValues() default { VehicleClassDict.UNSPECIFIED };
+    VehicleClassDict[] invalidValues() default {};
 
     String message() default "{kz.theeurasia.policy.validator.ValidVehicleClass.message}";
 

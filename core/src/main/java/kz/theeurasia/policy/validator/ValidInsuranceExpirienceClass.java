@@ -16,7 +16,7 @@ import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
 @Constraint(validatedBy = ValidInsuranceExpirienceClassConstraintValidator.class)
 public @interface ValidInsuranceExpirienceClass {
 
-    InsuredExpirienceClassEnum[] invalidValues() default { InsuredExpirienceClassEnum.UNSPECIFIED };
+    InsuredExpirienceClassEnum[] invalidValues() default {};
 
     String message() default "{kz.theeurasia.policy.validator.ValidInsuranceExpirienceClass.message}";
 

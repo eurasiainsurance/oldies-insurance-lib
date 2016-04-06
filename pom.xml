@@ -9,7 +9,7 @@
 
 	<groupId>kz.theeurasia.policy</groupId>
 	<artifactId>parent</artifactId>
-	<version>1.2-SNAPSHOT</version>
+	<version>1.2</version>
 	<packaging>pom</packaging>
 
 	<name>Policy : Parent</name>
@@ -29,12 +29,12 @@
 			<dependency>
 				<groupId>kz.theeurasia.esbdproxy</groupId>
 				<artifactId>esbdproxy-api</artifactId>
-				<version>1.2-SNAPSHOT</version>
+				<version>1.2</version>
 			</dependency>
 			<dependency>
 				<groupId>com.lapsa.kzlib</groupId>
 				<artifactId>kzlib-core</artifactId>
-				<version>1.0-SNAPSHOT</version>
+				<version>1.0</version>
 			</dependency>
 			<dependency>
 				<groupId>com.lapsa.international-helper</groupId>
@@ -56,7 +56,7 @@
 	<scm>
 		<connection>scm:git:https://gitrepo.theeurasia.kz/eurasia/eurasia-policy.git</connection>
 		<developerConnection>scm:git:https://gitrepo.theeurasia.kz/eurasia/eurasia-policy.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>v1.2</tag>
 	</scm>
 
 </project>

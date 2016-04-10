@@ -52,21 +52,30 @@ public class KZCityService {
 	return result;
     }
 
-    public List<SelectItem> regionalAndMajorItemsByAreaSI(KZArea area) {
-	return _createSIFromList(regionalAndMajorItemsByArea(area));
+    public List<SelectItem> getRegionalItemsSI() {
+	return _createSIFromList(getRegionalItems());
     }
 
-    public List<KZCity> regionalAndMajorItemsByArea(KZArea area) {
+    public List<KZCity> getRegionalItems() {
+	List<KZCity> result = new ArrayList<>();
+	for (KZCity city : KZCity.values())
+	    if (city.getArea() != null) {
+		if (isRegional(city))
+		    result.add(city);
+	    }
+	return result;
+    }
+
+    public List<SelectItem> regionalItemsByAreaSI(KZArea area) {
+	return _createSIFromList(regionalItemsByArea(area));
+    }
+
+    public List<KZCity> regionalItemsByArea(KZArea area) {
 	List<KZCity> result = new ArrayList<>();
 	for (KZCity city : KZCity.values())
 	    if (city.getArea() != null && city.getArea().equals(area)) {
-		switch (city.getType()) {
-		case MAJOR:
-		case REGIONAL_CENTER:
-		case REGIONAL_SUBORDINATION:
+		if (isRegional(city))
 		    result.add(city);
-		default:
-		}
 	    }
 	return result;
     }
@@ -83,6 +92,19 @@ public class KZCityService {
 	    result.add(si);
 	}
 	return result;
+    }
+
+    private boolean isRegional(KZCity city) {
+	if (city == null || city.getType() == null)
+	    return false;
+	switch (city.getType()) {
+	case MAJOR:
+	case REGIONAL_CENTER:
+	case REGIONAL_SUBORDINATION:
+	    return true;
+	default:
+	}
+	return false;
     }
 
 }

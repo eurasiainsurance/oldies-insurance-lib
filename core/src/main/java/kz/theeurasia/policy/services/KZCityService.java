@@ -62,7 +62,9 @@ public class KZCityService {
 	    if (city.getArea() == null) // TODO плохой код. Сделано чтобы OTHER
 					// не попадал в список. Исправить
 		continue;
-	    if (isRegional(city) && (area == null || city.getArea().equals(area)))
+	    if (!isRegional(city))
+		continue;
+	    if (area == null || city.getArea().equals(area))
 		result.add(city);
 	}
 	return result;

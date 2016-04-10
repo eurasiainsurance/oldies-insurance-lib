@@ -135,8 +135,13 @@ public class PremiumCostCalculatorRatesServiceDefault implements PremiumCostCalc
     public double getIsMajorKZCityCorrectionRate(KZCity city) {
 	if (city == null)
 	    return 0;
-	return (city.getType().equals(KZCityType.MAJOR) || city.getType().equals(KZCityType.REGION_CENTER)
-		? MAJOR_CITY_CORRECTION_RATE : NON_MAJOR_CITY_CORRECTION_RATE);
+	if (city.equals(KZCity.OTHER))
+	    return NON_MAJOR_CITY_CORRECTION_RATE;
+	if (city.getType() == null)
+	    return 0;
+	return (city.getType().equals(KZCityType.MAJOR) || city.getType().equals(KZCityType.REGIONAL_CENTER)
+		|| city.getType().equals(KZCityType.REGIONAL_SUBORDINATION) ? MAJOR_CITY_CORRECTION_RATE
+			: NON_MAJOR_CITY_CORRECTION_RATE);
     }
 
     @Override

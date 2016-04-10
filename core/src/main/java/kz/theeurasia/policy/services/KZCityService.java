@@ -47,8 +47,26 @@ public class KZCityService {
     public List<KZCity> selectableItemsByArea(KZArea area) {
 	List<KZCity> result = new ArrayList<>();
 	for (KZCity city : KZCity.values())
-	    if (city.getArea().equals(area))
+	    if (area == null || city.getArea().equals(area))
 		result.add(city);
+	return result;
+    }
+
+    public List<SelectItem> regionalItemsByAreaSI(KZArea area) {
+	return _createSIFromList(regionalItemsByArea(area));
+    }
+
+    public List<KZCity> regionalItemsByArea(KZArea area) {
+	List<KZCity> result = new ArrayList<>();
+	for (KZCity city : KZCity.values()) {
+	    if (city.getArea() == null) // TODO плохой код. Сделано чтобы OTHER
+					// не попадал в список. Исправить
+		continue;
+	    if (!isRegional(city))
+		continue;
+	    if (area == null || city.getArea().equals(area))
+		result.add(city);
+	}
 	return result;
     }
 
@@ -64,6 +82,19 @@ public class KZCityService {
 	    result.add(si);
 	}
 	return result;
+    }
+
+    private boolean isRegional(KZCity city) {
+	if (city == null || city.getType() == null)
+	    return false;
+	switch (city.getType()) {
+	case MAJOR:
+	case REGIONAL_CENTER:
+	case REGIONAL_SUBORDINATION:
+	    return true;
+	default:
+	}
+	return false;
     }
 
 }

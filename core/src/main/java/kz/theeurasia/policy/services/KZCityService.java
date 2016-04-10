@@ -52,6 +52,25 @@ public class KZCityService {
 	return result;
     }
 
+    public List<SelectItem> regionalAndMajorItemsByAreaSI(KZArea area) {
+	return _createSIFromList(regionalAndMajorItemsByArea(area));
+    }
+
+    public List<KZCity> regionalAndMajorItemsByArea(KZArea area) {
+	List<KZCity> result = new ArrayList<>();
+	for (KZCity city : KZCity.values())
+	    if (city.getArea() != null && city.getArea().equals(area)) {
+		switch (city.getType()) {
+		case MAJOR:
+		case REGIONAL_CENTER:
+		case REGIONAL_SUBORDINATION:
+		    result.add(city);
+		default:
+		}
+	    }
+	return result;
+    }
+
     public List<SelectItem> selectableItemsByAreaSI(KZArea area) {
 	return _createSIFromList(selectableItemsByArea(area));
     }

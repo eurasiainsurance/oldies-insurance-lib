@@ -16,20 +16,18 @@
 	<dependencies>
 		<!-- own -->
 		<dependency>
-			<groupId>${project.groupId}</groupId>
+			<groupId>kz.theeurasia.policy</groupId>
 			<artifactId>policy-validators</artifactId>
-			<version>${project.version}</version>
+			<version>1.3-SNAPSHOT</version>
 		</dependency>
 		<!-- internal -->
 		<dependency>
 			<groupId>com.lapsa.kzlib</groupId>
 			<artifactId>kzlib-core</artifactId>
-			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.lapsa.international-helper</groupId>
 			<artifactId>international-api</artifactId>
-			<scope>compile</scope>
 		</dependency>
 		<!-- JavaEE -->
 		<dependency>

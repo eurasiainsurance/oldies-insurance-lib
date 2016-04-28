@@ -41,7 +41,7 @@
 			<dependency>
 				<groupId>com.lapsa.international-helper</groupId>
 				<artifactId>international-api</artifactId>
-				<version>1.0</version>
+				<version>1.0.1</version>
 			</dependency>
 			<!-- external -->
 			<!-- JavaEE -->

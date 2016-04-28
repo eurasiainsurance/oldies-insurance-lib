@@ -10,7 +10,7 @@
 
 	<groupId>kz.theeurasia.policy</groupId>
 	<artifactId>parent</artifactId>
-	<version>1.2.3-SNAPSHOT</version>
+	<version>1.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Policy : Parent</name>

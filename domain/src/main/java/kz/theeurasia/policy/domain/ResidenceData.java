@@ -1,10 +1,10 @@
 package kz.theeurasia.policy.domain;
 
 import com.lapsa.kz.country.KZCity;
+import com.lapsa.kz.country.validators.ValidKZCity;
 
 import kz.theeurasia.policy.validator.NotEmptyString;
 import kz.theeurasia.policy.validator.NotNullValue;
-import kz.theeurasia.policy.validator.ValidKZCity;
 
 public class ResidenceData {
 

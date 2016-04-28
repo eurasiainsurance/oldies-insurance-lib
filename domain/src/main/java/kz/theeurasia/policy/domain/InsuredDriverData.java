@@ -2,13 +2,14 @@ package kz.theeurasia.policy.domain;
 
 import java.util.UUID;
 
+import com.lapsa.kz.idnumber.validators.ValidIdNumber;
+
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuranceClassTypeDict;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredAgeClassEnum;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
-import kz.theeurasia.policy.validator.ValidIdNumber;
+import kz.theeurasia.policy.validator.NotNullValue;
 import kz.theeurasia.policy.validator.ValidInsuranceAgeClass;
 import kz.theeurasia.policy.validator.ValidInsuranceExpirienceClass;
-import kz.theeurasia.policy.validator.NotNullValue;
 
 public class InsuredDriverData {
     private final UUID id = UUID.randomUUID();

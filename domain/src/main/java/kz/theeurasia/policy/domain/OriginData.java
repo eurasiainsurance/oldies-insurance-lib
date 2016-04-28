@@ -1,9 +1,9 @@
 package kz.theeurasia.policy.domain;
 
 import com.lapsa.country.Country;
+import com.lapsa.validators.ValidCountry;
 
 import kz.theeurasia.policy.validator.NotNullValue;
-import kz.theeurasia.policy.validator.ValidCountry;
 
 public class OriginData {
 

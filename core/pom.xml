@@ -11,15 +11,24 @@
 	<artifactId>policy-core</artifactId>
 	<packaging>jar</packaging>
 
-	<name>Policy : Policy Core &amp; API</name>
+	<name>Policy : Core</name>
 
 	<dependencies>
 		<!-- own -->
 		<dependency>
 			<groupId>${project.groupId}</groupId>
+			<artifactId>policy-elements</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>policy-domain</artifactId>
 			<version>${project.version}</version>
-			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>policy-validators</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 		<!-- internal -->
 		<dependency>

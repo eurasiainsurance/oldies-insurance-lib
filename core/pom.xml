@@ -8,10 +8,10 @@
 		<version>1.3-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>policy-core</artifactId>
+	<artifactId>policy-services</artifactId>
 	<packaging>jar</packaging>
 
-	<name>Policy : Core</name>
+	<name>Policy : Core services</name>
 
 	<dependencies>
 		<!-- own -->

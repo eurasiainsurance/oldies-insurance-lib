@@ -4,7 +4,6 @@ import java.util.UUID;
 
 import com.lapsa.kz.economic.KZEconomicSector;
 
-import kz.theeurasia.esbdproxy.domain.entities.general.SubjectPersonEntity;
 import kz.theeurasia.policy.validator.NotNullValue;
 import kz.theeurasia.policy.validator.ValidEnumerationValue;
 import kz.theeurasia.policy.validator.ValidIdNumber;
@@ -34,7 +33,7 @@ public class InsurantData {
     @ValidEnumerationValue(message = "{kz.theeurasia.policy.validator.custom.WhoIsInsurant.message}")
     private WhoIsInsurant whoIsInsurant = WhoIsInsurant.UNSPECIFIED;
 
-    private SubjectPersonEntity fetchedEntity;
+    private boolean fetched = false;
 
     @Override
     public int hashCode() {
@@ -48,10 +47,6 @@ public class InsurantData {
 
     public String getSafeId() {
 	return id.toString().replaceAll("-", "_");
-    }
-
-    public boolean isFetched() {
-	return fetchedEntity != null;
     }
 
     @Override
@@ -137,14 +132,6 @@ public class InsurantData {
 	this.residenceData = residenceData;
     }
 
-    public SubjectPersonEntity getFetchedEntity() {
-	return fetchedEntity;
-    }
-
-    public void setFetchedEntity(SubjectPersonEntity fetchedEntity) {
-	this.fetchedEntity = fetchedEntity;
-    }
-
     public WhoIsInsurant getWhoIsInsurant() {
 	return whoIsInsurant;
     }
@@ -153,4 +140,11 @@ public class InsurantData {
 	this.whoIsInsurant = whoIsInsurant;
     }
 
+    public boolean isFetched() {
+	return fetched;
+    }
+
+    public void setFetched(boolean fetched) {
+	this.fetched = fetched;
+    }
 }

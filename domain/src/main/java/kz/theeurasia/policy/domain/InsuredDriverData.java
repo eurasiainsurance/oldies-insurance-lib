@@ -3,7 +3,6 @@ package kz.theeurasia.policy.domain;
 import java.util.UUID;
 
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuranceClassTypeDict;
-import kz.theeurasia.esbdproxy.domain.entities.general.SubjectPersonEntity;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredAgeClassEnum;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
 import kz.theeurasia.policy.validator.ValidIdNumber;
@@ -37,6 +36,8 @@ public class InsuredDriverData {
     @ValidInsuranceExpirienceClass
     private InsuredExpirienceClassEnum expirienceClass;
 
+    private boolean fetched = false;
+
     // privileges
     private boolean hasAnyPrivilege = false;
 
@@ -52,9 +53,6 @@ public class InsuredDriverData {
     private boolean pensioner = false;
     private PensionerCertificateData pensionerCertificateData = new PensionerCertificateData();
 
-    // esbd entities
-    private SubjectPersonEntity fetchedEntity;
-
     @Override
     public int hashCode() {
 	return this.getClass().hashCode() * id.hashCode();
@@ -67,10 +65,6 @@ public class InsuredDriverData {
 
     public String getDisplayName() {
 	return personalData.getDisplayName();
-    }
-
-    public boolean isFetched() {
-	return fetchedEntity != null;
     }
 
     public String getSafeId() {
@@ -248,12 +242,12 @@ public class InsuredDriverData {
 	this.contactData = contactData;
     }
 
-    public SubjectPersonEntity getFetchedEntity() {
-	return fetchedEntity;
+    public boolean isFetched() {
+	return fetched;
     }
 
-    public void setFetchedEntity(SubjectPersonEntity fetchedEntity) {
-	this.fetchedEntity = fetchedEntity;
+    public void setFetched(boolean fetched) {
+	this.fetched = fetched;
     }
 
 }

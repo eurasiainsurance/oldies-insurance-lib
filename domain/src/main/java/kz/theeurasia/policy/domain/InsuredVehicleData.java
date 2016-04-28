@@ -4,7 +4,6 @@ import java.util.UUID;
 
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleAgeClassDict;
 import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
-import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleEntity;
 import kz.theeurasia.policy.validator.NotNullValue;
 import kz.theeurasia.policy.validator.ValidVehicleAgeClass;
 import kz.theeurasia.policy.validator.ValidVehicleClass;
@@ -26,8 +25,7 @@ public class InsuredVehicleData {
 
     private boolean forcedMajorCity;
 
-    // esbd entities
-    private VehicleEntity fetchedEntity;
+    private boolean fetched = false;
 
     @Override
     public int hashCode() {
@@ -43,10 +41,6 @@ public class InsuredVehicleData {
 	return vehicleData.getDisplayName();
     }
 
-    public boolean isFetched() {
-	return fetchedEntity != null;
-    }
-
     public String getSafeId() {
 	return id.toString().replaceAll("-", "_");
     }
@@ -55,7 +49,6 @@ public class InsuredVehicleData {
     public String toString() {
 	return vehicleData.getDisplayName();
     }
-
 
     // GENERATED
 
@@ -95,19 +88,19 @@ public class InsuredVehicleData {
 	this.forcedMajorCity = forcedMajorCity;
     }
 
-    public VehicleEntity getFetchedEntity() {
-	return fetchedEntity;
-    }
-
-    public void setFetchedEntity(VehicleEntity fetchedEntity) {
-	this.fetchedEntity = fetchedEntity;
-    }
-
     public VehicleData getVehicleData() {
 	return vehicleData;
     }
 
     public void setVehicleData(VehicleData vehicleData) {
 	this.vehicleData = vehicleData;
+    }
+
+    public boolean isFetched() {
+	return fetched;
+    }
+
+    public void setFetched(boolean fetched) {
+	this.fetched = fetched;
     }
 }

@@ -14,6 +14,13 @@
 	<name>Policy : Policy Core &amp; API</name>
 
 	<dependencies>
+		<!-- own -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>policy-domain</artifactId>
+			<version>${project.version}</version>
+			<scope>compile</scope>
+		</dependency>
 		<!-- internal -->
 		<dependency>
 			<groupId>kz.theeurasia.esbdproxy</groupId>

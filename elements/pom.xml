@@ -13,10 +13,4 @@
 
 	<name>Policy : Elements</name>
 
-	<dependencies>
-		<!-- own -->
-		<!-- internal -->
-		<!-- JavaEE -->
-	</dependencies>
-
 </project>

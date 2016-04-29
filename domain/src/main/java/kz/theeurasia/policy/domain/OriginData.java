@@ -1,7 +1,7 @@
 package kz.theeurasia.policy.domain;
 
 import com.lapsa.country.Country;
-import com.lapsa.validators.ValidCountry;
+import com.lapsa.country.validators.ValidCountry;
 
 import kz.theeurasia.policy.validator.NotNullValue;
 

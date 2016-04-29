@@ -1,7 +1,7 @@
 package kz.theeurasia.policy.domain;
 
 import com.lapsa.phone.PhoneNumber;
-import com.lapsa.validators.ValidPhoneNumber;
+import com.lapsa.phone.validators.ValidPhoneNumber;
 
 import kz.theeurasia.policy.validator.NotNullValue;
 import kz.theeurasia.policy.validator.ValidEmail;

@@ -24,7 +24,7 @@
 		<module>elements</module>
 		<module>validators</module>
 		<module>domain</module>
-		<module>core</module>
+		<module>services</module>
 	</modules>
 
 	<dependencyManagement>

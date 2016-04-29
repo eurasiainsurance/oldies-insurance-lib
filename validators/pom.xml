@@ -20,7 +20,7 @@
 			<artifactId>policy-elements</artifactId>
 			<version>1.3-SNAPSHOT</version>
 			<scope>compile</scope>
-			<optional>true</optional>
+			<optional>false</optional>
 		</dependency>
 		<!-- internal -->
 		<!-- JavaEE -->

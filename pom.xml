@@ -24,7 +24,6 @@
 		<module>elements</module>
 		<module>validators</module>
 		<module>domain</module>
-		<module>services</module>
 	</modules>
 
 	<dependencyManagement>

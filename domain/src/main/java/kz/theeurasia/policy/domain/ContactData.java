@@ -1,11 +1,11 @@
 package kz.theeurasia.policy.domain;
 
+import com.lapsa.internet.validators.ValidEmail;
+import com.lapsa.internet.validators.ValidURL;
 import com.lapsa.phone.PhoneNumber;
 import com.lapsa.phone.validators.ValidPhoneNumber;
 
 import kz.theeurasia.policy.validator.NotNullValue;
-import kz.theeurasia.policy.validator.ValidEmail;
-import kz.theeurasia.policy.validator.ValidURL;
 
 public class ContactData {
 

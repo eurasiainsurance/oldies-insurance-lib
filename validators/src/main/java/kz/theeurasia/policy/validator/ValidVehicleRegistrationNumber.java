@@ -13,6 +13,7 @@ import javax.validation.Payload;
 @Retention(RUNTIME)
 @Constraint(validatedBy = ValidVehicleRegistrationNumberConstraintValidator.class)
 public @interface ValidVehicleRegistrationNumber {
+
     String message() default "{kz.theeurasia.policy.validator.ValidVehicleRegistrationNumber.message}";
 
     Class<?>[] groups() default {};

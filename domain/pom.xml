@@ -38,7 +38,7 @@
 			<groupId>com.lapsa.kz-lib</groupId>
 			<artifactId>kz-eelib</artifactId>
 			<scope>compile</scope>
-			<optional>false</optional>
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>com.lapsa.international-lib</groupId>
@@ -50,7 +50,7 @@
 			<groupId>com.lapsa.international-lib</groupId>
 			<artifactId>international-eelib</artifactId>
 			<scope>compile</scope>
-			<optional>false</optional>
+			<optional>true</optional>
 		</dependency>
 		<!-- JavaEE -->
 		<dependency>

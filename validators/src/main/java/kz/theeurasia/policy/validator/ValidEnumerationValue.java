@@ -20,15 +20,13 @@ public @interface ValidEnumerationValue {
     // разрешено все, что не запрещено
     public static final int ALLOW_ALL_NOT_DENIED = 2;
 
-    String[] denyValues() default { "UNSPECIFIED" };
+    String[] denyValues() default {};
 
     String[] allowValues() default {};
 
     int mode() default ALLOW_ALL_NOT_DENIED;
 
-    String message()
-
-    default "{kz.theeurasia.policy.validator.ValidEnumerationValue.message}";
+    String message() default "{kz.theeurasia.policy.validator.ValidEnumerationValue.message}";
 
     Class<?>[] groups() default {};
 

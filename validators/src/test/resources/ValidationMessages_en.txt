@@ -1,0 +1,13 @@
+kz.theeurasia.policy.validator.NotEmptyString.message = Required field
+kz.theeurasia.policy.validator.NotNullValue.message = Required field
+kz.theeurasia.policy.validator.ValidDateOfBirth.message = Invalid date of birth
+kz.theeurasia.policy.validator.ValidDateOfIssue.message = Incorrect date of issue
+kz.theeurasia.policy.validator.ValidEnumerationValue.message = Incorrect value
+kz.theeurasia.policy.validator.ValidIdentityCardType.message = Incorrect document type
+kz.theeurasia.policy.validator.ValidInsuranceAgeClass.message = Age category listed incorrectly
+kz.theeurasia.policy.validator.ValidInsuranceExpirienceClass.message = Specified is invalid driving experience
+kz.theeurasia.policy.validator.ValidSex.message = Invalid value
+kz.theeurasia.policy.validator.ValidVehicleAgeClass.message = Specified is invalid term operation of the vehicle
+kz.theeurasia.policy.validator.ValidVehicleClass.message = Vehicle class listed incorrectly
+kz.theeurasia.policy.validator.ValidVehicleRegistrationNumber.message = Invalid registration number of the vehicle
+kz.theeurasia.policy.validator.ValidVehicleYearOfIssue.message = Vehicle year of issue is incorrect

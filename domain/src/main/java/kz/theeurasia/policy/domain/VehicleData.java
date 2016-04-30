@@ -2,9 +2,10 @@ package kz.theeurasia.policy.domain;
 
 import java.util.Locale;
 
+import com.lapsa.cars.validators.ValidVINCode;
+
 import kz.theeurasia.policy.validator.NotEmptyString;
 import kz.theeurasia.policy.validator.NotNullValue;
-import kz.theeurasia.policy.validator.ValidVINCode;
 import kz.theeurasia.policy.validator.ValidVehicleYearOfIssue;
 
 public class VehicleData {

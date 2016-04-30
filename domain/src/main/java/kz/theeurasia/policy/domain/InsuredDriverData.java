@@ -16,7 +16,7 @@ public class InsuredDriverData {
 
     private InsuranceClassTypeDict insuranceClassType;
 
-    @NotNullValue(message = "{kz.theeurasia.policy.validator.custom.IdNumber.empty.message}")
+    @NotNullValue(message = "{kz.theeurasia.policy.domain.InsuredDriverData.IdNumber.NotNull.message}")
     @ValidIdNumber
     private String idNumber;
 

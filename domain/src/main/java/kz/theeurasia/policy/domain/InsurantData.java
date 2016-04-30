@@ -11,7 +11,7 @@ import kz.theeurasia.policy.validator.ValidEnumerationValue;
 public class InsurantData {
     private final UUID id = UUID.randomUUID();
 
-    @NotNullValue
+    @NotNullValue(message = "{kz.theeurasia.policy.domain.InsurantData.IdNumber.NotNull.message}")
     @ValidIdNumber
     private String idNumber;
 
@@ -26,11 +26,10 @@ public class InsurantData {
 
     private KZEconomicSector economicsSector = KZEconomicSector.HOUSEHOLDS;
 
-    @NotNullValue(message = "{kz.theeurasia.policy.validator.custom.DriverAsInsurant.message}")
     private InsuredDriverData driverAsInsurant;
 
-    @NotNullValue(message = "{kz.theeurasia.policy.validator.custom.WhoIsInsurant.message}")
-    @ValidEnumerationValue(message = "{kz.theeurasia.policy.validator.custom.WhoIsInsurant.message}")
+    @NotNullValue(message = "{kz.theeurasia.policy.domain.InsurantData.WhoIsInsurant.NotNull.message}")
+    @ValidEnumerationValue(message = "{kz.theeurasia.policy.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message}")
     private WhoIsInsurant whoIsInsurant = WhoIsInsurant.UNSPECIFIED;
 
     private boolean fetched = false;

@@ -6,10 +6,10 @@ import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredAgeClassEnum;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
 
 public enum InsuredAgeExpirienceClassDict implements BundleBase {
-    OVER25_MORE2(InsuredAgeClassEnum.OVER25, InsuredExpirienceClassEnum.MORE2), //
-    UNDER25_LESS2(InsuredAgeClassEnum.UNDER25, InsuredExpirienceClassEnum.LESS2), //
-    UNDER25_MORE2(InsuredAgeClassEnum.OVER25, InsuredExpirienceClassEnum.MORE2), //
-    OVER25_LESS2(InsuredAgeClassEnum.UNDER25, InsuredExpirienceClassEnum.LESS2); //
+    OVER25_MORE2(InsuredAgeClassEnum.OVER25, InsuredExpirienceClassEnum.MORE2), // возраст старше 25 лет, стаж вождения более 2 лет
+    UNDER25_LESS2(InsuredAgeClassEnum.UNDER25, InsuredExpirienceClassEnum.LESS2), // возраст моложе 25 лет, стаж вождения менее 2 лет
+    UNDER25_MORE2(InsuredAgeClassEnum.UNDER25, InsuredExpirienceClassEnum.MORE2), // возраст моложе 25 лет, стаж вождения более 2 лет
+    OVER25_LESS2(InsuredAgeClassEnum.OVER25, InsuredExpirienceClassEnum.LESS2); // возраст старше 25 лет, стаж вождения менее 2 лет
 
     private final InsuredExpirienceClassEnum expirienceClass;
     private final InsuredAgeClassEnum ageClass;

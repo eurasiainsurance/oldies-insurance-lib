@@ -9,13 +9,13 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-import kz.theeurasia.esbdproxy.domain.dict.general.IdentityCardTypeDict;
+import com.lapsa.insurance.elements.IdentityCardType;
 
 @Target({ METHOD, FIELD, ANNOTATION_TYPE })
 @Retention(RUNTIME)
 @Constraint(validatedBy = ValidIdentityCardTypeConstraintValidator.class)
 public @interface ValidIdentityCardType {
-    IdentityCardTypeDict[] invalidValues() default {};
+    IdentityCardType[] invalidValues() default {};
 
     String message() default "{kz.theeurasia.policy.validator.ValidIdentityCardType.message}";
 

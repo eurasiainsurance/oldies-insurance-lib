@@ -2,6 +2,7 @@ package kz.theeurasia.policy.domain;
 
 import java.util.UUID;
 
+import com.lapsa.insurance.elements.WhoIsInsurant;
 import com.lapsa.kz.economic.KZEconomicSector;
 import com.lapsa.kz.idnumber.validators.ValidIdNumber;
 
@@ -30,7 +31,7 @@ public class InsurantData {
 
     @NotNullValue(message = "{kz.theeurasia.policy.domain.InsurantData.WhoIsInsurant.NotNull.message}")
     @ValidEnumerationValue(message = "{kz.theeurasia.policy.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message}")
-    private WhoIsInsurant whoIsInsurant = WhoIsInsurant.UNSPECIFIED;
+    private WhoIsInsurant whoIsInsurant = null;
 
     private boolean fetched = false;
 

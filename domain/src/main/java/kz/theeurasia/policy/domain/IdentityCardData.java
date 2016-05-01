@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import kz.theeurasia.esbdproxy.domain.dict.general.IdentityCardTypeDict;
+import com.lapsa.insurance.elements.IdentityCardType;
+
 import kz.theeurasia.policy.validator.NotEmptyString;
 import kz.theeurasia.policy.validator.NotNullValue;
 import kz.theeurasia.policy.validator.ValidDateOfIssue;
@@ -26,7 +27,7 @@ public class IdentityCardData implements ScanCopiedDocument {
 
     @NotNullValue
     @ValidIdentityCardType
-    private IdentityCardTypeDict type;
+    private IdentityCardType type;
 
     private List<UploadedImage> scanFiles = new ArrayList<>();
 
@@ -56,11 +57,11 @@ public class IdentityCardData implements ScanCopiedDocument {
 	this.number = number;
     }
 
-    public IdentityCardTypeDict getType() {
+    public IdentityCardType getType() {
 	return type;
     }
 
-    public void setType(IdentityCardTypeDict type) {
+    public void setType(IdentityCardType type) {
 	this.type = type;
     }
 

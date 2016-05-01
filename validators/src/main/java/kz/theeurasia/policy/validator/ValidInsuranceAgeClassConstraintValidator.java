@@ -3,12 +3,12 @@ package kz.theeurasia.policy.validator;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredAgeClassEnum;
+import com.lapsa.insurance.elements.InsuredAgeClass;
 
 public class ValidInsuranceAgeClassConstraintValidator
-	implements ConstraintValidator<ValidInsuranceAgeClass, InsuredAgeClassEnum> {
+	implements ConstraintValidator<ValidInsuranceAgeClass, InsuredAgeClass> {
 
-    private InsuredAgeClassEnum[] invalidTypes;
+    private InsuredAgeClass[] invalidTypes;
 
     @Override
     public void initialize(ValidInsuranceAgeClass constraintAnnotation) {
@@ -16,10 +16,10 @@ public class ValidInsuranceAgeClassConstraintValidator
     }
 
     @Override
-    public boolean isValid(InsuredAgeClassEnum value, ConstraintValidatorContext context) {
+    public boolean isValid(InsuredAgeClass value, ConstraintValidatorContext context) {
 	if (value == null)
 	    return true;
-	for (InsuredAgeClassEnum i : invalidTypes)
+	for (InsuredAgeClass i : invalidTypes)
 	    if (i.equals(value))
 		return false;
 	return true;

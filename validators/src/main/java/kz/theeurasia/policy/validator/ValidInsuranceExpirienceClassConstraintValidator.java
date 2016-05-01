@@ -3,12 +3,12 @@ package kz.theeurasia.policy.validator;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
+import com.lapsa.insurance.elements.InsuredExpirienceClass;
 
 public class ValidInsuranceExpirienceClassConstraintValidator
-	implements ConstraintValidator<ValidInsuranceExpirienceClass, InsuredExpirienceClassEnum> {
+	implements ConstraintValidator<ValidInsuranceExpirienceClass, InsuredExpirienceClass> {
 
-    private InsuredExpirienceClassEnum[] invalidTypes;
+    private InsuredExpirienceClass[] invalidTypes;
 
     @Override
     public void initialize(ValidInsuranceExpirienceClass constraintAnnotation) {
@@ -16,10 +16,10 @@ public class ValidInsuranceExpirienceClassConstraintValidator
     }
 
     @Override
-    public boolean isValid(InsuredExpirienceClassEnum value, ConstraintValidatorContext context) {
+    public boolean isValid(InsuredExpirienceClass value, ConstraintValidatorContext context) {
 	if (value == null)
 	    return true;
-	for (InsuredExpirienceClassEnum i : invalidTypes)
+	for (InsuredExpirienceClass i : invalidTypes)
 	    if (i.equals(value))
 		return false;
 	return true;

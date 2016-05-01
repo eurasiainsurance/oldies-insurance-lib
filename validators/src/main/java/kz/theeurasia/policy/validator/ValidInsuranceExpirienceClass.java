@@ -9,14 +9,14 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
+import com.lapsa.insurance.elements.InsuredExpirienceClass;
 
 @Target({ METHOD, FIELD, ANNOTATION_TYPE })
 @Retention(RUNTIME)
 @Constraint(validatedBy = ValidInsuranceExpirienceClassConstraintValidator.class)
 public @interface ValidInsuranceExpirienceClass {
 
-    InsuredExpirienceClassEnum[] invalidValues() default {};
+    InsuredExpirienceClass[] invalidValues() default {};
 
     String message() default "{kz.theeurasia.policy.validator.ValidInsuranceExpirienceClass.message}";
 

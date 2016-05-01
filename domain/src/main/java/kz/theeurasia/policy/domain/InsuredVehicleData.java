@@ -2,8 +2,9 @@ package kz.theeurasia.policy.domain;
 
 import java.util.UUID;
 
-import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleAgeClassDict;
-import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
+import com.lapsa.insurance.elements.VehicleAgeClass;
+import com.lapsa.insurance.elements.VehicleClass;
+
 import kz.theeurasia.policy.validator.NotNullValue;
 import kz.theeurasia.policy.validator.ValidVehicleAgeClass;
 import kz.theeurasia.policy.validator.ValidVehicleClass;
@@ -15,11 +16,11 @@ public class InsuredVehicleData {
 
     @NotNullValue
     @ValidVehicleClass
-    private VehicleClassDict vehicleClass;
+    private VehicleClass vehicleClass;
 
     @NotNullValue
     @ValidVehicleAgeClass
-    private VehicleAgeClassDict vehicleAgeClass;
+    private VehicleAgeClass vehicleAgeClass;
 
     private VehicleCertificateData vehicleCertificateData = new VehicleCertificateData();
 
@@ -56,19 +57,19 @@ public class InsuredVehicleData {
 	return id;
     }
 
-    public VehicleClassDict getVehicleClass() {
+    public VehicleClass getVehicleClass() {
 	return vehicleClass;
     }
 
-    public void setVehicleClass(VehicleClassDict vehicleClass) {
+    public void setVehicleClass(VehicleClass vehicleClass) {
 	this.vehicleClass = vehicleClass;
     }
 
-    public VehicleAgeClassDict getVehicleAgeClass() {
+    public VehicleAgeClass getVehicleAgeClass() {
 	return vehicleAgeClass;
     }
 
-    public void setVehicleAgeClass(VehicleAgeClassDict vehicleAgeClass) {
+    public void setVehicleAgeClass(VehicleAgeClass vehicleAgeClass) {
 	this.vehicleAgeClass = vehicleAgeClass;
     }
 

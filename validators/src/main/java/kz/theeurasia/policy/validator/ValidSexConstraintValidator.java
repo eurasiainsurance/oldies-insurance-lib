@@ -3,12 +3,12 @@ package kz.theeurasia.policy.validator;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-import kz.theeurasia.esbdproxy.domain.dict.general.SexDict;
+import com.lapsa.insurance.elements.Sex;
 
 public class ValidSexConstraintValidator
-	implements ConstraintValidator<ValidSex, SexDict> {
+	implements ConstraintValidator<ValidSex, Sex> {
 
-    private SexDict[] invalidTypes;
+    private Sex[] invalidTypes;
 
     @Override
     public void initialize(ValidSex constraintAnnotation) {
@@ -16,10 +16,10 @@ public class ValidSexConstraintValidator
     }
 
     @Override
-    public boolean isValid(SexDict value, ConstraintValidatorContext context) {
+    public boolean isValid(Sex value, ConstraintValidatorContext context) {
 	if (value == null)
 	    return true;
-	for (SexDict i : invalidTypes)
+	for (Sex i : invalidTypes)
 	    if (i.equals(value))
 		return false;
 	return true;

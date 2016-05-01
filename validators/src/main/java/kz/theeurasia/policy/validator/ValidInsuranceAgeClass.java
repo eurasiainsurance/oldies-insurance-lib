@@ -9,14 +9,14 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredAgeClassEnum;
+import com.lapsa.insurance.elements.InsuredAgeClass;
 
 @Target({ METHOD, FIELD, ANNOTATION_TYPE })
 @Retention(RUNTIME)
 @Constraint(validatedBy = ValidInsuranceAgeClassConstraintValidator.class)
 public @interface ValidInsuranceAgeClass {
 
-    InsuredAgeClassEnum[] invalidValues() default {};
+    InsuredAgeClass[] invalidValues() default {};
 
     String message() default "{kz.theeurasia.policy.validator.ValidInsuranceAgeClass.message}";
 

@@ -3,10 +3,10 @@ package kz.theeurasia.policy.domain;
 import java.util.UUID;
 
 import com.lapsa.insurance.elements.InsuranceClassType;
+import com.lapsa.insurance.elements.InsuredAgeClass;
+import com.lapsa.insurance.elements.InsuredExpirienceClass;
 import com.lapsa.kz.idnumber.validators.ValidIdNumber;
 
-import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredAgeClassEnum;
-import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
 import kz.theeurasia.policy.validator.NotNullValue;
 import kz.theeurasia.policy.validator.ValidInsuranceAgeClass;
 import kz.theeurasia.policy.validator.ValidInsuranceExpirienceClass;
@@ -31,11 +31,11 @@ public class InsuredDriverData {
 
     @NotNullValue
     @ValidInsuranceAgeClass
-    private InsuredAgeClassEnum ageClass;
+    private InsuredAgeClass ageClass;
 
     @NotNullValue
     @ValidInsuranceExpirienceClass
-    private InsuredExpirienceClassEnum expirienceClass;
+    private InsuredExpirienceClass expirienceClass;
 
     private boolean fetched = false;
 
@@ -147,19 +147,19 @@ public class InsuredDriverData {
 	this.driverLicenseData = driverLicenseData;
     }
 
-    public InsuredAgeClassEnum getAgeClass() {
+    public InsuredAgeClass getAgeClass() {
 	return ageClass;
     }
 
-    public void setAgeClass(InsuredAgeClassEnum ageClass) {
+    public void setAgeClass(InsuredAgeClass ageClass) {
 	this.ageClass = ageClass;
     }
 
-    public InsuredExpirienceClassEnum getExpirienceClass() {
+    public InsuredExpirienceClass getExpirienceClass() {
 	return expirienceClass;
     }
 
-    public void setExpirienceClass(InsuredExpirienceClassEnum expirienceClass) {
+    public void setExpirienceClass(InsuredExpirienceClass expirienceClass) {
 	this.expirienceClass = expirienceClass;
     }
 

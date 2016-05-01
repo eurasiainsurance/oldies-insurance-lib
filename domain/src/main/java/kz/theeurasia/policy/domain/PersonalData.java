@@ -2,7 +2,8 @@ package kz.theeurasia.policy.domain;
 
 import java.util.Date;
 
-import kz.theeurasia.esbdproxy.domain.dict.general.SexDict;
+import com.lapsa.insurance.elements.Sex;
+
 import kz.theeurasia.policy.validator.ValidDateOfBirth;
 import kz.theeurasia.policy.validator.NotEmptyString;
 import kz.theeurasia.policy.validator.NotNullValue;
@@ -28,7 +29,7 @@ public class PersonalData {
 
     @NotNullValue
     @ValidSex
-    private SexDict sex;
+    private Sex sex;
 
     public String getDisplayName() {
 	return (((surename == null || surename.isEmpty()) ? "" : (surename + " "))
@@ -70,11 +71,11 @@ public class PersonalData {
 	this.dayOfBirth = dayOfBirth;
     }
 
-    public SexDict getSex() {
+    public Sex getSex() {
 	return sex;
     }
 
-    public void setSex(SexDict sex) {
+    public void setSex(Sex sex) {
 	this.sex = sex;
     }
 }

@@ -3,12 +3,12 @@ package kz.theeurasia.policy.validator;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleAgeClassDict;
+import com.lapsa.insurance.elements.VehicleAgeClass;
 
 public class ValidVehicleAgeClassConstraintValidator
-	implements ConstraintValidator<ValidVehicleAgeClass, VehicleAgeClassDict> {
+	implements ConstraintValidator<ValidVehicleAgeClass, VehicleAgeClass> {
 
-    private VehicleAgeClassDict[] invalidTypes;
+    private VehicleAgeClass[] invalidTypes;
 
     @Override
     public void initialize(ValidVehicleAgeClass constraintAnnotation) {
@@ -16,10 +16,10 @@ public class ValidVehicleAgeClassConstraintValidator
     }
 
     @Override
-    public boolean isValid(VehicleAgeClassDict value, ConstraintValidatorContext context) {
+    public boolean isValid(VehicleAgeClass value, ConstraintValidatorContext context) {
 	if (value == null)
 	    return true;
-	for (VehicleAgeClassDict i : invalidTypes)
+	for (VehicleAgeClass i : invalidTypes)
 	    if (i.equals(value))
 		return false;
 	return true;

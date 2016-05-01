@@ -3,12 +3,12 @@ package kz.theeurasia.policy.validator;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleClassDict;
+import com.lapsa.insurance.elements.VehicleClass;
 
 public class ValidVehicleClassConstraintValidator
-	implements ConstraintValidator<ValidVehicleClass, VehicleClassDict> {
+	implements ConstraintValidator<ValidVehicleClass, VehicleClass> {
 
-    private VehicleClassDict[] invalidTypes;
+    private VehicleClass[] invalidTypes;
 
     @Override
     public void initialize(ValidVehicleClass constraintAnnotation) {
@@ -16,10 +16,10 @@ public class ValidVehicleClassConstraintValidator
     }
 
     @Override
-    public boolean isValid(VehicleClassDict value, ConstraintValidatorContext context) {
+    public boolean isValid(VehicleClass value, ConstraintValidatorContext context) {
 	if (value == null)
 	    return true;
-	for (VehicleClassDict i : invalidTypes)
+	for (VehicleClass i : invalidTypes)
 	    if (i.equals(value))
 		return false;
 	return true;

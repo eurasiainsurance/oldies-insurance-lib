@@ -1,8 +1,6 @@
-package kz.theeurasia.esbdproxy.domain.dict.osgpovts;
+package com.lapsa.insurance.elements;
 
-import com.lapsa.insurance.elements.BundleBase;
-
-public enum VehicleClassDict implements BundleBase {
+public enum VehicleClass implements BundleBase {
     BUS16(true), // Автобусы до 16 пассажирских мест включительно
     BUSOVR16(true), // Автобусы свыше 16 пассажирских мест
     CARGO(true), // Грузовые
@@ -17,7 +15,7 @@ public enum VehicleClassDict implements BundleBase {
 
     private final boolean applicableForOSGPOVTS;
 
-    VehicleClassDict(boolean applicableForOSGPOVTS) {
+    VehicleClass(boolean applicableForOSGPOVTS) {
 	this.applicableForOSGPOVTS = applicableForOSGPOVTS;
     }
 

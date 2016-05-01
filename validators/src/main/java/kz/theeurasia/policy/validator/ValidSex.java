@@ -9,14 +9,14 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-import kz.theeurasia.esbdproxy.domain.dict.general.SexDict;
+import com.lapsa.insurance.elements.Sex;
 
 @Target({ METHOD, FIELD, ANNOTATION_TYPE })
 @Retention(RUNTIME)
 @Constraint(validatedBy = ValidSexConstraintValidator.class)
 public @interface ValidSex {
 
-    SexDict[] invalidValues() default {};
+    Sex[] invalidValues() default {};
 
     String message() default "{kz.theeurasia.policy.validator.ValidSex.message}";
 

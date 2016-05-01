@@ -1,8 +1,6 @@
-package kz.theeurasia.esbdproxy.domain.dict.general;
+package com.lapsa.insurance.elements;
 
-import com.lapsa.insurance.elements.BundleBase;
-
-public enum IdentityCardTypeDict implements BundleBase {
+public enum IdentityCardType implements BundleBase {
     ID_CARD, // удостоверение личности
     PASSPORT, // паспорт
     BIRTH_CERTIFICATE, // свидетельство о рождении

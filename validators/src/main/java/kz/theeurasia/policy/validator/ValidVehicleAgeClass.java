@@ -9,14 +9,14 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-import kz.theeurasia.esbdproxy.domain.dict.osgpovts.VehicleAgeClassDict;
+import com.lapsa.insurance.elements.VehicleAgeClass;
 
 @Target({ METHOD, FIELD, ANNOTATION_TYPE })
 @Retention(RUNTIME)
 @Constraint(validatedBy = ValidVehicleAgeClassConstraintValidator.class)
 public @interface ValidVehicleAgeClass {
 
-    VehicleAgeClassDict[] invalidValues() default {};
+    VehicleAgeClass[] invalidValues() default {};
 
     String message() default "{kz.theeurasia.policy.validator.ValidVehicleAgeClass.message}";
 

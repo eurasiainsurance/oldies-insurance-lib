@@ -4,26 +4,17 @@ import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredAgeClassEnum;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
 
 public enum InsuredAgeExpirienceClassDict {
-    OVER25_MORE2(4, InsuredAgeClassEnum.OVER25, InsuredExpirienceClassEnum.MORE2), //
-    UNDER25_LESS2(1, InsuredAgeClassEnum.UNDER25, InsuredExpirienceClassEnum.LESS2), //
-    UNDER25_MORE2(2, InsuredAgeClassEnum.OVER25, InsuredExpirienceClassEnum.MORE2), //
-    OVER25_LESS2(3, InsuredAgeClassEnum.UNDER25, InsuredExpirienceClassEnum.LESS2); //
+    OVER25_MORE2(InsuredAgeClassEnum.OVER25, InsuredExpirienceClassEnum.MORE2), //
+    UNDER25_LESS2(InsuredAgeClassEnum.UNDER25, InsuredExpirienceClassEnum.LESS2), //
+    UNDER25_MORE2(InsuredAgeClassEnum.OVER25, InsuredExpirienceClassEnum.MORE2), //
+    OVER25_LESS2(InsuredAgeClassEnum.UNDER25, InsuredExpirienceClassEnum.LESS2); //
 
-    private final long id;
     private final InsuredExpirienceClassEnum expirienceClass;
     private final InsuredAgeClassEnum ageClass;
 
-    InsuredAgeExpirienceClassDict(long id, InsuredAgeClassEnum ageClass, InsuredExpirienceClassEnum expirienceClass) {
-	this.id = id;
+    InsuredAgeExpirienceClassDict(InsuredAgeClassEnum ageClass, InsuredExpirienceClassEnum expirienceClass) {
 	this.expirienceClass = expirienceClass;
 	this.ageClass = ageClass;
-    }
-
-    public static InsuredAgeExpirienceClassDict forId(long id) {
-	for (InsuredAgeExpirienceClassDict dict : values())
-	    if (dict.getId() == id)
-		return dict;
-	return null;
     }
 
     public static InsuredAgeExpirienceClassDict forPair(InsuredExpirienceClassEnum expirienceClass,
@@ -35,10 +26,6 @@ public enum InsuredAgeExpirienceClassDict {
     }
 
     // GENERATED
-
-    public long getId() {
-	return id;
-    }
 
     public InsuredExpirienceClassEnum getExpirienceClass() {
 	return expirienceClass;

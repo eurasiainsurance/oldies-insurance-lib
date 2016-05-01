@@ -1,7 +1,6 @@
 package com.lapsa.insurance.elements;
 
-public enum InsuranceClassType {
-
+public enum InsuranceClassType implements BundleBase {
     CLASS_0,
     CLASS_1,
     CLASS_2,
@@ -17,6 +16,4 @@ public enum InsuranceClassType {
     CLASS_12,
     CLASS_13,
     CLASS_M;
-
-    public static final String BUNDLE_BASENAME = "ElementsLocalization";
 }

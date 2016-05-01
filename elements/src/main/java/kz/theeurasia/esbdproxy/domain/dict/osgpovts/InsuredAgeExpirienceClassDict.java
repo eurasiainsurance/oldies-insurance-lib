@@ -1,9 +1,11 @@
 package kz.theeurasia.esbdproxy.domain.dict.osgpovts;
 
+import com.lapsa.insurance.elements.BundleBase;
+
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredAgeClassEnum;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
 
-public enum InsuredAgeExpirienceClassDict {
+public enum InsuredAgeExpirienceClassDict implements BundleBase {
     OVER25_MORE2(InsuredAgeClassEnum.OVER25, InsuredExpirienceClassEnum.MORE2), //
     UNDER25_LESS2(InsuredAgeClassEnum.UNDER25, InsuredExpirienceClassEnum.LESS2), //
     UNDER25_MORE2(InsuredAgeClassEnum.OVER25, InsuredExpirienceClassEnum.MORE2), //

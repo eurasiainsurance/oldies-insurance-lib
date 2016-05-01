@@ -1,6 +1,8 @@
 package kz.theeurasia.esbdproxy.domain.dict.general;
 
-public enum SexDict {
+import com.lapsa.insurance.elements.BundleBase;
+
+public enum SexDict implements BundleBase {
     MALE, // мужской
     FEMALE; // женский
 }

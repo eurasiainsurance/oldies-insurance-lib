@@ -1,6 +1,8 @@
 package kz.theeurasia.esbdproxy.domain.dict.general;
 
-public enum CancelationReasonDict {
+import com.lapsa.insurance.elements.BundleBase;
+
+public enum CancelationReasonDict implements BundleBase {
     CANCELATION_AND_RENEW, // Досрочное прекращение договора и заключение
 			   // нового
     CANCELATION, // Досрочное расторжение

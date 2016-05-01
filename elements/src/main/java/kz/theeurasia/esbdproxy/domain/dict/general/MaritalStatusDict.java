@@ -1,6 +1,8 @@
 package kz.theeurasia.esbdproxy.domain.dict.general;
 
-public enum MaritalStatusDict {
+import com.lapsa.insurance.elements.BundleBase;
+
+public enum MaritalStatusDict implements BundleBase {
     MARRIED, // женат / замужем
     SINGLE; // холост / незамужем
 }

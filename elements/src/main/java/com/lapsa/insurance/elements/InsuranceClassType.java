@@ -1,6 +1,6 @@
-package kz.theeurasia.esbdproxy.domain.dict.osgpovts;
+package com.lapsa.insurance.elements;
 
-public enum InsuranceClassTypeDict {
+public enum InsuranceClassType {
 
     CLASS_0,
     CLASS_1,

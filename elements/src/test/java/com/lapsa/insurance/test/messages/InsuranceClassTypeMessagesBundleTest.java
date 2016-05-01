@@ -8,13 +8,13 @@ import java.util.ResourceBundle;
 
 import org.junit.Test;
 
-import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuranceClassTypeDict;
+import com.lapsa.insurance.elements.InsuranceClassType;
 
 public class InsuranceClassTypeMessagesBundleTest {
 
     @Test
     public void testRussianBundle() {
-	ResourceBundle resources = ResourceBundle.getBundle(InsuranceClassTypeDict.BUNDLE_BASENAME,
+	ResourceBundle resources = ResourceBundle.getBundle(InsuranceClassType.BUNDLE_BASENAME,
 		Locale.forLanguageTag("ru"));
 	assertThat(resources, not(nullValue()));
 	testBundle(resources);
@@ -22,7 +22,7 @@ public class InsuranceClassTypeMessagesBundleTest {
 
     private void testBundle(ResourceBundle resources) {
 	assertThat(resources, not(nullValue()));
-	for (InsuranceClassTypeDict c : InsuranceClassTypeDict.values()) {
+	for (InsuranceClassType c : InsuranceClassType.values()) {
 	    String name = resources.getString(String.format("%s.%s", c.getClass().getName(), c.name()));
 	    assertThat(name, not(nullValue()));
 	}

@@ -2,9 +2,9 @@ package kz.theeurasia.policy.domain;
 
 import java.util.UUID;
 
+import com.lapsa.insurance.elements.InsuranceClassType;
 import com.lapsa.kz.idnumber.validators.ValidIdNumber;
 
-import kz.theeurasia.esbdproxy.domain.dict.osgpovts.InsuranceClassTypeDict;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredAgeClassEnum;
 import kz.theeurasia.esbdproxy.domain.enums.osgpovts.InsuredExpirienceClassEnum;
 import kz.theeurasia.policy.validator.NotNullValue;
@@ -14,7 +14,7 @@ import kz.theeurasia.policy.validator.ValidInsuranceExpirienceClass;
 public class InsuredDriverData {
     private final UUID id = UUID.randomUUID();
 
-    private InsuranceClassTypeDict insuranceClassType;
+    private InsuranceClassType insuranceClassType;
 
     @NotNullValue(message = "{kz.theeurasia.policy.domain.InsuredDriverData.IdNumber.NotNull.message}")
     @ValidIdNumber
@@ -83,11 +83,11 @@ public class InsuredDriverData {
 	return id;
     }
 
-    public InsuranceClassTypeDict getInsuranceClassType() {
+    public InsuranceClassType getInsuranceClassType() {
 	return insuranceClassType;
     }
 
-    public void setInsuranceClassType(InsuranceClassTypeDict insuranceClassType) {
+    public void setInsuranceClassType(InsuranceClassType insuranceClassType) {
 	this.insuranceClassType = insuranceClassType;
     }
 

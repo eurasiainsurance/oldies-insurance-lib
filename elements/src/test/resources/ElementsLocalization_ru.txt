@@ -1,3 +1,17 @@
+com.lapsa.insurance.elements.CancelationReason.CANCELATION_AND_RENEW = Досрочное прекращение договора и заключение нового
+com.lapsa.insurance.elements.CancelationReason.CANCELATION = Досрочное расторжение
+com.lapsa.insurance.elements.CancelationReason.MADE_INSURANCE_PAYMENT = Произведена страховая выплата
+com.lapsa.insurance.elements.CancelationReason.PREMIUM_COST_ERROR = Корректировка неверно рассчитанной премии
+com.lapsa.insurance.elements.CancelationReason.POLICY_LOST = Утеря
+com.lapsa.insurance.elements.CancelationReason.ISSUED_DUPLICATE_POLICY = Выпущен дубликат
+com.lapsa.insurance.elements.CancelationReason.OTHER = Другая причина
+com.lapsa.insurance.elements.CancelationReason.HUMAN_FAILURE =  Ошибка оператора
+
+com.lapsa.insurance.elements.IdentityCardType.ID_CARD = удостоверение личности
+com.lapsa.insurance.elements.IdentityCardType.PASSPORT = паспорт
+com.lapsa.insurance.elements.IdentityCardType.BIRTH_CERTIFICATE = свидетельство о рождении
+com.lapsa.insurance.elements.IdentityCardType.RESIDENCE_PERMIT = вид на жительство иностранца
+
 com.lapsa.insurance.elements.InsuranceClassType.CLASS_0 = Класс 0
 com.lapsa.insurance.elements.InsuranceClassType.CLASS_1 = Класс 1
 com.lapsa.insurance.elements.InsuranceClassType.CLASS_2 = Класс 2
@@ -13,3 +27,44 @@ com.lapsa.insurance.elements.InsuranceClassType.CLASS_11 = Класс 11
 com.lapsa.insurance.elements.InsuranceClassType.CLASS_12 = Класс 12
 com.lapsa.insurance.elements.InsuranceClassType.CLASS_13 = Класс 13
 com.lapsa.insurance.elements.InsuranceClassType.CLASS_M = Класс М
+
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.OVER25_MORE2 = возраст старше 25 лет, стаж вождения более 2 лет
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.UNDER25_LESS2 = возраст моложе 25 лет, стаж вождения менее 2 лет
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.UNDER25_MORE2 =  возраст моложе 25 лет, стаж вождения более 2 лет
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.OVER25_LESS2 = возраст старше 25 лет, стаж вождения менее 2 лет
+
+com.lapsa.insurance.elements.InsuredAgeClass.OVER25 = возраст старше 25 лет
+com.lapsa.insurance.elements.InsuredAgeClass.UNDER25 = возраст моложе 25 лет
+
+com.lapsa.insurance.elements.InsuredExpirienceClass.MORE2 = стаж вождения более 2 лет
+com.lapsa.insurance.elements.InsuredExpirienceClass.LESS2 = стаж вождения менее 2 лет
+
+com.lapsa.insurance.elements.MaritalStatus.MARRIED = женат / замужем
+com.lapsa.insurance.elements.MaritalStatus.SINGLE = холост / незамужем
+
+com.lapsa.insurance.elements.Sex.MALE = мужской
+com.lapsa.insurance.elements.Sex.FEMALE = женский
+
+com.lapsa.insurance.elements.SteeringWheelLocation.RIGHT_SIDE = руль справа
+com.lapsa.insurance.elements.SteeringWheelLocation.LEFT_SIDE = руль слева
+
+com.lapsa.insurance.elements.SubjectType.COMPANY = Юридическое лицо
+com.lapsa.insurance.elements.SubjectType.PERSON = Физическое лицо
+
+com.lapsa.insurance.elements.VehicleAgeClass.UNDER7 = До 7 лет включительно
+com.lapsa.insurance.elements.VehicleAgeClass.OVER7 = Свыше 7 лет
+
+com.lapsa.insurance.elements.VehicleClass.BUS16 = Автобусы до 16 пассажирских мест включительно
+com.lapsa.insurance.elements.VehicleClass.BUSOVR16 = Автобусы свыше 16 пассажирских мест
+com.lapsa.insurance.elements.VehicleClass.CARGO = Грузовые
+com.lapsa.insurance.elements.VehicleClass.CAR = Легковые
+com.lapsa.insurance.elements.VehicleClass.MOTO = Мототранспорт
+com.lapsa.insurance.elements.VehicleClass.TRAILER = Прицепы (полуприцепы)
+com.lapsa.insurance.elements.VehicleClass.TRAM = Троллейбусы, трамваи
+com.lapsa.insurance.elements.VehicleClass.SEA = Морское
+com.lapsa.insurance.elements.VehicleClass.AIRCRAFT = Воздушный транспорт
+com.lapsa.insurance.elements.VehicleClass.RAILWAY = Железнодорожный транспорт
+com.lapsa.insurance.elements.VehicleClass.SPECIAL = Спец.техника
+
+com.lapsa.insurance.elements.WhoIsInsurant.DRIVER = Страхователем является один из застрахованных водителей
+com.lapsa.insurance.elements.WhoIsInsurant.OTHER = Страхователем является другое лицо

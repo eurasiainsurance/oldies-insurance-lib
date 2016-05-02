@@ -28,10 +28,8 @@ public class VehicleData {
     private int yearOfIssue;
 
     public String getDisplayName() {
-	return (((manufacturer == null || manufacturer.isEmpty()) ? ""
-		: (manufacturer + " ")) +
-		((model == null || model.isEmpty()) ? ""
-			: (model + " "))).trim();
+	return (((manufacturer == null || manufacturer.isEmpty()) ? "" : (manufacturer + " "))
+		+ ((model == null || model.isEmpty()) ? "" : (model + " "))).trim();
     }
 
     // GENERATED

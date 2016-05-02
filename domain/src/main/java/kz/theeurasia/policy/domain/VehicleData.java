@@ -36,6 +36,7 @@ public class VehicleData {
 			: (model + " "))).trim();
     }
 
+    //TODO плохой код
     public void setVinCode(String vinCode) {
 	this.vinCode = vinCode;
 	if (this.vinCode != null)

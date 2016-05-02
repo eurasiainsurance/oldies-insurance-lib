@@ -77,6 +77,13 @@ public class InsuredDriverData {
 	return personalData.getDisplayName();
     }
 
+    //TODO плохой код
+    public void setIdNumber(String idNumber) {
+	this.idNumber = idNumber;
+	if (this.idNumber != null)
+	    this.idNumber = this.idNumber.replaceAll("\\D", "");
+    }
+
     // GENERATED
 
     public UUID getId() {
@@ -93,10 +100,6 @@ public class InsuredDriverData {
 
     public String getIdNumber() {
 	return idNumber;
-    }
-
-    public void setIdNumber(String idNumber) {
-	this.idNumber = idNumber;
     }
 
     public String getTaxPayerNumber() {

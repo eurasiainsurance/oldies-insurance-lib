@@ -24,6 +24,11 @@
 		<!-- internal -->
 		<!-- JavaEE -->
 		<dependency>
+			<groupId>javax.faces</groupId>
+			<artifactId>javax.faces-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
 			<scope>provided</scope>

@@ -1,7 +1,5 @@
 package kz.theeurasia.policy.domain;
 
-import java.util.Locale;
-
 import com.lapsa.cars.validators.ValidVINCode;
 
 import kz.theeurasia.policy.validator.NotEmptyString;
@@ -36,17 +34,14 @@ public class VehicleData {
 			: (model + " "))).trim();
     }
 
-    //TODO плохой код
-    public void setVinCode(String vinCode) {
-	this.vinCode = vinCode;
-	if (this.vinCode != null)
-	    this.vinCode = this.vinCode.toUpperCase(Locale.ENGLISH);
-    }
-
     // GENERATED
 
     public String getVinCode() {
 	return vinCode;
+    }
+
+    public void setVinCode(String vinCode) {
+	this.vinCode = vinCode;
     }
 
     public String getModel() {

@@ -85,7 +85,6 @@
 				<scope>provided</scope>
 			</dependency>
 			<!-- test -->
-			<!-- test -->
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-validator</artifactId>

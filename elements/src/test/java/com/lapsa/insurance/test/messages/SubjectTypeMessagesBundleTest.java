@@ -1,36 +1,17 @@
 package com.lapsa.insurance.test.messages;
 
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.*;
-
-import java.util.Locale;
-import java.util.ResourceBundle;
-
-import org.junit.Test;
-
 import com.lapsa.insurance.elements.SubjectType;
 
-public class SubjectTypeMessagesBundleTest {
+public class SubjectTypeMessagesBundleTest extends EnumTypeMessagesBundleTest<SubjectType> {
 
-    @Test
-    public void testRussianBundle() {
-	ResourceBundle resources = ResourceBundle.getBundle(SubjectType.BUNDLE_BASENAME, Locale.forLanguageTag("ru"));
-	assertThat(resources, not(nullValue()));
-	testBundle(resources);
+    @Override
+    protected SubjectType[] getAllEnumValues() {
+	return SubjectType.values();
     }
 
-    @Test
-    public void testEnglishBundle() {
-	ResourceBundle resources = ResourceBundle.getBundle(SubjectType.BUNDLE_BASENAME, Locale.forLanguageTag("en"));
-	assertThat(resources, not(nullValue()));
-	testBundle(resources);
+    @Override
+    protected String getBundleBaseName() {
+	return SubjectType.BUNDLE_BASENAME;
     }
 
-    private void testBundle(ResourceBundle resources) {
-	assertThat(resources, not(nullValue()));
-	for (SubjectType c : SubjectType.values()) {
-	    String name = resources.getString(String.format("%s.%s", c.getClass().getName(), c.name()));
-	    assertThat(name, not(nullValue()));
-	}
-    }
 }

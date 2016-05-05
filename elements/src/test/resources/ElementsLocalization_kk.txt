@@ -1,0 +1,70 @@
+com.lapsa.insurance.elements.CancelationReason.CANCELATION_AND_RENEW = Шартын мерзімінен бұрын тоқтату және жаңа қорытынды
+com.lapsa.insurance.elements.CancelationReason.CANCELATION = Мерзімінен бұрын бұзу
+com.lapsa.insurance.elements.CancelationReason.MADE_INSURANCE_PAYMENT = Жүргізілген сақтандыру төлемі
+com.lapsa.insurance.elements.CancelationReason.PREMIUM_COST_ERROR = Түзету қате есептелген сыйлықақы
+com.lapsa.insurance.elements.CancelationReason.POLICY_LOST = Жоғалту
+com.lapsa.insurance.elements.CancelationReason.ISSUED_DUPLICATE_POLICY = Шығарылды телнұсқасы
+com.lapsa.insurance.elements.CancelationReason.OTHER = Басқа себеп
+com.lapsa.insurance.elements.CancelationReason.HUMAN_FAILURE = Қате оператор
+
+com.lapsa.insurance.elements.IdentityCardType.ID_CARD = жеке куәлігі
+com.lapsa.insurance.elements.IdentityCardType.PASSPORT = паспорты
+com.lapsa.insurance.elements.IdentityCardType.BIRTH_CERTIFICATE = туу туралы куәлік
+com.lapsa.insurance.elements.IdentityCardType.RESIDENCE_PERMIT = шетелдіктің тұруға ықтиярхаты
+
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_0 = Класс 0
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_1 = Класс 1
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_2 = Класс 2
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_3 = Класс 3
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_4 = Класс 4
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_5 = Класс 5
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_6 = Класс 6
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_7 = Класс 7
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_8 = Класс 8
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_9 = Класс 9
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_10 = Класс 10
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_11 = Класс 11
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_12 = Класс 12
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_13 = Класс 13
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_M = Класс М
+
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.OVER25_MORE2 = жасы 25 жастан жоғары, жүргізу стажы 2 жылдан астам
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.UNDER25_LESS2 = жасы 25 жастан жүргізу стажы 2 жылдан аз
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.UNDER25_MORE2 =  жасы 25 жастан жүргізу стажы 2 жылдан астам
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.OVER25_LESS2 = жасы 25 жастан жоғары, жүргізу өтілі 2 жылдан кем
+
+com.lapsa.insurance.elements.InsuredAgeClass.OVER25 = жасы 25 жастан жоғары
+com.lapsa.insurance.elements.InsuredAgeClass.UNDER25 = жасы 25 жастан
+
+com.lapsa.insurance.elements.InsuredExpirienceClass.MORE2 = жүргізу стажы 2 жылдан астам
+com.lapsa.insurance.elements.InsuredExpirienceClass.LESS2 = жүргізу стажы 2 жылдан аз
+
+com.lapsa.insurance.elements.MaritalStatus.MARRIED = үйленген / тұрмыста
+com.lapsa.insurance.elements.MaritalStatus.SINGLE = үйленбеген / тұрмыс құрмаған
+
+com.lapsa.insurance.elements.Sex.MALE = ерлер
+com.lapsa.insurance.elements.Sex.FEMALE = қыздар
+
+com.lapsa.insurance.elements.SteeringWheelLocation.RIGHT_SIDE = оң жағында руль
+com.lapsa.insurance.elements.SteeringWheelLocation.LEFT_SIDE = сол жағында руль
+
+com.lapsa.insurance.elements.SubjectType.COMPANY = Заңды тұлға
+com.lapsa.insurance.elements.SubjectType.PERSON = Жеке тұлға
+
+com.lapsa.insurance.elements.VehicleAgeClass.UNDER7 = 7 жасқа дейін қоса алғанда
+com.lapsa.insurance.elements.VehicleAgeClass.OVER7 = 7 жылдан астам
+
+com.lapsa.insurance.elements.VehicleClass.BUS16 = 16-ға дейінгі автобустар жолаушылар орны қоса алғанда
+com.lapsa.insurance.elements.VehicleClass.BUSOVR16 = 16-дан артық автобустар жолаушылар орны
+com.lapsa.insurance.elements.VehicleClass.CARGO = Жүк
+com.lapsa.insurance.elements.VehicleClass.CAR = Жеңіл
+com.lapsa.insurance.elements.VehicleClass.MOTO = Мотокөлік
+com.lapsa.insurance.elements.VehicleClass.TRAILER = Тіркемелер (жартылай тіркемелер)
+com.lapsa.insurance.elements.VehicleClass.TRAM = Троллейбустар, трамвайлар
+com.lapsa.insurance.elements.VehicleClass.SEA = Теңіз көлігі
+com.lapsa.insurance.elements.VehicleClass.AIRCRAFT = Әуе көлігі
+com.lapsa.insurance.elements.VehicleClass.RAILWAY = Темір жол көлігі
+com.lapsa.insurance.elements.VehicleClass.SPECIAL = Мамандандырылған техника
+
+com.lapsa.insurance.elements.WhoIsInsurant.DRIVER = Страхователем является один из застрахованных водителей
+com.lapsa.insurance.elements.WhoIsInsurant.OTHER = Страхователем является другое лицо

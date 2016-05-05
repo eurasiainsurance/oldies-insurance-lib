@@ -24,7 +24,7 @@ import com.lapsa.insurance.elements.VehicleAgeClass;
 import com.lapsa.insurance.elements.VehicleClass;
 import com.lapsa.insurance.elements.WhoIsInsurant;
 
-public class MessagesBundleTest extends BaseMessagesBundleTest {
+public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 
     @Test
     public void testNoExcessRecordsRussian() {

@@ -1,4 +1,4 @@
-package com.lapsa.insurance.test.messages;
+package test.com.lapsa.insurance.elements;
 
 import com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass;
 

@@ -8,23 +8,21 @@ import java.util.ResourceBundle;
 
 import org.junit.Test;
 
-import com.lapsa.insurance.elements.SubjectType;
-
 public abstract class EnumTypeMessagesBundleTest<T extends Enum<?>> extends BaseMessagesBundleTest {
 
     @Test
     public void testRussianBundle() {
-	testBundle(SubjectType.BUNDLE_BASENAME, LANG_RU);
+	testBundle(getBundleBaseName(), LANG_RU);
     }
 
     @Test
     public void testEnglishBundle() {
-	testBundle(SubjectType.BUNDLE_BASENAME, LANG_EN);
+	testBundle(getBundleBaseName(), LANG_EN);
     }
 
     @Test
     public void testKazakhBundle() {
-	testBundle(SubjectType.BUNDLE_BASENAME, LANG_KK);
+	testBundle(getBundleBaseName(), LANG_KK);
     }
 
     protected abstract T[] getAllEnumValues();

@@ -5,7 +5,7 @@ com.lapsa.insurance.elements.CancelationReason.PREMIUM_COST_ERROR = Коррек
 com.lapsa.insurance.elements.CancelationReason.POLICY_LOST = Утеря
 com.lapsa.insurance.elements.CancelationReason.ISSUED_DUPLICATE_POLICY = Выпущен дубликат
 com.lapsa.insurance.elements.CancelationReason.OTHER = Другая причина
-com.lapsa.insurance.elements.CancelationReason.HUMAN_FAILURE =  Ошибка оператора
+com.lapsa.insurance.elements.CancelationReason.HUMAN_FAILURE = Ошибка оператора
 
 com.lapsa.insurance.elements.IdentityCardType.ID_CARD = удостоверение личности
 com.lapsa.insurance.elements.IdentityCardType.PASSPORT = паспорт

@@ -20,6 +20,14 @@ public class IdentityCardTypeMessagesBundleTest {
 	testBundle(resources);
     }
 
+    @Test
+    public void testEnglishBundle() {
+	ResourceBundle resources = ResourceBundle.getBundle(IdentityCardType.BUNDLE_BASENAME,
+		Locale.forLanguageTag("en"));
+	assertThat(resources, not(nullValue()));
+	testBundle(resources);
+    }
+
     private void testBundle(ResourceBundle resources) {
 	assertThat(resources, not(nullValue()));
 	for (IdentityCardType c : IdentityCardType.values()) {

@@ -37,6 +37,17 @@ public class MessagesBundleTest {
 	testBundle(resources);
     }
 
+    @Test
+    public void testNoExcessRecordsEnglish() {
+	Locale locale = Locale.forLanguageTag("en");
+	assertThat(locale.getLanguage(), allOf(not(nullValue()), is("en")));
+	ResourceBundle resources = ResourceBundle.getBundle(BundleBase.BUNDLE_BASENAME, locale);
+	assertThat(resources, not(nullValue()));
+	assertThat(resources.getString("com.lapsa.insurance.elements.InsuranceClassType.CLASS_3"),
+		allOf(not(nullValue()), is("Class 3")));
+	testBundle(resources);
+    }
+
     private void testBundle(ResourceBundle resources) {
 	Enumeration<String> keys = resources.getKeys();
 	while (keys.hasMoreElements()) {

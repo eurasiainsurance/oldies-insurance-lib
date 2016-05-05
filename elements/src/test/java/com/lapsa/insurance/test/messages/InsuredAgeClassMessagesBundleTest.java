@@ -20,6 +20,14 @@ public class InsuredAgeClassMessagesBundleTest {
 	testBundle(resources);
     }
 
+    @Test
+    public void testEnglishBundle() {
+	ResourceBundle resources = ResourceBundle.getBundle(InsuredAgeClass.BUNDLE_BASENAME,
+		Locale.forLanguageTag("en"));
+	assertThat(resources, not(nullValue()));
+	testBundle(resources);
+    }
+
     private void testBundle(ResourceBundle resources) {
 	assertThat(resources, not(nullValue()));
 	for (InsuredAgeClass c : InsuredAgeClass.values()) {

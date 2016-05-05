@@ -19,6 +19,13 @@ public class VehicleAgeClassMessagesBundleTest {
 	testBundle(resources);
     }
 
+    @Test
+    public void testEnglishBundle() {
+	ResourceBundle resources = ResourceBundle.getBundle(VehicleAgeClass.BUNDLE_BASENAME, Locale.forLanguageTag("en"));
+	assertThat(resources, not(nullValue()));
+	testBundle(resources);
+    }
+
     private void testBundle(ResourceBundle resources) {
 	assertThat(resources, not(nullValue()));
 	for (VehicleAgeClass c : VehicleAgeClass.values()) {

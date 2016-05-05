@@ -14,7 +14,16 @@ public class SteeringWheelLocationMessagesBundleTest {
 
     @Test
     public void testRussianBundle() {
-	ResourceBundle resources = ResourceBundle.getBundle(SteeringWheelLocation.BUNDLE_BASENAME, Locale.forLanguageTag("ru"));
+	ResourceBundle resources = ResourceBundle.getBundle(SteeringWheelLocation.BUNDLE_BASENAME,
+		Locale.forLanguageTag("ru"));
+	assertThat(resources, not(nullValue()));
+	testBundle(resources);
+    }
+
+    @Test
+    public void testEnglishBundle() {
+	ResourceBundle resources = ResourceBundle.getBundle(SteeringWheelLocation.BUNDLE_BASENAME,
+		Locale.forLanguageTag("en"));
 	assertThat(resources, not(nullValue()));
 	testBundle(resources);
     }

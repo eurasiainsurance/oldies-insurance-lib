@@ -29,7 +29,7 @@ public abstract class EnumTypeMessagesBundleTest<T extends Enum<?>> extends Base
 
     protected abstract String getBundleBaseName();
 
-    private void testBundle(String bundleBaseName, String languageTag) {
+    protected void testBundle(String bundleBaseName, String languageTag) {
 	Locale locale = getLocale(languageTag);
 	ResourceBundle resourceBundle = getResourceBundle(bundleBaseName, locale);
 	for (T c : getAllEnumValues()) {

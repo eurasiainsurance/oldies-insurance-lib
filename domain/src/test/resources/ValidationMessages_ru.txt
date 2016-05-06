@@ -3,3 +3,8 @@ kz.theeurasia.policy.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message 
 
 kz.theeurasia.policy.domain.InsuredDriverData.IdNumber.NotNull.message = ИИН не указан
 kz.theeurasia.policy.domain.InsurantData.IdNumber.NotNull.message = {kz.theeurasia.policy.domain.InsuredDriverData.IdNumber.NotNull.message}
+
+kz.theeurasia.policy.domain.PolicyObtainingData.method.NotNullValue.message = Укажите способ получения полиса
+kz.theeurasia.policy.domain.PolicyObtainingData.deliveryDate.NotNullValue.message = Укажите дату доставки
+kz.theeurasia.policy.domain.PolicyObtainingData.deliveryTime.NotNullValue.message = Укажите время доставки
+kz.theeurasia.policy.domain.PolicyObtainingData.deliveryAddress.NotNullValue.message = Укажите адрес доставки

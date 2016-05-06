@@ -3,3 +3,8 @@ kz.theeurasia.policy.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message 
 
 kz.theeurasia.policy.domain.InsuredDriverData.IdNumber.NotNull.message = ЖСН Белгісіз
 kz.theeurasia.policy.domain.InsurantData.IdNumber.NotNull.message = {kz.theeurasia.policy.domain.InsuredDriverData.IdNumber.NotNull.message}
+
+kz.theeurasia.policy.domain.PolicyObtainingData.method.NotNullValue.message = Көрсетіңіз алу тәсілі полисі
+kz.theeurasia.policy.domain.PolicyObtainingData.deliveryDate.NotNullValue.message = Көрсетіңіз жеткізу
+kz.theeurasia.policy.domain.PolicyObtainingData.deliveryTime.NotNullValue.message = Көрсетіңіз жеткізу уақыты
+kz.theeurasia.policy.domain.PolicyObtainingData.deliveryAddress.NotNullValue.message = Жеткізу мекен-жайын көрсетіңіз

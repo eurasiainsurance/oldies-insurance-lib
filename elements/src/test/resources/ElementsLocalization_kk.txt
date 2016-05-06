@@ -7,6 +7,10 @@ com.lapsa.insurance.elements.CancelationReason.ISSUED_DUPLICATE_POLICY = Шығ�
 com.lapsa.insurance.elements.CancelationReason.OTHER = Басқа себеп
 com.lapsa.insurance.elements.CancelationReason.HUMAN_FAILURE = Қате оператор
 
+com.lapsa.insurance.elements.DeliveryTimeSlot.BEFORE_LUNCH = бастап 9:00 дейін 13:00
+com.lapsa.insurance.elements.DeliveryTimeSlot.AFTER_LUNCH = бастап 13:00 дейін 18:00
+com.lapsa.insurance.elements.DeliveryTimeSlot.EVENING = бастап 18:00 дейін 21:00
+
 com.lapsa.insurance.elements.IdentityCardType.ID_CARD = жеке куәлігі
 com.lapsa.insurance.elements.IdentityCardType.PASSPORT = паспорты
 com.lapsa.insurance.elements.IdentityCardType.BIRTH_CERTIFICATE = туу туралы куәлік
@@ -41,6 +45,9 @@ com.lapsa.insurance.elements.InsuredExpirienceClass.LESS2 = жүргізу ст�
 
 com.lapsa.insurance.elements.MaritalStatus.MARRIED = үйленген / тұрмыста
 com.lapsa.insurance.elements.MaritalStatus.SINGLE = үйленбеген / тұрмыс құрмаған
+
+com.lapsa.insurance.elements.PolicyObtainingMethod.EXPRESS = курьер арқылы жеткізу
+com.lapsa.insurance.elements.PolicyObtainingMethod.PICKUP = забрать дербес сақтандыру компания офисінде
 
 com.lapsa.insurance.elements.Sex.MALE = ерлер
 com.lapsa.insurance.elements.Sex.FEMALE = қыздар

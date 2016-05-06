@@ -11,12 +11,14 @@ import org.junit.Test;
 
 import com.lapsa.insurance.elements.BundleBase;
 import com.lapsa.insurance.elements.CancelationReason;
+import com.lapsa.insurance.elements.DeliveryTimeSlot;
 import com.lapsa.insurance.elements.IdentityCardType;
 import com.lapsa.insurance.elements.InsuranceClassType;
-import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass;
+import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredExpirienceClass;
 import com.lapsa.insurance.elements.MaritalStatus;
+import com.lapsa.insurance.elements.PolicyObtainingMethod;
 import com.lapsa.insurance.elements.Sex;
 import com.lapsa.insurance.elements.SteeringWheelLocation;
 import com.lapsa.insurance.elements.SubjectType;
@@ -59,6 +61,8 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 	    String key = keys.nextElement();
 	    if (findByFullName(CancelationReason.values(), key) != null)
 		continue;
+	    if (findByFullName(DeliveryTimeSlot.values(), key) != null)
+		continue;
 	    if (findByFullName(IdentityCardType.values(), key) != null)
 		continue;
 	    if (findByFullName(InsuranceClassType.values(), key) != null)
@@ -66,6 +70,8 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 	    if (findByFullName(InsuredAgeAndExpirienceClass.values(), key) != null)
 		continue;
 	    if (findByFullName(MaritalStatus.values(), key) != null)
+		continue;
+	    if (findByFullName(PolicyObtainingMethod.values(), key) != null)
 		continue;
 	    if (findByFullName(Sex.values(), key) != null)
 		continue;

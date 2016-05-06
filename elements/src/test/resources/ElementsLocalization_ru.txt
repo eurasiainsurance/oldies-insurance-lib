@@ -7,6 +7,10 @@ com.lapsa.insurance.elements.CancelationReason.ISSUED_DUPLICATE_POLICY = Вып�
 com.lapsa.insurance.elements.CancelationReason.OTHER = Другая причина
 com.lapsa.insurance.elements.CancelationReason.HUMAN_FAILURE = Ошибка оператора
 
+com.lapsa.insurance.elements.DeliveryTimeSlot.BEFORE_LUNCH = с 9:00 до 13:00
+com.lapsa.insurance.elements.DeliveryTimeSlot.AFTER_LUNCH = с 13:00 до 18:00
+com.lapsa.insurance.elements.DeliveryTimeSlot.EVENING = с 18:00 до 21:00
+
 com.lapsa.insurance.elements.IdentityCardType.ID_CARD = удостоверение личности
 com.lapsa.insurance.elements.IdentityCardType.PASSPORT = паспорт
 com.lapsa.insurance.elements.IdentityCardType.BIRTH_CERTIFICATE = свидетельство о рождении
@@ -41,6 +45,9 @@ com.lapsa.insurance.elements.InsuredExpirienceClass.LESS2 = стаж вожде�
 
 com.lapsa.insurance.elements.MaritalStatus.MARRIED = женат / замужем
 com.lapsa.insurance.elements.MaritalStatus.SINGLE = холост / незамужем
+
+com.lapsa.insurance.elements.PolicyObtainingMethod.EXPRESS = доставить курьером
+com.lapsa.insurance.elements.PolicyObtainingMethod.PICKUP = забрать самостоятельно в офисе страховой компании
 
 com.lapsa.insurance.elements.Sex.MALE = мужской
 com.lapsa.insurance.elements.Sex.FEMALE = женский

@@ -5,6 +5,7 @@ import java.util.Date;
 import com.lapsa.insurance.elements.DeliveryTimeSlot;
 import com.lapsa.insurance.elements.PolicyObtainingMethod;
 
+import kz.theeurasia.policy.validator.NotEmptyString;
 import kz.theeurasia.policy.validator.NotNullValue;
 
 public class PolicyObtainingData {
@@ -19,6 +20,7 @@ public class PolicyObtainingData {
     private DeliveryTimeSlot deliveryTime;
 
     @NotNullValue(message = "{kz.theeurasia.policy.domain.PolicyObtainingData.deliveryAddress.NotNullValue.message}")
+    @NotEmptyString(message = "{kz.theeurasia.policy.domain.PolicyObtainingData.deliveryAddress.NotEmptyString.message}")
     private String deliveryAddress;
 
     // GENERATED

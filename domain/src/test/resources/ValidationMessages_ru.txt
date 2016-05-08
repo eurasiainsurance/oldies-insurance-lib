@@ -8,3 +8,4 @@ kz.theeurasia.policy.domain.PolicyObtainingData.method.NotNullValue.message = У
 kz.theeurasia.policy.domain.PolicyObtainingData.deliveryDate.NotNullValue.message = Укажите дату доставки
 kz.theeurasia.policy.domain.PolicyObtainingData.deliveryTime.NotNullValue.message = Укажите время доставки
 kz.theeurasia.policy.domain.PolicyObtainingData.deliveryAddress.NotNullValue.message = Укажите адрес доставки
+kz.theeurasia.policy.domain.PolicyObtainingData.deliveryAddress.NotEmptyString.message = {kz.theeurasia.policy.domain.PolicyObtainingData.deliveryAddress.NotNullValue.message}

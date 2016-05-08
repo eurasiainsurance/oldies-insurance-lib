@@ -1,22 +1,23 @@
 package kz.theeurasia.policy.domain;
 
-import javax.validation.constraints.NotNull;
-
 import com.lapsa.internet.validators.ValidEmail;
 import com.lapsa.phone.PhoneNumber;
 import com.lapsa.phone.validators.ValidPhoneNumber;
 
 import kz.theeurasia.policy.validator.NotEmptyString;
+import kz.theeurasia.policy.validator.NotNullValue;
 
 public class PloicyRequesterData {
 
-    @NotNull
+    @NotNullValue
     @NotEmptyString
     private String name;
 
+    @NotNullValue
     @ValidPhoneNumber
     private PhoneNumber phone;
 
+    @NotNullValue
     @ValidEmail
     private String email;
 

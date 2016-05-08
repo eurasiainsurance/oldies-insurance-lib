@@ -7,6 +7,8 @@ kz.theeurasia.policy.domain.InsurantData.IdNumber.NotNull.message = {kz.theeuras
 
 kz.theeurasia.policy.domain.PolicyObtainingData.method.NotNullValue.message = Select obtaining method
 kz.theeurasia.policy.domain.PolicyObtainingData.deliveryDate.NotNullValue.message = Select delivery date
+kz.theeurasia.policy.domain.PolicyObtainingData.deliveryDate.DaysAfterNow.messages = The policy can be delivered the next day after the order
+kz.theeurasia.policy.domain.PolicyObtainingData.deliveryDate.DaysBeforeNow.messages = Too late date of delivery of the policy
 kz.theeurasia.policy.domain.PolicyObtainingData.deliveryTime.NotNullValue.message = Select delivery time
 kz.theeurasia.policy.domain.PolicyObtainingData.deliveryAddress.NotNullValue.message = Select delivery address
 kz.theeurasia.policy.domain.PolicyObtainingData.deliveryAddress.NotEmptyString.message = {kz.theeurasia.policy.domain.PolicyObtainingData.deliveryAddress.NotNullValue.message}

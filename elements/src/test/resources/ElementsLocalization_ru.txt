@@ -7,6 +7,7 @@ com.lapsa.insurance.elements.CancelationReason.ISSUED_DUPLICATE_POLICY = Вып�
 com.lapsa.insurance.elements.CancelationReason.OTHER = Другая причина
 com.lapsa.insurance.elements.CancelationReason.HUMAN_FAILURE = Ошибка оператора
 
+com.lapsa.insurance.elements.DeliveryTimeSlot.DURING_THE_DAY = в течении дня
 com.lapsa.insurance.elements.DeliveryTimeSlot.BEFORE_LUNCH = в первой половине дня (с 9:00 до 13:00)
 com.lapsa.insurance.elements.DeliveryTimeSlot.AFTER_LUNCH = во второй половине дня (с 13:00 до 18:00)
 com.lapsa.insurance.elements.DeliveryTimeSlot.EVENING = вечером (с 18:00 до 21:00)

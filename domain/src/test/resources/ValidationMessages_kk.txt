@@ -2,6 +2,7 @@ kz.theeurasia.policy.domain.InsurantData.WhoIsInsurant.NotNull.message = Дұр�
 kz.theeurasia.policy.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message = Дұрыс мән
 
 kz.theeurasia.policy.domain.InsuredDriverData.IdNumber.NotNull.message = ЖСН Белгісіз
+
 kz.theeurasia.policy.domain.InsurantData.IdNumber.NotNull.message = {kz.theeurasia.policy.domain.InsuredDriverData.IdNumber.NotNull.message}
 
 kz.theeurasia.policy.domain.PolicyObtainingData.method.NotNullValue.message = Көрсетіңіз алу тәсілі полисі

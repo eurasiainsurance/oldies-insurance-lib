@@ -2,6 +2,7 @@ kz.theeurasia.policy.domain.InsurantData.WhoIsInsurant.NotNull.message = Выб�
 kz.theeurasia.policy.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message = Неверное значение
 
 kz.theeurasia.policy.domain.InsuredDriverData.IdNumber.NotNull.message = ИИН не указан
+
 kz.theeurasia.policy.domain.InsurantData.IdNumber.NotNull.message = {kz.theeurasia.policy.domain.InsuredDriverData.IdNumber.NotNull.message}
 
 kz.theeurasia.policy.domain.PolicyObtainingData.method.NotNullValue.message = Укажите способ получения полиса

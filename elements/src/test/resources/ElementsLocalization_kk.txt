@@ -7,9 +7,9 @@ com.lapsa.insurance.elements.CancelationReason.ISSUED_DUPLICATE_POLICY = Шығ�
 com.lapsa.insurance.elements.CancelationReason.OTHER = Басқа себеп
 com.lapsa.insurance.elements.CancelationReason.HUMAN_FAILURE = Қате оператор
 
-com.lapsa.insurance.elements.DeliveryTimeSlot.BEFORE_LUNCH = бастап 9:00 дейін 13:00
-com.lapsa.insurance.elements.DeliveryTimeSlot.AFTER_LUNCH = бастап 13:00 дейін 18:00
-com.lapsa.insurance.elements.DeliveryTimeSlot.EVENING = бастап 18:00 дейін 21:00
+com.lapsa.insurance.elements.DeliveryTimeSlot.BEFORE_LUNCH = күннің алғашқы жартысында (бастап 9:00 дейін 13:00)
+com.lapsa.insurance.elements.DeliveryTimeSlot.AFTER_LUNCH = күннің екінші жартысында (бастап 13:00 дейін 18:00)
+com.lapsa.insurance.elements.DeliveryTimeSlot.EVENING = кешке (сағат 18:00-ден 21:00)
 
 com.lapsa.insurance.elements.IdentityCardType.ID_CARD = жеке куәлігі
 com.lapsa.insurance.elements.IdentityCardType.PASSPORT = паспорты

@@ -7,9 +7,9 @@ com.lapsa.insurance.elements.CancelationReason.ISSUED_DUPLICATE_POLICY = Вып�
 com.lapsa.insurance.elements.CancelationReason.OTHER = Другая причина
 com.lapsa.insurance.elements.CancelationReason.HUMAN_FAILURE = Ошибка оператора
 
-com.lapsa.insurance.elements.DeliveryTimeSlot.BEFORE_LUNCH = с 9:00 до 13:00
-com.lapsa.insurance.elements.DeliveryTimeSlot.AFTER_LUNCH = с 13:00 до 18:00
-com.lapsa.insurance.elements.DeliveryTimeSlot.EVENING = с 18:00 до 21:00
+com.lapsa.insurance.elements.DeliveryTimeSlot.BEFORE_LUNCH = в первой половине дня (с 9:00 до 13:00)
+com.lapsa.insurance.elements.DeliveryTimeSlot.AFTER_LUNCH = во второй половине дня (с 13:00 до 18:00)
+com.lapsa.insurance.elements.DeliveryTimeSlot.EVENING = вечером (с 18:00 до 21:00)
 
 com.lapsa.insurance.elements.IdentityCardType.ID_CARD = удостоверение личности
 com.lapsa.insurance.elements.IdentityCardType.PASSPORT = паспорт

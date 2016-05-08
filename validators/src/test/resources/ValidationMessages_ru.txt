@@ -1,3 +1,5 @@
+kz.theeurasia.policy.validator.DaysAfterNow.message = Слишком ранняя дата
+kz.theeurasia.policy.validator.DaysBeforeNow.message = Слишком поздняя дата
 kz.theeurasia.policy.validator.NotEmptyString.message = Обязательное поле
 kz.theeurasia.policy.validator.NotNullValue.message = Обязательное поле
 kz.theeurasia.policy.validator.ValidDateOfBirth.message = Некорректная дата рождения

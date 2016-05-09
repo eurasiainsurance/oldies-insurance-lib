@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd">
+
+	<entity class="kz.theeurasia.policy.domain.UploadedImage">
+		<attributes>
+			<id name="id" />
+			<basic name="fileName" />
+			<basic name="mimeType" />
+			<basic name="comments" />
+			<embedded name="original" />
+			<embedded name="thumbnail" />
+		</attributes>
+	</entity>
+
+	<entity class="kz.theeurasia.policy.domain.InsuredDriverData">
+		<attributes>
+			<id name="id" />
+			<basic name="idNumber" />
+			<basic name="insuranceClassType">
+				<enumerated>STRING</enumerated>
+			</basic>
+			<basic name="ageClass">
+				<enumerated>STRING</enumerated>
+			</basic>
+			<basic name="expirienceClass">
+				<enumerated>STRING</enumerated>
+			</basic>
+			<basic name="hasAnyPrivilege" />
+			<transient name="personalData" />
+			<transient name="originData" />
+			<transient name="residenceData" />
+			<transient name="identityCardData" />
+			<transient name="driverLicenseData" />
+			<transient name="contactData" />
+			<transient name="fetched" />
+			<transient name="priveleger" />
+			<transient name="privilegerCertificateData" />
+			<transient name="handicaped" />
+			<transient name="handicapedCertificateData" />
+			<transient name="gpwParticipant" />
+			<transient name="gpwParticipantCertificateData" />
+			<transient name="pensioner" />
+			<transient name="pensionerCertificateData" />
+		</attributes>
+	</entity>
+
+	<entity class="kz.theeurasia.policy.domain.InsuredVehicleData">
+		<attributes>
+			<id name="id" />
+			<basic name="vehicleClass">
+				<enumerated>STRING</enumerated>
+			</basic>
+			<basic name="vehicleAgeClass">
+				<enumerated>STRING</enumerated>
+			</basic>
+			<embedded name="vehicleCertificateData" />
+			<transient name="forcedMajorCity" />
+			<transient name="fetched" />
+			<transient name="vehicleData" />
+		</attributes>
+	</entity>
+
+	<entity class="kz.theeurasia.policy.domain.PolicyExpressOrder">
+		<attributes>
+			<id name="id">
+				<generated-value strategy="AUTO" />
+			</id>
+			<one-to-many name="drivers" orphan-removal="true" />
+			<one-to-many name="vehicles" orphan-removal="true" />
+			<one-to-many name="uploadedImages" orphan-removal="true" />
+			<embedded name="calculationData" />
+			<embedded name="requesterData" />
+			<embedded name="obtaininigData" />
+		</attributes>
+	</entity>
+
+	<embeddable class="kz.theeurasia.policy.domain.VehicleCertificateData">
+		<attributes>
+			<basic name="region">
+				<enumerated>STRING</enumerated>
+			</basic>
+			<basic name="city">
+				<enumerated>STRING</enumerated>
+			</basic>
+			<transient name="registrationNumber" />
+			<transient name="number" />
+			<transient name="dateOfIssue" />
+			<transient name="scanFiles" />
+		</attributes>
+	</embeddable>
+
+	<embeddable class="kz.theeurasia.policy.domain.CalculationData">
+		<attributes>
+			<basic name="premiumCost" />
+			<basic name="termClass">
+				<enumerated>STRING</enumerated>
+			</basic>
+		</attributes>
+	</embeddable>
+
+	<embeddable class="kz.theeurasia.policy.domain.ImageContent"
+		access="PROPERTY">
+		<attributes>
+			<basic name="content">
+				<lob />
+			</basic>
+		</attributes>
+	</embeddable>
+
+	<embeddable class="kz.theeurasia.policy.domain.PloicyRequesterData">
+		<attributes>
+			<basic name="name" />
+			<basic name="email" />
+			<embedded name="phone" />
+		</attributes>
+	</embeddable>
+
+	<embeddable class="kz.theeurasia.policy.domain.PolicyObtainingData">
+		<attributes>
+			<basic name="method">
+				<enumerated>STRING</enumerated>
+			</basic>
+			<basic name="deliveryDate">
+				<temporal>DATE</temporal>
+			</basic>
+			<basic name="deliveryTime">
+				<enumerated>STRING</enumerated>
+			</basic>
+			<basic name="deliveryAddress" />
+		</attributes>
+	</embeddable>
+
+	<embeddable class="com.lapsa.phone.PhoneNumber">
+		<attributes>
+			<basic name="countryCode">
+				<enumerated>STRING</enumerated>
+			</basic>
+			<basic name="areaCode" />
+			<basic name="number" />
+		</attributes>
+	</embeddable>
+
+</entity-mappings>

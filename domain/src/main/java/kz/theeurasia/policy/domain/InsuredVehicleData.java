@@ -22,8 +22,6 @@ public class InsuredVehicleData {
     @ValidVehicleAgeClass
     private VehicleAgeClass vehicleAgeClass;
 
-    private VehicleCertificateData vehicleCertificateData = new VehicleCertificateData();
-
     private boolean forcedMajorCity;
 
     private boolean fetched = false;
@@ -75,14 +73,6 @@ public class InsuredVehicleData {
 
     public void setVehicleAgeClass(VehicleAgeClass vehicleAgeClass) {
 	this.vehicleAgeClass = vehicleAgeClass;
-    }
-
-    public VehicleCertificateData getVehicleCertificateData() {
-	return vehicleCertificateData;
-    }
-
-    public void setVehicleCertificateData(VehicleCertificateData vehicleCertificateData) {
-	this.vehicleCertificateData = vehicleCertificateData;
     }
 
     public boolean isForcedMajorCity() {

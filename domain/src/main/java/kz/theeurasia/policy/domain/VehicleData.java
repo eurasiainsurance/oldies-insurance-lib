@@ -27,6 +27,8 @@ public class VehicleData {
     @ValidVehicleYearOfIssue
     private int yearOfIssue;
 
+    private VehicleCertificateData certificateData = new VehicleCertificateData();
+
     public String getDisplayName() {
 	return (((manufacturer == null || manufacturer.isEmpty()) ? "" : (manufacturer + " "))
 		+ ((model == null || model.isEmpty()) ? "" : (model + " "))).trim();
@@ -74,4 +76,11 @@ public class VehicleData {
 	this.yearOfIssue = yearOfIssue;
     }
 
+    public VehicleCertificateData getCertificateData() {
+	return certificateData;
+    }
+
+    public void setCertificateData(VehicleCertificateData certificateData) {
+	this.certificateData = certificateData;
+    }
 }

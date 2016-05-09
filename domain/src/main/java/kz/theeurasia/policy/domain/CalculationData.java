@@ -1,5 +1,7 @@
 package kz.theeurasia.policy.domain;
 
+import com.lapsa.insurance.elements.PolicyTermClass;
+
 public class CalculationData {
 
     private PolicyTermClass termClass = PolicyTermClass.YEAR;

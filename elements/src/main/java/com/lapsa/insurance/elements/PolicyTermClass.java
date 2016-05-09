@@ -1,6 +1,6 @@
-package kz.theeurasia.policy.domain;
+package com.lapsa.insurance.elements;
 
-public enum PolicyTermClass {
+public enum PolicyTermClass implements BundleBase {
     YEAR, // 1 год
     DAY5, // 5 дней
     MONTH1_2, // от 1 до 2 месяцев включительно
@@ -15,5 +15,7 @@ public enum PolicyTermClass {
     MONTH7_8, // от 7 до 8 месяцев включительно
     MONTH8_9, // от 8 до 9 месяцев включительно
     MONTH9_10, // от 9 до 10 месяцев включительно
-    OVER11MONTH; // свыше 11 месяцев
+    OVER11MONTH, // свыше 11 месяцев
+    //
+    ;
 }

@@ -50,6 +50,22 @@ com.lapsa.insurance.elements.MaritalStatus.SINGLE = үйленбеген / тұ�
 com.lapsa.insurance.elements.PolicyObtainingMethod.EXPRESS = курьер арқылы жеткізу
 com.lapsa.insurance.elements.PolicyObtainingMethod.PICKUP = забрать дербес сақтандыру компания офисінде
 
+com.lapsa.insurance.elements.PolicyTermClass.YEAR = 1 жыл
+com.lapsa.insurance.elements.PolicyTermClass.DAY5 = 5 күн
+com.lapsa.insurance.elements.PolicyTermClass.MONTH1_2 = 1-ден 2 айға дейін қоса алғанда
+com.lapsa.insurance.elements.PolicyTermClass.MONTH10_11 = 10 айдан 11 айға дейін, қоса алғанда
+com.lapsa.insurance.elements.PolicyTermClass.DAY16_MONTH = 16 күннен 1 айға дейін, қоса алғанда
+com.lapsa.insurance.elements.PolicyTermClass.MONTH2_3 = 2 айдан 3 айға дейін, қоса алғанда
+com.lapsa.insurance.elements.PolicyTermClass.MONTH3_4 = 3-4 айға дейін, қоса алғанда
+com.lapsa.insurance.elements.PolicyTermClass.MONTH4_5 = 4-5 айға дейін, қоса алғанда
+com.lapsa.insurance.elements.PolicyTermClass.MONTH5_6 = 5-6 айға дейін қоса алғанда
+com.lapsa.insurance.elements.PolicyTermClass.DAY6_15 = 6 күннен 15 күнге дейін қоса алғанда
+com.lapsa.insurance.elements.PolicyTermClass.MONTH6_7 = 6-7 айға дейін, қоса алғанда
+com.lapsa.insurance.elements.PolicyTermClass.MONTH7_8 = 7-8 айға дейін, қоса алғанда
+com.lapsa.insurance.elements.PolicyTermClass.MONTH8_9 = 8-9 айға дейін, қоса алғанда
+com.lapsa.insurance.elements.PolicyTermClass.MONTH9_10 = 9 айдан 10 айға дейін, қоса алғанда
+com.lapsa.insurance.elements.PolicyTermClass.OVER11MONTH = 11-ден астам ай
+
 com.lapsa.insurance.elements.Sex.MALE = ерлер
 com.lapsa.insurance.elements.Sex.FEMALE = қыздар
 

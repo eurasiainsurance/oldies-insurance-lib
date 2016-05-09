@@ -50,6 +50,22 @@ com.lapsa.insurance.elements.MaritalStatus.SINGLE = single
 com.lapsa.insurance.elements.PolicyObtainingMethod.EXPRESS = delivered by courier
 com.lapsa.insurance.elements.PolicyObtainingMethod.PICKUP = pick yourself in the office of the insurance company
 
+com.lapsa.insurance.elements.PolicyTermClass.YEAR = 1 year
+com.lapsa.insurance.elements.PolicyTermClass.DAY5 = 5 days
+com.lapsa.insurance.elements.PolicyTermClass.MONTH1_2 = from 1 to 2 months inclusive
+com.lapsa.insurance.elements.PolicyTermClass.MONTH10_11 = from 10 to 11 months inclusive
+com.lapsa.insurance.elements.PolicyTermClass.DAY16_MONTH = from 16 days to 1 month inclusive
+com.lapsa.insurance.elements.PolicyTermClass.MONTH2_3 = from 2 to 3 months inclusive
+com.lapsa.insurance.elements.PolicyTermClass.MONTH3_4 = from 3 to 4 months inclusive
+com.lapsa.insurance.elements.PolicyTermClass.MONTH4_5 = from 4 to 5 months inclusive
+com.lapsa.insurance.elements.PolicyTermClass.MONTH5_6 = from 5 to 6 months inclusive
+com.lapsa.insurance.elements.PolicyTermClass.DAY6_15 = from 6 to 15 days inclusive
+com.lapsa.insurance.elements.PolicyTermClass.MONTH6_7 = from 6 to 7 months inclusive
+com.lapsa.insurance.elements.PolicyTermClass.MONTH7_8 = from 7 to 8 months inclusive
+com.lapsa.insurance.elements.PolicyTermClass.MONTH8_9 = from 8 to 9 months inclusive
+com.lapsa.insurance.elements.PolicyTermClass.MONTH9_10 = from 9 to 10 months inclusive
+com.lapsa.insurance.elements.PolicyTermClass.OVER11MONTH = свыше 11 months
+
 com.lapsa.insurance.elements.Sex.MALE = male
 com.lapsa.insurance.elements.Sex.FEMALE = female
 

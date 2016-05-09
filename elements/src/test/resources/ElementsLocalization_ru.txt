@@ -50,6 +50,22 @@ com.lapsa.insurance.elements.MaritalStatus.SINGLE = холост / незаму�
 com.lapsa.insurance.elements.PolicyObtainingMethod.EXPRESS = доставить курьером
 com.lapsa.insurance.elements.PolicyObtainingMethod.PICKUP = забрать самостоятельно в офисе страховой компании
 
+com.lapsa.insurance.elements.PolicyTermClass.YEAR = 1 год
+com.lapsa.insurance.elements.PolicyTermClass.DAY5 = 5 дней
+com.lapsa.insurance.elements.PolicyTermClass.MONTH1_2 = от 1 до 2 месяцев включительно
+com.lapsa.insurance.elements.PolicyTermClass.MONTH10_11 = от 10 до 11 месяцев включительно
+com.lapsa.insurance.elements.PolicyTermClass.DAY16_MONTH = от 16 дней до 1 месяца включительно
+com.lapsa.insurance.elements.PolicyTermClass.MONTH2_3 = от 2 до 3 месяцев включительно
+com.lapsa.insurance.elements.PolicyTermClass.MONTH3_4 = от 3 до 4 месяцев включительно
+com.lapsa.insurance.elements.PolicyTermClass.MONTH4_5 = от 4 до 5 месяцев включительно
+com.lapsa.insurance.elements.PolicyTermClass.MONTH5_6 = от 5 до 6 месяцев включительно
+com.lapsa.insurance.elements.PolicyTermClass.DAY6_15 = от 6 до 15 дней включительно
+com.lapsa.insurance.elements.PolicyTermClass.MONTH6_7 = от 6 до 7 месяцев включительно
+com.lapsa.insurance.elements.PolicyTermClass.MONTH7_8 = от 7 до 8 месяцев включительно
+com.lapsa.insurance.elements.PolicyTermClass.MONTH8_9 = от 8 до 9 месяцев включительно
+com.lapsa.insurance.elements.PolicyTermClass.MONTH9_10 = от 9 до 10 месяцев включительно
+com.lapsa.insurance.elements.PolicyTermClass.OVER11MONTH = свыше 11 месяцев
+
 com.lapsa.insurance.elements.Sex.MALE = мужской
 com.lapsa.insurance.elements.Sex.FEMALE = женский
 

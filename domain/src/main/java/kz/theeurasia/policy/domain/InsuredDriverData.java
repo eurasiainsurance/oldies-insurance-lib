@@ -12,7 +12,7 @@ import kz.theeurasia.policy.validator.ValidInsuranceAgeClass;
 import kz.theeurasia.policy.validator.ValidInsuranceExpirienceClass;
 
 public class InsuredDriverData {
-    private final UUID id = UUID.randomUUID();
+    private String id = UUID.randomUUID().toString();
 
     private InsuranceClassType insuranceClassType;
 
@@ -69,7 +69,7 @@ public class InsuredDriverData {
     }
 
     public String getSafeId() {
-	return id.toString().replaceAll("-", "_");
+	return id.replaceAll("-", "_");
     }
 
     @Override
@@ -79,8 +79,12 @@ public class InsuredDriverData {
 
     // GENERATED
 
-    public UUID getId() {
+    public String getId() {
 	return id;
+    }
+
+    public void setId(String id) {
+	this.id = id;
     }
 
     public InsuranceClassType getInsuranceClassType() {

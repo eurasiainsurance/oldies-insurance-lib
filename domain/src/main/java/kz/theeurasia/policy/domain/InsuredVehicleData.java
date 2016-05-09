@@ -10,7 +10,7 @@ import kz.theeurasia.policy.validator.ValidVehicleAgeClass;
 import kz.theeurasia.policy.validator.ValidVehicleClass;
 
 public class InsuredVehicleData {
-    private final UUID id = UUID.randomUUID();
+    private String id = UUID.randomUUID().toString();
 
     private VehicleData vehicleData = new VehicleData();
 
@@ -43,7 +43,7 @@ public class InsuredVehicleData {
     }
 
     public String getSafeId() {
-	return id.toString().replaceAll("-", "_");
+	return id.replaceAll("-", "_");
     }
 
     @Override
@@ -53,8 +53,12 @@ public class InsuredVehicleData {
 
     // GENERATED
 
-    public UUID getId() {
+    public String getId() {
 	return id;
+    }
+
+    public void setId(String id) {
+	this.id = id;
     }
 
     public VehicleClass getVehicleClass() {

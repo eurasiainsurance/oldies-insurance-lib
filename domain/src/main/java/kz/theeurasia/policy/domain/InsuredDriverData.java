@@ -20,6 +20,14 @@ public class InsuredDriverData {
     @ValidIdNumber
     private String idNumber;
 
+    @NotNullValue
+    @ValidInsuranceAgeClass
+    private InsuredAgeClass ageClass;
+
+    @NotNullValue
+    @ValidInsuranceExpirienceClass
+    private InsuredExpirienceClass expirienceClass;
+
     private String taxPayerNumber;
 
     private PersonalData personalData = new PersonalData();
@@ -28,14 +36,6 @@ public class InsuredDriverData {
     private IdentityCardData identityCardData = new IdentityCardData();
     private DriverLicenseData driverLicenseData = new DriverLicenseData();
     private ContactData contactData = new ContactData();
-
-    @NotNullValue
-    @ValidInsuranceAgeClass
-    private InsuredAgeClass ageClass;
-
-    @NotNullValue
-    @ValidInsuranceExpirienceClass
-    private InsuredExpirienceClass expirienceClass;
 
     private boolean fetched = false;
 
@@ -103,6 +103,22 @@ public class InsuredDriverData {
 	this.idNumber = idNumber;
     }
 
+    public InsuredAgeClass getAgeClass() {
+	return ageClass;
+    }
+
+    public void setAgeClass(InsuredAgeClass ageClass) {
+	this.ageClass = ageClass;
+    }
+
+    public InsuredExpirienceClass getExpirienceClass() {
+	return expirienceClass;
+    }
+
+    public void setExpirienceClass(InsuredExpirienceClass expirienceClass) {
+	this.expirienceClass = expirienceClass;
+    }
+
     public String getTaxPayerNumber() {
 	return taxPayerNumber;
     }
@@ -151,20 +167,20 @@ public class InsuredDriverData {
 	this.driverLicenseData = driverLicenseData;
     }
 
-    public InsuredAgeClass getAgeClass() {
-	return ageClass;
+    public ContactData getContactData() {
+	return contactData;
     }
 
-    public void setAgeClass(InsuredAgeClass ageClass) {
-	this.ageClass = ageClass;
+    public void setContactData(ContactData contactData) {
+	this.contactData = contactData;
     }
 
-    public InsuredExpirienceClass getExpirienceClass() {
-	return expirienceClass;
+    public boolean isFetched() {
+	return fetched;
     }
 
-    public void setExpirienceClass(InsuredExpirienceClass expirienceClass) {
-	this.expirienceClass = expirienceClass;
+    public void setFetched(boolean fetched) {
+	this.fetched = fetched;
     }
 
     public boolean isHasAnyPrivilege() {
@@ -238,21 +254,4 @@ public class InsuredDriverData {
     public void setPensionerCertificateData(PensionerCertificateData pensionerCertificateData) {
 	this.pensionerCertificateData = pensionerCertificateData;
     }
-
-    public ContactData getContactData() {
-	return contactData;
-    }
-
-    public void setContactData(ContactData contactData) {
-	this.contactData = contactData;
-    }
-
-    public boolean isFetched() {
-	return fetched;
-    }
-
-    public void setFetched(boolean fetched) {
-	this.fetched = fetched;
-    }
-
 }

@@ -16,9 +16,9 @@
 		<!-- own -->
 		<dependency>
 			<groupId>com.lapsa.insurance-lib</groupId>
-			<artifactId>insurance-eelib</artifactId>
+			<artifactId>insurance-validation</artifactId>
 			<scope>compile</scope>
-			<optional>false</optional>
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>com.lapsa.insurance-lib</groupId>

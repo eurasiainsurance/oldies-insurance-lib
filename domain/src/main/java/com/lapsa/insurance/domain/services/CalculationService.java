@@ -1,4 +1,4 @@
-package kz.theeurasia.policy.services;
+package com.lapsa.insurance.domain.services;
 
 import java.util.List;
 

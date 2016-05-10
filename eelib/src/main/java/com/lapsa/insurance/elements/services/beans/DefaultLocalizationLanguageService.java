@@ -1,5 +1,5 @@
 
-package com.lapsa.insurance.elements.services.inject;
+package com.lapsa.insurance.elements.services.beans;
 
 import java.util.List;
 

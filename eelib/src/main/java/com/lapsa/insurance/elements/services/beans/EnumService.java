@@ -1,4 +1,4 @@
-package com.lapsa.insurance.elements.services.inject;
+package com.lapsa.insurance.elements.services.beans;
 
 import com.lapsa.insurance.elements.services.ItemService;
 

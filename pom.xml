@@ -103,8 +103,8 @@
 	</dependencyManagement>
 
 	<scm>
-		<connection>scm:git:https://gitrepo.theeurasia.kz/eurasia/eurasia-policy.git</connection>
-		<developerConnection>scm:git:https://gitrepo.theeurasia.kz/eurasia/eurasia-policy.git</developerConnection>
+		<connection>scm:git:https://gitrepo.theeurasia.kz/vadim.isaev/insurance-lib.git</connection>
+		<developerConnection>scm:git:https://gitrepo.theeurasia.kz/vadim.isaev/insurance-lib.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 

@@ -10,7 +10,7 @@
 	<artifactId>insurance-domain</artifactId>
 	<packaging>jar</packaging>
 
-	<name>Policy : Domain</name>
+	<name>Insurance Lib : Domain</name>
 
 	<dependencies>
 		<!-- own -->

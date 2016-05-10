@@ -10,7 +10,7 @@
 	<artifactId>insurance-elements</artifactId>
 	<packaging>jar</packaging>
 
-	<name>Policy : Elements</name>
+	<name>Insurance Lib : Elements</name>
 
 	<dependencies>
 		<!-- test -->

@@ -10,7 +10,7 @@
 	<artifactId>insurance-eelib</artifactId>
 	<packaging>jar</packaging>
 
-	<name>Policy : Validators</name>
+	<name>Insurance Lib : Java EE library</name>
 
 	<dependencies>
 		<!-- own -->

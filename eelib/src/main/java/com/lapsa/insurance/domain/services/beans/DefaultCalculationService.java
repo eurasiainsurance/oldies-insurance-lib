@@ -1,4 +1,4 @@
-package com.lapsa.insurance.domain.services.inject;
+package com.lapsa.insurance.domain.services.beans;
 
 import java.util.List;
 

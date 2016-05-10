@@ -25,6 +25,14 @@ public class UploadedImage {
 	this.thumbnail = thumbnail;
     }
 
+    public UploadedImage(String fileName, String mimeType, ImageContent original,
+	    ImageContent thumbnail) {
+	this.fileName = fileName;
+	this.mimeType = mimeType;
+	this.original = original;
+	this.thumbnail = thumbnail;
+    }
+
     @Override
     public int hashCode() {
 	return this.getClass().hashCode() * id.hashCode();

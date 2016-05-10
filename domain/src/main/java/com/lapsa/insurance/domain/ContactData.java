@@ -1,11 +1,10 @@
 package com.lapsa.insurance.domain;
 
+import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.internet.validators.ValidEmail;
 import com.lapsa.internet.validators.ValidURL;
 import com.lapsa.phone.PhoneNumber;
 import com.lapsa.phone.validators.ValidPhoneNumber;
-
-import kz.theeurasia.policy.validator.NotNullValue;
 
 public class ContactData {
 

@@ -5,11 +5,10 @@ import java.util.UUID;
 import com.lapsa.insurance.elements.InsuranceClassType;
 import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredExpirienceClass;
+import com.lapsa.insurance.validation.NotNullValue;
+import com.lapsa.insurance.validation.ValidInsuranceAgeClass;
+import com.lapsa.insurance.validation.ValidInsuranceExpirienceClass;
 import com.lapsa.kz.idnumber.validators.ValidIdNumber;
-
-import kz.theeurasia.policy.validator.NotNullValue;
-import kz.theeurasia.policy.validator.ValidInsuranceAgeClass;
-import kz.theeurasia.policy.validator.ValidInsuranceExpirienceClass;
 
 public class InsuredDriverData {
     private String id = UUID.randomUUID().toString();

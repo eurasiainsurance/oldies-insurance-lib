@@ -3,11 +3,10 @@ package com.lapsa.insurance.domain;
 import java.util.UUID;
 
 import com.lapsa.insurance.elements.WhoIsInsurant;
+import com.lapsa.insurance.validation.NotNullValue;
+import com.lapsa.insurance.validation.ValidEnumerationValue;
 import com.lapsa.kz.economic.KZEconomicSector;
 import com.lapsa.kz.idnumber.validators.ValidIdNumber;
-
-import kz.theeurasia.policy.validator.NotNullValue;
-import kz.theeurasia.policy.validator.ValidEnumerationValue;
 
 public class InsurantData {
     private final UUID id = UUID.randomUUID();

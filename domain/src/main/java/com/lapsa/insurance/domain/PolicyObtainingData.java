@@ -4,12 +4,11 @@ import java.util.Date;
 
 import com.lapsa.insurance.elements.DeliveryTimeSlot;
 import com.lapsa.insurance.elements.PolicyObtainingMethod;
-
-import kz.theeurasia.policy.validator.DaysAfterNow;
-import kz.theeurasia.policy.validator.DaysBeforeNow;
-import kz.theeurasia.policy.validator.Mode;
-import kz.theeurasia.policy.validator.NotEmptyString;
-import kz.theeurasia.policy.validator.NotNullValue;
+import com.lapsa.insurance.validation.DaysAfterNow;
+import com.lapsa.insurance.validation.DaysBeforeNow;
+import com.lapsa.insurance.validation.Mode;
+import com.lapsa.insurance.validation.NotEmptyString;
+import com.lapsa.insurance.validation.NotNullValue;
 
 public class PolicyObtainingData {
 

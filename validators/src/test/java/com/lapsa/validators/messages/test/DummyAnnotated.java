@@ -1,21 +1,21 @@
 package com.lapsa.validators.messages.test;
 
-import kz.theeurasia.policy.validator.DaysAfterNow;
-import kz.theeurasia.policy.validator.DaysBeforeNow;
-import kz.theeurasia.policy.validator.Mode;
-import kz.theeurasia.policy.validator.NotEmptyString;
-import kz.theeurasia.policy.validator.NotNullValue;
-import kz.theeurasia.policy.validator.ValidDateOfBirth;
-import kz.theeurasia.policy.validator.ValidDateOfIssue;
-import kz.theeurasia.policy.validator.ValidEnumerationValue;
-import kz.theeurasia.policy.validator.ValidIdentityCardType;
-import kz.theeurasia.policy.validator.ValidInsuranceAgeClass;
-import kz.theeurasia.policy.validator.ValidInsuranceExpirienceClass;
-import kz.theeurasia.policy.validator.ValidSex;
-import kz.theeurasia.policy.validator.ValidVehicleAgeClass;
-import kz.theeurasia.policy.validator.ValidVehicleClass;
-import kz.theeurasia.policy.validator.ValidVehicleRegistrationNumber;
-import kz.theeurasia.policy.validator.ValidVehicleYearOfIssue;
+import com.lapsa.insurance.validation.DaysAfterNow;
+import com.lapsa.insurance.validation.DaysBeforeNow;
+import com.lapsa.insurance.validation.Mode;
+import com.lapsa.insurance.validation.NotEmptyString;
+import com.lapsa.insurance.validation.NotNullValue;
+import com.lapsa.insurance.validation.ValidDateOfBirth;
+import com.lapsa.insurance.validation.ValidDateOfIssue;
+import com.lapsa.insurance.validation.ValidEnumerationValue;
+import com.lapsa.insurance.validation.ValidIdentityCardType;
+import com.lapsa.insurance.validation.ValidInsuranceAgeClass;
+import com.lapsa.insurance.validation.ValidInsuranceExpirienceClass;
+import com.lapsa.insurance.validation.ValidSex;
+import com.lapsa.insurance.validation.ValidVehicleAgeClass;
+import com.lapsa.insurance.validation.ValidVehicleClass;
+import com.lapsa.insurance.validation.ValidVehicleRegistrationNumber;
+import com.lapsa.insurance.validation.ValidVehicleYearOfIssue;
 
 public interface DummyAnnotated {
 

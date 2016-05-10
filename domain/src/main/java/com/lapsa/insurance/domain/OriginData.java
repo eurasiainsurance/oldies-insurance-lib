@@ -2,8 +2,7 @@ package com.lapsa.insurance.domain;
 
 import com.lapsa.country.Country;
 import com.lapsa.country.validators.ValidCountry;
-
-import kz.theeurasia.policy.validator.NotNullValue;
+import com.lapsa.insurance.validation.NotNullValue;
 
 public class OriginData {
 

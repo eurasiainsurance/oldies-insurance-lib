@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import kz.theeurasia.policy.validator.ValidDateOfIssue;
-import kz.theeurasia.policy.validator.NotEmptyString;
-import kz.theeurasia.policy.validator.NotNullValue;
+import com.lapsa.insurance.validation.NotEmptyString;
+import com.lapsa.insurance.validation.NotNullValue;
+import com.lapsa.insurance.validation.ValidDateOfIssue;
 
 public class DriverLicenseData implements ScanCopiedDocument {
 

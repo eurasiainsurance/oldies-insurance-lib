@@ -5,11 +5,10 @@ import java.util.Date;
 import java.util.List;
 
 import com.lapsa.insurance.elements.IdentityCardType;
-
-import kz.theeurasia.policy.validator.NotEmptyString;
-import kz.theeurasia.policy.validator.NotNullValue;
-import kz.theeurasia.policy.validator.ValidDateOfIssue;
-import kz.theeurasia.policy.validator.ValidIdentityCardType;
+import com.lapsa.insurance.validation.NotEmptyString;
+import com.lapsa.insurance.validation.NotNullValue;
+import com.lapsa.insurance.validation.ValidDateOfIssue;
+import com.lapsa.insurance.validation.ValidIdentityCardType;
 
 public class IdentityCardData implements ScanCopiedDocument {
 

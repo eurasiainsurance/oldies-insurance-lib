@@ -1,10 +1,9 @@
 package com.lapsa.insurance.domain;
 
 import com.lapsa.cars.validators.ValidVINCode;
-
-import kz.theeurasia.policy.validator.NotEmptyString;
-import kz.theeurasia.policy.validator.NotNullValue;
-import kz.theeurasia.policy.validator.ValidVehicleYearOfIssue;
+import com.lapsa.insurance.validation.NotEmptyString;
+import com.lapsa.insurance.validation.NotNullValue;
+import com.lapsa.insurance.validation.ValidVehicleYearOfIssue;
 
 public class VehicleData {
 

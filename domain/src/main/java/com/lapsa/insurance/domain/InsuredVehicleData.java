@@ -4,14 +4,13 @@ import java.util.UUID;
 
 import com.lapsa.insurance.elements.VehicleAgeClass;
 import com.lapsa.insurance.elements.VehicleClass;
+import com.lapsa.insurance.validation.NotNullValue;
+import com.lapsa.insurance.validation.ValidVehicleAgeClass;
+import com.lapsa.insurance.validation.ValidVehicleClass;
 import com.lapsa.kz.country.KZArea;
 import com.lapsa.kz.country.KZCity;
 import com.lapsa.kz.country.validators.ValidKZArea;
 import com.lapsa.kz.country.validators.ValidKZCity;
-
-import kz.theeurasia.policy.validator.NotNullValue;
-import kz.theeurasia.policy.validator.ValidVehicleAgeClass;
-import kz.theeurasia.policy.validator.ValidVehicleClass;
 
 public class InsuredVehicleData {
     private String id = UUID.randomUUID().toString();

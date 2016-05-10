@@ -4,11 +4,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.lapsa.kz.country.KZArea;
-import com.lapsa.kz.country.KZCity;
-import com.lapsa.kz.country.validators.ValidKZArea;
-import com.lapsa.kz.country.validators.ValidKZCity;
-
 import kz.theeurasia.policy.validator.NotEmptyString;
 import kz.theeurasia.policy.validator.NotNullValue;
 import kz.theeurasia.policy.validator.ValidDateOfIssue;
@@ -29,14 +24,6 @@ public class VehicleCertificateData implements ScanCopiedDocument {
     @ValidDateOfIssue
     private Date dateOfIssue;
 
-    @NotNullValue
-    @ValidKZArea
-    private KZArea region;
-
-    @NotNullValue
-    @ValidKZCity
-    private KZCity city;
-
     private List<UploadedImage> scanFiles = new ArrayList<>();
 
     // GENERATED
@@ -55,22 +42,6 @@ public class VehicleCertificateData implements ScanCopiedDocument {
 
     public void setDateOfIssue(Date dateOfIssue) {
 	this.dateOfIssue = dateOfIssue;
-    }
-
-    public KZArea getRegion() {
-	return region;
-    }
-
-    public void setRegion(KZArea region) {
-	this.region = region;
-    }
-
-    public KZCity getCity() {
-	return city;
-    }
-
-    public void setCity(KZCity city) {
-	this.city = city;
     }
 
     public String getRegistrationNumber() {

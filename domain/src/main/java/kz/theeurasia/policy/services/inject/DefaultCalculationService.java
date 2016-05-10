@@ -8,9 +8,9 @@ import javax.inject.Inject;
 import com.lapsa.insurance.domain.InsuredDriverData;
 import com.lapsa.insurance.domain.InsuredVehicleData;
 import com.lapsa.insurance.elements.PolicyTermClass;
+import com.lapsa.insurance.elements.services.PremiumCostCalculatorRatesService;
 
 import kz.theeurasia.policy.services.CalculationService;
-import kz.theeurasia.policy.services.PremiumCostCalculatorRatesService;
 
 @ApplicationScoped
 public class DefaultCalculationService implements CalculationService {

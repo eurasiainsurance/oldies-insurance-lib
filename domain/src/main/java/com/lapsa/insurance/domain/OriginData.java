@@ -1,4 +1,4 @@
-package kz.theeurasia.policy.domain;
+package com.lapsa.insurance.domain;
 
 import com.lapsa.country.Country;
 import com.lapsa.country.validators.ValidCountry;

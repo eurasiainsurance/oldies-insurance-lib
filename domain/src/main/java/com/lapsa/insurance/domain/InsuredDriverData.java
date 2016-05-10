@@ -1,4 +1,4 @@
-package kz.theeurasia.policy.domain;
+package com.lapsa.insurance.domain;
 
 import java.util.UUID;
 
@@ -16,7 +16,7 @@ public class InsuredDriverData {
 
     private InsuranceClassType insuranceClassType;
 
-    @NotNullValue(message = "{kz.theeurasia.policy.domain.InsuredDriverData.IdNumber.NotNull.message}")
+    @NotNullValue(message = "{com.lapsa.insurance.domain.InsuredDriverData.IdNumber.NotNull.message}")
     @ValidIdNumber
     private String idNumber;
 

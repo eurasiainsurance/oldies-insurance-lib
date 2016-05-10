@@ -1,4 +1,4 @@
-package kz.theeurasia.policy.domain;
+package com.lapsa.insurance.domain;
 
 import java.util.UUID;
 
@@ -12,7 +12,7 @@ import kz.theeurasia.policy.validator.ValidEnumerationValue;
 public class InsurantData {
     private final UUID id = UUID.randomUUID();
 
-    @NotNullValue(message = "{kz.theeurasia.policy.domain.InsurantData.IdNumber.NotNull.message}")
+    @NotNullValue(message = "{com.lapsa.insurance.domain.InsurantData.IdNumber.NotNull.message}")
     @ValidIdNumber
     private String idNumber;
 
@@ -29,8 +29,8 @@ public class InsurantData {
 
     private InsuredDriverData driverAsInsurant;
 
-    @NotNullValue(message = "{kz.theeurasia.policy.domain.InsurantData.WhoIsInsurant.NotNull.message}")
-    @ValidEnumerationValue(message = "{kz.theeurasia.policy.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message}")
+    @NotNullValue(message = "{com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.NotNull.message}")
+    @ValidEnumerationValue(message = "{com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message}")
     private WhoIsInsurant whoIsInsurant = null;
 
     private boolean fetched = false;

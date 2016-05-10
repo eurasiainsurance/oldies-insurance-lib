@@ -1,14 +1,14 @@
-kz.theeurasia.policy.domain.InsurantData.WhoIsInsurant.NotNull.message = Required value
-kz.theeurasia.policy.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message = Wrong value
+com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.NotNull.message = Required value
+com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message = Wrong value
 
-kz.theeurasia.policy.domain.InsuredDriverData.IdNumber.NotNull.message = ID number is required
+com.lapsa.insurance.domain.InsuredDriverData.IdNumber.NotNull.message = ID number is required
 
-kz.theeurasia.policy.domain.InsurantData.IdNumber.NotNull.message = {kz.theeurasia.policy.domain.InsuredDriverData.IdNumber.NotNull.message}
+com.lapsa.insurance.domain.InsurantData.IdNumber.NotNull.message = {com.lapsa.insurance.domain.InsuredDriverData.IdNumber.NotNull.message}
 
-kz.theeurasia.policy.domain.PolicyObtainingData.method.NotNullValue.message = Select obtaining method
-kz.theeurasia.policy.domain.PolicyObtainingData.deliveryDate.NotNullValue.message = Select delivery date
-kz.theeurasia.policy.domain.PolicyObtainingData.deliveryDate.DaysAfterNow.messages = The policy can be delivered the next day after the order
-kz.theeurasia.policy.domain.PolicyObtainingData.deliveryDate.DaysBeforeNow.messages = Too late date of delivery of the policy
-kz.theeurasia.policy.domain.PolicyObtainingData.deliveryTime.NotNullValue.message = Select delivery time
-kz.theeurasia.policy.domain.PolicyObtainingData.deliveryAddress.NotNullValue.message = Select delivery address
-kz.theeurasia.policy.domain.PolicyObtainingData.deliveryAddress.NotEmptyString.message = {kz.theeurasia.policy.domain.PolicyObtainingData.deliveryAddress.NotNullValue.message}
+com.lapsa.insurance.domain.PolicyObtainingData.method.NotNullValue.message = Select obtaining method
+com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.NotNullValue.message = Select delivery date
+com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.DaysAfterNow.messages = The policy can be delivered the next day after the order
+com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.DaysBeforeNow.messages = Too late date of delivery of the policy
+com.lapsa.insurance.domain.PolicyObtainingData.deliveryTime.NotNullValue.message = Select delivery time
+com.lapsa.insurance.domain.PolicyObtainingData.deliveryAddress.NotNullValue.message = Select delivery address
+com.lapsa.insurance.domain.PolicyObtainingData.deliveryAddress.NotEmptyString.message = {com.lapsa.insurance.domain.PolicyObtainingData.deliveryAddress.NotNullValue.message}

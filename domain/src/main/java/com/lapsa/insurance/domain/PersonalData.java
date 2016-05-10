@@ -1,4 +1,4 @@
-package kz.theeurasia.policy.domain;
+package com.lapsa.insurance.domain;
 
 import java.util.Date;
 

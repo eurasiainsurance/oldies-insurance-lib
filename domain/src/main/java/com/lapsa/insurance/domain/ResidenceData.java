@@ -1,4 +1,4 @@
-package kz.theeurasia.policy.domain;
+package com.lapsa.insurance.domain;
 
 import com.lapsa.kz.country.KZCity;
 import com.lapsa.kz.country.validators.ValidKZCity;

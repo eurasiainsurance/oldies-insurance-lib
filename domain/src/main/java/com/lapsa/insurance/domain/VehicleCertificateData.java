@@ -1,4 +1,4 @@
-package kz.theeurasia.policy.domain;
+package com.lapsa.insurance.domain;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -7,12 +7,14 @@ import java.util.List;
 import kz.theeurasia.policy.validator.NotEmptyString;
 import kz.theeurasia.policy.validator.NotNullValue;
 import kz.theeurasia.policy.validator.ValidDateOfIssue;
+import kz.theeurasia.policy.validator.ValidVehicleRegistrationNumber;
 
-public class PrivilegerCertificateData implements ScanCopiedDocument {
+public class VehicleCertificateData implements ScanCopiedDocument {
 
     @NotNullValue
     @NotEmptyString
-    private String type;
+    @ValidVehicleRegistrationNumber
+    private String registrationNumber;
 
     @NotNullValue
     @NotEmptyString
@@ -25,14 +27,6 @@ public class PrivilegerCertificateData implements ScanCopiedDocument {
     private List<UploadedImage> scanFiles = new ArrayList<>();
 
     // GENERATED
-
-    public String getType() {
-	return type;
-    }
-
-    public void setType(String type) {
-	this.type = type;
-    }
 
     public String getNumber() {
 	return number;
@@ -48,6 +42,14 @@ public class PrivilegerCertificateData implements ScanCopiedDocument {
 
     public void setDateOfIssue(Date dateOfIssue) {
 	this.dateOfIssue = dateOfIssue;
+    }
+
+    public String getRegistrationNumber() {
+	return registrationNumber;
+    }
+
+    public void setRegistrationNumber(String registrationNumber) {
+	this.registrationNumber = registrationNumber;
     }
 
     @Override
@@ -69,5 +71,4 @@ public class PrivilegerCertificateData implements ScanCopiedDocument {
     public void removeScanFile(UploadedImage im) {
 	scanFiles.remove(im);
     }
-
 }

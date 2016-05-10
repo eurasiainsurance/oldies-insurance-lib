@@ -1,4 +1,4 @@
-package kz.theeurasia.policy.domain;
+package com.lapsa.insurance.domain;
 
 import java.awt.AlphaComposite;
 import java.awt.Graphics2D;

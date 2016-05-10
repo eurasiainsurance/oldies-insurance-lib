@@ -1,4 +1,4 @@
-package kz.theeurasia.policy.domain;
+package com.lapsa.insurance.domain;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -6,17 +6,18 @@ import java.util.List;
 
 import kz.theeurasia.policy.validator.NotEmptyString;
 import kz.theeurasia.policy.validator.NotNullValue;
-import kz.theeurasia.policy.validator.ValidDateOfIssue;
 
-public class PensionerCertificateData implements ScanCopiedDocument {
+public class HandicaptedCertificateData implements ScanCopiedDocument {
 
     @NotNullValue
     @NotEmptyString
     private String number;
 
     @NotNullValue
-    @ValidDateOfIssue
-    private Date dateOfIssue;
+    private Date validFrom;
+
+    @NotNullValue
+    private Date validTill;
 
     private List<UploadedImage> scanFiles = new ArrayList<>();
 
@@ -30,12 +31,20 @@ public class PensionerCertificateData implements ScanCopiedDocument {
 	this.number = number;
     }
 
-    public Date getDateOfIssue() {
-	return dateOfIssue;
+    public Date getValidFrom() {
+	return validFrom;
     }
 
-    public void setDateOfIssue(Date dateOfIssue) {
-	this.dateOfIssue = dateOfIssue;
+    public void setValidFrom(Date validFrom) {
+	this.validFrom = validFrom;
+    }
+
+    public Date getValidTill() {
+	return validTill;
+    }
+
+    public void setValidTill(Date validTill) {
+	this.validTill = validTill;
     }
 
     @Override
@@ -57,5 +66,4 @@ public class PensionerCertificateData implements ScanCopiedDocument {
     public void removeScanFile(UploadedImage im) {
 	scanFiles.remove(im);
     }
-
 }

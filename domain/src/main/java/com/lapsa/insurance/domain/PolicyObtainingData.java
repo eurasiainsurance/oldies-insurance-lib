@@ -1,4 +1,4 @@
-package kz.theeurasia.policy.domain;
+package com.lapsa.insurance.domain;
 
 import java.util.Date;
 
@@ -13,19 +13,19 @@ import kz.theeurasia.policy.validator.NotNullValue;
 
 public class PolicyObtainingData {
 
-    @NotNullValue(message = "{kz.theeurasia.policy.domain.PolicyObtainingData.method.NotNullValue.message}")
+    @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.method.NotNullValue.message}")
     private PolicyObtainingMethod method;
 
-    @NotNullValue(message = "{kz.theeurasia.policy.domain.PolicyObtainingData.deliveryDate.NotNullValue.message}")
-    @DaysAfterNow(mode = Mode.MUST, value = 0, message = "{kz.theeurasia.policy.domain.PolicyObtainingData.deliveryDate.DaysAfterNow.messages}")
-    @DaysBeforeNow(mode = Mode.MUST_NOT, value = 7, message = "{kz.theeurasia.policy.domain.PolicyObtainingData.deliveryDate.DaysBeforeNow.messages}")
+    @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.NotNullValue.message}")
+    @DaysAfterNow(mode = Mode.MUST, value = 0, message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.DaysAfterNow.messages}")
+    @DaysBeforeNow(mode = Mode.MUST_NOT, value = 7, message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.DaysBeforeNow.messages}")
     private Date deliveryDate;
 
-    @NotNullValue(message = "{kz.theeurasia.policy.domain.PolicyObtainingData.deliveryTime.NotNullValue.message}")
+    @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryTime.NotNullValue.message}")
     private DeliveryTimeSlot deliveryTime;
 
-    @NotNullValue(message = "{kz.theeurasia.policy.domain.PolicyObtainingData.deliveryAddress.NotNullValue.message}")
-    @NotEmptyString(message = "{kz.theeurasia.policy.domain.PolicyObtainingData.deliveryAddress.NotEmptyString.message}")
+    @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryAddress.NotNullValue.message}")
+    @NotEmptyString(message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryAddress.NotEmptyString.message}")
     private String deliveryAddress;
 
     // GENERATED

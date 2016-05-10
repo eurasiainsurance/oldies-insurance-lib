@@ -1,14 +1,14 @@
-package kz.theeurasia.policy.domain;
+package com.lapsa.insurance.domain;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import kz.theeurasia.policy.validator.ValidDateOfIssue;
 import kz.theeurasia.policy.validator.NotEmptyString;
 import kz.theeurasia.policy.validator.NotNullValue;
+import kz.theeurasia.policy.validator.ValidDateOfIssue;
 
-public class DriverLicenseData implements ScanCopiedDocument {
+public class PensionerCertificateData implements ScanCopiedDocument {
 
     @NotNullValue
     @NotEmptyString
@@ -57,4 +57,5 @@ public class DriverLicenseData implements ScanCopiedDocument {
     public void removeScanFile(UploadedImage im) {
 	scanFiles.remove(im);
     }
+
 }

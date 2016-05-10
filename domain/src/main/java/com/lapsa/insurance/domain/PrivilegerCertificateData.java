@@ -1,52 +1,37 @@
-package kz.theeurasia.policy.domain;
+package com.lapsa.insurance.domain;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.lapsa.insurance.elements.IdentityCardType;
-
 import kz.theeurasia.policy.validator.NotEmptyString;
 import kz.theeurasia.policy.validator.NotNullValue;
 import kz.theeurasia.policy.validator.ValidDateOfIssue;
-import kz.theeurasia.policy.validator.ValidIdentityCardType;
 
-public class IdentityCardData implements ScanCopiedDocument {
-
-    @NotNullValue
-    @ValidDateOfIssue
-    private Date dateOfIssue;
+public class PrivilegerCertificateData implements ScanCopiedDocument {
 
     @NotNullValue
     @NotEmptyString
-    private String issuingAuthority;
+    private String type;
 
     @NotNullValue
     @NotEmptyString
     private String number;
 
     @NotNullValue
-    @ValidIdentityCardType
-    private IdentityCardType type;
+    @ValidDateOfIssue
+    private Date dateOfIssue;
 
     private List<UploadedImage> scanFiles = new ArrayList<>();
 
     // GENERATED
 
-    public Date getDateOfIssue() {
-	return dateOfIssue;
+    public String getType() {
+	return type;
     }
 
-    public void setDateOfIssue(Date dateOfIssue) {
-	this.dateOfIssue = dateOfIssue;
-    }
-
-    public String getIssuingAuthority() {
-	return issuingAuthority;
-    }
-
-    public void setIssuingAuthority(String issuingAuthority) {
-	this.issuingAuthority = issuingAuthority;
+    public void setType(String type) {
+	this.type = type;
     }
 
     public String getNumber() {
@@ -57,12 +42,12 @@ public class IdentityCardData implements ScanCopiedDocument {
 	this.number = number;
     }
 
-    public IdentityCardType getType() {
-	return type;
+    public Date getDateOfIssue() {
+	return dateOfIssue;
     }
 
-    public void setType(IdentityCardType type) {
-	this.type = type;
+    public void setDateOfIssue(Date dateOfIssue) {
+	this.dateOfIssue = dateOfIssue;
     }
 
     @Override
@@ -84,4 +69,5 @@ public class IdentityCardData implements ScanCopiedDocument {
     public void removeScanFile(UploadedImage im) {
 	scanFiles.remove(im);
     }
+
 }

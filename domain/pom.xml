@@ -18,7 +18,7 @@
 			<groupId>com.lapsa.insurance-lib</groupId>
 			<artifactId>insurance-validation</artifactId>
 			<scope>compile</scope>
-			<optional>true</optional>
+			<optional>false</optional>
 		</dependency>
 		<dependency>
 			<groupId>com.lapsa.insurance-lib</groupId>
@@ -37,7 +37,7 @@
 			<groupId>com.lapsa.kz-lib</groupId>
 			<artifactId>kz-eelib</artifactId>
 			<scope>compile</scope>
-			<optional>true</optional>
+			<optional>false</optional>
 		</dependency>
 		<dependency>
 			<groupId>com.lapsa.international-lib</groupId>
@@ -49,7 +49,7 @@
 			<groupId>com.lapsa.international-lib</groupId>
 			<artifactId>international-eelib</artifactId>
 			<scope>compile</scope>
-			<optional>true</optional>
+			<optional>false</optional>
 		</dependency>
 		<!-- JavaEE -->
 		<dependency>

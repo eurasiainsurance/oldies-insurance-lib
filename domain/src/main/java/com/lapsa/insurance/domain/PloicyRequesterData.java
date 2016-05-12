@@ -3,7 +3,9 @@ package com.lapsa.insurance.domain;
 import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.internet.validators.ValidEmail;
+import com.lapsa.phone.PhoneFormatException;
 import com.lapsa.phone.PhoneNumber;
+import com.lapsa.phone.PhoneNumberFactoryProvider;
 import com.lapsa.phone.validators.ValidPhoneNumber;
 
 public class PloicyRequesterData {
@@ -13,12 +15,27 @@ public class PloicyRequesterData {
     private String name;
 
     @NotNullValue
+    @ValidEmail
+    private String email;
+
+    @NotNullValue
     @ValidPhoneNumber
     private PhoneNumber phone;
 
     @NotNullValue
-    @ValidEmail
-    private String email;
+    @ValidPhoneNumber
+    public String getPhoneString() {
+	if (phone == null)
+	    return null;
+	return phone.getFormatted();
+    }
+
+    public void setPhoneString(String phoneString) {
+	try {
+	    phone = PhoneNumberFactoryProvider.provideDefault().parse(phoneString);
+	} catch (PhoneFormatException ignored) {
+	}
+    }
 
     // GENERATED
 

@@ -1,15 +1,13 @@
 package com.lapsa.insurance.domain;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidDateOfIssue;
 import com.lapsa.insurance.validation.ValidVehicleRegistrationNumber;
 
-public class VehicleCertificateData implements ScanCopiedDocument {
+public class VehicleCertificateData {
 
     @NotNullValue
     @NotEmptyString
@@ -24,7 +22,7 @@ public class VehicleCertificateData implements ScanCopiedDocument {
     @ValidDateOfIssue
     private Date dateOfIssue;
 
-    private List<UploadedImage> scanFiles = new ArrayList<>();
+    private TwoSidedDocumentScan scan = new TwoSidedDocumentScan();
 
     // GENERATED
 
@@ -52,23 +50,11 @@ public class VehicleCertificateData implements ScanCopiedDocument {
 	this.registrationNumber = registrationNumber;
     }
 
-    @Override
-    public List<UploadedImage> getScanFiles() {
-	return scanFiles;
+    public DocumentScan getScan() {
+	return scan;
     }
 
-    @Override
-    public void setScanFiles(List<UploadedImage> scanFiles) {
-	this.scanFiles = scanFiles;
-    }
-
-    @Override
-    public void addScanFile(UploadedImage im) {
-	scanFiles.add(im);
-    }
-
-    @Override
-    public void removeScanFile(UploadedImage im) {
-	scanFiles.remove(im);
+    public void setScan(TwoSidedDocumentScan scan) {
+	this.scan = scan;
     }
 }

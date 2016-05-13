@@ -1,8 +1,6 @@
 package com.lapsa.insurance.domain;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
@@ -19,7 +17,7 @@ public class HandicaptedCertificateData implements ScanCopiedDocument {
     @NotNullValue
     private Date validTill;
 
-    private List<UploadedImage> scanFiles = new ArrayList<>();
+    private MultipageDocumentScan scan;
 
     // GENERATED
 
@@ -48,22 +46,11 @@ public class HandicaptedCertificateData implements ScanCopiedDocument {
     }
 
     @Override
-    public List<UploadedImage> getScanFiles() {
-	return scanFiles;
+    public MultipageDocumentScan getScan() {
+	return scan;
     }
 
-    @Override
-    public void setScanFiles(List<UploadedImage> scanFiles) {
-	this.scanFiles = scanFiles;
-    }
-
-    @Override
-    public void addScanFile(UploadedImage im) {
-	scanFiles.add(im);
-    }
-
-    @Override
-    public void removeScanFile(UploadedImage im) {
-	scanFiles.remove(im);
+    public void setScan(MultipageDocumentScan scan) {
+	this.scan = scan;
     }
 }

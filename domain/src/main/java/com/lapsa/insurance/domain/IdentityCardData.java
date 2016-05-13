@@ -1,8 +1,6 @@
 package com.lapsa.insurance.domain;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import com.lapsa.insurance.elements.IdentityCardType;
 import com.lapsa.insurance.validation.NotEmptyString;
@@ -28,7 +26,7 @@ public class IdentityCardData implements ScanCopiedDocument {
     @ValidIdentityCardType
     private IdentityCardType type;
 
-    private List<UploadedImage> scanFiles = new ArrayList<>();
+    private TwoSidedDocumentScan scan = new TwoSidedDocumentScan();
 
     // GENERATED
 
@@ -65,22 +63,11 @@ public class IdentityCardData implements ScanCopiedDocument {
     }
 
     @Override
-    public List<UploadedImage> getScanFiles() {
-	return scanFiles;
+    public TwoSidedDocumentScan getScan() {
+	return scan;
     }
 
-    @Override
-    public void setScanFiles(List<UploadedImage> scanFiles) {
-	this.scanFiles = scanFiles;
-    }
-
-    @Override
-    public void addScanFile(UploadedImage im) {
-	scanFiles.add(im);
-    }
-
-    @Override
-    public void removeScanFile(UploadedImage im) {
-	scanFiles.remove(im);
+    public void setScan(TwoSidedDocumentScan scan) {
+	this.scan = scan;
     }
 }

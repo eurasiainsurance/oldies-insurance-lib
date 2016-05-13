@@ -2,6 +2,8 @@ package com.lapsa.insurance.domain;
 
 import java.util.UUID;
 
+import com.lapsa.image.ImageContent;
+
 public class UploadedImage {
 
     private String id = UUID.randomUUID().toString();
@@ -25,8 +27,7 @@ public class UploadedImage {
 	this.thumbnail = thumbnail;
     }
 
-    public UploadedImage(String fileName, String mimeType, ImageContent original,
-	    ImageContent thumbnail) {
+    public UploadedImage(String fileName, String mimeType, ImageContent original, ImageContent thumbnail) {
 	this.fileName = fileName;
 	this.mimeType = mimeType;
 	this.original = original;

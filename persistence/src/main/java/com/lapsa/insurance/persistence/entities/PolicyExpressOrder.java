@@ -7,7 +7,6 @@ import com.lapsa.insurance.domain.InsuredDriverData;
 import com.lapsa.insurance.domain.InsuredVehicleData;
 import com.lapsa.insurance.domain.PloicyRequesterData;
 import com.lapsa.insurance.domain.PolicyObtainingData;
-import com.lapsa.insurance.domain.UploadedImage;
 
 public class PolicyExpressOrder {
 
@@ -17,7 +16,6 @@ public class PolicyExpressOrder {
     private CalculationData calculationData;
     private PloicyRequesterData requesterData;
     private PolicyObtainingData obtaininigData;
-    private List<UploadedImage> uploadedImages;
 
     // GENERATED
 
@@ -67,13 +65,5 @@ public class PolicyExpressOrder {
 
     public void setObtaininigData(PolicyObtainingData obtaininigData) {
 	this.obtaininigData = obtaininigData;
-    }
-
-    public List<UploadedImage> getUploadedImages() {
-	return uploadedImages;
-    }
-
-    public void setUploadedImages(List<UploadedImage> uploadedImages) {
-	this.uploadedImages = uploadedImages;
     }
 }

@@ -1,5 +1,6 @@
 package com.lapsa.insurance.validation;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
@@ -12,7 +13,7 @@ public class ValidHumanNameConstraintValidator implements ConstraintValidator<Va
     private static final String RUSSIAN_PATTERN = "^[А-Я\\ \\-]+$";
     private static final String KAZAKH_PATTERN = "^[А-ЯӘҒҚҢӨҰҮҺІ\\ \\-]+$";
 
-    private static Map<String, Pattern> languagePatterns;
+    private static final Map<String, Pattern> languagePatterns = new HashMap<>();
 
     static {
 	int flags = Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS | Pattern.UNICODE_CASE;

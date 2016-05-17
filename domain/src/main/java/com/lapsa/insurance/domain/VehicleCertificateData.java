@@ -9,6 +9,8 @@ import com.lapsa.insurance.validation.ValidVehicleRegistrationNumber;
 
 public class VehicleCertificateData {
 
+    private Integer id;
+
     @NotNullValue
     @NotEmptyString
     @ValidVehicleRegistrationNumber
@@ -25,6 +27,14 @@ public class VehicleCertificateData {
     private TwoSidedDocumentScan scan = new TwoSidedDocumentScan();
 
     // GENERATED
+
+    public Integer getId() {
+	return id;
+    }
+
+    public void setId(Integer id) {
+	this.id = id;
+    }
 
     public String getNumber() {
 	return number;

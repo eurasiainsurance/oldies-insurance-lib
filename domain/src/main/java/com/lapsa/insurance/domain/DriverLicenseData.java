@@ -8,6 +8,8 @@ import com.lapsa.insurance.validation.ValidDateOfIssue;
 
 public class DriverLicenseData implements ScanCopiedDocument {
 
+    private Integer id;
+
     @NotNullValue
     @NotEmptyString
     private String number;
@@ -19,6 +21,14 @@ public class DriverLicenseData implements ScanCopiedDocument {
     private TwoSidedDocumentScan scan = new TwoSidedDocumentScan();
 
     // GENERATED
+
+    public Integer getId() {
+	return id;
+    }
+
+    public void setId(Integer id) {
+	this.id = id;
+    }
 
     public String getNumber() {
 	return number;

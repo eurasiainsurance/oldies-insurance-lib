@@ -7,6 +7,8 @@ import com.lapsa.insurance.validation.ValidVehicleYearOfIssue;
 
 public class VehicleData {
 
+    private Integer id;
+
     @NotNullValue
     @ValidVINCode(checkDigit = false)
     private String vinCode;
@@ -34,6 +36,14 @@ public class VehicleData {
     }
 
     // GENERATED
+
+    public Integer getId() {
+	return id;
+    }
+
+    public void setId(Integer id) {
+	this.id = id;
+    }
 
     public String getVinCode() {
 	return vinCode;

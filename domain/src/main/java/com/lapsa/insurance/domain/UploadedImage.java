@@ -1,12 +1,10 @@
 package com.lapsa.insurance.domain;
 
-import java.util.UUID;
-
 import com.lapsa.image.ImageContent;
 
 public class UploadedImage {
 
-    private String id = UUID.randomUUID().toString();
+    private Integer id;
 
     private String fileName;
     private String mimeType;
@@ -36,25 +34,22 @@ public class UploadedImage {
 
     @Override
     public int hashCode() {
-	return this.getClass().hashCode() * id.hashCode();
+	return this.getClass().hashCode() * (id != null ? id.hashCode() : 777);
     }
 
     @Override
     public boolean equals(Object obj) {
-	return obj != null && this.getClass().isInstance(obj) && getId().equals((this.getClass().cast(obj)).getId());
-    }
-
-    public String getSafeId() {
-	return id.replaceAll("-", "_");
+	return obj != null && this.getClass().isInstance(obj)
+		&& (getId() == null || (getId() != null && getId().equals((this.getClass().cast(obj)).getId())));
     }
 
     // GENERATED
 
-    public String getId() {
+    public Integer getId() {
 	return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
 	this.id = id;
     }
 

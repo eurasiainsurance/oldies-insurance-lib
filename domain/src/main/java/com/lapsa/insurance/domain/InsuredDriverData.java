@@ -1,7 +1,5 @@
 package com.lapsa.insurance.domain;
 
-import java.util.UUID;
-
 import com.lapsa.insurance.elements.InsuranceClassType;
 import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredExpirienceClass;
@@ -11,7 +9,8 @@ import com.lapsa.insurance.validation.ValidInsuranceExpirienceClass;
 import com.lapsa.kz.idnumber.validators.ValidIdNumber;
 
 public class InsuredDriverData {
-    private String id = UUID.randomUUID().toString();
+
+    private Integer id;
 
     private InsuranceClassType insuranceClassType;
 
@@ -55,20 +54,17 @@ public class InsuredDriverData {
 
     @Override
     public int hashCode() {
-	return this.getClass().hashCode() * id.hashCode();
+	return this.getClass().hashCode() * (id != null ? id.hashCode() : 888);
     }
 
     @Override
     public boolean equals(Object obj) {
-	return obj != null && this.getClass().isInstance(obj) && getId().equals((this.getClass().cast(obj)).getId());
+	return obj != null && this.getClass().isInstance(obj)
+		&& (getId() == null || (getId() != null && getId().equals((this.getClass().cast(obj)).getId())));
     }
 
     public String getDisplayName() {
 	return personalData.getDisplayName();
-    }
-
-    public String getSafeId() {
-	return id.replaceAll("-", "_");
     }
 
     @Override
@@ -78,11 +74,11 @@ public class InsuredDriverData {
 
     // GENERATED
 
-    public String getId() {
+    public Integer getId() {
 	return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
 	this.id = id;
     }
 

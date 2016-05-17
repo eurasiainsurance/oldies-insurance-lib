@@ -17,6 +17,7 @@ public class PloicyRequesterData {
     private String name;
 
     @NotNullValue
+    @NotEmptyString
     @ValidEmail
     private String email;
 

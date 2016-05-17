@@ -6,20 +6,24 @@ import com.lapsa.insurance.elements.Sex;
 import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidDateOfBirth;
+import com.lapsa.insurance.validation.ValidHumanName;
 import com.lapsa.insurance.validation.ValidSex;
 
 public class PersonalData {
 
     @NotNullValue
     @NotEmptyString
+    @ValidHumanName
     private String name;
 
     @NotNullValue
     @NotEmptyString
+    @ValidHumanName
     private String surename;
 
     @NotNullValue
     @NotEmptyString
+    @ValidHumanName
     private String patronymic;
 
     @NotNullValue

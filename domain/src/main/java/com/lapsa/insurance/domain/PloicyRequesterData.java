@@ -2,6 +2,7 @@ package com.lapsa.insurance.domain;
 
 import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
+import com.lapsa.insurance.validation.ValidHumanName;
 import com.lapsa.internet.validators.ValidEmail;
 import com.lapsa.phone.PhoneFormatException;
 import com.lapsa.phone.PhoneNumber;
@@ -12,6 +13,7 @@ public class PloicyRequesterData {
 
     @NotNullValue
     @NotEmptyString
+    @ValidHumanName
     private String name;
 
     @NotNullValue

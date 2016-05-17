@@ -8,6 +8,7 @@ import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidDateOfBirth;
 import com.lapsa.insurance.validation.ValidDateOfIssue;
 import com.lapsa.insurance.validation.ValidEnumerationValue;
+import com.lapsa.insurance.validation.ValidHumanName;
 import com.lapsa.insurance.validation.ValidIdentityCardType;
 import com.lapsa.insurance.validation.ValidInsuranceAgeClass;
 import com.lapsa.insurance.validation.ValidInsuranceExpirienceClass;
@@ -34,5 +35,6 @@ public interface DummyAnnotated {
     @ValidVehicleClass
     @ValidVehicleRegistrationNumber
     @ValidVehicleYearOfIssue
+    @ValidHumanName
     void dummy();
 }

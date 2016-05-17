@@ -5,6 +5,7 @@ com.lapsa.insurance.validation.NotNullValue.message = Міндетті өріс
 com.lapsa.insurance.validation.ValidDateOfBirth.message = Жарамсыз туған күні
 com.lapsa.insurance.validation.ValidDateOfIssue.message = Қате күні шығарылымның
 com.lapsa.insurance.validation.ValidEnumerationValue.message = Қате мән
+com.lapsa.insurance.validation.ValidHumanName.message = Қате мән
 com.lapsa.insurance.validation.ValidIdentityCardType.message = Қате құжат түрі
 com.lapsa.insurance.validation.ValidInsuranceAgeClass.message = Жасы санаты дұрыс аталған 
 com.lapsa.insurance.validation.ValidInsuranceExpirienceClass.message = көрсетілген жарамсыз жүргізу өтілі болып табылады

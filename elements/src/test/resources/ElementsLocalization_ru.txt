@@ -94,7 +94,7 @@ com.lapsa.insurance.elements.WhoIsInsurant.DRIVER = Страхователем �
 com.lapsa.insurance.elements.WhoIsInsurant.OTHER = Страхователем является другое лицо
 
 com.lapsa.insurance.crm.RequestStatus.OPEN = Открыто
-com.lapsa.insurance.crm.RequestStatus.CLOSE = Закрыто
+com.lapsa.insurance.crm.RequestStatus.CLOSED = Закрыто
 
 com.lapsa.insurance.crm.ClosingResult.COMPLETED = Завершено
 com.lapsa.insurance.crm.ClosingResult.CANCELED = Отменено

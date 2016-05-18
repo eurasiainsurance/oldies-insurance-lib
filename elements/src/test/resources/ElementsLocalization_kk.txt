@@ -94,7 +94,7 @@ com.lapsa.insurance.elements.WhoIsInsurant.DRIVER = Страхователем �
 com.lapsa.insurance.elements.WhoIsInsurant.OTHER = Страхователем является другое лицо
 
 com.lapsa.insurance.crm.RequestStatus.OPEN = Ашық
-com.lapsa.insurance.crm.RequestStatus.CLOSE = Жабық
+com.lapsa.insurance.crm.RequestStatus.CLOSED = Жабық
 
 com.lapsa.insurance.crm.ClosingResult.COMPLETED = Аяқталды
 com.lapsa.insurance.crm.ClosingResult.CANCELED = Жойылды

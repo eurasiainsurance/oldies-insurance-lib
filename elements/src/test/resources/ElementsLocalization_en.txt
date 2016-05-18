@@ -94,7 +94,7 @@ com.lapsa.insurance.elements.WhoIsInsurant.DRIVER = Insurant is one of the drive
 com.lapsa.insurance.elements.WhoIsInsurant.OTHER = Insured is another person
 
 com.lapsa.insurance.crm.RequestStatus.OPEN = Open
-com.lapsa.insurance.crm.RequestStatus.CLOSE = Closed
+com.lapsa.insurance.crm.RequestStatus.CLOSED = Closed
 
 com.lapsa.insurance.crm.ClosingResult.COMPLETED = Completed
 com.lapsa.insurance.crm.ClosingResult.CANCELED = Canceled

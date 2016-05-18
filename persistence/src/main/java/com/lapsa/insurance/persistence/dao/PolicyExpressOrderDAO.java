@@ -19,4 +19,6 @@ public interface PolicyExpressOrderDAO {
 
     List<PolicyExpressOrder> findAllOpen();
 
+    List<PolicyExpressOrder> findAll();
+
 }

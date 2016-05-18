@@ -1,16 +1,21 @@
-package com.lapsa.insurance.persistence.entities;
+package com.lapsa.insurance.domain;
 
+import java.util.Date;
 import java.util.List;
 
-import com.lapsa.insurance.domain.CalculationData;
-import com.lapsa.insurance.domain.InsuredDriverData;
-import com.lapsa.insurance.domain.InsuredVehicleData;
-import com.lapsa.insurance.domain.PloicyRequesterData;
-import com.lapsa.insurance.domain.PolicyObtainingData;
+import com.lapsa.insurance.crm.ClosingResult;
+import com.lapsa.insurance.crm.RequestStatus;
 
 public class PolicyExpressOrder {
 
     private int id;
+
+    private Date created;
+    private Date updated;
+    private Date closed;
+    private RequestStatus requestStatus;
+    private ClosingResult closingResult;
+
     private List<InsuredDriverData> drivers;
     private List<InsuredVehicleData> vehicles;
     private CalculationData calculationData;
@@ -23,8 +28,44 @@ public class PolicyExpressOrder {
 	return id;
     }
 
-    public void setId(int id) {
-	this.id = id;
+    public Date getCreated() {
+	return created;
+    }
+
+    public void setCreated(Date created) {
+	this.created = created;
+    }
+
+    public Date getUpdated() {
+	return updated;
+    }
+
+    public void setUpdated(Date updated) {
+	this.updated = updated;
+    }
+
+    public Date getClosed() {
+	return closed;
+    }
+
+    public void setClosed(Date closed) {
+	this.closed = closed;
+    }
+
+    public RequestStatus getRequestStatus() {
+	return requestStatus;
+    }
+
+    public void setRequestStatus(RequestStatus requestStatus) {
+	this.requestStatus = requestStatus;
+    }
+
+    public ClosingResult getClosingResult() {
+	return closingResult;
+    }
+
+    public void setClosingResult(ClosingResult closingResult) {
+	this.closingResult = closingResult;
     }
 
     public List<InsuredDriverData> getDrivers() {
@@ -65,5 +106,9 @@ public class PolicyExpressOrder {
 
     public void setObtaininigData(PolicyObtainingData obtaininigData) {
 	this.obtaininigData = obtaininigData;
+    }
+
+    public void setId(int id) {
+	this.id = id;
     }
 }

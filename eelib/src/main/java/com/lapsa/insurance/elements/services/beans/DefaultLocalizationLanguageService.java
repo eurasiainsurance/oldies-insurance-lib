@@ -11,7 +11,8 @@ import com.lapsa.localization.LocalizationLanguage;
 
 @Named("localizationLanguageService")
 @ApplicationScoped
-public class DefaultLocalizationLanguageService extends EnumService<LocalizationLanguage> implements LocalizationLanguageService {
+public class DefaultLocalizationLanguageService extends EnumService<LocalizationLanguage>
+	implements LocalizationLanguageService {
 
     @Override
     public List<LocalizationLanguage> getAllItems() {
@@ -27,5 +28,4 @@ public class DefaultLocalizationLanguageService extends EnumService<Localization
     protected String getMessageBundleName() {
 	return LocalizationLanguage.BUNDLE_VAR;
     }
-
 }

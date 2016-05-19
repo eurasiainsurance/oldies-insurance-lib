@@ -11,9 +11,15 @@ public interface ItemService<T> {
 
     List<SelectItem> getAllItemsSI();
 
+    List<SelectItem> getAllItemsShortSI();
+
     List<SelectItem> getSelectableItemsSI();
 
+    List<SelectItem> getSelectableItemsShortSI();
+
     String localized(T value);
+
+    String localizedShort(T value);
 
     String localizedKey(String key);
 }

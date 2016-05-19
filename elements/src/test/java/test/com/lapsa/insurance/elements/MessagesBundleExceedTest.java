@@ -107,6 +107,9 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 	    String name = String.format("%s.%s", c.getClass().getName(), c.name());
 	    if (name.equals(key))
 		return c;
+	    String shrt = String.format("%s.%s.short", c.getClass().getName(), c.name());
+	    if (shrt.equals(key))
+		return c;
 	}
 	return null;
     }

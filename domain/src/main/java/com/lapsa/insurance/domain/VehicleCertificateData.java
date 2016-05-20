@@ -7,9 +7,7 @@ import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidDateOfIssue;
 import com.lapsa.insurance.validation.ValidVehicleRegistrationNumber;
 
-public class VehicleCertificateData {
-
-    private Integer id;
+public class VehicleCertificateData extends BaseDomain<Integer> {
 
     @NotNullValue
     @NotEmptyString
@@ -27,14 +25,6 @@ public class VehicleCertificateData {
     private TwoSidedDocumentScan scan = new TwoSidedDocumentScan();
 
     // GENERATED
-
-    public Integer getId() {
-	return id;
-    }
-
-    public void setId(Integer id) {
-	this.id = id;
-    }
 
     public String getNumber() {
 	return number;

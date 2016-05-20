@@ -1,15 +1,12 @@
 package com.lapsa.insurance.domain;
 
-import java.util.UUID;
-
 import com.lapsa.insurance.elements.WhoIsInsurant;
 import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidEnumerationValue;
 import com.lapsa.kz.economic.KZEconomicSector;
 import com.lapsa.kz.idnumber.validators.ValidIdNumber;
 
-public class InsurantData {
-    private final UUID id = UUID.randomUUID();
+public class InsurantData extends BaseDomain<Integer> {
 
     @NotNullValue(message = "{com.lapsa.insurance.domain.InsurantData.IdNumber.NotNull.message}")
     @ValidIdNumber
@@ -35,29 +32,11 @@ public class InsurantData {
     private boolean fetched = false;
 
     @Override
-    public int hashCode() {
-	return this.getClass().hashCode() * id.hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-	return obj != null && this.getClass().isInstance(obj) && getId().equals((this.getClass().cast(obj)).getId());
-    }
-
-    public String getSafeId() {
-	return id.toString().replaceAll("-", "_");
-    }
-
-    @Override
     public String toString() {
 	return personalData.getDisplayName();
     }
 
     // GENERATED
-
-    public UUID getId() {
-	return id;
-    }
 
     public String getIdNumber() {
 	return idNumber;

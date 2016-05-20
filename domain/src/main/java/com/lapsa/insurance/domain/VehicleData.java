@@ -5,9 +5,7 @@ import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidVehicleYearOfIssue;
 
-public class VehicleData {
-
-    private Integer id;
+public class VehicleData extends BaseDomain<Integer> {
 
     @NotNullValue
     @ValidVINCode(checkDigit = false)
@@ -36,14 +34,6 @@ public class VehicleData {
     }
 
     // GENERATED
-
-    public Integer getId() {
-	return id;
-    }
-
-    public void setId(Integer id) {
-	this.id = id;
-    }
 
     public String getVinCode() {
 	return vinCode;

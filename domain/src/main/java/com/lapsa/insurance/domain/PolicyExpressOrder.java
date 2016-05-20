@@ -6,9 +6,7 @@ import java.util.List;
 import com.lapsa.insurance.crm.ClosingResult;
 import com.lapsa.insurance.crm.RequestStatus;
 
-public class PolicyExpressOrder {
-
-    private int id;
+public class PolicyExpressOrder extends BaseDomain<Integer> {
 
     private Date created;
     private Date updated;
@@ -23,10 +21,6 @@ public class PolicyExpressOrder {
     private PolicyObtainingData obtaininigData;
 
     // GENERATED
-
-    public int getId() {
-	return id;
-    }
 
     public Date getCreated() {
 	return created;
@@ -106,9 +100,5 @@ public class PolicyExpressOrder {
 
     public void setObtaininigData(PolicyObtainingData obtaininigData) {
 	this.obtaininigData = obtaininigData;
-    }
-
-    public void setId(int id) {
-	this.id = id;
     }
 }

@@ -8,9 +8,7 @@ import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidDateOfIssue;
 import com.lapsa.insurance.validation.ValidIdentityCardType;
 
-public class IdentityCardData implements ScanCopiedDocument {
-
-    private Integer id;
+public class IdentityCardData extends BaseDomain<Integer> implements ScanCopiedDocument {
 
     @NotNullValue
     @ValidDateOfIssue
@@ -31,14 +29,6 @@ public class IdentityCardData implements ScanCopiedDocument {
     private TwoSidedDocumentScan scan = new TwoSidedDocumentScan();
 
     // GENERATED
-
-    public Integer getId() {
-	return id;
-    }
-
-    public void setId(Integer id) {
-	this.id = id;
-    }
 
     public Date getDateOfIssue() {
 	return dateOfIssue;

@@ -2,9 +2,7 @@ package com.lapsa.insurance.domain;
 
 import com.lapsa.image.ImageContent;
 
-public class UploadedImage {
-
-    private Integer id;
+public class UploadedImage extends BaseDomain<Integer> {
 
     private String fileName;
     private String mimeType;
@@ -32,26 +30,7 @@ public class UploadedImage {
 	this.thumbnail = thumbnail;
     }
 
-    @Override
-    public int hashCode() {
-	return this.getClass().hashCode() * (id != null ? id.hashCode() : 777);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-	return obj != null && this.getClass().isInstance(obj)
-		&& (getId() == null || (getId() != null && getId().equals((this.getClass().cast(obj)).getId())));
-    }
-
     // GENERATED
-
-    public Integer getId() {
-	return id;
-    }
-
-    public void setId(Integer id) {
-	this.id = id;
-    }
 
     public String getFileName() {
 	return fileName;

@@ -10,9 +10,7 @@ import com.lapsa.kz.country.KZCity;
 import com.lapsa.kz.country.validators.ValidKZArea;
 import com.lapsa.kz.country.validators.ValidKZCity;
 
-public class InsuredVehicleData {
-
-    private Integer id;
+public class InsuredVehicleData extends BaseDomain<Integer> {
 
     @NotNullValue
     @ValidVehicleClass
@@ -36,17 +34,6 @@ public class InsuredVehicleData {
 
     private boolean fetched = false;
 
-    @Override
-    public int hashCode() {
-	return this.getClass().hashCode() * (id != null ? id.hashCode() : 999);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-	return obj != null && this.getClass().isInstance(obj)
-		&& (getId() == null || (getId() != null && getId().equals((this.getClass().cast(obj)).getId())));
-    }
-
     public String getDisplayName() {
 	return vehicleData.getDisplayName();
     }
@@ -57,14 +44,6 @@ public class InsuredVehicleData {
     }
 
     // GENERATED
-
-    public Integer getId() {
-	return id;
-    }
-
-    public void setId(Integer id) {
-	this.id = id;
-    }
 
     public VehicleClass getVehicleClass() {
 	return vehicleClass;

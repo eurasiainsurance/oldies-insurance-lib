@@ -6,9 +6,7 @@ import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidDateOfIssue;
 
-public class DriverLicenseData implements ScanCopiedDocument {
-
-    private Integer id;
+public class DriverLicenseData extends BaseDomain<Integer> implements ScanCopiedDocument {
 
     @NotNullValue
     @NotEmptyString
@@ -21,14 +19,6 @@ public class DriverLicenseData implements ScanCopiedDocument {
     private TwoSidedDocumentScan scan = new TwoSidedDocumentScan();
 
     // GENERATED
-
-    public Integer getId() {
-	return id;
-    }
-
-    public void setId(Integer id) {
-	this.id = id;
-    }
 
     public String getNumber() {
 	return number;

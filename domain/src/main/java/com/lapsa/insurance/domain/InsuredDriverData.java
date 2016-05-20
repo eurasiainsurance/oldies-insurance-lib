@@ -8,9 +8,7 @@ import com.lapsa.insurance.validation.ValidInsuranceAgeClass;
 import com.lapsa.insurance.validation.ValidInsuranceExpirienceClass;
 import com.lapsa.kz.idnumber.validators.ValidIdNumber;
 
-public class InsuredDriverData {
-
-    private Integer id;
+public class InsuredDriverData extends BaseDomain<Integer> {
 
     private InsuranceClassType insuranceClassType;
 
@@ -52,17 +50,6 @@ public class InsuredDriverData {
     private boolean pensioner = false;
     private PensionerCertificateData pensionerCertificateData = new PensionerCertificateData();
 
-    @Override
-    public int hashCode() {
-	return this.getClass().hashCode() * (id != null ? id.hashCode() : 888);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-	return obj != null && this.getClass().isInstance(obj)
-		&& (getId() == null || (getId() != null && getId().equals((this.getClass().cast(obj)).getId())));
-    }
-
     public String getDisplayName() {
 	return personalData.getDisplayName();
     }
@@ -73,14 +60,6 @@ public class InsuredDriverData {
     }
 
     // GENERATED
-
-    public Integer getId() {
-	return id;
-    }
-
-    public void setId(Integer id) {
-	this.id = id;
-    }
 
     public InsuranceClassType getInsuranceClassType() {
 	return insuranceClassType;

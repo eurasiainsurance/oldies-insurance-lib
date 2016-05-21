@@ -1,7 +1,6 @@
 package com.lapsa.insurance.domain;
 
 import java.util.Date;
-import java.util.List;
 
 import com.lapsa.insurance.crm.ClosingResult;
 import com.lapsa.insurance.crm.RequestStatus;
@@ -14,11 +13,9 @@ public class PolicyExpressOrder extends BaseDomain<Integer> {
     private RequestStatus requestStatus;
     private ClosingResult closingResult;
 
-    private List<InsuredDriverData> drivers;
-    private List<InsuredVehicleData> vehicles;
-    private CalculationData calculationData;
-    private PloicyRequesterData requesterData;
-    private PolicyObtainingData obtaininigData;
+    private PolicyData policy;
+    private PloicyRequesterData requester;
+    private PolicyObtainingData obtaininig;
 
     // GENERATED
 
@@ -62,43 +59,27 @@ public class PolicyExpressOrder extends BaseDomain<Integer> {
 	this.closingResult = closingResult;
     }
 
-    public List<InsuredDriverData> getDrivers() {
-	return drivers;
+    public PolicyData getPolicy() {
+	return policy;
     }
 
-    public void setDrivers(List<InsuredDriverData> drivers) {
-	this.drivers = drivers;
+    public void setPolicy(PolicyData policy) {
+	this.policy = policy;
     }
 
-    public List<InsuredVehicleData> getVehicles() {
-	return vehicles;
+    public PloicyRequesterData getRequester() {
+	return requester;
     }
 
-    public void setVehicles(List<InsuredVehicleData> vehicles) {
-	this.vehicles = vehicles;
+    public void setRequester(PloicyRequesterData requester) {
+	this.requester = requester;
     }
 
-    public CalculationData getCalculationData() {
-	return calculationData;
+    public PolicyObtainingData getObtaininig() {
+	return obtaininig;
     }
 
-    public void setCalculationData(CalculationData calculationData) {
-	this.calculationData = calculationData;
-    }
-
-    public PloicyRequesterData getRequesterData() {
-	return requesterData;
-    }
-
-    public void setRequesterData(PloicyRequesterData requesterData) {
-	this.requesterData = requesterData;
-    }
-
-    public PolicyObtainingData getObtaininigData() {
-	return obtaininigData;
-    }
-
-    public void setObtaininigData(PolicyObtainingData obtaininigData) {
-	this.obtaininigData = obtaininigData;
+    public void setObtaininig(PolicyObtainingData obtaininig) {
+	this.obtaininig = obtaininig;
     }
 }

@@ -7,7 +7,7 @@ import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidDateOfIssue;
 import com.lapsa.insurance.validation.ValidVehicleRegistrationNumber;
 
-public class VehicleCertificateData extends BaseDomain<Integer> {
+public class VehicleCertificateData extends BaseDomain<Integer> implements ScanCopiedDocument {
 
     @NotNullValue
     @NotEmptyString
@@ -50,7 +50,8 @@ public class VehicleCertificateData extends BaseDomain<Integer> {
 	this.registrationNumber = registrationNumber;
     }
 
-    public DocumentScan getScan() {
+    @Override
+    public TwoSidedDocumentScan getScan() {
 	return scan;
     }
 

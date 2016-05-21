@@ -40,9 +40,13 @@ com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.OVER25_LESS2 = жас�
 
 com.lapsa.insurance.elements.InsuredAgeClass.OVER25 = жасы 25 жастан жоғары
 com.lapsa.insurance.elements.InsuredAgeClass.UNDER25 = жасы 25 жастан
+com.lapsa.insurance.elements.InsuredAgeClass.OVER25.short = 25 жастан жоғары
+com.lapsa.insurance.elements.InsuredAgeClass.UNDER25.short = 25 жастан
 
 com.lapsa.insurance.elements.InsuredExpirienceClass.MORE2 = жүргізу стажы 2 жылдан астам
 com.lapsa.insurance.elements.InsuredExpirienceClass.LESS2 = жүргізу стажы 2 жылдан аз
+com.lapsa.insurance.elements.InsuredExpirienceClass.MORE2.short = 2 жылдан астам
+com.lapsa.insurance.elements.InsuredExpirienceClass.LESS2.short = 2 жылдан аз
 
 com.lapsa.insurance.elements.MaritalStatus.MARRIED = үйленген / тұрмыста
 com.lapsa.insurance.elements.MaritalStatus.SINGLE = үйленбеген / тұрмыс құрмаған

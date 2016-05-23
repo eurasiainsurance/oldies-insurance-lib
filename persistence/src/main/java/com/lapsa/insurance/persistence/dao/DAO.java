@@ -5,7 +5,7 @@ public interface DAO<T,I> {
 
     T save(T entity);
     
-    void enqueue(T entity);
+    void enqueueSave(T entity);
 
-    void flushQueue();
+    void flushQueued();
 }

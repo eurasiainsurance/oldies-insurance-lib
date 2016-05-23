@@ -1,13 +1,12 @@
 package com.lapsa.insurance.domain;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class PolicyData extends BaseDomain<Integer> {
 
-    protected List<InsuredDriverData> insuredDrivers = new ArrayList<>();
-    protected List<InsuredVehicleData> insuredVehicles = new ArrayList<>();
-    protected CalculationData calculation = new CalculationData();
+    protected List<InsuredDriverData> insuredDrivers;
+    protected List<InsuredVehicleData> insuredVehicles;
+    protected CalculationData calculation;
 
     // GENERATED
 

@@ -17,6 +17,8 @@ public class PolicyExpressOrder extends BaseDomain<Integer> {
     private PloicyRequesterData requester;
     private PolicyObtainingData obtaining;
 
+    private boolean allowSpam;
+
     // GENERATED
 
     public Date getCreated() {
@@ -81,5 +83,13 @@ public class PolicyExpressOrder extends BaseDomain<Integer> {
 
     public void setObtaining(PolicyObtainingData btaining) {
 	this.obtaining = btaining;
+    }
+
+    public boolean isAllowSpam() {
+	return allowSpam;
+    }
+
+    public void setAllowSpam(boolean allowSpam) {
+	this.allowSpam = allowSpam;
     }
 }

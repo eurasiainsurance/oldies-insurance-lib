@@ -15,7 +15,7 @@ public class PolicyExpressOrder extends BaseDomain<Integer> {
 
     private PolicyData policy;
     private PloicyRequesterData requester;
-    private PolicyObtainingData obtaininig;
+    private PolicyObtainingData obtaining;
 
     // GENERATED
 
@@ -75,11 +75,11 @@ public class PolicyExpressOrder extends BaseDomain<Integer> {
 	this.requester = requester;
     }
 
-    public PolicyObtainingData getObtaininig() {
-	return obtaininig;
+    public PolicyObtainingData getObtaining() {
+	return obtaining;
     }
 
-    public void setObtaininig(PolicyObtainingData obtaininig) {
-	this.obtaininig = obtaininig;
+    public void setObtaining(PolicyObtainingData btaining) {
+	this.obtaining = btaining;
     }
 }

@@ -13,4 +13,8 @@ public interface PolicyExpressOrderDAO extends DAO<PolicyExpressOrder, Integer> 
 
     List<PolicyExpressOrder> findAll();
 
+    List<PolicyExpressOrder> findPendingUserNotification();
+
+    List<PolicyExpressOrder> findPendingCompanyNotification();
+
 }

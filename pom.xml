@@ -55,7 +55,7 @@
 			</dependency>
 			<dependency>
 				<groupId>com.lapsa.insurance-lib</groupId>
-				<artifactId>insurance-messenger</artifactId>
+				<artifactId>insurance-mesenger</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>

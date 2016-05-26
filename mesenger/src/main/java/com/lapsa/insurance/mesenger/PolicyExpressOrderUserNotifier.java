@@ -1,4 +1,4 @@
-package com.lapsa.insurance.messenger;
+package com.lapsa.insurance.mesenger;
 
 import java.util.List;
 

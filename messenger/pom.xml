@@ -11,7 +11,7 @@
 	<artifactId>insurance-mesenger</artifactId>
 	<packaging>jar</packaging>
 
-	<name>Insurance Lib : Messenger Core</name>
+	<name>Insurance Lib : Mesenger Core</name>
 
 	<dependencies>
 		<!-- own -->

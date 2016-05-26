@@ -21,7 +21,7 @@
 		<module>eelib</module>
 		<module>domain</module>
 		<module>persistence</module>
-		<module>messenger</module>
+		<module>mesenger</module>
 		<module>esbd</module>
 	</modules>
 

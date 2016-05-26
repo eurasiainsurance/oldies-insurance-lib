@@ -21,6 +21,7 @@
 		<module>eelib</module>
 		<module>domain</module>
 		<module>persistence</module>
+		<module>messenger</module>
 		<module>esbd</module>
 	</modules>
 
@@ -50,6 +51,11 @@
 			<dependency>
 				<groupId>com.lapsa.insurance-lib</groupId>
 				<artifactId>insurance-persistence</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.lapsa.insurance-lib</groupId>
+				<artifactId>insurance-messenger</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>

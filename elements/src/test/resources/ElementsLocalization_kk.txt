@@ -102,3 +102,6 @@ com.lapsa.insurance.crm.RequestStatus.CLOSED = Жабық
 
 com.lapsa.insurance.crm.ClosingResult.COMPLETED = Аяқталды
 com.lapsa.insurance.crm.ClosingResult.CANCELED = Жойылды
+
+com.lapsa.insurance.crm.NotificationStatus.DONE = Аяқталған
+com.lapsa.insurance.crm.NotificationStatus.PENDING = Кезек

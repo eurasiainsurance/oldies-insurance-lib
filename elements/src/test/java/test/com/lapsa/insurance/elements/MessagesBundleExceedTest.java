@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 import org.junit.Test;
 
 import com.lapsa.insurance.crm.ClosingResult;
+import com.lapsa.insurance.crm.NotificationStatus;
 import com.lapsa.insurance.crm.RequestStatus;
 import com.lapsa.insurance.elements.BundleBase;
 import com.lapsa.insurance.elements.CancelationReason;
@@ -63,6 +64,8 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 	while (keys.hasMoreElements()) {
 	    String key = keys.nextElement();
 	    if (findByFullName(ClosingResult.values(), key) != null)
+		continue;
+	    if (findByFullName(NotificationStatus.values(), key) != null)
 		continue;
 	    if (findByFullName(RequestStatus.values(), key) != null)
 		continue;

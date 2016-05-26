@@ -4,6 +4,7 @@ import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidHumanName;
 import com.lapsa.internet.validators.ValidEmail;
+import com.lapsa.localization.LocalizationLanguage;
 import com.lapsa.phone.PhoneFormatException;
 import com.lapsa.phone.PhoneNumber;
 import com.lapsa.phone.PhoneNumberFactoryProvider;
@@ -32,6 +33,8 @@ public class PloicyRequesterData {
 	    return null;
 	return phone.getFormatted();
     }
+
+    private LocalizationLanguage preferLanguage;
 
     public void setPhoneString(String phoneString) {
 	try {
@@ -64,5 +67,13 @@ public class PloicyRequesterData {
 
     public void setEmail(String email) {
 	this.email = email;
+    }
+
+    public LocalizationLanguage getPreferLanguage() {
+	return preferLanguage;
+    }
+
+    public void setPreferLanguage(LocalizationLanguage preferLanguage) {
+	this.preferLanguage = preferLanguage;
     }
 }

@@ -1,6 +1,6 @@
 package com.lapsa.insurance.elements;
 
-public enum InsuranceClassType implements BundleBase {
+public enum InsuranceClassType implements ElementsBundleBase {
     CLASS_0,
     CLASS_1,
     CLASS_2,

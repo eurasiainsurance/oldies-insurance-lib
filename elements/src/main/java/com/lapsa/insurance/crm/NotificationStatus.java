@@ -1,8 +1,8 @@
 package com.lapsa.insurance.crm;
 
-import com.lapsa.insurance.elements.BundleBase;
+import com.lapsa.insurance.elements.ElementsBundleBase;
 
-public enum NotificationStatus implements BundleBase {
+public enum NotificationStatus implements ElementsBundleBase {
     PENDING, // Завершено
     DONE, // В очереди
     //

@@ -1,6 +1,6 @@
 package com.lapsa.insurance.elements;
 
-public enum IdentityCardType implements BundleBase {
+public enum IdentityCardType implements ElementsBundleBase {
     ID_CARD, // удостоверение личности
     PASSPORT, // паспорт
     BIRTH_CERTIFICATE, // свидетельство о рождении

@@ -1,6 +1,6 @@
 package com.lapsa.insurance.elements;
 
-public enum SubjectType implements BundleBase {
+public enum SubjectType implements ElementsBundleBase {
     COMPANY, // юрлицо
     PERSON; // физлицо
 }

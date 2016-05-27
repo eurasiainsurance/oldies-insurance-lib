@@ -1,6 +1,6 @@
 package com.lapsa.insurance.elements;
 
-public enum VehicleClass implements BundleBase {
+public enum VehicleClass implements ElementsBundleBase {
     BUS16(true), // Автобусы до 16 пассажирских мест включительно
     BUSOVR16(true), // Автобусы свыше 16 пассажирских мест
     CARGO(true), // Грузовые

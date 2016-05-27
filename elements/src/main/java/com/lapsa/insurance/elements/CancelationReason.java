@@ -9,5 +9,12 @@ public enum CancelationReason implements ElementsBundleBase {
     POLICY_LOST, // Утеря
     ISSUED_DUPLICATE_POLICY, // Выпущен дубликат
     OTHER, // Другая причина
-    HUMAN_FAILURE; // Ошибка оператора
+    HUMAN_FAILURE, // Ошибка оператора
+    //
+    ;
+
+    @Override
+    public String canonicalName() {
+	return String.format("%1$s.%2$s", this.getClass().getName(), name());
+    }
 }

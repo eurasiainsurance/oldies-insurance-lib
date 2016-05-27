@@ -15,5 +15,12 @@ public enum InsuranceClassType implements ElementsBundleBase {
     CLASS_11,
     CLASS_12,
     CLASS_13,
-    CLASS_M;
+    CLASS_M,
+    //
+    ;
+
+    @Override
+    public String canonicalName() {
+	return String.format("%1$s.%2$s", this.getClass().getName(), name());
+    }
 }

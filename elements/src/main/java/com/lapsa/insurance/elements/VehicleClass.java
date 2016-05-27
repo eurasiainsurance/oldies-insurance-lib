@@ -11,7 +11,14 @@ public enum VehicleClass implements ElementsBundleBase {
     SEA(false), // Морское
     AIRCRAFT(false), // Воздушный транспорт
     RAILWAY(false), // Железнодорожный транспорт
-    SPECIAL(false); // Спец.техника
+    SPECIAL(false), // Спец.техника
+    //
+    ;
+
+    @Override
+    public String canonicalName() {
+	return String.format("%1$s.%2$s", this.getClass().getName(), name());
+    }
 
     private final boolean applicableForOSGPOVTS;
 

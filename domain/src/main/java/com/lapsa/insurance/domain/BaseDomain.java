@@ -34,4 +34,8 @@ public abstract class BaseDomain<T> {
     public final UUID getInstanceUUID() {
 	return instanceUUID;
     }
+
+    public final String getInstanceWebSafeUUID() {
+	return instanceUUID.toString().replace('-', '_');
+    }
 }

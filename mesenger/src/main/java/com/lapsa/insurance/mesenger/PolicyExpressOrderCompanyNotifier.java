@@ -2,5 +2,5 @@ package com.lapsa.insurance.mesenger;
 
 import com.lapsa.insurance.domain.PolicyExpressOrder;
 
-public interface PolicyExpressOrderUserNotifier extends BaseNotifier<PolicyExpressOrder> {
+public interface PolicyExpressOrderCompanyNotifier extends BaseNotifier<PolicyExpressOrder> {
 }

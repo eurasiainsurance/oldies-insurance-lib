@@ -5,6 +5,7 @@ import java.util.UUID;
 public abstract class BaseDomain<T> {
 
     protected transient final UUID instanceUUID = UUID.randomUUID();
+    protected transient final String instanceWebSafeUUID = "UUID" + instanceUUID.toString().replace("-", "");
     protected T id;
 
     @Override
@@ -36,6 +37,6 @@ public abstract class BaseDomain<T> {
     }
 
     public final String getInstanceWebSafeUUID() {
-	return instanceUUID.toString().replace('-', '_');
+	return instanceWebSafeUUID;
     }
 }

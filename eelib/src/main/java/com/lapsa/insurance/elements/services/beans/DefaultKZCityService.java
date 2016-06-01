@@ -32,7 +32,7 @@ public class DefaultKZCityService extends EnumService<KZCity> implements KZCityS
 
     @Override
     public List<SelectItem> regionalItemsByAreaSI(KZArea area) {
-	return getLocalizedSI(regionalItemsByArea(area));
+	return localizedSI(regionalItemsByArea(area));
     }
 
     @Override
@@ -54,7 +54,7 @@ public class DefaultKZCityService extends EnumService<KZCity> implements KZCityS
 
     @Override
     public List<SelectItem> selectableItemsByAreaSI(KZArea area) {
-	return getLocalizedSI(selectableItemsByArea(area));
+	return localizedSI(selectableItemsByArea(area));
     }
 
     private boolean isRegional(KZCity city) {

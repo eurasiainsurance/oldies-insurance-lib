@@ -17,9 +17,9 @@ public interface ItemService<T> {
 
     List<SelectItem> getSelectableItemsShortSI();
 
-    List<SelectItem> getLocalizedSI(List<T> values);
+    List<SelectItem> localizedSI(List<T> values);
 
-    List<SelectItem> getLocalizedShortSI(List<T> values);
+    List<SelectItem> localizedShortSI(List<T> values);
 
     String localized(T value);
 

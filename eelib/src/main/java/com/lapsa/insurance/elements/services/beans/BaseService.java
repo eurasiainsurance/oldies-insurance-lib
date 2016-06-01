@@ -18,12 +18,12 @@ public abstract class BaseService<T> implements ItemService<T> {
 
     @Override
     public List<SelectItem> getAllItemsSI() {
-	return _createSIFromList(getAllItems());
+	return getLocalizedSI(getAllItems());
     }
 
     @Override
     public List<SelectItem> getAllItemsShortSI() {
-	return _createShortSIFromList(getAllItems());
+	return getLocalizedShortSI(getAllItems());
     }
 
     @Override
@@ -33,12 +33,12 @@ public abstract class BaseService<T> implements ItemService<T> {
 
     @Override
     public List<SelectItem> getSelectableItemsSI() {
-	return _createSIFromList(getSelectableItems());
+	return getLocalizedSI(getSelectableItems());
     }
 
     @Override
     public List<SelectItem> getSelectableItemsShortSI() {
-	return _createShortSIFromList(getSelectableItems());
+	return getLocalizedShortSI(getSelectableItems());
     }
 
     @Override
@@ -55,14 +55,16 @@ public abstract class BaseService<T> implements ItemService<T> {
 	}
     }
 
-    protected List<SelectItem> _createSIFromList(List<T> list) {
+    @Override
+    public List<SelectItem> getLocalizedSI(List<T> list) {
 	List<SelectItem> result = new ArrayList<>();
 	for (T item : list)
 	    result.add(new SelectItem(item, localized(item)));
 	return result;
     }
 
-    protected List<SelectItem> _createShortSIFromList(List<T> list) {
+    @Override
+    public List<SelectItem> getLocalizedShortSI(List<T> list) {
 	List<SelectItem> result = new ArrayList<>();
 	for (T item : list)
 	    result.add(new SelectItem(item, localizedShort(item)));

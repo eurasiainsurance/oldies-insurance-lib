@@ -33,12 +33,11 @@ public class PolicyObtainingData extends BaseDomain {
     @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryCity.NotNullValue.message}")
     private KZCity deliveryCity;
 
-    @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryPOS.NotNullValue.message}")
-    private CompanyPointOfSale deliveryPOS;
-
     @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryAddress.NotNullValue.message}")
     @NotEmptyString(message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryAddress.NotEmptyString.message}")
     private String deliveryAddress;
+
+    private CompanyPointOfSale deliveryFromPOS;
 
     // GENERATED
 
@@ -90,19 +89,19 @@ public class PolicyObtainingData extends BaseDomain {
 	this.deliveryCity = deliveryCity;
     }
 
-    public CompanyPointOfSale getDeliveryPOS() {
-	return deliveryPOS;
-    }
-
-    public void setDeliveryPOS(CompanyPointOfSale deliveryPOS) {
-	this.deliveryPOS = deliveryPOS;
-    }
-
     public String getDeliveryAddress() {
 	return deliveryAddress;
     }
 
     public void setDeliveryAddress(String deliveryAddress) {
 	this.deliveryAddress = deliveryAddress;
+    }
+
+    public CompanyPointOfSale getDeliveryFromPOS() {
+	return deliveryFromPOS;
+    }
+
+    public void setDeliveryFromPOS(CompanyPointOfSale deliveryFromPOS) {
+	this.deliveryFromPOS = deliveryFromPOS;
     }
 }

@@ -39,6 +39,13 @@
 			<scope>compile</scope>
 			<optional>false</optional>
 		</dependency>
+		<!-- external -->
+		<dependency>
+			<groupId>org.omnifaces</groupId>
+			<artifactId>omnifaces</artifactId>
+			<scope>compile</scope>
+			<optional>true</optional>
+		</dependency>
 		<!-- JavaEE -->
 		<dependency>
 			<groupId>javax.faces</groupId>

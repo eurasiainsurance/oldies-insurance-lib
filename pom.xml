@@ -95,6 +95,11 @@
 				<version>${image-lib.version}</version>
 			</dependency>
 			<!-- external -->
+			<dependency>
+				<groupId>org.omnifaces</groupId>
+				<artifactId>omnifaces</artifactId>
+				<version>2.3</version>
+			</dependency>
 			<!-- JavaEE -->
 			<dependency>
 				<groupId>javax.faces</groupId>

@@ -6,6 +6,7 @@ com.lapsa.insurance.domain.InsuredDriverData.IdNumber.NotNull.message = ИИН �
 com.lapsa.insurance.domain.InsurantData.IdNumber.NotNull.message = {com.lapsa.insurance.domain.InsuredDriverData.IdNumber.NotNull.message}
 
 com.lapsa.insurance.domain.PolicyObtainingData.method.NotNullValue.message = Укажите способ получения полиса
+com.lapsa.insurance.domain.PolicyObtainingData.pickupCity.NotNullValue.message = Укажите город местопооложения филиала для самовывоза полиса
 com.lapsa.insurance.domain.PolicyObtainingData.pickupPOS.NotNullValue.message = Укажите адрес филиала для самовывоза полиса
 com.lapsa.insurance.domain.PolicyObtainingData.deliveryCity.NotNullValue.message = Укажите Ваше местоположение
 com.lapsa.insurance.domain.PolicyObtainingData.deliveryPOS.NotNullValue.message = Укажите адрес ближайшего к Вам офиса страховой компании

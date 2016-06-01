@@ -16,6 +16,9 @@ public class PolicyObtainingData extends BaseDomain {
     @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.method.NotNullValue.message}")
     private PolicyObtainingMethod method;
 
+    @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.pickupCity.NotNullValue.message}")
+    private KZCity pickupCity;
+
     @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.pickupPOS.NotNullValue.message}")
     private CompanyPointOfSale pickupPOS;
 

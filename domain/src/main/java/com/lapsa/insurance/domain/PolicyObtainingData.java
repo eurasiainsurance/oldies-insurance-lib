@@ -50,28 +50,20 @@ public class PolicyObtainingData extends BaseDomain {
 	this.method = method;
     }
 
+    public KZCity getPickupCity() {
+	return pickupCity;
+    }
+
+    public void setPickupCity(KZCity pickupCity) {
+	this.pickupCity = pickupCity;
+    }
+
     public CompanyPointOfSale getPickupPOS() {
 	return pickupPOS;
     }
 
     public void setPickupPOS(CompanyPointOfSale pickupPOS) {
 	this.pickupPOS = pickupPOS;
-    }
-
-    public KZCity getDeliveryCity() {
-	return deliveryCity;
-    }
-
-    public void setDeliveryCity(KZCity deliveryCity) {
-	this.deliveryCity = deliveryCity;
-    }
-
-    public CompanyPointOfSale getDeliveryPOS() {
-	return deliveryPOS;
-    }
-
-    public void setDeliveryPOS(CompanyPointOfSale deliveryPOS) {
-	this.deliveryPOS = deliveryPOS;
     }
 
     public Date getDeliveryDate() {
@@ -90,6 +82,22 @@ public class PolicyObtainingData extends BaseDomain {
 	this.deliveryTime = deliveryTime;
     }
 
+    public KZCity getDeliveryCity() {
+	return deliveryCity;
+    }
+
+    public void setDeliveryCity(KZCity deliveryCity) {
+	this.deliveryCity = deliveryCity;
+    }
+
+    public CompanyPointOfSale getDeliveryPOS() {
+	return deliveryPOS;
+    }
+
+    public void setDeliveryPOS(CompanyPointOfSale deliveryPOS) {
+	this.deliveryPOS = deliveryPOS;
+    }
+
     public String getDeliveryAddress() {
 	return deliveryAddress;
     }
@@ -97,5 +105,4 @@ public class PolicyObtainingData extends BaseDomain {
     public void setDeliveryAddress(String deliveryAddress) {
 	this.deliveryAddress = deliveryAddress;
     }
-
 }

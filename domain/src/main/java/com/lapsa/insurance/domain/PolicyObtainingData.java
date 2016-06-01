@@ -9,11 +9,15 @@ import com.lapsa.insurance.validation.DaysBeforeNow;
 import com.lapsa.insurance.validation.Mode;
 import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
+import com.lapsa.kz.country.KZCity;
 
 public class PolicyObtainingData extends BaseDomain {
 
     @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.method.NotNullValue.message}")
     private PolicyObtainingMethod method;
+
+    @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.pickupPOS.NotNullValue.message}")
+    private CompanyPointOfSale pickupPOS;
 
     @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.NotNullValue.message}")
     @DaysAfterNow(mode = Mode.MUST, value = 0, message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.DaysAfterNow.messages}")
@@ -22,6 +26,12 @@ public class PolicyObtainingData extends BaseDomain {
 
     @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryTime.NotNullValue.message}")
     private DeliveryTimeSlot deliveryTime;
+
+    @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryCity.NotNullValue.message}")
+    private KZCity deliveryCity;
+
+    @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryPOS.NotNullValue.message}")
+    private CompanyPointOfSale deliveryPOS;
 
     @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryAddress.NotNullValue.message}")
     @NotEmptyString(message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryAddress.NotEmptyString.message}")
@@ -35,6 +45,30 @@ public class PolicyObtainingData extends BaseDomain {
 
     public void setMethod(PolicyObtainingMethod method) {
 	this.method = method;
+    }
+
+    public CompanyPointOfSale getPickupPOS() {
+	return pickupPOS;
+    }
+
+    public void setPickupPOS(CompanyPointOfSale pickupPOS) {
+	this.pickupPOS = pickupPOS;
+    }
+
+    public KZCity getDeliveryCity() {
+	return deliveryCity;
+    }
+
+    public void setDeliveryCity(KZCity deliveryCity) {
+	this.deliveryCity = deliveryCity;
+    }
+
+    public CompanyPointOfSale getDeliveryPOS() {
+	return deliveryPOS;
+    }
+
+    public void setDeliveryPOS(CompanyPointOfSale deliveryPOS) {
+	this.deliveryPOS = deliveryPOS;
     }
 
     public Date getDeliveryDate() {
@@ -60,4 +94,5 @@ public class PolicyObtainingData extends BaseDomain {
     public void setDeliveryAddress(String deliveryAddress) {
 	this.deliveryAddress = deliveryAddress;
     }
+
 }

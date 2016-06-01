@@ -2,7 +2,7 @@ package com.lapsa.insurance.domain;
 
 import com.lapsa.phone.PhoneNumber;
 
-public class ContactPhone extends BaseEntity<Integer> {
+public class CompanyContactPhone extends BaseDomain {
 
     private PhoneNumber phone;
 

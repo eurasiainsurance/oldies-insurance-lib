@@ -6,6 +6,9 @@ com.lapsa.insurance.domain.InsuredDriverData.IdNumber.NotNull.message = ЖСН �
 com.lapsa.insurance.domain.InsurantData.IdNumber.NotNull.message = {com.lapsa.insurance.domain.InsuredDriverData.IdNumber.NotNull.message}
 
 com.lapsa.insurance.domain.PolicyObtainingData.method.NotNullValue.message = Көрсетіңіз алу тәсілі полисі
+com.lapsa.insurance.domain.PolicyObtainingData.pickupPOS.NotNullValue.message = Мекен-жайыңызды көрсетіңіз филиалы үшін өзі шығару полисі
+com.lapsa.insurance.domain.PolicyObtainingData.deliveryCity.NotNullValue.message = Орналасқан жеріңізді көрсетіңіз
+com.lapsa.insurance.domain.PolicyObtainingData.deliveryPOS.NotNullValue.message = Мекен-жайыңызды көрсетіңіз Сізге ең жақын орналасқан кеңсесінің сақтандыру компания
 com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.NotNullValue.message = Көрсетіңіз жеткізу
 com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.DaysAfterNow.messages = Полис жеткізілуі мүмкін ғана кейін келесі күні тапсырыс
 com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.DaysBeforeNow.messages = Тым кеш күні полисін жеткізу

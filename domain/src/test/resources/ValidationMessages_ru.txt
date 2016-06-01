@@ -6,8 +6,8 @@ com.lapsa.insurance.domain.InsuredDriverData.IdNumber.NotNull.message = ИИН �
 com.lapsa.insurance.domain.InsurantData.IdNumber.NotNull.message = {com.lapsa.insurance.domain.InsuredDriverData.IdNumber.NotNull.message}
 
 com.lapsa.insurance.domain.PolicyObtainingData.method.NotNullValue.message = Укажите способ получения полиса
-com.lapsa.insurance.domain.PolicyObtainingData.pickupCity.NotNullValue.message = Укажите город местопооложения филиала для самовывоза полиса
-com.lapsa.insurance.domain.PolicyObtainingData.pickupPOS.NotNullValue.message = Укажите адрес филиала для самовывоза полиса
+com.lapsa.insurance.domain.PolicyObtainingData.pickupCity.NotNullValue.message = Необходимо указать город для того, чтобы выбрать офис страховой компани
+com.lapsa.insurance.domain.PolicyObtainingData.pickupPOS.NotNullValue.message = Необходимо укзаать офис страховой компании для того, чтобы оформить самовывоз
 com.lapsa.insurance.domain.PolicyObtainingData.deliveryCity.NotNullValue.message = Укажите Ваше местоположение
 com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.NotNullValue.message = Укажите дату доставки
 com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.DaysAfterNow.messages = Полис может быть доставлен только на следующий день после заказа

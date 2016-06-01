@@ -6,7 +6,7 @@ import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidDateOfIssue;
 
-public class GPWParticipantCertificateData implements ScanCopiedDocument {
+public class GPWParticipantCertificateData extends BaseDomain implements ScanCopiedDocument {
 
     @NotNullValue
     @NotEmptyString

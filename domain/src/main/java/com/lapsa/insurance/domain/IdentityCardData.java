@@ -8,7 +8,7 @@ import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidDateOfIssue;
 import com.lapsa.insurance.validation.ValidIdentityCardType;
 
-public class IdentityCardData extends BaseDomain<Integer> implements ScanCopiedDocument {
+public class IdentityCardData extends BaseEntity<Integer> implements ScanCopiedDocument {
 
     @NotNullValue
     @ValidDateOfIssue

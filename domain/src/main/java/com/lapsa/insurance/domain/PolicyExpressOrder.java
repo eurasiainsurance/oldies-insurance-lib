@@ -6,7 +6,7 @@ import com.lapsa.insurance.crm.ClosingResult;
 import com.lapsa.insurance.crm.NotificationStatus;
 import com.lapsa.insurance.crm.RequestStatus;
 
-public class PolicyExpressOrder extends BaseDomain<Integer> {
+public class PolicyExpressOrder extends BaseEntity<Integer> {
 
     private Date created;
     private Date updated;

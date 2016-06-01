@@ -4,7 +4,7 @@ import com.lapsa.country.Country;
 import com.lapsa.country.validators.ValidCountry;
 import com.lapsa.insurance.validation.NotNullValue;
 
-public class OriginData {
+public class OriginData extends BaseDomain {
 
     @NotNullValue
     @ValidCountry

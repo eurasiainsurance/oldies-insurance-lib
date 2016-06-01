@@ -3,7 +3,7 @@ package com.lapsa.insurance.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TwoSidedDocumentScan implements DocumentScan {
+public class TwoSidedDocumentScan extends BaseDomain implements DocumentScan {
 
     private UploadedImage frontside;
     private UploadedImage backside;

@@ -9,7 +9,7 @@ import com.lapsa.insurance.validation.ValidDateOfBirth;
 import com.lapsa.insurance.validation.ValidHumanName;
 import com.lapsa.insurance.validation.ValidSex;
 
-public class PersonalData {
+public class PersonalData extends BaseDomain {
 
     @NotNullValue
     @NotEmptyString

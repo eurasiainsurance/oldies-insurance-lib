@@ -5,7 +5,7 @@ import java.util.Date;
 import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
 
-public class HandicaptedCertificateData implements ScanCopiedDocument {
+public class HandicaptedCertificateData extends BaseDomain implements ScanCopiedDocument {
 
     @NotNullValue
     @NotEmptyString

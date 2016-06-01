@@ -10,7 +10,7 @@ import com.lapsa.phone.PhoneNumber;
 import com.lapsa.phone.PhoneNumberFactoryProvider;
 import com.lapsa.phone.validators.ValidPhoneNumber;
 
-public class PloicyRequesterData {
+public class PloicyRequesterData extends BaseDomain {
 
     @NotNullValue
     @NotEmptyString

@@ -6,7 +6,7 @@ import com.lapsa.internet.validators.ValidURL;
 import com.lapsa.phone.PhoneNumber;
 import com.lapsa.phone.validators.ValidPhoneNumber;
 
-public class ContactData {
+public class ContactData extends BaseDomain {
 
     @NotNullValue
     @ValidPhoneNumber

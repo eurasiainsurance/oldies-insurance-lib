@@ -5,7 +5,7 @@ import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidVehicleYearOfIssue;
 
-public class VehicleData extends BaseDomain<Integer> {
+public class VehicleData extends BaseEntity<Integer> {
 
     @NotNullValue
     @ValidVINCode(checkDigit = false)

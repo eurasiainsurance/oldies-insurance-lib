@@ -2,7 +2,7 @@ package com.lapsa.insurance.domain;
 
 import com.lapsa.image.ImageContent;
 
-public class UploadedImage extends BaseDomain<Integer> {
+public class UploadedImage extends BaseEntity<Integer> {
 
     private String fileName;
     private String mimeType;

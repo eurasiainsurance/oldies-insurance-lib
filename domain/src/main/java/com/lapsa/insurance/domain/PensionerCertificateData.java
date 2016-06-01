@@ -6,7 +6,7 @@ import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidDateOfIssue;
 
-public class PensionerCertificateData {
+public class PensionerCertificateData extends BaseDomain {
 
     @NotNullValue
     @NotEmptyString

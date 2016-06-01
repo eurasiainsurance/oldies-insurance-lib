@@ -6,7 +6,7 @@ import com.lapsa.insurance.validation.ValidEnumerationValue;
 import com.lapsa.kz.economic.KZEconomicSector;
 import com.lapsa.kz.idnumber.validators.ValidIdNumber;
 
-public class InsurantData extends BaseDomain<Integer> {
+public class InsurantData extends BaseEntity<Integer> {
 
     @NotNullValue(message = "{com.lapsa.insurance.domain.InsurantData.IdNumber.NotNull.message}")
     @ValidIdNumber

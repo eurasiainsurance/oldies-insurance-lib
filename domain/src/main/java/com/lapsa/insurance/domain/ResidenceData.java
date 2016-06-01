@@ -5,7 +5,7 @@ import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.kz.country.KZCity;
 import com.lapsa.kz.country.validators.ValidKZCity;
 
-public class ResidenceData {
+public class ResidenceData extends BaseDomain {
 
     private boolean resident;
 

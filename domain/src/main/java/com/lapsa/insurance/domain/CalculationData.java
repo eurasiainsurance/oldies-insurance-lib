@@ -2,7 +2,7 @@ package com.lapsa.insurance.domain;
 
 import com.lapsa.insurance.elements.PolicyTermClass;
 
-public class CalculationData {
+public class CalculationData extends BaseDomain {
 
     private PolicyTermClass termClass = PolicyTermClass.YEAR;
 

@@ -6,7 +6,7 @@ import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidDateOfIssue;
 
-public class DriverLicenseData extends BaseDomain<Integer> implements ScanCopiedDocument {
+public class DriverLicenseData extends BaseEntity<Integer> implements ScanCopiedDocument {
 
     @NotNullValue
     @NotEmptyString

@@ -2,7 +2,7 @@ package com.lapsa.insurance.domain;
 
 import java.util.List;
 
-public class PolicyData extends BaseDomain<Integer> {
+public class PolicyData extends BaseEntity<Integer> {
 
     protected List<InsuredDriverData> insuredDrivers;
     protected List<InsuredVehicleData> insuredVehicles;

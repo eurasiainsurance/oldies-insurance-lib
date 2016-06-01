@@ -8,7 +8,7 @@ import com.lapsa.insurance.validation.ValidInsuranceAgeClass;
 import com.lapsa.insurance.validation.ValidInsuranceExpirienceClass;
 import com.lapsa.kz.idnumber.validators.ValidIdNumber;
 
-public class InsuredDriverData extends BaseDomain<Integer> {
+public class InsuredDriverData extends BaseEntity<Integer> {
 
     private InsuranceClassType insuranceClassType;
 

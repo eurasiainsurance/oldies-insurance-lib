@@ -3,7 +3,7 @@ package com.lapsa.insurance.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MultipageDocumentScan implements DocumentScan {
+public class MultipageDocumentScan extends BaseDomain implements DocumentScan {
 
     private List<UploadedImage> scanCopies = new ArrayList<>();
 

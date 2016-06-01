@@ -10,7 +10,7 @@ import com.lapsa.kz.country.KZCity;
 import com.lapsa.kz.country.validators.ValidKZArea;
 import com.lapsa.kz.country.validators.ValidKZCity;
 
-public class InsuredVehicleData extends BaseDomain<Integer> {
+public class InsuredVehicleData extends BaseEntity<Integer> {
 
     @NotNullValue
     @ValidVehicleClass

@@ -10,7 +10,7 @@ import com.lapsa.insurance.validation.Mode;
 import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
 
-public class PolicyObtainingData {
+public class PolicyObtainingData extends BaseDomain {
 
     @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.method.NotNullValue.message}")
     private PolicyObtainingMethod method;

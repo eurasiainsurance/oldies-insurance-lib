@@ -24,6 +24,12 @@
 		<module>esbd</module>
 	</modules>
 
+	<properties>
+		<kz-lib.version>2.0-pre-rc2</kz-lib.version>
+		<international-lib.version>2.0-pre-rc3-SNAPSHOT</international-lib.version>
+		<image-lib.version>1.0-pre-rc1</image-lib.version>
+	</properties>
+
 	<dependencyManagement>
 		<dependencies>
 			<!-- own -->
@@ -66,27 +72,27 @@
 			<dependency>
 				<groupId>com.lapsa.kz-lib</groupId>
 				<artifactId>kz-core</artifactId>
-				<version>2.0-pre-rc2</version>
+				<version>${kz-lib.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.lapsa.kz-lib</groupId>
 				<artifactId>kz-eelib</artifactId>
-				<version>2.0-pre-rc2</version>
+				<version>${kz-lib.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.lapsa.international-lib</groupId>
 				<artifactId>international-core</artifactId>
-				<version>2.0-pre-rc2</version>
+				<version>${international-lib.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.lapsa.international-lib</groupId>
 				<artifactId>international-eelib</artifactId>
-				<version>2.0-pre-rc2</version>
+				<version>${international-lib.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.lapsa.image-lib</groupId>
 				<artifactId>image-core</artifactId>
-				<version>1.0-pre-rc1</version>
+				<version>${image-lib.version}</version>
 			</dependency>
 			<!-- external -->
 			<!-- JavaEE -->

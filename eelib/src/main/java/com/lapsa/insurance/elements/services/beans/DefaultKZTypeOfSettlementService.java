@@ -12,7 +12,7 @@ import com.lapsa.kz.country.KZTypeOfSettlement;
 
 @Named("kzTypeOfSettlement")
 @ApplicationScoped
-public class DefaultKZTypeOfSettlementService extends EnumService<KZTypeOfSettlement> implements KZTypeOfSettlementService {
+public class DefaultKZTypeOfSettlementService extends GenericEnumService<KZTypeOfSettlement> implements KZTypeOfSettlementService {
 
     @Override
     public List<KZTypeOfSettlement> getAllItems() {

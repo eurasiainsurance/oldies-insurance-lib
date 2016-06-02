@@ -10,7 +10,7 @@ import com.lapsa.insurance.elements.services.SexService;
 
 @Named("SexService")
 @ApplicationScoped
-public class DefaultSexService extends EnumService<Sex> implements SexService {
+public class DefaultSexService extends GenericEnumService<Sex> implements SexService {
 
     public List<Sex> getAllItems() {
 	return CollectionUtils.toList(Sex.values());

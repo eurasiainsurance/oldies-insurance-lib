@@ -10,7 +10,7 @@ import com.lapsa.phone.PhoneType;
 
 @Named("phoneTypeService")
 @ApplicationScoped
-public class DefaultPhoneTypeService extends EnumService<PhoneType> implements PhoneTypeService {
+public class DefaultPhoneTypeService extends GenericEnumService<PhoneType> implements PhoneTypeService {
 
     public List<PhoneType> getAllItems() {
 	return CollectionUtils.toList(PhoneType.values());

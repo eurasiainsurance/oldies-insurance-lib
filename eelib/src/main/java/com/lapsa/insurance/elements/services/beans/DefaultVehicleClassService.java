@@ -11,7 +11,7 @@ import com.lapsa.insurance.elements.services.VehicleClassService;
 
 @Named("vehicleClassService")
 @ApplicationScoped
-public class DefaultVehicleClassService extends EnumService<VehicleClass> implements VehicleClassService {
+public class DefaultVehicleClassService extends GenericEnumService<VehicleClass> implements VehicleClassService {
 
     @Override
     public List<VehicleClass> getAllItems() {

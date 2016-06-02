@@ -11,7 +11,7 @@ import com.lapsa.insurance.elements.services.CountryService;
 
 @Named("countryService")
 @ApplicationScoped
-public class DefaultCountryService extends EnumService<Country> implements CountryService {
+public class DefaultCountryService extends GenericEnumService<Country> implements CountryService {
 
     @Override
     public List<Country> getAllItems() {

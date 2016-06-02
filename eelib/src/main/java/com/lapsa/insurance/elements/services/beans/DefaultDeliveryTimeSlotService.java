@@ -10,7 +10,7 @@ import com.lapsa.insurance.elements.services.DeliveryTimeSlotService;
 
 @Named("deliveryTimeSlotService")
 @ApplicationScoped
-public class DefaultDeliveryTimeSlotService extends EnumService<DeliveryTimeSlot> implements DeliveryTimeSlotService {
+public class DefaultDeliveryTimeSlotService extends GenericEnumService<DeliveryTimeSlot> implements DeliveryTimeSlotService {
 
     public List<DeliveryTimeSlot> getAllItems() {
 	return CollectionUtils.toList(DeliveryTimeSlot.values());

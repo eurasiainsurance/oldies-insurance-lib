@@ -3,18 +3,24 @@ package com.lapsa.insurance.elements.services.beans;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.faces.model.SelectItem;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.lapsa.insurance.elements.services.KZCityService;
+import com.lapsa.insurance.elements.services.KZTypeOfSettlementService;
 import com.lapsa.kz.country.KZArea;
 import com.lapsa.kz.country.KZCity;
 
 @Named("kzCityService")
 @ApplicationScoped
-public class DefaultKZCityService extends EnumService<KZCity> implements KZCityService {
+public class DefaultKZCityService extends GenericEnumService<KZCity> implements KZCityService {
+
+    @Inject
+    private KZTypeOfSettlementService kzTypeOfSettlementService;
 
     @Override
     public List<KZCity> getAllItems() {
@@ -32,7 +38,7 @@ public class DefaultKZCityService extends EnumService<KZCity> implements KZCityS
 
     @Override
     public List<SelectItem> regionalItemsByAreaSI(KZArea area) {
-	return localizedSI(regionalItemsByArea(area));
+	return displayNameSI(regionalItemsByArea(area));
     }
 
     @Override
@@ -54,7 +60,7 @@ public class DefaultKZCityService extends EnumService<KZCity> implements KZCityS
 
     @Override
     public List<SelectItem> selectableItemsByAreaSI(KZArea area) {
-	return localizedSI(selectableItemsByArea(area));
+	return displayNameSI(selectableItemsByArea(area));
     }
 
     private boolean isRegional(KZCity city) {
@@ -78,6 +84,28 @@ public class DefaultKZCityService extends EnumService<KZCity> implements KZCityS
     @Override
     protected String getMessageBundleVar() {
 	return KZCity.BUNDLE_VAR;
+    }
+
+    @Override
+    public String displayName(KZCity value) {
+	return generateDisplayName(kzTypeOfSettlementService.enumNameLocalizedShort(value.getTypeOfSettlement()),
+		enumNameLocalized(value));
+    }
+
+    @Override
+    public String displayName(KZCity value, Locale locale) {
+	return generateDisplayName(kzTypeOfSettlementService.enumNameLocalizedShort(value.getTypeOfSettlement(), locale),
+		enumNameLocalized(value, locale));
+    }
+
+    private String generateDisplayName(String typeOfSettlement, String city) {
+	StringBuffer sb = new StringBuffer();
+	if (typeOfSettlement != null) {
+	    sb.append(typeOfSettlement);
+	    sb.append(" ");
+	}
+	sb.append(city);
+	return sb.toString();
     }
 
 }

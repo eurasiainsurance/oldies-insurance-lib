@@ -10,7 +10,7 @@ import com.lapsa.insurance.elements.services.InsuredAgeClassService;
 
 @Named("insuredAgeClassService")
 @ApplicationScoped
-public class DefaultInsuredAgeClassService extends EnumService<InsuredAgeClass> implements InsuredAgeClassService {
+public class DefaultInsuredAgeClassService extends GenericEnumService<InsuredAgeClass> implements InsuredAgeClassService {
 
     @Override
     public List<InsuredAgeClass> getAllItems() {

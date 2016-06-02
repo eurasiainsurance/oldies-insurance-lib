@@ -10,7 +10,7 @@ import com.lapsa.insurance.elements.services.InsuranceClassTypeService;
 
 @Named("insuranceClassTypeService")
 @ApplicationScoped
-public class DefaultInsuranceClassTypeService extends EnumService<InsuranceClassType>
+public class DefaultInsuranceClassTypeService extends GenericEnumService<InsuranceClassType>
 	implements InsuranceClassTypeService {
 
     @Override

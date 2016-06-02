@@ -10,7 +10,7 @@ import com.lapsa.insurance.elements.services.WhoIsInsurantService;
 
 @Named("whoIsInsurantService")
 @ApplicationScoped
-public class DefaultWhoIsInsurantService extends EnumService<WhoIsInsurant> implements WhoIsInsurantService {
+public class DefaultWhoIsInsurantService extends GenericEnumService<WhoIsInsurant> implements WhoIsInsurantService {
 
     public List<WhoIsInsurant> getAllItems() {
 	return CollectionUtils.toList(WhoIsInsurant.values());

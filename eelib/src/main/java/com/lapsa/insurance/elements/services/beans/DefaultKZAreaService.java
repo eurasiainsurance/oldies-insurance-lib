@@ -10,7 +10,7 @@ import com.lapsa.kz.country.KZArea;
 
 @Named("kzAreaService")
 @ApplicationScoped
-public class DefaultKZAreaService extends EnumService<KZArea> implements KZAreaService {
+public class DefaultKZAreaService extends GenericEnumService<KZArea> implements KZAreaService {
 
     public List<KZArea> getAllItems() {
 	return CollectionUtils.toList(KZArea.values());

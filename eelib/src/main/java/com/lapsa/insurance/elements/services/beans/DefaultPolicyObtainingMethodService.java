@@ -10,7 +10,7 @@ import com.lapsa.insurance.elements.services.PolicyObtainingMethodService;
 
 @Named("policyObtainingMethodService")
 @ApplicationScoped
-public class DefaultPolicyObtainingMethodService extends EnumService<PolicyObtainingMethod>
+public class DefaultPolicyObtainingMethodService extends GenericEnumService<PolicyObtainingMethod>
 	implements PolicyObtainingMethodService {
 
     public List<PolicyObtainingMethod> getAllItems() {

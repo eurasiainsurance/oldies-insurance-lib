@@ -10,7 +10,7 @@ import com.lapsa.insurance.elements.services.InsuredExpirienceClassService;
 
 @Named("insuredExpirienceClassService")
 @ApplicationScoped
-public class DefaultInsuredExpirienceClassService extends EnumService<InsuredExpirienceClass> implements InsuredExpirienceClassService {
+public class DefaultInsuredExpirienceClassService extends GenericEnumService<InsuredExpirienceClass> implements InsuredExpirienceClassService {
 
     public List<InsuredExpirienceClass> getAllItems() {
 	return CollectionUtils.toList(InsuredExpirienceClass.values());

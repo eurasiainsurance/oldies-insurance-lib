@@ -10,7 +10,7 @@ import com.lapsa.insurance.elements.services.VehicleAgeClassService;
 
 @Named("vehicleAgeClassService")
 @ApplicationScoped
-public class DefaultVehicleAgeClassService extends EnumService<VehicleAgeClass> implements VehicleAgeClassService {
+public class DefaultVehicleAgeClassService extends GenericEnumService<VehicleAgeClass> implements VehicleAgeClassService {
 
     public List<VehicleAgeClass> getAllItems() {
 	return CollectionUtils.toList(VehicleAgeClass.values());

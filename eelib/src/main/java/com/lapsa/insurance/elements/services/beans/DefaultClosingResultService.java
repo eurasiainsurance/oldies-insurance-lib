@@ -10,7 +10,7 @@ import com.lapsa.insurance.elements.services.ClosingResultService;
 
 @Named("closingResultService")
 @ApplicationScoped
-public class DefaultClosingResultService extends EnumService<ClosingResult> implements ClosingResultService {
+public class DefaultClosingResultService extends GenericEnumService<ClosingResult> implements ClosingResultService {
 
     @Override
     public List<ClosingResult> getAllItems() {

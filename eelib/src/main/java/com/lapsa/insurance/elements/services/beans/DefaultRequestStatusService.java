@@ -10,7 +10,7 @@ import com.lapsa.insurance.elements.services.RequestStatusService;
 
 @Named("requestStatusService")
 @ApplicationScoped
-public class DefaultRequestStatusService extends EnumService<RequestStatus> implements RequestStatusService {
+public class DefaultRequestStatusService extends GenericEnumService<RequestStatus> implements RequestStatusService {
 
     @Override
     public List<RequestStatus> getAllItems() {

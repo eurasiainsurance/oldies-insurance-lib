@@ -10,7 +10,7 @@ import com.lapsa.insurance.elements.services.IdentityCardTypeService;
 
 @Named("identityCardTypeService")
 @ApplicationScoped
-public class DefaultIdentityCardTypeService extends EnumService<IdentityCardType> implements IdentityCardTypeService {
+public class DefaultIdentityCardTypeService extends GenericEnumService<IdentityCardType> implements IdentityCardTypeService {
 
     public List<IdentityCardType> getAllItems() {
 	return CollectionUtils.toList(IdentityCardType.values());

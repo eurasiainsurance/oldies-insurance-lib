@@ -6,27 +6,17 @@ import java.util.Locale;
 import javax.faces.model.SelectItem;
 
 public interface ItemService<T> {
-    List<T> getAllItems();
 
-    List<T> getSelectableItems();
+    String displayName(T value);
 
-    List<SelectItem> getAllItemsSI();
+    String displayName(T value, Locale locale);
 
-    List<SelectItem> getAllItemsShortSI();
+    String displayNameShort(T value);
 
-    List<SelectItem> getSelectableItemsSI();
+    String displayNameShort(T value, Locale locale);
 
-    List<SelectItem> getSelectableItemsShortSI();
+    List<SelectItem> displayNameShortSI(List<T> list);
 
-    List<SelectItem> localizedSI(List<T> values);
+    List<SelectItem> displayNameSI(List<T> list);
 
-    List<SelectItem> localizedShortSI(List<T> values);
-
-    String localized(T value);
-
-    String localized(T value, Locale locale);
-
-    String localizedShort(T value);
-
-    String localizedShort(T value, Locale locale);
 }

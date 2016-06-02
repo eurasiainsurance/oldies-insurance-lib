@@ -15,7 +15,7 @@ import com.lapsa.localization.LocalizationLanguage;
 
 @Named("localizationLanguageService")
 @ApplicationScoped
-public class DefaultLocalizationLanguageService extends EnumService<LocalizationLanguage>
+public class DefaultLocalizationLanguageService extends GenericEnumService<LocalizationLanguage>
 	implements LocalizationLanguageService {
 
     @Override

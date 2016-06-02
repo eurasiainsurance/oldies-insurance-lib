@@ -8,7 +8,6 @@ import javax.inject.Named;
 
 import com.lapsa.insurance.domain.CompanyPointOfSale;
 import com.lapsa.insurance.domain.services.CompanyPointOfSaleService;
-import com.lapsa.insurance.elements.services.KZCityService;
 import com.lapsa.insurance.persistence.dao.CompanyPointOfSaleDAO;
 import com.lapsa.kz.country.KZCity;
 
@@ -18,9 +17,6 @@ public class DefaultCompanyPointOfSaleService implements CompanyPointOfSaleServi
 
     @Inject
     private CompanyPointOfSaleDAO companyPointOfSaleDAO;
-
-    @Inject
-    private KZCityService kzCityService;
 
     @Override
     public List<CompanyPointOfSale> pointOfSalesForPickup(KZCity city) {
@@ -50,10 +46,7 @@ public class DefaultCompanyPointOfSaleService implements CompanyPointOfSaleServi
 
     @Override
     public String localized(CompanyPointOfSale pointOfSale) {
-	StringBuffer sb = new StringBuffer(kzCityService.localized(pointOfSale.getCity()));
-	sb.append(", ");
-	sb.append(pointOfSale.getAddress());
-	return sb.toString();
+	return pointOfSale.getAddress();
     }
 
 }

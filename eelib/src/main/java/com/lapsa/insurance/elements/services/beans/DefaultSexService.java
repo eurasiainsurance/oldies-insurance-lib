@@ -22,7 +22,7 @@ public class DefaultSexService extends EnumService<Sex> implements SexService {
     }
 
     @Override
-    protected String getMessageBundleName() {
+    protected String getMessageBundleVar() {
 	return Sex.BUNDLE_VAR;
     }
 }

@@ -2,6 +2,7 @@ package com.lapsa.insurance.elements.services.beans;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
@@ -14,7 +15,7 @@ public abstract class BaseService<T> implements ItemService<T> {
 
     protected abstract String getMessageBundleBase();
 
-    protected abstract String getMessageBundleName();
+    protected abstract String getMessageBundleVar();
 
     @Override
     public List<SelectItem> getAllItemsSI() {
@@ -41,11 +42,20 @@ public abstract class BaseService<T> implements ItemService<T> {
 	return localizedShortSI(getSelectableItems());
     }
 
-    @Override
     public String localizedKey(String key) {
 	FacesContext facesContext = FacesContext.getCurrentInstance();
-	String bundleName = getMessageBundleName();
-	ResourceBundle bundle = facesContext.getApplication().getResourceBundle(facesContext, bundleName);
+	String bundleVar = getMessageBundleVar();
+	ResourceBundle bundle = facesContext.getApplication().getResourceBundle(facesContext, bundleVar);
+	return localizedKey(key, bundle);
+    }
+
+    public String localizedKey(String key, Locale locale) {
+	String bundleBase = getMessageBundleBase();
+	ResourceBundle bundle = ResourceBundle.getBundle(bundleBase, locale);
+	return localizedKey(key, bundle);
+    }
+
+    private String localizedKey(String key, ResourceBundle bundle) {
 	if (key == null)
 	    return null;
 	try {

@@ -22,7 +22,7 @@ public class DefaultVehicleAgeClassService extends EnumService<VehicleAgeClass> 
     }
 
     @Override
-    protected String getMessageBundleName() {
+    protected String getMessageBundleVar() {
 	return VehicleAgeClass.BUNDLE_VAR;
     }
 }

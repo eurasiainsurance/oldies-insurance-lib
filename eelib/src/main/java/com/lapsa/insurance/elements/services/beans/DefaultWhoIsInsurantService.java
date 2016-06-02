@@ -22,7 +22,7 @@ public class DefaultWhoIsInsurantService extends EnumService<WhoIsInsurant> impl
     }
 
     @Override
-    protected String getMessageBundleName() {
+    protected String getMessageBundleVar() {
 	return WhoIsInsurant.BUNDLE_VAR;
     }
 }

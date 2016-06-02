@@ -22,7 +22,7 @@ public class DefaultPhoneTypeService extends EnumService<PhoneType> implements P
     }
 
     @Override
-    protected String getMessageBundleName() {
+    protected String getMessageBundleVar() {
 	return PhoneType.BUNDLE_VAR;
     }
 }

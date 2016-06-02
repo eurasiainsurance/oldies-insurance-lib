@@ -24,7 +24,7 @@ public class DefaultInsuranceClassTypeService extends EnumService<InsuranceClass
     }
 
     @Override
-    protected String getMessageBundleName() {
+    protected String getMessageBundleVar() {
 	return InsuranceClassType.BUNDLE_VAR;
     }
 }

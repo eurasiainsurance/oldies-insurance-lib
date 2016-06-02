@@ -33,7 +33,7 @@ public class DefaultCountryService extends EnumService<Country> implements Count
     }
 
     @Override
-    protected String getMessageBundleName() {
+    protected String getMessageBundleVar() {
 	return Country.BUNDLE_VAR;
     }
 

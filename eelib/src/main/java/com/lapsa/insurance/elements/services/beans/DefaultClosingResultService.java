@@ -23,7 +23,7 @@ public class DefaultClosingResultService extends EnumService<ClosingResult> impl
     }
 
     @Override
-    protected String getMessageBundleName() {
+    protected String getMessageBundleVar() {
 	return ClosingResult.BUNDLE_VAR;
     }
 }

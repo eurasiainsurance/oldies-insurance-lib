@@ -22,7 +22,7 @@ public class DefaultIdentityCardTypeService extends EnumService<IdentityCardType
     }
 
     @Override
-    protected String getMessageBundleName() {
+    protected String getMessageBundleVar() {
 	return IdentityCardType.BUNDLE_VAR;
     }
 }

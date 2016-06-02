@@ -34,7 +34,7 @@ public class DefaultVehicleClassService extends EnumService<VehicleClass> implem
     }
 
     @Override
-    protected String getMessageBundleName() {
+    protected String getMessageBundleVar() {
 	return VehicleClass.BUNDLE_VAR;
     }
 }

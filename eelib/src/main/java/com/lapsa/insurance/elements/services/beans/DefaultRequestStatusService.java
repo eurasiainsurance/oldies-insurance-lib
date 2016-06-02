@@ -23,7 +23,7 @@ public class DefaultRequestStatusService extends EnumService<RequestStatus> impl
     }
 
     @Override
-    protected String getMessageBundleName() {
+    protected String getMessageBundleVar() {
 	return RequestStatus.BUNDLE_VAR;
     }
 }

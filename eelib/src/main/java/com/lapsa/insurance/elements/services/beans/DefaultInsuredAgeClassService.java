@@ -23,7 +23,7 @@ public class DefaultInsuredAgeClassService extends EnumService<InsuredAgeClass> 
     }
 
     @Override
-    protected String getMessageBundleName() {
+    protected String getMessageBundleVar() {
 	return InsuredAgeClass.BUNDLE_VAR;
     }
 }

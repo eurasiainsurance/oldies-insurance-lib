@@ -1,6 +1,7 @@
 package com.lapsa.insurance.elements.services;
 
 import java.util.List;
+import java.util.Locale;
 
 import javax.faces.model.SelectItem;
 
@@ -23,7 +24,9 @@ public interface ItemService<T> {
 
     String localized(T value);
 
+    String localized(T value, Locale locale);
+
     String localizedShort(T value);
 
-    String localizedKey(String key);
+    String localizedShort(T value, Locale locale);
 }

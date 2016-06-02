@@ -22,7 +22,7 @@ public class DefaultInsuredExpirienceClassService extends EnumService<InsuredExp
     }
 
     @Override
-    protected String getMessageBundleName() {
+    protected String getMessageBundleVar() {
 	return InsuredExpirienceClass.BUNDLE_VAR;
     }
 }

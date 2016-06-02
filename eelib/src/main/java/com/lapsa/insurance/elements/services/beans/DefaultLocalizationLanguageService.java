@@ -43,7 +43,7 @@ public class DefaultLocalizationLanguageService extends EnumService<Localization
 	}
 
 	@Override
-	protected String getMessageBundleName() {
+	protected String getMessageBundleVar() {
 		return LocalizationLanguage.BUNDLE_VAR;
 	}
 }

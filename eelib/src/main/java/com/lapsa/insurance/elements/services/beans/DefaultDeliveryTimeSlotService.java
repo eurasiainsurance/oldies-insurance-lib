@@ -22,7 +22,7 @@ public class DefaultDeliveryTimeSlotService extends EnumService<DeliveryTimeSlot
     }
 
     @Override
-    protected String getMessageBundleName() {
+    protected String getMessageBundleVar() {
 	return DeliveryTimeSlot.BUNDLE_VAR;
     }
 }

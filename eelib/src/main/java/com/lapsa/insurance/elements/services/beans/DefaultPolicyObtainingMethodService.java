@@ -23,7 +23,7 @@ public class DefaultPolicyObtainingMethodService extends EnumService<PolicyObtai
     }
 
     @Override
-    protected String getMessageBundleName() {
+    protected String getMessageBundleVar() {
 	return PolicyObtainingMethod.BUNDLE_VAR;
     }
 }

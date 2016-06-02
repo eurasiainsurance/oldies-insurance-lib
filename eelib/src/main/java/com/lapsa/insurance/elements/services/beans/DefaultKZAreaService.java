@@ -22,7 +22,7 @@ public class DefaultKZAreaService extends EnumService<KZArea> implements KZAreaS
     }
 
     @Override
-    protected String getMessageBundleName() {
+    protected String getMessageBundleVar() {
 	return KZArea.BUNDLE_VAR;
     }
 }

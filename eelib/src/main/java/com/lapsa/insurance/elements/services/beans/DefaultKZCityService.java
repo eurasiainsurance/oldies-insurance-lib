@@ -76,7 +76,7 @@ public class DefaultKZCityService extends EnumService<KZCity> implements KZCityS
     }
 
     @Override
-    protected String getMessageBundleName() {
+    protected String getMessageBundleVar() {
 	return KZCity.BUNDLE_VAR;
     }
 

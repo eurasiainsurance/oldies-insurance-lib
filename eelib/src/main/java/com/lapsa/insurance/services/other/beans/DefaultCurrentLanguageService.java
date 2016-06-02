@@ -1,4 +1,4 @@
-package com.lapsa.insurance.services.elements.beans;
+package com.lapsa.insurance.services.other.beans;
 
 import java.io.Serializable;
 import java.util.Locale;
@@ -8,7 +8,7 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
-import com.lapsa.insurance.services.elements.CurrentLanguageService;
+import com.lapsa.insurance.services.other.CurrentLanguageService;
 import com.lapsa.localization.LocalizationLanguage;
 
 @Named("currentLanguageService")

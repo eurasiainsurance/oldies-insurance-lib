@@ -1,5 +1,6 @@
 package com.lapsa.insurance.services.elements.beans;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -13,7 +14,7 @@ import com.lapsa.phone.PhoneType;
 public class DefaultPhoneTypeService extends GenericEnumService<PhoneType> implements PhoneTypeService {
 
     public List<PhoneType> getAllItems() {
-	return CollectionUtils.toList(PhoneType.values());
+	return Arrays.asList(PhoneType.values());
     }
 
     @Override

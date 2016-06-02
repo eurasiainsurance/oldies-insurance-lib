@@ -1,5 +1,6 @@
 package com.lapsa.insurance.services.elements.beans;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -13,7 +14,7 @@ import com.lapsa.insurance.services.elements.VehicleAgeClassService;
 public class DefaultVehicleAgeClassService extends GenericEnumService<VehicleAgeClass> implements VehicleAgeClassService {
 
     public List<VehicleAgeClass> getAllItems() {
-	return CollectionUtils.toList(VehicleAgeClass.values());
+	return Arrays.asList(VehicleAgeClass.values());
     }
 
     @Override

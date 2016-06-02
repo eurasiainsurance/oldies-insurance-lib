@@ -1,4 +1,4 @@
-package com.lapsa.insurance.services.elements.beans;
+package com.lapsa.insurance.services.other.beans;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +12,7 @@ import com.lapsa.insurance.elements.InsuredExpirienceClass;
 import com.lapsa.insurance.elements.PolicyTermClass;
 import com.lapsa.insurance.elements.VehicleAgeClass;
 import com.lapsa.insurance.elements.VehicleClass;
-import com.lapsa.insurance.services.elements.PremiumCostCalculatorRatesService;
+import com.lapsa.insurance.services.other.PremiumCostCalculatorRatesService;
 import com.lapsa.kz.country.KZArea;
 import com.lapsa.kz.country.KZCity;
 import com.lapsa.kz.country.KZCityType;

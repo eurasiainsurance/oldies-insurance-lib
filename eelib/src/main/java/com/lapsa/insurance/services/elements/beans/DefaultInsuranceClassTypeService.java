@@ -1,5 +1,6 @@
 package com.lapsa.insurance.services.elements.beans;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -15,7 +16,7 @@ public class DefaultInsuranceClassTypeService extends GenericEnumService<Insuran
 
     @Override
     public List<InsuranceClassType> getAllItems() {
-	return CollectionUtils.toList(InsuranceClassType.values());
+	return Arrays.asList(InsuranceClassType.values());
     }
 
     @Override

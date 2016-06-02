@@ -1,5 +1,6 @@
 package com.lapsa.insurance.services.elements.beans;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -13,7 +14,7 @@ import com.lapsa.kz.country.KZArea;
 public class DefaultKZAreaService extends GenericEnumService<KZArea> implements KZAreaService {
 
     public List<KZArea> getAllItems() {
-	return CollectionUtils.toList(KZArea.values());
+	return Arrays.asList(KZArea.values());
     }
 
     @Override

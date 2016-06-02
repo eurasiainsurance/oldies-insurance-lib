@@ -1,5 +1,6 @@
 package com.lapsa.insurance.services.elements.beans;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -13,7 +14,7 @@ import com.lapsa.insurance.services.elements.SexService;
 public class DefaultSexService extends GenericEnumService<Sex> implements SexService {
 
     public List<Sex> getAllItems() {
-	return CollectionUtils.toList(Sex.values());
+	return Arrays.asList(Sex.values());
     }
 
     @Override

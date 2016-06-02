@@ -1,4 +1,4 @@
-package com.lapsa.insurance.services.elements;
+package com.lapsa.insurance.services.other;
 
 import java.util.Locale;
 

@@ -2,6 +2,7 @@
 package com.lapsa.insurance.services.elements.beans;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
@@ -20,7 +21,7 @@ public class DefaultLocalizationLanguageService extends GenericEnumService<Local
 
     @Override
     public List<LocalizationLanguage> getAllItems() {
-	return CollectionUtils.toList(LocalizationLanguage.values());
+	return Arrays.asList(LocalizationLanguage.values());
     }
 
     @Override

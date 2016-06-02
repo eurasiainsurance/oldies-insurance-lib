@@ -1,5 +1,6 @@
 package com.lapsa.insurance.services.elements.beans;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -13,7 +14,7 @@ import com.lapsa.insurance.services.elements.InsuredExpirienceClassService;
 public class DefaultInsuredExpirienceClassService extends GenericEnumService<InsuredExpirienceClass> implements InsuredExpirienceClassService {
 
     public List<InsuredExpirienceClass> getAllItems() {
-	return CollectionUtils.toList(InsuredExpirienceClass.values());
+	return Arrays.asList(InsuredExpirienceClass.values());
     }
 
     @Override

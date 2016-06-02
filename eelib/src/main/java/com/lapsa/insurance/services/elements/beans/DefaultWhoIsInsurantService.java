@@ -1,5 +1,6 @@
 package com.lapsa.insurance.services.elements.beans;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -13,7 +14,7 @@ import com.lapsa.insurance.services.elements.WhoIsInsurantService;
 public class DefaultWhoIsInsurantService extends GenericEnumService<WhoIsInsurant> implements WhoIsInsurantService {
 
     public List<WhoIsInsurant> getAllItems() {
-	return CollectionUtils.toList(WhoIsInsurant.values());
+	return Arrays.asList(WhoIsInsurant.values());
     }
 
     @Override

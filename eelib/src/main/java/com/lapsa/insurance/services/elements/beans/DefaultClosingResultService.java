@@ -1,5 +1,6 @@
 package com.lapsa.insurance.services.elements.beans;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -14,7 +15,7 @@ public class DefaultClosingResultService extends GenericEnumService<ClosingResul
 
     @Override
     public List<ClosingResult> getAllItems() {
-	return CollectionUtils.toList(ClosingResult.values());
+	return Arrays.asList(ClosingResult.values());
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.lapsa.insurance.services.elements.beans;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -14,7 +15,7 @@ public class DefaultPolicyObtainingMethodService extends GenericEnumService<Poli
 	implements PolicyObtainingMethodService {
 
     public List<PolicyObtainingMethod> getAllItems() {
-	return CollectionUtils.toList(PolicyObtainingMethod.values());
+	return Arrays.asList(PolicyObtainingMethod.values());
     }
 
     @Override

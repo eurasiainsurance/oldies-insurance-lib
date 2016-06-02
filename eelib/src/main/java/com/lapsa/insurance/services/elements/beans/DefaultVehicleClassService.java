@@ -1,6 +1,7 @@
 package com.lapsa.insurance.services.elements.beans;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -15,7 +16,7 @@ public class DefaultVehicleClassService extends GenericEnumService<VehicleClass>
 
     @Override
     public List<VehicleClass> getAllItems() {
-	return CollectionUtils.toList(VehicleClass.values());
+	return Arrays.asList(VehicleClass.values());
     }
 
     @Override

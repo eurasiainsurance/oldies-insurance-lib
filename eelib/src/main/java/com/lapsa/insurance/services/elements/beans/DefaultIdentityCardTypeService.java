@@ -1,5 +1,6 @@
 package com.lapsa.insurance.services.elements.beans;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -10,10 +11,11 @@ import com.lapsa.insurance.services.elements.IdentityCardTypeService;
 
 @Named("identityCardTypeService")
 @ApplicationScoped
-public class DefaultIdentityCardTypeService extends GenericEnumService<IdentityCardType> implements IdentityCardTypeService {
+public class DefaultIdentityCardTypeService extends GenericEnumService<IdentityCardType>
+	implements IdentityCardTypeService {
 
     public List<IdentityCardType> getAllItems() {
-	return CollectionUtils.toList(IdentityCardType.values());
+	return Arrays.asList(IdentityCardType.values());
     }
 
     @Override

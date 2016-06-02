@@ -1,5 +1,6 @@
 package com.lapsa.insurance.services.elements.beans;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -14,7 +15,7 @@ public class DefaultRequestStatusService extends GenericEnumService<RequestStatu
 
     @Override
     public List<RequestStatus> getAllItems() {
-	return CollectionUtils.toList(RequestStatus.values());
+	return Arrays.asList(RequestStatus.values());
     }
 
     @Override

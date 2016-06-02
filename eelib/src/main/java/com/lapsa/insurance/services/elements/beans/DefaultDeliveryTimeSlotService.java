@@ -1,5 +1,6 @@
 package com.lapsa.insurance.services.elements.beans;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -13,7 +14,7 @@ import com.lapsa.insurance.services.elements.DeliveryTimeSlotService;
 public class DefaultDeliveryTimeSlotService extends GenericEnumService<DeliveryTimeSlot> implements DeliveryTimeSlotService {
 
     public List<DeliveryTimeSlot> getAllItems() {
-	return CollectionUtils.toList(DeliveryTimeSlot.values());
+	return Arrays.asList(DeliveryTimeSlot.values());
     }
 
     @Override

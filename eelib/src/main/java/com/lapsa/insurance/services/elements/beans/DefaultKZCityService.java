@@ -2,6 +2,7 @@
 package com.lapsa.insurance.services.elements.beans;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
@@ -24,7 +25,7 @@ public class DefaultKZCityService extends GenericEnumService<KZCity> implements 
 
     @Override
     public List<KZCity> getAllItems() {
-	return CollectionUtils.toList(KZCity.values());
+	return Arrays.asList(KZCity.values());
     }
 
     @Override

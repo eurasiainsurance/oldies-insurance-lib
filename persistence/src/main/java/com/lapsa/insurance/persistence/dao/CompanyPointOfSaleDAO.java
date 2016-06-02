@@ -19,4 +19,6 @@ public interface CompanyPointOfSaleDAO extends DAO<CompanyPointOfSale, Integer> 
 
     List<KZCity> findCitiesWithDeliveryAvailable();
 
+    List<CompanyPointOfSale> findAllOwnOffices();
+
 }

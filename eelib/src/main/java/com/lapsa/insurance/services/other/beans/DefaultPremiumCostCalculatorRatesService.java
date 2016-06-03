@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import com.lapsa.insurance.elements.InsuranceClassType;
@@ -18,6 +19,7 @@ import com.lapsa.kz.country.KZCity;
 import com.lapsa.kz.country.KZCityType;
 
 @Singleton
+@Named("premiumCostCalculatorRatesService")
 public class DefaultPremiumCostCalculatorRatesService implements PremiumCostCalculatorRatesService {
 
     private final double MRP = 2121;

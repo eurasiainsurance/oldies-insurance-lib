@@ -51,7 +51,7 @@ com.lapsa.insurance.elements.InsuredExpirienceClass.LESS2.short = 2 жылдан
 com.lapsa.insurance.elements.MaritalStatus.MARRIED = үйленген / тұрмыста
 com.lapsa.insurance.elements.MaritalStatus.SINGLE = үйленбеген / тұрмыс құрмаған
 
-com.lapsa.insurance.elements.PolicyObtainingMethod.EXPRESS = курьер арқылы жеткізу
+com.lapsa.insurance.elements.PolicyObtainingMethod.DELIVERY = курьер арқылы жеткізу
 com.lapsa.insurance.elements.PolicyObtainingMethod.PICKUP = забрать дербес сақтандыру компания офисінде
 
 com.lapsa.insurance.elements.PolicyTermClass.YEAR = 1 жыл

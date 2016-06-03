@@ -21,6 +21,8 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
     @NotEmptyString
     private String address;
 
+    private GeoPoint geoPoint;
+
     private boolean available;
 
     private boolean companyOwnOffice;
@@ -30,6 +32,8 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
     private boolean deliveryServicesAvailable;
 
     private List<CompanyContactPhone> phones;
+
+    private List<CompanyContactEmail> emailAddresses;
 
     public String getName() {
 	return name;
@@ -53,6 +57,22 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
 
     public void setAddress(String address) {
 	this.address = address;
+    }
+
+    public GeoPoint getGeoPoint() {
+	return geoPoint;
+    }
+
+    public void setGeoPoint(GeoPoint geoPoint) {
+	this.geoPoint = geoPoint;
+    }
+
+    public List<CompanyContactEmail> getEmailAddresses() {
+	return emailAddresses;
+    }
+
+    public void setEmailAddresses(List<CompanyContactEmail> emailAddresses) {
+	this.emailAddresses = emailAddresses;
     }
 
     public boolean isAvailable() {

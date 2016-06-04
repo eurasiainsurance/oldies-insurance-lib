@@ -116,14 +116,6 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<developers>
-		<developer>
-			<id>vadim.o.isaev@gmail.com</id>
-			<name>Vadim Isaev</name>
-			<email>vadim.o.isaev@gmail.com</email>
-		</developer>
-	</developers>
-
 	<scm>
 		<connection>scm:git:https://gitrepo.theeurasia.kz/vadim.isaev/insurance-lib.git</connection>
 		<developerConnection>scm:git:https://gitrepo.theeurasia.kz/vadim.isaev/insurance-lib.git</developerConnection>

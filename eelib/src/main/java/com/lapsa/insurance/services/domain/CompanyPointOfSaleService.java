@@ -12,9 +12,13 @@ public interface CompanyPointOfSaleService extends DomainService<CompanyPointOfS
 
     List<SelectItem> pointOfSalesForPickupSI(KZCity city);
 
+    List<SelectItem> pointOfSalesForPickupShortSI(KZCity city);
+
     List<CompanyPointOfSale> pointOfSalesForDelivery(KZCity city);
 
     List<SelectItem> pointOfSalesForDeliverySI(KZCity city);
+
+    List<SelectItem> pointOfSalesForDeliveryShortSI(KZCity city);
 
     // TODO подумать куда это вынести
     List<KZCity> getCitiesForPickup();

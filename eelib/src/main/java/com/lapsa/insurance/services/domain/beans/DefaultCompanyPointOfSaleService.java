@@ -11,7 +11,6 @@ import javax.inject.Named;
 import com.lapsa.insurance.domain.CompanyPointOfSale;
 import com.lapsa.insurance.persistence.dao.CompanyPointOfSaleDAO;
 import com.lapsa.insurance.services.domain.CompanyPointOfSaleService;
-import com.lapsa.insurance.services.elements.KZCityService;
 import com.lapsa.kz.country.KZCity;
 
 @Named("companyPointOfSaleService")
@@ -21,9 +20,6 @@ public class DefaultCompanyPointOfSaleService extends GenericDomainService<Compa
 
     @Inject
     private CompanyPointOfSaleDAO companyPointOfSaleDAO;
-
-    @Inject
-    private KZCityService kzCityService;
 
     @Override
     public List<CompanyPointOfSale> pointOfSalesForPickup(KZCity city) {
@@ -53,12 +49,22 @@ public class DefaultCompanyPointOfSaleService extends GenericDomainService<Compa
 
     @Override
     public String displayName(CompanyPointOfSale pointOfSale) {
-	return generateDisplayName(kzCityService.displayName(pointOfSale.getCity()), pointOfSale.getAddress());
+	return pointOfSale.getName();
     }
 
     @Override
     public String displayName(CompanyPointOfSale pointOfSale, Locale locale) {
-	return generateDisplayName(kzCityService.displayName(pointOfSale.getCity(), locale), pointOfSale.getAddress());
+	return displayName(pointOfSale);
+    }
+
+    @Override
+    public String displayNameShort(CompanyPointOfSale pointOfSale) {
+	return pointOfSale.getName();
+    }
+
+    @Override
+    public String displayNameShort(CompanyPointOfSale pointOfSale, Locale locale) {
+	return pointOfSale.getName();
     }
 
     @Override
@@ -67,15 +73,17 @@ public class DefaultCompanyPointOfSaleService extends GenericDomainService<Compa
     }
 
     @Override
+    public List<SelectItem> pointOfSalesForPickupShortSI(KZCity city) {
+	return displayNameShortSI(pointOfSalesForPickup(city));
+    }
+
+    @Override
     public List<SelectItem> pointOfSalesForDeliverySI(KZCity city) {
 	return displayNameSI(pointOfSalesForDelivery(city));
     }
 
-    private String generateDisplayName(String city, String address) {
-	StringBuffer sb = new StringBuffer();
-	sb.append(city);
-	sb.append(", ");
-	sb.append(address);
-	return sb.toString();
+    @Override
+    public List<SelectItem> pointOfSalesForDeliveryShortSI(KZCity city) {
+	return displayNameShortSI(pointOfSalesForDelivery(city));
     }
 }

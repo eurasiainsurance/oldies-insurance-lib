@@ -2,10 +2,9 @@ package com.lapsa.insurance.domain;
 
 import java.util.List;
 
+import com.lapsa.image.ImageContent;
 import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
-import com.lapsa.kz.country.KZCity;
-import com.lapsa.kz.country.validators.ValidKZCity;
 
 public class CompanyPointOfSale extends BaseEntity<Integer> {
 
@@ -13,13 +12,7 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
     @NotEmptyString
     private String name;
 
-    @NotNullValue
-    @ValidKZCity(invalidValues = KZCity.OTHER)
-    private KZCity city;
-
-    @NotNullValue
-    @NotEmptyString
-    private String address;
+    private PostAddress address;
 
     private GeoPoint geoPoint;
 
@@ -30,6 +23,8 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
     private boolean pickupAvailable;
 
     private boolean deliveryServicesAvailable;
+
+    private ImageContent photo;
 
     private List<CompanyContactPhone> phones;
 
@@ -43,19 +38,11 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
 	this.name = name;
     }
 
-    public KZCity getCity() {
-	return city;
-    }
-
-    public void setCity(KZCity city) {
-	this.city = city;
-    }
-
-    public String getAddress() {
+    public PostAddress getAddress() {
 	return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(PostAddress address) {
 	this.address = address;
     }
 
@@ -113,5 +100,13 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
 
     public void setDeliveryServicesAvailable(boolean deliveryServicesAvailable) {
 	this.deliveryServicesAvailable = deliveryServicesAvailable;
+    }
+
+    public ImageContent getPhoto() {
+	return photo;
+    }
+
+    public void setPhoto(ImageContent photo) {
+	this.photo = photo;
     }
 }

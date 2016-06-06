@@ -11,6 +11,7 @@ import javax.inject.Named;
 import com.lapsa.insurance.domain.CompanyPointOfSale;
 import com.lapsa.insurance.persistence.dao.CompanyPointOfSaleDAO;
 import com.lapsa.insurance.services.domain.CompanyPointOfSaleService;
+import com.lapsa.insurance.services.domain.PostAddressService;
 import com.lapsa.kz.country.KZCity;
 
 @Named("companyPointOfSaleService")
@@ -20,6 +21,9 @@ public class DefaultCompanyPointOfSaleService extends GenericDomainService<Compa
 
     @Inject
     private CompanyPointOfSaleDAO companyPointOfSaleDAO;
+
+    @Inject
+    private PostAddressService postAddressService;
 
     @Override
     public List<CompanyPointOfSale> pointOfSalesForPickup(KZCity city) {
@@ -49,7 +53,12 @@ public class DefaultCompanyPointOfSaleService extends GenericDomainService<Compa
 
     @Override
     public String displayName(CompanyPointOfSale pointOfSale) {
-	return pointOfSale.getName();
+	StringBuffer sb = new StringBuffer();
+	if (pointOfSale.getName() != null)
+	    sb.append(pointOfSale.getName() + ", ");
+	if (pointOfSale.getAddress() != null)
+	    sb.append(postAddressService.displayName(pointOfSale.getAddress()));
+	return sb.toString();
     }
 
     @Override

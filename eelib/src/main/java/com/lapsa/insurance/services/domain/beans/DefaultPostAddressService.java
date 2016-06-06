@@ -20,18 +20,24 @@ public class DefaultPostAddressService extends GenericDomainService<PostAddress>
 
     @Override
     public String displayName(PostAddress value) {
-	StringBuffer sb = new StringBuffer();
-	if (value.getPostIndex() != null)
-	    sb.append(value.getPostIndex() + ", ");
-	if (value.getCity() != null)
-	    sb.append(kzCityService.displayName(value.getCity()) + ", ");
-	if (value.getStreet() != null)
-	    sb.append(value.getStreet());
-	return sb.toString();
+	String city = kzCityService.displayName(value.getCity());
+	return generateDisplayName(value.getPostIndex(), city, value.getStreet());
     }
 
     @Override
     public String displayName(PostAddress value, Locale locale) {
-	return displayName(value);
+	String city = kzCityService.displayName(value.getCity(), locale);
+	return generateDisplayName(value.getPostIndex(), city, value.getStreet());
+    }
+
+    private String generateDisplayName(String postIndex, String city, String address) {
+	StringBuffer sb = new StringBuffer();
+	if (postIndex != null)
+	    sb.append(postIndex + ", ");
+	if (city != null)
+	    sb.append(city + ", ");
+	if (address != null)
+	    sb.append(address);
+	return sb.toString();
     }
 }

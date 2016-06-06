@@ -89,14 +89,17 @@ public class DefaultKZCityService extends GenericEnumService<KZCity> implements 
 
     @Override
     public String displayName(KZCity value) {
-	return generateDisplayName(kzTypeOfSettlementService.enumNameLocalizedShort(value.getTypeOfSettlement()),
-		enumNameLocalized(value));
+	String typeOfSettlementName = kzTypeOfSettlementService.enumNameLocalizedShort(value.getTypeOfSettlement());
+	String cityName = enumNameLocalized(value);
+	return generateDisplayName(typeOfSettlementName, cityName);
     }
 
     @Override
     public String displayName(KZCity value, Locale locale) {
-	return generateDisplayName(kzTypeOfSettlementService.enumNameLocalizedShort(value.getTypeOfSettlement(), locale),
-		enumNameLocalized(value, locale));
+	String typeOfSettlementName = kzTypeOfSettlementService.enumNameLocalizedShort(value.getTypeOfSettlement(),
+		locale);
+	String cityName = enumNameLocalized(value, locale);
+	return generateDisplayName(typeOfSettlementName, cityName);
     }
 
     private String generateDisplayName(String typeOfSettlement, String city) {

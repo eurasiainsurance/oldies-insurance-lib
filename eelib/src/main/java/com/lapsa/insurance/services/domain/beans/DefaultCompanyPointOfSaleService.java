@@ -53,17 +53,23 @@ public class DefaultCompanyPointOfSaleService extends GenericDomainService<Compa
 
     @Override
     public String displayName(CompanyPointOfSale pointOfSale) {
-	StringBuffer sb = new StringBuffer();
-	if (pointOfSale.getName() != null)
-	    sb.append(pointOfSale.getName() + ", ");
-	if (pointOfSale.getAddress() != null)
-	    sb.append(postAddressService.displayName(pointOfSale.getAddress()));
-	return sb.toString();
+	String address = postAddressService.displayName(pointOfSale.getAddress());
+	return generateDisplayName(pointOfSale.getName(), address);
     }
 
     @Override
     public String displayName(CompanyPointOfSale pointOfSale, Locale locale) {
-	return displayName(pointOfSale);
+	String address = postAddressService.displayName(pointOfSale.getAddress(), locale);
+	return generateDisplayName(pointOfSale.getName(), address);
+    }
+
+    private String generateDisplayName(String name, String address) {
+	StringBuffer sb = new StringBuffer();
+	if (name != null)
+	    sb.append(name + ", ");
+	if (address != null)
+	    sb.append(address);
+	return sb.toString();
     }
 
     @Override

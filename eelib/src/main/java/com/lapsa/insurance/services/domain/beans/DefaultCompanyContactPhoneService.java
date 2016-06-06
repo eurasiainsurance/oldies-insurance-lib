@@ -20,14 +20,14 @@ public class DefaultCompanyContactPhoneService extends GenericDomainService<Comp
 
     @Override
     public String displayName(CompanyContactPhone value) {
-	return generateDisplayName(phoneTypeService.displayNameShort(value.getPhoneType()),
-		value.getPhone().getFormatted());
+	String phoneType = phoneTypeService.displayNameShort(value.getPhoneType());
+	return generateDisplayName(phoneType, value.getPhone().getFormatted());
     }
 
     @Override
     public String displayName(CompanyContactPhone value, Locale locale) {
-	return generateDisplayName(phoneTypeService.displayNameShort(value.getPhoneType(), locale),
-		value.getPhone().getFormatted());
+	String phoneType = phoneTypeService.displayNameShort(value.getPhoneType(), locale);
+	return generateDisplayName(phoneType, value.getPhone().getFormatted());
     }
 
     private String generateDisplayName(String phoneType, String phone) {

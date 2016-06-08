@@ -3,6 +3,7 @@ package com.lapsa.insurance.services.domain.beans;
 import java.util.List;
 import java.util.Locale;
 
+import javax.ejb.EJB;
 import javax.enterprise.context.ApplicationScoped;
 import javax.faces.model.SelectItem;
 import javax.inject.Inject;
@@ -19,7 +20,7 @@ import com.lapsa.kz.country.KZCity;
 public class DefaultCompanyPointOfSaleService extends GenericDomainService<CompanyPointOfSale>
 	implements CompanyPointOfSaleService {
 
-    @Inject
+    @EJB
     private CompanyPointOfSaleDAO companyPointOfSaleDAO;
 
     @Inject
@@ -51,19 +52,7 @@ public class DefaultCompanyPointOfSaleService extends GenericDomainService<Compa
 	return companyPointOfSaleDAO.findCitiesWithDeliveryAvailable();
     }
 
-    @Override
-    public String displayName(CompanyPointOfSale pointOfSale) {
-	String address = postAddressService.displayName(pointOfSale.getAddress());
-	return generateDisplayName(pointOfSale.getName(), address);
-    }
-
-    @Override
-    public String displayName(CompanyPointOfSale pointOfSale, Locale locale) {
-	String address = postAddressService.displayName(pointOfSale.getAddress(), locale);
-	return generateDisplayName(pointOfSale.getName(), address);
-    }
-
-    private String generateDisplayName(String name, String address) {
+    private String generateDisplayNameFull(String name, String address) {
 	StringBuffer sb = new StringBuffer();
 	if (name != null)
 	    sb.append(name + ", ");
@@ -73,13 +62,25 @@ public class DefaultCompanyPointOfSaleService extends GenericDomainService<Compa
     }
 
     @Override
-    public String displayNameShort(CompanyPointOfSale pointOfSale) {
+    public String displayName(CompanyPointOfSale pointOfSale) {
 	return pointOfSale.getName();
     }
 
     @Override
-    public String displayNameShort(CompanyPointOfSale pointOfSale, Locale locale) {
+    public String displayName(CompanyPointOfSale pointOfSale, Locale locale) {
 	return pointOfSale.getName();
+    }
+
+    @Override
+    public String displayNameFull(CompanyPointOfSale pointOfSale) {
+	String address = postAddressService.displayName(pointOfSale.getAddress());
+	return generateDisplayNameFull(pointOfSale.getName(), address);
+    }
+
+    @Override
+    public String displayNameFull(CompanyPointOfSale pointOfSale, Locale locale) {
+	String address = postAddressService.displayName(pointOfSale.getAddress(), locale);
+	return generateDisplayNameFull(pointOfSale.getName(), address);
     }
 
     @Override

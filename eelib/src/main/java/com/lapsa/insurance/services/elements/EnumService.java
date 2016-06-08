@@ -28,4 +28,8 @@ public interface EnumService<T extends Enum<?>> extends ItemService<T> {
     String enumNameLocalizedShort(T value);
 
     String enumNameLocalizedShort(T value, Locale locale);
+
+    String enumNameLocalizedFull(T value);
+
+    String enumNameLocalizedFull(T value, Locale locale);
 }

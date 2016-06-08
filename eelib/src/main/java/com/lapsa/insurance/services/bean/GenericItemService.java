@@ -21,6 +21,16 @@ public abstract class GenericItemService<T> implements ItemService<T> {
     }
 
     @Override
+    public String displayNameFull(T value) {
+	return displayName(value);
+    }
+
+    @Override
+    public String displayNameFull(T value, Locale locale) {
+	return displayName(value, locale);
+    }
+
+    @Override
     public List<SelectItem> displayNameSI(List<T> list) {
 	List<SelectItem> result = new ArrayList<>();
 	for (T item : list)
@@ -33,6 +43,14 @@ public abstract class GenericItemService<T> implements ItemService<T> {
 	List<SelectItem> result = new ArrayList<>();
 	for (T item : list)
 	    result.add(new SelectItem(item, displayNameShort(item)));
+	return result;
+    }
+
+    @Override
+    public List<SelectItem> displayNameFullSI(List<T> list) {
+	List<SelectItem> result = new ArrayList<>();
+	for (T item : list)
+	    result.add(new SelectItem(item, displayNameFull(item)));
 	return result;
     }
 

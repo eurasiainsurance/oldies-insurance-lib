@@ -49,21 +49,33 @@ public abstract class GenericEnumService<T extends Enum<T>> extends GenericItemS
     }
 
     @Override
-    public String displayNameShort(T value) {
-	// default - enumNameShort
-	return enumNameLocalizedShort(value);
-    }
-
-    @Override
     public String displayName(T value, Locale locale) {
 	// default - enumName
 	return enumNameLocalized(value, locale);
     }
 
     @Override
+    public String displayNameShort(T value) {
+	// default - enumNameShort
+	return enumNameLocalizedShort(value);
+    }
+
+    @Override
     public String displayNameShort(T value, Locale locale) {
 	// default - enumNameShort
 	return enumNameLocalizedShort(value, locale);
+    }
+
+    @Override
+    public String displayNameFull(T value) {
+	// default - enumNameShort
+	return enumNameLocalizedFull(value);
+    }
+
+    @Override
+    public String displayNameFull(T value, Locale locale) {
+	// default - enumNameShort
+	return enumNameLocalizedFull(value, locale);
     }
 
     @Override
@@ -95,6 +107,27 @@ public abstract class GenericEnumService<T extends Enum<T>> extends GenericItemS
 	if (value == null)
 	    return null;
 	String ret = localizationByKey(String.format("%1$s.%2$s.short", value.getClass().getName(), value.name()),
+		locale);
+	if (ret != null)
+	    return ret;
+	return enumNameLocalized(value, locale);
+    }
+
+    @Override
+    public String enumNameLocalizedFull(T value) {
+	if (value == null)
+	    return null;
+	String ret = localizationByKey(String.format("%1$s.%2$s.full", value.getClass().getName(), value.name()));
+	if (ret != null)
+	    return ret;
+	return enumNameLocalized(value);
+    }
+
+    @Override
+    public String enumNameLocalizedFull(T value, Locale locale) {
+	if (value == null)
+	    return null;
+	String ret = localizationByKey(String.format("%1$s.%2$s.full", value.getClass().getName(), value.name()),
 		locale);
 	if (ret != null)
 	    return ret;

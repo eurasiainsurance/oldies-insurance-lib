@@ -39,7 +39,7 @@ public class DefaultKZCityService extends GenericEnumService<KZCity> implements 
 
     @Override
     public List<SelectItem> regionalItemsByAreaSI(KZArea area) {
-	return displayNameSI(regionalItemsByArea(area));
+	return displayNamesSI(regionalItemsByArea(area));
     }
 
     @Override
@@ -61,7 +61,7 @@ public class DefaultKZCityService extends GenericEnumService<KZCity> implements 
 
     @Override
     public List<SelectItem> selectableItemsByAreaSI(KZArea area) {
-	return displayNameSI(selectableItemsByArea(area));
+	return displayNamesSI(selectableItemsByArea(area));
     }
 
     private boolean isRegional(KZCity city) {

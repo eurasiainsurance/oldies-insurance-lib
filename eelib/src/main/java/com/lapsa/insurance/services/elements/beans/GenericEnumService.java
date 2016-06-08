@@ -19,12 +19,12 @@ public abstract class GenericEnumService<T extends Enum<T>> extends GenericItemS
 
     @Override
     public List<SelectItem> getAllItemsSI() {
-	return displayNameSI(getAllItems());
+	return displayNamesSI(getAllItems());
     }
 
     @Override
     public List<SelectItem> getAllItemsShortSI() {
-	return displayNameShortSI(getAllItems());
+	return displayNamesShortSI(getAllItems());
     }
 
     @Override
@@ -34,12 +34,12 @@ public abstract class GenericEnumService<T extends Enum<T>> extends GenericItemS
 
     @Override
     public List<SelectItem> getSelectableItemsSI() {
-	return displayNameSI(getSelectableItems());
+	return displayNamesSI(getSelectableItems());
     }
 
     @Override
     public List<SelectItem> getSelectableItemsShortSI() {
-	return displayNameShortSI(getSelectableItems());
+	return displayNamesShortSI(getSelectableItems());
     }
 
     @Override

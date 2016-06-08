@@ -85,21 +85,21 @@ public class DefaultCompanyPointOfSaleService extends GenericDomainService<Compa
 
     @Override
     public List<SelectItem> pointOfSalesForPickupSI(KZCity city) {
-	return displayNameSI(pointOfSalesForPickup(city));
+	return displayNamesSI(pointOfSalesForPickup(city));
     }
 
     @Override
     public List<SelectItem> pointOfSalesForPickupShortSI(KZCity city) {
-	return displayNameShortSI(pointOfSalesForPickup(city));
+	return displayNamesShortSI(pointOfSalesForPickup(city));
     }
 
     @Override
     public List<SelectItem> pointOfSalesForDeliverySI(KZCity city) {
-	return displayNameSI(pointOfSalesForDelivery(city));
+	return displayNamesSI(pointOfSalesForDelivery(city));
     }
 
     @Override
     public List<SelectItem> pointOfSalesForDeliveryShortSI(KZCity city) {
-	return displayNameShortSI(pointOfSalesForDelivery(city));
+	return displayNamesShortSI(pointOfSalesForDelivery(city));
     }
 }

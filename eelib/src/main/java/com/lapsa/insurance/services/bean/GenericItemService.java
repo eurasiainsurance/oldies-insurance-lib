@@ -31,7 +31,7 @@ public abstract class GenericItemService<T> implements ItemService<T> {
     }
 
     @Override
-    public List<SelectItem> displayNameSI(List<T> list) {
+    public List<SelectItem> displayNamesSI(List<T> list) {
 	List<SelectItem> result = new ArrayList<>();
 	for (T item : list)
 	    result.add(new SelectItem(item, displayName(item)));
@@ -39,7 +39,7 @@ public abstract class GenericItemService<T> implements ItemService<T> {
     }
 
     @Override
-    public List<SelectItem> displayNameShortSI(List<T> list) {
+    public List<SelectItem> displayNamesShortSI(List<T> list) {
 	List<SelectItem> result = new ArrayList<>();
 	for (T item : list)
 	    result.add(new SelectItem(item, displayNameShort(item)));
@@ -47,7 +47,7 @@ public abstract class GenericItemService<T> implements ItemService<T> {
     }
 
     @Override
-    public List<SelectItem> displayNameFullSI(List<T> list) {
+    public List<SelectItem> displayNamesFullSI(List<T> list) {
 	List<SelectItem> result = new ArrayList<>();
 	for (T item : list)
 	    result.add(new SelectItem(item, displayNameFull(item)));

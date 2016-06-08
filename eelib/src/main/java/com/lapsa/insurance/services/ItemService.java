@@ -19,10 +19,10 @@ public interface ItemService<T> {
     
     String displayNameFull(T value, Locale locale);
 
-    List<SelectItem> displayNameShortSI(List<T> list);
+    List<SelectItem> displayNamesShortSI(List<T> list);
 
-    List<SelectItem> displayNameFullSI(List<T> list);
+    List<SelectItem> displayNamesFullSI(List<T> list);
 
-    List<SelectItem> displayNameSI(List<T> list);
+    List<SelectItem> displayNamesSI(List<T> list);
 
 }

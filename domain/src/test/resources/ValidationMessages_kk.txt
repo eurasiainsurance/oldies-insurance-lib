@@ -1,17 +1,17 @@
-com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.NotNull.message = Дұрыс мән
-com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message = Дұрыс мән
+﻿com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.NotNull.message = Мәнін таңдаңыз
+com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message = Қате мән
 
-com.lapsa.insurance.domain.InsuredDriverData.IdNumber.NotNull.message = ЖСН Белгісіз
+com.lapsa.insurance.domain.InsuredDriverData.IdNumber.NotNull.message = ЖСН көрсетілмеген
 
 com.lapsa.insurance.domain.InsurantData.IdNumber.NotNull.message = {com.lapsa.insurance.domain.InsuredDriverData.IdNumber.NotNull.message}
 
-com.lapsa.insurance.domain.PolicyObtainingData.method.NotNullValue.message = Көрсетіңіз алу тәсілі полисі
-com.lapsa.insurance.domain.PolicyObtainingData.pickupCity.NotNullValue.message = Қажет қаласы таңдау үшін офис сақтандыру компани
-com.lapsa.insurance.domain.PolicyObtainingData.pickupPOS.NotNullValue.message = Қажет укзаать офис сақтандыру компаниясының ресімдеу үшін өзіңіз алып кету
-com.lapsa.insurance.domain.PolicyObtainingData.deliveryCity.NotNullValue.message = Орналасқан жеріңізді көрсетіңіз
-com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.NotNullValue.message = Көрсетіңіз жеткізу
-com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.DaysAfterNow.messages = Полис жеткізілуі мүмкін ғана кейін келесі күні тапсырыс
-com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.DaysBeforeNow.messages = Тым кеш күні полисін жеткізу
-com.lapsa.insurance.domain.PolicyObtainingData.deliveryTime.NotNullValue.message = Көрсетіңіз жеткізу уақыты
-com.lapsa.insurance.domain.PolicyObtainingData.deliveryAddress.NotNullValue.message = Жеткізу мекен-жайын көрсетіңіз
+com.lapsa.insurance.domain.PolicyObtainingData.method.NotNullValue.message = Полисті алу тәсілін көрсетіңіз
+com.lapsa.insurance.domain.PolicyObtainingData.pickupCity.NotNullValue.message = Сақтандыру компаниясының офисін таңдау үшін, қаланы көрсету қажет
+com.lapsa.insurance.domain.PolicyObtainingData.pickupPOS.NotNullValue.message = Өзі алып кетуді ресімдеу үшін сақтандыру компаниясының офисін көрсету қажет
+com.lapsa.insurance.domain.PolicyObtainingData.deliveryCity.NotNullValue.message = Өзіңіздің орналасқан жеріңізді көрсетіңіз
+com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.NotNullValue.message = Жеткізу күнін көрсетіңіз
+com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.DaysAfterNow.messages = Полис тек тапсырыс берілгеннен кейін келесі күні ғана жеткізілуі мүмкін
+com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.DaysBeforeNow.messages = Полисті жеткізудің өте кеш күні
+com.lapsa.insurance.domain.PolicyObtainingData.deliveryTime.NotNullValue.message = Жеткізу уақытын көрсетіңіз
+com.lapsa.insurance.domain.PolicyObtainingData.deliveryAddress.NotNullValue.message = Жеткізу мекенжайын көрсетіңіз
 com.lapsa.insurance.domain.PolicyObtainingData.deliveryAddress.NotEmptyString.message = {com.lapsa.insurance.domain.PolicyObtainingData.deliveryAddress.NotNullValue.message}

@@ -55,10 +55,10 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 	Locale locale = getLocale(LANG_KK);
 	ResourceBundle resources = getResourceBundle(ElementsBundleBase.BUNDLE_BASENAME, locale);
 	assertThat(resources.getString("com.lapsa.insurance.elements.IdentityCardType.PASSPORT"),
-		allOf(not(nullValue()), is("паспорты")));
+		allOf(not(nullValue()), is("төлқұжат")));
 	testBundle(resources);
     }
-
+    
     private void testBundle(ResourceBundle resources) {
 	Enumeration<String> keys = resources.getKeys();
 	while (keys.hasMoreElements()) {

@@ -5,6 +5,7 @@ import java.util.Locale;
 
 import javax.ejb.EJB;
 import javax.enterprise.context.ApplicationScoped;
+import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -14,6 +15,7 @@ import com.lapsa.insurance.persistence.dao.CompanyPointOfSaleDAO;
 import com.lapsa.insurance.services.domain.CompanyPointOfSaleService;
 import com.lapsa.insurance.services.domain.PostAddressService;
 import com.lapsa.kz.country.KZCity;
+import com.lapsa.localization.LocalizationLanguage;
 
 @Named("companyPointOfSaleService")
 @ApplicationScoped
@@ -63,24 +65,39 @@ public class DefaultCompanyPointOfSaleService extends GenericDomainService<Compa
 
     @Override
     public String displayName(CompanyPointOfSale pointOfSale) {
-	return pointOfSale.getName();
+	return generateName(pointOfSale);
     }
 
     @Override
     public String displayName(CompanyPointOfSale pointOfSale, Locale locale) {
+	return generateName(pointOfSale, locale);
+    }
+
+    private String generateName(CompanyPointOfSale pointOfSale, Locale locale) {
+	LocalizationLanguage lang = LocalizationLanguage.byTag(locale.getLanguage());
+	if (lang != null && pointOfSale.getNameLocalization().containsKey(lang))
+	    return pointOfSale.getNameLocalization().get(lang);
 	return pointOfSale.getName();
+    }
+
+    private String generateName(CompanyPointOfSale pointOfSale) {
+	FacesContext facesContext = FacesContext.getCurrentInstance();
+	Locale locale = facesContext.getViewRoot().getLocale();
+	return generateName(pointOfSale, locale);
     }
 
     @Override
     public String displayNameFull(CompanyPointOfSale pointOfSale) {
 	String address = postAddressService.displayName(pointOfSale.getAddress());
-	return generateDisplayNameFull(pointOfSale.getName(), address);
+	String name = generateName(pointOfSale);
+	return generateDisplayNameFull(name, address);
     }
 
     @Override
     public String displayNameFull(CompanyPointOfSale pointOfSale, Locale locale) {
 	String address = postAddressService.displayName(pointOfSale.getAddress(), locale);
-	return generateDisplayNameFull(pointOfSale.getName(), address);
+	String name = generateName(pointOfSale, locale);
+	return generateDisplayNameFull(name, address);
     }
 
     @Override

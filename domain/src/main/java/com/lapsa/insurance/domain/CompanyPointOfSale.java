@@ -1,16 +1,20 @@
 package com.lapsa.insurance.domain;
 
 import java.util.List;
+import java.util.Map;
 
 import com.lapsa.image.ImageContent;
 import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
+import com.lapsa.localization.LocalizationLanguage;
 
 public class CompanyPointOfSale extends BaseEntity<Integer> {
 
     @NotNullValue
     @NotEmptyString
     private String name;
+
+    private Map<LocalizationLanguage, String> nameLocalization;
 
     private PostAddress address;
 
@@ -36,6 +40,14 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
 
     public void setName(String name) {
 	this.name = name;
+    }
+
+    public Map<LocalizationLanguage, String> getNameLocalization() {
+	return nameLocalization;
+    }
+
+    public void setNameLocalization(Map<LocalizationLanguage, String> nameLocalization) {
+	this.nameLocalization = nameLocalization;
     }
 
     public PostAddress getAddress() {

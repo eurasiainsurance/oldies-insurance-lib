@@ -10,6 +10,7 @@ import javax.faces.model.SelectItem;
 
 import com.lapsa.insurance.services.bean.GenericItemService;
 import com.lapsa.insurance.services.elements.EnumService;
+import com.lapsa.localization.LocalizationLanguage;
 
 public abstract class GenericEnumService<T extends Enum<T>> extends GenericItemService<T> implements EnumService<T> {
 
@@ -93,6 +94,11 @@ public abstract class GenericEnumService<T extends Enum<T>> extends GenericItemS
     }
 
     @Override
+    public String enumNameLocalized(T value, LocalizationLanguage lang) {
+	return enumNameLocalized(value, lang.getLocale());
+    }
+
+    @Override
     public String enumNameLocalizedShort(T value) {
 	if (value == null)
 	    return null;
@@ -112,6 +118,12 @@ public abstract class GenericEnumService<T extends Enum<T>> extends GenericItemS
 	    return ret;
 	return enumNameLocalized(value, locale);
     }
+
+    @Override
+    public String enumNameLocalizedShort(T value, LocalizationLanguage lang) {
+	return enumNameLocalizedShort(value, lang.getLocale());
+    }
+
 
     @Override
     public String enumNameLocalizedFull(T value) {
@@ -134,6 +146,13 @@ public abstract class GenericEnumService<T extends Enum<T>> extends GenericItemS
 	return enumNameLocalized(value, locale);
     }
 
+    @Override
+    public String enumNameLocalizedFull(T value, LocalizationLanguage lang) {
+	return enumNameLocalizedFull(value, lang.getLocale());
+    }
+
+    // PRIVATE & PROTECTED
+
     protected String localizationByKey(String key) {
 	FacesContext facesContext = FacesContext.getCurrentInstance();
 	String bundleVar = getMessageBundleVar();
@@ -144,6 +163,12 @@ public abstract class GenericEnumService<T extends Enum<T>> extends GenericItemS
     protected String localizationByKey(String key, Locale locale) {
 	String bundleBase = getMessageBundleBase();
 	ResourceBundle bundle = ResourceBundle.getBundle(bundleBase, locale);
+	return localizationByKey(key, bundle);
+    }
+
+    protected String localizationByKey(String key, LocalizationLanguage language) {
+	String bundleBase = getMessageBundleBase();
+	ResourceBundle bundle = ResourceBundle.getBundle(bundleBase, language.getLocale());
 	return localizationByKey(key, bundle);
     }
 

@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Locale;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -15,6 +16,7 @@ import com.lapsa.insurance.services.elements.KZCityService;
 import com.lapsa.insurance.services.elements.KZTypeOfSettlementService;
 import com.lapsa.kz.country.KZArea;
 import com.lapsa.kz.country.KZCity;
+import com.lapsa.localization.LocalizationLanguage;
 
 @Named("kzCityService")
 @ApplicationScoped
@@ -46,35 +48,20 @@ public class DefaultKZCityService extends GenericEnumService<KZCity> implements 
     public List<KZCity> regionalItemsByArea(KZArea area) {
 	List<KZCity> result = new ArrayList<>();
 	for (KZCity city : KZCity.values()) {
-	    if (city.getArea() == null) // TODO плохой код. Сделано чтобы OTHER
-					// не попадал в список. Исправить
+	    if (city.getArea() == null)
 		continue;
 	    if (!isRegional(city))
 		continue;
 	    if (area == null || city.getArea().equals(area))
 		result.add(city);
 	}
-	result.add(KZCity.OTHER); // TODO тоже плохой код. Непонятно, что делать
-				  // с этим OTHER
+	result.add(KZCity.OTHER);
 	return result;
     }
 
     @Override
     public List<SelectItem> selectableItemsByAreaSI(KZArea area) {
 	return displayNamesSI(selectableItemsByArea(area));
-    }
-
-    private boolean isRegional(KZCity city) {
-	if (city == null || city.getType() == null)
-	    return false;
-	switch (city.getType()) {
-	case MAJOR:
-	case REGIONAL_CENTER:
-	case REGIONAL_SUBORDINATION:
-	    return true;
-	default:
-	}
-	return false;
     }
 
     @Override
@@ -99,17 +86,53 @@ public class DefaultKZCityService extends GenericEnumService<KZCity> implements 
 	String typeOfSettlementName = kzTypeOfSettlementService.enumNameLocalizedShort(value.getTypeOfSettlement(),
 		locale);
 	String cityName = enumNameLocalized(value, locale);
-	return generateDisplayName(typeOfSettlementName, cityName);
+	return generateDisplayName(typeOfSettlementName, cityName, locale);
     }
 
-    private String generateDisplayName(String typeOfSettlement, String city) {
+    // PRIVATE & PROTECTED
+
+    private String generateDisplayName(String typeOfSettlementName, String cityName) {
+	return generateDisplayName(typeOfSettlementName, cityName,
+		FacesContext.getCurrentInstance().getViewRoot().getLocale());
+    }
+
+    private String generateDisplayName(String typeOfSettlementName, String cityName, Locale locale) {
+	return generateDisplayName(typeOfSettlementName, cityName, LocalizationLanguage.byLocale(locale));
+    }
+
+    private String generateDisplayName(String typeOfSettlement, String city, LocalizationLanguage language) {
 	StringBuffer sb = new StringBuffer();
-	if (typeOfSettlement != null) {
-	    sb.append(typeOfSettlement);
-	    sb.append(" ");
+	switch (language) {
+	case ENGLISH:
+	case KAZAKH:
+	    sb.append(city);
+	    if (typeOfSettlement != null) {
+		sb.append(" ");
+		sb.append(typeOfSettlement);
+	    }
+	    break;
+	case RUSSIAN:
+	default:
+	    if (typeOfSettlement != null) {
+		sb.append(typeOfSettlement);
+		sb.append(" ");
+	    }
+	    sb.append(city);
+	    break;
 	}
-	sb.append(city);
 	return sb.toString();
     }
 
+    private boolean isRegional(KZCity city) {
+	if (city == null || city.getType() == null)
+	    return false;
+	switch (city.getType()) {
+	case MAJOR:
+	case REGIONAL_CENTER:
+	case REGIONAL_SUBORDINATION:
+	    return true;
+	default:
+	}
+	return false;
+    }
 }

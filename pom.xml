@@ -25,9 +25,9 @@
 	</modules>
 
 	<properties>
-		<kz-lib.version>2.0-pre-rc3-SNAPSHOT</kz-lib.version>
-		<international-lib.version>2.0-pre-rc3-SNAPSHOT</international-lib.version>
-		<image-lib.version>1.0-pre-rc2-SNAPSHOT</image-lib.version>
+		<kz-lib.version>2.0</kz-lib.version>
+		<international-lib.version>2.0</international-lib.version>
+		<image-lib.version>1.0</image-lib.version>
 	</properties>
 
 	<dependencyManagement>

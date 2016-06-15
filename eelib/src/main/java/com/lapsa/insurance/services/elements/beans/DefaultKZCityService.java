@@ -104,6 +104,8 @@ public class DefaultKZCityService extends GenericEnumService<KZCity> implements 
 	StringBuffer sb = new StringBuffer();
 	switch (language) {
 	case ENGLISH:
+	    sb.append(city);
+	    break;
 	case KAZAKH:
 	    sb.append(city);
 	    if (typeOfSettlement != null) {

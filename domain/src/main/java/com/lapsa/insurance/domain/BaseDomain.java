@@ -1,8 +1,10 @@
 package com.lapsa.insurance.domain;
 
+import java.io.Serializable;
 import java.util.UUID;
 
-public abstract class BaseDomain {
+public abstract class BaseDomain implements Serializable {
+    private static final long serialVersionUID = 5644465723973796337L;
 
     protected transient final UUID instanceUUID = UUID.randomUUID();
     protected transient final String instanceWebSafeUUID = "UUID" + instanceUUID.toString().replace("-", "");

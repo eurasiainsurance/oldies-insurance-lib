@@ -4,6 +4,7 @@ import com.lapsa.phone.PhoneNumber;
 import com.lapsa.phone.PhoneType;
 
 public class CompanyContactPhone extends BaseDomain {
+    private static final long serialVersionUID = -1005845698858843018L;
 
     private PhoneNumber phone;
     private PhoneType phoneType;

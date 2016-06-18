@@ -9,6 +9,7 @@ import com.lapsa.insurance.validation.ValidDateOfIssue;
 import com.lapsa.insurance.validation.ValidIdentityCardType;
 
 public class IdentityCardData extends BaseEntity<Integer> implements ScanCopiedDocument {
+    private static final long serialVersionUID = 6150409229272494445L;
 
     @NotNullValue
     @ValidDateOfIssue

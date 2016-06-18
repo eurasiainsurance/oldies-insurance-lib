@@ -8,6 +8,7 @@ import com.lapsa.insurance.validation.ValidDateOfIssue;
 import com.lapsa.insurance.validation.ValidVehicleRegistrationNumber;
 
 public class VehicleCertificateData extends BaseEntity<Integer> implements ScanCopiedDocument {
+    private static final long serialVersionUID = -8205031496636707778L;
 
     @NotNullValue
     @NotEmptyString

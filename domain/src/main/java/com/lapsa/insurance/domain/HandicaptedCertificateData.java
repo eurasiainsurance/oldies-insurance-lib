@@ -6,6 +6,7 @@ import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
 
 public class HandicaptedCertificateData extends BaseDomain implements ScanCopiedDocument {
+    private static final long serialVersionUID = 3008779514582207946L;
 
     @NotNullValue
     @NotEmptyString

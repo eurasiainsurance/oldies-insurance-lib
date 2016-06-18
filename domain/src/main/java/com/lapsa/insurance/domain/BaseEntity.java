@@ -1,6 +1,9 @@
 package com.lapsa.insurance.domain;
 
-public abstract class BaseEntity<T> extends BaseDomain {
+import java.io.Serializable;
+
+public abstract class BaseEntity<T> extends BaseDomain implements Serializable {
+    private static final long serialVersionUID = -6232109945476654981L;
 
     protected T id;
 

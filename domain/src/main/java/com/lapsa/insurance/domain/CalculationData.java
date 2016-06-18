@@ -3,6 +3,7 @@ package com.lapsa.insurance.domain;
 import com.lapsa.insurance.elements.PolicyTermClass;
 
 public class CalculationData extends BaseDomain {
+    private static final long serialVersionUID = -1769681003179820909L;
 
     private PolicyTermClass termClass = PolicyTermClass.YEAR;
 

@@ -3,6 +3,7 @@ package com.lapsa.insurance.domain;
 import java.util.List;
 
 public class PolicyData extends BaseEntity<Integer> {
+    private static final long serialVersionUID = 1148321211581313286L;
 
     protected List<InsuredDriverData> insuredDrivers;
     protected List<InsuredVehicleData> insuredVehicles;

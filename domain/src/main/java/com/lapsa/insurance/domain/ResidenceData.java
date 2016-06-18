@@ -6,6 +6,7 @@ import com.lapsa.kz.country.KZCity;
 import com.lapsa.kz.country.validators.ValidKZCity;
 
 public class ResidenceData extends BaseDomain {
+    private static final long serialVersionUID = 6787004222278561370L;
 
     private boolean resident;
 

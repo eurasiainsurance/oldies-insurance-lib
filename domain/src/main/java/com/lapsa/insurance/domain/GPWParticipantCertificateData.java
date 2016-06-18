@@ -7,6 +7,7 @@ import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidDateOfIssue;
 
 public class GPWParticipantCertificateData extends BaseDomain implements ScanCopiedDocument {
+    private static final long serialVersionUID = -2962825826022534176L;
 
     @NotNullValue
     @NotEmptyString

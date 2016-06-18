@@ -7,6 +7,7 @@ import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidDateOfIssue;
 
 public class DriverLicenseData extends BaseEntity<Integer> implements ScanCopiedDocument {
+    private static final long serialVersionUID = -4979156573374546371L;
 
     @NotNullValue
     @NotEmptyString

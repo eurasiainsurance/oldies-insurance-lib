@@ -9,6 +9,7 @@ import com.lapsa.kz.country.validators.ValidKZCity;
 import com.lapsa.localization.LocalizationLanguage;
 
 public class PostAddress extends BaseDomain {
+    private static final long serialVersionUID = -5557010401647487544L;
 
     @NotNullValue
     @NotEmptyString

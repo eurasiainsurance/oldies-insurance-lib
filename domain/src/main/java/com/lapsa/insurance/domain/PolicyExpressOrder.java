@@ -7,6 +7,7 @@ import com.lapsa.insurance.crm.NotificationStatus;
 import com.lapsa.insurance.crm.RequestStatus;
 
 public class PolicyExpressOrder extends BaseEntity<Integer> {
+    private static final long serialVersionUID = 944531653617396366L;
 
     private Date created;
     private Date updated;

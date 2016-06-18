@@ -3,6 +3,7 @@ package com.lapsa.insurance.domain;
 import com.lapsa.image.ImageContent;
 
 public class UploadedImage extends BaseEntity<Integer> {
+    private static final long serialVersionUID = 6988116673010364293L;
 
     private String fileName;
     private String mimeType;

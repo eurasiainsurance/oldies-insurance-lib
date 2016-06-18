@@ -9,6 +9,7 @@ import com.lapsa.insurance.validation.ValidInsuranceExpirienceClass;
 import com.lapsa.kz.idnumber.validators.ValidIdNumber;
 
 public class InsuredDriverData extends BaseEntity<Integer> {
+    private static final long serialVersionUID = 5209394299289430299L;
 
     private InsuranceClassType insuranceClassType;
 

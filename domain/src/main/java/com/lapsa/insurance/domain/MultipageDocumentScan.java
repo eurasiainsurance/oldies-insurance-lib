@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MultipageDocumentScan extends BaseDomain implements DocumentScan {
+    private static final long serialVersionUID = 722737247502872835L;
 
     private List<UploadedImage> scanCopies = new ArrayList<>();
 

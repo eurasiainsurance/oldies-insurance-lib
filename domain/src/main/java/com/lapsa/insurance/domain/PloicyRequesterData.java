@@ -11,6 +11,7 @@ import com.lapsa.phone.PhoneNumberFactoryProvider;
 import com.lapsa.phone.validators.ValidPhoneNumber;
 
 public class PloicyRequesterData extends BaseDomain {
+    private static final long serialVersionUID = 2536050924805456436L;
 
     @NotNullValue
     @NotEmptyString

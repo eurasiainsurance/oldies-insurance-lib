@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TwoSidedDocumentScan extends BaseDomain implements DocumentScan {
+    private static final long serialVersionUID = 239502663275715827L;
 
     private UploadedImage frontside;
     private UploadedImage backside;

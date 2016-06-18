@@ -7,6 +7,7 @@ import com.lapsa.kz.economic.KZEconomicSector;
 import com.lapsa.kz.idnumber.validators.ValidIdNumber;
 
 public class InsurantData extends BaseEntity<Integer> {
+    private static final long serialVersionUID = 5242824083075950955L;
 
     @NotNullValue(message = "{com.lapsa.insurance.domain.InsurantData.IdNumber.NotNull.message}")
     @ValidIdNumber

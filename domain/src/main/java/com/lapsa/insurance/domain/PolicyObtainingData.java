@@ -12,6 +12,7 @@ import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.kz.country.KZCity;
 
 public class PolicyObtainingData extends BaseDomain {
+    private static final long serialVersionUID = -6326848114328976035L;
 
     @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.method.NotNullValue.message}")
     private PolicyObtainingMethod method;

@@ -6,6 +6,7 @@ import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidVehicleYearOfIssue;
 
 public class VehicleData extends BaseEntity<Integer> {
+    private static final long serialVersionUID = -7589698813986815583L;
 
     @NotNullValue
     @ValidVINCode(checkDigit = false)

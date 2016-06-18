@@ -3,7 +3,6 @@ package com.lapsa.insurance.domain;
 import java.io.Serializable;
 
 public class GeoPoint extends BaseDomain implements Serializable {
-
     private static final long serialVersionUID = -2196615504671366442L;
 
     private double latitude;

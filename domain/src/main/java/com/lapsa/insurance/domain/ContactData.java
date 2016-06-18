@@ -7,6 +7,7 @@ import com.lapsa.phone.PhoneNumber;
 import com.lapsa.phone.validators.ValidPhoneNumber;
 
 public class ContactData extends BaseDomain {
+    private static final long serialVersionUID = 6954755236615159684L;
 
     @NotNullValue
     @ValidPhoneNumber

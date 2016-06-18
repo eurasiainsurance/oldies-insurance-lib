@@ -10,6 +10,7 @@ import com.lapsa.insurance.validation.ValidHumanName;
 import com.lapsa.insurance.validation.ValidSex;
 
 public class PersonalData extends BaseDomain {
+    private static final long serialVersionUID = 6108831386319756885L;
 
     @NotNullValue
     @NotEmptyString

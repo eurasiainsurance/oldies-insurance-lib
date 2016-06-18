@@ -11,6 +11,7 @@ import com.lapsa.kz.country.validators.ValidKZArea;
 import com.lapsa.kz.country.validators.ValidKZCity;
 
 public class InsuredVehicleData extends BaseEntity<Integer> {
+    private static final long serialVersionUID = -944934937361936981L;
 
     @NotNullValue
     @ValidVehicleClass

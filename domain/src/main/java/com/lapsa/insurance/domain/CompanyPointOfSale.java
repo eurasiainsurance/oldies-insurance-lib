@@ -9,6 +9,7 @@ import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.localization.LocalizationLanguage;
 
 public class CompanyPointOfSale extends BaseEntity<Integer> {
+    private static final long serialVersionUID = 2591037979593224479L;
 
     @NotNullValue
     @NotEmptyString

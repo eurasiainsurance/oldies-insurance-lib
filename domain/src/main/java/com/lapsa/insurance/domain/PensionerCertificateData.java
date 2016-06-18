@@ -7,6 +7,7 @@ import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidDateOfIssue;
 
 public class PensionerCertificateData extends BaseDomain {
+    private static final long serialVersionUID = -8178378418860305812L;
 
     @NotNullValue
     @NotEmptyString

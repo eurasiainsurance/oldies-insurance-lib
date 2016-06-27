@@ -8,6 +8,8 @@ import com.lapsa.insurance.validation.ValidDateOfIssue;
 
 public class PrivilegerCertificateData extends BaseDomain {
     private static final long serialVersionUID = 1084136479061384027L;
+    private static final int PRIME = 101;
+    private static final int MULTIPLIER = 101;
 
     @NotNullValue
     @NotEmptyString
@@ -22,6 +24,16 @@ public class PrivilegerCertificateData extends BaseDomain {
     private Date dateOfIssue;
 
     private MultipageDocumentScan scan;
+
+    @Override
+    protected int getPrime() {
+	return PRIME;
+    }
+
+    @Override
+    protected int getMultiplier() {
+	return MULTIPLIER;
+    }
 
     // GENERATED
 

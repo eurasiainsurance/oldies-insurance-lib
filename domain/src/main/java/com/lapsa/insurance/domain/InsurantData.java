@@ -8,6 +8,8 @@ import com.lapsa.kz.idnumber.validators.ValidIdNumber;
 
 public class InsurantData extends BaseEntity<Integer> {
     private static final long serialVersionUID = 5242824083075950955L;
+    private static final int PRIME = 43;
+    private static final int MULTIPLIER = 43;
 
     @NotNullValue(message = "{com.lapsa.insurance.domain.InsurantData.IdNumber.NotNull.message}")
     @ValidIdNumber
@@ -35,6 +37,16 @@ public class InsurantData extends BaseEntity<Integer> {
     @Override
     public String toString() {
 	return personalData.getDisplayName();
+    }
+
+    @Override
+    protected int getPrime() {
+	return PRIME;
+    }
+
+    @Override
+    protected int getMultiplier() {
+	return MULTIPLIER;
     }
 
     // GENERATED

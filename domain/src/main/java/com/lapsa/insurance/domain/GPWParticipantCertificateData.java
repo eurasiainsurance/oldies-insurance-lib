@@ -8,6 +8,8 @@ import com.lapsa.insurance.validation.ValidDateOfIssue;
 
 public class GPWParticipantCertificateData extends BaseDomain implements ScanCopiedDocument {
     private static final long serialVersionUID = -2962825826022534176L;
+    private static final int PRIME = 23;
+    private static final int MULTIPLIER = 23;
 
     @NotNullValue
     @NotEmptyString
@@ -18,6 +20,16 @@ public class GPWParticipantCertificateData extends BaseDomain implements ScanCop
     private Date dateOfIssue;
 
     private MultipageDocumentScan scan = new MultipageDocumentScan();
+
+    @Override
+    protected int getPrime() {
+	return PRIME;
+    }
+
+    @Override
+    protected int getMultiplier() {
+	return MULTIPLIER;
+    }
 
     // GENERATED
 

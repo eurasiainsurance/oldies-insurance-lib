@@ -8,6 +8,8 @@ import com.lapsa.insurance.validation.ValidDateOfIssue;
 
 public class DriverLicenseData extends BaseEntity<Integer> implements ScanCopiedDocument {
     private static final long serialVersionUID = -4979156573374546371L;
+    private static final int PRIME = 17;
+    private static final int MULTIPLIER = 17;
 
     @NotNullValue
     @NotEmptyString
@@ -18,6 +20,16 @@ public class DriverLicenseData extends BaseEntity<Integer> implements ScanCopied
     private Date dateOfIssue;
 
     private TwoSidedDocumentScan scan = new TwoSidedDocumentScan();
+
+    @Override
+    protected int getPrime() {
+	return PRIME;
+    }
+
+    @Override
+    protected int getMultiplier() {
+	return MULTIPLIER;
+    }
 
     // GENERATED
 

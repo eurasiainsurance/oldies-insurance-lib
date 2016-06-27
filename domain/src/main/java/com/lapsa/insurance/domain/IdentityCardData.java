@@ -10,6 +10,8 @@ import com.lapsa.insurance.validation.ValidIdentityCardType;
 
 public class IdentityCardData extends BaseEntity<Integer> implements ScanCopiedDocument {
     private static final long serialVersionUID = 6150409229272494445L;
+    private static final int PRIME = 37;
+    private static final int MULTIPLIER = 37;
 
     @NotNullValue
     @ValidDateOfIssue
@@ -28,6 +30,16 @@ public class IdentityCardData extends BaseEntity<Integer> implements ScanCopiedD
     private IdentityCardType type;
 
     private TwoSidedDocumentScan scan = new TwoSidedDocumentScan();
+
+    @Override
+    protected int getPrime() {
+	return PRIME;
+    }
+
+    @Override
+    protected int getMultiplier() {
+	return MULTIPLIER;
+    }
 
     // GENERATED
 

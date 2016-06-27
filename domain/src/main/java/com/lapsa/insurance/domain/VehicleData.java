@@ -7,6 +7,8 @@ import com.lapsa.insurance.validation.ValidVehicleYearOfIssue;
 
 public class VehicleData extends BaseEntity<Integer> {
     private static final long serialVersionUID = -7589698813986815583L;
+    private static final int PRIME = 113;
+    private static final int MULTIPLIER = PRIME;
 
     @NotNullValue
     @ValidVINCode(checkDigit = false)
@@ -32,6 +34,16 @@ public class VehicleData extends BaseEntity<Integer> {
     public String getDisplayName() {
 	return (((manufacturer == null || manufacturer.isEmpty()) ? "" : (manufacturer + " "))
 		+ ((model == null || model.isEmpty()) ? "" : (model + " "))).trim();
+    }
+
+    @Override
+    protected int getPrime() {
+	return PRIME;
+    }
+
+    @Override
+    protected int getMultiplier() {
+	return MULTIPLIER;
     }
 
     // GENERATED

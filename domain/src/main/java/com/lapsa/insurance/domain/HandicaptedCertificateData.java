@@ -7,6 +7,8 @@ import com.lapsa.insurance.validation.NotNullValue;
 
 public class HandicaptedCertificateData extends BaseDomain implements ScanCopiedDocument {
     private static final long serialVersionUID = 3008779514582207946L;
+    private static final int PRIME = 31;
+    private static final int MULTIPLIER = 31;
 
     @NotNullValue
     @NotEmptyString
@@ -19,6 +21,16 @@ public class HandicaptedCertificateData extends BaseDomain implements ScanCopied
     private Date validTill;
 
     private MultipageDocumentScan scan;
+
+    @Override
+    protected int getPrime() {
+	return PRIME;
+    }
+
+    @Override
+    protected int getMultiplier() {
+	return MULTIPLIER;
+    }
 
     // GENERATED
 

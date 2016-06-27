@@ -2,23 +2,40 @@ package com.lapsa.insurance.domain;
 
 import java.io.Serializable;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 public abstract class BaseEntity<T> extends BaseDomain implements Serializable {
-    private static final long serialVersionUID = -6232109945476654981L;
+    private static final long serialVersionUID = 2914122165051543297L;
 
     protected T id;
 
     @Override
-    public int hashCode() {
-	return this.getClass().hashCode()
-		* (id != null ? id.hashCode() : super.instanceUUID.hashCode());
+    public String toString() {
+	return String.format("%1$s.ID:%2$s", this.getClass().getSimpleName(), id != null ? id : "NULL");
     }
 
     @Override
-    public boolean equals(Object obj) {
-	return obj != null
-		&& this.getClass().isInstance(obj)
-		&& ((id == null && instanceUUID.equals(this.getClass().cast(obj).instanceUUID))
-			|| (id != null && getId().equals((this.getClass().cast(obj)).id)));
+    public int hashCode() {
+	HashCodeBuilder hcb = new HashCodeBuilder();
+	if (id == null)
+	    return hcb.appendSuper(super.hashCode()).toHashCode();
+	return hcb.append(id).toHashCode();
+    }
+
+    @Override
+    public boolean equals(Object other) {
+	if (other == null || other.getClass() != getClass())
+	    return false;
+	if (other == this)
+	    return true;
+
+	@SuppressWarnings("unchecked")
+	BaseEntity<T> that = (BaseEntity<T>) other;
+	EqualsBuilder eb = new EqualsBuilder();
+	if (id == null)
+	    return eb.appendSuper(super.equals(that)).isEquals();
+	return eb.append(id, that.id).isEquals();
     }
 
     // GENERATED
@@ -27,6 +44,7 @@ public abstract class BaseEntity<T> extends BaseDomain implements Serializable {
 	return id;
     }
 
+    @Deprecated
     public void setId(T id) {
 	this.id = id;
     }

@@ -11,6 +11,8 @@ import com.lapsa.insurance.validation.ValidSex;
 
 public class PersonalData extends BaseDomain {
     private static final long serialVersionUID = 6108831386319756885L;
+    private static final int PRIME = 71;
+    private static final int MULTIPLIER = 71;
 
     @NotNullValue
     @NotEmptyString
@@ -39,6 +41,16 @@ public class PersonalData extends BaseDomain {
 	return (((surename == null || surename.isEmpty()) ? "" : (surename + " "))
 		+ ((name == null || name.isEmpty()) ? "" : (name + " "))
 		+ ((patronymic == null || patronymic.isEmpty()) ? "" : (patronymic + " "))).trim();
+    }
+
+    @Override
+    protected int getPrime() {
+	return PRIME;
+    }
+
+    @Override
+    protected int getMultiplier() {
+	return MULTIPLIER;
     }
 
     // GENERATED

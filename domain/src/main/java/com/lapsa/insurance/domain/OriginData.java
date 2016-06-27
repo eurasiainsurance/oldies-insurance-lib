@@ -6,10 +6,22 @@ import com.lapsa.insurance.validation.NotNullValue;
 
 public class OriginData extends BaseDomain {
     private static final long serialVersionUID = -2811566798584800985L;
+    private static final int PRIME = 61;
+    private static final int MULTIPLIER = 61;
 
     @NotNullValue
     @ValidCountry
     private Country country;
+
+    @Override
+    protected int getPrime() {
+	return PRIME;
+    }
+
+    @Override
+    protected int getMultiplier() {
+	return MULTIPLIER;
+    }
 
     // GENERATED
 

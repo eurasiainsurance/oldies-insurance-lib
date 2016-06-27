@@ -8,6 +8,8 @@ import com.lapsa.insurance.validation.ValidDateOfIssue;
 
 public class PensionerCertificateData extends BaseDomain {
     private static final long serialVersionUID = -8178378418860305812L;
+    private static final int PRIME = 67;
+    private static final int MULTIPLIER = 67;
 
     @NotNullValue
     @NotEmptyString
@@ -18,6 +20,16 @@ public class PensionerCertificateData extends BaseDomain {
     private Date dateOfIssue;
 
     private MultipageDocumentScan scan = new MultipageDocumentScan();
+
+    @Override
+    protected int getPrime() {
+	return PRIME;
+    }
+
+    @Override
+    protected int getMultiplier() {
+	return MULTIPLIER;
+    }
 
     // GENERATED
 

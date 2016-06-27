@@ -10,6 +10,8 @@ import com.lapsa.localization.LocalizationLanguage;
 
 public class CompanyPointOfSale extends BaseEntity<Integer> {
     private static final long serialVersionUID = 2591037979593224479L;
+    private static final int PRIME = 11;
+    private static final int MULTIPLIER = 11;
 
     @NotNullValue
     @NotEmptyString
@@ -34,6 +36,18 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
     private List<CompanyContactPhone> phones;
 
     private List<CompanyContactEmail> emailAddresses;
+
+    @Override
+    protected int getPrime() {
+	return PRIME;
+    }
+
+    @Override
+    protected int getMultiplier() {
+	return MULTIPLIER;
+    }
+
+    // GENERATED
 
     public String getName() {
 	return name;

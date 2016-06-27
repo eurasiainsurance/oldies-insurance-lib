@@ -4,6 +4,8 @@ import com.lapsa.image.ImageContent;
 
 public class UploadedImage extends BaseEntity<Integer> {
     private static final long serialVersionUID = 6988116673010364293L;
+    private static final int PRIME = 107;
+    private static final int MULTIPLIER = PRIME;
 
     private String fileName;
     private String mimeType;
@@ -29,6 +31,16 @@ public class UploadedImage extends BaseEntity<Integer> {
 	this.mimeType = mimeType;
 	this.original = original;
 	this.thumbnail = thumbnail;
+    }
+
+    @Override
+    protected int getPrime() {
+	return PRIME;
+    }
+
+    @Override
+    protected int getMultiplier() {
+	return MULTIPLIER;
     }
 
     // GENERATED

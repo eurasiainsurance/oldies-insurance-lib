@@ -8,6 +8,8 @@ import com.lapsa.insurance.crm.RequestStatus;
 
 public class PolicyExpressOrder extends BaseEntity<Integer> {
     private static final long serialVersionUID = 944531653617396366L;
+    private static final int PRIME = 83;
+    private static final int MULTIPLIER = 83;
 
     private Date created;
     private Date updated;
@@ -24,6 +26,16 @@ public class PolicyExpressOrder extends BaseEntity<Integer> {
     private PolicyObtainingData obtaining;
 
     private boolean allowSpam;
+
+    @Override
+    protected int getPrime() {
+	return PRIME;
+    }
+
+    @Override
+    protected int getMultiplier() {
+	return MULTIPLIER;
+    }
 
     // GENERATED
 

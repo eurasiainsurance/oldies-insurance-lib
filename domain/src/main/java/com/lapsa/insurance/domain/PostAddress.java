@@ -10,6 +10,8 @@ import com.lapsa.localization.LocalizationLanguage;
 
 public class PostAddress extends BaseDomain {
     private static final long serialVersionUID = -5557010401647487544L;
+    private static final int PRIME = 97;
+    private static final int MULTIPLIER = 97;
 
     @NotNullValue
     @NotEmptyString
@@ -24,6 +26,18 @@ public class PostAddress extends BaseDomain {
     private String street;
 
     private Map<LocalizationLanguage, String> streetLocalization;
+
+    @Override
+    protected int getPrime() {
+	return PRIME;
+    }
+
+    @Override
+    protected int getMultiplier() {
+	return MULTIPLIER;
+    }
+
+    // GENERATED
 
     public String getPostIndex() {
 	return postIndex;

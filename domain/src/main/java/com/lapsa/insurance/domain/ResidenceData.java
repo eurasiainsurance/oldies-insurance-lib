@@ -7,6 +7,8 @@ import com.lapsa.kz.country.validators.ValidKZCity;
 
 public class ResidenceData extends BaseDomain {
     private static final long serialVersionUID = 6787004222278561370L;
+    private static final int PRIME = 103;
+    private static final int MULTIPLIER = PRIME;
 
     private boolean resident;
 
@@ -17,6 +19,16 @@ public class ResidenceData extends BaseDomain {
     @NotNullValue
     @NotEmptyString
     private String address;
+
+    @Override
+    protected int getPrime() {
+	return PRIME;
+    }
+
+    @Override
+    protected int getMultiplier() {
+	return MULTIPLIER;
+    }
 
     // GENERATED
 

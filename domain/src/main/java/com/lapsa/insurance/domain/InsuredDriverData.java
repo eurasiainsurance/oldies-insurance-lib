@@ -10,6 +10,8 @@ import com.lapsa.kz.idnumber.validators.ValidIdNumber;
 
 public class InsuredDriverData extends BaseEntity<Integer> {
     private static final long serialVersionUID = 5209394299289430299L;
+    private static final int PRIME = 47;
+    private static final int MULTIPLIER = 47;
 
     private InsuranceClassType insuranceClassType;
 
@@ -58,6 +60,16 @@ public class InsuredDriverData extends BaseEntity<Integer> {
     @Override
     public String toString() {
 	return personalData.getDisplayName();
+    }
+
+    @Override
+    protected int getPrime() {
+	return PRIME;
+    }
+
+    @Override
+    protected int getMultiplier() {
+	return MULTIPLIER;
     }
 
     // GENERATED

@@ -5,6 +5,8 @@ import java.util.List;
 
 public class TwoSidedDocumentScan extends BaseDomain implements DocumentScan {
     private static final long serialVersionUID = 239502663275715827L;
+    private static final int PRIME = 107;
+    private static final int MULTIPLIER = PRIME;
 
     private UploadedImage frontside;
     private UploadedImage backside;
@@ -17,6 +19,16 @@ public class TwoSidedDocumentScan extends BaseDomain implements DocumentScan {
 	if (backside != null)
 	    ret.add(backside);
 	return ret.toArray(new UploadedImage[0]);
+    }
+
+    @Override
+    protected int getPrime() {
+	return PRIME;
+    }
+
+    @Override
+    protected int getMultiplier() {
+	return MULTIPLIER;
     }
 
     // GENERATED

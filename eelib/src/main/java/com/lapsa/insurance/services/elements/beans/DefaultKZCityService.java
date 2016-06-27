@@ -76,6 +76,8 @@ public class DefaultKZCityService extends GenericEnumService<KZCity> implements 
 
     @Override
     public String displayName(KZCity value) {
+	if (value == null)
+	    return null;
 	String typeOfSettlementName = kzTypeOfSettlementService.enumNameLocalizedShort(value.getTypeOfSettlement());
 	String cityName = enumNameLocalized(value);
 	return generateDisplayName(typeOfSettlementName, cityName);
@@ -83,6 +85,8 @@ public class DefaultKZCityService extends GenericEnumService<KZCity> implements 
 
     @Override
     public String displayName(KZCity value, Locale locale) {
+	if (value == null)
+	    return null;
 	String typeOfSettlementName = kzTypeOfSettlementService.enumNameLocalizedShort(value.getTypeOfSettlement(),
 		locale);
 	String cityName = enumNameLocalized(value, locale);

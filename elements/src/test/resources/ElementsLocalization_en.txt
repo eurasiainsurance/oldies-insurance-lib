@@ -51,6 +51,12 @@ com.lapsa.insurance.elements.InsuredExpirienceClass.LESS2.short = less than 2 ye
 com.lapsa.insurance.elements.MaritalStatus.MARRIED = married
 com.lapsa.insurance.elements.MaritalStatus.SINGLE = single
 
+com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE = Credit cards
+com.lapsa.insurance.elements.PaymentMethod.PAYCASH = Pay by cashe to the courier upon delivery 
+
+com.lapsa.insurance.elements.PaymentStatus.DONE = Оплачено
+com.lapsa.insurance.elements.PaymentStatus.PENDING = Ожидается оплата
+
 com.lapsa.insurance.elements.PolicyObtainingMethod.DELIVERY = courier delivery
 com.lapsa.insurance.elements.PolicyObtainingMethod.PICKUP = pick-up in the office of the insurance company
 

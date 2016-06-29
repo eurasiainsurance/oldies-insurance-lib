@@ -51,6 +51,12 @@ com.lapsa.insurance.elements.InsuredExpirienceClass.LESS2.short = 2 жылдан
 com.lapsa.insurance.elements.MaritalStatus.MARRIED = үйленген / тұрмысқа шыққан
 com.lapsa.insurance.elements.MaritalStatus.SINGLE = бойдақ / тұрмысқа шықпаған
 
+com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE = Банк картасымен төлеу
+com.lapsa.insurance.elements.PaymentMethod.PAYCASH = Курьерге қолма-қол төлеу кезінде жеткізу полисі
+
+com.lapsa.insurance.elements.PaymentStatus.DONE = Төленді
+com.lapsa.insurance.elements.PaymentStatus.PENDING = Күтілетін төлеу
+
 com.lapsa.insurance.elements.PolicyObtainingMethod.DELIVERY = курьермен жеткізу
 com.lapsa.insurance.elements.PolicyObtainingMethod.PICKUP = сақтандыру компаниясының офисінен өз бетімен алу
 

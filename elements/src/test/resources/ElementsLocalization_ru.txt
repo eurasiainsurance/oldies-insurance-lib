@@ -51,6 +51,12 @@ com.lapsa.insurance.elements.InsuredExpirienceClass.LESS2.short = менее 2 �
 com.lapsa.insurance.elements.MaritalStatus.MARRIED = женат / замужем
 com.lapsa.insurance.elements.MaritalStatus.SINGLE = холост / незамужем
 
+com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE = Оплата банковской картой
+com.lapsa.insurance.elements.PaymentMethod.PAYCASH = Оплата наличными курьеру при доставке полиса
+
+com.lapsa.insurance.elements.PaymentStatus.DONE = Оплачено
+com.lapsa.insurance.elements.PaymentStatus.PENDING = Ожидается оплата
+
 com.lapsa.insurance.elements.PolicyObtainingMethod.DELIVERY = доставить курьером
 com.lapsa.insurance.elements.PolicyObtainingMethod.PICKUP = забрать самостоятельно в офисе страховой компании
 

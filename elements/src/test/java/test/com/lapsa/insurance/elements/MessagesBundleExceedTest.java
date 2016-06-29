@@ -12,15 +12,17 @@ import org.junit.Test;
 import com.lapsa.insurance.crm.ClosingResult;
 import com.lapsa.insurance.crm.NotificationStatus;
 import com.lapsa.insurance.crm.RequestStatus;
-import com.lapsa.insurance.elements.ElementsBundleBase;
 import com.lapsa.insurance.elements.CancelationReason;
 import com.lapsa.insurance.elements.DeliveryTimeSlot;
+import com.lapsa.insurance.elements.ElementsBundleBase;
 import com.lapsa.insurance.elements.IdentityCardType;
 import com.lapsa.insurance.elements.InsuranceClassType;
 import com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass;
 import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredExpirienceClass;
 import com.lapsa.insurance.elements.MaritalStatus;
+import com.lapsa.insurance.elements.PaymentMethod;
+import com.lapsa.insurance.elements.PaymentStatus;
 import com.lapsa.insurance.elements.PolicyObtainingMethod;
 import com.lapsa.insurance.elements.PolicyTermClass;
 import com.lapsa.insurance.elements.Sex;
@@ -58,7 +60,7 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 		allOf(not(nullValue()), is("төлқұжат")));
 	testBundle(resources);
     }
-    
+
     private void testBundle(ResourceBundle resources) {
 	Enumeration<String> keys = resources.getKeys();
 	while (keys.hasMoreElements()) {
@@ -80,6 +82,10 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 	    if (findByFullName(InsuredAgeAndExpirienceClass.values(), key) != null)
 		continue;
 	    if (findByFullName(MaritalStatus.values(), key) != null)
+		continue;
+	    if (findByFullName(PaymentMethod.values(), key) != null)
+		continue;
+	    if (findByFullName(PaymentStatus.values(), key) != null)
 		continue;
 	    if (findByFullName(PolicyObtainingMethod.values(), key) != null)
 		continue;

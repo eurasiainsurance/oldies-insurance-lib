@@ -12,7 +12,7 @@ import com.lapsa.insurance.services.kz.KZTypeOfSettlementService;
 import com.lapsa.kz.country.KZCity;
 import com.lapsa.kz.country.KZTypeOfSettlement;
 
-@Named("kzTypeOfSettlement")
+@Named("kzTypeOfSettlementService")
 @ApplicationScoped
 public class DefaultKZTypeOfSettlementService extends GenericEnumService<KZTypeOfSettlement> implements KZTypeOfSettlementService {
 

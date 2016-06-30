@@ -6,26 +6,26 @@ import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 
-import com.lapsa.insurance.crm.RequestStatus;
-import com.lapsa.insurance.services.crm.RequestStatusService;
+import com.lapsa.insurance.crm.PaymentStatus;
+import com.lapsa.insurance.services.crm.PaymentStatusService;
 import com.lapsa.insurance.services.elements.beans.GenericEnumService;
 
-@Named("requestStatusService")
+@Named("paymentStatusService")
 @ApplicationScoped
-public class DefaultRequestStatusService extends GenericEnumService<RequestStatus> implements RequestStatusService {
+public class DefaultPaymentStatusService extends GenericEnumService<PaymentStatus> implements PaymentStatusService {
 
     @Override
-    public List<RequestStatus> getAllItems() {
-	return Arrays.asList(RequestStatus.values());
+    public List<PaymentStatus> getAllItems() {
+	return Arrays.asList(PaymentStatus.values());
     }
 
     @Override
     protected String getMessageBundleBase() {
-	return RequestStatus.BUNDLE_BASENAME;
+	return PaymentStatus.BUNDLE_BASENAME;
     }
 
     @Override
     protected String getMessageBundleVar() {
-	return RequestStatus.BUNDLE_VAR;
+	return PaymentStatus.BUNDLE_VAR;
     }
 }

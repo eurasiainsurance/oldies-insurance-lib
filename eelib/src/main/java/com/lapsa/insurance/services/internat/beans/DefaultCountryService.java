@@ -1,4 +1,4 @@
-package com.lapsa.insurance.services.elements.beans;
+package com.lapsa.insurance.services.internat.beans;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,7 +8,8 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 
 import com.lapsa.country.Country;
-import com.lapsa.insurance.services.elements.CountryService;
+import com.lapsa.insurance.services.elements.beans.GenericEnumService;
+import com.lapsa.insurance.services.internat.CountryService;
 
 @Named("countryService")
 @ApplicationScoped

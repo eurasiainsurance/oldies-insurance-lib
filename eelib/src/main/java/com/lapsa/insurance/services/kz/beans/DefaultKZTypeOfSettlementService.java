@@ -1,5 +1,5 @@
 
-package com.lapsa.insurance.services.elements.beans;
+package com.lapsa.insurance.services.kz.beans;
 
 import java.util.Arrays;
 import java.util.List;
@@ -7,7 +7,8 @@ import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 
-import com.lapsa.insurance.services.elements.KZTypeOfSettlementService;
+import com.lapsa.insurance.services.elements.beans.GenericEnumService;
+import com.lapsa.insurance.services.kz.KZTypeOfSettlementService;
 import com.lapsa.kz.country.KZCity;
 import com.lapsa.kz.country.KZTypeOfSettlement;
 

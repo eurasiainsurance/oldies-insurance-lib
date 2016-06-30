@@ -1,5 +1,5 @@
 
-package com.lapsa.insurance.services.elements.beans;
+package com.lapsa.insurance.services.kz.beans;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,8 +12,9 @@ import javax.faces.model.SelectItem;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.lapsa.insurance.services.elements.KZCityService;
-import com.lapsa.insurance.services.elements.KZTypeOfSettlementService;
+import com.lapsa.insurance.services.elements.beans.GenericEnumService;
+import com.lapsa.insurance.services.kz.KZCityService;
+import com.lapsa.insurance.services.kz.KZTypeOfSettlementService;
 import com.lapsa.kz.country.KZArea;
 import com.lapsa.kz.country.KZCity;
 import com.lapsa.localization.LocalizationLanguage;

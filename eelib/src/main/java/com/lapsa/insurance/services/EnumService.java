@@ -1,11 +1,10 @@
-package com.lapsa.insurance.services.elements;
+package com.lapsa.insurance.services;
 
 import java.util.List;
 import java.util.Locale;
 
 import javax.faces.model.SelectItem;
 
-import com.lapsa.insurance.services.ItemService;
 import com.lapsa.localization.LocalizationLanguage;
 
 public interface EnumService<T extends Enum<?>> extends ItemService<T> {

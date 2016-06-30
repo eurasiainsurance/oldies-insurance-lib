@@ -1,5 +1,5 @@
 
-package com.lapsa.insurance.services.elements.beans;
+package com.lapsa.insurance.services.internat.beans;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,7 +11,8 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
-import com.lapsa.insurance.services.elements.LocalizationLanguageService;
+import com.lapsa.insurance.services.elements.beans.GenericEnumService;
+import com.lapsa.insurance.services.internat.LocalizationLanguageService;
 import com.lapsa.localization.LocalizationLanguage;
 
 @Named("localizationLanguageService")

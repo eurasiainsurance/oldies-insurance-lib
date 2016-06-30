@@ -9,7 +9,7 @@ import javax.inject.Named;
 import com.lapsa.insurance.elements.Sex;
 import com.lapsa.insurance.services.elements.SexService;
 
-@Named("SexService")
+@Named("sexService")
 @ApplicationScoped
 public class DefaultSexService extends GenericEnumService<Sex> implements SexService {
 

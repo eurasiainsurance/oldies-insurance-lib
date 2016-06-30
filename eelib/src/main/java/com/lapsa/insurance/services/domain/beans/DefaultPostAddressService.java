@@ -9,7 +9,7 @@ import javax.inject.Named;
 
 import com.lapsa.insurance.domain.PostAddress;
 import com.lapsa.insurance.services.domain.PostAddressService;
-import com.lapsa.insurance.services.elements.KZCityService;
+import com.lapsa.insurance.services.kz.KZCityService;
 import com.lapsa.localization.LocalizationLanguage;
 
 @Named("postAddressService")

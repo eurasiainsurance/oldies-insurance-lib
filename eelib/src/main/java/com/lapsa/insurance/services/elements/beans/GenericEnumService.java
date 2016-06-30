@@ -8,8 +8,8 @@ import java.util.ResourceBundle;
 import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
 
+import com.lapsa.insurance.services.EnumService;
 import com.lapsa.insurance.services.bean.GenericItemService;
-import com.lapsa.insurance.services.elements.EnumService;
 import com.lapsa.localization.LocalizationLanguage;
 
 public abstract class GenericEnumService<T extends Enum<T>> extends GenericItemService<T> implements EnumService<T> {

@@ -1,10 +1,11 @@
 
-package com.lapsa.insurance.services.elements;
+package com.lapsa.insurance.services.kz;
 
 import java.util.List;
 
 import javax.faces.model.SelectItem;
 
+import com.lapsa.insurance.services.EnumService;
 import com.lapsa.kz.country.KZArea;
 import com.lapsa.kz.country.KZCity;
 

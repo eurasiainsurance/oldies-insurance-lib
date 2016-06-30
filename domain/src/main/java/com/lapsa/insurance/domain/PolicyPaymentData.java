@@ -1,7 +1,7 @@
 package com.lapsa.insurance.domain;
 
+import com.lapsa.insurance.crm.PaymentStatus;
 import com.lapsa.insurance.elements.PaymentMethod;
-import com.lapsa.insurance.elements.PaymentStatus;
 import com.lapsa.insurance.validation.NotNullValue;
 
 public class PolicyPaymentData extends BaseDomain {
@@ -13,9 +13,9 @@ public class PolicyPaymentData extends BaseDomain {
     private PaymentMethod method;
 
     private PaymentStatus status;
-    
+
     private String kkbOrderId;
-    
+
     @Override
     protected int getPrime() {
 	return PRIME;

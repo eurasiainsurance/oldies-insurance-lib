@@ -15,3 +15,5 @@ com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.DaysBeforeNow.messag
 com.lapsa.insurance.domain.PolicyObtainingData.deliveryTime.NotNullValue.message = Укажите время доставки
 com.lapsa.insurance.domain.PolicyObtainingData.deliveryAddress.NotNullValue.message = Укажите адрес доставки
 com.lapsa.insurance.domain.PolicyObtainingData.deliveryAddress.NotEmptyString.message = {com.lapsa.insurance.domain.PolicyObtainingData.deliveryAddress.NotNullValue.message}
+
+com.lapsa.insurance.domain.PolicyPaymentData.method.NotNullValue.message = Необходимо выбрать способ оплаты

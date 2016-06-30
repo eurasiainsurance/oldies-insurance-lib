@@ -3,7 +3,6 @@ package com.lapsa.insurance.domain;
 import java.util.Date;
 
 import com.lapsa.insurance.crm.ClosingResult;
-import com.lapsa.insurance.crm.NotificationStatus;
 import com.lapsa.insurance.crm.RequestStatus;
 
 public class PolicyExpressOrder extends BaseEntity<Integer> {
@@ -15,8 +14,7 @@ public class PolicyExpressOrder extends BaseEntity<Integer> {
     private Date updated;
     private Date closed;
 
-    private NotificationStatus userNotificationStatus;
-    private NotificationStatus companyNotificationStatus;
+    private NotificationData notification;
 
     private RequestStatus requestStatus;
     private ClosingResult closingResult;
@@ -24,6 +22,7 @@ public class PolicyExpressOrder extends BaseEntity<Integer> {
     private PolicyData policy;
     private PloicyRequesterData requester;
     private PolicyObtainingData obtaining;
+    private PolicyPaymentData payment;
 
     private boolean allowSpam;
 
@@ -103,6 +102,14 @@ public class PolicyExpressOrder extends BaseEntity<Integer> {
 	this.obtaining = btaining;
     }
 
+    public PolicyPaymentData getPayment() {
+	return payment;
+    }
+
+    public void setPayment(PolicyPaymentData payment) {
+	this.payment = payment;
+    }
+
     public boolean isAllowSpam() {
 	return allowSpam;
     }
@@ -111,19 +118,11 @@ public class PolicyExpressOrder extends BaseEntity<Integer> {
 	this.allowSpam = allowSpam;
     }
 
-    public NotificationStatus getUserNotificationStatus() {
-	return userNotificationStatus;
+    public NotificationData getNotification() {
+	return notification;
     }
 
-    public void setUserNotificationStatus(NotificationStatus userNotificationStatus) {
-	this.userNotificationStatus = userNotificationStatus;
-    }
-
-    public NotificationStatus getCompanyNotificationStatus() {
-	return companyNotificationStatus;
-    }
-
-    public void setCompanyNotificationStatus(NotificationStatus companyNotificationStatus) {
-	this.companyNotificationStatus = companyNotificationStatus;
+    public void setNotification(NotificationData notification) {
+	this.notification = notification;
     }
 }

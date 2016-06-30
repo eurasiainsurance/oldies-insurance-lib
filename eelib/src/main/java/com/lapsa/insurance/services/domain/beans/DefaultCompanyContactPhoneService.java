@@ -8,7 +8,7 @@ import javax.inject.Named;
 
 import com.lapsa.insurance.domain.CompanyContactPhone;
 import com.lapsa.insurance.services.domain.CompanyContactPhoneService;
-import com.lapsa.insurance.services.internat.PhoneTypeService;
+import com.lapsa.insurance.services.international.PhoneTypeService;
 
 @Named("companyContactPhoneService")
 @ApplicationScoped

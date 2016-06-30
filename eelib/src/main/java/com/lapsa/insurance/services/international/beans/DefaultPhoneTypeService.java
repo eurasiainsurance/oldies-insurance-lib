@@ -1,4 +1,4 @@
-package com.lapsa.insurance.services.internat.beans;
+package com.lapsa.insurance.services.international.beans;
 
 import java.util.Arrays;
 import java.util.List;
@@ -7,7 +7,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 
 import com.lapsa.insurance.services.elements.beans.GenericEnumService;
-import com.lapsa.insurance.services.internat.PhoneTypeService;
+import com.lapsa.insurance.services.international.PhoneTypeService;
 import com.lapsa.phone.PhoneType;
 
 @Named("phoneTypeService")

@@ -2,6 +2,8 @@ package test.com.lapsa.insurance.elements;
 
 import com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass;
 
+import test.com.lapsa.insurance.EnumTypeMessagesBundleTest;
+
 public class InsuredAgeAndExpirienceClassMessagesBundleTest
 	extends EnumTypeMessagesBundleTest<InsuredAgeAndExpirienceClass> {
 

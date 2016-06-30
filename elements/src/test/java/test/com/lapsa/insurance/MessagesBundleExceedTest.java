@@ -1,4 +1,4 @@
-package test.com.lapsa.insurance.elements;
+package test.com.lapsa.insurance;
 
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
@@ -9,12 +9,13 @@ import java.util.ResourceBundle;
 
 import org.junit.Test;
 
+import com.lapsa.insurance.ElementsBundleBase;
 import com.lapsa.insurance.crm.ClosingResult;
 import com.lapsa.insurance.crm.NotificationStatus;
+import com.lapsa.insurance.crm.PaymentStatus;
 import com.lapsa.insurance.crm.RequestStatus;
 import com.lapsa.insurance.elements.CancelationReason;
 import com.lapsa.insurance.elements.DeliveryTimeSlot;
-import com.lapsa.insurance.elements.ElementsBundleBase;
 import com.lapsa.insurance.elements.IdentityCardType;
 import com.lapsa.insurance.elements.InsuranceClassType;
 import com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass;
@@ -22,7 +23,6 @@ import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredExpirienceClass;
 import com.lapsa.insurance.elements.MaritalStatus;
 import com.lapsa.insurance.elements.PaymentMethod;
-import com.lapsa.insurance.elements.PaymentStatus;
 import com.lapsa.insurance.elements.PolicyObtainingMethod;
 import com.lapsa.insurance.elements.PolicyTermClass;
 import com.lapsa.insurance.elements.Sex;
@@ -65,12 +65,16 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 	Enumeration<String> keys = resources.getKeys();
 	while (keys.hasMoreElements()) {
 	    String key = keys.nextElement();
+	    // CRM
 	    if (findByFullName(ClosingResult.values(), key) != null)
 		continue;
 	    if (findByFullName(NotificationStatus.values(), key) != null)
 		continue;
+	    if (findByFullName(PaymentStatus.values(), key) != null)
+		continue;
 	    if (findByFullName(RequestStatus.values(), key) != null)
 		continue;
+	    // ELEMENTS
 	    if (findByFullName(CancelationReason.values(), key) != null)
 		continue;
 	    if (findByFullName(DeliveryTimeSlot.values(), key) != null)
@@ -81,11 +85,13 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 		continue;
 	    if (findByFullName(InsuredAgeAndExpirienceClass.values(), key) != null)
 		continue;
+	    if (findByFullName(InsuredAgeClass.values(), key) != null)
+		continue;
+	    if (findByFullName(InsuredExpirienceClass.values(), key) != null)
+		continue;
 	    if (findByFullName(MaritalStatus.values(), key) != null)
 		continue;
 	    if (findByFullName(PaymentMethod.values(), key) != null)
-		continue;
-	    if (findByFullName(PaymentStatus.values(), key) != null)
 		continue;
 	    if (findByFullName(PolicyObtainingMethod.values(), key) != null)
 		continue;
@@ -93,17 +99,13 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 		continue;
 	    if (findByFullName(Sex.values(), key) != null)
 		continue;
-	    if (findByFullName(VehicleAgeClass.values(), key) != null)
-		continue;
-	    if (findByFullName(VehicleClass.values(), key) != null)
+	    if (findByFullName(SteeringWheelLocation.values(), key) != null)
 		continue;
 	    if (findByFullName(SubjectType.values(), key) != null)
 		continue;
-	    if (findByFullName(InsuredAgeClass.values(), key) != null)
+	    if (findByFullName(VehicleAgeClass.values(), key) != null)
 		continue;
-	    if (findByFullName(InsuredExpirienceClass.values(), key) != null)
-		continue;
-	    if (findByFullName(SteeringWheelLocation.values(), key) != null)
+	    if (findByFullName(VehicleClass.values(), key) != null)
 		continue;
 	    if (findByFullName(WhoIsInsurant.values(), key) != null)
 		continue;

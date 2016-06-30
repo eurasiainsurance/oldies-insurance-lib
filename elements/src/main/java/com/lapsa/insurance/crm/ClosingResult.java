@@ -1,6 +1,6 @@
 package com.lapsa.insurance.crm;
 
-import com.lapsa.insurance.elements.ElementsBundleBase;
+import com.lapsa.insurance.ElementsBundleBase;
 
 public enum ClosingResult implements ElementsBundleBase {
     COMPLETED, // Выполнено

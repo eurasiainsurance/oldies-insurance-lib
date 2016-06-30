@@ -1,5 +1,7 @@
 package com.lapsa.insurance.elements;
 
+import com.lapsa.insurance.ElementsBundleBase;
+
 public enum InsuranceClassType implements ElementsBundleBase {
     CLASS_0,
     CLASS_1,

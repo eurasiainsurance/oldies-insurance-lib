@@ -1,4 +1,17 @@
-﻿com.lapsa.insurance.elements.CancelationReason.CANCELATION_AND_RENEW = Шартты мерзімінен бұрын тоқтату және жаңа шарт жасау
+﻿com.lapsa.insurance.crm.ClosingResult.COMPLETED = Аяқталған
+com.lapsa.insurance.crm.ClosingResult.CANCELED = Болдырмау
+
+com.lapsa.insurance.crm.NotificationStatus.DONE = Аяқталған
+com.lapsa.insurance.crm.NotificationStatus.PENDING = Кезекте
+com.lapsa.insurance.crm.NotificationStatus.NOT_REQUIRED = Талап етілмейді
+
+com.lapsa.insurance.crm.PaymentStatus.PENDING = Күтілуде
+com.lapsa.insurance.crm.PaymentStatus.DONE = Аяқталды
+
+com.lapsa.insurance.crm.RequestStatus.OPEN = Ашық
+com.lapsa.insurance.crm.RequestStatus.CLOSED = Жабық
+
+com.lapsa.insurance.elements.CancelationReason.CANCELATION_AND_RENEW = Шартты мерзімінен бұрын тоқтату және жаңа шарт жасау
 com.lapsa.insurance.elements.CancelationReason.CANCELATION = Мерзімінен бұрын бұзу
 com.lapsa.insurance.elements.CancelationReason.MADE_INSURANCE_PAYMENT = Сақтандыру төлемі жүзеге асырылды
 com.lapsa.insurance.elements.CancelationReason.PREMIUM_COST_ERROR = Дұрыс есептелмеген сыйлықақыны түзету
@@ -54,9 +67,6 @@ com.lapsa.insurance.elements.MaritalStatus.SINGLE = бойдақ / тұрмыс�
 com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE = Банк картасымен төлеу
 com.lapsa.insurance.elements.PaymentMethod.PAYCASH = Курьерге қолма-қол төлеу кезінде жеткізу полисі
 
-com.lapsa.insurance.elements.PaymentStatus.DONE = Төленді
-com.lapsa.insurance.elements.PaymentStatus.PENDING = Күтілетін төлеу
-
 com.lapsa.insurance.elements.PolicyObtainingMethod.DELIVERY = курьермен жеткізу
 com.lapsa.insurance.elements.PolicyObtainingMethod.PICKUP = сақтандыру компаниясының офисінен өз бетімен алу
 
@@ -102,12 +112,3 @@ com.lapsa.insurance.elements.VehicleClass.SPECIAL = Арнай техника
 
 com.lapsa.insurance.elements.WhoIsInsurant.DRIVER = Сақтанушы сақтандырылған жүргізушілердің бірі болып табылады
 com.lapsa.insurance.elements.WhoIsInsurant.OTHER = Сақтанушы басқа тұлға болып табылады
-
-com.lapsa.insurance.crm.RequestStatus.OPEN = Ашық
-com.lapsa.insurance.crm.RequestStatus.CLOSED = Жабық
-
-com.lapsa.insurance.crm.ClosingResult.COMPLETED = Аяқталған
-com.lapsa.insurance.crm.ClosingResult.CANCELED = Болдырмау
-
-com.lapsa.insurance.crm.NotificationStatus.DONE = Аяқталған
-com.lapsa.insurance.crm.NotificationStatus.PENDING = Кезекте

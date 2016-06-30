@@ -1,4 +1,4 @@
-package test.com.lapsa.insurance.elements;
+package test.com.lapsa.insurance;
 
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;

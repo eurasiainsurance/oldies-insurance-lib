@@ -1,4 +1,4 @@
-package com.lapsa.insurance.elements;
+package com.lapsa.insurance;
 
 public interface ElementsBundleBase {
     public static final String BUNDLE_BASENAME = "ElementsLocalization";

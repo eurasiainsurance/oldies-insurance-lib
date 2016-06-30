@@ -17,4 +17,7 @@ public interface PolicyExpressOrderDAO extends DAO<PolicyExpressOrder, Integer> 
 
     List<PolicyExpressOrder> findPendingCompanyNotification();
 
+    List<PolicyExpressOrder> findPendingKKBPaymentURLNotification();
+
+    List<PolicyExpressOrder> findPendingKKBPaymentSuccessNotification();
 }

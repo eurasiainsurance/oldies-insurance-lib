@@ -1,6 +1,6 @@
 package com.lapsa.insurance.mesenger;
 
-import com.lapsa.insurance.domain.PolicyExpressOrder;
+import com.lapsa.insurance.domain.notification.NewExpressOrderCompanyNotification;
 
-public interface PolicyExpressOrderCompanyNotifier extends BaseNotifier<PolicyExpressOrder> {
+public interface NewExpressOrderUserNotifier extends BaseNotifier<NewExpressOrderCompanyNotification> {
 }

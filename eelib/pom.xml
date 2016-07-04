@@ -15,19 +15,19 @@
 	<dependencies>
 		<!-- own -->
 		<dependency>
-			<groupId>com.lapsa.insurance-lib</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>insurance-elements</artifactId>
 			<scope>compile</scope>
 			<optional>false</optional>
 		</dependency>
 		<dependency>
-			<groupId>com.lapsa.insurance-lib</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>insurance-domain</artifactId>
 			<scope>compile</scope>
 			<optional>false</optional>
 		</dependency>
 		<dependency>
-			<groupId>com.lapsa.insurance-lib</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>insurance-persistence</artifactId>
 			<scope>compile</scope>
 			<optional>false</optional>

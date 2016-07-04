@@ -34,37 +34,37 @@
 		<dependencies>
 			<!-- own -->
 			<dependency>
-				<groupId>com.lapsa.insurance-lib</groupId>
+				<groupId>${project.groupId}</groupId>
 				<artifactId>insurance-elements</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.lapsa.insurance-lib</groupId>
+				<groupId>${project.groupId}</groupId>
 				<artifactId>insurance-validation</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.lapsa.insurance-lib</groupId>
+				<groupId>${project.groupId}</groupId>
 				<artifactId>insurance-eelib</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.lapsa.insurance-lib</groupId>
+				<groupId>${project.groupId}</groupId>
 				<artifactId>insurance-domain</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.lapsa.insurance-lib</groupId>
+				<groupId>${project.groupId}</groupId>
 				<artifactId>insurance-persistence</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.lapsa.insurance-lib</groupId>
+				<groupId>${project.groupId}</groupId>
 				<artifactId>insurance-mesenger</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.lapsa.insurance-lib</groupId>
+				<groupId>${project.groupId}</groupId>
 				<artifactId>insurance-esbd</artifactId>
 				<version>${project.version}</version>
 			</dependency>

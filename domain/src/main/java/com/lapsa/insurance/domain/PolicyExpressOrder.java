@@ -1,9 +1,12 @@
 package com.lapsa.insurance.domain;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import com.lapsa.insurance.crm.ClosingResult;
 import com.lapsa.insurance.crm.RequestStatus;
+import com.lapsa.insurance.domain.notification.ExpressOrderNotification;
 
 public class PolicyExpressOrder extends BaseEntity<Integer> {
     private static final long serialVersionUID = 944531653617396366L;
@@ -13,8 +16,6 @@ public class PolicyExpressOrder extends BaseEntity<Integer> {
     private Date created;
     private Date updated;
     private Date closed;
-
-    private NotificationData notification;
 
     private RequestStatus requestStatus;
     private ClosingResult closingResult;
@@ -26,6 +27,8 @@ public class PolicyExpressOrder extends BaseEntity<Integer> {
 
     private boolean allowSpam;
 
+    private List<ExpressOrderNotification> notifications;
+
     @Override
     protected int getPrime() {
 	return PRIME;
@@ -34,6 +37,26 @@ public class PolicyExpressOrder extends BaseEntity<Integer> {
     @Override
     protected int getMultiplier() {
 	return MULTIPLIER;
+    }
+
+    public void addNotification(ExpressOrderNotification notification) {
+	if (notification == null)
+	    throw new NullPointerException("Value must not be null");
+	if (notification.getOrder() != null)
+	    notification.getOrder().removeNotification(notification);
+	if (notifications == null)
+	    notifications = new ArrayList<>();
+	notifications.add(notification);
+	notification.setOrder(this);
+    }
+
+    public void removeNotification(ExpressOrderNotification notification) {
+	if (notification == null)
+	    throw new NullPointerException("Value must not be null");
+	if (notifications == null) // nothing to remove from
+	    return;
+	notifications.remove(notification);
+	notification.setOrder(null);
     }
 
     // GENERATED
@@ -118,11 +141,12 @@ public class PolicyExpressOrder extends BaseEntity<Integer> {
 	this.allowSpam = allowSpam;
     }
 
-    public NotificationData getNotification() {
-	return notification;
+    public List<ExpressOrderNotification> getNotifications() {
+	return notifications;
     }
 
-    public void setNotification(NotificationData notification) {
-	this.notification = notification;
+    public void setNotifications(List<ExpressOrderNotification> notifications) {
+	this.notifications = notifications;
     }
+
 }

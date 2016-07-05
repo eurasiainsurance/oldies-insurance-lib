@@ -10,6 +10,7 @@ public abstract class Notification extends BaseEntity<Integer> {
 
     private Date created;
     private Date updated;
+    private Date sent;
     private NotificationStatus status;
 
     // GENERATED
@@ -28,6 +29,14 @@ public abstract class Notification extends BaseEntity<Integer> {
 
     public void setUpdated(Date updated) {
 	this.updated = updated;
+    }
+
+    public Date getSent() {
+	return sent;
+    }
+
+    public void setSent(Date sent) {
+	this.sent = sent;
     }
 
     public NotificationStatus getStatus() {

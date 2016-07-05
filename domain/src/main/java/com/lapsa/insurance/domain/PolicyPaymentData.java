@@ -14,7 +14,7 @@ public class PolicyPaymentData extends BaseDomain {
 
     private PaymentStatus status;
 
-    private String kkbOrderId;
+    private String paymentReference;
 
     @Override
     protected int getPrime() {
@@ -36,12 +36,12 @@ public class PolicyPaymentData extends BaseDomain {
 	this.method = method;
     }
 
-    public String getKkbOrderId() {
-	return kkbOrderId;
+    public String getPaymentReference() {
+	return paymentReference;
     }
 
-    public void setKkbOrderId(String kkbOrderId) {
-	this.kkbOrderId = kkbOrderId;
+    public void setPaymentReference(String paymentReference) {
+	this.paymentReference = paymentReference;
     }
 
     public PaymentStatus getStatus() {

@@ -11,7 +11,7 @@
 	<artifactId>insurance-mesenger</artifactId>
 	<packaging>jar</packaging>
 
-	<name>Insurance Lib : Mesenger Core</name>
+	<name>Insurance Lib : Mesenger API</name>
 
 	<dependencies>
 		<!-- own -->

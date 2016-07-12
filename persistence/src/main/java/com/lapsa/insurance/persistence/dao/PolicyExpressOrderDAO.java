@@ -14,4 +14,6 @@ public interface PolicyExpressOrderDAO extends DAO<PolicyExpressOrder, Integer> 
     List<PolicyExpressOrder> findAll();
 
     List<PolicyExpressOrder> findByPaymentReference(String paymentReference);
+
+    List<PolicyExpressOrder> findOpenUnpaidByPaycardOnline();
 }

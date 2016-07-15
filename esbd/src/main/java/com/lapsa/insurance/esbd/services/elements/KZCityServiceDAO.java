@@ -1,4 +1,4 @@
-package kz.theeurasia.esbdproxy.services.elements;
+package com.lapsa.insurance.esbd.services.elements;
 
 import com.lapsa.kz.country.KZCity;
 

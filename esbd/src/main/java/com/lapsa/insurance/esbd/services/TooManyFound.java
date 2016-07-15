@@ -1,4 +1,4 @@
-package kz.theeurasia.esbdproxy.services;
+package com.lapsa.insurance.esbd.services;
 
 public class TooManyFound extends Exception {
 

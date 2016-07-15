@@ -1,9 +1,10 @@
-package kz.theeurasia.esbdproxy.services.osgpovts;
+package com.lapsa.insurance.esbd.services.osgpovts;
+
+import com.lapsa.insurance.esbd.services.GeneralServiceDAO;
+import com.lapsa.insurance.esbd.services.InvalidInputParameter;
+import com.lapsa.insurance.esbd.services.NotFound;
 
 import kz.theeurasia.esbdproxy.domain.entities.osgpovts.PolicyEntity;
-import kz.theeurasia.esbdproxy.services.GeneralServiceDAO;
-import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
-import kz.theeurasia.esbdproxy.services.NotFound;
 
 public interface PolicyServiceDAO extends GeneralServiceDAO<PolicyEntity, Long> {
     PolicyEntity getByNumber(String number) throws NotFound, InvalidInputParameter;

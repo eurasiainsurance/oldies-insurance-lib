@@ -1,8 +1,9 @@
-package kz.theeurasia.esbdproxy.services.general;
+package com.lapsa.insurance.esbd.services.general;
+
+import com.lapsa.insurance.esbd.services.InvalidInputParameter;
+import com.lapsa.insurance.esbd.services.NotFound;
 
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectEntity;
-import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
-import kz.theeurasia.esbdproxy.services.NotFound;
 
 public interface SubjectServiceDAO {
     SubjectEntity getById(Long id) throws NotFound, InvalidInputParameter;

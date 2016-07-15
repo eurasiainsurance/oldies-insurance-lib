@@ -1,11 +1,12 @@
-package kz.theeurasia.esbdproxy.services.osgpovts;
+package com.lapsa.insurance.esbd.services.osgpovts;
 
 import java.util.List;
 
+import com.lapsa.insurance.esbd.services.GeneralServiceDAO;
+import com.lapsa.insurance.esbd.services.InvalidInputParameter;
+
 import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleManufacturerEntity;
 import kz.theeurasia.esbdproxy.domain.entities.osgpovts.VehicleModelEntity;
-import kz.theeurasia.esbdproxy.services.GeneralServiceDAO;
-import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
 
 public interface VehicleModelServiceDAO extends GeneralServiceDAO<VehicleModelEntity, Long> {
     List<VehicleModelEntity> getByName(String name) throws InvalidInputParameter;

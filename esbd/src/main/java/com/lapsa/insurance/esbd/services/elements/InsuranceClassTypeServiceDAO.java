@@ -1,12 +1,12 @@
-package kz.theeurasia.esbdproxy.services.elements;
+package com.lapsa.insurance.esbd.services.elements;
 
 import java.util.Calendar;
 
 import com.lapsa.insurance.elements.InsuranceClassType;
+import com.lapsa.insurance.esbd.services.InvalidInputParameter;
+import com.lapsa.insurance.esbd.services.NotFound;
 
 import kz.theeurasia.esbdproxy.domain.entities.general.SubjectPersonEntity;
-import kz.theeurasia.esbdproxy.services.InvalidInputParameter;
-import kz.theeurasia.esbdproxy.services.NotFound;
 
 public interface InsuranceClassTypeServiceDAO extends ElementsServiceDAO<InsuranceClassType, Integer> {
     InsuranceClassType getByCode(String code) throws NotFound, InvalidInputParameter;

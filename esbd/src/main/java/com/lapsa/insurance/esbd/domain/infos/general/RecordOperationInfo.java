@@ -1,8 +1,8 @@
-package kz.theeurasia.esbdproxy.domain.infos.general;
+package com.lapsa.insurance.esbd.domain.infos.general;
 
 import java.util.Calendar;
 
-import kz.theeurasia.esbdproxy.domain.entities.general.UserEntity;
+import com.lapsa.insurance.esbd.domain.entities.general.UserEntity;
 
 public class RecordOperationInfo {
     private Calendar date;

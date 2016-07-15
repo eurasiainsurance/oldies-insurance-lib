@@ -1,11 +1,10 @@
-package kz.theeurasia.esbdproxy.domain.entities.osgpovts;
+package com.lapsa.insurance.esbd.domain.entities.osgpovts;
 
 import com.lapsa.insurance.elements.VehicleAgeClass;
 import com.lapsa.insurance.elements.VehicleClass;
-
-import kz.theeurasia.esbdproxy.domain.entities.general.InsuranceCompanyEntity;
-import kz.theeurasia.esbdproxy.domain.infos.general.RecordOperationInfo;
-import kz.theeurasia.esbdproxy.domain.infos.general.VehicleCertificateInfo;
+import com.lapsa.insurance.esbd.domain.entities.general.InsuranceCompanyEntity;
+import com.lapsa.insurance.esbd.domain.infos.general.RecordOperationInfo;
+import com.lapsa.insurance.esbd.domain.infos.general.VehicleCertificateInfo;
 
 public class InsuredVehicleEntity {
 

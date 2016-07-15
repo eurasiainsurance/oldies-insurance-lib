@@ -1,15 +1,14 @@
-package kz.theeurasia.esbdproxy.domain.entities.osgpovts;
+package com.lapsa.insurance.esbd.domain.entities.osgpovts;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 import com.lapsa.insurance.elements.CancelationReason;
-
-import kz.theeurasia.esbdproxy.domain.entities.general.BranchEntity;
-import kz.theeurasia.esbdproxy.domain.entities.general.InsuranceCompanyEntity;
-import kz.theeurasia.esbdproxy.domain.entities.general.SubjectEntity;
-import kz.theeurasia.esbdproxy.domain.infos.general.RecordOperationInfo;
+import com.lapsa.insurance.esbd.domain.entities.general.BranchEntity;
+import com.lapsa.insurance.esbd.domain.entities.general.InsuranceCompanyEntity;
+import com.lapsa.insurance.esbd.domain.entities.general.SubjectEntity;
+import com.lapsa.insurance.esbd.domain.infos.general.RecordOperationInfo;
 
 public class PolicyEntity {
     // POLICY_ID s:int Идентификатор полиса (обязательно)

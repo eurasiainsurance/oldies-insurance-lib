@@ -1,4 +1,4 @@
-package kz.theeurasia.esbdproxy.domain.infos.general;
+package com.lapsa.insurance.esbd.domain.infos.general;
 
 import com.lapsa.phone.PhoneNumber;
 

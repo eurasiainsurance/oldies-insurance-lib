@@ -1,19 +1,18 @@
-package kz.theeurasia.esbdproxy.domain.entities.osgpovts;
+package com.lapsa.insurance.esbd.domain.entities.osgpovts;
 
 import com.lapsa.insurance.elements.InsuranceClassType;
 import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass;
 import com.lapsa.insurance.elements.InsuredExpirienceClass;
 import com.lapsa.insurance.elements.MaritalStatus;
-
-import kz.theeurasia.esbdproxy.domain.entities.general.InsuranceCompanyEntity;
-import kz.theeurasia.esbdproxy.domain.entities.general.SubjectPersonEntity;
-import kz.theeurasia.esbdproxy.domain.infos.general.RecordOperationInfo;
-import kz.theeurasia.esbdproxy.domain.infos.osgpovts.DriverLicenseInfo;
-import kz.theeurasia.esbdproxy.domain.infos.osgpovts.GPWParticipantInfo;
-import kz.theeurasia.esbdproxy.domain.infos.osgpovts.InvalidInfo;
-import kz.theeurasia.esbdproxy.domain.infos.osgpovts.PensionerInfo;
-import kz.theeurasia.esbdproxy.domain.infos.osgpovts.PrivilegerInfo;
+import com.lapsa.insurance.esbd.domain.entities.general.InsuranceCompanyEntity;
+import com.lapsa.insurance.esbd.domain.entities.general.SubjectPersonEntity;
+import com.lapsa.insurance.esbd.domain.infos.general.RecordOperationInfo;
+import com.lapsa.insurance.esbd.domain.infos.osgpovts.DriverLicenseInfo;
+import com.lapsa.insurance.esbd.domain.infos.osgpovts.GPWParticipantInfo;
+import com.lapsa.insurance.esbd.domain.infos.osgpovts.InvalidInfo;
+import com.lapsa.insurance.esbd.domain.infos.osgpovts.PensionerInfo;
+import com.lapsa.insurance.esbd.domain.infos.osgpovts.PrivilegerInfo;
 
 public class InsuredDriverEntity {
     // DRIVER_ID s:int Идентификатор водителя

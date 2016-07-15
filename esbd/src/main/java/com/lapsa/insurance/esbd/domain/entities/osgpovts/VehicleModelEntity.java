@@ -1,4 +1,4 @@
-package kz.theeurasia.esbdproxy.domain.entities.osgpovts;
+package com.lapsa.insurance.esbd.domain.entities.osgpovts;
 
 public class VehicleModelEntity {
     // ID s:int Идентификатор модели

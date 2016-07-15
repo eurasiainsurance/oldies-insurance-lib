@@ -1,4 +1,4 @@
-package kz.theeurasia.esbdproxy.domain.entities.general;
+package com.lapsa.insurance.esbd.domain.entities.general;
 
 import com.lapsa.insurance.elements.SubjectType;
 

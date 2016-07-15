@@ -1,4 +1,4 @@
-package kz.theeurasia.esbdproxy.domain.entities.general;
+package com.lapsa.insurance.esbd.domain.entities.general;
 
 public class UserEntity {
     // ID s:int Идентификатор пользователя

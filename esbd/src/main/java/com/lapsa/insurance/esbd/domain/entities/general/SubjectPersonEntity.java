@@ -1,9 +1,8 @@
-package kz.theeurasia.esbdproxy.domain.entities.general;
+package com.lapsa.insurance.esbd.domain.entities.general;
 
 import com.lapsa.insurance.elements.SubjectType;
-
-import kz.theeurasia.esbdproxy.domain.infos.general.IdentityCardInfo;
-import kz.theeurasia.esbdproxy.domain.infos.general.PersonalInfo;
+import com.lapsa.insurance.esbd.domain.infos.general.IdentityCardInfo;
+import com.lapsa.insurance.esbd.domain.infos.general.PersonalInfo;
 
 /**
  * Класс для представления данных о субъекте - физ.лице

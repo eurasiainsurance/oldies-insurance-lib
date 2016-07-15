@@ -1,10 +1,9 @@
-package kz.theeurasia.esbdproxy.domain.entities.general;
+package com.lapsa.insurance.esbd.domain.entities.general;
 
 import com.lapsa.insurance.elements.SubjectType;
+import com.lapsa.insurance.esbd.domain.infos.general.ContactInfo;
+import com.lapsa.insurance.esbd.domain.infos.general.OriginInfo;
 import com.lapsa.kz.economic.KZEconomicSector;
-
-import kz.theeurasia.esbdproxy.domain.infos.general.ContactInfo;
-import kz.theeurasia.esbdproxy.domain.infos.general.OriginInfo;
 
 /**
  * Абстрактный класс для представления лица

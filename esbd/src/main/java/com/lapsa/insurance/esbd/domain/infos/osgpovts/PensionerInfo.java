@@ -1,4 +1,4 @@
-package kz.theeurasia.esbdproxy.domain.infos.osgpovts;
+package com.lapsa.insurance.esbd.domain.infos.osgpovts;
 
 import java.util.Calendar;
 

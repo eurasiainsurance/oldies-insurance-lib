@@ -1,5 +1,6 @@
 package com.lapsa.insurance.domain;
 
+import com.lapsa.fin.FinCurrency;
 import com.lapsa.insurance.elements.PolicyTermClass;
 
 public class CalculationData extends BaseDomain {
@@ -10,6 +11,7 @@ public class CalculationData extends BaseDomain {
     private PolicyTermClass termClass = PolicyTermClass.YEAR;
 
     private double premiumCost;
+    private FinCurrency premiumCurrency;
 
     @Override
     protected int getPrime() {
@@ -39,4 +41,11 @@ public class CalculationData extends BaseDomain {
 	this.premiumCost = premiumCost;
     }
 
+    public FinCurrency getPremiumCurrency() {
+	return premiumCurrency;
+    }
+
+    public void setPremiumCurrency(FinCurrency premiumCurrency) {
+	this.premiumCurrency = premiumCurrency;
+    }
 }

@@ -1,19 +1,19 @@
 package test.com.lapsa.insurance.elements;
 
-import com.lapsa.insurance.elements.PolicyTermClass;
+import com.lapsa.insurance.elements.TermClass;
 
 import test.com.lapsa.insurance.EnumTypeMessagesBundleTest;
 
 public class PolicyTermsClassMessagesBundleTest
-	extends EnumTypeMessagesBundleTest<PolicyTermClass> {
+	extends EnumTypeMessagesBundleTest<TermClass> {
 
     @Override
-    protected PolicyTermClass[] getAllEnumValues() {
-	return PolicyTermClass.values();
+    protected TermClass[] getAllEnumValues() {
+	return TermClass.values();
     }
 
     @Override
     protected String getBundleBaseName() {
-	return PolicyTermClass.BUNDLE_BASENAME;
+	return TermClass.BUNDLE_BASENAME;
     }
 }

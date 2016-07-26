@@ -24,7 +24,7 @@ import com.lapsa.insurance.elements.InsuredExpirienceClass;
 import com.lapsa.insurance.elements.MaritalStatus;
 import com.lapsa.insurance.elements.PaymentMethod;
 import com.lapsa.insurance.elements.ObtainingMethod;
-import com.lapsa.insurance.elements.PolicyTermClass;
+import com.lapsa.insurance.elements.TermClass;
 import com.lapsa.insurance.elements.Sex;
 import com.lapsa.insurance.elements.SteeringWheelLocation;
 import com.lapsa.insurance.elements.SubjectType;
@@ -95,7 +95,7 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 		continue;
 	    if (findByFullName(ObtainingMethod.values(), key) != null)
 		continue;
-	    if (findByFullName(PolicyTermClass.values(), key) != null)
+	    if (findByFullName(TermClass.values(), key) != null)
 		continue;
 	    if (findByFullName(Sex.values(), key) != null)
 		continue;

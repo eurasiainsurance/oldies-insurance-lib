@@ -1,14 +1,14 @@
 package com.lapsa.insurance.domain;
 
 import com.lapsa.fin.FinCurrency;
-import com.lapsa.insurance.elements.PolicyTermClass;
+import com.lapsa.insurance.elements.TermClass;
 
 public class CalculationData extends BaseDomain {
     private static final long serialVersionUID = -1769681003179820909L;
     private static final int PRIME = 3;
     private static final int MULTIPLIER = 3;
 
-    private PolicyTermClass termClass = PolicyTermClass.YEAR;
+    private TermClass termClass = TermClass.YEAR;
 
     private double premiumCost;
     private FinCurrency premiumCurrency;
@@ -25,11 +25,11 @@ public class CalculationData extends BaseDomain {
 
     // GENEERATED
 
-    public PolicyTermClass getTermClass() {
+    public TermClass getTermClass() {
 	return termClass;
     }
 
-    public void setTermClass(PolicyTermClass termClass) {
+    public void setTermClass(TermClass termClass) {
 	this.termClass = termClass;
     }
 

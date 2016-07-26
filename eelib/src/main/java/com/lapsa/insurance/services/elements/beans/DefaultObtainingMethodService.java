@@ -7,12 +7,12 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 
 import com.lapsa.insurance.elements.ObtainingMethod;
-import com.lapsa.insurance.services.elements.PolicyObtainingMethodService;
+import com.lapsa.insurance.services.elements.ObtainingMethodService;
 
 @Named("policyObtainingMethodService")
 @ApplicationScoped
-public class DefaultPolicyObtainingMethodService extends GenericEnumService<ObtainingMethod>
-	implements PolicyObtainingMethodService {
+public class DefaultObtainingMethodService extends GenericEnumService<ObtainingMethod>
+	implements ObtainingMethodService {
 
     public List<ObtainingMethod> getAllItems() {
 	return Arrays.asList(ObtainingMethod.values());

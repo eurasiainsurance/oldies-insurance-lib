@@ -7,7 +7,7 @@ import javax.inject.Inject;
 
 import com.lapsa.insurance.domain.InsuredDriverData;
 import com.lapsa.insurance.domain.InsuredVehicleData;
-import com.lapsa.insurance.elements.PolicyTermClass;
+import com.lapsa.insurance.elements.TermClass;
 import com.lapsa.insurance.services.other.CalculationService;
 import com.lapsa.insurance.services.other.PremiumCostCalculatorRatesService;
 
@@ -19,7 +19,7 @@ public class DefaultCalculationService implements CalculationService {
 
     @Override
     public double calculatePremiumCost(List<InsuredDriverData> drivers, List<InsuredVehicleData> vehicles,
-	    PolicyTermClass termClass) {
+	    TermClass termClass) {
 	double maximumCost = 0d;
 	for (InsuredDriverData driver : drivers)
 	    for (InsuredVehicleData vehicle : vehicles) {
@@ -34,7 +34,7 @@ public class DefaultCalculationService implements CalculationService {
     }
 
     private double _calculatePremiumCostVariant(InsuredDriverData insured, InsuredVehicleData vehicle,
-	    PolicyTermClass policyTermClass) {
+	    TermClass termClass) {
 	double premium = rates.getBase();
 	premium *= rates.getBaseRate();
 	premium *= rates.getRegionRate(vehicle.getRegion());
@@ -43,7 +43,7 @@ public class DefaultCalculationService implements CalculationService {
 	premium *= rates.getDriverExpirienceTypeRate(insured.getAgeClass(), insured.getExpirienceClass());
 	premium *= rates.getVehicleAgeTypeRate(vehicle.getVehicleAgeClass());
 	premium *= rates.getInsuranceClassTypeRate(insured.getInsuranceClassType());
-	premium *= rates.getPolicyTermClassRate(policyTermClass);
+	premium *= rates.getTermClassRate(termClass);
 	premium *= rates.getPrivilegeRate(insured.isHasAnyPrivilege());
 	premium = roundMoney(premium); // округляем до "копеек"
 	return premium;

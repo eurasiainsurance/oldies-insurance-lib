@@ -6,25 +6,25 @@ import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 
-import com.lapsa.insurance.elements.PolicyTermClass;
-import com.lapsa.insurance.services.elements.PolicyTermClassService;
+import com.lapsa.insurance.elements.TermClass;
+import com.lapsa.insurance.services.elements.TermClassService;
 
 @Named("policyTermClassService")
 @ApplicationScoped
-public class DefaultPolicyTermClassService extends GenericEnumService<PolicyTermClass>
-	implements PolicyTermClassService {
+public class DefaultTermClassService extends GenericEnumService<TermClass>
+	implements TermClassService {
 
-    public List<PolicyTermClass> getAllItems() {
-	return Arrays.asList(PolicyTermClass.values());
+    public List<TermClass> getAllItems() {
+	return Arrays.asList(TermClass.values());
     }
 
     @Override
     protected String getMessageBundleBase() {
-	return PolicyTermClass.BUNDLE_BASENAME;
+	return TermClass.BUNDLE_BASENAME;
     }
 
     @Override
     protected String getMessageBundleVar() {
-	return PolicyTermClass.BUNDLE_VAR;
+	return TermClass.BUNDLE_VAR;
     }
 }

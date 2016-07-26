@@ -1,7 +1,7 @@
 package com.lapsa.insurance.services.elements;
 
-import com.lapsa.insurance.elements.PolicyTermClass;
+import com.lapsa.insurance.elements.TermClass;
 import com.lapsa.insurance.services.EnumService;
 
-public interface PolicyTermClassService extends EnumService<PolicyTermClass> {
+public interface TermClassService extends EnumService<TermClass> {
 }

@@ -2,7 +2,7 @@ package com.lapsa.insurance.elements;
 
 import com.lapsa.insurance.ElementsBundleBase;
 
-public enum PolicyTermClass implements ElementsBundleBase {
+public enum TermClass implements ElementsBundleBase {
     YEAR, // 1 год
     DAY5, // 5 дней
     MONTH1_2, // от 1 до 2 месяцев включительно

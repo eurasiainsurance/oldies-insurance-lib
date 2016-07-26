@@ -10,7 +10,7 @@ import com.lapsa.phone.PhoneNumber;
 import com.lapsa.phone.PhoneNumberFactoryProvider;
 import com.lapsa.phone.validators.ValidPhoneNumber;
 
-public class PloicyRequesterData extends BaseDomain {
+public class RequesterData extends BaseDomain {
     private static final long serialVersionUID = 2536050924805456436L;
     private static final int PRIME = 73;
     private static final int MULTIPLIER = 73;

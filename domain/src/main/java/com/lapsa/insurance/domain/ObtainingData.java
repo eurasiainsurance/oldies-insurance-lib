@@ -3,7 +3,7 @@ package com.lapsa.insurance.domain;
 import java.util.Date;
 
 import com.lapsa.insurance.elements.DeliveryTimeSlot;
-import com.lapsa.insurance.elements.PolicyObtainingMethod;
+import com.lapsa.insurance.elements.ObtainingMethod;
 import com.lapsa.insurance.validation.DaysAfterNow;
 import com.lapsa.insurance.validation.DaysBeforeNow;
 import com.lapsa.insurance.validation.Mode;
@@ -11,33 +11,33 @@ import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.kz.country.KZCity;
 
-public class PolicyObtainingData extends BaseDomain {
+public class ObtainingData extends BaseDomain {
     private static final long serialVersionUID = -6326848114328976035L;
     private static final int PRIME = 89;
     private static final int MULTIPLIER = 89;
 
-    @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.method.NotNullValue.message}")
-    private PolicyObtainingMethod method;
+    @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.method.NotNullValue.message}")
+    private ObtainingMethod method;
 
-    @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.pickupCity.NotNullValue.message}")
+    @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.pickupCity.NotNullValue.message}")
     private KZCity pickupCity;
 
-    @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.pickupPOS.NotNullValue.message}")
+    @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.pickupPOS.NotNullValue.message}")
     private CompanyPointOfSale pickupPOS;
 
-    @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.NotNullValue.message}")
-    @DaysAfterNow(mode = Mode.MUST, value = 0, message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.DaysAfterNow.messages}")
-    @DaysBeforeNow(mode = Mode.MUST_NOT, value = 7, message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.DaysBeforeNow.messages}")
+    @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.deliveryDate.NotNullValue.message}")
+    @DaysAfterNow(mode = Mode.MUST, value = 0, message = "{com.lapsa.insurance.domain.ObtainingData.deliveryDate.DaysAfterNow.messages}")
+    @DaysBeforeNow(mode = Mode.MUST_NOT, value = 7, message = "{com.lapsa.insurance.domain.ObtainingData.deliveryDate.DaysBeforeNow.messages}")
     private Date deliveryDate;
 
-    @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryTime.NotNullValue.message}")
+    @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.deliveryTime.NotNullValue.message}")
     private DeliveryTimeSlot deliveryTime;
 
-    @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryCity.NotNullValue.message}")
+    @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.deliveryCity.NotNullValue.message}")
     private KZCity deliveryCity;
 
-    @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryAddress.NotNullValue.message}")
-    @NotEmptyString(message = "{com.lapsa.insurance.domain.PolicyObtainingData.deliveryAddress.NotEmptyString.message}")
+    @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.deliveryAddress.NotNullValue.message}")
+    @NotEmptyString(message = "{com.lapsa.insurance.domain.ObtainingData.deliveryAddress.NotEmptyString.message}")
     private String deliveryAddress;
 
     private CompanyPointOfSale deliveryFromPOS;
@@ -54,11 +54,11 @@ public class PolicyObtainingData extends BaseDomain {
 
     // GENERATED
 
-    public PolicyObtainingMethod getMethod() {
+    public ObtainingMethod getMethod() {
 	return method;
     }
 
-    public void setMethod(PolicyObtainingMethod method) {
+    public void setMethod(ObtainingMethod method) {
 	this.method = method;
     }
 

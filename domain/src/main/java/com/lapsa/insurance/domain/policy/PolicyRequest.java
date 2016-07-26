@@ -6,7 +6,7 @@ import java.util.List;
 import com.lapsa.insurance.domain.InsuranceRequest;
 import com.lapsa.insurance.domain.notification.ExpressOrderNotification;
 
-public class PolicyExpressOrder extends InsuranceRequest {
+public class PolicyRequest extends InsuranceRequest {
     private static final long serialVersionUID = 944531653617396366L;
     private static final int PRIME = 83;
     private static final int MULTIPLIER = 83;

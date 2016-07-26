@@ -1,6 +1,6 @@
 package com.lapsa.insurance.persistence.dao;
 
-import com.lapsa.insurance.domain.PolicyExpressOrder;
+import com.lapsa.insurance.domain.policy.PolicyRequest;
 
-public interface PolicyExpressOrderDAO extends GenericInsuranceRequestDAO<PolicyExpressOrder> {
+public interface PolicyRequestDAO extends GenericInsuranceRequestDAO<PolicyRequest> {
 }

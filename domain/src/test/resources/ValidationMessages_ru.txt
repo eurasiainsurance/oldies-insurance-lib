@@ -5,15 +5,15 @@ com.lapsa.insurance.domain.InsuredDriverData.IdNumber.NotNull.message = ИИН �
 
 com.lapsa.insurance.domain.InsurantData.IdNumber.NotNull.message = {com.lapsa.insurance.domain.InsuredDriverData.IdNumber.NotNull.message}
 
-com.lapsa.insurance.domain.PolicyObtainingData.method.NotNullValue.message = Укажите способ получения полиса
-com.lapsa.insurance.domain.PolicyObtainingData.pickupCity.NotNullValue.message = Необходимо указать город для того, чтобы выбрать офис страховой компани
-com.lapsa.insurance.domain.PolicyObtainingData.pickupPOS.NotNullValue.message = Необходимо укзаать офис страховой компании для того, чтобы оформить самовывоз
-com.lapsa.insurance.domain.PolicyObtainingData.deliveryCity.NotNullValue.message = Укажите Ваше местоположение
-com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.NotNullValue.message = Укажите дату доставки
-com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.DaysAfterNow.messages = Полис может быть доставлен только на следующий день после заказа
-com.lapsa.insurance.domain.PolicyObtainingData.deliveryDate.DaysBeforeNow.messages = Слишком поздняя дата доставки полиса
-com.lapsa.insurance.domain.PolicyObtainingData.deliveryTime.NotNullValue.message = Укажите время доставки
-com.lapsa.insurance.domain.PolicyObtainingData.deliveryAddress.NotNullValue.message = Укажите адрес доставки
-com.lapsa.insurance.domain.PolicyObtainingData.deliveryAddress.NotEmptyString.message = {com.lapsa.insurance.domain.PolicyObtainingData.deliveryAddress.NotNullValue.message}
+com.lapsa.insurance.domain.ObtainingData.method.NotNullValue.message = Укажите способ получения полиса
+com.lapsa.insurance.domain.ObtainingData.pickupCity.NotNullValue.message = Необходимо указать город для того, чтобы выбрать офис страховой компани
+com.lapsa.insurance.domain.ObtainingData.pickupPOS.NotNullValue.message = Необходимо укзаать офис страховой компании для того, чтобы оформить самовывоз
+com.lapsa.insurance.domain.ObtainingData.deliveryCity.NotNullValue.message = Укажите Ваше местоположение
+com.lapsa.insurance.domain.ObtainingData.deliveryDate.NotNullValue.message = Укажите дату доставки
+com.lapsa.insurance.domain.ObtainingData.deliveryDate.DaysAfterNow.messages = Полис может быть доставлен только на следующий день после заказа
+com.lapsa.insurance.domain.ObtainingData.deliveryDate.DaysBeforeNow.messages = Слишком поздняя дата доставки полиса
+com.lapsa.insurance.domain.ObtainingData.deliveryTime.NotNullValue.message = Укажите время доставки
+com.lapsa.insurance.domain.ObtainingData.deliveryAddress.NotNullValue.message = Укажите адрес доставки
+com.lapsa.insurance.domain.ObtainingData.deliveryAddress.NotEmptyString.message = {com.lapsa.insurance.domain.ObtainingData.deliveryAddress.NotNullValue.message}
 
-com.lapsa.insurance.domain.PolicyPaymentData.method.NotNullValue.message = Необходимо выбрать способ оплаты
+com.lapsa.insurance.domain.PaymentData.method.NotNullValue.message = Необходимо выбрать способ оплаты

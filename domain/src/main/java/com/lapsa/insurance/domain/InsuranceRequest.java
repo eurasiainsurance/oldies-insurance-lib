@@ -15,9 +15,9 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
     private RequestStatus requestStatus;
     private ClosingResult closingResult;
 
-    private PloicyRequesterData requester;
-    private PolicyObtainingData obtaining;
-    private PolicyPaymentData payment;
+    private RequesterData requester;
+    private ObtainingData obtaining;
+    private PaymentData payment;
     private boolean allowSpam;
 
     // GENERATED
@@ -62,27 +62,27 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
 	this.closingResult = closingResult;
     }
 
-    public PloicyRequesterData getRequester() {
+    public RequesterData getRequester() {
 	return requester;
     }
 
-    public void setRequester(PloicyRequesterData requester) {
+    public void setRequester(RequesterData requester) {
 	this.requester = requester;
     }
 
-    public PolicyObtainingData getObtaining() {
+    public ObtainingData getObtaining() {
 	return obtaining;
     }
 
-    public void setObtaining(PolicyObtainingData btaining) {
+    public void setObtaining(ObtainingData btaining) {
 	this.obtaining = btaining;
     }
 
-    public PolicyPaymentData getPayment() {
+    public PaymentData getPayment() {
 	return payment;
     }
 
-    public void setPayment(PolicyPaymentData payment) {
+    public void setPayment(PaymentData payment) {
 	this.payment = payment;
     }
 

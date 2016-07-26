@@ -4,12 +4,12 @@ import com.lapsa.insurance.crm.PaymentStatus;
 import com.lapsa.insurance.elements.PaymentMethod;
 import com.lapsa.insurance.validation.NotNullValue;
 
-public class PolicyPaymentData extends BaseDomain {
+public class PaymentData extends BaseDomain {
     private static final long serialVersionUID = -6326848114328976035L;
     private static final int PRIME = 127;
     private static final int MULTIPLIER = PRIME;
 
-    @NotNullValue(message = "{com.lapsa.insurance.domain.PolicyPaymentData.method.NotNullValue.message}")
+    @NotNullValue(message = "{com.lapsa.insurance.domain.PaymentData.method.NotNullValue.message}")
     private PaymentMethod method;
 
     private PaymentStatus status;

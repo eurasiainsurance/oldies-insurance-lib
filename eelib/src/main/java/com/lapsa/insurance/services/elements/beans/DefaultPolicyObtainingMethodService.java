@@ -6,25 +6,25 @@ import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 
-import com.lapsa.insurance.elements.PolicyObtainingMethod;
+import com.lapsa.insurance.elements.ObtainingMethod;
 import com.lapsa.insurance.services.elements.PolicyObtainingMethodService;
 
 @Named("policyObtainingMethodService")
 @ApplicationScoped
-public class DefaultPolicyObtainingMethodService extends GenericEnumService<PolicyObtainingMethod>
+public class DefaultPolicyObtainingMethodService extends GenericEnumService<ObtainingMethod>
 	implements PolicyObtainingMethodService {
 
-    public List<PolicyObtainingMethod> getAllItems() {
-	return Arrays.asList(PolicyObtainingMethod.values());
+    public List<ObtainingMethod> getAllItems() {
+	return Arrays.asList(ObtainingMethod.values());
     }
 
     @Override
     protected String getMessageBundleBase() {
-	return PolicyObtainingMethod.BUNDLE_BASENAME;
+	return ObtainingMethod.BUNDLE_BASENAME;
     }
 
     @Override
     protected String getMessageBundleVar() {
-	return PolicyObtainingMethod.BUNDLE_VAR;
+	return ObtainingMethod.BUNDLE_VAR;
     }
 }

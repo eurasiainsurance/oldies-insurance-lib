@@ -28,10 +28,10 @@ public class DefaultPremiumCostCalculatorRatesService implements PremiumCostCalc
     private final Map<KZArea, Double> REGION_RATES = new HashMap<>();
     private final double MAJOR_CITY_CORRECTION_RATE = 1d;
     private final double NON_MAJOR_CITY_CORRECTION_RATE = 0.8d;
-    private final Map<VehicleClass, Double> VEHICLE_TYPE_RATES = new HashMap<>();
-    private final Map<InsuredAgeClass, Map<InsuredExpirienceClass, Double>> DRIVER_EXPIRIENCE_CLASS_RATES = new HashMap<InsuredAgeClass, Map<InsuredExpirienceClass, Double>>();
-    private final Map<VehicleAgeClass, Double> VEHICLE_AGE_RATES = new HashMap<>();
-    private final Map<InsuranceClassType, Double> INSURANCE_CLASS_TYPES_RATES = new HashMap<>();
+    private final Map<VehicleClass, Double> VEHICLE_CLASS_RATES = new HashMap<>();
+    private final Map<InsuredAgeClass, Map<InsuredExpirienceClass, Double>> INSURED_AGE_EXPIRIENCE_CLASS_RATES = new HashMap<>();
+    private final Map<VehicleAgeClass, Double> VEHICLE_AGE_CLASS_RATES = new HashMap<>();
+    private final Map<InsuranceClassType, Double> INSURANCE_CLASS_TYPE_RATES = new HashMap<>();
     private final Map<TermClass, Double> TERM_CLASS_RATES = new HashMap<>();
     private final double HAS_PRIVILEGE_RATE = 0.5d;
     private final double HAS_NO_PRIVILEGE_RATE = 1d;
@@ -55,41 +55,39 @@ public class DefaultPremiumCostCalculatorRatesService implements PremiumCostCalc
 	REGION_RATES.put(KZArea.OSK, 1.33d); // 15
 	REGION_RATES.put(KZArea.OVK, 1.96d); // 16
 
-	VEHICLE_TYPE_RATES.put(VehicleClass.BUS16, 3.26d);
-	VEHICLE_TYPE_RATES.put(VehicleClass.BUSOVR16, 3.45d);
-	VEHICLE_TYPE_RATES.put(VehicleClass.CARGO, 3.98d);
-	VEHICLE_TYPE_RATES.put(VehicleClass.CAR, 2.09d);
-	VEHICLE_TYPE_RATES.put(VehicleClass.MOTO, 1d);
-	VEHICLE_TYPE_RATES.put(VehicleClass.TRAILER, 1d);
-	VEHICLE_TYPE_RATES.put(VehicleClass.TRAM, 2.33d);
+	VEHICLE_CLASS_RATES.put(VehicleClass.BUS16, 3.26d);
+	VEHICLE_CLASS_RATES.put(VehicleClass.BUSOVR16, 3.45d);
+	VEHICLE_CLASS_RATES.put(VehicleClass.CARGO, 3.98d);
+	VEHICLE_CLASS_RATES.put(VehicleClass.CAR, 2.09d);
+	VEHICLE_CLASS_RATES.put(VehicleClass.MOTO, 1d);
+	VEHICLE_CLASS_RATES.put(VehicleClass.TRAILER, 1d);
+	VEHICLE_CLASS_RATES.put(VehicleClass.TRAM, 2.33d);
 
-	DRIVER_EXPIRIENCE_CLASS_RATES.put(InsuredAgeClass.OVER25,
-		new HashMap<InsuredExpirienceClass, Double>());
-	DRIVER_EXPIRIENCE_CLASS_RATES.get(InsuredAgeClass.OVER25).put(InsuredExpirienceClass.MORE2, 1d);
-	DRIVER_EXPIRIENCE_CLASS_RATES.get(InsuredAgeClass.OVER25).put(InsuredExpirienceClass.LESS2, 1.05d);
-	DRIVER_EXPIRIENCE_CLASS_RATES.put(InsuredAgeClass.UNDER25,
-		new HashMap<InsuredExpirienceClass, Double>());
-	DRIVER_EXPIRIENCE_CLASS_RATES.get(InsuredAgeClass.UNDER25).put(InsuredExpirienceClass.MORE2, 1.05d);
-	DRIVER_EXPIRIENCE_CLASS_RATES.get(InsuredAgeClass.UNDER25).put(InsuredExpirienceClass.LESS2, 1.1d);
+	INSURED_AGE_EXPIRIENCE_CLASS_RATES.put(InsuredAgeClass.OVER25, new HashMap<>());
+	INSURED_AGE_EXPIRIENCE_CLASS_RATES.get(InsuredAgeClass.OVER25).put(InsuredExpirienceClass.MORE2, 1d);
+	INSURED_AGE_EXPIRIENCE_CLASS_RATES.get(InsuredAgeClass.OVER25).put(InsuredExpirienceClass.LESS2, 1.05d);
+	INSURED_AGE_EXPIRIENCE_CLASS_RATES.put(InsuredAgeClass.UNDER25, new HashMap<>());
+	INSURED_AGE_EXPIRIENCE_CLASS_RATES.get(InsuredAgeClass.UNDER25).put(InsuredExpirienceClass.MORE2, 1.05d);
+	INSURED_AGE_EXPIRIENCE_CLASS_RATES.get(InsuredAgeClass.UNDER25).put(InsuredExpirienceClass.LESS2, 1.1d);
 
-	VEHICLE_AGE_RATES.put(VehicleAgeClass.UNDER7, 1d);
-	VEHICLE_AGE_RATES.put(VehicleAgeClass.OVER7, 1.1d);
+	VEHICLE_AGE_CLASS_RATES.put(VehicleAgeClass.UNDER7, 1d);
+	VEHICLE_AGE_CLASS_RATES.put(VehicleAgeClass.OVER7, 1.1d);
 
-	INSURANCE_CLASS_TYPES_RATES.put(InsuranceClassType.CLASS_0, 2.3d);
-	INSURANCE_CLASS_TYPES_RATES.put(InsuranceClassType.CLASS_1, 1.55d);
-	INSURANCE_CLASS_TYPES_RATES.put(InsuranceClassType.CLASS_2, 1.4d);
-	INSURANCE_CLASS_TYPES_RATES.put(InsuranceClassType.CLASS_3, 1d);
-	INSURANCE_CLASS_TYPES_RATES.put(InsuranceClassType.CLASS_4, 0.95d);
-	INSURANCE_CLASS_TYPES_RATES.put(InsuranceClassType.CLASS_5, 0.9d);
-	INSURANCE_CLASS_TYPES_RATES.put(InsuranceClassType.CLASS_6, 0.85d);
-	INSURANCE_CLASS_TYPES_RATES.put(InsuranceClassType.CLASS_7, 0.8d);
-	INSURANCE_CLASS_TYPES_RATES.put(InsuranceClassType.CLASS_8, 0.75d);
-	INSURANCE_CLASS_TYPES_RATES.put(InsuranceClassType.CLASS_9, 0.7d);
-	INSURANCE_CLASS_TYPES_RATES.put(InsuranceClassType.CLASS_10, 0.65d);
-	INSURANCE_CLASS_TYPES_RATES.put(InsuranceClassType.CLASS_11, 0.6d);
-	INSURANCE_CLASS_TYPES_RATES.put(InsuranceClassType.CLASS_12, 0.55d);
-	INSURANCE_CLASS_TYPES_RATES.put(InsuranceClassType.CLASS_13, 0.5d);
-	INSURANCE_CLASS_TYPES_RATES.put(InsuranceClassType.CLASS_M, 2.45d);
+	INSURANCE_CLASS_TYPE_RATES.put(InsuranceClassType.CLASS_0, 2.3d);
+	INSURANCE_CLASS_TYPE_RATES.put(InsuranceClassType.CLASS_1, 1.55d);
+	INSURANCE_CLASS_TYPE_RATES.put(InsuranceClassType.CLASS_2, 1.4d);
+	INSURANCE_CLASS_TYPE_RATES.put(InsuranceClassType.CLASS_3, 1d);
+	INSURANCE_CLASS_TYPE_RATES.put(InsuranceClassType.CLASS_4, 0.95d);
+	INSURANCE_CLASS_TYPE_RATES.put(InsuranceClassType.CLASS_5, 0.9d);
+	INSURANCE_CLASS_TYPE_RATES.put(InsuranceClassType.CLASS_6, 0.85d);
+	INSURANCE_CLASS_TYPE_RATES.put(InsuranceClassType.CLASS_7, 0.8d);
+	INSURANCE_CLASS_TYPE_RATES.put(InsuranceClassType.CLASS_8, 0.75d);
+	INSURANCE_CLASS_TYPE_RATES.put(InsuranceClassType.CLASS_9, 0.7d);
+	INSURANCE_CLASS_TYPE_RATES.put(InsuranceClassType.CLASS_10, 0.65d);
+	INSURANCE_CLASS_TYPE_RATES.put(InsuranceClassType.CLASS_11, 0.6d);
+	INSURANCE_CLASS_TYPE_RATES.put(InsuranceClassType.CLASS_12, 0.55d);
+	INSURANCE_CLASS_TYPE_RATES.put(InsuranceClassType.CLASS_13, 0.5d);
+	INSURANCE_CLASS_TYPE_RATES.put(InsuranceClassType.CLASS_M, 2.45d);
 
 	TERM_CLASS_RATES.put(TermClass.YEAR, 1d);
 	TERM_CLASS_RATES.put(TermClass.DAY5, 0.1d);
@@ -145,33 +143,33 @@ public class DefaultPremiumCostCalculatorRatesService implements PremiumCostCalc
 
     @Override
     public double getVehicleTypeRate(VehicleClass vehicleType) {
-	if (!VEHICLE_TYPE_RATES.containsKey(vehicleType))
+	if (!VEHICLE_CLASS_RATES.containsKey(vehicleType))
 	    return 0;
-	return VEHICLE_TYPE_RATES.get(vehicleType);
+	return VEHICLE_CLASS_RATES.get(vehicleType);
     }
 
     @Override
     public double getDriverExpirienceTypeRate(InsuredAgeClass ageClass,
 	    InsuredExpirienceClass driverExpirienceClass) {
-	if (!DRIVER_EXPIRIENCE_CLASS_RATES.containsKey(ageClass))
+	if (!INSURED_AGE_EXPIRIENCE_CLASS_RATES.containsKey(ageClass))
 	    return 0;
-	if (!DRIVER_EXPIRIENCE_CLASS_RATES.get(ageClass).containsKey(driverExpirienceClass))
+	if (!INSURED_AGE_EXPIRIENCE_CLASS_RATES.get(ageClass).containsKey(driverExpirienceClass))
 	    return 0;
-	return DRIVER_EXPIRIENCE_CLASS_RATES.get(ageClass).get(driverExpirienceClass);
+	return INSURED_AGE_EXPIRIENCE_CLASS_RATES.get(ageClass).get(driverExpirienceClass);
     }
 
     @Override
     public double getVehicleAgeTypeRate(VehicleAgeClass vehicleAgeType) {
-	if (!VEHICLE_AGE_RATES.containsKey(vehicleAgeType))
+	if (!VEHICLE_AGE_CLASS_RATES.containsKey(vehicleAgeType))
 	    return 0;
-	return VEHICLE_AGE_RATES.get(vehicleAgeType);
+	return VEHICLE_AGE_CLASS_RATES.get(vehicleAgeType);
     }
 
     @Override
     public double getInsuranceClassTypeRate(InsuranceClassType insuranceClassType) {
-	if (!INSURANCE_CLASS_TYPES_RATES.containsKey(insuranceClassType))
+	if (!INSURANCE_CLASS_TYPE_RATES.containsKey(insuranceClassType))
 	    return 0;
-	return INSURANCE_CLASS_TYPES_RATES.get(insuranceClassType);
+	return INSURANCE_CLASS_TYPE_RATES.get(insuranceClassType);
     }
 
     @Override

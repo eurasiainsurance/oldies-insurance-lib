@@ -4,7 +4,7 @@ import com.lapsa.insurance.elements.TermClass;
 
 import test.com.lapsa.insurance.EnumTypeMessagesBundleTest;
 
-public class PolicyTermsClassMessagesBundleTest
+public class TermClassMessagesBundleTest
 	extends EnumTypeMessagesBundleTest<TermClass> {
 
     @Override

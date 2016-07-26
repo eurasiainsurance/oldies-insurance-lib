@@ -4,7 +4,7 @@ import com.lapsa.insurance.elements.ObtainingMethod;
 
 import test.com.lapsa.insurance.EnumTypeMessagesBundleTest;
 
-public class PolicyObtainingMethodMessagesBundleTest extends EnumTypeMessagesBundleTest<ObtainingMethod> {
+public class ObtainingMethodMessagesBundleTest extends EnumTypeMessagesBundleTest<ObtainingMethod> {
 
     @Override
     protected ObtainingMethod[] getAllEnumValues() {

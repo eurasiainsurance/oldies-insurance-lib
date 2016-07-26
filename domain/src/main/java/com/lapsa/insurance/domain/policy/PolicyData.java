@@ -1,6 +1,11 @@
-package com.lapsa.insurance.domain;
+package com.lapsa.insurance.domain.policy;
 
 import java.util.List;
+
+import com.lapsa.insurance.domain.BaseEntity;
+import com.lapsa.insurance.domain.CalculationData;
+import com.lapsa.insurance.domain.InsuredDriverData;
+import com.lapsa.insurance.domain.InsuredVehicleData;
 
 public class PolicyData extends BaseEntity<Integer> {
     private static final long serialVersionUID = 1148321211581313286L;

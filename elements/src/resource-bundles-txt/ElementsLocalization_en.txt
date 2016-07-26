@@ -70,8 +70,8 @@ com.lapsa.insurance.elements.PaymentMethod.PAYCASH = Pay by cashe to the courier
 com.lapsa.insurance.crm.PaymentStatus.DONE = Оплачено
 com.lapsa.insurance.crm.PaymentStatus.PENDING = Ожидается оплата
 
-com.lapsa.insurance.elements.PolicyObtainingMethod.DELIVERY = courier delivery
-com.lapsa.insurance.elements.PolicyObtainingMethod.PICKUP = pick-up in the office of the insurance company
+com.lapsa.insurance.elements.ObtainingMethod.DELIVERY = courier delivery
+com.lapsa.insurance.elements.ObtainingMethod.PICKUP = pick-up in the office of the insurance company
 
 com.lapsa.insurance.elements.PolicyTermClass.YEAR = 1 year
 com.lapsa.insurance.elements.PolicyTermClass.DAY5 = 5 days

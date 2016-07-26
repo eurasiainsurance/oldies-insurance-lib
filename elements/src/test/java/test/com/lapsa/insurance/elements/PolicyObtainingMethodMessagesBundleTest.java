@@ -1,18 +1,18 @@
 package test.com.lapsa.insurance.elements;
 
-import com.lapsa.insurance.elements.PolicyObtainingMethod;
+import com.lapsa.insurance.elements.ObtainingMethod;
 
 import test.com.lapsa.insurance.EnumTypeMessagesBundleTest;
 
-public class PolicyObtainingMethodMessagesBundleTest extends EnumTypeMessagesBundleTest<PolicyObtainingMethod> {
+public class PolicyObtainingMethodMessagesBundleTest extends EnumTypeMessagesBundleTest<ObtainingMethod> {
 
     @Override
-    protected PolicyObtainingMethod[] getAllEnumValues() {
-	return PolicyObtainingMethod.values();
+    protected ObtainingMethod[] getAllEnumValues() {
+	return ObtainingMethod.values();
     }
 
     @Override
     protected String getBundleBaseName() {
-	return PolicyObtainingMethod.BUNDLE_BASENAME;
+	return ObtainingMethod.BUNDLE_BASENAME;
     }
 }

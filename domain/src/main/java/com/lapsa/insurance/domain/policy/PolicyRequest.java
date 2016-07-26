@@ -1,8 +1,9 @@
-package com.lapsa.insurance.domain;
+package com.lapsa.insurance.domain.policy;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.lapsa.insurance.domain.InsuranceRequest;
 import com.lapsa.insurance.domain.notification.ExpressOrderNotification;
 
 public class PolicyExpressOrder extends InsuranceRequest {

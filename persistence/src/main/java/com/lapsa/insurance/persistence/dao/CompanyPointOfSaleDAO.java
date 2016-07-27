@@ -7,18 +7,18 @@ import com.lapsa.kz.country.KZCity;
 
 public interface CompanyPointOfSaleDAO extends GeneralDAO<CompanyPointOfSale, Integer> {
 
-    List<CompanyPointOfSale> findWithPickupAvailable();
+    List<CompanyPointOfSale> findWithPickupAvailable() throws PeristenceOperationFailed;
 
-    List<CompanyPointOfSale> findWithPickupAvailable(KZCity pickupCity);
+    List<CompanyPointOfSale> findWithPickupAvailable(KZCity pickupCity) throws PeristenceOperationFailed;
 
-    List<KZCity> findCitiesWithPickupAvailable();
+    List<KZCity> findCitiesWithPickupAvailable() throws PeristenceOperationFailed;
 
-    List<CompanyPointOfSale> findWithDeliveryAvailable();
+    List<CompanyPointOfSale> findWithDeliveryAvailable() throws PeristenceOperationFailed;
 
-    List<CompanyPointOfSale> findWithDeliveryAvailable(KZCity deliveryCity);
+    List<CompanyPointOfSale> findWithDeliveryAvailable(KZCity deliveryCity) throws PeristenceOperationFailed;
 
-    List<KZCity> findCitiesWithDeliveryAvailable();
+    List<KZCity> findCitiesWithDeliveryAvailable() throws PeristenceOperationFailed;
 
-    List<CompanyPointOfSale> findAllOwnOffices();
+    List<CompanyPointOfSale> findAllOwnOffices() throws PeristenceOperationFailed;
 
 }

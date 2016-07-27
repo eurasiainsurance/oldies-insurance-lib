@@ -1,6 +1,6 @@
 package com.lapsa.insurance.domain.notification;
 
-public class NewExpressOrderUserNotification extends ExpressOrderNotification {
+public class NewPolicyRequestUserNotification extends PolicyRequestNotification {
     private static final long serialVersionUID = 4148318656693578936L;
     private static final int PRIME = 151;
     private static final int MULTIPLIER = PRIME;

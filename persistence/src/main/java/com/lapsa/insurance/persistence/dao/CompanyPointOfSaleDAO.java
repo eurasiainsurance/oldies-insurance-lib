@@ -5,7 +5,7 @@ import java.util.List;
 import com.lapsa.insurance.domain.CompanyPointOfSale;
 import com.lapsa.kz.country.KZCity;
 
-public interface CompanyPointOfSaleDAO extends DAO<CompanyPointOfSale, Integer> {
+public interface CompanyPointOfSaleDAO extends GeneralDAO<CompanyPointOfSale, Integer> {
 
     List<CompanyPointOfSale> findWithPickupAvailable();
 

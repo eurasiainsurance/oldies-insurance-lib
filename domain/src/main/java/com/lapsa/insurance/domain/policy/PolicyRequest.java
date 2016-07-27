@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.lapsa.insurance.domain.InsuranceRequest;
-import com.lapsa.insurance.domain.notification.ExpressOrderNotification;
+import com.lapsa.insurance.domain.notification.PolicyRequestNotification;
 
 public class PolicyRequest extends InsuranceRequest {
     private static final long serialVersionUID = 944531653617396366L;
@@ -12,7 +12,7 @@ public class PolicyRequest extends InsuranceRequest {
     private static final int MULTIPLIER = 83;
 
     private PolicyData policy;
-    private List<ExpressOrderNotification> notifications;
+    private List<PolicyRequestNotification> notifications;
 
     @Override
     protected int getPrime() {
@@ -24,24 +24,24 @@ public class PolicyRequest extends InsuranceRequest {
 	return MULTIPLIER;
     }
 
-    public void addNotification(ExpressOrderNotification notification) {
+    public void addNotification(PolicyRequestNotification notification) {
 	if (notification == null)
 	    throw new NullPointerException("Value must not be null");
-	if (notification.getOrder() != null)
-	    notification.getOrder().removeNotification(notification);
+	if (notification.getPolicyRequest() != null)
+	    notification.getPolicyRequest().removeNotification(notification);
 	if (notifications == null)
 	    notifications = new ArrayList<>();
 	notifications.add(notification);
-	notification.setOrder(this);
+	notification.setPolicyRequest(this);
     }
 
-    public void removeNotification(ExpressOrderNotification notification) {
+    public void removeNotification(PolicyRequestNotification notification) {
 	if (notification == null)
 	    throw new NullPointerException("Value must not be null");
 	if (notifications == null) // nothing to remove from
 	    return;
 	notifications.remove(notification);
-	notification.setOrder(null);
+	notification.setPolicyRequest(null);
     }
 
     // GENERATED
@@ -54,11 +54,11 @@ public class PolicyRequest extends InsuranceRequest {
 	this.policy = policy;
     }
 
-    public List<ExpressOrderNotification> getNotifications() {
+    public List<PolicyRequestNotification> getNotifications() {
 	return notifications;
     }
 
-    public void setNotifications(List<ExpressOrderNotification> notifications) {
+    public void setNotifications(List<PolicyRequestNotification> notifications) {
 	this.notifications = notifications;
     }
 }

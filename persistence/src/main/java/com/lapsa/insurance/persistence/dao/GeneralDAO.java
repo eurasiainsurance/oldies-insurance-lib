@@ -2,7 +2,7 @@ package com.lapsa.insurance.persistence.dao;
 
 import java.util.List;
 
-public interface DAO<T, I> {
+public interface GeneralDAO<T, I> {
     T findById(I id) throws EntityNotFound, PeristenceOperationFailed;
 
     T findByIdByPassCache(I id) throws EntityNotFound, PeristenceOperationFailed;

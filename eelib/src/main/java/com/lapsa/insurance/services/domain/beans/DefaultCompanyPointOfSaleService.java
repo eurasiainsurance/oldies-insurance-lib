@@ -12,6 +12,7 @@ import javax.inject.Named;
 
 import com.lapsa.insurance.domain.CompanyPointOfSale;
 import com.lapsa.insurance.persistence.dao.CompanyPointOfSaleDAO;
+import com.lapsa.insurance.persistence.dao.PeristenceOperationFailed;
 import com.lapsa.insurance.services.domain.CompanyPointOfSaleService;
 import com.lapsa.insurance.services.domain.PostAddressService;
 import com.lapsa.kz.country.KZCity;
@@ -30,28 +31,44 @@ public class DefaultCompanyPointOfSaleService extends GenericDomainService<Compa
 
     @Override
     public List<CompanyPointOfSale> pointOfSalesForPickup(KZCity city) {
-	if (city == null)
-	    return companyPointOfSaleDAO.findWithPickupAvailable();
-	else
-	    return companyPointOfSaleDAO.findWithPickupAvailable(city);
+	try {
+	    if (city == null)
+		return companyPointOfSaleDAO.findWithPickupAvailable();
+	    else
+		return companyPointOfSaleDAO.findWithPickupAvailable(city);
+	} catch (PeristenceOperationFailed e) {
+	    throw new RuntimeException(e);
+	}
     }
 
     @Override
     public List<KZCity> getCitiesForPickup() {
-	return companyPointOfSaleDAO.findCitiesWithPickupAvailable();
+	try {
+	    return companyPointOfSaleDAO.findCitiesWithPickupAvailable();
+	} catch (PeristenceOperationFailed e) {
+	    throw new RuntimeException(e);
+	}
     }
 
     @Override
     public List<CompanyPointOfSale> pointOfSalesForDelivery(KZCity city) {
-	if (city == null)
-	    return companyPointOfSaleDAO.findWithDeliveryAvailable();
-	else
-	    return companyPointOfSaleDAO.findWithDeliveryAvailable(city);
+	try {
+	    if (city == null)
+		return companyPointOfSaleDAO.findWithDeliveryAvailable();
+	    else
+		return companyPointOfSaleDAO.findWithDeliveryAvailable(city);
+	} catch (PeristenceOperationFailed e) {
+	    throw new RuntimeException(e);
+	}
     }
 
     @Override
     public List<KZCity> getCitiesForDelivery() {
-	return companyPointOfSaleDAO.findCitiesWithDeliveryAvailable();
+	try {
+	    return companyPointOfSaleDAO.findCitiesWithDeliveryAvailable();
+	} catch (PeristenceOperationFailed e) {
+	    throw new RuntimeException(e);
+	}
     }
 
     private String generateDisplayNameFull(String name, String address) {

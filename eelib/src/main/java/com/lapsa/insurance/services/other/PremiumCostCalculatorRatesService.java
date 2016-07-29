@@ -3,7 +3,6 @@ package com.lapsa.insurance.services.other;
 import com.lapsa.insurance.elements.InsuranceClassType;
 import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredExpirienceClass;
-import com.lapsa.insurance.elements.TermClass;
 import com.lapsa.insurance.elements.VehicleAgeClass;
 import com.lapsa.insurance.elements.VehicleClass;
 import com.lapsa.kz.country.KZArea;
@@ -27,8 +26,6 @@ public interface PremiumCostCalculatorRatesService {
     double getVehicleAgeTypeRate(VehicleAgeClass vehicleAgeType);
 
     double getInsuranceClassTypeRate(InsuranceClassType insuranceClassType);
-
-    double getTermClassRate(TermClass termClass);
 
     double getPrivilegeRate(boolean hasPrivilege);
 }

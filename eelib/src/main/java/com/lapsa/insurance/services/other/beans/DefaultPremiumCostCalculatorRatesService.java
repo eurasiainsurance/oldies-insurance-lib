@@ -10,7 +10,6 @@ import javax.inject.Singleton;
 import com.lapsa.insurance.elements.InsuranceClassType;
 import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredExpirienceClass;
-import com.lapsa.insurance.elements.TermClass;
 import com.lapsa.insurance.elements.VehicleAgeClass;
 import com.lapsa.insurance.elements.VehicleClass;
 import com.lapsa.insurance.services.other.PremiumCostCalculatorRatesService;
@@ -32,7 +31,6 @@ public class DefaultPremiumCostCalculatorRatesService implements PremiumCostCalc
     private final Map<InsuredAgeClass, Map<InsuredExpirienceClass, Double>> INSURED_AGE_EXPIRIENCE_CLASS_RATES = new HashMap<>();
     private final Map<VehicleAgeClass, Double> VEHICLE_AGE_CLASS_RATES = new HashMap<>();
     private final Map<InsuranceClassType, Double> INSURANCE_CLASS_TYPE_RATES = new HashMap<>();
-    private final Map<TermClass, Double> TERM_CLASS_RATES = new HashMap<>();
     private final double HAS_PRIVILEGE_RATE = 0.5d;
     private final double HAS_NO_PRIVILEGE_RATE = 1d;
 
@@ -88,22 +86,6 @@ public class DefaultPremiumCostCalculatorRatesService implements PremiumCostCalc
 	INSURANCE_CLASS_TYPE_RATES.put(InsuranceClassType.CLASS_12, 0.55d);
 	INSURANCE_CLASS_TYPE_RATES.put(InsuranceClassType.CLASS_13, 0.5d);
 	INSURANCE_CLASS_TYPE_RATES.put(InsuranceClassType.CLASS_M, 2.45d);
-
-	TERM_CLASS_RATES.put(TermClass.YEAR, 1d);
-	TERM_CLASS_RATES.put(TermClass.DAY5, 0.1d);
-	TERM_CLASS_RATES.put(TermClass.MONTH1_2, 0.3d);
-	TERM_CLASS_RATES.put(TermClass.MONTH10_11, 0.95d);
-	TERM_CLASS_RATES.put(TermClass.DAY16_MONTH, 0.2d);
-	TERM_CLASS_RATES.put(TermClass.MONTH2_3, 0.4d);
-	TERM_CLASS_RATES.put(TermClass.MONTH3_4, 0.5d);
-	TERM_CLASS_RATES.put(TermClass.MONTH4_5, 0.6d);
-	TERM_CLASS_RATES.put(TermClass.MONTH5_6, 0.7d);
-	TERM_CLASS_RATES.put(TermClass.DAY6_15, 0.15d);
-	TERM_CLASS_RATES.put(TermClass.MONTH6_7, 0.75d);
-	TERM_CLASS_RATES.put(TermClass.MONTH7_8, 0.8d);
-	TERM_CLASS_RATES.put(TermClass.MONTH8_9, 0.85d);
-	TERM_CLASS_RATES.put(TermClass.MONTH9_10, 0.9d);
-	TERM_CLASS_RATES.put(TermClass.OVER11MONTH, 1d);
     }
 
     @Override
@@ -170,13 +152,6 @@ public class DefaultPremiumCostCalculatorRatesService implements PremiumCostCalc
 	if (!INSURANCE_CLASS_TYPE_RATES.containsKey(insuranceClassType))
 	    return 0;
 	return INSURANCE_CLASS_TYPE_RATES.get(insuranceClassType);
-    }
-
-    @Override
-    public double getTermClassRate(TermClass termClass) {
-	if (!TERM_CLASS_RATES.containsKey(termClass))
-	    return 0;
-	return TERM_CLASS_RATES.get(termClass);
     }
 
     @Override

@@ -7,7 +7,6 @@ import javax.inject.Inject;
 
 import com.lapsa.insurance.domain.InsuredDriverData;
 import com.lapsa.insurance.domain.InsuredVehicleData;
-import com.lapsa.insurance.elements.TermClass;
 import com.lapsa.insurance.services.other.CalculationService;
 import com.lapsa.insurance.services.other.PremiumCostCalculatorRatesService;
 
@@ -18,12 +17,11 @@ public class DefaultCalculationService implements CalculationService {
     private PremiumCostCalculatorRatesService rates;
 
     @Override
-    public double calculatePremiumCost(List<InsuredDriverData> drivers, List<InsuredVehicleData> vehicles,
-	    TermClass termClass) {
+    public double calculatePremiumCost(List<InsuredDriverData> drivers, List<InsuredVehicleData> vehicles) {
 	double maximumCost = 0d;
 	for (InsuredDriverData driver : drivers)
 	    for (InsuredVehicleData vehicle : vehicles) {
-		double cost = _calculatePremiumCostVariant(driver, vehicle, termClass);
+		double cost = _calculatePremiumCostVariant(driver, vehicle);
 		if (cost == 0) {
 		    return 0;
 		}
@@ -33,8 +31,7 @@ public class DefaultCalculationService implements CalculationService {
 	return maximumCost;
     }
 
-    private double _calculatePremiumCostVariant(InsuredDriverData insured, InsuredVehicleData vehicle,
-	    TermClass termClass) {
+    private double _calculatePremiumCostVariant(InsuredDriverData insured, InsuredVehicleData vehicle) {
 	double premium = rates.getBase();
 	premium *= rates.getBaseRate();
 	premium *= rates.getRegionRate(vehicle.getRegion());
@@ -43,7 +40,6 @@ public class DefaultCalculationService implements CalculationService {
 	premium *= rates.getDriverExpirienceTypeRate(insured.getAgeClass(), insured.getExpirienceClass());
 	premium *= rates.getVehicleAgeTypeRate(vehicle.getVehicleAgeClass());
 	premium *= rates.getInsuranceClassTypeRate(insured.getInsuranceClassType());
-	premium *= rates.getTermClassRate(termClass);
 	premium *= rates.getPrivilegeRate(insured.isHasAnyPrivilege());
 	premium = roundMoney(premium); // округляем до "копеек"
 	return premium;

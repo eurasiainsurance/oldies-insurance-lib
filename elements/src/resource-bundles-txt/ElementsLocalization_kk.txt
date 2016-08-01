@@ -27,7 +27,7 @@ com.lapsa.insurance.elements.DeliveryTimeSlot.EVENING = кешке (18:00 бас
 
 com.lapsa.insurance.elements.IdentityCardType.ID_CARD = жеке куәлік
 com.lapsa.insurance.elements.IdentityCardType.PASSPORT = төлқұжат
-com.lapsa.insurance.elements.IdentityCardType.BIRTH_CERTIFICATE = туу туралы куәлік 
+com.lapsa.insurance.elements.IdentityCardType.BIRTH_CERTIFICATE = туу туралы куәлік
 com.lapsa.insurance.elements.IdentityCardType.RESIDENCE_PERMIT = шетелдіктің ыхтиярхаты
 
 com.lapsa.insurance.elements.InsuranceClassType.CLASS_0 = 0 Жіктелім

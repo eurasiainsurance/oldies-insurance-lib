@@ -90,9 +90,9 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 		continue;
 	    if (findByFullName(MaritalStatus.values(), key) != null)
 		continue;
-	    if (findByFullName(PaymentMethod.values(), key) != null)
-		continue;
 	    if (findByFullName(ObtainingMethod.values(), key) != null)
+		continue;
+	    if (findByFullName(PaymentMethod.values(), key) != null)
 		continue;
 	    if (findByFullName(Sex.values(), key) != null)
 		continue;

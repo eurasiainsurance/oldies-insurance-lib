@@ -1,12 +1,12 @@
-﻿com.lapsa.insurance.crm.ClosingResult.COMPLETED = Аяқталған
-com.lapsa.insurance.crm.ClosingResult.CANCELED = Болдырмау
+﻿com.lapsa.insurance.crm.ClosingResult.COMPLETED = Аяқталды
+com.lapsa.insurance.crm.ClosingResult.CANCELED = Өзгертілді
 
-com.lapsa.insurance.crm.NotificationStatus.DONE = Аяқталған
+com.lapsa.insurance.crm.NotificationStatus.DONE = Аяқталды
 com.lapsa.insurance.crm.NotificationStatus.PENDING = Кезекте
 com.lapsa.insurance.crm.NotificationStatus.NOT_REQUIRED = Талап етілмейді
 
 com.lapsa.insurance.crm.PaymentStatus.PENDING = Күтілуде
-com.lapsa.insurance.crm.PaymentStatus.DONE = Аяқталды
+com.lapsa.insurance.crm.PaymentStatus.DONE = Төленген
 
 com.lapsa.insurance.crm.RequestStatus.OPEN = Ашық
 com.lapsa.insurance.crm.RequestStatus.CLOSED = Жабық
@@ -27,7 +27,7 @@ com.lapsa.insurance.elements.DeliveryTimeSlot.EVENING = кешке (18:00 бас
 
 com.lapsa.insurance.elements.IdentityCardType.ID_CARD = жеке куәлік
 com.lapsa.insurance.elements.IdentityCardType.PASSPORT = төлқұжат
-com.lapsa.insurance.elements.IdentityCardType.BIRTH_CERTIFICATE = туу туралы куәлік 
+com.lapsa.insurance.elements.IdentityCardType.BIRTH_CERTIFICATE = туу туралы куәлік
 com.lapsa.insurance.elements.IdentityCardType.RESIDENCE_PERMIT = шетелдіктің ыхтиярхаты
 
 com.lapsa.insurance.elements.InsuranceClassType.CLASS_0 = 0 Жіктелім
@@ -53,7 +53,7 @@ com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.OVER25_LESS2 = жас�
 
 com.lapsa.insurance.elements.InsuredAgeClass.OVER25 = жасы 25 жастан асқан
 com.lapsa.insurance.elements.InsuredAgeClass.UNDER25 = жасы 25 жасқа жетпеген
-com.lapsa.insurance.elements.InsuredAgeClass.OVER25.short = 25 дастан асқан
+com.lapsa.insurance.elements.InsuredAgeClass.OVER25.short = 25 жастан асқан
 com.lapsa.insurance.elements.InsuredAgeClass.UNDER25.short = 25 жасқа жетпеген
 
 com.lapsa.insurance.elements.InsuredExpirienceClass.MORE2 = жүргізу өтілі 2 жылдан көп
@@ -65,7 +65,7 @@ com.lapsa.insurance.elements.MaritalStatus.MARRIED = үйленген / тұрм
 com.lapsa.insurance.elements.MaritalStatus.SINGLE = бойдақ / тұрмысқа шықпаған
 
 com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE = Банк картасымен төлеу
-com.lapsa.insurance.elements.PaymentMethod.PAYCASH = Курьерге қолма-қол төлеу кезінде жеткізу полисі
+com.lapsa.insurance.elements.PaymentMethod.PAYCASH = Полисті жеткізу кезінде курьерге қолма-қол ақшамен төлеу
 
 com.lapsa.insurance.elements.PolicyObtainingMethod.DELIVERY = курьермен жеткізу
 com.lapsa.insurance.elements.PolicyObtainingMethod.PICKUP = сақтандыру компаниясының офисінен өз бетімен алу

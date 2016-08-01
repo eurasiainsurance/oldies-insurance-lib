@@ -6,12 +6,12 @@ com.lapsa.insurance.crm.NotificationStatus.PENDING = Pending
 com.lapsa.insurance.crm.NotificationStatus.NOT_REQUIRED = Not required
 
 com.lapsa.insurance.crm.PaymentStatus.PENDING = Pending
-com.lapsa.insurance.crm.PaymentStatus.DONE = Done
+com.lapsa.insurance.crm.PaymentStatus.DONE = Paid
 
 com.lapsa.insurance.crm.RequestStatus.OPEN = Open
 com.lapsa.insurance.crm.RequestStatus.CLOSED = Closed
 
-com.lapsa.insurance.elements.CancelationReason.CANCELATION_AND_RENEW = Early termination of the agreement and signing the new one
+com.lapsa.insurance.elements.CancelationReason.CANCELATION_AND_RENEW = Early termination of the agreement and its renewal
 com.lapsa.insurance.elements.CancelationReason.CANCELATION = Early termination
 com.lapsa.insurance.elements.CancelationReason.MADE_INSURANCE_PAYMENT = Insurance payment is done
 com.lapsa.insurance.elements.CancelationReason.PREMIUM_COST_ERROR = Correction of the wrong calculated premium
@@ -21,14 +21,14 @@ com.lapsa.insurance.elements.CancelationReason.OTHER = Other reason
 com.lapsa.insurance.elements.CancelationReason.HUMAN_FAILURE = Operator's failure
 
 com.lapsa.insurance.elements.DeliveryTimeSlot.DURING_THE_DAY = during the day
-com.lapsa.insurance.elements.DeliveryTimeSlot.BEFORE_LUNCH = in the first half of the day (from 9am to 1pm)
-com.lapsa.insurance.elements.DeliveryTimeSlot.AFTER_LUNCH = in the second half of the day (from 1pm to 6pm)
+com.lapsa.insurance.elements.DeliveryTimeSlot.BEFORE_LUNCH = before lunch (from 9am to 1pm)
+com.lapsa.insurance.elements.DeliveryTimeSlot.AFTER_LUNCH = after lunch (from 1pm to 6pm)
 com.lapsa.insurance.elements.DeliveryTimeSlot.EVENING = in the evening (from 6pm to 9pm)
 
-com.lapsa.insurance.elements.IdentityCardType.ID_CARD = ID Card
+com.lapsa.insurance.elements.IdentityCardType.ID_CARD = ID card
 com.lapsa.insurance.elements.IdentityCardType.PASSPORT = passport
 com.lapsa.insurance.elements.IdentityCardType.BIRTH_CERTIFICATE = birth certificate
-com.lapsa.insurance.elements.IdentityCardType.RESIDENCE_PERMIT = residence permit for the foreigner
+com.lapsa.insurance.elements.IdentityCardType.RESIDENCE_PERMIT = alien's residence permit
 
 com.lapsa.insurance.elements.InsuranceClassType.CLASS_0 = Class 0
 com.lapsa.insurance.elements.InsuranceClassType.CLASS_1 = Class 1
@@ -46,15 +46,15 @@ com.lapsa.insurance.elements.InsuranceClassType.CLASS_12 = Class 12
 com.lapsa.insurance.elements.InsuranceClassType.CLASS_13 = Class 13
 com.lapsa.insurance.elements.InsuranceClassType.CLASS_M = Class М
 
-com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.OVER25_MORE2 = age over 25 years, driving experience more than 2 years
-com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.UNDER25_LESS2 = age under 25 years, driving experience less than 2 years
-com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.UNDER25_MORE2 =  age under 25 years, driving experience more than 2 years
-com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.OVER25_LESS2 = age over 25 years, driving experience less than 2 years
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.OVER25_MORE2 = age above 25, driving experience more than 2 years
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.UNDER25_LESS2 = age under 25, driving experience less than 2 years
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.UNDER25_MORE2 =  age under 25, driving experience more than 2 years
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.OVER25_LESS2 = age above 25, driving experience less than 2 years
 
-com.lapsa.insurance.elements.InsuredAgeClass.OVER25 = age over 25 years
-com.lapsa.insurance.elements.InsuredAgeClass.UNDER25 = age under 25 years
-com.lapsa.insurance.elements.InsuredAgeClass.OVER25.short = over 25 years
-com.lapsa.insurance.elements.InsuredAgeClass.UNDER25.short = under 25 years
+com.lapsa.insurance.elements.InsuredAgeClass.OVER25 = age over 25
+com.lapsa.insurance.elements.InsuredAgeClass.UNDER25 = age under 25
+com.lapsa.insurance.elements.InsuredAgeClass.OVER25.short = over 25
+com.lapsa.insurance.elements.InsuredAgeClass.UNDER25.short = under 25
 
 com.lapsa.insurance.elements.InsuredExpirienceClass.MORE2 = driving experience more than 2 years
 com.lapsa.insurance.elements.InsuredExpirienceClass.LESS2 = driving experience less than 2 years
@@ -64,14 +64,11 @@ com.lapsa.insurance.elements.InsuredExpirienceClass.LESS2.short = less than 2 ye
 com.lapsa.insurance.elements.MaritalStatus.MARRIED = married
 com.lapsa.insurance.elements.MaritalStatus.SINGLE = single
 
-com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE = Credit cards
-com.lapsa.insurance.elements.PaymentMethod.PAYCASH = Pay by cashe to the courier upon delivery 
-
-com.lapsa.insurance.crm.PaymentStatus.DONE = Оплачено
-com.lapsa.insurance.crm.PaymentStatus.PENDING = Ожидается оплата
+com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE = Payment with credit card
+com.lapsa.insurance.elements.PaymentMethod.PAYCASH = Payment by cash to the courier at the Policy delivery
 
 com.lapsa.insurance.elements.PolicyObtainingMethod.DELIVERY = courier delivery
-com.lapsa.insurance.elements.PolicyObtainingMethod.PICKUP = pick-up in the office of the insurance company
+com.lapsa.insurance.elements.PolicyObtainingMethod.PICKUP = self-pick-up from the office of the Insurance Company
 
 com.lapsa.insurance.elements.PolicyTermClass.YEAR = 1 year
 com.lapsa.insurance.elements.PolicyTermClass.DAY5 = 5 days
@@ -101,17 +98,17 @@ com.lapsa.insurance.elements.SubjectType.PERSON = Individual
 com.lapsa.insurance.elements.VehicleAgeClass.UNDER7 = Up to 7 years inclusive
 com.lapsa.insurance.elements.VehicleAgeClass.OVER7 = Over 7 years
 
-com.lapsa.insurance.elements.VehicleClass.BUS16 = Buses with up to 16 passenger seats inclusive
-com.lapsa.insurance.elements.VehicleClass.BUSOVR16 = Buses with more than 16 passenger seats
-com.lapsa.insurance.elements.VehicleClass.CARGO = Cargo truck
-com.lapsa.insurance.elements.VehicleClass.CAR = Passenger car
+com.lapsa.insurance.elements.VehicleClass.BUS16 = Buses with up to 16 seats inclusive
+com.lapsa.insurance.elements.VehicleClass.BUSOVR16 = Buses with over 16 passenger seats
+com.lapsa.insurance.elements.VehicleClass.CARGO = Cargo vehicle
+com.lapsa.insurance.elements.VehicleClass.CAR = Cars
 com.lapsa.insurance.elements.VehicleClass.MOTO = Motor vehicle
-com.lapsa.insurance.elements.VehicleClass.TRAILER = Trailer (halftrailer)
-com.lapsa.insurance.elements.VehicleClass.TRAM = Trolleybus, tram
-com.lapsa.insurance.elements.VehicleClass.SEA = Sea vehicle
-com.lapsa.insurance.elements.VehicleClass.AIRCRAFT = Air vehicle
-com.lapsa.insurance.elements.VehicleClass.RAILWAY = Railway vehicle
-com.lapsa.insurance.elements.VehicleClass.SPECIAL = Special vehicle
+com.lapsa.insurance.elements.VehicleClass.TRAILER = Trailers (semi-trailers)
+com.lapsa.insurance.elements.VehicleClass.TRAM = Trolleybuses, tramways
+com.lapsa.insurance.elements.VehicleClass.SEA = Sea vehicles
+com.lapsa.insurance.elements.VehicleClass.AIRCRAFT = Aircraft
+com.lapsa.insurance.elements.VehicleClass.RAILWAY = Railroad transport
+com.lapsa.insurance.elements.VehicleClass.SPECIAL = Special vehicles
 
-com.lapsa.insurance.elements.WhoIsInsurant.DRIVER = The Insured is one of the insured drivers
-com.lapsa.insurance.elements.WhoIsInsurant.OTHER = The insured is another person
+com.lapsa.insurance.elements.WhoIsInsurant.DRIVER = One of the Insured drivers is the Insurer
+com.lapsa.insurance.elements.WhoIsInsurant.OTHER = Insurer is another person

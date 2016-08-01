@@ -1,26 +1,26 @@
-﻿com.lapsa.insurance.crm.ClosingResult.COMPLETED = Аяқталған
-com.lapsa.insurance.crm.ClosingResult.CANCELED = Болдырмау
+﻿com.lapsa.insurance.crm.ClosingResult.COMPLETED = Аяқталды
+com.lapsa.insurance.crm.ClosingResult.CANCELED = Өзгертілді
 
-com.lapsa.insurance.crm.NotificationStatus.DONE = Аяқталған
+com.lapsa.insurance.crm.NotificationStatus.DONE = Аяқталды
 com.lapsa.insurance.crm.NotificationStatus.PENDING = Кезекте
 com.lapsa.insurance.crm.NotificationStatus.NOT_REQUIRED = Талап етілмейді
 
 com.lapsa.insurance.crm.PaymentStatus.PENDING = Күтілуде
-com.lapsa.insurance.crm.PaymentStatus.DONE = Аяқталды
+com.lapsa.insurance.crm.PaymentStatus.DONE = Төленген
 
 com.lapsa.insurance.crm.RequestStatus.OPEN = Ашық
 com.lapsa.insurance.crm.RequestStatus.CLOSED = Жабық
 
-com.lapsa.insurance.elements.CancelationReason.CANCELATION_AND_RENEW = Шартты мерзімінен бұрын тоқтату және жаңа шарт жасау
-com.lapsa.insurance.elements.CancelationReason.CANCELATION = Мерзімінен бұрын бұзу
-com.lapsa.insurance.elements.CancelationReason.MADE_INSURANCE_PAYMENT = Сақтандыру төлемі жүзеге асырылды
-com.lapsa.insurance.elements.CancelationReason.PREMIUM_COST_ERROR = Дұрыс есептелмеген сыйлықақыны түзету
+com.lapsa.insurance.elements.CancelationReason.CANCELATION_AND_RENEW = Шартты мерзімінен бұрын тоқтату және жаңа шарт жасау 
+com.lapsa.insurance.elements.CancelationReason.CANCELATION = Мерзімінен бұрын бұзу 
+com.lapsa.insurance.elements.CancelationReason.MADE_INSURANCE_PAYMENT = Сақтандыру төлемі жүзеге асырылды 
+com.lapsa.insurance.elements.CancelationReason.PREMIUM_COST_ERROR = Дұрыс есептелмеген сыйлықақыны түзету 
 com.lapsa.insurance.elements.CancelationReason.POLICY_LOST = Жоғалту
-com.lapsa.insurance.elements.CancelationReason.ISSUED_DUPLICATE_POLICY = Телнұсқасы шығарылған
+com.lapsa.insurance.elements.CancelationReason.ISSUED_DUPLICATE_POLICY = Телнұсқасы шығарылған 
 com.lapsa.insurance.elements.CancelationReason.OTHER = Басқа себеп
-com.lapsa.insurance.elements.CancelationReason.HUMAN_FAILURE = Оператордың қатесі
+com.lapsa.insurance.elements.CancelationReason.HUMAN_FAILURE = Оператордың қатесі 
 
-com.lapsa.insurance.elements.DeliveryTimeSlot.DURING_THE_DAY = күні бойына
+com.lapsa.insurance.elements.DeliveryTimeSlot.DURING_THE_DAY = күні бойына 
 com.lapsa.insurance.elements.DeliveryTimeSlot.BEFORE_LUNCH = күннің бірінші жартысында  (9:00 бастап 13:00 дейін)
 com.lapsa.insurance.elements.DeliveryTimeSlot.AFTER_LUNCH = күннің екінші  жартысында  (13:00 бастап  18:00 дейін)
 com.lapsa.insurance.elements.DeliveryTimeSlot.EVENING = кешке (18:00 бастап 21:00 дейін)
@@ -46,28 +46,28 @@ com.lapsa.insurance.elements.InsuranceClassType.CLASS_12 = 12 Жіктелім
 com.lapsa.insurance.elements.InsuranceClassType.CLASS_13 = 13 Жіктелім
 com.lapsa.insurance.elements.InsuranceClassType.CLASS_M =  М Жіктелім
 
-com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.OVER25_MORE2 = жасы 25 жастан асқан, жүргізу өтілі 2 жылдан көп
-com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.UNDER25_LESS2 = жасы 25 жасқа жетпеген, жүргізу өтілі 2 жылдан аз
-com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.UNDER25_MORE2 =  жасы 25 жасқа жетпеген, жүргізу өтілі 2 жылдан көп
-com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.OVER25_LESS2 = жасы 25 жастан асқан, жүргізу өтілі 2 жылдан аз
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.OVER25_MORE2 = жасы 25 жастан асқан, жүргізу өтілі 2 жылдан көп 
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.UNDER25_LESS2 = жасы 25 жасқа жетпеген, жүргізу өтілі 2 жылдан аз 
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.UNDER25_MORE2 =  жасы 25 жасқа жетпеген, жүргізу өтілі 2 жылдан көп 
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.OVER25_LESS2 = жасы 25 жастан асқан, жүргізу өтілі 2 жылдан аз  
 
 com.lapsa.insurance.elements.InsuredAgeClass.OVER25 = жасы 25 жастан асқан
 com.lapsa.insurance.elements.InsuredAgeClass.UNDER25 = жасы 25 жасқа жетпеген
-com.lapsa.insurance.elements.InsuredAgeClass.OVER25.short = 25 дастан асқан
+com.lapsa.insurance.elements.InsuredAgeClass.OVER25.short = 25 жастан асқан
 com.lapsa.insurance.elements.InsuredAgeClass.UNDER25.short = 25 жасқа жетпеген
 
 com.lapsa.insurance.elements.InsuredExpirienceClass.MORE2 = жүргізу өтілі 2 жылдан көп
-com.lapsa.insurance.elements.InsuredExpirienceClass.LESS2 = жүргізу өтілі 2 жылдан аз
+com.lapsa.insurance.elements.InsuredExpirienceClass.LESS2 = жүргізу өтілі 2 жылдан аз 
 com.lapsa.insurance.elements.InsuredExpirienceClass.MORE2.short = 2 жылдан көп
 com.lapsa.insurance.elements.InsuredExpirienceClass.LESS2.short = 2 жылдан аз
 
 com.lapsa.insurance.elements.MaritalStatus.MARRIED = үйленген / тұрмысқа шыққан
 com.lapsa.insurance.elements.MaritalStatus.SINGLE = бойдақ / тұрмысқа шықпаған
 
-com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE = Банк картасымен төлеу
-com.lapsa.insurance.elements.PaymentMethod.PAYCASH = Курьерге қолма-қол төлеу кезінде жеткізу полисі
+com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE = Банк картасымен төлеу 
+com.lapsa.insurance.elements.PaymentMethod.PAYCASH = Полисті жеткізу кезінде курьерге қолма-қол ақшамен төлеу 
 
-com.lapsa.insurance.elements.ObtainingMethod.DELIVERY = курьермен жеткізу
+com.lapsa.insurance.elements.ObtainingMethod.DELIVERY = курьермен жеткізу 
 com.lapsa.insurance.elements.ObtainingMethod.PICKUP = сақтандыру компаниясының офисінен өз бетімен алу
 
 com.lapsa.insurance.elements.Sex.MALE = ер
@@ -79,20 +79,21 @@ com.lapsa.insurance.elements.SteeringWheelLocation.LEFT_SIDE = меңгеріг�
 com.lapsa.insurance.elements.SubjectType.COMPANY = Заңды тұлға
 com.lapsa.insurance.elements.SubjectType.PERSON = Жеке тұлға
 
-com.lapsa.insurance.elements.VehicleAgeClass.UNDER7 = 7 жылға дейін, қоса алғанда
+com.lapsa.insurance.elements.VehicleAgeClass.UNDER7 = 7 жылға дейін, қоса алғанда 
 com.lapsa.insurance.elements.VehicleAgeClass.OVER7 = 7 жылдан жоғары
 
-com.lapsa.insurance.elements.VehicleClass.BUS16 = Жолаушылар орны қоса алғанда 16-ға дейінгі автобустар
+com.lapsa.insurance.elements.VehicleClass.BUS16 = Жолаушылар орны қоса алғанда 16-ға дейінгі автобустар 
 com.lapsa.insurance.elements.VehicleClass.BUSOVR16 = Жолаушылар орны 16-дан артық автобустар
 com.lapsa.insurance.elements.VehicleClass.CARGO = Жүк көліктері
 com.lapsa.insurance.elements.VehicleClass.CAR = Жеңіл көлік
-com.lapsa.insurance.elements.VehicleClass.MOTO = Мотокөлік
+com.lapsa.insurance.elements.VehicleClass.MOTO = Мотокөлік 
 com.lapsa.insurance.elements.VehicleClass.TRAILER = Тіркемелер (жартылай тіркемелер)
 com.lapsa.insurance.elements.VehicleClass.TRAM = Троллейбустар, трамвайлар
-com.lapsa.insurance.elements.VehicleClass.SEA = Теңіз көлігі
-com.lapsa.insurance.elements.VehicleClass.AIRCRAFT = Әуе көлігі
-com.lapsa.insurance.elements.VehicleClass.RAILWAY = Темір жол көлігі
+com.lapsa.insurance.elements.VehicleClass.SEA = Теңіз көлігі 
+com.lapsa.insurance.elements.VehicleClass.AIRCRAFT = Әуе көлігі 
+com.lapsa.insurance.elements.VehicleClass.RAILWAY = Темір жол көлігі 
 com.lapsa.insurance.elements.VehicleClass.SPECIAL = Арнай техника
 
-com.lapsa.insurance.elements.WhoIsInsurant.DRIVER = Сақтанушы сақтандырылған жүргізушілердің бірі болып табылады
-com.lapsa.insurance.elements.WhoIsInsurant.OTHER = Сақтанушы басқа тұлға болып табылады
+com.lapsa.insurance.elements.WhoIsInsurant.DRIVER = Сақтанушы сақтандырылған жүргізушілердің бірі болып табылады 
+com.lapsa.insurance.elements.WhoIsInsurant.OTHER = Сақтанушы басқа тұлға болып табылады 
+

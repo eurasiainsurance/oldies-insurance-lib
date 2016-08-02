@@ -1,6 +1,6 @@
 package com.lapsa.insurance.persistence.dao;
 
-public class PeristenceOperationFailed extends Exception {
+public class PeristenceOperationFailed extends RuntimeException {
 
     private static final long serialVersionUID = 1912901337056261895L;
 

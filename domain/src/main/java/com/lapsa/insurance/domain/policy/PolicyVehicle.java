@@ -1,5 +1,7 @@
-package com.lapsa.insurance.domain;
+package com.lapsa.insurance.domain.policy;
 
+import com.lapsa.insurance.domain.BaseEntity;
+import com.lapsa.insurance.domain.VehicleData;
 import com.lapsa.insurance.elements.VehicleAgeClass;
 import com.lapsa.insurance.elements.VehicleClass;
 import com.lapsa.insurance.validation.NotNullValue;
@@ -10,7 +12,7 @@ import com.lapsa.kz.country.KZCity;
 import com.lapsa.kz.country.validators.ValidKZArea;
 import com.lapsa.kz.country.validators.ValidKZCity;
 
-public class InsuredVehicleData extends BaseEntity<Integer> {
+public class PolicyVehicle extends BaseEntity<Integer> {
     private static final long serialVersionUID = -944934937361936981L;
     private static final int PRIME = 53;
     private static final int MULTIPLIER = 53;

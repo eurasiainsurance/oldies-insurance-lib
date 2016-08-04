@@ -1,5 +1,16 @@
-package com.lapsa.insurance.domain;
+package com.lapsa.insurance.domain.policy;
 
+import com.lapsa.insurance.domain.BaseEntity;
+import com.lapsa.insurance.domain.ContactData;
+import com.lapsa.insurance.domain.DriverLicenseData;
+import com.lapsa.insurance.domain.GPWParticipantCertificateData;
+import com.lapsa.insurance.domain.HandicaptedCertificateData;
+import com.lapsa.insurance.domain.IdentityCardData;
+import com.lapsa.insurance.domain.OriginData;
+import com.lapsa.insurance.domain.PensionerCertificateData;
+import com.lapsa.insurance.domain.PersonalData;
+import com.lapsa.insurance.domain.PrivilegerCertificateData;
+import com.lapsa.insurance.domain.ResidenceData;
 import com.lapsa.insurance.elements.InsuranceClassType;
 import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredExpirienceClass;
@@ -8,7 +19,7 @@ import com.lapsa.insurance.validation.ValidInsuranceAgeClass;
 import com.lapsa.insurance.validation.ValidInsuranceExpirienceClass;
 import com.lapsa.kz.idnumber.validators.ValidIdNumber;
 
-public class InsuredDriverData extends BaseEntity<Integer> {
+public class PolicyDriver extends BaseEntity<Integer> {
     private static final long serialVersionUID = 5209394299289430299L;
     private static final int PRIME = 47;
     private static final int MULTIPLIER = 47;

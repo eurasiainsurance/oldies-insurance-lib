@@ -1,5 +1,6 @@
 package com.lapsa.insurance.domain;
 
+import com.lapsa.insurance.domain.policy.PolicyDriver;
 import com.lapsa.insurance.elements.WhoIsInsurant;
 import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidEnumerationValue;
@@ -26,7 +27,7 @@ public class InsurantData extends BaseEntity<Integer> {
 
     private KZEconomicSector economicsSector = KZEconomicSector.HOUSEHOLDS;
 
-    private InsuredDriverData driverAsInsurant;
+    private PolicyDriver driverAsInsurant;
 
     @NotNullValue(message = "{com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.NotNull.message}")
     @ValidEnumerationValue(message = "{com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message}")
@@ -107,11 +108,11 @@ public class InsurantData extends BaseEntity<Integer> {
 	this.economicsSector = economicsSector;
     }
 
-    public InsuredDriverData getDriverAsInsurant() {
+    public PolicyDriver getDriverAsInsurant() {
 	return driverAsInsurant;
     }
 
-    public void setDriverAsInsurant(InsuredDriverData driverAsInsurant) {
+    public void setDriverAsInsurant(PolicyDriver driverAsInsurant) {
 	this.driverAsInsurant = driverAsInsurant;
     }
 

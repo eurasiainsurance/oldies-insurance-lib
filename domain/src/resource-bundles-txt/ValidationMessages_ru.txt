@@ -1,9 +1,9 @@
 com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.NotNull.message = Выберите значение
 com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message = Неверное значение
 
-com.lapsa.insurance.domain.InsuredDriverData.IdNumber.NotNull.message = ИИН не указан
+com.lapsa.insurance.domain.policy.PolicyDriver.IdNumber.NotNull.message = ИИН не указан
 
-com.lapsa.insurance.domain.InsurantData.IdNumber.NotNull.message = {com.lapsa.insurance.domain.InsuredDriverData.IdNumber.NotNull.message}
+com.lapsa.insurance.domain.InsurantData.IdNumber.NotNull.message = {com.lapsa.insurance.domain.policy.PolicyDriver.IdNumber.NotNull.message}
 
 com.lapsa.insurance.domain.ObtainingData.method.NotNullValue.message = Укажите способ получения полиса
 com.lapsa.insurance.domain.ObtainingData.pickupCity.NotNullValue.message = Необходимо указать город для того, чтобы выбрать офис страховой компани

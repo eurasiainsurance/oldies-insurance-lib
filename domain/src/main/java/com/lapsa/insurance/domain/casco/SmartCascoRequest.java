@@ -17,15 +17,15 @@ public class SmartCascoRequest extends InsuranceRequest {
 	return MULTIPLIER;
     }
 
-    private SmartCascoData smartCasco;
+    private SmartCasco smartCasco;
 
     // GENERATED
 
-    public SmartCascoData getSmartCasco() {
+    public SmartCasco getSmartCasco() {
 	return smartCasco;
     }
 
-    public void setSmartCasco(SmartCascoData smartCasco) {
+    public void setSmartCasco(SmartCasco smartCasco) {
 	this.smartCasco = smartCasco;
     }
 

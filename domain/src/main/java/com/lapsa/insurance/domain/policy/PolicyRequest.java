@@ -21,7 +21,7 @@ public class PolicyRequest extends InsuranceRequest {
 	return MULTIPLIER;
     }
 
-    private PolicyData policy;
+    private Policy policy;
     private List<PolicyRequestNotification> notifications;
 
     public void addNotification(PolicyRequestNotification notification) {
@@ -46,11 +46,11 @@ public class PolicyRequest extends InsuranceRequest {
 
     // GENERATED
 
-    public PolicyData getPolicy() {
+    public Policy getPolicy() {
 	return policy;
     }
 
-    public void setPolicy(PolicyData policy) {
+    public void setPolicy(Policy policy) {
 	this.policy = policy;
     }
 

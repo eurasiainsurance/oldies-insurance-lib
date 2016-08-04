@@ -5,8 +5,8 @@ import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import com.lapsa.insurance.domain.InsuredDriverData;
-import com.lapsa.insurance.domain.InsuredVehicleData;
+import com.lapsa.insurance.domain.policy.PolicyDriver;
+import com.lapsa.insurance.domain.policy.PolicyVehicle;
 import com.lapsa.insurance.services.other.CalculationService;
 import com.lapsa.insurance.services.other.PremiumCostCalculatorRatesService;
 
@@ -17,10 +17,10 @@ public class DefaultCalculationService implements CalculationService {
     private PremiumCostCalculatorRatesService rates;
 
     @Override
-    public double calculatePremiumCost(List<InsuredDriverData> drivers, List<InsuredVehicleData> vehicles) {
+    public double calculatePremiumCost(List<PolicyDriver> drivers, List<PolicyVehicle> vehicles) {
 	double maximumCost = 0d;
-	for (InsuredDriverData driver : drivers)
-	    for (InsuredVehicleData vehicle : vehicles) {
+	for (PolicyDriver driver : drivers)
+	    for (PolicyVehicle vehicle : vehicles) {
 		double cost = _calculatePremiumCostVariant(driver, vehicle);
 		if (cost == 0) {
 		    return 0;
@@ -31,7 +31,7 @@ public class DefaultCalculationService implements CalculationService {
 	return maximumCost;
     }
 
-    private double _calculatePremiumCostVariant(InsuredDriverData insured, InsuredVehicleData vehicle) {
+    private double _calculatePremiumCostVariant(PolicyDriver insured, PolicyVehicle vehicle) {
 	double premium = rates.getBase();
 	premium *= rates.getBaseRate();
 	premium *= rates.getRegionRate(vehicle.getRegion());

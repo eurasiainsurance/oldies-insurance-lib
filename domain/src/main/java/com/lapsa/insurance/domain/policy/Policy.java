@@ -4,10 +4,8 @@ import java.util.List;
 
 import com.lapsa.insurance.domain.BaseEntity;
 import com.lapsa.insurance.domain.CalculationData;
-import com.lapsa.insurance.domain.InsuredDriverData;
-import com.lapsa.insurance.domain.InsuredVehicleData;
 
-public class PolicyData extends BaseEntity<Integer> {
+public class Policy extends BaseEntity<Integer> {
     private static final long serialVersionUID = 1148321211581313286L;
     private static final int PRIME = 79;
     private static final int MULTIPLIER = 79;
@@ -22,25 +20,25 @@ public class PolicyData extends BaseEntity<Integer> {
 	return MULTIPLIER;
     }
 
-    private List<InsuredDriverData> insuredDrivers;
-    private List<InsuredVehicleData> insuredVehicles;
+    private List<PolicyDriver> insuredDrivers;
+    private List<PolicyVehicle> insuredVehicles;
     private CalculationData calculation;
 
     // GENERATED
 
-    public List<InsuredDriverData> getInsuredDrivers() {
+    public List<PolicyDriver> getInsuredDrivers() {
 	return insuredDrivers;
     }
 
-    public void setInsuredDrivers(List<InsuredDriverData> insuredDrivers) {
+    public void setInsuredDrivers(List<PolicyDriver> insuredDrivers) {
 	this.insuredDrivers = insuredDrivers;
     }
 
-    public List<InsuredVehicleData> getInsuredVehicles() {
+    public List<PolicyVehicle> getInsuredVehicles() {
 	return insuredVehicles;
     }
 
-    public void setInsuredVehicles(List<InsuredVehicleData> insuredVehicles) {
+    public void setInsuredVehicles(List<PolicyVehicle> insuredVehicles) {
 	this.insuredVehicles = insuredVehicles;
     }
 

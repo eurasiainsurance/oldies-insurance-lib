@@ -1,6 +1,7 @@
 package com.lapsa.insurance.domain.casco;
 
 import com.lapsa.insurance.domain.BaseEntity;
+import com.lapsa.insurance.elements.CascoCarAgeClass;
 import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.kz.country.KZArea;
 import com.lapsa.kz.country.KZCity;
@@ -25,6 +26,9 @@ public class CascoVehicle extends BaseEntity<Integer> {
     private double cost;
 
     private int yearOfIssue;
+
+    @NotNullValue
+    private CascoCarAgeClass carAgeClass;
 
     @NotNullValue
     @ValidKZArea
@@ -52,6 +56,14 @@ public class CascoVehicle extends BaseEntity<Integer> {
 	this.yearOfIssue = yearOfIssue;
     }
 
+    public CascoCarAgeClass getCarAgeClass() {
+	return carAgeClass;
+    }
+
+    public void setCarAgeClass(CascoCarAgeClass carAgeClass) {
+	this.carAgeClass = carAgeClass;
+    }
+
     public KZArea getRegion() {
 	return region;
     }
@@ -67,4 +79,5 @@ public class CascoVehicle extends BaseEntity<Integer> {
     public void setCity(KZCity city) {
 	this.city = city;
     }
+
 }

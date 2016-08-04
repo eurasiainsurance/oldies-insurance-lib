@@ -9,22 +9,17 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 import com.lapsa.fin.FinCurrency;
-import com.lapsa.insurance.domain.casco.Casco;
 import com.lapsa.insurance.domain.policy.Policy;
 import com.lapsa.insurance.domain.policy.PolicyDriver;
 import com.lapsa.insurance.domain.policy.PolicyVehicle;
-import com.lapsa.insurance.services.other.CalculationService;
-import com.lapsa.insurance.services.other.CascoRatesService;
-import com.lapsa.insurance.services.other.PremiumCostCalculatorRatesService;
+import com.lapsa.insurance.services.other.PolicyCalculationService;
+import com.lapsa.insurance.services.other.PolicyRatesService;
 
 @ApplicationScoped
-public class DefaultCalculationService implements CalculationService {
+public class DefaultPolicyCalculationService implements PolicyCalculationService {
 
     @Inject
-    private PremiumCostCalculatorRatesService policyRates;
-
-    @Inject
-    private CascoRatesService cascoRates;
+    private PolicyRatesService policyRates;
 
     @Override
     public void calculatePolicyCost(Policy policy) {
@@ -63,42 +58,6 @@ public class DefaultCalculationService implements CalculationService {
 	calculatePolicyCost(policy, start, days);
     }
 
-    @Override
-    public void calculateCascoCost(Casco casco) {
-	double annualCost = cascoCostAnnual(casco);
-	casco.getCalculation().setPremiumCost(roundMoney(annualCost));
-	casco.getCalculation().setPremiumCurrency(FinCurrency.KZT);
-    }
-
-    @Override
-    public void calculateCascoCost(Casco casco, LocalDate start, LocalDate end) {
-	double annualCost = cascoCostAnnual(casco);
-	double cost = costAnnualToPeriod(annualCost, start, end);
-	casco.getCalculation().setPremiumCost(roundMoney(cost));
-	casco.getCalculation().setPremiumCurrency(FinCurrency.KZT);
-    }
-
-    @Override
-    public void calculateCascoCost(Casco casco, Calendar startDate, Calendar endDate) {
-	LocalDate start = startDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-	LocalDate end = endDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-	calculateCascoCost(casco, start, end);
-    }
-
-    @Override
-    public void calculateCascoCost(Casco casco, Calendar startDate, int days) {
-	LocalDate start = startDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-	calculateCascoCost(casco, start, days);
-    }
-
-    @Override
-    public void calculateCascoCost(Casco casco, LocalDate start, int days) {
-	double annualCost = cascoCostAnnual(casco);
-	double cost = costAnnualToPeriod(annualCost, start, days);
-	casco.getCalculation().setPremiumCost(roundMoney(cost));
-	casco.getCalculation().setPremiumCurrency(FinCurrency.KZT);
-    }
-
     // PRIVATE
 
     private static double costAnnualToPeriod(double annualCost, LocalDate start, LocalDate end) {
@@ -116,33 +75,6 @@ public class DefaultCalculationService implements CalculationService {
     private static double costAnnualToPeriod(double annualCost, LocalDate start, int days) {
 	LocalDate end = start.plusDays(days);
 	return costAnnualToPeriod(annualCost, start, end);
-    }
-
-    private double cascoCostAnnual(Casco casco) {
-	double rate = 0;
-	rate += cascoRates.getRateDeductible(casco.getDeductiblePartialDamageRate());
-	rate += cascoRates.getRateDeductibleFullDeath(casco.getDeductibleFullDeathRate());
-	rate += cascoRates.getRateSpecialServiceStation(casco.isSpecialServiceStationRequired(),
-		casco.getInsuredVehicle().getCarAgeClass());
-	rate += cascoRates.getRateNoPoliceRequired(casco.isNoPoliceRequired());
-	rate += cascoRates.getRateNoDeductibleAppliedIfNotGuilty(casco.isNoDeductibleAppliedIfNotGuilty());
-	rate += cascoRates.getRateContactToPolicyRequired(casco.isContactToPoliceRequired());
-	rate += cascoRates.getRateEvacuatorRequired(casco.isEvacuatorRequired());
-	rate += cascoRates.getRateReplacementCarRequired(casco.isReplacementCarRequired());
-
-	double discount = 0;
-	discount += cascoRates.getDiscountCoverage(casco.isCoverRoadAccidents(), casco.isCoverNonRoadAccidents());
-	discount += cascoRates.getDiscountContractEndsAfterFirstCase(casco.isContractEndsAfterFirstCase());
-
-	double annualCost = casco.getInsuredVehicle().getCost() * rate * (1 - discount);
-
-	if (casco.isThirdPartyLiabilityCoverage())
-	    annualCost += cascoRates.getAmountThirdPartyLiabilityCoverage();
-
-	if (casco.isDriverAndPassengerCoverage())
-	    annualCost += cascoRates.getAmountDriverAndPassengerCoverage(casco.getDriverAndPassengerCount());
-
-	return annualCost;
     }
 
     private double policyCostAnnual(List<PolicyDriver> drivers, List<PolicyVehicle> vehicles) {

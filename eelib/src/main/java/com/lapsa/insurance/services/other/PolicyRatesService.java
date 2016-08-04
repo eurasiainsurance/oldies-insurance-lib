@@ -8,7 +8,7 @@ import com.lapsa.insurance.elements.VehicleClass;
 import com.lapsa.kz.country.KZArea;
 import com.lapsa.kz.country.KZCity;
 
-public interface PremiumCostCalculatorRatesService {
+public interface PolicyRatesService {
     double getBase();
 
     double getBaseRate();

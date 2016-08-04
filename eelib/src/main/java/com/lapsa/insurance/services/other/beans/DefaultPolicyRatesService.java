@@ -12,14 +12,14 @@ import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredExpirienceClass;
 import com.lapsa.insurance.elements.VehicleAgeClass;
 import com.lapsa.insurance.elements.VehicleClass;
-import com.lapsa.insurance.services.other.PremiumCostCalculatorRatesService;
+import com.lapsa.insurance.services.other.PolicyRatesService;
 import com.lapsa.kz.country.KZArea;
 import com.lapsa.kz.country.KZCity;
 import com.lapsa.kz.country.KZCityType;
 
 @Singleton
 @Named("premiumCostCalculatorRatesService")
-public class DefaultPremiumCostCalculatorRatesService implements PremiumCostCalculatorRatesService {
+public class DefaultPolicyRatesService implements PolicyRatesService {
 
     private final double MRP = 2121;
     private final double BASE_RATE = 1.9;

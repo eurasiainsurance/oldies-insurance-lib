@@ -33,7 +33,7 @@
      139 com.lapsa.insurance.domain.notification.NewCascoRequestCompanyNotification
      149 com.lapsa.insurance.domain.notification.NewPolicyRequestCompanyNotification
      151 com.lapsa.insurance.domain.notification.NewPolicyRequestUserNotification
-     157 
+     157 com.lapsa.insurance.domain.casco.CascoVehicle
      163 
      167 
      173 

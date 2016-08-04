@@ -13,7 +13,17 @@ import com.lapsa.phone.validators.ValidPhoneNumber;
 public class RequesterData extends BaseDomain {
     private static final long serialVersionUID = 2536050924805456436L;
     private static final int PRIME = 73;
-    private static final int MULTIPLIER = 73;
+    private static final int MULTIPLIER = PRIME;
+
+    @Override
+    protected int getPrime() {
+	return PRIME;
+    }
+
+    @Override
+    protected int getMultiplier() {
+	return MULTIPLIER;
+    }
 
     @NotNullValue
     @NotEmptyString
@@ -44,16 +54,6 @@ public class RequesterData extends BaseDomain {
 	    phone = PhoneNumberFactoryProvider.provideDefault().parse(phoneString);
 	} catch (PhoneFormatException ignored) {
 	}
-    }
-
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
     }
 
     // GENERATED

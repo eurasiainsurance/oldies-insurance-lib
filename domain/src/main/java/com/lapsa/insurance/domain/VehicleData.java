@@ -10,6 +10,16 @@ public class VehicleData extends BaseEntity<Integer> {
     private static final int PRIME = 113;
     private static final int MULTIPLIER = PRIME;
 
+    @Override
+    protected int getPrime() {
+	return PRIME;
+    }
+
+    @Override
+    protected int getMultiplier() {
+	return MULTIPLIER;
+    }
+
     @NotNullValue
     @ValidVINCode(checkDigit = false)
     private String vinCode;
@@ -34,16 +44,6 @@ public class VehicleData extends BaseEntity<Integer> {
     public String getDisplayName() {
 	return (((manufacturer == null || manufacturer.isEmpty()) ? "" : (manufacturer + " "))
 		+ ((model == null || model.isEmpty()) ? "" : (model + " "))).trim();
-    }
-
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
     }
 
     // GENERATED

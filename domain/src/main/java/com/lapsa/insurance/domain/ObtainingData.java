@@ -14,7 +14,17 @@ import com.lapsa.kz.country.KZCity;
 public class ObtainingData extends BaseDomain {
     private static final long serialVersionUID = -6326848114328976035L;
     private static final int PRIME = 89;
-    private static final int MULTIPLIER = 89;
+    private static final int MULTIPLIER = PRIME;
+
+    @Override
+    protected int getPrime() {
+	return PRIME;
+    }
+
+    @Override
+    protected int getMultiplier() {
+	return MULTIPLIER;
+    }
 
     @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.method.NotNullValue.message}")
     private ObtainingMethod method;
@@ -41,16 +51,6 @@ public class ObtainingData extends BaseDomain {
     private String deliveryAddress;
 
     private CompanyPointOfSale deliveryFromPOS;
-
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
 
     // GENERATED
 

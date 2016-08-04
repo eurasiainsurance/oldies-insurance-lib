@@ -8,7 +8,7 @@ import com.lapsa.insurance.domain.CalculationData;
 public class Policy extends BaseEntity<Integer> {
     private static final long serialVersionUID = 1148321211581313286L;
     private static final int PRIME = 79;
-    private static final int MULTIPLIER = 79;
+    private static final int MULTIPLIER = PRIME;
 
     @Override
     protected int getPrime() {

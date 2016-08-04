@@ -18,8 +18,6 @@ public class Casco extends BaseEntity<Integer> {
 	return MULTIPLIER;
     }
 
-    
-    
     private CalculationData calculation;
 
     // GENERATED

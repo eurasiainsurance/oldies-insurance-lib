@@ -10,16 +10,6 @@ public class ResidenceData extends BaseDomain {
     private static final int PRIME = 103;
     private static final int MULTIPLIER = PRIME;
 
-    private boolean resident;
-
-    @NotNullValue
-    @ValidKZCity
-    private KZCity city;
-
-    @NotNullValue
-    @NotEmptyString
-    private String address;
-
     @Override
     protected int getPrime() {
 	return PRIME;
@@ -29,6 +19,16 @@ public class ResidenceData extends BaseDomain {
     protected int getMultiplier() {
 	return MULTIPLIER;
     }
+
+    private boolean resident;
+
+    @NotNullValue
+    @ValidKZCity
+    private KZCity city;
+
+    @NotNullValue
+    @NotEmptyString
+    private String address;
 
     // GENERATED
 

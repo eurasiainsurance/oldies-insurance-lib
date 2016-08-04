@@ -9,13 +9,6 @@ public class PaymentData extends BaseDomain {
     private static final int PRIME = 127;
     private static final int MULTIPLIER = PRIME;
 
-    @NotNullValue(message = "{com.lapsa.insurance.domain.PaymentData.method.NotNullValue.message}")
-    private PaymentMethod method;
-
-    private PaymentStatus status;
-
-    private String paymentReference;
-
     @Override
     protected int getPrime() {
 	return PRIME;
@@ -25,6 +18,13 @@ public class PaymentData extends BaseDomain {
     protected int getMultiplier() {
 	return MULTIPLIER;
     }
+
+    @NotNullValue(message = "{com.lapsa.insurance.domain.PaymentData.method.NotNullValue.message}")
+    private PaymentMethod method;
+
+    private PaymentStatus status;
+
+    private String paymentReference;
 
     // GENERATED
 

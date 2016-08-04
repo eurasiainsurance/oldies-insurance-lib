@@ -6,10 +6,7 @@ import com.lapsa.phone.PhoneType;
 public class CompanyContactPhone extends BaseDomain {
     private static final long serialVersionUID = -1005845698858843018L;
     private static final int PRIME = 7;
-    private static final int MULTIPLIER = 7;
-
-    private PhoneNumber phone;
-    private PhoneType phoneType;
+    private static final int MULTIPLIER = PRIME;
 
     @Override
     protected int getPrime() {
@@ -20,6 +17,9 @@ public class CompanyContactPhone extends BaseDomain {
     protected int getMultiplier() {
 	return MULTIPLIER;
     }
+
+    private PhoneNumber phone;
+    private PhoneType phoneType;
 
     // GENERATED
 

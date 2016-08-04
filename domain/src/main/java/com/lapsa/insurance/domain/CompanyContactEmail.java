@@ -3,9 +3,7 @@ package com.lapsa.insurance.domain;
 public class CompanyContactEmail extends BaseEntity<Integer> {
     private static final long serialVersionUID = 4127152799405864110L;
     private static final int PRIME = 5;
-    private static final int MULTIPLIER = 5;
-
-    private String address;
+    private static final int MULTIPLIER = PRIME;
 
     @Override
     protected int getPrime() {
@@ -16,6 +14,8 @@ public class CompanyContactEmail extends BaseEntity<Integer> {
     protected int getMultiplier() {
 	return MULTIPLIER;
     }
+
+    private String address;
 
     // GENERATED
 

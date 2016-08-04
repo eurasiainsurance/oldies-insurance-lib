@@ -15,7 +15,17 @@ import com.lapsa.kz.country.validators.ValidKZCity;
 public class PolicyVehicle extends BaseEntity<Integer> {
     private static final long serialVersionUID = -944934937361936981L;
     private static final int PRIME = 53;
-    private static final int MULTIPLIER = 53;
+    private static final int MULTIPLIER = PRIME;
+
+    @Override
+    protected int getPrime() {
+	return PRIME;
+    }
+
+    @Override
+    protected int getMultiplier() {
+	return MULTIPLIER;
+    }
 
     @NotNullValue
     @ValidVehicleClass
@@ -46,16 +56,6 @@ public class PolicyVehicle extends BaseEntity<Integer> {
     @Override
     public String toString() {
 	return vehicleData.getDisplayName();
-    }
-
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
     }
 
     // GENERATED

@@ -9,7 +9,7 @@ import com.lapsa.insurance.domain.notification.PolicyRequestNotification;
 public class PolicyRequest extends InsuranceRequest {
     private static final long serialVersionUID = 944531653617396366L;
     private static final int PRIME = 83;
-    private static final int MULTIPLIER = 83;
+    private static final int MULTIPLIER = PRIME;
 
     @Override
     protected int getPrime() {

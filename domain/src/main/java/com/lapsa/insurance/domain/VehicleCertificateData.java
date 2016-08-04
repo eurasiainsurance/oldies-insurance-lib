@@ -12,6 +12,16 @@ public class VehicleCertificateData extends BaseEntity<Integer> implements ScanC
     private static final int PRIME = 109;
     private static final int MULTIPLIER = PRIME;
 
+    @Override
+    protected int getPrime() {
+	return PRIME;
+    }
+
+    @Override
+    protected int getMultiplier() {
+	return MULTIPLIER;
+    }
+
     @NotNullValue
     @NotEmptyString
     @ValidVehicleRegistrationNumber
@@ -26,16 +36,6 @@ public class VehicleCertificateData extends BaseEntity<Integer> implements ScanC
     private Date dateOfIssue;
 
     private TwoSidedDocumentScan scan = new TwoSidedDocumentScan();
-
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
 
     // GENERATED
 

@@ -8,6 +8,16 @@ public class TwoSidedDocumentScan extends BaseDomain implements DocumentScan {
     private static final int PRIME = 107;
     private static final int MULTIPLIER = PRIME;
 
+    @Override
+    protected int getPrime() {
+	return PRIME;
+    }
+
+    @Override
+    protected int getMultiplier() {
+	return MULTIPLIER;
+    }
+
     private UploadedImage frontside;
     private UploadedImage backside;
 
@@ -19,16 +29,6 @@ public class TwoSidedDocumentScan extends BaseDomain implements DocumentScan {
 	if (backside != null)
 	    ret.add(backside);
 	return ret.toArray(new UploadedImage[0]);
-    }
-
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
     }
 
     // GENERATED

@@ -7,11 +7,7 @@ import com.lapsa.insurance.validation.NotNullValue;
 public class OriginData extends BaseDomain {
     private static final long serialVersionUID = -2811566798584800985L;
     private static final int PRIME = 61;
-    private static final int MULTIPLIER = 61;
-
-    @NotNullValue
-    @ValidCountry
-    private Country country;
+    private static final int MULTIPLIER = PRIME;
 
     @Override
     protected int getPrime() {
@@ -22,6 +18,10 @@ public class OriginData extends BaseDomain {
     protected int getMultiplier() {
 	return MULTIPLIER;
     }
+
+    @NotNullValue
+    @ValidCountry
+    private Country country;
 
     // GENERATED
 

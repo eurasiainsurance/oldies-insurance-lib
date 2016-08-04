@@ -5,10 +5,7 @@ import com.lapsa.fin.FinCurrency;
 public class CalculationData extends BaseDomain {
     private static final long serialVersionUID = -1769681003179820909L;
     private static final int PRIME = 3;
-    private static final int MULTIPLIER = 3;
-
-    private double premiumCost;
-    private FinCurrency premiumCurrency;
+    private static final int MULTIPLIER = PRIME;
 
     @Override
     protected int getPrime() {
@@ -19,6 +16,9 @@ public class CalculationData extends BaseDomain {
     protected int getMultiplier() {
 	return MULTIPLIER;
     }
+
+    private double premiumCost;
+    private FinCurrency premiumCurrency;
 
     // GENEERATED
 

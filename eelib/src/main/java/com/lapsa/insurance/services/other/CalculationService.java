@@ -1,10 +1,18 @@
 package com.lapsa.insurance.services.other;
 
-import java.util.List;
+import java.time.LocalDate;
+import java.util.Calendar;
 
-import com.lapsa.insurance.domain.policy.PolicyDriver;
-import com.lapsa.insurance.domain.policy.PolicyVehicle;
+import com.lapsa.insurance.domain.policy.Policy;
 
 public interface CalculationService {
-    double calculatePremiumCost(List<PolicyDriver> drivers, List<PolicyVehicle> vehicles);
+    void calculatePolicyCost(Policy policy);
+
+    void calculatePolicyCost(Policy policy, Calendar startDate, Calendar endDate);
+
+    void calculatePolicyCost(Policy policy, Calendar startDate, int days);
+
+    void calculatePolicyCost(Policy policy, LocalDate startDate, LocalDate endDate);
+
+    void calculatePolicyCost(Policy policy, LocalDate startDate, int days);
 }

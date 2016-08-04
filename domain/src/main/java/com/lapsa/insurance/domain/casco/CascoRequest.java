@@ -2,7 +2,7 @@ package com.lapsa.insurance.domain.casco;
 
 import com.lapsa.insurance.domain.InsuranceRequest;
 
-public class SmartCascoRequest extends InsuranceRequest {
+public class CascoRequest extends InsuranceRequest {
     private static final long serialVersionUID = -8067548829502589540L;
     private static final int PRIME = 137;
     private static final int MULTIPLIER = PRIME;
@@ -17,16 +17,16 @@ public class SmartCascoRequest extends InsuranceRequest {
 	return MULTIPLIER;
     }
 
-    private SmartCasco smartCasco;
+    private Casco casco;
 
     // GENERATED
 
-    public SmartCasco getSmartCasco() {
-	return smartCasco;
+    public Casco getCasco() {
+	return casco;
     }
 
-    public void setSmartCasco(SmartCasco smartCasco) {
-	this.smartCasco = smartCasco;
+    public void setCasco(Casco casco) {
+	this.casco = casco;
     }
 
 }

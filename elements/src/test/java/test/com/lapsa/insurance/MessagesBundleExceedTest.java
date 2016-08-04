@@ -22,14 +22,16 @@ import com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass;
 import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredExpirienceClass;
 import com.lapsa.insurance.elements.MaritalStatus;
-import com.lapsa.insurance.elements.PaymentMethod;
 import com.lapsa.insurance.elements.ObtainingMethod;
+import com.lapsa.insurance.elements.PaymentMethod;
 import com.lapsa.insurance.elements.Sex;
 import com.lapsa.insurance.elements.SteeringWheelLocation;
 import com.lapsa.insurance.elements.SubjectType;
 import com.lapsa.insurance.elements.VehicleAgeClass;
 import com.lapsa.insurance.elements.VehicleClass;
 import com.lapsa.insurance.elements.WhoIsInsurant;
+import com.lapsa.insurance.elements.casco.CascoDeductibleFullDeathRate;
+import com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate;
 
 public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 
@@ -105,6 +107,11 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 	    if (findByFullName(VehicleClass.values(), key) != null)
 		continue;
 	    if (findByFullName(WhoIsInsurant.values(), key) != null)
+		continue;
+	    // ELEMENTS / CASCO
+	    if (findByFullName(CascoDeductibleFullDeathRate.values(), key) != null)
+		continue;
+	    if (findByFullName(CascoDeductiblePartialDamageRate.values(), key) != null)
 		continue;
 	    fail(String.format("Resource bunddle key '%1$s' is outbinded", key));
 	}

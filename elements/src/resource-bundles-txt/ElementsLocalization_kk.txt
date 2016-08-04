@@ -97,3 +97,14 @@ com.lapsa.insurance.elements.VehicleClass.SPECIAL = Арнай техника
 com.lapsa.insurance.elements.WhoIsInsurant.DRIVER = Сақтанушы сақтандырылған жүргізушілердің бірі болып табылады 
 com.lapsa.insurance.elements.WhoIsInsurant.OTHER = Сақтанушы басқа тұлға болып табылады 
 
+com.lapsa.insurance.elements.casco.CascoDeductibleFullDeathRate.PERCENT10 = 10%
+com.lapsa.insurance.elements.casco.CascoDeductibleFullDeathRate.PERCENT5 = 5%
+
+com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate.PERCENT0_5 = 0,5%
+com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate.PERCENT1 = 1%
+com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate.PERCENT10 = 10%
+com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate.PERCENT2 = 2%
+com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate.PERCENT3 = 3%
+com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate.PERCENT5 = 5%
+com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate.ZERO = қолдануға болмайды
+

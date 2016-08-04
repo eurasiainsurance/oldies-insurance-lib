@@ -11,9 +11,6 @@ public class PolicyRequest extends InsuranceRequest {
     private static final int PRIME = 83;
     private static final int MULTIPLIER = 83;
 
-    private PolicyData policy;
-    private List<PolicyRequestNotification> notifications;
-
     @Override
     protected int getPrime() {
 	return PRIME;
@@ -23,6 +20,9 @@ public class PolicyRequest extends InsuranceRequest {
     protected int getMultiplier() {
 	return MULTIPLIER;
     }
+
+    private PolicyData policy;
+    private List<PolicyRequestNotification> notifications;
 
     public void addNotification(PolicyRequestNotification notification) {
 	if (notification == null)

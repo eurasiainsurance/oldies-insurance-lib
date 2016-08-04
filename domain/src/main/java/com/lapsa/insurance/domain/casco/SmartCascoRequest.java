@@ -7,8 +7,6 @@ public class SmartCascoRequest extends InsuranceRequest {
     private static final int PRIME = 137;
     private static final int MULTIPLIER = PRIME;
 
-    private SmartCascoData smartCasco;
-
     @Override
     protected int getPrime() {
 	return PRIME;
@@ -18,6 +16,8 @@ public class SmartCascoRequest extends InsuranceRequest {
     protected int getMultiplier() {
 	return MULTIPLIER;
     }
+
+    private SmartCascoData smartCasco;
 
     // GENERATED
 

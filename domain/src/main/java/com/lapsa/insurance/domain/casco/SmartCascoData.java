@@ -8,8 +8,6 @@ public class SmartCascoData extends BaseEntity<Integer> {
     private static final int PRIME = 131;
     private static final int MULTIPLIER = PRIME;
 
-    private CalculationData calculation;
-
     @Override
     protected int getPrime() {
 	return PRIME;
@@ -19,6 +17,10 @@ public class SmartCascoData extends BaseEntity<Integer> {
     protected int getMultiplier() {
 	return MULTIPLIER;
     }
+
+    private CalculationData calculation;
+
+    // GENERATED
 
     public CalculationData getCalculation() {
 	return calculation;

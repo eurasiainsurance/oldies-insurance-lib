@@ -12,10 +12,6 @@ public class PolicyData extends BaseEntity<Integer> {
     private static final int PRIME = 79;
     private static final int MULTIPLIER = 79;
 
-    protected List<InsuredDriverData> insuredDrivers;
-    protected List<InsuredVehicleData> insuredVehicles;
-    protected CalculationData calculation;
-
     @Override
     protected int getPrime() {
 	return PRIME;
@@ -25,6 +21,10 @@ public class PolicyData extends BaseEntity<Integer> {
     protected int getMultiplier() {
 	return MULTIPLIER;
     }
+
+    private List<InsuredDriverData> insuredDrivers;
+    private List<InsuredVehicleData> insuredVehicles;
+    private CalculationData calculation;
 
     // GENERATED
 

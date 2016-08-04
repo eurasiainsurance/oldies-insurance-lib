@@ -15,6 +15,7 @@ import com.lapsa.insurance.crm.NotificationStatus;
 import com.lapsa.insurance.crm.PaymentStatus;
 import com.lapsa.insurance.crm.RequestStatus;
 import com.lapsa.insurance.elements.CancelationReason;
+import com.lapsa.insurance.elements.CascoCarAgeClass;
 import com.lapsa.insurance.elements.CascoDeductibleFullDeathRate;
 import com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate;
 import com.lapsa.insurance.elements.DeliveryTimeSlot;
@@ -77,6 +78,8 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 		continue;
 	    // ELEMENTS
 	    if (findByFullName(CancelationReason.values(), key) != null)
+		continue;
+	    if (findByFullName(CascoCarAgeClass.values(), key) != null)
 		continue;
 	    if (findByFullName(CascoDeductibleFullDeathRate.values(), key) != null)
 		continue;

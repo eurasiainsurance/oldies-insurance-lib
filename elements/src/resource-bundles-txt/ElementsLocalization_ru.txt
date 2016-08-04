@@ -20,6 +20,10 @@ com.lapsa.insurance.elements.CancelationReason.ISSUED_DUPLICATE_POLICY = Вып�
 com.lapsa.insurance.elements.CancelationReason.OTHER = Другая причина
 com.lapsa.insurance.elements.CancelationReason.HUMAN_FAILURE = Ошибка оператора
 
+com.lapsa.insurance.elements.CascoCarAgeClass.FROM3TO7 = от 3-х до 7 лет
+com.lapsa.insurance.elements.CascoCarAgeClass.OVER7 = старше 7 лет
+com.lapsa.insurance.elements.CascoCarAgeClass.UNDER3 = до 3-х лет
+
 com.lapsa.insurance.elements.CascoDeductibleFullDeathRate.PERCENT10 = 10%
 com.lapsa.insurance.elements.CascoDeductibleFullDeathRate.PERCENT5 = 5%
 

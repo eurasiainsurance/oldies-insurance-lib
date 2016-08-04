@@ -1,4 +1,4 @@
-package com.lapsa.insurance.elements.casco;
+package com.lapsa.insurance.elements;
 
 import com.lapsa.insurance.ElementsBundleBase;
 

@@ -20,6 +20,17 @@ com.lapsa.insurance.elements.CancelationReason.ISSUED_DUPLICATE_POLICY = Duplica
 com.lapsa.insurance.elements.CancelationReason.OTHER = Other reason
 com.lapsa.insurance.elements.CancelationReason.HUMAN_FAILURE = Operator's failure
 
+com.lapsa.insurance.elements.CascoDeductibleFullDeathRate.PERCENT10 = 10%
+com.lapsa.insurance.elements.CascoDeductibleFullDeathRate.PERCENT5 = 5%
+
+com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate.PERCENT0_5 = 0,5%
+com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate.PERCENT1 = 1%
+com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate.PERCENT10 = 10%
+com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate.PERCENT2 = 2%
+com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate.PERCENT3 = 3%
+com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate.PERCENT5 = 5%
+com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate.ZERO = don't apply
+
 com.lapsa.insurance.elements.DeliveryTimeSlot.DURING_THE_DAY = during the day
 com.lapsa.insurance.elements.DeliveryTimeSlot.BEFORE_LUNCH = before lunch (from 9am to 1pm)
 com.lapsa.insurance.elements.DeliveryTimeSlot.AFTER_LUNCH = after lunch (from 1pm to 6pm)
@@ -96,15 +107,3 @@ com.lapsa.insurance.elements.VehicleClass.SPECIAL = Special vehicles
 
 com.lapsa.insurance.elements.WhoIsInsurant.DRIVER = One of the Insured drivers is the Insurer
 com.lapsa.insurance.elements.WhoIsInsurant.OTHER = Insurer is another person
-
-com.lapsa.insurance.elements.casco.CascoDeductibleFullDeathRate.PERCENT10 = 10%
-com.lapsa.insurance.elements.casco.CascoDeductibleFullDeathRate.PERCENT5 = 5%
-
-com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate.PERCENT0_5 = 0,5%
-com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate.PERCENT1 = 1%
-com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate.PERCENT10 = 10%
-com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate.PERCENT2 = 2%
-com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate.PERCENT3 = 3%
-com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate.PERCENT5 = 5%
-com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate.ZERO = don't apply
-

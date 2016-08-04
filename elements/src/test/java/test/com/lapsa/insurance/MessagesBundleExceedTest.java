@@ -15,6 +15,8 @@ import com.lapsa.insurance.crm.NotificationStatus;
 import com.lapsa.insurance.crm.PaymentStatus;
 import com.lapsa.insurance.crm.RequestStatus;
 import com.lapsa.insurance.elements.CancelationReason;
+import com.lapsa.insurance.elements.CascoDeductibleFullDeathRate;
+import com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate;
 import com.lapsa.insurance.elements.DeliveryTimeSlot;
 import com.lapsa.insurance.elements.IdentityCardType;
 import com.lapsa.insurance.elements.InsuranceClassType;
@@ -30,8 +32,6 @@ import com.lapsa.insurance.elements.SubjectType;
 import com.lapsa.insurance.elements.VehicleAgeClass;
 import com.lapsa.insurance.elements.VehicleClass;
 import com.lapsa.insurance.elements.WhoIsInsurant;
-import com.lapsa.insurance.elements.casco.CascoDeductibleFullDeathRate;
-import com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate;
 
 public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 
@@ -78,6 +78,10 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 	    // ELEMENTS
 	    if (findByFullName(CancelationReason.values(), key) != null)
 		continue;
+	    if (findByFullName(CascoDeductibleFullDeathRate.values(), key) != null)
+		continue;
+	    if (findByFullName(CascoDeductiblePartialDamageRate.values(), key) != null)
+		continue;
 	    if (findByFullName(DeliveryTimeSlot.values(), key) != null)
 		continue;
 	    if (findByFullName(IdentityCardType.values(), key) != null)
@@ -107,11 +111,6 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 	    if (findByFullName(VehicleClass.values(), key) != null)
 		continue;
 	    if (findByFullName(WhoIsInsurant.values(), key) != null)
-		continue;
-	    // ELEMENTS / CASCO
-	    if (findByFullName(CascoDeductibleFullDeathRate.values(), key) != null)
-		continue;
-	    if (findByFullName(CascoDeductiblePartialDamageRate.values(), key) != null)
 		continue;
 	    fail(String.format("Resource bunddle key '%1$s' is outbinded", key));
 	}

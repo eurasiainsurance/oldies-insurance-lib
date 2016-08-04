@@ -20,6 +20,17 @@ com.lapsa.insurance.elements.CancelationReason.ISSUED_DUPLICATE_POLICY = Тел�
 com.lapsa.insurance.elements.CancelationReason.OTHER = Басқа себеп
 com.lapsa.insurance.elements.CancelationReason.HUMAN_FAILURE = Оператордың қатесі 
 
+com.lapsa.insurance.elements.CascoDeductibleFullDeathRate.PERCENT10 = 10%
+com.lapsa.insurance.elements.CascoDeductibleFullDeathRate.PERCENT5 = 5%
+
+com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate.PERCENT0_5 = 0,5%
+com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate.PERCENT1 = 1%
+com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate.PERCENT10 = 10%
+com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate.PERCENT2 = 2%
+com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate.PERCENT3 = 3%
+com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate.PERCENT5 = 5%
+com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate.ZERO = қолдануға болмайды
+
 com.lapsa.insurance.elements.DeliveryTimeSlot.DURING_THE_DAY = күні бойына 
 com.lapsa.insurance.elements.DeliveryTimeSlot.BEFORE_LUNCH = күннің бірінші жартысында  (9:00 бастап 13:00 дейін)
 com.lapsa.insurance.elements.DeliveryTimeSlot.AFTER_LUNCH = күннің екінші  жартысында  (13:00 бастап  18:00 дейін)
@@ -96,15 +107,3 @@ com.lapsa.insurance.elements.VehicleClass.SPECIAL = Арнай техника
 
 com.lapsa.insurance.elements.WhoIsInsurant.DRIVER = Сақтанушы сақтандырылған жүргізушілердің бірі болып табылады 
 com.lapsa.insurance.elements.WhoIsInsurant.OTHER = Сақтанушы басқа тұлға болып табылады 
-
-com.lapsa.insurance.elements.casco.CascoDeductibleFullDeathRate.PERCENT10 = 10%
-com.lapsa.insurance.elements.casco.CascoDeductibleFullDeathRate.PERCENT5 = 5%
-
-com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate.PERCENT0_5 = 0,5%
-com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate.PERCENT1 = 1%
-com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate.PERCENT10 = 10%
-com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate.PERCENT2 = 2%
-com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate.PERCENT3 = 3%
-com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate.PERCENT5 = 5%
-com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate.ZERO = қолдануға болмайды
-

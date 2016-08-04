@@ -1,6 +1,6 @@
-package test.com.lapsa.insurance.elements.casco;
+package test.com.lapsa.insurance.elements;
 
-import com.lapsa.insurance.elements.casco.CascoDeductiblePartialDamageRate;
+import com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate;
 
 import test.com.lapsa.insurance.EnumTypeMessagesBundleTest;
 

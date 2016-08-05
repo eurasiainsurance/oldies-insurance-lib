@@ -1,5 +1,7 @@
 package com.lapsa.insurance.services.other.beans;
 
+import static com.lapsa.insurance.services.other.beans.Calcs.*;
+
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Calendar;
@@ -60,23 +62,6 @@ public class DefaultPolicyCalculationService implements PolicyCalculationService
 
     // PRIVATE
 
-    private static double costAnnualToPeriod(double annualCost, LocalDate start, LocalDate end) {
-	if (start.isAfter(end))
-	    throw new RuntimeException("Start date is after the end date");
-	double cost = 0;
-	LocalDate c = start;
-	while (c.isBefore(end) || c.isEqual(end)) {
-	    cost += annualCost / (start.getChronology().isLeapYear(start.getYear()) ? 366 : 365);
-	    c = c.plusDays(1);
-	}
-	return cost;
-    }
-
-    private static double costAnnualToPeriod(double annualCost, LocalDate start, int days) {
-	LocalDate end = start.plusDays(days);
-	return costAnnualToPeriod(annualCost, start, end);
-    }
-
     private double policyCostAnnual(List<PolicyDriver> drivers, List<PolicyVehicle> vehicles) {
 	double maximumCost = 0d;
 	for (PolicyDriver driver : drivers)
@@ -102,13 +87,5 @@ public class DefaultPolicyCalculationService implements PolicyCalculationService
 	premium *= policyRates.getInsuranceClassTypeRate(insured.getInsuranceClassType());
 	premium *= policyRates.getPrivilegeRate(insured.isHasAnyPrivilege());
 	return premium;
-    }
-
-    private static double roundMoney(final double input) {
-	double output = input;
-	output *= 100d;
-	output = Math.round(output);
-	output /= 100d;
-	return output;
     }
 }

@@ -1,5 +1,7 @@
 package com.lapsa.insurance.services.other.beans;
 
+import static com.lapsa.insurance.services.other.beans.Calcs.*;
+
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Calendar;
@@ -55,41 +57,11 @@ public class DefaultCascoCalculationService implements CascoCalculationService {
 
     // PRIVATE
 
-    private static double costAnnualToPeriod(double annualCost, LocalDate start, LocalDate end) {
-	if (start.isAfter(end))
-	    throw new RuntimeException("Start date is after the end date");
-	double cost = 0;
-	LocalDate c = start;
-	while (c.isBefore(end) || c.isEqual(end)) {
-	    cost += annualCost / (start.getChronology().isLeapYear(start.getYear()) ? 366 : 365);
-	    c = c.plusDays(1);
-	}
-	return cost;
-    }
-
-    private static double costAnnualToPeriod(double annualCost, LocalDate start, int days) {
-	LocalDate end = start.plusDays(days);
-	return costAnnualToPeriod(annualCost, start, end);
-    }
-
-    @SuppressWarnings("unused")
-    private double rateIncr(final double value, final double base, final double percent) {
-	return value + percentIncrement(base, percent);
-    }
-
-    private double percentIncrement(final double value, final double percent) {
-	return value * (1 + percent);
-    }
-
-    private double percentDecrement(final double value, final double percent) {
-	return value * (1 - percent);
-    }
-
     private double cascoCostAnnual(Casco casco) throws CalculationFailed {
+
+	// insurance rate
 	double base = cascoRates.getBaseRate(casco.getDeductiblePartialDamageRate());
-
 	double rate = base;
-
 	rate += base * cascoRates.getIncrRateSpecialServiceStation(casco.isSpecialServiceStationRequired(),
 		casco.getInsuredVehicle().getCarAgeClass());
 
@@ -102,30 +74,19 @@ public class DefaultCascoCalculationService implements CascoCalculationService {
 
 	double annualCost = casco.getInsuredVehicle().getCost() * rate;
 
+	// discount
 	double discount = 0;
 	discount += cascoRates.getDiscountCoverage(casco.isCoverRoadAccidents(),
 		casco.isCoverNonRoadAccidents());
 	discount += cascoRates.getDiscountContractEndsAfterFirstCase(casco.isContractEndsAfterFirstCase());
 
-	annualCost = percentDecrement(annualCost, discount);
+	annualCost = annualCost * (1 - discount);
 
+	// complex insurance
 	annualCost += cascoRates.getAmountThirdPartyLiabilityCoverage(casco.isThirdPartyLiabilityCoverage());
-
 	annualCost += cascoRates.getAmountDriverAndPassengerCoverage(casco.isDriverAndPassengerCoverage(),
 		casco.getDriverAndPassengerCount());
 
 	return annualCost;
-    }
-
-    private static double roundMoney(final double input, int digs) {
-	double output = input;
-	output *= Math.pow(10, digs);
-	output = Math.round(output);
-	output /= Math.pow(10, digs);
-	return output;
-    }
-
-    private static double roundMoney(final double input) {
-	return roundMoney(input, 2);
     }
 }

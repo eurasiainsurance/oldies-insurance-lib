@@ -18,7 +18,7 @@
 	<modules>
 		<module>elements</module>
 		<module>validation</module>
-		<module>eelib</module>
+		<module>services</module>
 		<module>domain</module>
 		<module>persistence</module>
 		<module>mesenger</module>
@@ -48,7 +48,7 @@
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
-				<artifactId>insurance-eelib</artifactId>
+				<artifactId>insurance-services</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>

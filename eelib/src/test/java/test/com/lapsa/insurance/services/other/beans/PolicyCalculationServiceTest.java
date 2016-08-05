@@ -1,8 +1,13 @@
 package test.com.lapsa.insurance.services.other.beans;
 
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
+import static org.hamcrest.Matchers.*;
+import static org.junit.Assert.*;
+
 import java.util.ArrayList;
+
+import javax.inject.Inject;
+
+import org.junit.Test;
 
 import com.lapsa.insurance.domain.CalculationData;
 import com.lapsa.insurance.domain.policy.Policy;
@@ -13,15 +18,46 @@ import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredExpirienceClass;
 import com.lapsa.insurance.elements.VehicleAgeClass;
 import com.lapsa.insurance.elements.VehicleClass;
+import com.lapsa.insurance.services.other.CalculationFailed;
 import com.lapsa.insurance.services.other.PolicyCalculationService;
 import com.lapsa.kz.country.KZArea;
 import com.lapsa.kz.country.KZCity;
 
-public class CalculationServiceTest {
+public class PolicyCalculationServiceTest {
 
-    static PolicyCalculationService s;
+    @Inject
+    private PolicyCalculationService s;
 
-    public static void main(String[] args) {
+    @Test
+    public void testPolicyCalculationVariant1() throws CalculationFailed {
+	Policy policy = generatePolicy();
+	s.calculatePolicyCost(policy);
+	assertThat(policy.getCalculation().getPremiumCost(), equalTo(282993.75d));
+    }
+
+    // public static void main(String[] args) {
+    // // %[argument_index$][flags][width][.precision]conversion
+    // String fmt = "%30s : %30.15f";
+    //
+    // System.out.println(String.format(fmt, "Annual clean",
+    // policy.getCalculation().getPremiumCost()));
+    //
+    // s.calculatePolicyCost(policy, LocalDate.now(), 365);
+    // System.out.println(String.format(fmt, "365 days",
+    // policy.getCalculation().getPremiumCost()));
+    //
+    // s.calculatePolicyCost(policy, LocalDate.now(),
+    // LocalDate.now().plusMonths(1));
+    // System.out.println(String.format(fmt, "Month",
+    // policy.getCalculation().getPremiumCost()));
+    //
+    // s.calculatePolicyCost(policy, LocalDate.now(), LocalDate.now().plus(1,
+    // ChronoUnit.YEARS));
+    // System.out.println(String.format(fmt, "YEAR",
+    // policy.getCalculation().getPremiumCost()));
+    // }
+
+    protected Policy generatePolicy() {
 	Policy policy = new Policy();
 
 	policy.setInsuredDrivers(new ArrayList<>());
@@ -45,22 +81,7 @@ public class CalculationServiceTest {
 
 	CalculationData c = new CalculationData();
 	policy.setCalculation(c);
-
-	s.calculatePolicyCost(policy);
-	// %[argument_index$][flags][width][.precision]conversion
-	String fmt = "%30s : %30.15f";
-
-	System.out.println(String.format(fmt, "Annual clean", policy.getCalculation().getPremiumCost()));
-
-	s.calculatePolicyCost(policy, LocalDate.now(), 365);
-	System.out.println(String.format(fmt, "365 days", policy.getCalculation().getPremiumCost()));
-
-	s.calculatePolicyCost(policy, LocalDate.now(), LocalDate.now().plusMonths(1));
-	System.out.println(String.format(fmt, "Month", policy.getCalculation().getPremiumCost()));
-
-	s.calculatePolicyCost(policy, LocalDate.now(), LocalDate.now().plus(1, ChronoUnit.YEARS));
-	System.out.println(String.format(fmt, "YEAR", policy.getCalculation().getPremiumCost()));
-
+	return policy;
     }
 
 }

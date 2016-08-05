@@ -21,12 +21,7 @@ com.lapsa.insurance.elements.CancelationReason.OTHER = Other reason
 com.lapsa.insurance.elements.CancelationReason.HUMAN_FAILURE = Operator's failure
 
 com.lapsa.insurance.elements.CascoCarAgeClass.FROM3TO7 = 3 to 7 years
-com.lapsa.insurance.elements.CascoCarAgeClass.OVER7 = older than 7 years
 com.lapsa.insurance.elements.CascoCarAgeClass.UNDER3 = up to 3 years
-
-com.lapsa.insurance.elements.CascoCarAgeClass.FROM3TO7 = 
-com.lapsa.insurance.elements.CascoCarAgeClass.OVER7 = от 3-х до 7 лет
-com.lapsa.insurance.elements.CascoCarAgeClass.UNDER3 = старше 7 лет
 
 com.lapsa.insurance.elements.CascoDeductibleFullDeathRate.PERCENT10 = 10%
 com.lapsa.insurance.elements.CascoDeductibleFullDeathRate.PERCENT5 = 5%

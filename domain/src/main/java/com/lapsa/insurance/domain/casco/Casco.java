@@ -42,13 +42,13 @@ public class Casco extends BaseEntity<Integer> {
     // При убытке (ДТП) до 200 000 тенге - без вызова ГАИ, но с обязательным
     // выездом аварийного комиссара на место события (Алматы, Астана и
     // Караганда)
-    private boolean noPoliceRequired;
+    private boolean noPoliceCallRequired;
 
     // При возникновении ДТП не по вине застрахованного франшиза не применяется
-    private boolean noDeductibleAppliedIfNotGuilty;
+    private boolean noGuiltNoDeductibleRequired;
 
     // Сбор документов в Дорожной Полиции компанией от имени клиента
-    private boolean contactToPoliceRequired;
+    private boolean helpWithPoliceRequired;
 
     // Покрытие расходов на услуги Эвакуатора, до 10 000 тенге.
     private boolean evacuatorRequired;
@@ -130,28 +130,28 @@ public class Casco extends BaseEntity<Integer> {
 	this.specialServiceStationRequired = specialServiceStationRequired;
     }
 
-    public boolean isNoPoliceRequired() {
-	return noPoliceRequired;
+    public boolean isNoPoliceCallRequired() {
+	return noPoliceCallRequired;
     }
 
-    public void setNoPoliceRequired(boolean noPoliceRequired) {
-	this.noPoliceRequired = noPoliceRequired;
+    public void setNoPoliceCallRequired(boolean noPoliceCallRequired) {
+	this.noPoliceCallRequired = noPoliceCallRequired;
     }
 
-    public boolean isNoDeductibleAppliedIfNotGuilty() {
-	return noDeductibleAppliedIfNotGuilty;
+    public boolean isNoGuiltNoDeductibleRequired() {
+	return noGuiltNoDeductibleRequired;
     }
 
-    public void setNoDeductibleAppliedIfNotGuilty(boolean noDeductibleAppliedIfNotGuilty) {
-	this.noDeductibleAppliedIfNotGuilty = noDeductibleAppliedIfNotGuilty;
+    public void setNoGuiltNoDeductibleRequired(boolean noGuiltNoDeductibleRequired) {
+	this.noGuiltNoDeductibleRequired = noGuiltNoDeductibleRequired;
     }
 
-    public boolean isContactToPoliceRequired() {
-	return contactToPoliceRequired;
+    public boolean isHelpWithPoliceRequired() {
+	return helpWithPoliceRequired;
     }
 
-    public void setContactToPoliceRequired(boolean contactToPoliceRequired) {
-	this.contactToPoliceRequired = contactToPoliceRequired;
+    public void setHelpWithPoliceRequired(boolean helpWithPoliceRequired) {
+	this.helpWithPoliceRequired = helpWithPoliceRequired;
     }
 
     public boolean isEvacuatorRequired() {

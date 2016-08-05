@@ -6,28 +6,33 @@ import com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate;
 
 public interface CascoRatesService {
 
-    double getRateDeductible(CascoDeductiblePartialDamageRate deductiblePartialDamageRate);
+    double getBaseRate(CascoDeductiblePartialDamageRate deductible) throws CalculationFailed;
 
-    double getRateDeductibleFullDeath(CascoDeductibleFullDeathRate deductibleFullDeathRate);
+    double getIncrRateDeductibleFullDeath(CascoDeductibleFullDeathRate deductibleFullDeathRate) throws CalculationFailed;
 
-    double getRateSpecialServiceStation(boolean specialServiceStationRequired, CascoCarAgeClass carAgeClass);
+    double getIncrRateSpecialServiceStation(boolean specialServiceStationRequired,
+	    CascoCarAgeClass carAgeClass) throws CalculationFailed;
 
-    double getRateNoPoliceRequired(boolean noPoliceRequired);
+    double getIncrRateNoPoliceCallRequired(boolean noPoliceCallRequired)
+	    throws CalculationFailed;
 
-    double getRateNoDeductibleAppliedIfNotGuilty(boolean noDeductibleAppliedIfNotGuilty);
+    double getIncrRateNoGuiltNoDeductibleRequired(boolean noGuiltNoDeductibleRequired) throws CalculationFailed;
 
-    double getRateContactToPolicyRequired(boolean contactToPoliceRequired);
+    double getIncrRateHelpWithPoliceRequired(boolean helpWithPoliceRequired)
+	    throws CalculationFailed;
 
-    double getRateEvacuatorRequired(boolean evacuatorRequired);
+    double getIncrRateEvacuatorRequired(boolean evacuatorRequired)
+	    throws CalculationFailed;
 
-    double getRateReplacementCarRequired(boolean replacementCarRequired);
+    double getIncrRateReplacementCarRequired(boolean replacementCarRequired)
+	    throws CalculationFailed;
 
-    double getDiscountCoverage(boolean coverRoadAccidents, boolean coverNonRoadAccidents);
+    double getDiscountCoverage(boolean coverRoadAccidents, boolean coverNonRoadAccidents) throws CalculationFailed;
 
-    double getDiscountContractEndsAfterFirstCase(boolean contractEndsAfterFirstCase);
+    double getDiscountContractEndsAfterFirstCase(boolean contractEndsAfterFirstCase) throws CalculationFailed;
 
-    double getAmountThirdPartyLiabilityCoverage();
+    double getAmountThirdPartyLiabilityCoverage(boolean thirdPartyLiabilityCoverage) throws CalculationFailed;
 
-    double getAmountDriverAndPassengerCoverage(int driverAndPassengerCount);
+    double getAmountDriverAndPassengerCoverage(boolean driverAndPassengerCoverage, int driverAndPassengerCount) throws CalculationFailed;
 
 }

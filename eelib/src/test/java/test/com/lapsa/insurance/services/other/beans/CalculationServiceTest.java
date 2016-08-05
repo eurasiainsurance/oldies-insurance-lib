@@ -13,13 +13,13 @@ import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredExpirienceClass;
 import com.lapsa.insurance.elements.VehicleAgeClass;
 import com.lapsa.insurance.elements.VehicleClass;
-import com.lapsa.insurance.services.other.CalculationService;
+import com.lapsa.insurance.services.other.PolicyCalculationService;
 import com.lapsa.kz.country.KZArea;
 import com.lapsa.kz.country.KZCity;
 
 public class CalculationServiceTest {
 
-    static CalculationService s;
+    static PolicyCalculationService s;
 
     public static void main(String[] args) {
 	Policy policy = new Policy();

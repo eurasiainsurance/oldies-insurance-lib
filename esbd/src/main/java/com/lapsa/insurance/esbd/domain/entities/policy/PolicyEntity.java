@@ -1,4 +1,4 @@
-package com.lapsa.insurance.esbd.domain.entities.osgpovts;
+package com.lapsa.insurance.esbd.domain.entities.policy;
 
 import java.util.ArrayList;
 import java.util.Calendar;

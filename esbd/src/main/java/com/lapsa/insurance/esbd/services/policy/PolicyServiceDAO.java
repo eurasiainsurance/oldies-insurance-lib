@@ -1,6 +1,6 @@
-package com.lapsa.insurance.esbd.services.osgpovts;
+package com.lapsa.insurance.esbd.services.policy;
 
-import com.lapsa.insurance.esbd.domain.entities.osgpovts.PolicyEntity;
+import com.lapsa.insurance.esbd.domain.entities.policy.PolicyEntity;
 import com.lapsa.insurance.esbd.services.GeneralServiceDAO;
 import com.lapsa.insurance.esbd.services.InvalidInputParameter;
 import com.lapsa.insurance.esbd.services.NotFound;

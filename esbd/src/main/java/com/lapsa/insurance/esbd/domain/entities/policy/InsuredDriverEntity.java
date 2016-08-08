@@ -1,4 +1,4 @@
-package com.lapsa.insurance.esbd.domain.entities.osgpovts;
+package com.lapsa.insurance.esbd.domain.entities.policy;
 
 import com.lapsa.insurance.elements.InsuranceClassType;
 import com.lapsa.insurance.elements.InsuredAgeClass;
@@ -8,11 +8,11 @@ import com.lapsa.insurance.elements.MaritalStatus;
 import com.lapsa.insurance.esbd.domain.entities.general.InsuranceCompanyEntity;
 import com.lapsa.insurance.esbd.domain.entities.general.SubjectPersonEntity;
 import com.lapsa.insurance.esbd.domain.infos.general.RecordOperationInfo;
-import com.lapsa.insurance.esbd.domain.infos.osgpovts.DriverLicenseInfo;
-import com.lapsa.insurance.esbd.domain.infos.osgpovts.GPWParticipantInfo;
-import com.lapsa.insurance.esbd.domain.infos.osgpovts.InvalidInfo;
-import com.lapsa.insurance.esbd.domain.infos.osgpovts.PensionerInfo;
-import com.lapsa.insurance.esbd.domain.infos.osgpovts.PrivilegerInfo;
+import com.lapsa.insurance.esbd.domain.infos.policy.DriverLicenseInfo;
+import com.lapsa.insurance.esbd.domain.infos.policy.GPWParticipantInfo;
+import com.lapsa.insurance.esbd.domain.infos.policy.InvalidInfo;
+import com.lapsa.insurance.esbd.domain.infos.policy.PensionerInfo;
+import com.lapsa.insurance.esbd.domain.infos.policy.PrivilegerInfo;
 
 public class InsuredDriverEntity {
     // DRIVER_ID s:int Идентификатор водителя

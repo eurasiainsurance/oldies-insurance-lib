@@ -1,4 +1,4 @@
-package com.lapsa.insurance.esbd.domain.entities.osgpovts;
+package com.lapsa.insurance.esbd.domain.entities.policy;
 
 import com.lapsa.insurance.elements.VehicleAgeClass;
 import com.lapsa.insurance.elements.VehicleClass;

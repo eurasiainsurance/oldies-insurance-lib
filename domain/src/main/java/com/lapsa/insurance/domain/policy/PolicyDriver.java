@@ -36,7 +36,7 @@ public class PolicyDriver extends BaseEntity<Integer> {
 
     private InsuranceClassType insuranceClassType;
 
-    @NotNullValue(message = "{com.lapsa.insurance.domain.InsuredDriverData.IdNumber.NotNull.message}")
+    @NotNullValue(message = "{com.lapsa.insurance.domain.policy.PolicyDriver.IdNumber.NotNull.message}")
     @ValidIdNumber
     private String idNumber;
 

@@ -32,7 +32,7 @@ public class CascoVehicle extends BaseEntity<Integer> {
 
     @NotNullValue
     @ValidKZArea
-    private KZArea region;
+    private KZArea area;
 
     @NotNullValue
     @ValidKZCity
@@ -64,12 +64,12 @@ public class CascoVehicle extends BaseEntity<Integer> {
 	this.carAgeClass = carAgeClass;
     }
 
-    public KZArea getRegion() {
-	return region;
+    public KZArea getArea() {
+	return area;
     }
 
-    public void setRegion(KZArea region) {
-	this.region = region;
+    public void setArea(KZArea area) {
+	this.area = area;
     }
 
     public KZCity getCity() {

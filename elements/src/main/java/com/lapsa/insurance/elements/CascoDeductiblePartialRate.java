@@ -2,7 +2,7 @@ package com.lapsa.insurance.elements;
 
 import com.lapsa.insurance.ElementsBundleBase;
 
-public enum CascoDeductiblePartialDamageRate implements ElementsBundleBase {
+public enum CascoDeductiblePartialRate implements ElementsBundleBase {
     PERCENT0_5(.005d), // 0.5%
     PERCENT1(.010d), // 1%
     PERCENT2(.020d), // 2%
@@ -18,7 +18,7 @@ public enum CascoDeductiblePartialDamageRate implements ElementsBundleBase {
 	return String.format("%1$s.%2$s", this.getClass().getName(), name());
     }
 
-    private CascoDeductiblePartialDamageRate(double value) {
+    private CascoDeductiblePartialRate(double value) {
 	this.value = value;
     }
 

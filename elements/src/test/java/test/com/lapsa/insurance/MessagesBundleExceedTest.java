@@ -16,8 +16,8 @@ import com.lapsa.insurance.crm.PaymentStatus;
 import com.lapsa.insurance.crm.RequestStatus;
 import com.lapsa.insurance.elements.CancelationReason;
 import com.lapsa.insurance.elements.CascoCarAgeClass;
-import com.lapsa.insurance.elements.CascoDeductibleFullDeathRate;
-import com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate;
+import com.lapsa.insurance.elements.CascoDeductibleFullRate;
+import com.lapsa.insurance.elements.CascoDeductiblePartialRate;
 import com.lapsa.insurance.elements.DeliveryTimeSlot;
 import com.lapsa.insurance.elements.IdentityCardType;
 import com.lapsa.insurance.elements.InsuranceClassType;
@@ -81,9 +81,9 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 		continue;
 	    if (findByFullName(CascoCarAgeClass.values(), key) != null)
 		continue;
-	    if (findByFullName(CascoDeductibleFullDeathRate.values(), key) != null)
+	    if (findByFullName(CascoDeductibleFullRate.values(), key) != null)
 		continue;
-	    if (findByFullName(CascoDeductiblePartialDamageRate.values(), key) != null)
+	    if (findByFullName(CascoDeductiblePartialRate.values(), key) != null)
 		continue;
 	    if (findByFullName(DeliveryTimeSlot.values(), key) != null)
 		continue;

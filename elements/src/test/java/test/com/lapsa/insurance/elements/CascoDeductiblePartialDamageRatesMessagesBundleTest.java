@@ -1,18 +1,18 @@
 package test.com.lapsa.insurance.elements;
 
-import com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate;
+import com.lapsa.insurance.elements.CascoDeductiblePartialRate;
 
 import test.com.lapsa.insurance.EnumTypeMessagesBundleTest;
 
-public class CascoDeductiblePartialDamageRatesMessagesBundleTest extends EnumTypeMessagesBundleTest<CascoDeductiblePartialDamageRate> {
+public class CascoDeductiblePartialDamageRatesMessagesBundleTest extends EnumTypeMessagesBundleTest<CascoDeductiblePartialRate> {
 
     @Override
-    protected CascoDeductiblePartialDamageRate[] getAllEnumValues() {
-	return CascoDeductiblePartialDamageRate.values();
+    protected CascoDeductiblePartialRate[] getAllEnumValues() {
+	return CascoDeductiblePartialRate.values();
     }
 
     @Override
     protected String getBundleBaseName() {
-	return CascoDeductiblePartialDamageRate.BUNDLE_BASENAME;
+	return CascoDeductiblePartialRate.BUNDLE_BASENAME;
     }
 }

@@ -1,9 +1,12 @@
 package com.lapsa.insurance.domain.casco;
 
+import javax.validation.constraints.Min;
+
 import com.lapsa.insurance.domain.BaseEntity;
 import com.lapsa.insurance.domain.CalculationData;
 import com.lapsa.insurance.elements.CascoDeductibleFullDeathRate;
 import com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate;
+import com.lapsa.insurance.validation.NotNullValue;
 
 public class Casco extends BaseEntity<Integer> {
     private static final long serialVersionUID = -1919280207677627360L;
@@ -30,9 +33,11 @@ public class Casco extends BaseEntity<Integer> {
     private CascoVehicle insuredVehicle;
 
     // франшиза на частичный ущерб
+    @NotNullValue(message = "{com.lapsa.insurance.domain.casco.Casco.deductiblePartialDamageRate.NotNullValue.message}")
     private CascoDeductiblePartialDamageRate deductiblePartialDamageRate;
 
     // франшиза на гибель/угон
+    @NotNullValue(message = "{com.lapsa.insurance.domain.casco.Casco.deductibleFullDeathRate.NotNullValue.message}")
     private CascoDeductibleFullDeathRate deductibleFullDeathRate;
 
     // Спец. СТО для ТС до 3-х лет
@@ -68,6 +73,8 @@ public class Casco extends BaseEntity<Integer> {
     // НС для водителя и пассажиров с лимитом 1 000 000 тенге на 1-го
     // застрахованного по случаю и в агрегате
     private boolean driverAndPassengerCoverage;
+
+    @Min(value = 1, message = "{com.lapsa.insurance.domain.casco.Casco.driverAndPassengerCount.Min.message}")
     private int driverAndPassengerCount;
 
     private CalculationData calculation;

@@ -1,8 +1,13 @@
 package com.lapsa.insurance.domain.casco;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+
 import com.lapsa.insurance.domain.BaseEntity;
 import com.lapsa.insurance.elements.CascoCarAgeClass;
 import com.lapsa.insurance.validation.NotNullValue;
+import com.lapsa.insurance.validation.NotTooOldYearOfIssue;
+import com.lapsa.insurance.validation.NotTooYoungYearOfIssue;
 import com.lapsa.kz.country.KZArea;
 import com.lapsa.kz.country.KZCity;
 import com.lapsa.kz.country.validators.ValidKZArea;
@@ -23,8 +28,12 @@ public class CascoVehicle extends BaseEntity<Integer> {
 	return MULTIPLIER;
     }
 
+    @Min(message = "{com.lapsa.insurance.domain.casco.CascoVehicle.cost.Min.message}", value = 1000000)
+    @Max(message = "{com.lapsa.insurance.domain.casco.CascoVehicle.cost.Max.message}", value = 52500000)
     private double cost;
 
+    @NotTooOldYearOfIssue(message = "{com.lapsa.insurance.domain.casco.CascoVehicle.yearOfIssue.NotTooOldYearOfIssue.message}", maxAge = 10)
+    @NotTooYoungYearOfIssue(message = "{com.lapsa.insurance.domain.casco.CascoVehicle.yearOfIssue.NotTooYoungYearOfIssue.message}", minAge = 0)
     private int yearOfIssue;
 
     @NotNullValue

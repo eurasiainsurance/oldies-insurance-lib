@@ -17,6 +17,7 @@ public class NotTooOldYearOfIssueConstraintValidator
     public boolean isValid(Integer value, ConstraintValidatorContext cvc) {
 	if (value == null)
 	    return true;
+	
 	int nowY = LocalDate.now().getYear();
 	int age = nowY - value;
 	return age <= maxAge;

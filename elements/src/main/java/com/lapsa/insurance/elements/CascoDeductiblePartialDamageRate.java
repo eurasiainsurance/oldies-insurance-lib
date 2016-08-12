@@ -3,7 +3,6 @@ package com.lapsa.insurance.elements;
 import com.lapsa.insurance.ElementsBundleBase;
 
 public enum CascoDeductiblePartialDamageRate implements ElementsBundleBase {
-    ZERO(.000d), // 0%
     PERCENT0_5(.005d), // 0.5%
     PERCENT1(.010d), // 1%
     PERCENT2(.020d), // 2%

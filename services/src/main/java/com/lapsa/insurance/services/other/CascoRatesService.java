@@ -6,7 +6,7 @@ import com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate;
 
 public interface CascoRatesService {
 
-    double getBaseRate(CascoDeductiblePartialDamageRate deductible) throws CalculationFailed;
+    double getBaseRate(boolean deductible, CascoDeductiblePartialDamageRate deductibleValue) throws CalculationFailed;
 
     double getIncrRateDeductibleFullDeath(CascoDeductibleFullDeathRate deductibleFullDeathRate) throws CalculationFailed;
 
@@ -34,5 +34,6 @@ public interface CascoRatesService {
     double getAmountThirdPartyLiabilityCoverage(boolean thirdPartyLiabilityCoverage) throws CalculationFailed;
 
     double getAmountDriverAndPassengerCoverage(boolean driverAndPassengerCoverage, int driverAndPassengerCount) throws CalculationFailed;
+
 
 }

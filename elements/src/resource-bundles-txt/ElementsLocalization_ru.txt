@@ -33,7 +33,6 @@ com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate.PERCENT10 = 10%
 com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate.PERCENT2 = 2%
 com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate.PERCENT3 = 3%
 com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate.PERCENT5 = 5%
-com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate.ZERO = не применять
 
 com.lapsa.insurance.elements.DeliveryTimeSlot.DURING_THE_DAY = в течении дня
 com.lapsa.insurance.elements.DeliveryTimeSlot.BEFORE_LUNCH = в первой половине дня (с 9:00 до 13:00)

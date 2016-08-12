@@ -32,7 +32,10 @@ public class Casco extends BaseEntity<Integer> {
     // информация о застрахованном ТС
     private CascoVehicle insuredVehicle;
 
-    // франшиза на частичный ущерб
+    // применяется ли франшиза на частичный ущерб
+    private boolean deductiblePartialDamage;
+
+    // размер франшизы на частичный ущерб
     @NotNullValue(message = "{com.lapsa.insurance.domain.casco.Casco.deductiblePartialDamageRate.NotNullValue.message}")
     private CascoDeductiblePartialDamageRate deductiblePartialDamageRate;
 
@@ -107,6 +110,14 @@ public class Casco extends BaseEntity<Integer> {
 
     public void setCoverNonRoadAccidents(boolean coverNonRoadAccidents) {
 	this.coverNonRoadAccidents = coverNonRoadAccidents;
+    }
+
+    public boolean isDeductiblePartialDamage() {
+	return deductiblePartialDamage;
+    }
+
+    public void setDeductiblePartialDamage(boolean deductiblePartialDamage) {
+	this.deductiblePartialDamage = deductiblePartialDamage;
     }
 
     public CascoDeductiblePartialDamageRate getDeductiblePartialDamageRate() {

@@ -1,14 +1,14 @@
 package com.lapsa.insurance.services.other;
 
 import com.lapsa.insurance.elements.CascoCarAgeClass;
-import com.lapsa.insurance.elements.CascoDeductibleFullDeathRate;
-import com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate;
+import com.lapsa.insurance.elements.CascoDeductibleFullRate;
+import com.lapsa.insurance.elements.CascoDeductiblePartialRate;
 
 public interface CascoRatesService {
 
-    double getBaseRate(boolean deductible, CascoDeductiblePartialDamageRate deductibleValue) throws CalculationFailed;
+    double getBaseRate(boolean deductible, CascoDeductiblePartialRate deductibleValue) throws CalculationFailed;
 
-    double getIncrRateDeductibleFullDeath(CascoDeductibleFullDeathRate deductibleFullDeathRate) throws CalculationFailed;
+    double getIncrRateDeductibleFull(CascoDeductibleFullRate deductibleFullDeathRate) throws CalculationFailed;
 
     double getIncrRateSpecialServiceStation(boolean specialServiceStationRequired,
 	    CascoCarAgeClass carAgeClass) throws CalculationFailed;

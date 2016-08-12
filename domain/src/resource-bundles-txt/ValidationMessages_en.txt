@@ -3,6 +3,14 @@ com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message =
 
 com.lapsa.insurance.domain.policy.PolicyDriver.IdNumber.NotNull.message = IIN not filled in
 
+com.lapsa.insurance.domain.casco.Casco.deductiblePartialDamageRate.NotNullValue.message = You must select the size of the franchise for partial damage
+com.lapsa.insurance.domain.casco.Casco.deductibleFullDeathRate.NotNullValue.message = You must select the size of the franchise for the total loss of or hijacking
+com.lapsa.insurance.domain.casco.Casco.driverAndPassengerCount.Min.message = Passengers may not be less than one
+com.lapsa.insurance.domain.casco.CascoVehicle.cost.Min.message = The cost of the car by Auto CASCO program can not be less than ₸ {value}
+com.lapsa.insurance.domain.casco.CascoVehicle.cost.Max.message = The cost of the car by Auto CASCO program may not exceed ₸ {value}
+com.lapsa.insurance.domain.casco.CascoVehicle.yearOfIssue.NotTooOldYearOfIssue.message = For insurance on arogramme Auto CASCO accepted car not older than {maxAge} years
+com.lapsa.insurance.domain.casco.CascoVehicle.yearOfIssue.NotTooYoungYearOfIssue.message = Please, specify the right year of manufacture of the car
+
 com.lapsa.insurance.domain.InsurantData.IdNumber.NotNull.message = {com.lapsa.insurance.domain.policy.PolicyDriver.IdNumber.NotNull.message}
 
 com.lapsa.insurance.domain.ObtainingData.method.NotNullValue.message = Please state the method of Policy receiving

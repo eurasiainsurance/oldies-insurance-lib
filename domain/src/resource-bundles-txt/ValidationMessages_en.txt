@@ -3,8 +3,8 @@ com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message =
 
 com.lapsa.insurance.domain.policy.PolicyDriver.IdNumber.NotNull.message = IIN not filled in
 
-com.lapsa.insurance.domain.casco.Casco.deductiblePartialDamageRate.NotNullValue.message = You must select the size of the franchise for partial damage
-com.lapsa.insurance.domain.casco.Casco.deductibleFullDeathRate.NotNullValue.message = You must select the size of the franchise for the total loss of or hijacking
+com.lapsa.insurance.domain.casco.Casco.deductiblePartialRate.NotNullValue.message = You must select the size of the franchise for partial damage
+com.lapsa.insurance.domain.casco.Casco.deductibleFullRate.NotNullValue.message = You must select the size of the franchise for the total loss of or hijacking
 com.lapsa.insurance.domain.casco.Casco.driverAndPassengerCount.Min.message = Passengers may not be less than one
 com.lapsa.insurance.domain.casco.CascoVehicle.cost.Min.message = The cost of the car by Auto CASCO program can not be less than ₸ {value}
 com.lapsa.insurance.domain.casco.CascoVehicle.cost.Max.message = The cost of the car by Auto CASCO program may not exceed ₸ {value}

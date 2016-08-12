@@ -4,8 +4,8 @@ import javax.validation.constraints.Min;
 
 import com.lapsa.insurance.domain.BaseEntity;
 import com.lapsa.insurance.domain.CalculationData;
-import com.lapsa.insurance.elements.CascoDeductibleFullDeathRate;
-import com.lapsa.insurance.elements.CascoDeductiblePartialDamageRate;
+import com.lapsa.insurance.elements.CascoDeductibleFullRate;
+import com.lapsa.insurance.elements.CascoDeductiblePartialRate;
 import com.lapsa.insurance.validation.NotNullValue;
 
 public class Casco extends BaseEntity<Integer> {
@@ -33,15 +33,15 @@ public class Casco extends BaseEntity<Integer> {
     private CascoVehicle insuredVehicle;
 
     // применяется ли франшиза на частичный ущерб
-    private boolean deductiblePartialDamage;
+    private boolean deductiblePartialRequired;
 
     // размер франшизы на частичный ущерб
-    @NotNullValue(message = "{com.lapsa.insurance.domain.casco.Casco.deductiblePartialDamageRate.NotNullValue.message}")
-    private CascoDeductiblePartialDamageRate deductiblePartialDamageRate;
+    @NotNullValue(message = "{com.lapsa.insurance.domain.casco.Casco.deductiblePartialRate.NotNullValue.message}")
+    private CascoDeductiblePartialRate deductiblePartialRate;
 
     // франшиза на гибель/угон
-    @NotNullValue(message = "{com.lapsa.insurance.domain.casco.Casco.deductibleFullDeathRate.NotNullValue.message}")
-    private CascoDeductibleFullDeathRate deductibleFullDeathRate;
+    @NotNullValue(message = "{com.lapsa.insurance.domain.casco.Casco.deductibleFullRate.NotNullValue.message}")
+    private CascoDeductibleFullRate deductibleFullRate;
 
     // Спец. СТО для ТС до 3-х лет
     // Спец. СТО для ТС от 3-х до 7 лет
@@ -112,28 +112,28 @@ public class Casco extends BaseEntity<Integer> {
 	this.coverNonRoadAccidents = coverNonRoadAccidents;
     }
 
-    public boolean isDeductiblePartialDamage() {
-	return deductiblePartialDamage;
+    public boolean isDeductiblePartialRequired() {
+	return deductiblePartialRequired;
     }
 
-    public void setDeductiblePartialDamage(boolean deductiblePartialDamage) {
-	this.deductiblePartialDamage = deductiblePartialDamage;
+    public void setDeductiblePartialRequired(boolean deductiblePartialRequired) {
+	this.deductiblePartialRequired = deductiblePartialRequired;
     }
 
-    public CascoDeductiblePartialDamageRate getDeductiblePartialDamageRate() {
-	return deductiblePartialDamageRate;
+    public CascoDeductiblePartialRate getDeductiblePartialRate() {
+	return deductiblePartialRate;
     }
 
-    public void setDeductiblePartialDamageRate(CascoDeductiblePartialDamageRate deductiblePartialDamageRate) {
-	this.deductiblePartialDamageRate = deductiblePartialDamageRate;
+    public void setDeductiblePartialRate(CascoDeductiblePartialRate deductiblePartialRate) {
+	this.deductiblePartialRate = deductiblePartialRate;
     }
 
-    public CascoDeductibleFullDeathRate getDeductibleFullDeathRate() {
-	return deductibleFullDeathRate;
+    public CascoDeductibleFullRate getDeductibleFullRate() {
+	return deductibleFullRate;
     }
 
-    public void setDeductibleFullDeathRate(CascoDeductibleFullDeathRate deductibleFullDeathRate) {
-	this.deductibleFullDeathRate = deductibleFullDeathRate;
+    public void setDeductibleFullRate(CascoDeductibleFullRate deductibleFullRate) {
+	this.deductibleFullRate = deductibleFullRate;
     }
 
     public void setCalculation(CalculationData calculation) {

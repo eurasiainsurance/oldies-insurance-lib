@@ -3,8 +3,8 @@ com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message =
 
 com.lapsa.insurance.domain.policy.PolicyDriver.IdNumber.NotNull.message = ИИН не указан
 
-com.lapsa.insurance.domain.casco.Casco.deductiblePartialDamageRate.NotNullValue.message = Необходимо выбрать размер франшизы по частичному ущербу
-com.lapsa.insurance.domain.casco.Casco.deductibleFullDeathRate.NotNullValue.message = Необходимо выбрать размер франшизы по полной гибели или угону
+com.lapsa.insurance.domain.casco.Casco.deductiblePartialRate.NotNullValue.message = Необходимо выбрать размер франшизы по частичному ущербу
+com.lapsa.insurance.domain.casco.Casco.deductibleFullRate.NotNullValue.message = Необходимо выбрать размер франшизы по полной гибели или угону
 com.lapsa.insurance.domain.casco.Casco.driverAndPassengerCount.Min.message = Количество пассажиров не может быть меньше одного
 com.lapsa.insurance.domain.casco.CascoVehicle.cost.Min.message = Стоимость автомобиля по программе Авто КАСКО не может быть менее чем ₸  {value}
 com.lapsa.insurance.domain.casco.CascoVehicle.cost.Max.message = Стоимость автомобиля по программе Авто КАСКО не может превышать ₸  {value}

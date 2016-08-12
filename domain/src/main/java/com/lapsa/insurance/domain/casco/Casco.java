@@ -77,8 +77,9 @@ public class Casco extends BaseEntity<Integer> {
     // застрахованного по случаю и в агрегате
     private boolean driverAndPassengerCoverage;
 
-    @Min(value = 1, message = "{com.lapsa.insurance.domain.casco.Casco.driverAndPassengerCount.Min.message}")
-    private int driverAndPassengerCount;
+    @NotNullValue
+    @Min(message = "{com.lapsa.insurance.domain.casco.Casco.driverAndPassengerCount.Min.message}", value = 1)
+    private Integer driverAndPassengerCount;
 
     private CalculationData calculation;
 
@@ -212,11 +213,11 @@ public class Casco extends BaseEntity<Integer> {
 	this.driverAndPassengerCoverage = driverAndPassengerCoverage;
     }
 
-    public int getDriverAndPassengerCount() {
+    public Integer getDriverAndPassengerCount() {
 	return driverAndPassengerCount;
     }
 
-    public void setDriverAndPassengerCount(int driverAndPassengerCount) {
+    public void setDriverAndPassengerCount(Integer driverAndPassengerCount) {
 	this.driverAndPassengerCount = driverAndPassengerCount;
     }
 }

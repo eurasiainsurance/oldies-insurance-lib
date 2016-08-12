@@ -28,13 +28,15 @@ public class CascoVehicle extends BaseEntity<Integer> {
 	return MULTIPLIER;
     }
 
+    @NotNullValue
     @Min(message = "{com.lapsa.insurance.domain.casco.CascoVehicle.cost.Min.message}", value = 1000000)
     @Max(message = "{com.lapsa.insurance.domain.casco.CascoVehicle.cost.Max.message}", value = 52500000)
-    private double cost;
+    private Double cost;
 
+    @NotNullValue
     @NotTooOldYearOfIssue(message = "{com.lapsa.insurance.domain.casco.CascoVehicle.yearOfIssue.NotTooOldYearOfIssue.message}", maxAge = 10)
     @NotTooYoungYearOfIssue(message = "{com.lapsa.insurance.domain.casco.CascoVehicle.yearOfIssue.NotTooYoungYearOfIssue.message}", minAge = 0)
-    private int yearOfIssue;
+    private Integer yearOfIssue;
 
     @NotNullValue
     private CascoCarAgeClass carAgeClass;
@@ -49,19 +51,19 @@ public class CascoVehicle extends BaseEntity<Integer> {
 
     // GENERATED
 
-    public double getCost() {
+    public Double getCost() {
 	return cost;
     }
 
-    public void setCost(double cost) {
+    public void setCost(Double cost) {
 	this.cost = cost;
     }
 
-    public int getYearOfIssue() {
+    public Integer getYearOfIssue() {
 	return yearOfIssue;
     }
 
-    public void setYearOfIssue(int yearOfIssue) {
+    public void setYearOfIssue(Integer yearOfIssue) {
 	this.yearOfIssue = yearOfIssue;
     }
 

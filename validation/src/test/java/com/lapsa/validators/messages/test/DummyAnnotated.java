@@ -5,8 +5,6 @@ import com.lapsa.insurance.validation.DaysBeforeNow;
 import com.lapsa.insurance.validation.Mode;
 import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
-import com.lapsa.insurance.validation.NotTooOldYearOfIssue;
-import com.lapsa.insurance.validation.NotTooYoungYearOfIssue;
 import com.lapsa.insurance.validation.ValidDateOfBirth;
 import com.lapsa.insurance.validation.ValidDateOfIssue;
 import com.lapsa.insurance.validation.ValidEnumerationValue;
@@ -26,8 +24,8 @@ public interface DummyAnnotated {
     @DaysBeforeNow(mode = Mode.MUST, value = 1)
     @NotEmptyString
     @NotNullValue
-    @NotTooOldYearOfIssue(maxAge = 1)
-    @NotTooYoungYearOfIssue(minAge = 1)
+//    @NotTooOldYearOfIssue(maxAge = 1)
+//    @NotTooYoungYearOfIssue(minAge = 1)
     @ValidDateOfBirth
     @ValidDateOfIssue
     @ValidEnumerationValue

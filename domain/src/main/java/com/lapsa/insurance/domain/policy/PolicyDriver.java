@@ -1,25 +1,18 @@
 package com.lapsa.insurance.domain.policy;
 
-import com.lapsa.insurance.domain.BaseEntity;
-import com.lapsa.insurance.domain.ContactData;
-import com.lapsa.insurance.domain.DriverLicenseData;
+import com.lapsa.insurance.domain.Driver;
 import com.lapsa.insurance.domain.GPWParticipantCertificateData;
 import com.lapsa.insurance.domain.HandicaptedCertificateData;
-import com.lapsa.insurance.domain.IdentityCardData;
-import com.lapsa.insurance.domain.OriginData;
 import com.lapsa.insurance.domain.PensionerCertificateData;
-import com.lapsa.insurance.domain.PersonalData;
 import com.lapsa.insurance.domain.PrivilegerCertificateData;
-import com.lapsa.insurance.domain.ResidenceData;
 import com.lapsa.insurance.elements.InsuranceClassType;
 import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredExpirienceClass;
 import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidInsuranceAgeClass;
 import com.lapsa.insurance.validation.ValidInsuranceExpirienceClass;
-import com.lapsa.kz.idnumber.validators.ValidIdNumber;
 
-public class PolicyDriver extends BaseEntity<Integer> {
+public class PolicyDriver extends Driver {
     private static final long serialVersionUID = 5209394299289430299L;
     private static final int PRIME = 47;
     private static final int MULTIPLIER = PRIME;
@@ -36,10 +29,6 @@ public class PolicyDriver extends BaseEntity<Integer> {
 
     private InsuranceClassType insuranceClassType;
 
-    @NotNullValue(message = "{com.lapsa.insurance.domain.policy.PolicyDriver.IdNumber.NotNull.message}")
-    @ValidIdNumber
-    private String idNumber;
-
     @NotNullValue
     @ValidInsuranceAgeClass
     private InsuredAgeClass ageClass;
@@ -47,15 +36,6 @@ public class PolicyDriver extends BaseEntity<Integer> {
     @NotNullValue
     @ValidInsuranceExpirienceClass
     private InsuredExpirienceClass expirienceClass;
-
-    private String taxPayerNumber;
-
-    private PersonalData personalData = new PersonalData();
-    private OriginData originData = new OriginData();
-    private ResidenceData residenceData = new ResidenceData();
-    private IdentityCardData identityCardData = new IdentityCardData();
-    private DriverLicenseData driverLicenseData = new DriverLicenseData();
-    private ContactData contactData = new ContactData();
 
     private boolean fetched = false;
 
@@ -83,6 +63,12 @@ public class PolicyDriver extends BaseEntity<Integer> {
 	return personalData.getDisplayName();
     }
 
+    @NotNullValue(message = "{com.lapsa.insurance.domain.policy.PolicyDriver.IdNumber.NotNull.message}")
+    @Override
+    public String getIdNumber() {
+	return super.getIdNumber();
+    }
+
     // GENERATED
 
     public InsuranceClassType getInsuranceClassType() {
@@ -91,14 +77,6 @@ public class PolicyDriver extends BaseEntity<Integer> {
 
     public void setInsuranceClassType(InsuranceClassType insuranceClassType) {
 	this.insuranceClassType = insuranceClassType;
-    }
-
-    public String getIdNumber() {
-	return idNumber;
-    }
-
-    public void setIdNumber(String idNumber) {
-	this.idNumber = idNumber;
     }
 
     public InsuredAgeClass getAgeClass() {
@@ -115,62 +93,6 @@ public class PolicyDriver extends BaseEntity<Integer> {
 
     public void setExpirienceClass(InsuredExpirienceClass expirienceClass) {
 	this.expirienceClass = expirienceClass;
-    }
-
-    public String getTaxPayerNumber() {
-	return taxPayerNumber;
-    }
-
-    public void setTaxPayerNumber(String taxPayerNumber) {
-	this.taxPayerNumber = taxPayerNumber;
-    }
-
-    public PersonalData getPersonalData() {
-	return personalData;
-    }
-
-    public void setPersonalData(PersonalData personalData) {
-	this.personalData = personalData;
-    }
-
-    public OriginData getOriginData() {
-	return originData;
-    }
-
-    public void setOriginData(OriginData originData) {
-	this.originData = originData;
-    }
-
-    public ResidenceData getResidenceData() {
-	return residenceData;
-    }
-
-    public void setResidenceData(ResidenceData residenceData) {
-	this.residenceData = residenceData;
-    }
-
-    public IdentityCardData getIdentityCardData() {
-	return identityCardData;
-    }
-
-    public void setIdentityCardData(IdentityCardData identityCardData) {
-	this.identityCardData = identityCardData;
-    }
-
-    public DriverLicenseData getDriverLicenseData() {
-	return driverLicenseData;
-    }
-
-    public void setDriverLicenseData(DriverLicenseData driverLicenseData) {
-	this.driverLicenseData = driverLicenseData;
-    }
-
-    public ContactData getContactData() {
-	return contactData;
-    }
-
-    public void setContactData(ContactData contactData) {
-	this.contactData = contactData;
     }
 
     public boolean isFetched() {

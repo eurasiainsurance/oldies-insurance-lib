@@ -1,5 +1,7 @@
 package com.lapsa.insurance.domain.casco;
 
+import java.util.List;
+
 import javax.validation.constraints.Min;
 
 import com.lapsa.insurance.domain.BaseEntity;
@@ -31,6 +33,9 @@ public class Casco extends BaseEntity<Integer> {
 
     // информация о застрахованном ТС
     private CascoVehicle insuredVehicle;
+
+    // информация о допущенных к управлению
+    private List<CascoDriver> insuredDrivers;
 
     // применяется ли франшиза на частичный ущерб
     private boolean deductiblePartialRequired;
@@ -99,6 +104,14 @@ public class Casco extends BaseEntity<Integer> {
 
     public void setInsuredVehicle(CascoVehicle insuredVehicle) {
 	this.insuredVehicle = insuredVehicle;
+    }
+
+    public List<CascoDriver> getInsuredDrivers() {
+	return insuredDrivers;
+    }
+
+    public void setInsuredDrivers(List<CascoDriver> insuredDrivers) {
+	this.insuredDrivers = insuredDrivers;
     }
 
     public void setCoverRoadAccidents(boolean coverRoadAccidents) {

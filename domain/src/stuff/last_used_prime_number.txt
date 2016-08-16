@@ -26,7 +26,7 @@
      103 com.lapsa.insurance.domain.ResidenceData
      107 com.lapsa.insurance.domain.TwoSidedDocumentScan
      109 com.lapsa.insurance.domain.VehicleCertificateData
-     113 
+     113 com.lapsa.insurance.domain.casco.CascoDriver
      127 com.lapsa.insurance.domain.PaymentData
      131 com.lapsa.insurance.domain.casco.Casco
      137 com.lapsa.insurance.domain.casco.CascoRequest

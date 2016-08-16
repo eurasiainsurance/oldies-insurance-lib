@@ -3,17 +3,13 @@ package com.lapsa.insurance.domain.casco;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
-import com.lapsa.insurance.domain.BaseEntity;
+import com.lapsa.insurance.domain.Vehicle;
 import com.lapsa.insurance.elements.CascoCarAgeClass;
 import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.NotTooOldYearOfIssue;
 import com.lapsa.insurance.validation.NotTooYoungYearOfIssue;
-import com.lapsa.kz.country.KZArea;
-import com.lapsa.kz.country.KZCity;
-import com.lapsa.kz.country.validators.ValidKZArea;
-import com.lapsa.kz.country.validators.ValidKZCity;
 
-public class CascoVehicle extends BaseEntity<Integer> {
+public class CascoVehicle extends Vehicle {
     private static final long serialVersionUID = 2602178314016175969L;
     private static final int PRIME = 157;
     private static final int MULTIPLIER = PRIME;
@@ -34,20 +30,7 @@ public class CascoVehicle extends BaseEntity<Integer> {
     private Double cost;
 
     @NotNullValue
-    @NotTooOldYearOfIssue(message = "{com.lapsa.insurance.domain.casco.CascoVehicle.yearOfIssue.NotTooOldYearOfIssue.message}", maxAge = 10)
-    @NotTooYoungYearOfIssue(message = "{com.lapsa.insurance.domain.casco.CascoVehicle.yearOfIssue.NotTooYoungYearOfIssue.message}", minAge = 0)
-    private Integer yearOfIssue;
-
-    @NotNullValue
     private CascoCarAgeClass carAgeClass;
-
-    @NotNullValue
-    @ValidKZArea
-    private KZArea area;
-
-    @NotNullValue
-    @ValidKZCity
-    private KZCity city;
 
     // GENERATED
 
@@ -59,12 +42,12 @@ public class CascoVehicle extends BaseEntity<Integer> {
 	this.cost = cost;
     }
 
-    public Integer getYearOfIssue() {
-	return yearOfIssue;
-    }
-
-    public void setYearOfIssue(Integer yearOfIssue) {
-	this.yearOfIssue = yearOfIssue;
+    @NotNullValue
+    @NotTooOldYearOfIssue(message = "{com.lapsa.insurance.domain.Vehicle.yearOfIssue.NotTooOldYearOfIssue.message}", maxAge = 10)
+    @NotTooYoungYearOfIssue(message = "{com.lapsa.insurance.domain.Vehicle.yearOfIssue.NotTooYoungYearOfIssue.message}", minAge = 0)
+    @Override
+    public Integer getYearOfManufacture() {
+	return super.getYearOfManufacture();
     }
 
     public CascoCarAgeClass getCarAgeClass() {
@@ -74,21 +57,4 @@ public class CascoVehicle extends BaseEntity<Integer> {
     public void setCarAgeClass(CascoCarAgeClass carAgeClass) {
 	this.carAgeClass = carAgeClass;
     }
-
-    public KZArea getArea() {
-	return area;
-    }
-
-    public void setArea(KZArea area) {
-	this.area = area;
-    }
-
-    public KZCity getCity() {
-	return city;
-    }
-
-    public void setCity(KZCity city) {
-	this.city = city;
-    }
-
 }

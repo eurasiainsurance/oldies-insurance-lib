@@ -43,8 +43,8 @@ public class CascoVehicle extends Vehicle {
     }
 
     @NotNullValue
-    @NotTooOldYearOfIssue(message = "{com.lapsa.insurance.domain.Vehicle.yearOfIssue.NotTooOldYearOfIssue.message}", maxAge = 10)
-    @NotTooYoungYearOfIssue(message = "{com.lapsa.insurance.domain.Vehicle.yearOfIssue.NotTooYoungYearOfIssue.message}", minAge = 0)
+    @NotTooOldYearOfIssue(message = "{com.lapsa.insurance.domain.casco.CascoVehicle.yearOfManufacture.NotTooOldYearOfIssue.message}", maxAge = 10)
+    @NotTooYoungYearOfIssue(message = "{com.lapsa.insurance.domain.casco.CascoVehicle.yearOfManufacture.NotTooYoungYearOfIssue.message}", minAge = 0)
     @Override
     public Integer getYearOfManufacture() {
 	return super.getYearOfManufacture();

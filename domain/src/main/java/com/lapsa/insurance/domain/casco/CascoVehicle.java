@@ -3,6 +3,7 @@ package com.lapsa.insurance.domain.casco;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
+import com.lapsa.insurance.domain.UploadedImage;
 import com.lapsa.insurance.domain.Vehicle;
 import com.lapsa.insurance.elements.CascoCarAgeClass;
 import com.lapsa.insurance.validation.NotNullValue;
@@ -32,6 +33,11 @@ public class CascoVehicle extends Vehicle {
     @NotNullValue
     private CascoCarAgeClass carAgeClass;
 
+    private UploadedImage view1;
+    private UploadedImage view2;
+    private UploadedImage view3;
+    private UploadedImage view4;
+
     // GENERATED
 
     public Double getCost() {
@@ -56,5 +62,37 @@ public class CascoVehicle extends Vehicle {
 
     public void setCarAgeClass(CascoCarAgeClass carAgeClass) {
 	this.carAgeClass = carAgeClass;
+    }
+
+    public UploadedImage getView1() {
+	return view1;
+    }
+
+    public void setView1(UploadedImage view1) {
+	this.view1 = view1;
+    }
+
+    public UploadedImage getView2() {
+	return view2;
+    }
+
+    public void setView2(UploadedImage view2) {
+	this.view2 = view2;
+    }
+
+    public UploadedImage getView3() {
+	return view3;
+    }
+
+    public void setView3(UploadedImage view3) {
+	this.view3 = view3;
+    }
+
+    public UploadedImage getView4() {
+	return view4;
+    }
+
+    public void setView4(UploadedImage view4) {
+	this.view4 = view4;
     }
 }

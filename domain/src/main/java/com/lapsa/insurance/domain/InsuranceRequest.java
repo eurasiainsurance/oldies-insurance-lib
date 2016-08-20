@@ -93,4 +93,6 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
     public void setAllowSpam(boolean allowSpam) {
 	this.allowSpam = allowSpam;
     }
+    
+    public abstract InsuranceProduct getProduct();
 }

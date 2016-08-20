@@ -3,6 +3,7 @@ package com.lapsa.insurance.domain.policy;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.lapsa.insurance.domain.InsuranceProduct;
 import com.lapsa.insurance.domain.InsuranceRequest;
 import com.lapsa.insurance.domain.notification.PolicyRequestNotification;
 
@@ -42,6 +43,11 @@ public class PolicyRequest extends InsuranceRequest {
 	    return;
 	notifications.remove(notification);
 	notification.setPolicyRequest(null);
+    }
+
+    @Override
+    public InsuranceProduct getProduct() {
+	return policy;
     }
 
     // GENERATED

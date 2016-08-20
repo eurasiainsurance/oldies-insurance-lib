@@ -4,13 +4,12 @@ import java.util.List;
 
 import javax.validation.constraints.Min;
 
-import com.lapsa.insurance.domain.BaseEntity;
-import com.lapsa.insurance.domain.CalculationData;
+import com.lapsa.insurance.domain.InsuranceProduct;
 import com.lapsa.insurance.elements.CascoDeductibleFullRate;
 import com.lapsa.insurance.elements.CascoDeductiblePartialRate;
 import com.lapsa.insurance.validation.NotNullValue;
 
-public class Casco extends BaseEntity<Integer> {
+public class Casco extends InsuranceProduct {
     private static final long serialVersionUID = -1919280207677627360L;
     private static final int PRIME = 131;
     private static final int MULTIPLIER = PRIME;
@@ -86,13 +85,7 @@ public class Casco extends BaseEntity<Integer> {
     @Min(message = "{com.lapsa.insurance.domain.casco.Casco.driverAndPassengerCount.Min.message}", value = 1)
     private Integer driverAndPassengerCount;
 
-    private CalculationData calculation;
-
     // GENERATED
-
-    public CalculationData getCalculation() {
-	return calculation;
-    }
 
     public boolean isCoverRoadAccidents() {
 	return coverRoadAccidents;
@@ -148,10 +141,6 @@ public class Casco extends BaseEntity<Integer> {
 
     public void setDeductibleFullRate(CascoDeductibleFullRate deductibleFullRate) {
 	this.deductibleFullRate = deductibleFullRate;
-    }
-
-    public void setCalculation(CalculationData calculation) {
-	this.calculation = calculation;
     }
 
     public boolean isSpecialServiceStationRequired() {

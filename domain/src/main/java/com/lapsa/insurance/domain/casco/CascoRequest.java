@@ -3,6 +3,7 @@ package com.lapsa.insurance.domain.casco;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.lapsa.insurance.domain.InsuranceProduct;
 import com.lapsa.insurance.domain.InsuranceRequest;
 import com.lapsa.insurance.domain.notification.CascoRequestNotification;
 
@@ -42,6 +43,11 @@ public class CascoRequest extends InsuranceRequest {
 	    return;
 	notifications.remove(notification);
 	notification.setCascoRequest(null);
+    }
+
+    @Override
+    public InsuranceProduct getProduct() {
+	return casco;
     }
 
     // GENERATED

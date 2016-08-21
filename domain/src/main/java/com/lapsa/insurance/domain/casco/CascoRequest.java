@@ -6,6 +6,7 @@ import java.util.List;
 import com.lapsa.insurance.domain.InsuranceProduct;
 import com.lapsa.insurance.domain.InsuranceRequest;
 import com.lapsa.insurance.domain.notification.CascoRequestNotification;
+import com.lapsa.insurance.elements.InsuranceProductType;
 
 public class CascoRequest extends InsuranceRequest {
     private static final long serialVersionUID = -8067548829502589540L;
@@ -48,6 +49,12 @@ public class CascoRequest extends InsuranceRequest {
     @Override
     public InsuranceProduct getProduct() {
 	return casco;
+    }
+
+
+    @Override
+    public InsuranceProductType getProductType() {
+	return InsuranceProductType.CASCO;
     }
 
     // GENERATED

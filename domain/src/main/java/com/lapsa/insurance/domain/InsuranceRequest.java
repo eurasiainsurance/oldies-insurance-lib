@@ -4,6 +4,7 @@ import java.util.Date;
 
 import com.lapsa.insurance.crm.ClosingResult;
 import com.lapsa.insurance.crm.RequestStatus;
+import com.lapsa.insurance.elements.InsuranceProductType;
 
 public abstract class InsuranceRequest extends BaseEntity<Integer> {
     private static final long serialVersionUID = 944531653617396366L;
@@ -93,6 +94,8 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
     public void setAllowSpam(boolean allowSpam) {
 	this.allowSpam = allowSpam;
     }
-    
+
     public abstract InsuranceProduct getProduct();
+
+    public abstract InsuranceProductType getProductType();
 }

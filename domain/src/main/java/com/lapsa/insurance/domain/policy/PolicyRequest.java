@@ -6,6 +6,7 @@ import java.util.List;
 import com.lapsa.insurance.domain.InsuranceProduct;
 import com.lapsa.insurance.domain.InsuranceRequest;
 import com.lapsa.insurance.domain.notification.PolicyRequestNotification;
+import com.lapsa.insurance.elements.InsuranceProductType;
 
 public class PolicyRequest extends InsuranceRequest {
     private static final long serialVersionUID = 944531653617396366L;
@@ -48,6 +49,11 @@ public class PolicyRequest extends InsuranceRequest {
     @Override
     public InsuranceProduct getProduct() {
 	return policy;
+    }
+
+    @Override
+    public InsuranceProductType getProductType() {
+	return InsuranceProductType.POLICY;
     }
 
     // GENERATED

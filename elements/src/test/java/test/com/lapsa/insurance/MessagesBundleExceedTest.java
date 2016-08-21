@@ -20,6 +20,7 @@ import com.lapsa.insurance.elements.CascoDeductibleFullRate;
 import com.lapsa.insurance.elements.CascoDeductiblePartialRate;
 import com.lapsa.insurance.elements.DeliveryTimeSlot;
 import com.lapsa.insurance.elements.IdentityCardType;
+import com.lapsa.insurance.elements.InsuranceProductType;
 import com.lapsa.insurance.elements.InsuranceClassType;
 import com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass;
 import com.lapsa.insurance.elements.InsuredAgeClass;
@@ -88,6 +89,8 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 	    if (findByFullName(DeliveryTimeSlot.values(), key) != null)
 		continue;
 	    if (findByFullName(IdentityCardType.values(), key) != null)
+		continue;
+	    if (findByFullName(InsuranceProductType.values(), key) != null)
 		continue;
 	    if (findByFullName(InsuranceClassType.values(), key) != null)
 		continue;

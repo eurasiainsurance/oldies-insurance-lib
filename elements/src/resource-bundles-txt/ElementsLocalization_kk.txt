@@ -44,6 +44,9 @@ com.lapsa.insurance.elements.IdentityCardType.PASSPORT = төлқұжат
 com.lapsa.insurance.elements.IdentityCardType.BIRTH_CERTIFICATE = туу туралы куәлік
 com.lapsa.insurance.elements.IdentityCardType.RESIDENCE_PERMIT = шетелдіктің ыхтиярхаты
 
+com.lapsa.insurance.elements.InsuranceProductType.CASCO = Сақтандыру Авто КАСКО
+com.lapsa.insurance.elements.InsuranceProductType.POLICY = КҚИ АҚЖ МС
+
 com.lapsa.insurance.elements.InsuranceClassType.CLASS_0 = 0 Жіктелім
 com.lapsa.insurance.elements.InsuranceClassType.CLASS_1 = 1 Жіктелім
 com.lapsa.insurance.elements.InsuranceClassType.CLASS_2 = 2 Жіктелім

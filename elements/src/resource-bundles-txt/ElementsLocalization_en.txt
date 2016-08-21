@@ -44,6 +44,9 @@ com.lapsa.insurance.elements.IdentityCardType.PASSPORT = passport
 com.lapsa.insurance.elements.IdentityCardType.BIRTH_CERTIFICATE = birth certificate
 com.lapsa.insurance.elements.IdentityCardType.RESIDENCE_PERMIT = alien's residence permit
 
+com.lapsa.insurance.elements.InsuranceProductType.CASCO = Auto CASCO insurance contract
+com.lapsa.insurance.elements.InsuranceProductType.POLICY = Policy of OI CLVO
+
 com.lapsa.insurance.elements.InsuranceClassType.CLASS_0 = Class 0
 com.lapsa.insurance.elements.InsuranceClassType.CLASS_1 = Class 1
 com.lapsa.insurance.elements.InsuranceClassType.CLASS_2 = Class 2

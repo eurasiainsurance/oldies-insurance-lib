@@ -5,6 +5,7 @@ import com.lapsa.insurance.ElementsBundleBase;
 public enum ClosingResult implements ElementsBundleBase {
     COMPLETED, // Выполнено
     CANCELED, // Отменено
+    TEST, // Тестовая
     //
     ;
 

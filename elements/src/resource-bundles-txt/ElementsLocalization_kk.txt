@@ -1,5 +1,6 @@
-﻿com.lapsa.insurance.crm.ClosingResult.COMPLETED = Аяқталды
+com.lapsa.insurance.crm.ClosingResult.COMPLETED = Аяқталды
 com.lapsa.insurance.crm.ClosingResult.CANCELED = Өзгертілді
+com.lapsa.insurance.crm.ClosingResult.TEST = Тест
 
 com.lapsa.insurance.crm.NotificationStatus.DONE = Аяқталды
 com.lapsa.insurance.crm.NotificationStatus.PENDING = Кезекте

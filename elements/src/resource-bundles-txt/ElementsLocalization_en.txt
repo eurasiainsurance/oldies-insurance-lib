@@ -1,5 +1,6 @@
-﻿com.lapsa.insurance.crm.ClosingResult.COMPLETED = Completed
+com.lapsa.insurance.crm.ClosingResult.COMPLETED = Completed
 com.lapsa.insurance.crm.ClosingResult.CANCELED = Cancelled
+com.lapsa.insurance.crm.ClosingResult.TEST = Test
 
 com.lapsa.insurance.crm.NotificationStatus.DONE = Done
 com.lapsa.insurance.crm.NotificationStatus.PENDING = Pending

@@ -1,6 +1,7 @@
 package com.lapsa.insurance.persistence.dao.filter;
 
 import com.lapsa.insurance.crm.ClosingResult;
+import com.lapsa.insurance.crm.ObtainingStatus;
 import com.lapsa.insurance.crm.PaymentStatus;
 import com.lapsa.insurance.crm.RequestStatus;
 import com.lapsa.insurance.elements.ObtainingMethod;
@@ -15,6 +16,8 @@ public interface InsuranceRequestFitler {
     PaymentStatus getPaymentStatus();
 
     ObtainingMethod getObtainingMethod();
-    
+
+    ObtainingStatus getObtainingStatus();
+
     ClosingResult getClosingResult();
 }

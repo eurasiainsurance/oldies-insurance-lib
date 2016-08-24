@@ -12,6 +12,7 @@ import org.junit.Test;
 import com.lapsa.insurance.ElementsBundleBase;
 import com.lapsa.insurance.crm.ClosingResult;
 import com.lapsa.insurance.crm.NotificationStatus;
+import com.lapsa.insurance.crm.ObtainingStatus;
 import com.lapsa.insurance.crm.PaymentStatus;
 import com.lapsa.insurance.crm.RequestStatus;
 import com.lapsa.insurance.elements.CancelationReason;
@@ -20,8 +21,8 @@ import com.lapsa.insurance.elements.CascoDeductibleFullRate;
 import com.lapsa.insurance.elements.CascoDeductiblePartialRate;
 import com.lapsa.insurance.elements.DeliveryTimeSlot;
 import com.lapsa.insurance.elements.IdentityCardType;
-import com.lapsa.insurance.elements.InsuranceProductType;
 import com.lapsa.insurance.elements.InsuranceClassType;
+import com.lapsa.insurance.elements.InsuranceProductType;
 import com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass;
 import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredExpirienceClass;
@@ -72,6 +73,8 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 	    if (findByFullName(ClosingResult.values(), key) != null)
 		continue;
 	    if (findByFullName(NotificationStatus.values(), key) != null)
+		continue;
+	    if (findByFullName(ObtainingStatus.values(), key) != null)
 		continue;
 	    if (findByFullName(PaymentStatus.values(), key) != null)
 		continue;

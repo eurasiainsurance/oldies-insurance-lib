@@ -7,9 +7,9 @@ public interface GeneralDAO<T, I> {
 
     T findByIdByPassCache(I id) throws EntityNotFound, PeristenceOperationFailed;
 
-    <Z extends T> Z save(Z entity) throws PeristenceOperationFailed;
+    <ET extends T> ET save(ET entity) throws PeristenceOperationFailed;
 
-    <Z extends T> void reset(Z entity) throws PeristenceOperationFailed;
+    <ET extends T> ET reset(ET entity) throws PeristenceOperationFailed;
 
     void saveAll(List<T> entities) throws PeristenceOperationFailed;
 

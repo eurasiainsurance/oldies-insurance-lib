@@ -8,6 +8,7 @@ com.lapsa.insurance.crm.NotificationStatus.NOT_REQUIRED = Не требуетс�
 
 com.lapsa.insurance.crm.PaymentStatus.PENDING = Ожидается
 com.lapsa.insurance.crm.PaymentStatus.DONE = Оплачено
+com.lapsa.insurance.crm.PaymentStatus.CANCELED = Отменено
 
 com.lapsa.insurance.crm.RequestStatus.OPEN = Открыто
 com.lapsa.insurance.crm.RequestStatus.CLOSED = Закрыто

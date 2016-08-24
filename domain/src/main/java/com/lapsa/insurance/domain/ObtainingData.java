@@ -2,6 +2,7 @@ package com.lapsa.insurance.domain;
 
 import java.util.Date;
 
+import com.lapsa.insurance.crm.ObtainingStatus;
 import com.lapsa.insurance.elements.DeliveryTimeSlot;
 import com.lapsa.insurance.elements.ObtainingMethod;
 import com.lapsa.insurance.validation.DaysAfterNow;
@@ -28,6 +29,8 @@ public class ObtainingData extends BaseDomain {
 
     @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.method.NotNullValue.message}")
     private ObtainingMethod method;
+
+    private ObtainingStatus status;
 
     @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.pickupCity.NotNullValue.message}")
     private KZCity pickupCity;
@@ -60,6 +63,14 @@ public class ObtainingData extends BaseDomain {
 
     public void setMethod(ObtainingMethod method) {
 	this.method = method;
+    }
+
+    public ObtainingStatus getStatus() {
+	return status;
+    }
+
+    public void setStatus(ObtainingStatus status) {
+	this.status = status;
     }
 
     public KZCity getPickupCity() {

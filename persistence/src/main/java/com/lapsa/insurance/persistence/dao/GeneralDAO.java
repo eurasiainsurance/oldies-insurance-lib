@@ -9,6 +9,8 @@ public interface GeneralDAO<T, I> {
 
     <Z extends T> Z save(Z entity) throws PeristenceOperationFailed;
 
+    <Z extends T> void reset(Z entity) throws PeristenceOperationFailed;
+
     void saveAll(List<T> entities) throws PeristenceOperationFailed;
 
     void enqueueSave(T entity);

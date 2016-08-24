@@ -9,7 +9,7 @@ public interface GeneralDAO<T, I> {
 
     <ET extends T> ET save(ET entity) throws PeristenceOperationFailed;
 
-    <ET extends T> ET reset(ET entity) throws PeristenceOperationFailed;
+    <ET extends T> ET restore(ET entity) throws PeristenceOperationFailed, NotPersistedException;
 
     void saveAll(List<T> entities) throws PeristenceOperationFailed;
 

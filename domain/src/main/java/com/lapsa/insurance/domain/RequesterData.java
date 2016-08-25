@@ -1,5 +1,7 @@
 package com.lapsa.insurance.domain;
 
+import javax.validation.constraints.AssertTrue;
+
 import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidHumanName;
@@ -38,6 +40,11 @@ public class RequesterData extends BaseDomain {
     @NotNullValue
     @ValidPhoneNumber
     private PhoneNumber phone;
+
+    private boolean allowSpam;
+
+    @AssertTrue(message = "{com.lapsa.insurance.domain.InsuranceRequest.allowProcessPersonalData.AssertTrue.message}")
+    private boolean allowProcessPersonalData;
 
     @NotNullValue
     @ValidPhoneNumber
@@ -88,5 +95,21 @@ public class RequesterData extends BaseDomain {
 
     public void setPreferLanguage(LocalizationLanguage preferLanguage) {
 	this.preferLanguage = preferLanguage;
+    }
+
+    public boolean isAllowSpam() {
+	return allowSpam;
+    }
+
+    public void setAllowSpam(boolean allowSpam) {
+	this.allowSpam = allowSpam;
+    }
+
+    public boolean isAllowProcessPersonalData() {
+	return allowProcessPersonalData;
+    }
+
+    public void setAllowProcessPersonalData(boolean allowProcessPersonalData) {
+	this.allowProcessPersonalData = allowProcessPersonalData;
     }
 }

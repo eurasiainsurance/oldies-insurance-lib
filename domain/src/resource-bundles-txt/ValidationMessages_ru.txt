@@ -1,6 +1,8 @@
 com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.NotNull.message = Выберите значение
 com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message = Неверное значение
 
+com.lapsa.insurance.domain.InsuranceRequest.allowProcessPersonalData.AssertTrue.message = Вы должны дать согласие на обработку своих персональных данных
+
 com.lapsa.insurance.domain.policy.PolicyDriver.IdNumber.NotNull.message = ИИН не указан
 
 com.lapsa.insurance.domain.casco.Casco.deductiblePartialRate.NotNullValue.message = Необходимо выбрать размер франшизы по частичному ущербу

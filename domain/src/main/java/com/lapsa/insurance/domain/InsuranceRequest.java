@@ -15,7 +15,7 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
     private Date closed;
 
     @NotNullValue
-    private RequestStatus requestStatus;
+    private RequestStatus status;
 
     @NotNullValue
     private ClosingResult closingResult;
@@ -50,12 +50,12 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
 	this.closed = closed;
     }
 
-    public RequestStatus getRequestStatus() {
-	return requestStatus;
+    public RequestStatus getStatus() {
+	return status;
     }
 
-    public void setRequestStatus(RequestStatus requestStatus) {
-	this.requestStatus = requestStatus;
+    public void setStatus(RequestStatus status) {
+	this.status = status;
     }
 
     public ClosingResult getClosingResult() {

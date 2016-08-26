@@ -22,6 +22,7 @@ public class PaymentData extends BaseDomain {
     @NotNullValue(message = "{com.lapsa.insurance.domain.PaymentData.method.NotNullValue.message}")
     private PaymentMethod method;
 
+    @NotNullValue
     private PaymentStatus status;
 
     private String paymentReference;

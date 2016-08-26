@@ -30,6 +30,7 @@ public class ObtainingData extends BaseDomain {
     @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.method.NotNullValue.message}")
     private ObtainingMethod method;
 
+    @NotNullValue
     private ObtainingStatus status;
 
     @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.pickupCity.NotNullValue.message}")

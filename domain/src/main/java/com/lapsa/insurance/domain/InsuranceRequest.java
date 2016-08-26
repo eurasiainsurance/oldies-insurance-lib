@@ -5,6 +5,7 @@ import java.util.Date;
 import com.lapsa.insurance.crm.ClosingResult;
 import com.lapsa.insurance.crm.RequestStatus;
 import com.lapsa.insurance.elements.InsuranceProductType;
+import com.lapsa.insurance.validation.NotNullValue;
 
 public abstract class InsuranceRequest extends BaseEntity<Integer> {
     private static final long serialVersionUID = 944531653617396366L;
@@ -13,7 +14,10 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
     private Date updated;
     private Date closed;
 
+    @NotNullValue
     private RequestStatus requestStatus;
+
+    @NotNullValue
     private ClosingResult closingResult;
 
     private RequesterData requester;

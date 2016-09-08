@@ -3,6 +3,8 @@ package com.lapsa.insurance.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.lapsa.insurance.validation.NotNullValue;
+
 public class TwoSidedDocumentScan extends BaseDomain implements DocumentScan {
     private static final long serialVersionUID = 239502663275715827L;
     private static final int PRIME = 107;
@@ -18,7 +20,9 @@ public class TwoSidedDocumentScan extends BaseDomain implements DocumentScan {
 	return MULTIPLIER;
     }
 
+    @NotNullValue(message = "{com.lapsa.insurance.domain.TwoSidedDocumentScan.frontside.NotNullValue.message}")
     private UploadedImage frontside;
+
     private UploadedImage backside;
 
     @Override

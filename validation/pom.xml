@@ -21,7 +21,7 @@
 			<optional>false</optional>
 		</dependency>
 		<!-- internal -->
-			<dependency>
+		<dependency>
 			<groupId>com.lapsa.international-lib</groupId>
 			<artifactId>international-core</artifactId>
 			<scope>compile</scope>

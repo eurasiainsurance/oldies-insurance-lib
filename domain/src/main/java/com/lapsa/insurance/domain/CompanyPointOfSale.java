@@ -3,7 +3,6 @@ package com.lapsa.insurance.domain;
 import java.util.List;
 import java.util.Map;
 
-import com.lapsa.image.ImageContent;
 import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.localization.LocalizationLanguage;
@@ -40,8 +39,6 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
     private boolean pickupAvailable;
 
     private boolean deliveryServicesAvailable;
-
-    private ImageContent photo;
 
     private List<CompanyContactPhone> phones;
 
@@ -127,13 +124,5 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
 
     public void setDeliveryServicesAvailable(boolean deliveryServicesAvailable) {
 	this.deliveryServicesAvailable = deliveryServicesAvailable;
-    }
-
-    public ImageContent getPhoto() {
-	return photo;
-    }
-
-    public void setPhoto(ImageContent photo) {
-	this.photo = photo;
     }
 }

@@ -32,6 +32,7 @@
 		<international-lib.version>2.0.1</international-lib.version>
 		<fin-lib.version>1.1.0.1</fin-lib.version>
 		<image-lib.version>1.1</image-lib.version>
+		<donkeyfaces-lib.version>1.0-SNAPSHOT</donkeyfaces-lib.version>
 	</properties>
 
 	<dependencyManagement>
@@ -107,6 +108,16 @@
 				<groupId>com.lapsa.fin-lib</groupId>
 				<artifactId>fin-core</artifactId>
 				<version>${fin-lib.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.lapsa.donkeyfaces-lib</groupId>
+				<artifactId>donkeyfaces-model</artifactId>
+				<version>${donkeyfaces-lib.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.lapsa.donkeyfaces-lib</groupId>
+				<artifactId>donkeyfaces-validation</artifactId>
+				<version>${donkeyfaces-lib.version}</version>
 			</dependency>
 			<!-- external -->
 			<dependency>

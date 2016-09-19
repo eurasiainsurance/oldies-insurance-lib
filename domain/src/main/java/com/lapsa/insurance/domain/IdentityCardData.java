@@ -8,7 +8,7 @@ import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidDateOfIssue;
 import com.lapsa.insurance.validation.ValidIdentityCardType;
 
-public class IdentityCardData extends BaseEntity<Integer> implements ScanCopiedDocument {
+public class IdentityCardData extends BaseEntity<Integer> {
     private static final long serialVersionUID = 6150409229272494445L;
     private static final int PRIME = 37;
     private static final int MULTIPLIER = PRIME;
@@ -75,7 +75,6 @@ public class IdentityCardData extends BaseEntity<Integer> implements ScanCopiedD
 	this.type = type;
     }
 
-    @Override
     public TwoSidedDocumentScan getScan() {
 	return scan;
     }

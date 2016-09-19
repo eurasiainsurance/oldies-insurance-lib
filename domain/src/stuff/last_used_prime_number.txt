@@ -6,14 +6,14 @@
       17 com.lapsa.insurance.domain.DriverLicenseData
       19 com.lapsa.insurance.domain.GeoPoint
       23 com.lapsa.insurance.domain.GPWParticipantCertificateData
-      29 com.lapsa.insurance.domain.UploadedImage
+      29 
       31 com.lapsa.insurance.domain.HandicaptedCertificateData
       37 com.lapsa.insurance.domain.IdentityCardData
       41 com.lapsa.insurance.domain.notification.NewCascoRequestUserNotification
       43 com.lapsa.insurance.domain.InsurantData
       47 com.lapsa.insurance.domain.policy.PolicyDriver
       53 com.lapsa.insurance.domain.policy.PolicyVehicle
-      59 com.lapsa.insurance.domain.MultipageDocumentScan
+      59 
       61 com.lapsa.insurance.domain.OriginData
       67 com.lapsa.insurance.domain.PensionerCertificateData
       71 com.lapsa.insurance.domain.PersonalData

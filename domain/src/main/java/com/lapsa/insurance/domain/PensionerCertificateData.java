@@ -29,7 +29,7 @@ public class PensionerCertificateData extends BaseDomain {
     @ValidDateOfIssue
     private Date dateOfIssue;
 
-    private MultipageDocumentScan scan = new MultipageDocumentScan();
+    private TwoSidedDocumentScan scan = new TwoSidedDocumentScan();
 
     // GENERATED
 
@@ -49,11 +49,11 @@ public class PensionerCertificateData extends BaseDomain {
 	this.dateOfIssue = dateOfIssue;
     }
 
-    public MultipageDocumentScan getScan() {
+    public TwoSidedDocumentScan getScan() {
 	return scan;
     }
 
-    public void setScan(MultipageDocumentScan scan) {
+    public void setScan(TwoSidedDocumentScan scan) {
 	this.scan = scan;
     }
 

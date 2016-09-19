@@ -1,11 +1,11 @@
 package com.lapsa.insurance.domain;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.lapsa.donkeyfaces.model.Image;
+import com.lapsa.donkeyfaces.validators.FileSizeMeasure;
+import com.lapsa.donkeyfaces.validators.MaxImageSize;
 import com.lapsa.insurance.validation.NotNullValue;
 
-public class TwoSidedDocumentScan extends BaseDomain implements DocumentScan {
+public class TwoSidedDocumentScan extends BaseDomain {
     private static final long serialVersionUID = 239502663275715827L;
     private static final int PRIME = 107;
     private static final int MULTIPLIER = PRIME;
@@ -20,36 +20,29 @@ public class TwoSidedDocumentScan extends BaseDomain implements DocumentScan {
 	return MULTIPLIER;
     }
 
-    @NotNullValue(message = "{com.lapsa.insurance.domain.TwoSidedDocumentScan.frontside.NotNullValue.message}")
-    private UploadedImage frontside;
+    @NotNullValue
+    @MaxImageSize(fileSizeMeasure = FileSizeMeasure.MB, maxFileSize = 10, maxWidth = 1920, maxHeight = 1080)
+    private Image frontside;
 
-    private UploadedImage backside;
-
-    @Override
-    public UploadedImage[] getScans() {
-	List<UploadedImage> ret = new ArrayList<>();
-	if (frontside != null)
-	    ret.add(frontside);
-	if (backside != null)
-	    ret.add(backside);
-	return ret.toArray(new UploadedImage[0]);
-    }
+    @NotNullValue
+    @MaxImageSize(fileSizeMeasure = FileSizeMeasure.MB, maxFileSize = 10, maxWidth = 1920, maxHeight = 1080)
+    private Image backside;
 
     // GENERATED
 
-    public UploadedImage getFrontside() {
+    public Image getFrontside() {
 	return frontside;
     }
 
-    public void setFrontside(UploadedImage frontside) {
+    public void setFrontside(Image frontside) {
 	this.frontside = frontside;
     }
 
-    public UploadedImage getBackside() {
+    public Image getBackside() {
 	return backside;
     }
 
-    public void setBackside(UploadedImage backside) {
+    public void setBackside(Image backside) {
 	this.backside = backside;
     }
 

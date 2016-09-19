@@ -6,7 +6,7 @@ import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidDateOfIssue;
 
-public class GPWParticipantCertificateData extends BaseDomain implements ScanCopiedDocument {
+public class GPWParticipantCertificateData extends BaseDomain {
     private static final long serialVersionUID = -2962825826022534176L;
     private static final int PRIME = 23;
     private static final int MULTIPLIER = PRIME;
@@ -29,7 +29,7 @@ public class GPWParticipantCertificateData extends BaseDomain implements ScanCop
     @ValidDateOfIssue
     private Date dateOfIssue;
 
-    private MultipageDocumentScan scan = new MultipageDocumentScan();
+    private TwoSidedDocumentScan scan = new TwoSidedDocumentScan();
 
     // GENERATED
 
@@ -49,12 +49,11 @@ public class GPWParticipantCertificateData extends BaseDomain implements ScanCop
 	this.dateOfIssue = dateOfIssue;
     }
 
-    @Override
-    public MultipageDocumentScan getScan() {
+    public TwoSidedDocumentScan getScan() {
 	return scan;
     }
 
-    public void setScan(MultipageDocumentScan scan) {
+    public void setScan(TwoSidedDocumentScan scan) {
 	this.scan = scan;
     }
 }

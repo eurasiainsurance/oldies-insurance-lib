@@ -33,7 +33,7 @@ public class PrivilegerCertificateData extends BaseDomain {
     @ValidDateOfIssue
     private Date dateOfIssue;
 
-    private MultipageDocumentScan scan;
+    private TwoSidedDocumentScan scan;
 
     // GENERATED
 
@@ -61,11 +61,11 @@ public class PrivilegerCertificateData extends BaseDomain {
 	this.dateOfIssue = dateOfIssue;
     }
 
-    public MultipageDocumentScan getScan() {
+    public TwoSidedDocumentScan getScan() {
 	return scan;
     }
 
-    public void setScan(MultipageDocumentScan scan) {
+    public void setScan(TwoSidedDocumentScan scan) {
 	this.scan = scan;
     }
 }

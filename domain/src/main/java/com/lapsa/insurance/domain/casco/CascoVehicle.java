@@ -3,7 +3,9 @@ package com.lapsa.insurance.domain.casco;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
-import com.lapsa.insurance.domain.UploadedImage;
+import com.lapsa.donkeyfaces.model.Image;
+import com.lapsa.donkeyfaces.validators.FileSizeMeasure;
+import com.lapsa.donkeyfaces.validators.MaxImageSize;
 import com.lapsa.insurance.domain.Vehicle;
 import com.lapsa.insurance.elements.CascoCarAgeClass;
 import com.lapsa.insurance.validation.NotNullValue;
@@ -33,10 +35,21 @@ public class CascoVehicle extends Vehicle {
     @NotNullValue
     private CascoCarAgeClass carAgeClass;
 
-    private UploadedImage view1;
-    private UploadedImage view2;
-    private UploadedImage view3;
-    private UploadedImage view4;
+    @NotNullValue
+    @MaxImageSize(fileSizeMeasure = FileSizeMeasure.MB, maxFileSize = 10, maxWidth = 1920, maxHeight = 1080)
+    private Image view1;
+
+    @NotNullValue
+    @MaxImageSize(fileSizeMeasure = FileSizeMeasure.MB, maxFileSize = 10, maxWidth = 1920, maxHeight = 1080)
+    private Image view2;
+
+    @NotNullValue
+    @MaxImageSize(fileSizeMeasure = FileSizeMeasure.MB, maxFileSize = 10, maxWidth = 1920, maxHeight = 1080)
+    private Image view3;
+
+    @NotNullValue
+    @MaxImageSize(fileSizeMeasure = FileSizeMeasure.MB, maxFileSize = 10, maxWidth = 1920, maxHeight = 1080)
+    private Image view4;
 
     // GENERATED
 
@@ -64,35 +77,35 @@ public class CascoVehicle extends Vehicle {
 	this.carAgeClass = carAgeClass;
     }
 
-    public UploadedImage getView1() {
+    public Image getView1() {
 	return view1;
     }
 
-    public void setView1(UploadedImage view1) {
+    public void setView1(Image view1) {
 	this.view1 = view1;
     }
 
-    public UploadedImage getView2() {
+    public Image getView2() {
 	return view2;
     }
 
-    public void setView2(UploadedImage view2) {
+    public void setView2(Image view2) {
 	this.view2 = view2;
     }
 
-    public UploadedImage getView3() {
+    public Image getView3() {
 	return view3;
     }
 
-    public void setView3(UploadedImage view3) {
+    public void setView3(Image view3) {
 	this.view3 = view3;
     }
 
-    public UploadedImage getView4() {
+    public Image getView4() {
 	return view4;
     }
 
-    public void setView4(UploadedImage view4) {
+    public void setView4(Image view4) {
 	this.view4 = view4;
     }
 }

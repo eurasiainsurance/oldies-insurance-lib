@@ -7,7 +7,7 @@ import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidDateOfIssue;
 import com.lapsa.insurance.validation.ValidVehicleRegistrationNumber;
 
-public class VehicleCertificateData extends BaseEntity<Integer> implements ScanCopiedDocument {
+public class VehicleCertificateData extends BaseEntity<Integer> {
     private static final long serialVersionUID = -8205031496636707778L;
     private static final int PRIME = 109;
     private static final int MULTIPLIER = PRIME;
@@ -63,7 +63,6 @@ public class VehicleCertificateData extends BaseEntity<Integer> implements ScanC
 	this.registrationNumber = registrationNumber;
     }
 
-    @Override
     public TwoSidedDocumentScan getScan() {
 	return scan;
     }

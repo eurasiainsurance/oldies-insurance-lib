@@ -5,7 +5,7 @@ import java.util.Date;
 import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
 
-public class HandicaptedCertificateData extends BaseDomain implements ScanCopiedDocument {
+public class HandicaptedCertificateData extends BaseDomain {
     private static final long serialVersionUID = 3008779514582207946L;
     private static final int PRIME = 31;
     private static final int MULTIPLIER = PRIME;
@@ -30,7 +30,7 @@ public class HandicaptedCertificateData extends BaseDomain implements ScanCopied
     @NotNullValue
     private Date validTill;
 
-    private MultipageDocumentScan scan;
+    private TwoSidedDocumentScan scan;
 
     // GENERATED
 
@@ -58,12 +58,11 @@ public class HandicaptedCertificateData extends BaseDomain implements ScanCopied
 	this.validTill = validTill;
     }
 
-    @Override
-    public MultipageDocumentScan getScan() {
+    public TwoSidedDocumentScan getScan() {
 	return scan;
     }
 
-    public void setScan(MultipageDocumentScan scan) {
+    public void setScan(TwoSidedDocumentScan scan) {
 	this.scan = scan;
     }
 }

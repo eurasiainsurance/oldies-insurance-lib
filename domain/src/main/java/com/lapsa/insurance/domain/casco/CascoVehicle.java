@@ -35,19 +35,19 @@ public class CascoVehicle extends Vehicle {
     @NotNullValue
     private CascoCarAgeClass carAgeClass;
 
-    @NotNullValue
+    // @NotNullValue
     @MaxImageSize(fileSizeMeasure = FileSizeMeasure.MB, maxFileSize = 10, maxWidth = 1920, maxHeight = 1080)
     private Image view1;
 
-    @NotNullValue
+    // @NotNullValue
     @MaxImageSize(fileSizeMeasure = FileSizeMeasure.MB, maxFileSize = 10, maxWidth = 1920, maxHeight = 1080)
     private Image view2;
 
-    @NotNullValue
+    // @NotNullValue
     @MaxImageSize(fileSizeMeasure = FileSizeMeasure.MB, maxFileSize = 10, maxWidth = 1920, maxHeight = 1080)
     private Image view3;
 
-    @NotNullValue
+    // @NotNullValue
     @MaxImageSize(fileSizeMeasure = FileSizeMeasure.MB, maxFileSize = 10, maxWidth = 1920, maxHeight = 1080)
     private Image view4;
 

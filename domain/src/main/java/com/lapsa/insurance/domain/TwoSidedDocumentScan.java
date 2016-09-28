@@ -3,7 +3,6 @@ package com.lapsa.insurance.domain;
 import com.lapsa.donkeyfaces.model.Image;
 import com.lapsa.donkeyfaces.validators.FileSizeMeasure;
 import com.lapsa.donkeyfaces.validators.MaxImageSize;
-import com.lapsa.insurance.validation.NotNullValue;
 
 public class TwoSidedDocumentScan extends BaseDomain {
     private static final long serialVersionUID = 239502663275715827L;
@@ -20,11 +19,11 @@ public class TwoSidedDocumentScan extends BaseDomain {
 	return MULTIPLIER;
     }
 
-    @NotNullValue
+    // @NotNullValue
     @MaxImageSize(fileSizeMeasure = FileSizeMeasure.MB, maxFileSize = 10, maxWidth = 1920, maxHeight = 1080)
     private Image frontside;
 
-    @NotNullValue
+    // @NotNullValue
     @MaxImageSize(fileSizeMeasure = FileSizeMeasure.MB, maxFileSize = 10, maxWidth = 1920, maxHeight = 1080)
     private Image backside;
 

@@ -21,18 +21,6 @@
 			<optional>false</optional>
 		</dependency>
 		<!-- internal -->
-		<dependency>
-			<groupId>com.lapsa.international-lib</groupId>
-			<artifactId>international-core</artifactId>
-			<scope>compile</scope>
-			<optional>false</optional>
-		</dependency>
-		<dependency>
-			<groupId>com.lapsa.kz-lib</groupId>
-			<artifactId>kz-core</artifactId>
-			<scope>compile</scope>
-			<optional>false</optional>
-		</dependency>
 		<!-- JavaEE -->
 		<dependency>
 			<groupId>javax.validation</groupId>

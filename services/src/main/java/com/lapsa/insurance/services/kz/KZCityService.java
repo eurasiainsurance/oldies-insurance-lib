@@ -15,7 +15,11 @@ public interface KZCityService extends EnumService<KZCity> {
 
     List<SelectItem> regionalItemsByAreaSI(KZArea area);
 
+    List<SelectItem> regionalItemsByAreaShortSI(KZArea area);
+
     List<KZCity> regionalItemsByArea(KZArea area);
 
     List<SelectItem> selectableItemsByAreaSI(KZArea area);
+
+    List<SelectItem> selectableItemsByAreaShortSI(KZArea area);
 }

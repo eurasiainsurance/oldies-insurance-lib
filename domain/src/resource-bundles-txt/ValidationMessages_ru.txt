@@ -10,7 +10,7 @@ com.lapsa.insurance.domain.casco.Casco.deductibleFullRate.NotNullValue.message =
 com.lapsa.insurance.domain.casco.Casco.driverAndPassengerCount.Min.message = Количество пассажиров не может быть меньше одного
 com.lapsa.insurance.domain.casco.CascoVehicle.cost.Min.message = Стоимость автомобиля по программе Авто КАСКО не может быть менее чем ₸  {value}
 com.lapsa.insurance.domain.casco.CascoVehicle.cost.Max.message = Стоимость автомобиля по программе Авто КАСКО не может превышать ₸  {value}
-com.lapsa.insurance.domain.casco.CascoVehicle.yearOfManufacture.NotTooOldYearOfIssue.message = К страхованию по арограмме Авто КАСКО принимаются автомобиле не старше {maxAge} лет
+com.lapsa.insurance.domain.casco.CascoVehicle.yearOfManufacture.NotTooOldYearOfIssue.message = К страхованию по программе Авто КАСКО принимаются автомобиле не старше {maxAge} лет
 com.lapsa.insurance.domain.casco.CascoVehicle.yearOfManufacture.NotTooYoungYearOfIssue.message = Укажите корректный год выпуска автомобиля
 
 com.lapsa.insurance.domain.InsurantData.IdNumber.NotNull.message = {com.lapsa.insurance.domain.policy.PolicyDriver.IdNumber.NotNull.message}

@@ -94,8 +94,8 @@ com.lapsa.insurance.elements.PaymentMethod.PAYCASH.short = Наличными
 
 com.lapsa.insurance.elements.ObtainingMethod.DELIVERY = доставить курьером
 com.lapsa.insurance.elements.ObtainingMethod.PICKUP = забрать самостоятельно в офисе страховой компании
-com.lapsa.insurance.elements.ObtainingMethod.DELIVERY.short = доставка
-com.lapsa.insurance.elements.ObtainingMethod.PICKUP.short = самовывоз
+com.lapsa.insurance.elements.ObtainingMethod.DELIVERY.short = доставить курьером
+com.lapsa.insurance.elements.ObtainingMethod.PICKUP.short = забрать самостоятельно
 
 com.lapsa.insurance.elements.Sex.MALE = мужской
 com.lapsa.insurance.elements.Sex.FEMALE = женский

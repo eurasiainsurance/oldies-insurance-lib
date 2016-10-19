@@ -5,7 +5,7 @@ import javax.validation.constraints.Min;
 
 import com.lapsa.donkeyfaces.model.Image;
 import com.lapsa.donkeyfaces.validators.FileSizeMeasure;
-import com.lapsa.donkeyfaces.validators.MaxImageSize;
+import com.lapsa.donkeyfaces.validators.MaxImageFileSize;
 import com.lapsa.insurance.domain.Vehicle;
 import com.lapsa.insurance.elements.CascoCarAgeClass;
 import com.lapsa.insurance.validation.NotNullValue;
@@ -36,19 +36,19 @@ public class CascoVehicle extends Vehicle {
     private CascoCarAgeClass carAgeClass;
 
     // @NotNullValue
-    @MaxImageSize(fileSizeMeasure = FileSizeMeasure.MB, maxFileSize = 10, maxWidth = 1920, maxHeight = 1080)
+    @MaxImageFileSize(measure = FileSizeMeasure.MB, value = 10)
     private Image view1;
 
     // @NotNullValue
-    @MaxImageSize(fileSizeMeasure = FileSizeMeasure.MB, maxFileSize = 10, maxWidth = 1920, maxHeight = 1080)
+    @MaxImageFileSize(measure = FileSizeMeasure.MB, value = 10)
     private Image view2;
 
     // @NotNullValue
-    @MaxImageSize(fileSizeMeasure = FileSizeMeasure.MB, maxFileSize = 10, maxWidth = 1920, maxHeight = 1080)
+    @MaxImageFileSize(measure = FileSizeMeasure.MB, value = 10)
     private Image view3;
 
     // @NotNullValue
-    @MaxImageSize(fileSizeMeasure = FileSizeMeasure.MB, maxFileSize = 10, maxWidth = 1920, maxHeight = 1080)
+    @MaxImageFileSize(measure = FileSizeMeasure.MB, value = 10)
     private Image view4;
 
     // GENERATED

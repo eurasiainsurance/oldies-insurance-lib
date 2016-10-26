@@ -4,6 +4,7 @@ import java.util.Date;
 
 import com.lapsa.insurance.crm.ClosingResult;
 import com.lapsa.insurance.crm.RequestStatus;
+import com.lapsa.insurance.crm.RequestType;
 import com.lapsa.insurance.elements.InsuranceProductType;
 import com.lapsa.insurance.validation.NotNullValue;
 
@@ -16,6 +17,9 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
 
     @NotNullValue
     private RequestStatus status;
+
+    @NotNullValue
+    private RequestType type;
 
     @NotNullValue
     private ClosingResult closingResult;
@@ -56,6 +60,14 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
 
     public void setStatus(RequestStatus status) {
 	this.status = status;
+    }
+
+    public RequestType getType() {
+	return type;
+    }
+
+    public void setType(RequestType type) {
+	this.type = type;
     }
 
     public ClosingResult getClosingResult() {

@@ -7,7 +7,7 @@ import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidDateOfIssue;
 import com.lapsa.insurance.validation.ValidVehicleRegistrationNumber;
 
-public class VehicleCertificateData extends BaseEntity<Integer> {
+public class VehicleCertificateData extends SidedScannedDocument {
     private static final long serialVersionUID = -8205031496636707778L;
     private static final int PRIME = 109;
     private static final int MULTIPLIER = PRIME;
@@ -35,8 +35,6 @@ public class VehicleCertificateData extends BaseEntity<Integer> {
     @ValidDateOfIssue
     private Date dateOfIssue;
 
-    private TwoSidedDocumentScan scan = new TwoSidedDocumentScan();
-
     // GENERATED
 
     public String getNumber() {
@@ -61,13 +59,5 @@ public class VehicleCertificateData extends BaseEntity<Integer> {
 
     public void setRegistrationNumber(String registrationNumber) {
 	this.registrationNumber = registrationNumber;
-    }
-
-    public TwoSidedDocumentScan getScan() {
-	return scan;
-    }
-
-    public void setScan(TwoSidedDocumentScan scan) {
-	this.scan = scan;
     }
 }

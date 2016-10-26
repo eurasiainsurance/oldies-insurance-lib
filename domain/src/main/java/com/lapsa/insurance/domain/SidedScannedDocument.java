@@ -13,43 +13,6 @@ public abstract class SidedScannedDocument extends BaseEntity<Integer> {
     @MaxImageFileSize(measure = FileSizeMeasure.MB, value = 10)
     private Image backside;
 
-    // used for
-    private final Scans scanProxy;
-
-    public SidedScannedDocument() {
-	scanProxy = new Scans() {
-	    @Override
-	    public Image getFrontside() {
-		return SidedScannedDocument.this.getFrontside();
-	    }
-
-	    @Override
-	    public void setFrontside(Image frontside) {
-		SidedScannedDocument.this.setFrontside(frontside);
-	    }
-
-	    @Override
-	    public Image getBackside() {
-		return SidedScannedDocument.this.getBackside();
-	    }
-
-	    @Override
-	    public void setBackside(Image backside) {
-		SidedScannedDocument.this.setBackside(backside);
-	    }
-	};
-    }
-
-    interface Scans {
-	Image getFrontside();
-
-	void setFrontside(Image frontside);
-
-	Image getBackside();
-
-	void setBackside(Image backside);
-    }
-
     // GENERATED
 
     public Image getFrontside() {
@@ -67,9 +30,4 @@ public abstract class SidedScannedDocument extends BaseEntity<Integer> {
     public void setBackside(Image backside) {
 	this.backside = backside;
     }
-
-    public Scans getScan() {
-	return scanProxy;
-    }
-
 }

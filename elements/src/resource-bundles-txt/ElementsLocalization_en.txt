@@ -19,6 +19,7 @@ com.lapsa.insurance.crm.RequestStatus.CLOSED = Closed
 
 com.lapsa.insurance.crm.RequestType.ONLINE = On-line
 com.lapsa.insurance.crm.RequestType.EXPRESS = Express
+com.lapsa.insurance.crm.RequestType.UNCOMPLETE = Uncompleted
 
 com.lapsa.insurance.elements.CancelationReason.CANCELATION_AND_RENEW = Early termination of the agreement and its renewal
 com.lapsa.insurance.elements.CancelationReason.CANCELATION = Early termination

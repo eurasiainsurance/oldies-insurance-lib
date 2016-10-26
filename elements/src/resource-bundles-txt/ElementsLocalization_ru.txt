@@ -19,6 +19,7 @@ com.lapsa.insurance.crm.RequestStatus.CLOSED = Закрыто
 
 com.lapsa.insurance.crm.RequestType.ONLINE = Он-лайн
 com.lapsa.insurance.crm.RequestType.EXPRESS = Эксрпесс
+com.lapsa.insurance.crm.RequestType.UNCOMPLETE = Незавершено
 
 com.lapsa.insurance.elements.CancelationReason.CANCELATION_AND_RENEW = Досрочное прекращение договора и заключение нового
 com.lapsa.insurance.elements.CancelationReason.CANCELATION = Досрочное расторжение

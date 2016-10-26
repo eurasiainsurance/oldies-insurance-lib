@@ -19,6 +19,7 @@ com.lapsa.insurance.crm.RequestStatus.CLOSED = Жабық
 
 com.lapsa.insurance.crm.RequestType.ONLINE = Он-лайн
 com.lapsa.insurance.crm.RequestType.EXPRESS = Эксрпесс
+com.lapsa.insurance.crm.RequestType.UNCOMPLETE = Незавершено
 
 com.lapsa.insurance.elements.CancelationReason.CANCELATION_AND_RENEW = Шартты мерзімінен бұрын тоқтату және жаңа шарт жасау 
 com.lapsa.insurance.elements.CancelationReason.CANCELATION = Мерзімінен бұрын бұзу 

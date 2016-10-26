@@ -5,6 +5,7 @@ import com.lapsa.insurance.ElementsBundleBase;
 public enum RequestType implements ElementsBundleBase {
     EXPRESS, // экспресс
     ONLINE, // он-лайн
+    UNCOMPLETE, // незавершенная заявка
     //
     ;
 

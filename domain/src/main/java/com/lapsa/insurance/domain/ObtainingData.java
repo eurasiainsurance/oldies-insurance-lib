@@ -54,8 +54,6 @@ public class ObtainingData extends BaseDomain {
     @NotEmptyString(message = "{com.lapsa.insurance.domain.ObtainingData.deliveryAddress.NotEmptyString.message}")
     private String deliveryAddress;
 
-    private CompanyPointOfSale deliveryFromPOS;
-
     // GENERATED
 
     public ObtainingMethod getMethod() {
@@ -120,13 +118,5 @@ public class ObtainingData extends BaseDomain {
 
     public void setDeliveryAddress(String deliveryAddress) {
 	this.deliveryAddress = deliveryAddress;
-    }
-
-    public CompanyPointOfSale getDeliveryFromPOS() {
-	return deliveryFromPOS;
-    }
-
-    public void setDeliveryFromPOS(CompanyPointOfSale deliveryFromPOS) {
-	this.deliveryFromPOS = deliveryFromPOS;
     }
 }

@@ -93,9 +93,11 @@ com.lapsa.insurance.elements.MaritalStatus.SINGLE = бойдақ / тұрмыс�
 
 com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE = Банк картасымен төлеу 
 com.lapsa.insurance.elements.PaymentMethod.PAYCASH = Полисті жеткізу кезінде курьерге қолма-қол ақшамен төлеу 
+com.lapsa.insurance.elements.PaymentMethod.UNDEFINED = Не определен
 
 com.lapsa.insurance.elements.ObtainingMethod.DELIVERY = курьермен жеткізу 
 com.lapsa.insurance.elements.ObtainingMethod.PICKUP = сақтандыру компаниясының офисінен өз бетімен алу
+com.lapsa.insurance.elements.ObtainingMethod.UNDEFINED = Не определен
 
 com.lapsa.insurance.elements.Sex.MALE = ер
 com.lapsa.insurance.elements.Sex.FEMALE = әйел

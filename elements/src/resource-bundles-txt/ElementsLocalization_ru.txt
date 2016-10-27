@@ -95,11 +95,15 @@ com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE = Оплата бан�
 com.lapsa.insurance.elements.PaymentMethod.PAYCASH        = Оплата наличными курьеру при доставке полиса
 com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE.short = картой on-line
 com.lapsa.insurance.elements.PaymentMethod.PAYCASH.short        = наличными
+com.lapsa.insurance.elements.PaymentMethod.UNDEFINED            = Не определен
+com.lapsa.insurance.elements.PaymentMethod.UNDEFINED.short      = не определен
 
 com.lapsa.insurance.elements.ObtainingMethod.DELIVERY = Доставить курьером
 com.lapsa.insurance.elements.ObtainingMethod.PICKUP   = Забрать самостоятельно в офисе страховой компании
 com.lapsa.insurance.elements.ObtainingMethod.DELIVERY.short = доставить курьером
 com.lapsa.insurance.elements.ObtainingMethod.PICKUP.short   = забрать самостоятельно
+com.lapsa.insurance.elements.ObtainingMethod.UNDEFINED       = Не определен
+com.lapsa.insurance.elements.ObtainingMethod.UNDEFINED.short = не определен
 
 com.lapsa.insurance.elements.Sex.MALE   = мужской
 com.lapsa.insurance.elements.Sex.FEMALE = женский

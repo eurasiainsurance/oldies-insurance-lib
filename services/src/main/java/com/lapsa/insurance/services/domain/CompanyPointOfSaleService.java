@@ -1,6 +1,7 @@
 package com.lapsa.insurance.services.domain;
 
 import java.util.List;
+import java.util.Locale;
 
 import javax.faces.model.SelectItem;
 
@@ -24,4 +25,16 @@ public interface CompanyPointOfSaleService extends DomainService<CompanyPointOfS
     List<KZCity> getCitiesForPickup();
 
     List<KZCity> getCitiesForDelivery();
+
+    String displayAddress(CompanyPointOfSale pointOfSale);
+
+    String displayAddress(CompanyPointOfSale pointOfSale, Locale locale);
+
+    List<SelectItem> displayAddressSI(List<CompanyPointOfSale> list);
+
+    String displayAddressShort(CompanyPointOfSale pointOfSale);
+
+    String displayAddressShort(CompanyPointOfSale pointOfSale, Locale locale);
+
+    List<SelectItem> displayAddressShortSI(List<CompanyPointOfSale> list);
 }

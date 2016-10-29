@@ -38,7 +38,7 @@ public class RequesterData extends BaseDomain {
     private String email;
 
     @NotNullValue
-    @ValidPhoneNumber
+    @ValidPhoneNumber(areaCodeLength = 3, numberLength = 7)
     private PhoneNumber phone;
 
     private boolean allowSpam;
@@ -47,7 +47,7 @@ public class RequesterData extends BaseDomain {
     private boolean allowProcessPersonalData;
 
     @NotNullValue
-    @ValidPhoneNumber
+    @ValidPhoneNumber(areaCodeLength = 3, numberLength = 7)
     public String getPhoneString() {
 	if (phone == null)
 	    return null;

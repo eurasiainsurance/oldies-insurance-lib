@@ -4,6 +4,7 @@ import com.lapsa.insurance.crm.ClosingResult;
 import com.lapsa.insurance.crm.ObtainingStatus;
 import com.lapsa.insurance.crm.PaymentStatus;
 import com.lapsa.insurance.crm.RequestStatus;
+import com.lapsa.insurance.crm.RequestType;
 import com.lapsa.insurance.elements.ObtainingMethod;
 import com.lapsa.insurance.elements.PaymentMethod;
 
@@ -11,6 +12,8 @@ public interface InsuranceRequestFitler {
 
     RequestStatus getRequestStatus();
 
+    RequestType getRequestType();
+    
     PaymentMethod getPaymentMethod();
 
     PaymentStatus getPaymentStatus();

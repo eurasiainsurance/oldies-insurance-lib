@@ -30,6 +30,8 @@ public class PolicyVehicle extends Vehicle {
     @ValidVehicleAgeClass
     private VehicleAgeClass vehicleAgeClass;
 
+    private boolean temporaryEntry = false;
+
     private boolean forcedMajorCity;
 
     private boolean fetched = false;
@@ -50,6 +52,14 @@ public class PolicyVehicle extends Vehicle {
 
     public void setVehicleAgeClass(VehicleAgeClass vehicleAgeClass) {
 	this.vehicleAgeClass = vehicleAgeClass;
+    }
+
+    public boolean isTemporaryEntry() {
+	return temporaryEntry;
+    }
+
+    public void setTemporaryEntry(boolean temporaryEntry) {
+	this.temporaryEntry = temporaryEntry;
     }
 
     public boolean isForcedMajorCity() {

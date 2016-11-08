@@ -14,8 +14,11 @@ import com.lapsa.insurance.crm.ClosingResult;
 import com.lapsa.insurance.crm.NotificationStatus;
 import com.lapsa.insurance.crm.ObtainingStatus;
 import com.lapsa.insurance.crm.PaymentStatus;
+import com.lapsa.insurance.crm.ProgressStatus;
 import com.lapsa.insurance.crm.RequestStatus;
 import com.lapsa.insurance.crm.RequestType;
+import com.lapsa.insurance.crm.TransactionProblem;
+import com.lapsa.insurance.crm.TransactionStatus;
 import com.lapsa.insurance.elements.CancelationReason;
 import com.lapsa.insurance.elements.CascoCarAgeClass;
 import com.lapsa.insurance.elements.CascoDeductibleFullRate;
@@ -79,9 +82,15 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 		continue;
 	    if (findByFullName(PaymentStatus.values(), key) != null)
 		continue;
+	    if (findByFullName(ProgressStatus.values(), key) != null)
+		continue;
 	    if (findByFullName(RequestStatus.values(), key) != null)
 		continue;
 	    if (findByFullName(RequestType.values(), key) != null)
+		continue;
+	    if (findByFullName(TransactionProblem.values(), key) != null)
+		continue;
+	    if (findByFullName(TransactionStatus.values(), key) != null)
 		continue;
 	    // ELEMENTS
 	    if (findByFullName(CancelationReason.values(), key) != null)

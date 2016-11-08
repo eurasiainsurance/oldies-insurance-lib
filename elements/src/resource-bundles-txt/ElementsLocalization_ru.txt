@@ -14,12 +14,25 @@ com.lapsa.insurance.crm.PaymentStatus.PENDING  = Ожидается
 com.lapsa.insurance.crm.PaymentStatus.DONE     = Оплачено
 com.lapsa.insurance.crm.PaymentStatus.CANCELED = Отменено
 
+com.lapsa.insurance.crm.ProgressStatus.NEW        = Новая 
+com.lapsa.insurance.crm.ProgressStatus.ON_PROCESS = На обработке
+com.lapsa.insurance.crm.ProgressStatus.ON_HOLD    = На паузе
+com.lapsa.insurance.crm.ProgressStatus.COMPLETED  = Завершено
+
 com.lapsa.insurance.crm.RequestStatus.OPEN   = Открыто
 com.lapsa.insurance.crm.RequestStatus.CLOSED = Закрыто
 
 com.lapsa.insurance.crm.RequestType.ONLINE     = Он-лайн заявка
 com.lapsa.insurance.crm.RequestType.EXPRESS    = Экспресс заявка
 com.lapsa.insurance.crm.RequestType.UNCOMPLETE = Незавершеная заявка
+
+com.lapsa.insurance.crm.TransactionProblem.CANCELED_BY_CONSUMER = Отменено клиентом
+com.lapsa.insurance.crm.TransactionProblem.WRONG_DATA_PROVIDED  = Предоставлены неверные данные
+com.lapsa.insurance.crm.TransactionProblem.TEST                 = Тестовая заявка
+com.lapsa.insurance.crm.TransactionProblem.OTHER                = Другая причина
+
+com.lapsa.insurance.crm.TransactionStatus.COMPLETED             = Сделка заключена
+com.lapsa.insurance.crm.TransactionStatus.NOT_COMPLETED         = Сделка отменена
 
 com.lapsa.insurance.elements.CancelationReason.CANCELATION_AND_RENEW   = Досрочное прекращение договора и заключение нового
 com.lapsa.insurance.elements.CancelationReason.CANCELATION             = Досрочное расторжение

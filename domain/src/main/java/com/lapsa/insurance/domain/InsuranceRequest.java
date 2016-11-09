@@ -2,7 +2,6 @@ package com.lapsa.insurance.domain;
 
 import java.util.Date;
 
-import com.lapsa.insurance.crm.ClosingResult;
 import com.lapsa.insurance.crm.RequestStatus;
 import com.lapsa.insurance.crm.RequestType;
 import com.lapsa.insurance.elements.InsuranceProductType;
@@ -20,9 +19,6 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
 
     @NotNullValue
     private RequestType type;
-
-    @NotNullValue
-    private ClosingResult closingResult;
 
     private RequesterData requester;
     private ObtainingData obtaining;
@@ -68,14 +64,6 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
 
     public void setType(RequestType type) {
 	this.type = type;
-    }
-
-    public ClosingResult getClosingResult() {
-	return closingResult;
-    }
-
-    public void setClosingResult(ClosingResult closingResult) {
-	this.closingResult = closingResult;
     }
 
     public RequesterData getRequester() {

@@ -1,7 +1,3 @@
-com.lapsa.insurance.crm.ClosingResult.COMPLETED = Завершено
-com.lapsa.insurance.crm.ClosingResult.CANCELED  = Отменено
-com.lapsa.insurance.crm.ClosingResult.TEST      = Тест
-
 com.lapsa.insurance.crm.NotificationStatus.DONE         = Завершено
 com.lapsa.insurance.crm.NotificationStatus.PENDING      = В очереди
 com.lapsa.insurance.crm.NotificationStatus.NOT_REQUIRED = Не требуется

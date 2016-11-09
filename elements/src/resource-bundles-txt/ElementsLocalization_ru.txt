@@ -13,7 +13,7 @@ com.lapsa.insurance.crm.PaymentStatus.CANCELED = Отменено
 com.lapsa.insurance.crm.ProgressStatus.NEW        = Новая 
 com.lapsa.insurance.crm.ProgressStatus.ON_PROCESS = На обработке
 com.lapsa.insurance.crm.ProgressStatus.ON_HOLD    = На паузе
-com.lapsa.insurance.crm.ProgressStatus.COMPLETED  = Завершено
+com.lapsa.insurance.crm.ProgressStatus.FINISHED   = Завершено
 
 com.lapsa.insurance.crm.RequestStatus.OPEN   = Открыто
 com.lapsa.insurance.crm.RequestStatus.CLOSED = Закрыто

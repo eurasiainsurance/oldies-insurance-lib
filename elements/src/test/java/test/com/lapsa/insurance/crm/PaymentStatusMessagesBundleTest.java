@@ -1,18 +1,18 @@
 package test.com.lapsa.insurance.crm;
 
-import com.lapsa.insurance.crm.RequestStatus;
+import com.lapsa.insurance.crm.PaymentStatus;
 
 import test.com.lapsa.insurance.EnumTypeMessagesBundleTest;
 
-public class PaymentStatusMessagesBundleTest extends EnumTypeMessagesBundleTest<RequestStatus> {
+public class PaymentStatusMessagesBundleTest extends EnumTypeMessagesBundleTest<PaymentStatus> {
 
     @Override
-    protected RequestStatus[] getAllEnumValues() {
-	return RequestStatus.values();
+    protected PaymentStatus[] getAllEnumValues() {
+	return PaymentStatus.values();
     }
 
     @Override
     protected String getBundleBaseName() {
-	return RequestStatus.BUNDLE_BASENAME;
+	return PaymentStatus.BUNDLE_BASENAME;
     }
 }

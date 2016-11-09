@@ -1,7 +1,3 @@
-com.lapsa.insurance.crm.ClosingResult.COMPLETED = Аяқталды
-com.lapsa.insurance.crm.ClosingResult.CANCELED = Өзгертілді
-com.lapsa.insurance.crm.ClosingResult.TEST = Тест
-
 com.lapsa.insurance.crm.NotificationStatus.DONE = Аяқталды
 com.lapsa.insurance.crm.NotificationStatus.PENDING = Кезекте
 com.lapsa.insurance.crm.NotificationStatus.NOT_REQUIRED = Талап етілмейді
@@ -16,12 +12,25 @@ com.lapsa.insurance.crm.PaymentStatus.DONE = Төленген
 com.lapsa.insurance.crm.PaymentStatus.CANCELED = Өзгертілді
 com.lapsa.insurance.crm.PaymentStatus.UNDEFINED = Не определено
 
+com.lapsa.insurance.crm.ProgressStatus.NEW        = Новая 
+com.lapsa.insurance.crm.ProgressStatus.ON_PROCESS = На обработке
+com.lapsa.insurance.crm.ProgressStatus.ON_HOLD    = На паузе
+com.lapsa.insurance.crm.ProgressStatus.FINISHED   = Завершено
+
 com.lapsa.insurance.crm.RequestStatus.OPEN = Ашық
 com.lapsa.insurance.crm.RequestStatus.CLOSED = Жабық
 
 com.lapsa.insurance.crm.RequestType.ONLINE = Он-лайн
 com.lapsa.insurance.crm.RequestType.EXPRESS = Эксрпесс
 com.lapsa.insurance.crm.RequestType.UNCOMPLETE = Незавершено
+
+com.lapsa.insurance.crm.TransactionProblem.CANCELED_BY_CONSUMER = Отменено клиентом
+com.lapsa.insurance.crm.TransactionProblem.WRONG_DATA_PROVIDED  = Предоставлены неверные данные
+com.lapsa.insurance.crm.TransactionProblem.TEST                 = Тестовая заявка
+com.lapsa.insurance.crm.TransactionProblem.OTHER                = Другая причина
+
+com.lapsa.insurance.crm.TransactionStatus.COMPLETED             = Сделка заключена
+com.lapsa.insurance.crm.TransactionStatus.NOT_COMPLETED         = Сделка отменена
 
 com.lapsa.insurance.elements.CancelationReason.CANCELATION_AND_RENEW = Шартты мерзімінен бұрын тоқтату және жаңа шарт жасау 
 com.lapsa.insurance.elements.CancelationReason.CANCELATION = Мерзімінен бұрын бұзу 

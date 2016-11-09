@@ -2,9 +2,11 @@ package com.lapsa.insurance.domain;
 
 import java.util.Date;
 
-import com.lapsa.insurance.crm.ClosingResult;
+import com.lapsa.insurance.crm.ProgressStatus;
 import com.lapsa.insurance.crm.RequestStatus;
 import com.lapsa.insurance.crm.RequestType;
+import com.lapsa.insurance.crm.TransactionProblem;
+import com.lapsa.insurance.crm.TransactionStatus;
 import com.lapsa.insurance.elements.InsuranceProductType;
 import com.lapsa.insurance.validation.NotNullValue;
 
@@ -22,7 +24,13 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
     private RequestType type;
 
     @NotNullValue
-    private ClosingResult closingResult;
+    private ProgressStatus progressStatus;
+
+    @NotNullValue
+    private TransactionStatus transactionStatus;
+
+    @NotNullValue
+    private TransactionProblem transactionProblem;
 
     private RequesterData requester;
     private ObtainingData obtaining;
@@ -70,12 +78,28 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
 	this.type = type;
     }
 
-    public ClosingResult getClosingResult() {
-	return closingResult;
+    public ProgressStatus getProgressStatus() {
+	return progressStatus;
     }
 
-    public void setClosingResult(ClosingResult closingResult) {
-	this.closingResult = closingResult;
+    public void setProgressStatus(ProgressStatus progressStatus) {
+	this.progressStatus = progressStatus;
+    }
+
+    public TransactionStatus getTransactionStatus() {
+	return transactionStatus;
+    }
+
+    public void setTransactionStatus(TransactionStatus transactionStatus) {
+	this.transactionStatus = transactionStatus;
+    }
+
+    public TransactionProblem getTransactionProblem() {
+	return transactionProblem;
+    }
+
+    public void setTransactionProblem(TransactionProblem transactionProblem) {
+	this.transactionProblem = transactionProblem;
     }
 
     public RequesterData getRequester() {

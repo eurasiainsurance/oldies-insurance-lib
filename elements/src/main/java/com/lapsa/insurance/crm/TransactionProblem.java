@@ -2,11 +2,11 @@ package com.lapsa.insurance.crm;
 
 import com.lapsa.insurance.ElementsBundleBase;
 
-public enum ClosingResult implements ElementsBundleBase {
-    COMPLETED, // Выполнено
-    CANCELED, // Отменено
-    TEST, // Тестовая
-    //
+public enum TransactionProblem implements ElementsBundleBase {
+    CANCELED_BY_CONSUMER, //
+    WRONG_DATA_PROVIDED, //
+    TEST, //
+    OTHER, //
     ;
 
     @Override

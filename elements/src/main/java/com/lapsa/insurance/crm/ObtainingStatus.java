@@ -6,6 +6,7 @@ public enum ObtainingStatus implements ElementsBundleBase {
     PENDING, // ожидается получение
     DONE, // получено
     CANCELED, // отменено
+    UNDEFINED, // не определно
     //
     ;
 

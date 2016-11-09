@@ -6,13 +6,23 @@ com.lapsa.insurance.crm.NotificationStatus.DONE         = Завершено
 com.lapsa.insurance.crm.NotificationStatus.PENDING      = В очереди
 com.lapsa.insurance.crm.NotificationStatus.NOT_REQUIRED = Не требуется
 
-com.lapsa.insurance.crm.ObtainingStatus.PENDING  = Ожидается получение
-com.lapsa.insurance.crm.ObtainingStatus.DONE     = Получено
-com.lapsa.insurance.crm.ObtainingStatus.CANCELED = Отменено
+com.lapsa.insurance.crm.ObtainingStatus.PENDING         = Получение ожидается
+com.lapsa.insurance.crm.ObtainingStatus.PENDING.short   = ожидается
+com.lapsa.insurance.crm.ObtainingStatus.DONE            = Получено
+com.lapsa.insurance.crm.ObtainingStatus.DONE.short      = получено
+com.lapsa.insurance.crm.ObtainingStatus.CANCELED        = Отменено
+com.lapsa.insurance.crm.ObtainingStatus.CANCELED.short  = отменено
+com.lapsa.insurance.crm.ObtainingStatus.UNDEFINED       = Не определено
+com.lapsa.insurance.crm.ObtainingStatus.UNDEFINED.short = не определено
 
-com.lapsa.insurance.crm.PaymentStatus.PENDING  = Ожидается
-com.lapsa.insurance.crm.PaymentStatus.DONE     = Оплачено
-com.lapsa.insurance.crm.PaymentStatus.CANCELED = Отменено
+com.lapsa.insurance.crm.PaymentStatus.PENDING         = Оплата ожидается
+com.lapsa.insurance.crm.PaymentStatus.PENDING.short   = ожидается
+com.lapsa.insurance.crm.PaymentStatus.DONE            = Оплачено
+com.lapsa.insurance.crm.PaymentStatus.DONE.short      = оплачено
+com.lapsa.insurance.crm.PaymentStatus.CANCELED        = Отменено
+com.lapsa.insurance.crm.PaymentStatus.CANCELED.short  = отменено
+com.lapsa.insurance.crm.PaymentStatus.UNDEFINED       = Не определено
+com.lapsa.insurance.crm.PaymentStatus.UNDEFINED.short = не определено
 
 com.lapsa.insurance.crm.RequestStatus.OPEN   = Открыто
 com.lapsa.insurance.crm.RequestStatus.CLOSED = Закрыто
@@ -98,15 +108,15 @@ com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE       = Оплата �
 com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE.short = картой on-line
 com.lapsa.insurance.elements.PaymentMethod.PAYCASH              = Оплата наличными курьеру при доставке полиса
 com.lapsa.insurance.elements.PaymentMethod.PAYCASH.short        = наличными
-com.lapsa.insurance.elements.PaymentMethod.UNDEFINED            = Не определен
-com.lapsa.insurance.elements.PaymentMethod.UNDEFINED.short      = не определен
+com.lapsa.insurance.elements.PaymentMethod.UNDEFINED            = Не определено
+com.lapsa.insurance.elements.PaymentMethod.UNDEFINED.short      = не определено
 
 com.lapsa.insurance.elements.ObtainingMethod.DELIVERY        = Доставить курьером
 com.lapsa.insurance.elements.ObtainingMethod.DELIVERY.short  = доставить курьером
 com.lapsa.insurance.elements.ObtainingMethod.PICKUP          = Забрать самостоятельно в офисе страховой компании
 com.lapsa.insurance.elements.ObtainingMethod.PICKUP.short    = забрать самостоятельно
-com.lapsa.insurance.elements.ObtainingMethod.UNDEFINED       = Не определен
-com.lapsa.insurance.elements.ObtainingMethod.UNDEFINED.short = не определен
+com.lapsa.insurance.elements.ObtainingMethod.UNDEFINED       = Не определено
+com.lapsa.insurance.elements.ObtainingMethod.UNDEFINED.short = не определено
 
 com.lapsa.insurance.elements.Sex.MALE   = мужской
 com.lapsa.insurance.elements.Sex.FEMALE = женский

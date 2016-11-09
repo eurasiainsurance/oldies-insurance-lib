@@ -9,10 +9,12 @@ com.lapsa.insurance.crm.NotificationStatus.NOT_REQUIRED = Талап етілм�
 com.lapsa.insurance.crm.ObtainingStatus.PENDING = Алу күтілуде
 com.lapsa.insurance.crm.ObtainingStatus.DONE = Алынған
 com.lapsa.insurance.crm.ObtainingStatus.CANCELED = Өзгертілді
+com.lapsa.insurance.crm.ObtainingStatus.UNDEFINED = Не определено
 
 com.lapsa.insurance.crm.PaymentStatus.PENDING = Күтілуде
 com.lapsa.insurance.crm.PaymentStatus.DONE = Төленген
 com.lapsa.insurance.crm.PaymentStatus.CANCELED = Өзгертілді
+com.lapsa.insurance.crm.PaymentStatus.UNDEFINED = Не определено
 
 com.lapsa.insurance.crm.RequestStatus.OPEN = Ашық
 com.lapsa.insurance.crm.RequestStatus.CLOSED = Жабық

@@ -18,13 +18,13 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
     private Date closed;
 
     @NotNullValue
-    private RequestStatus status;
+    private RequestStatus status = RequestStatus.OPEN;
 
     @NotNullValue
-    private RequestType type;
+    private RequestType type = RequestType.UNCOMPLETE;
 
     @NotNullValue
-    private ProgressStatus progressStatus;
+    private ProgressStatus progressStatus = ProgressStatus.NEW;
 
     @NotNullValue
     private TransactionStatus transactionStatus;

@@ -8,10 +8,10 @@ import com.lapsa.insurance.domain.BaseEntity;
 public abstract class Notification extends BaseEntity<Integer> {
     private static final long serialVersionUID = -1902885458072366192L;
 
-    private Date created;
+    private Date created = new Date();
     private Date updated;
     private Date sent;
-    private NotificationStatus status;
+    private NotificationStatus status = NotificationStatus.PENDING;
 
     // GENERATED
 

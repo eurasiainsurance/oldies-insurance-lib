@@ -20,10 +20,10 @@ public class PaymentData extends BaseDomain {
     }
 
     @NotNullValue(message = "{com.lapsa.insurance.domain.PaymentData.method.NotNullValue.message}")
-    private PaymentMethod method;
+    private PaymentMethod method = PaymentMethod.UNDEFINED;
 
     @NotNullValue
-    private PaymentStatus status;
+    private PaymentStatus status = PaymentStatus.UNDEFINED;
 
     private String paymentReference;
 

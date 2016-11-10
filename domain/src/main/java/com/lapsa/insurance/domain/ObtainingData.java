@@ -28,10 +28,10 @@ public class ObtainingData extends BaseDomain {
     }
 
     @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.method.NotNullValue.message}")
-    private ObtainingMethod method;
+    private ObtainingMethod method = ObtainingMethod.UNDEFINED;
 
     @NotNullValue
-    private ObtainingStatus status;
+    private ObtainingStatus status = ObtainingStatus.UNDEFINED;
 
     @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.pickupCity.NotNullValue.message}")
     private KZCity pickupCity;

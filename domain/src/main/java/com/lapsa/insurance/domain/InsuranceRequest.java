@@ -13,18 +13,18 @@ import com.lapsa.insurance.validation.NotNullValue;
 public abstract class InsuranceRequest extends BaseEntity<Integer> {
     private static final long serialVersionUID = 944531653617396366L;
 
-    private Date created;
+    private Date created = new Date();
     private Date updated;
     private Date closed;
 
     @NotNullValue
-    private RequestStatus status;
+    private RequestStatus status = RequestStatus.OPEN;
 
     @NotNullValue
-    private RequestType type;
+    private RequestType type = RequestType.UNCOMPLETE;
 
     @NotNullValue
-    private ProgressStatus progressStatus;
+    private ProgressStatus progressStatus = ProgressStatus.NEW;
 
     @NotNullValue
     private TransactionStatus transactionStatus;

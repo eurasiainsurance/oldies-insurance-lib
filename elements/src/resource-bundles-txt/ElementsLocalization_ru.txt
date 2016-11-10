@@ -21,7 +21,7 @@ com.lapsa.insurance.crm.PaymentStatus.UNDEFINED       = Не определен�
 com.lapsa.insurance.crm.PaymentStatus.UNDEFINED.short = не определено
 
 com.lapsa.insurance.crm.ProgressStatus.NEW        = Новая 
-com.lapsa.insurance.crm.ProgressStatus.ON_PROCESS = На обработке
+com.lapsa.insurance.crm.ProgressStatus.ON_PROCESS = В обработке
 com.lapsa.insurance.crm.ProgressStatus.ON_HOLD    = На паузе
 com.lapsa.insurance.crm.ProgressStatus.FINISHED   = Завершено
 

@@ -11,11 +11,11 @@ public interface EnumService<T extends Enum<?>> extends ItemService<T> {
 
     List<T> getAllItems();
 
-    List<T> getSelectableItems();
-
     List<SelectItem> getAllItemsSI();
 
     List<SelectItem> getAllItemsShortSI();
+
+    List<T> getSelectableItems();
 
     List<SelectItem> getSelectableItemsSI();
 

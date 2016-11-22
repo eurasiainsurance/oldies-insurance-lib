@@ -16,6 +16,7 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
     private Date created = new Date();
     private Date updated;
     private Date accepted;
+    private Date completed;
     private Date closed;
 
     @NotNullValue
@@ -69,6 +70,14 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
 
     public void setAccepted(Date accepted) {
 	this.accepted = accepted;
+    }
+
+    public Date getCompleted() {
+	return completed;
+    }
+
+    public void setCompleted(Date completed) {
+	this.completed = completed;
     }
 
     public RequestStatus getStatus() {

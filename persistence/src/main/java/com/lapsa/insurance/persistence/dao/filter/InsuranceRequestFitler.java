@@ -1,5 +1,7 @@
 package com.lapsa.insurance.persistence.dao.filter;
 
+import java.util.Date;
+
 import com.lapsa.insurance.crm.ObtainingStatus;
 import com.lapsa.insurance.crm.PaymentStatus;
 import com.lapsa.insurance.crm.ProgressStatus;
@@ -29,4 +31,12 @@ public interface InsuranceRequestFitler {
     TransactionStatus getTransactionStatus();
 
     TransactionProblem getTransactionProblem();
+
+    Date getCreatedAfter();
+
+    Date getCreatedBefore();
+
+    Date getCompletedAfter();
+
+    Date getCompletedBefore();
 }

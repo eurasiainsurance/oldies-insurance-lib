@@ -1,8 +1,5 @@
 package com.lapsa.insurance.domain.crm;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.lapsa.insurance.domain.BaseDomain;
 
 public class UTMData extends BaseDomain {
@@ -20,16 +17,51 @@ public class UTMData extends BaseDomain {
 	return MULTIPLIER;
     }
 
-    private Map<String, String> tag = new HashMap<>();
+    private String source;
+    private String medium;
+    private String campaign;
+    private String content;
+    private String term;
 
     // GENERATED
 
-    public Map<String, String> getTag() {
-	return tag;
+    public String getSource() {
+	return source;
     }
 
-    public void setTag(Map<String, String> tag) {
-	this.tag = tag;
+    public void setSource(String source) {
+	this.source = source;
     }
 
+    public String getMedium() {
+	return medium;
+    }
+
+    public void setMedium(String medium) {
+	this.medium = medium;
+    }
+
+    public String getCampaign() {
+	return campaign;
+    }
+
+    public void setCampaign(String campaign) {
+	this.campaign = campaign;
+    }
+
+    public String getContent() {
+	return content;
+    }
+
+    public void setContent(String content) {
+	this.content = content;
+    }
+
+    public String getTerm() {
+	return term;
+    }
+
+    public void setTerm(String term) {
+	this.term = term;
+    }
 }

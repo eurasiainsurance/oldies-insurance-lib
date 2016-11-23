@@ -6,7 +6,7 @@
       17 com.lapsa.insurance.domain.DriverLicenseData
       19 com.lapsa.insurance.domain.GeoPoint
       23 com.lapsa.insurance.domain.GPWParticipantCertificateData
-      29 
+      29 com.lapsa.insurance.domain.crm.UTMData
       31 com.lapsa.insurance.domain.HandicaptedCertificateData
       37 com.lapsa.insurance.domain.IdentityCardData
       41 com.lapsa.insurance.domain.notification.NewCascoRequestUserNotification

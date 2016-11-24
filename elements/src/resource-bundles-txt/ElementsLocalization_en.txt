@@ -27,6 +27,7 @@ com.lapsa.insurance.crm.RequestType.UNCOMPLETE = Uncompleted
 com.lapsa.insurance.crm.TransactionProblem.CANCELED_BY_CONSUMER = Отменено клиентом
 com.lapsa.insurance.crm.TransactionProblem.WRONG_DATA_PROVIDED  = Предоставлены неверные данные
 com.lapsa.insurance.crm.TransactionProblem.TEST                 = Тестовая заявка
+com.lapsa.insurance.crm.TransactionProblem.DUPLICATE            = Дублирует другую заявку
 com.lapsa.insurance.crm.TransactionProblem.OTHER                = Другая причина
 
 com.lapsa.insurance.crm.TransactionStatus.COMPLETED             = Сделка заключена

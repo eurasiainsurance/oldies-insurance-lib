@@ -28,9 +28,12 @@ com.lapsa.insurance.crm.ProgressStatus.FINISHED   = Завершено
 com.lapsa.insurance.crm.RequestStatus.OPEN   = Открыто
 com.lapsa.insurance.crm.RequestStatus.CLOSED = Закрыто
 
-com.lapsa.insurance.crm.RequestType.ONLINE     = Он-лайн заявка
-com.lapsa.insurance.crm.RequestType.EXPRESS    = Экспресс заявка
-com.lapsa.insurance.crm.RequestType.UNCOMPLETE = Незавершеная заявка
+com.lapsa.insurance.crm.RequestType.ONLINE           = Он-лайн заявка
+com.lapsa.insurance.crm.RequestType.ONLINE.short     = Он-лайн
+com.lapsa.insurance.crm.RequestType.EXPRESS          = Экспресс заявка
+com.lapsa.insurance.crm.RequestType.EXPRESS.short    = Экспресс
+com.lapsa.insurance.crm.RequestType.UNCOMPLETE       = Незавершеная заявка
+com.lapsa.insurance.crm.RequestType.UNCOMPLETE.short = Незавершено
 
 com.lapsa.insurance.crm.TransactionProblem.CANCELED_BY_CONSUMER = Отменено клиентом
 com.lapsa.insurance.crm.TransactionProblem.WRONG_DATA_PROVIDED  = Предоставлены неверные данные
@@ -76,8 +79,10 @@ com.lapsa.insurance.elements.IdentityCardType.PASSPORT          = паспорт
 com.lapsa.insurance.elements.IdentityCardType.BIRTH_CERTIFICATE = свидетельство о рождении
 com.lapsa.insurance.elements.IdentityCardType.RESIDENCE_PERMIT  = вид на жительство иностранца
 
-com.lapsa.insurance.elements.InsuranceProductType.CASCO  = Авто КАСКО
-com.lapsa.insurance.elements.InsuranceProductType.POLICY = Полис ОС ГПО ВТС
+com.lapsa.insurance.elements.InsuranceProductType.CASCO        = Авто КАСКО
+com.lapsa.insurance.elements.InsuranceProductType.CASCO.short  = КАСКО
+com.lapsa.insurance.elements.InsuranceProductType.POLICY       = Полис ОС ГПО ВТС
+com.lapsa.insurance.elements.InsuranceProductType.POLICY.short = Полис
 
 com.lapsa.insurance.elements.InsuranceClassType.CLASS_0  = Класс 0
 com.lapsa.insurance.elements.InsuranceClassType.CLASS_1  = Класс 1

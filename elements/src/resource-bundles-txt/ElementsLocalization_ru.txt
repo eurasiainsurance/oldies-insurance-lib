@@ -32,8 +32,8 @@ com.lapsa.insurance.crm.RequestType.ONLINE           = Он-лайн заявк�
 com.lapsa.insurance.crm.RequestType.ONLINE.short     = Он-лайн
 com.lapsa.insurance.crm.RequestType.EXPRESS          = Экспресс заявка
 com.lapsa.insurance.crm.RequestType.EXPRESS.short    = Экспресс
-com.lapsa.insurance.crm.RequestType.UNCOMPLETE       = Незавершеная заявка
-com.lapsa.insurance.crm.RequestType.UNCOMPLETE.short = Незавершено
+com.lapsa.insurance.crm.RequestType.UNCOMPLETE       = Незавершеная заявка (лид)
+com.lapsa.insurance.crm.RequestType.UNCOMPLETE.short = Лид
 
 com.lapsa.insurance.crm.TransactionProblem.CANCELED_BY_CONSUMER = Отменено клиентом
 com.lapsa.insurance.crm.TransactionProblem.WRONG_DATA_PROVIDED  = Предоставлены неверные данные

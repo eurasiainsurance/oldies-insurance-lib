@@ -17,17 +17,41 @@ public class CalculationData extends BaseDomain {
 	return MULTIPLIER;
     }
 
-    private double premiumCost;
+    private double calculatedPremiumCost;
+    private double actualPremiumCost;
+    private double discountAmount;
     private FinCurrency premiumCurrency;
+
+    public double getPremiumCost() {
+	if (actualPremiumCost > 0)
+	    return actualPremiumCost;
+	return calculatedPremiumCost - discountAmount;
+    }
 
     // GENEERATED
 
-    public double getPremiumCost() {
-	return premiumCost;
+    public double getCalculatedPremiumCost() {
+	return calculatedPremiumCost;
     }
 
-    public void setPremiumCost(double premiumCost) {
-	this.premiumCost = premiumCost;
+    public void setCalculatedPremiumCost(double calculatedPremiumCost) {
+	this.calculatedPremiumCost = calculatedPremiumCost;
+    }
+
+    public double getActualPremiumCost() {
+	return actualPremiumCost;
+    }
+
+    public void setActualPremiumCost(double actualPremiumCost) {
+	this.actualPremiumCost = actualPremiumCost;
+    }
+
+    public double getDiscountAmount() {
+	return discountAmount;
+    }
+
+    public void setDiscountAmount(double discountAmount) {
+	this.discountAmount = discountAmount;
     }
 
     public FinCurrency getPremiumCurrency() {

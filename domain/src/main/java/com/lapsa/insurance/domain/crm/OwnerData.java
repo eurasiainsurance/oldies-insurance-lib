@@ -17,4 +17,16 @@ public class OwnerData extends BaseDomain {
 	return MULTIPLIER;
     }
 
+    private String email;
+
+    // GENERATED
+
+    public String getEmail() {
+	return email;
+    }
+
+    public void setEmail(String email) {
+	this.email = email;
+    }
+
 }

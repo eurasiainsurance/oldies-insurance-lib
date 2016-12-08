@@ -43,6 +43,8 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
     private UTMData utmData;
 
     private User acceptedBy;
+    private User completedBy;
+    private User closedBy;
 
     // GENERATED
 
@@ -164,6 +166,22 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
 
     public void setAcceptedBy(User acceptedBy) {
 	this.acceptedBy = acceptedBy;
+    }
+
+    public User getCompletedBy() {
+	return completedBy;
+    }
+
+    public void setCompletedBy(User completedBy) {
+	this.completedBy = completedBy;
+    }
+
+    public User getClosedBy() {
+	return closedBy;
+    }
+
+    public void setClosedBy(User closedBy) {
+	this.closedBy = closedBy;
     }
 
     public abstract InsuranceProduct getProduct();

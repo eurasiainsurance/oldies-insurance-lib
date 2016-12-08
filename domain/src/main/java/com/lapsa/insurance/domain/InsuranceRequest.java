@@ -7,6 +7,7 @@ import com.lapsa.insurance.crm.RequestStatus;
 import com.lapsa.insurance.crm.RequestType;
 import com.lapsa.insurance.crm.TransactionProblem;
 import com.lapsa.insurance.crm.TransactionStatus;
+import com.lapsa.insurance.domain.crm.User;
 import com.lapsa.insurance.domain.crm.UTMData;
 import com.lapsa.insurance.elements.InsuranceProductType;
 import com.lapsa.insurance.validation.NotNullValue;
@@ -40,6 +41,10 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
     private PaymentData payment;
 
     private UTMData utmData;
+
+    private User acceptedBy;
+    private User completedBy;
+    private User closedBy;
 
     // GENERATED
 
@@ -153,6 +158,30 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
 
     public void setUtmData(UTMData utmData) {
 	this.utmData = utmData;
+    }
+
+    public User getAcceptedBy() {
+	return acceptedBy;
+    }
+
+    public void setAcceptedBy(User acceptedBy) {
+	this.acceptedBy = acceptedBy;
+    }
+
+    public User getCompletedBy() {
+	return completedBy;
+    }
+
+    public void setCompletedBy(User completedBy) {
+	this.completedBy = completedBy;
+    }
+
+    public User getClosedBy() {
+	return closedBy;
+    }
+
+    public void setClosedBy(User closedBy) {
+	this.closedBy = closedBy;
     }
 
     public abstract InsuranceProduct getProduct();

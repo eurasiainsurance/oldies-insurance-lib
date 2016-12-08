@@ -42,7 +42,7 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
 
     private UTMData utmData;
 
-    private User owner;
+    private User acceptedBy;
 
     // GENERATED
 
@@ -158,12 +158,12 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
 	this.utmData = utmData;
     }
 
-    public User getOwner() {
-	return owner;
+    public User getAcceptedBy() {
+	return acceptedBy;
     }
 
-    public void setOwner(User owner) {
-	this.owner = owner;
+    public void setAcceptedBy(User acceptedBy) {
+	this.acceptedBy = acceptedBy;
     }
 
     public abstract InsuranceProduct getProduct();

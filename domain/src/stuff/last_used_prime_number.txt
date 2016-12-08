@@ -13,7 +13,7 @@
       43 com.lapsa.insurance.domain.InsurantData
       47 com.lapsa.insurance.domain.policy.PolicyDriver
       53 com.lapsa.insurance.domain.policy.PolicyVehicle
-      59 com.lapsa.insurance.domain.crm.Manager
+      59 com.lapsa.insurance.domain.crm.User
       61 com.lapsa.insurance.domain.OriginData
       67 com.lapsa.insurance.domain.PensionerCertificateData
       71 com.lapsa.insurance.domain.PersonalData

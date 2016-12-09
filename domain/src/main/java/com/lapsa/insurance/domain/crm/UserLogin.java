@@ -4,7 +4,7 @@ import com.lapsa.insurance.domain.BaseEntity;
 
 public class UserLogin extends BaseEntity<Integer> {
     private static final long serialVersionUID = -3456756685893976599L;
-    private static final int PRIME = 164;
+    private static final int PRIME = 163;
     private static final int MULTIPLIER = PRIME;
 
     @Override

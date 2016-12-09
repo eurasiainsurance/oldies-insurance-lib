@@ -26,7 +26,7 @@ public class CascoRequest extends InsuranceRequest {
     private Casco casco = new Casco();
     private List<CascoRequestNotification> notifications = new ArrayList<>();
 
-    public void addNotification(CascoRequestNotification notification) {
+    public CascoRequestNotification addNotification(CascoRequestNotification notification) {
 	if (notification == null)
 	    throw new NullPointerException("Value must not be null");
 	if (notification.getCascoRequest() != null)
@@ -35,22 +35,22 @@ public class CascoRequest extends InsuranceRequest {
 	    notifications = new ArrayList<>();
 	notifications.add(notification);
 	notification.setCascoRequest(this);
+	return notification;
     }
 
-    public void removeNotification(CascoRequestNotification notification) {
+    public CascoRequestNotification removeNotification(CascoRequestNotification notification) {
 	if (notification == null)
 	    throw new NullPointerException("Value must not be null");
-	if (notifications == null) // nothing to remove from
-	    return;
-	notifications.remove(notification);
 	notification.setCascoRequest(null);
+	if (notifications != null) // nothing to remove from
+	    notifications.remove(notification);
+	return notification;
     }
 
     @Override
     public InsuranceProduct getProduct() {
 	return casco;
     }
-
 
     @Override
     public InsuranceProductType getProductType() {

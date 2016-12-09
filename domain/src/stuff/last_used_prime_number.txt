@@ -34,7 +34,7 @@
      149 com.lapsa.insurance.domain.notification.NewPolicyRequestCompanyNotification
      151 com.lapsa.insurance.domain.notification.NewPolicyRequestUserNotification
      157 com.lapsa.insurance.domain.casco.CascoVehicle
-     163 
+     163 com.lapsa.insurance.domain.crm.UserLogin
      167 
      173 
      179 

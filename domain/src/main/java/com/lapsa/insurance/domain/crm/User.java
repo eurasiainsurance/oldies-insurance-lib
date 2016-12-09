@@ -1,5 +1,8 @@
 package com.lapsa.insurance.domain.crm;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.lapsa.insurance.domain.BaseEntity;
 
 public class User extends BaseEntity<Integer> {
@@ -17,19 +20,39 @@ public class User extends BaseEntity<Integer> {
 	return MULTIPLIER;
     }
 
-    private String login;
     private String name;
     private String email;
 
+    private List<UserLogin> logins = new ArrayList<>();
+
+    public String getDefaultLogin() {
+	if (logins == null || logins.isEmpty())
+	    return null;
+	return logins.iterator().next().getName();
+    }
+
+    public UserLogin addLogin(UserLogin userLogin) {
+	if (userLogin == null)
+	    throw new NullPointerException("Value must not be null");
+	if (userLogin.getUser() != null)
+	    userLogin.getUser().removeLogin(userLogin);
+	if (logins == null)
+	    logins = new ArrayList<>();
+	logins.add(userLogin);
+	userLogin.setUser(this);
+	return userLogin;
+    }
+
+    public UserLogin removeLogin(UserLogin userLogin) {
+	if (userLogin == null)
+	    throw new NullPointerException("Value must not be null");
+	userLogin.setUser(null);
+	if (logins != null) // nothing to remove from
+	    logins.remove(userLogin);
+	return userLogin;
+    }
+
     // GENERATED
-
-    public String getLogin() {
-	return login;
-    }
-
-    public void setLogin(String login) {
-	this.login = login;
-    }
 
     public String getName() {
 	return name;
@@ -47,4 +70,11 @@ public class User extends BaseEntity<Integer> {
 	this.email = email;
     }
 
+    public List<UserLogin> getLogins() {
+	return logins;
+    }
+
+    public void setLogins(List<UserLogin> logins) {
+	this.logins = logins;
+    }
 }

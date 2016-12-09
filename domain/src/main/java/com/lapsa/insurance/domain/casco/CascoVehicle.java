@@ -30,7 +30,7 @@ public class CascoVehicle extends Vehicle {
     @NotNullValue
     @Min(message = "{com.lapsa.insurance.domain.casco.CascoVehicle.cost.Min.message}", value = 1000000)
     @Max(message = "{com.lapsa.insurance.domain.casco.CascoVehicle.cost.Max.message}", value = 52500000)
-    private Double cost = 0d;
+    private Double cost;
 
     @NotNullValue
     private CascoCarAgeClass carAgeClass;

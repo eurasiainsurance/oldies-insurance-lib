@@ -84,7 +84,7 @@ public class Casco extends InsuranceProduct {
 
     @NotNullValue
     @Min(message = "{com.lapsa.insurance.domain.casco.Casco.driverAndPassengerCount.Min.message}", value = 1)
-    private Integer driverAndPassengerCount = 1;
+    private Integer driverAndPassengerCount;
 
     public CascoDriver addDriver(CascoDriver driver) {
 	if (driver == null)

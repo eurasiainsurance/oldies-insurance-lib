@@ -23,7 +23,7 @@ public class PolicyRequest extends InsuranceRequest {
 	return MULTIPLIER;
     }
 
-    private Policy policy;
+    private Policy policy = new Policy();
     private List<PolicyRequestNotification> notifications = new ArrayList<>();
 
     public void addNotification(PolicyRequestNotification notification) {

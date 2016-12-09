@@ -23,7 +23,7 @@ public class CascoRequest extends InsuranceRequest {
 	return MULTIPLIER;
     }
 
-    private Casco casco;
+    private Casco casco = new Casco();
     private List<CascoRequestNotification> notifications = new ArrayList<>();
 
     public void addNotification(CascoRequestNotification notification) {

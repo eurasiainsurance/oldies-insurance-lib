@@ -46,6 +46,40 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
 
     private List<CompanyContactEmail> emailAddresses = new ArrayList<>();
 
+    public CompanyContactPhone addPhone(CompanyContactPhone phone) {
+	if (phone == null)
+	    throw new NullPointerException("Value must not be null");
+	if (phones == null)
+	    phones = new ArrayList<>();
+	phones.add(phone);
+	return phone;
+    }
+
+    public CompanyContactPhone removePhone(CompanyContactPhone phone) {
+	if (phone == null)
+	    throw new NullPointerException("Value must not be null");
+	if (phones != null)
+	    phones.remove(phone);
+	return phone;
+    }
+
+    public CompanyContactEmail addEmailAddress(CompanyContactEmail phone) {
+	if (phone == null)
+	    throw new NullPointerException("Value must not be null");
+	if (emailAddresses == null)
+	    emailAddresses = new ArrayList<>();
+	emailAddresses.add(phone);
+	return phone;
+    }
+
+    public CompanyContactEmail removeEmailAddress(CompanyContactEmail phone) {
+	if (phone == null)
+	    throw new NullPointerException("Value must not be null");
+	if (emailAddresses != null)
+	    emailAddresses.remove(phone);
+	return phone;
+    }
+
     // GENERATED
 
     public String getName() {

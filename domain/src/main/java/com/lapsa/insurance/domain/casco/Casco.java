@@ -86,6 +86,23 @@ public class Casco extends InsuranceProduct {
     @Min(message = "{com.lapsa.insurance.domain.casco.Casco.driverAndPassengerCount.Min.message}", value = 1)
     private Integer driverAndPassengerCount = 1;
 
+    public CascoDriver addDriver(CascoDriver driver) {
+	if (driver == null)
+	    throw new NullPointerException("Value must not be null");
+	if (insuredDrivers == null)
+	    insuredDrivers = new ArrayList<>();
+	insuredDrivers.add(driver);
+	return driver;
+    }
+
+    public CascoDriver removeDriver(CascoDriver driver) {
+	if (driver == null)
+	    throw new NullPointerException("Value must not be null");
+	if (insuredDrivers != null)
+	    insuredDrivers.remove(driver);
+	return driver;
+    }
+
     // GENERATED
 
     public boolean isCoverRoadAccidents() {

@@ -24,7 +24,7 @@ public class CascoRequest extends InsuranceRequest {
     }
 
     private Casco casco;
-    private List<CascoRequestNotification> notifications;
+    private List<CascoRequestNotification> notifications = new ArrayList<>();
 
     public void addNotification(CascoRequestNotification notification) {
 	if (notification == null)

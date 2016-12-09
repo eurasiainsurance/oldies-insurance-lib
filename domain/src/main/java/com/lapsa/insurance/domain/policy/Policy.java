@@ -1,5 +1,6 @@
 package com.lapsa.insurance.domain.policy;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.lapsa.insurance.domain.InsuranceProduct;
@@ -19,8 +20,8 @@ public class Policy extends InsuranceProduct {
 	return MULTIPLIER;
     }
 
-    private List<PolicyDriver> insuredDrivers;
-    private List<PolicyVehicle> insuredVehicles;
+    private List<PolicyDriver> insuredDrivers = new ArrayList<>();
+    private List<PolicyVehicle> insuredVehicles = new ArrayList<>();
 
     // GENERATED
 

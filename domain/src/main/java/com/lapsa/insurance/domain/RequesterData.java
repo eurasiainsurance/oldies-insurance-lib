@@ -46,6 +46,8 @@ public class RequesterData extends BaseDomain {
     @AssertTrue(message = "{com.lapsa.insurance.domain.InsuranceRequest.allowProcessPersonalData.AssertTrue.message}")
     private boolean allowProcessPersonalData;
 
+    private LocalizationLanguage preferLanguage;
+
     @NotNullValue
     @ValidPhoneNumber(areaCodeLength = 3, numberLength = 7)
     public String getPhoneString() {
@@ -53,8 +55,6 @@ public class RequesterData extends BaseDomain {
 	    return null;
 	return phone.getFormatted();
     }
-
-    private LocalizationLanguage preferLanguage;
 
     public void setPhoneString(String phoneString) {
 	try {

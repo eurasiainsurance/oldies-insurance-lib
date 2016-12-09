@@ -33,7 +33,7 @@ public class PrivilegerCertificateData extends BaseDomain {
     @ValidDateOfIssue
     private Date dateOfIssue;
 
-    private TwoSidedDocumentScan scan;
+    private TwoSidedDocumentScan scan = new TwoSidedDocumentScan();
 
     // GENERATED
 

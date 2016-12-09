@@ -1,5 +1,6 @@
 package com.lapsa.insurance.domain.casco;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.constraints.Min;
@@ -34,7 +35,7 @@ public class Casco extends InsuranceProduct {
     private CascoVehicle insuredVehicle;
 
     // информация о допущенных к управлению
-    private List<CascoDriver> insuredDrivers;
+    private List<CascoDriver> insuredDrivers = new ArrayList<>();
 
     // применяется ли франшиза на частичный ущерб
     private boolean deductiblePartialRequired;
@@ -83,7 +84,7 @@ public class Casco extends InsuranceProduct {
 
     @NotNullValue
     @Min(message = "{com.lapsa.insurance.domain.casco.Casco.driverAndPassengerCount.Min.message}", value = 1)
-    private Integer driverAndPassengerCount;
+    private Integer driverAndPassengerCount = 1;
 
     // GENERATED
 

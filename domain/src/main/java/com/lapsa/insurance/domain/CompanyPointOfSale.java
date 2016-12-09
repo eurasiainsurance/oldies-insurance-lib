@@ -1,5 +1,7 @@
 package com.lapsa.insurance.domain;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -26,7 +28,7 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
     @NotEmptyString
     private String name;
 
-    private Map<LocalizationLanguage, String> nameLocalization;
+    private Map<LocalizationLanguage, String> nameLocalization = new HashMap<>();
 
     private PostAddress address;
 
@@ -40,9 +42,9 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
 
     private boolean deliveryServicesAvailable;
 
-    private List<CompanyContactPhone> phones;
+    private List<CompanyContactPhone> phones = new ArrayList<>();
 
-    private List<CompanyContactEmail> emailAddresses;
+    private List<CompanyContactEmail> emailAddresses = new ArrayList<>();
 
     // GENERATED
 

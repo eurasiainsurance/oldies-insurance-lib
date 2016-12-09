@@ -24,7 +24,7 @@ public class PolicyRequest extends InsuranceRequest {
     }
 
     private Policy policy;
-    private List<PolicyRequestNotification> notifications;
+    private List<PolicyRequestNotification> notifications = new ArrayList<>();
 
     public void addNotification(PolicyRequestNotification notification) {
 	if (notification == null)

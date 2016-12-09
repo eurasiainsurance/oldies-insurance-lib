@@ -36,11 +36,11 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
     @NotNullValue
     private TransactionProblem transactionProblem;
 
-    private RequesterData requester;
-    private ObtainingData obtaining;
-    private PaymentData payment;
+    private RequesterData requester = new RequesterData();
+    private ObtainingData obtaining = new ObtainingData();
+    private PaymentData payment = new PaymentData();
 
-    private UTMData utmData;
+    private UTMData utmData = new UTMData();
 
     private User acceptedBy;
     private User completedBy;

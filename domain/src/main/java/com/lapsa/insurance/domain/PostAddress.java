@@ -1,5 +1,6 @@
 package com.lapsa.insurance.domain;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import com.lapsa.insurance.validation.NotEmptyString;
@@ -35,7 +36,7 @@ public class PostAddress extends BaseDomain {
     @NotEmptyString
     private String street;
 
-    private Map<LocalizationLanguage, String> streetLocalization;
+    private Map<LocalizationLanguage, String> streetLocalization = new HashMap<>();
 
     // GENERATED
 

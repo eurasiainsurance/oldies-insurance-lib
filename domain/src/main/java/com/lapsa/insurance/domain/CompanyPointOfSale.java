@@ -1,5 +1,7 @@
 package com.lapsa.insurance.domain;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -26,7 +28,7 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
     @NotEmptyString
     private String name;
 
-    private Map<LocalizationLanguage, String> nameLocalization;
+    private Map<LocalizationLanguage, String> nameLocalization = new HashMap<>();
 
     private PostAddress address;
 
@@ -40,9 +42,43 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
 
     private boolean deliveryServicesAvailable;
 
-    private List<CompanyContactPhone> phones;
+    private List<CompanyContactPhone> phones = new ArrayList<>();
 
-    private List<CompanyContactEmail> emailAddresses;
+    private List<CompanyContactEmail> emailAddresses = new ArrayList<>();
+
+    public CompanyContactPhone addPhone(CompanyContactPhone phone) {
+	if (phone == null)
+	    throw new NullPointerException("Value must not be null");
+	if (phones == null)
+	    phones = new ArrayList<>();
+	phones.add(phone);
+	return phone;
+    }
+
+    public CompanyContactPhone removePhone(CompanyContactPhone phone) {
+	if (phone == null)
+	    throw new NullPointerException("Value must not be null");
+	if (phones != null)
+	    phones.remove(phone);
+	return phone;
+    }
+
+    public CompanyContactEmail addEmailAddress(CompanyContactEmail phone) {
+	if (phone == null)
+	    throw new NullPointerException("Value must not be null");
+	if (emailAddresses == null)
+	    emailAddresses = new ArrayList<>();
+	emailAddresses.add(phone);
+	return phone;
+    }
+
+    public CompanyContactEmail removeEmailAddress(CompanyContactEmail phone) {
+	if (phone == null)
+	    throw new NullPointerException("Value must not be null");
+	if (emailAddresses != null)
+	    emailAddresses.remove(phone);
+	return phone;
+    }
 
     // GENERATED
 

@@ -23,10 +23,10 @@ public class PolicyRequest extends InsuranceRequest {
 	return MULTIPLIER;
     }
 
-    private Policy policy;
-    private List<PolicyRequestNotification> notifications;
+    private Policy policy = new Policy();
+    private List<PolicyRequestNotification> notifications = new ArrayList<>();
 
-    public void addNotification(PolicyRequestNotification notification) {
+    public PolicyRequestNotification addNotification(PolicyRequestNotification notification) {
 	if (notification == null)
 	    throw new NullPointerException("Value must not be null");
 	if (notification.getPolicyRequest() != null)
@@ -35,15 +35,16 @@ public class PolicyRequest extends InsuranceRequest {
 	    notifications = new ArrayList<>();
 	notifications.add(notification);
 	notification.setPolicyRequest(this);
+	return notification;
     }
 
-    public void removeNotification(PolicyRequestNotification notification) {
+    public PolicyRequestNotification removeNotification(PolicyRequestNotification notification) {
 	if (notification == null)
 	    throw new NullPointerException("Value must not be null");
-	if (notifications == null) // nothing to remove from
-	    return;
-	notifications.remove(notification);
 	notification.setPolicyRequest(null);
+	if (notifications != null) // nothing to remove from
+	    notifications.remove(notification);
+	return notification;
     }
 
     @Override

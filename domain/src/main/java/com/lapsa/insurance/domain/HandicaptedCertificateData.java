@@ -30,7 +30,7 @@ public class HandicaptedCertificateData extends BaseDomain {
     @NotNullValue
     private Date validTill;
 
-    private TwoSidedDocumentScan scan;
+    private TwoSidedDocumentScan scan = new TwoSidedDocumentScan();
 
     // GENERATED
 

@@ -1,4 +1,4 @@
-package com.lapsa.insurance.persistence.dao;
+package com.lapsa.insurance.dao;
 
 public class NotPersistedException extends Exception {
     private static final long serialVersionUID = 2017753590608651407L;

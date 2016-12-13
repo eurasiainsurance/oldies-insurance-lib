@@ -1,10 +1,10 @@
-package com.lapsa.insurance.persistence.dao;
+package com.lapsa.insurance.dao;
 
 import java.util.List;
 
 import com.lapsa.insurance.crm.RequestStatus;
+import com.lapsa.insurance.dao.filter.InsuranceRequestFitler;
 import com.lapsa.insurance.domain.InsuranceRequest;
-import com.lapsa.insurance.persistence.dao.filter.InsuranceRequestFitler;
 
 public interface GeneralInsuranceRequestDAO<T extends InsuranceRequest> extends GeneralDAO<T, Integer> {
 

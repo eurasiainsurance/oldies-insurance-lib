@@ -1,4 +1,4 @@
-package com.lapsa.insurance.persistence.dao.filter;
+package com.lapsa.insurance.dao.filter;
 
 import java.util.Date;
 

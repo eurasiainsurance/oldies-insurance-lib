@@ -1,4 +1,4 @@
-package com.lapsa.insurance.persistence.dao;
+package com.lapsa.insurance.dao;
 
 public class EntityNotFound extends Exception {
     private static final long serialVersionUID = 4444353365595112283L;

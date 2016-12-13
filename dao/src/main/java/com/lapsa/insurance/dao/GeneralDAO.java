@@ -1,4 +1,4 @@
-package com.lapsa.insurance.persistence.dao;
+package com.lapsa.insurance.dao;
 
 import java.util.List;
 

@@ -7,7 +7,7 @@
 		<version>1.7-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>insurance-persistence</artifactId>
+	<artifactId>insurance-dao</artifactId>
 	<packaging>jar</packaging>
 
 	<name>Insurance Lib : Persistence Core</name>

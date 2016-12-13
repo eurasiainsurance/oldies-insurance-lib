@@ -59,7 +59,7 @@
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
-				<artifactId>insurance-persistence</artifactId>
+				<artifactId>insurance-dao</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>

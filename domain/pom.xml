@@ -52,12 +52,6 @@
 			<optional>false</optional>
 		</dependency>
 		<dependency>
-			<groupId>com.lapsa.image-lib</groupId>
-			<artifactId>image-core</artifactId>
-			<scope>compile</scope>
-			<optional>false</optional>
-		</dependency>
-		<dependency>
 			<groupId>com.lapsa.fin-lib</groupId>
 			<artifactId>fin-core</artifactId>
 			<scope>compile</scope>

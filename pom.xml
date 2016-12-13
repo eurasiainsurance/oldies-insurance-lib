@@ -19,7 +19,7 @@
 		<module>validation</module>
 		<module>services</module>
 		<module>domain</module>
-		<module>persistence</module>
+		<module>dao</module>
 		<module>mesenger</module>
 		<module>faces</module>
 		<module>esbd</module>

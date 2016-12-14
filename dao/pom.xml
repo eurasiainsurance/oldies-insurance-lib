@@ -10,7 +10,7 @@
 	<artifactId>insurance-dao</artifactId>
 	<packaging>jar</packaging>
 
-	<name>Insurance Lib : Persistence Core</name>
+	<name>Insurance Lib : DAO API</name>
 
 	<dependencies>
 		<!-- own -->

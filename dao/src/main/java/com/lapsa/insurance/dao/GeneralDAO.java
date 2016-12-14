@@ -13,11 +13,4 @@ public interface GeneralDAO<T, I> {
 
     void saveAll(List<T> entities) throws PeristenceOperationFailed;
 
-    void enqueueSave(T entity);
-
-    void enqueueSaveAll(List<T> entities);
-
-    void flushQueued();
-
-
 }

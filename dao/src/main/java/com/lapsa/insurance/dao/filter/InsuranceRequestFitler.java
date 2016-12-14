@@ -41,7 +41,7 @@ public interface InsuranceRequestFitler {
 
     Date getCompletedBefore();
     
-    User getAccepdtedBy();
+    User getAcceptedBy();
 
     User getCompletedBy();
 }

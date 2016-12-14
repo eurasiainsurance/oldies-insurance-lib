@@ -9,6 +9,7 @@ import com.lapsa.insurance.crm.RequestStatus;
 import com.lapsa.insurance.crm.RequestType;
 import com.lapsa.insurance.crm.TransactionProblem;
 import com.lapsa.insurance.crm.TransactionStatus;
+import com.lapsa.insurance.domain.crm.User;
 import com.lapsa.insurance.elements.ObtainingMethod;
 import com.lapsa.insurance.elements.PaymentMethod;
 
@@ -39,4 +40,8 @@ public interface InsuranceRequestFitler {
     Date getCompletedAfter();
 
     Date getCompletedBefore();
+    
+    User getAccepdtedBy();
+
+    User getCompletedBy();
 }

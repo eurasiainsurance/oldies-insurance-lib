@@ -15,8 +15,6 @@ import com.lapsa.insurance.elements.PaymentMethod;
 
 public interface InsuranceRequestFitler {
 
-    Integer getId();
-
     String getIdMask();
 
     String getRequesterNameMask();

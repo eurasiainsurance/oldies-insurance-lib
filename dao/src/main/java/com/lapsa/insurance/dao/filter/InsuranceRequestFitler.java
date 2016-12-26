@@ -15,6 +15,10 @@ import com.lapsa.insurance.elements.PaymentMethod;
 
 public interface InsuranceRequestFitler {
 
+    Integer getId();
+
+    String getRequesterNameMask();
+
     RequestStatus getRequestStatus();
 
     RequestType getRequestType();
@@ -40,7 +44,7 @@ public interface InsuranceRequestFitler {
     Date getCompletedAfter();
 
     Date getCompletedBefore();
-    
+
     User getAcceptedBy();
 
     User getCompletedBy();

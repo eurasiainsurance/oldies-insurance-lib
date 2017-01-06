@@ -10,8 +10,8 @@ import javax.validation.ConstraintValidatorContext;
 public class ValidHumanNameConstraintValidator implements ConstraintValidator<ValidHumanName, String> {
 
     private static final String ENGLISH_PATTERN = "^[A-Z\\ \\-]+$";
-    private static final String RUSSIAN_PATTERN = "^[А-Я\\ \\-]+$";
-    private static final String KAZAKH_PATTERN = "^[А-ЯӘҒҚҢӨҰҮҺІ\\ \\-]+$";
+    private static final String RUSSIAN_PATTERN = "^[А-ЯЁё\\ \\-]+$";
+    private static final String KAZAKH_PATTERN = "^[А-ЯЁёӘҒҚҢӨҰҮҺІ\\ \\-]+$";
 
     private static final Map<String, Pattern> languagePatterns = new HashMap<>();
 

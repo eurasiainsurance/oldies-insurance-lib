@@ -19,7 +19,7 @@ public interface InsuranceRequestFitler {
 
     String getRequesterNameMask();
     
-    String getRequesterIDNumberMask();
+    String getRequesterIdNumberMask();
 
     RequestStatus getRequestStatus();
 

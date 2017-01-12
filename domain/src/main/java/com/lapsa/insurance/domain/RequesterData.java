@@ -6,6 +6,7 @@ import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidHumanName;
 import com.lapsa.internet.validators.ValidEmail;
+import com.lapsa.kz.idnumber.validators.ValidIdNumber;
 import com.lapsa.localization.LocalizationLanguage;
 import com.lapsa.phone.PhoneFormatException;
 import com.lapsa.phone.PhoneNumber;
@@ -36,6 +37,10 @@ public class RequesterData extends BaseDomain {
     @NotEmptyString
     @ValidEmail
     private String email;
+
+    @NotNullValue
+    @ValidIdNumber
+    private String idNumber;
 
     @NotNullValue
     @ValidPhoneNumber(areaCodeLength = 3, numberLength = 7)
@@ -87,6 +92,14 @@ public class RequesterData extends BaseDomain {
 
     public void setEmail(String email) {
 	this.email = email;
+    }
+
+    public String getIdNumber() {
+	return idNumber;
+    }
+
+    public void setIdNumber(String idNumber) {
+	this.idNumber = idNumber;
     }
 
     public LocalizationLanguage getPreferLanguage() {

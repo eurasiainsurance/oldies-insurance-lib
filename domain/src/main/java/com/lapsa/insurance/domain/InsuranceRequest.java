@@ -7,8 +7,8 @@ import com.lapsa.insurance.crm.RequestStatus;
 import com.lapsa.insurance.crm.RequestType;
 import com.lapsa.insurance.crm.TransactionProblem;
 import com.lapsa.insurance.crm.TransactionStatus;
-import com.lapsa.insurance.domain.crm.User;
 import com.lapsa.insurance.domain.crm.UTMData;
+import com.lapsa.insurance.domain.crm.User;
 import com.lapsa.insurance.elements.InsuranceProductType;
 import com.lapsa.insurance.validation.NotNullValue;
 
@@ -45,6 +45,8 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
     private User acceptedBy;
     private User completedBy;
     private User closedBy;
+
+    private String note;
 
     // GENERATED
 
@@ -182,6 +184,14 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
 
     public void setClosedBy(User closedBy) {
 	this.closedBy = closedBy;
+    }
+
+    public String getNote() {
+	return note;
+    }
+
+    public void setNote(String note) {
+	this.note = note;
     }
 
     public abstract InsuranceProduct getProduct();

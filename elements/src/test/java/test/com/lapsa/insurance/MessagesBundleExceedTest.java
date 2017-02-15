@@ -73,6 +73,8 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 	while (keys.hasMoreElements()) {
 	    String key = keys.nextElement();
 	    // CRM
+	    if (findByFullName(InsuranceRequestType.values(), key) != null)
+		continue;
 	    if (findByFullName(NotificationStatus.values(), key) != null)
 		continue;
 	    if (findByFullName(ObtainingStatus.values(), key) != null)
@@ -82,8 +84,6 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 	    if (findByFullName(ProgressStatus.values(), key) != null)
 		continue;
 	    if (findByFullName(RequestStatus.values(), key) != null)
-		continue;
-	    if (findByFullName(InsuranceRequestType.values(), key) != null)
 		continue;
 	    if (findByFullName(TransactionProblem.values(), key) != null)
 		continue;

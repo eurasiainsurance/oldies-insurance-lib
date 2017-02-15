@@ -1,11 +1,7 @@
 package com.lapsa.insurance.domain.policy;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.lapsa.insurance.domain.InsuranceProduct;
 import com.lapsa.insurance.domain.InsuranceRequest;
-import com.lapsa.insurance.domain.notification.PolicyRequestNotification;
 import com.lapsa.insurance.elements.InsuranceProductType;
 
 public class PolicyRequest extends InsuranceRequest {
@@ -24,28 +20,6 @@ public class PolicyRequest extends InsuranceRequest {
     }
 
     private Policy policy = new Policy();
-    private List<PolicyRequestNotification> notifications = new ArrayList<>();
-
-    public PolicyRequestNotification addNotification(PolicyRequestNotification notification) {
-	if (notification == null)
-	    throw new NullPointerException("Value must not be null");
-	if (notification.getPolicyRequest() != null)
-	    notification.getPolicyRequest().removeNotification(notification);
-	if (notifications == null)
-	    notifications = new ArrayList<>();
-	notifications.add(notification);
-	notification.setPolicyRequest(this);
-	return notification;
-    }
-
-    public PolicyRequestNotification removeNotification(PolicyRequestNotification notification) {
-	if (notification == null)
-	    throw new NullPointerException("Value must not be null");
-	notification.setPolicyRequest(null);
-	if (notifications != null) // nothing to remove from
-	    notifications.remove(notification);
-	return notification;
-    }
 
     @Override
     public InsuranceProduct getProduct() {
@@ -65,13 +39,5 @@ public class PolicyRequest extends InsuranceRequest {
 
     public void setPolicy(Policy policy) {
 	this.policy = policy;
-    }
-
-    public List<PolicyRequestNotification> getNotifications() {
-	return notifications;
-    }
-
-    public void setNotifications(List<PolicyRequestNotification> notifications) {
-	this.notifications = notifications;
     }
 }

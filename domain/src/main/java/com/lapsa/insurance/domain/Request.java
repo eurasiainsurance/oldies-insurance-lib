@@ -1,11 +1,14 @@
 package com.lapsa.insurance.domain;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import com.lapsa.insurance.crm.ProgressStatus;
 import com.lapsa.insurance.crm.RequestStatus;
 import com.lapsa.insurance.domain.crm.UTMData;
 import com.lapsa.insurance.domain.crm.User;
+import com.lapsa.insurance.domain.notification.RequestNotification;
 import com.lapsa.insurance.validation.NotNullValue;
 
 public abstract class Request extends BaseEntity<Integer> {
@@ -31,6 +34,29 @@ public abstract class Request extends BaseEntity<Integer> {
     private User closedBy;
 
     private String note;
+
+    private List<RequestNotification> notifications = new ArrayList<>();
+
+    public RequestNotification addNotification(RequestNotification notification) {
+	if (notification == null)
+	    throw new NullPointerException("Value must not be null");
+	if (notification.getRequest() != null)
+	    notification.getRequest().removeNotification(notification);
+	if (notifications == null)
+	    notifications = new ArrayList<>();
+	notifications.add(notification);
+	notification.setRequest(this);
+	return notification;
+    }
+
+    public RequestNotification removeNotification(RequestNotification notification) {
+	if (notification == null)
+	    throw new NullPointerException("Value must not be null");
+	notification.setRequest(null);
+	if (notifications != null) // nothing to remove from
+	    notifications.remove(notification);
+	return notification;
+    }
 
     // GENERATED
 
@@ -137,4 +163,14 @@ public abstract class Request extends BaseEntity<Integer> {
     public void setNote(String note) {
 	this.note = note;
     }
+
+    public List<RequestNotification> getNotifications() {
+	return notifications;
+    }
+
+    @Deprecated
+    public void setNotifications(List<RequestNotification> notifications) {
+	this.notifications = notifications;
+    }
+
 }

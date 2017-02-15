@@ -28,12 +28,12 @@ com.lapsa.insurance.crm.ProgressStatus.FINISHED   = Завершено
 com.lapsa.insurance.crm.RequestStatus.OPEN   = Открыто
 com.lapsa.insurance.crm.RequestStatus.CLOSED = Закрыто
 
-com.lapsa.insurance.crm.RequestType.ONLINE           = Он-лайн заявка
-com.lapsa.insurance.crm.RequestType.ONLINE.short     = Он-лайн
-com.lapsa.insurance.crm.RequestType.EXPRESS          = Экспресс заявка
-com.lapsa.insurance.crm.RequestType.EXPRESS.short    = Экспресс
-com.lapsa.insurance.crm.RequestType.UNCOMPLETE       = Незавершеная заявка (лид)
-com.lapsa.insurance.crm.RequestType.UNCOMPLETE.short = Лид
+com.lapsa.insurance.crm.InsuranceRequestType.ONLINE           = Он-лайн заявка
+com.lapsa.insurance.crm.InsuranceRequestType.ONLINE.short     = Он-лайн
+com.lapsa.insurance.crm.InsuranceRequestType.EXPRESS          = Экспресс заявка
+com.lapsa.insurance.crm.InsuranceRequestType.EXPRESS.short    = Экспресс
+com.lapsa.insurance.crm.InsuranceRequestType.UNCOMPLETE       = Незавершеная заявка (лид)
+com.lapsa.insurance.crm.InsuranceRequestType.UNCOMPLETE.short = Лид
 
 com.lapsa.insurance.crm.TransactionProblem.CANCELED_BY_CONSUMER = Отменено клиентом
 com.lapsa.insurance.crm.TransactionProblem.WRONG_DATA_PROVIDED  = Предоставлены неверные данные

@@ -1,18 +1,18 @@
 package test.com.lapsa.insurance.crm;
 
-import com.lapsa.insurance.crm.RequestType;
+import com.lapsa.insurance.crm.InsuranceRequestType;
 
 import test.com.lapsa.insurance.EnumTypeMessagesBundleTest;
 
-public class RequestTypeMessagesBundleTest extends EnumTypeMessagesBundleTest<RequestType> {
+public class RequestTypeMessagesBundleTest extends EnumTypeMessagesBundleTest<InsuranceRequestType> {
 
     @Override
-    protected RequestType[] getAllEnumValues() {
-	return RequestType.values();
+    protected InsuranceRequestType[] getAllEnumValues() {
+	return InsuranceRequestType.values();
     }
 
     @Override
     protected String getBundleBaseName() {
-	return RequestType.BUNDLE_BASENAME;
+	return InsuranceRequestType.BUNDLE_BASENAME;
     }
 }

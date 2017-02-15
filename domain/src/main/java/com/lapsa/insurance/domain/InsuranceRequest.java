@@ -4,7 +4,7 @@ import java.util.Date;
 
 import com.lapsa.insurance.crm.ProgressStatus;
 import com.lapsa.insurance.crm.RequestStatus;
-import com.lapsa.insurance.crm.RequestType;
+import com.lapsa.insurance.crm.InsuranceRequestType;
 import com.lapsa.insurance.crm.TransactionProblem;
 import com.lapsa.insurance.crm.TransactionStatus;
 import com.lapsa.insurance.domain.crm.UTMData;
@@ -25,7 +25,7 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
     private RequestStatus status = RequestStatus.OPEN;
 
     @NotNullValue
-    private RequestType type = RequestType.UNCOMPLETE;
+    private InsuranceRequestType type = InsuranceRequestType.UNCOMPLETE;
 
     @NotNullValue
     private ProgressStatus progressStatus = ProgressStatus.NEW;
@@ -98,11 +98,11 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
 	this.status = status;
     }
 
-    public RequestType getType() {
+    public InsuranceRequestType getType() {
 	return type;
     }
 
-    public void setType(RequestType type) {
+    public void setType(InsuranceRequestType type) {
 	this.type = type;
     }
 

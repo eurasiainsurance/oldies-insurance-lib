@@ -17,9 +17,9 @@ com.lapsa.insurance.crm.ProgressStatus.ON_PROCESS = На обработке
 com.lapsa.insurance.crm.ProgressStatus.ON_HOLD    = На паузе
 com.lapsa.insurance.crm.ProgressStatus.FINISHED   = Завершено
 
-com.lapsa.insurance.crm.RequestNotificationType.NEW_REQUEST_COMPANY_EMAIL_NOTIFICATION = Оповещение сотрудника компании по email при поступлении запроса
-com.lapsa.insurance.crm.RequestNotificationType.NEW_REQUEST_USER_EMAIL_NOTIFICATION    = Подтверждение заявителя по email при поступлении запроса
-com.lapsa.insurance.crm.RequestNotificationType.NEW_REQUEST_USER_PUSH_NOTIFICATION     = Оповещение сотрудника компании с помощью push при поступлении запроса
+com.lapsa.insurance.crm.RequestNotificationType.NEW_REQUEST_COMPANY_EMAIL_NOTIFICATION = Cотрудник при поступлении запроса (EMAIL)
+com.lapsa.insurance.crm.RequestNotificationType.NEW_REQUEST_USER_EMAIL_NOTIFICATION    = Клиент при поступлении запроса (EMAIL)
+com.lapsa.insurance.crm.RequestNotificationType.NEW_REQUEST_COMPANY_PUSH_NOTIFICATION  = Сотрудника при поступлении запроса (PUSH)
 
 com.lapsa.insurance.crm.RequestStatus.OPEN = Open
 com.lapsa.insurance.crm.RequestStatus.CLOSED = Closed

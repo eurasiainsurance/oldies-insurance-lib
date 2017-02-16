@@ -21,6 +21,18 @@ public class RequestNotification extends Notification {
     private RequestNotificationType type;
     private Request request;
 
+    public RequestNotification() {
+    }
+    
+    public RequestNotification(RequestNotificationType type) {
+	this.type = type;
+    }
+
+    public RequestNotification(RequestNotificationType type, Request request) {
+	this.type = type;
+	this.request = request;
+    }
+
     // GENERATED
 
     public RequestNotificationType getType() {

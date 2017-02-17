@@ -12,7 +12,7 @@ com.lapsa.insurance.crm.NotificationChannel.SMS   = SMS
 com.lapsa.insurance.crm.NotificationRecipientType.COMPANY   = Компания
 com.lapsa.insurance.crm.NotificationRecipientType.REQUESTER = Заявитель
 
-com.lapsa.insurance.crm.NotificationRequestStage.NEW_REQUEST = Получение заявки
+com.lapsa.insurance.crm.NotificationRequestStage.NEW_REQUEST = Новая заявка
 
 com.lapsa.insurance.crm.NotificationStatus.DONE         = Завершено
 com.lapsa.insurance.crm.NotificationStatus.PENDING      = В очереди

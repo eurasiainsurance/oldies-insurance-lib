@@ -1,6 +1,6 @@
 package com.lapsa.insurance.domain.notification;
 
-import com.lapsa.insurance.crm.RequestNotificationType;
+import com.lapsa.insurance.crm.NotificationRequestStage;
 import com.lapsa.insurance.domain.Request;
 
 public class RequestNotification extends Notification {
@@ -18,29 +18,29 @@ public class RequestNotification extends Notification {
 	return MULTIPLIER;
     }
 
-    private RequestNotificationType type;
+    private NotificationRequestStage requestStage;
     private Request request;
 
     public RequestNotification() {
     }
-    
-    public RequestNotification(RequestNotificationType type) {
-	this.type = type;
+
+    public RequestNotification(NotificationRequestStage requestStage) {
+	this.requestStage = requestStage;
     }
 
-    public RequestNotification(RequestNotificationType type, Request request) {
-	this.type = type;
+    public RequestNotification(NotificationRequestStage requestStage, Request request) {
+	this.requestStage = requestStage;
 	this.request = request;
     }
 
     // GENERATED
 
-    public RequestNotificationType getType() {
-	return type;
+    public NotificationRequestStage getRequestStage() {
+	return requestStage;
     }
 
-    public void setType(RequestNotificationType type) {
-	this.type = type;
+    public void setRequestStage(NotificationRequestStage requestStage) {
+	this.requestStage = requestStage;
     }
 
     public Request getRequest() {

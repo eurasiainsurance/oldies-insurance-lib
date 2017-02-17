@@ -2,6 +2,8 @@ package com.lapsa.insurance.domain.notification;
 
 import java.util.Date;
 
+import com.lapsa.insurance.crm.NotificationChannel;
+import com.lapsa.insurance.crm.NotificationRecipientType;
 import com.lapsa.insurance.crm.NotificationStatus;
 import com.lapsa.insurance.domain.BaseEntity;
 
@@ -12,6 +14,8 @@ public abstract class Notification extends BaseEntity<Integer> {
     private Date updated;
     private Date sent;
     private NotificationStatus status = NotificationStatus.PENDING;
+    private NotificationChannel channel;
+    private NotificationRecipientType recipientType;
 
     // GENERATED
 
@@ -45,5 +49,21 @@ public abstract class Notification extends BaseEntity<Integer> {
 
     public void setStatus(NotificationStatus status) {
 	this.status = status;
+    }
+
+    public NotificationChannel getChannel() {
+	return channel;
+    }
+
+    public void setChannel(NotificationChannel channel) {
+	this.channel = channel;
+    }
+
+    public NotificationRecipientType getRecipientType() {
+	return recipientType;
+    }
+
+    public void setRecipientType(NotificationRecipientType recipientType) {
+	this.recipientType = recipientType;
     }
 }

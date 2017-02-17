@@ -2,12 +2,8 @@ package com.lapsa.insurance.crm;
 
 import com.lapsa.insurance.ElementsBundleBase;
 
-public enum RequestNotificationType implements ElementsBundleBase {
-    NEW_REQUEST_USER_EMAIL_NOTIFICATION,
-    NEW_REQUEST_COMPANY_EMAIL_NOTIFICATION,
-    NEW_REQUEST_COMPANY_PUSH_NOTIFICATION,
-    //
-    ;
+public enum NotificationChannel implements ElementsBundleBase {
+    EMAIL, PUSH, SMS;
 
     @Override
     public String canonicalName() {

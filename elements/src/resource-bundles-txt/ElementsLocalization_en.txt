@@ -1,3 +1,16 @@
+com.lapsa.insurance.crm.InsuranceRequestType.ONLINE = On-line
+com.lapsa.insurance.crm.InsuranceRequestType.EXPRESS = Express
+com.lapsa.insurance.crm.InsuranceRequestType.UNCOMPLETE = Uncompleted
+
+com.lapsa.insurance.crm.NotificationChannel.EMAIL = E-mail
+com.lapsa.insurance.crm.NotificationChannel.PUSH  = Push
+com.lapsa.insurance.crm.NotificationChannel.SMS   = SMS
+
+com.lapsa.insurance.crm.NotificationRecipientType.COMPANY   = Компания
+com.lapsa.insurance.crm.NotificationRecipientType.REQUESTER = Заявитель
+
+com.lapsa.insurance.crm.NotificationRequestStage.NEW_REQUEST = Получение заявки
+
 com.lapsa.insurance.crm.NotificationStatus.DONE = Done
 com.lapsa.insurance.crm.NotificationStatus.PENDING = Pending
 com.lapsa.insurance.crm.NotificationStatus.NOT_REQUIRED = Not required
@@ -17,16 +30,8 @@ com.lapsa.insurance.crm.ProgressStatus.ON_PROCESS = На обработке
 com.lapsa.insurance.crm.ProgressStatus.ON_HOLD    = На паузе
 com.lapsa.insurance.crm.ProgressStatus.FINISHED   = Завершено
 
-com.lapsa.insurance.crm.RequestNotificationType.NEW_REQUEST_COMPANY_EMAIL_NOTIFICATION = Cотрудник при поступлении запроса (EMAIL)
-com.lapsa.insurance.crm.RequestNotificationType.NEW_REQUEST_USER_EMAIL_NOTIFICATION    = Клиент при поступлении запроса (EMAIL)
-com.lapsa.insurance.crm.RequestNotificationType.NEW_REQUEST_COMPANY_PUSH_NOTIFICATION  = Сотрудника при поступлении запроса (PUSH)
-
 com.lapsa.insurance.crm.RequestStatus.OPEN = Open
 com.lapsa.insurance.crm.RequestStatus.CLOSED = Closed
-
-com.lapsa.insurance.crm.InsuranceRequestType.ONLINE = On-line
-com.lapsa.insurance.crm.InsuranceRequestType.EXPRESS = Express
-com.lapsa.insurance.crm.InsuranceRequestType.UNCOMPLETE = Uncompleted
 
 com.lapsa.insurance.crm.TransactionProblem.CANCELED_BY_CONSUMER = Отменено клиентом
 com.lapsa.insurance.crm.TransactionProblem.WRONG_DATA_PROVIDED  = Предоставлены неверные данные

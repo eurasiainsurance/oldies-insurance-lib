@@ -17,6 +17,14 @@ public abstract class Notification extends BaseEntity<Integer> {
     private NotificationChannel channel;
     private NotificationRecipientType recipientType;
 
+    public Notification() {
+    }
+
+    public Notification(NotificationChannel channel, NotificationRecipientType recipientType) {
+	this.channel = channel;
+	this.recipientType = recipientType;
+    }
+    
     // GENERATED
 
     public Date getCreated() {

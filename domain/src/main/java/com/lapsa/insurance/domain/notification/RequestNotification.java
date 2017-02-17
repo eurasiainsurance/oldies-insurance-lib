@@ -1,5 +1,7 @@
 package com.lapsa.insurance.domain.notification;
 
+import com.lapsa.insurance.crm.NotificationChannel;
+import com.lapsa.insurance.crm.NotificationRecipientType;
 import com.lapsa.insurance.crm.NotificationRequestStage;
 import com.lapsa.insurance.domain.Request;
 
@@ -28,9 +30,10 @@ public class RequestNotification extends Notification {
 	this.requestStage = requestStage;
     }
 
-    public RequestNotification(NotificationRequestStage requestStage, Request request) {
+    public RequestNotification(NotificationChannel channel, NotificationRecipientType recipientType,
+	    NotificationRequestStage requestStage) {
+	super(channel, recipientType);
 	this.requestStage = requestStage;
-	this.request = request;
     }
 
     // GENERATED

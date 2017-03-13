@@ -5,19 +5,6 @@ com.lapsa.insurance.crm.InsuranceRequestType.EXPRESS.short    = Экспресс
 com.lapsa.insurance.crm.InsuranceRequestType.UNCOMPLETE       = Незавершеная заявка (лид)
 com.lapsa.insurance.crm.InsuranceRequestType.UNCOMPLETE.short = Лид
 
-com.lapsa.insurance.crm.NotificationChannel.EMAIL = E-mail
-com.lapsa.insurance.crm.NotificationChannel.PUSH  = Push
-com.lapsa.insurance.crm.NotificationChannel.SMS   = SMS
-
-com.lapsa.insurance.crm.NotificationRecipientType.COMPANY   = Компания
-com.lapsa.insurance.crm.NotificationRecipientType.REQUESTER = Заявитель
-
-com.lapsa.insurance.crm.NotificationRequestStage.NEW_REQUEST = Новая заявка
-
-com.lapsa.insurance.crm.NotificationStatus.DONE         = Завершено
-com.lapsa.insurance.crm.NotificationStatus.PENDING      = В очереди
-com.lapsa.insurance.crm.NotificationStatus.NOT_REQUIRED = Не требуется
-
 com.lapsa.insurance.crm.ObtainingStatus.PENDING         = Получение ожидается
 com.lapsa.insurance.crm.ObtainingStatus.PENDING.short   = ожидается
 com.lapsa.insurance.crm.ObtainingStatus.DONE            = Получено

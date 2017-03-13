@@ -1,6 +1,6 @@
 package com.lapsa.insurance.mesenger;
 
-public class NotificationFailed extends Exception {
+public class NotificationFailed extends RuntimeException {
 
     private static final long serialVersionUID = -5063540628264203040L;
 

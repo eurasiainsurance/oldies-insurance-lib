@@ -11,11 +11,9 @@ import org.junit.Test;
 
 import com.lapsa.insurance.ElementsBundleBase;
 import com.lapsa.insurance.crm.InsuranceRequestType;
-import com.lapsa.insurance.crm.NotificationStatus;
 import com.lapsa.insurance.crm.ObtainingStatus;
 import com.lapsa.insurance.crm.PaymentStatus;
 import com.lapsa.insurance.crm.ProgressStatus;
-import com.lapsa.insurance.crm.RequestNotificationType;
 import com.lapsa.insurance.crm.RequestStatus;
 import com.lapsa.insurance.crm.TransactionProblem;
 import com.lapsa.insurance.crm.TransactionStatus;
@@ -76,13 +74,9 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 	    // CRM
 	    if (findByFullName(InsuranceRequestType.values(), key) != null)
 		continue;
-	    if (findByFullName(NotificationStatus.values(), key) != null)
-		continue;
 	    if (findByFullName(ObtainingStatus.values(), key) != null)
 		continue;
 	    if (findByFullName(PaymentStatus.values(), key) != null)
-		continue;
-	    if (findByFullName(RequestNotificationType.values(), key) != null)
 		continue;
 	    if (findByFullName(ProgressStatus.values(), key) != null)
 		continue;

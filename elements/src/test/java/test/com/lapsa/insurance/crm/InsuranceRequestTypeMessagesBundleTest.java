@@ -4,7 +4,7 @@ import com.lapsa.insurance.crm.InsuranceRequestType;
 
 import test.com.lapsa.insurance.EnumTypeMessagesBundleTest;
 
-public class RequestTypeMessagesBundleTest extends EnumTypeMessagesBundleTest<InsuranceRequestType> {
+public class InsuranceRequestTypeMessagesBundleTest extends EnumTypeMessagesBundleTest<InsuranceRequestType> {
 
     @Override
     protected InsuranceRequestType[] getAllEnumValues() {

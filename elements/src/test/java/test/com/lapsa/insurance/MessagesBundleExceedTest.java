@@ -10,12 +10,11 @@ import java.util.ResourceBundle;
 import org.junit.Test;
 
 import com.lapsa.insurance.ElementsBundleBase;
-import com.lapsa.insurance.crm.NotificationStatus;
+import com.lapsa.insurance.crm.InsuranceRequestType;
 import com.lapsa.insurance.crm.ObtainingStatus;
 import com.lapsa.insurance.crm.PaymentStatus;
 import com.lapsa.insurance.crm.ProgressStatus;
 import com.lapsa.insurance.crm.RequestStatus;
-import com.lapsa.insurance.crm.RequestType;
 import com.lapsa.insurance.crm.TransactionProblem;
 import com.lapsa.insurance.crm.TransactionStatus;
 import com.lapsa.insurance.elements.CancelationReason;
@@ -73,7 +72,7 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 	while (keys.hasMoreElements()) {
 	    String key = keys.nextElement();
 	    // CRM
-	    if (findByFullName(NotificationStatus.values(), key) != null)
+	    if (findByFullName(InsuranceRequestType.values(), key) != null)
 		continue;
 	    if (findByFullName(ObtainingStatus.values(), key) != null)
 		continue;
@@ -82,8 +81,6 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 	    if (findByFullName(ProgressStatus.values(), key) != null)
 		continue;
 	    if (findByFullName(RequestStatus.values(), key) != null)
-		continue;
-	    if (findByFullName(RequestType.values(), key) != null)
 		continue;
 	    if (findByFullName(TransactionProblem.values(), key) != null)
 		continue;

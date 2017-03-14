@@ -2,10 +2,10 @@ package com.lapsa.insurance.crm;
 
 import com.lapsa.insurance.ElementsBundleBase;
 
-public enum NotificationStatus implements ElementsBundleBase {
-    PENDING, // Завершено
-    DONE, // В очереди
-    NOT_REQUIRED, // не требуется
+public enum InsuranceRequestType implements ElementsBundleBase {
+    EXPRESS, // экспресс
+    ONLINE, // он-лайн
+    UNCOMPLETE, // лид
     //
     ;
 

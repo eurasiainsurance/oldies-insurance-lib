@@ -1,34 +1,16 @@
 package com.lapsa.insurance.domain;
 
-import java.util.Date;
-
-import com.lapsa.insurance.crm.ProgressStatus;
-import com.lapsa.insurance.crm.RequestStatus;
-import com.lapsa.insurance.crm.RequestType;
+import com.lapsa.insurance.crm.InsuranceRequestType;
 import com.lapsa.insurance.crm.TransactionProblem;
 import com.lapsa.insurance.crm.TransactionStatus;
-import com.lapsa.insurance.domain.crm.UTMData;
-import com.lapsa.insurance.domain.crm.User;
 import com.lapsa.insurance.elements.InsuranceProductType;
 import com.lapsa.insurance.validation.NotNullValue;
 
-public abstract class InsuranceRequest extends BaseEntity<Integer> {
+public abstract class InsuranceRequest extends Request {
     private static final long serialVersionUID = 944531653617396366L;
 
-    private Date created = new Date();
-    private Date updated;
-    private Date accepted;
-    private Date completed;
-    private Date closed;
-
     @NotNullValue
-    private RequestStatus status = RequestStatus.OPEN;
-
-    @NotNullValue
-    private RequestType type = RequestType.UNCOMPLETE;
-
-    @NotNullValue
-    private ProgressStatus progressStatus = ProgressStatus.NEW;
+    private InsuranceRequestType type = InsuranceRequestType.UNCOMPLETE;
 
     @NotNullValue
     private TransactionStatus transactionStatus;
@@ -36,82 +18,21 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
     @NotNullValue
     private TransactionProblem transactionProblem;
 
-    private RequesterData requester = new RequesterData();
     private ObtainingData obtaining = new ObtainingData();
     private PaymentData payment = new PaymentData();
 
-    private UTMData utmData = new UTMData();
+    public abstract InsuranceProduct getProduct();
 
-    private User acceptedBy;
-    private User completedBy;
-    private User closedBy;
-
-    private String note;
+    public abstract InsuranceProductType getProductType();
 
     // GENERATED
 
-    public Date getCreated() {
-	return created;
-    }
-
-    public void setCreated(Date created) {
-	this.created = created;
-    }
-
-    public Date getUpdated() {
-	return updated;
-    }
-
-    public void setUpdated(Date updated) {
-	this.updated = updated;
-    }
-
-    public Date getClosed() {
-	return closed;
-    }
-
-    public void setClosed(Date closed) {
-	this.closed = closed;
-    }
-
-    public Date getAccepted() {
-	return accepted;
-    }
-
-    public void setAccepted(Date accepted) {
-	this.accepted = accepted;
-    }
-
-    public Date getCompleted() {
-	return completed;
-    }
-
-    public void setCompleted(Date completed) {
-	this.completed = completed;
-    }
-
-    public RequestStatus getStatus() {
-	return status;
-    }
-
-    public void setStatus(RequestStatus status) {
-	this.status = status;
-    }
-
-    public RequestType getType() {
+    public InsuranceRequestType getType() {
 	return type;
     }
 
-    public void setType(RequestType type) {
+    public void setType(InsuranceRequestType type) {
 	this.type = type;
-    }
-
-    public ProgressStatus getProgressStatus() {
-	return progressStatus;
-    }
-
-    public void setProgressStatus(ProgressStatus progressStatus) {
-	this.progressStatus = progressStatus;
     }
 
     public TransactionStatus getTransactionStatus() {
@@ -130,14 +51,6 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
 	this.transactionProblem = transactionProblem;
     }
 
-    public RequesterData getRequester() {
-	return requester;
-    }
-
-    public void setRequester(RequesterData requester) {
-	this.requester = requester;
-    }
-
     public ObtainingData getObtaining() {
 	return obtaining;
     }
@@ -153,49 +66,4 @@ public abstract class InsuranceRequest extends BaseEntity<Integer> {
     public void setPayment(PaymentData payment) {
 	this.payment = payment;
     }
-
-    public UTMData getUtmData() {
-	return utmData;
-    }
-
-    public void setUtmData(UTMData utmData) {
-	this.utmData = utmData;
-    }
-
-    public User getAcceptedBy() {
-	return acceptedBy;
-    }
-
-    public void setAcceptedBy(User acceptedBy) {
-	this.acceptedBy = acceptedBy;
-    }
-
-    public User getCompletedBy() {
-	return completedBy;
-    }
-
-    public void setCompletedBy(User completedBy) {
-	this.completedBy = completedBy;
-    }
-
-    public User getClosedBy() {
-	return closedBy;
-    }
-
-    public void setClosedBy(User closedBy) {
-	this.closedBy = closedBy;
-    }
-
-    public String getNote() {
-	return note;
-    }
-
-    public void setNote(String note) {
-	this.note = note;
-    }
-
-    public abstract InsuranceProduct getProduct();
-
-    public abstract InsuranceProductType getProductType();
-
 }

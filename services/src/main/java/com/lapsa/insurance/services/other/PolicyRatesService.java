@@ -27,7 +27,7 @@ public interface PolicyRatesService {
 
     double getVehicleAgeTypeRate(VehicleAgeClass vehicleAgeType);
 
-    double getInsuranceClassTypeRate(InsuranceClassType insuranceClassType);
+    double getInsuranceClassTypeRate(InsuranceClassType insuranceClassType, boolean temporaryEntry);
 
     double getPrivilegeRate(boolean hasPrivilege);
 }

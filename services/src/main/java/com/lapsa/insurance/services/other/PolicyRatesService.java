@@ -17,9 +17,9 @@ public interface PolicyRatesService {
 
     double getIsMajorCityCorrectionRate(boolean isMajorCity);
 
-    double getIsMajorKZCityCorrectionRate(KZCity city);
+    double getIsMajorCityCorrectionRate(KZCity city);
 
-    double getTotalAreaRate(KZArea area, KZCity city, boolean temporaryEntry);
+    double getTotalAreaRate(KZArea area, KZCity city, boolean temporaryEntry, boolean forcedMajorCity);
 
     double getVehicleTypeRate(VehicleClass vehicleType);
 

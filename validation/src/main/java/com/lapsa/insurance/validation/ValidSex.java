@@ -11,7 +11,7 @@ import javax.validation.Payload;
 
 import com.lapsa.insurance.elements.Sex;
 
-@Target({ METHOD, FIELD, ANNOTATION_TYPE })
+@Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER })
 @Retention(RUNTIME)
 @Constraint(validatedBy = ValidSexConstraintValidator.class)
 public @interface ValidSex {

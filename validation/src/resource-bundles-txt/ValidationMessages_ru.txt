@@ -4,6 +4,7 @@ com.lapsa.insurance.validation.NotEmptyString.message = Обязательное
 com.lapsa.insurance.validation.NotNullValue.message = Обязательное поле
 com.lapsa.insurance.validation.NotTooYoungYearOfIssue.message = Минимальный допустимый возраст составляет {minAge} лет
 com.lapsa.insurance.validation.NotTooOldYearOfIssue.message = Максимальный допустимый возраст составляет {maxAge} лет
+com.lapsa.insurance.validation.NotZeroAmount.message = Размер суммы должна быть больше ноля
 com.lapsa.insurance.validation.ValidDateOfBirth.message = Некорректная дата рождения
 com.lapsa.insurance.validation.ValidDateOfIssue.message = Некорректная дата выдачи
 com.lapsa.insurance.validation.ValidEnumerationValue.message = Некорректное значение

@@ -33,8 +33,6 @@ public class RequesterData extends BaseDomain {
     @ValidHumanName
     private String name;
 
-    @NotNullValue
-    @NotEmptyString
     @ValidEmail
     private String email;
 

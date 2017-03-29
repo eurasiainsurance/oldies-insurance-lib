@@ -22,7 +22,7 @@ public class ContactData extends BaseDomain {
     }
 
     @NotNullValue
-    @ValidPhoneNumber(areaCodeLength = 3, numberLength = 7)
+    @ValidPhoneNumber
     private PhoneNumber phone;
 
     @NotNullValue

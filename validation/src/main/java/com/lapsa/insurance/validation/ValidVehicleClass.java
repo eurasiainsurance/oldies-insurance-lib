@@ -11,7 +11,7 @@ import javax.validation.Payload;
 
 import com.lapsa.insurance.elements.VehicleClass;
 
-@Target({ METHOD, FIELD, ANNOTATION_TYPE })
+@Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER })
 @Retention(RUNTIME)
 @Constraint(validatedBy = ValidVehicleClassConstraintValidator.class)
 public @interface ValidVehicleClass {

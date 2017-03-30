@@ -3,7 +3,7 @@ package com.lapsa.insurance.domain;
 import com.lapsa.phone.PhoneNumber;
 import com.lapsa.phone.PhoneType;
 
-public class CompanyContactPhone extends BaseDomain {
+public class CompanyContactPhone extends BaseEntity<Integer> {
     private static final long serialVersionUID = -1005845698858843018L;
     private static final int PRIME = 7;
     private static final int MULTIPLIER = PRIME;

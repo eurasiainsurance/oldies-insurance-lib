@@ -8,7 +8,6 @@ import com.lapsa.insurance.validation.ValidHumanName;
 import com.lapsa.internet.validators.ValidEmail;
 import com.lapsa.kz.idnumber.validators.ValidIdNumber;
 import com.lapsa.localization.LocalizationLanguage;
-import com.lapsa.phone.PhoneFormatException;
 import com.lapsa.phone.PhoneNumber;
 import com.lapsa.phone.PhoneNumberFactoryProvider;
 import com.lapsa.phone.validators.ValidPhoneNumber;
@@ -33,8 +32,6 @@ public class RequesterData extends BaseDomain {
     @ValidHumanName
     private String name;
 
-    @NotNullValue
-    @NotEmptyString
     @ValidEmail
     private String email;
 
@@ -43,7 +40,7 @@ public class RequesterData extends BaseDomain {
     private String idNumber;
 
     @NotNullValue
-    @ValidPhoneNumber(areaCodeLength = 3, numberLength = 7)
+    @ValidPhoneNumber
     private PhoneNumber phone;
 
     private boolean allowSpam;
@@ -54,18 +51,17 @@ public class RequesterData extends BaseDomain {
     private LocalizationLanguage preferLanguage;
 
     @NotNullValue
-    @ValidPhoneNumber(areaCodeLength = 3, numberLength = 7)
+    @ValidPhoneNumber
     public String getPhoneString() {
 	if (phone == null)
 	    return null;
-	return phone.getFormatted();
+	return phone.getRaw();
     }
 
     public void setPhoneString(String phoneString) {
-	try {
+	phone = null;
+	if (phoneString != null && !phoneString.isEmpty())
 	    phone = PhoneNumberFactoryProvider.provideDefault().parse(phoneString);
-	} catch (PhoneFormatException ignored) {
-	}
     }
 
     // GENERATED

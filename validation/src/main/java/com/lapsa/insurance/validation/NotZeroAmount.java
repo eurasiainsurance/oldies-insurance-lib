@@ -11,17 +11,12 @@ import javax.validation.Payload;
 
 @Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER })
 @Retention(RUNTIME)
-@Constraint(validatedBy = ValidHumanNameConstraintValidator.class)
-public @interface ValidHumanName {
-
-    String message() default "{com.lapsa.insurance.validation.ValidHumanName.message}";
-
-    String[] languagesAllowed() default { "ru", "kk", "en" };
+@Constraint(validatedBy = NotZeroAmountConstraintValidator.class)
+public @interface NotZeroAmount {
+    String message() default "{com.lapsa.insurance.validation.NotZeroAmount.message}";
 
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
-
-    boolean trimSpaces() default true;
 
 }

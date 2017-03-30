@@ -11,7 +11,7 @@ import javax.validation.Payload;
 
 import com.lapsa.insurance.elements.IdentityCardType;
 
-@Target({ METHOD, FIELD, ANNOTATION_TYPE })
+@Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER })
 @Retention(RUNTIME)
 @Constraint(validatedBy = ValidIdentityCardTypeConstraintValidator.class)
 public @interface ValidIdentityCardType {

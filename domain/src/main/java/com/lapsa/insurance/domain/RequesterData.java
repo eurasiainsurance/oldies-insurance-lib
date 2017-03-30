@@ -2,7 +2,6 @@ package com.lapsa.insurance.domain;
 
 import javax.validation.constraints.AssertTrue;
 
-import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidHumanName;
 import com.lapsa.internet.validators.ValidEmail;
@@ -27,15 +26,12 @@ public class RequesterData extends BaseDomain {
 	return MULTIPLIER;
     }
 
-    @NotNullValue
-    @NotEmptyString
     @ValidHumanName
     private String name;
 
     @ValidEmail
     private String email;
 
-    @NotNullValue
     @ValidIdNumber
     private String idNumber;
 

@@ -5,6 +5,7 @@ import com.lapsa.insurance.ElementsBundleBase;
 public enum InsuranceRequestType implements ElementsBundleBase {
     EXPRESS, // экспресс
     ONLINE, // он-лайн
+    API, // получено через API веб-сервиса
     UNCOMPLETE, // лид
     //
     ;

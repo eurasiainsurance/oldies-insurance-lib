@@ -1,5 +1,7 @@
 com.lapsa.insurance.crm.InsuranceRequestType.ONLINE           = Он-лайн заявка
 com.lapsa.insurance.crm.InsuranceRequestType.ONLINE.short     = Он-лайн
+com.lapsa.insurance.crm.InsuranceRequestType.API              = Заявка через API веб-сервиса 
+com.lapsa.insurance.crm.InsuranceRequestType.API.short        = API
 com.lapsa.insurance.crm.InsuranceRequestType.EXPRESS          = Экспресс заявка
 com.lapsa.insurance.crm.InsuranceRequestType.EXPRESS.short    = Экспресс
 com.lapsa.insurance.crm.InsuranceRequestType.UNCOMPLETE       = Незавершеная заявка (лид)

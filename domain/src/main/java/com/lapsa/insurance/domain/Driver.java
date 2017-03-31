@@ -1,12 +1,10 @@
 package com.lapsa.insurance.domain;
 
-import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.kz.idnumber.validators.ValidIdNumber;
 
 public abstract class Driver extends BaseEntity<Integer> {
     private static final long serialVersionUID = -9161699848130198940L;
 
-    @NotNullValue
     @ValidIdNumber
     protected String idNumber;
 

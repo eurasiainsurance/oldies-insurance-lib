@@ -8,7 +8,6 @@ import com.lapsa.internet.validators.ValidEmail;
 import com.lapsa.kz.idnumber.validators.ValidIdNumber;
 import com.lapsa.localization.LocalizationLanguage;
 import com.lapsa.phone.PhoneNumber;
-import com.lapsa.phone.PhoneNumberFactoryProvider;
 import com.lapsa.phone.validators.ValidPhoneNumber;
 
 public class RequesterData extends BaseDomain {
@@ -45,20 +44,6 @@ public class RequesterData extends BaseDomain {
     private boolean allowProcessPersonalData;
 
     private LocalizationLanguage preferLanguage;
-
-    @NotNullValue
-    @ValidPhoneNumber
-    public String getPhoneString() {
-	if (phone == null)
-	    return null;
-	return phone.getRaw();
-    }
-
-    public void setPhoneString(String phoneString) {
-	phone = null;
-	if (phoneString != null && !phoneString.isEmpty())
-	    phone = PhoneNumberFactoryProvider.provideDefault().parse(phoneString);
-    }
 
     // GENERATED
 

@@ -63,12 +63,6 @@ public class PolicyDriver extends Driver {
 	return personalData.getDisplayName();
     }
 
-    @NotNullValue(message = "{com.lapsa.insurance.domain.policy.PolicyDriver.IdNumber.NotNull.message}")
-    @Override
-    public String getIdNumber() {
-	return super.getIdNumber();
-    }
-
     // GENERATED
 
     public InsuranceClassType getInsuranceClassType() {

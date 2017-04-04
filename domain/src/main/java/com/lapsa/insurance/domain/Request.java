@@ -26,6 +26,7 @@ public abstract class Request extends BaseEntity<Integer> {
 
     private UTMData utmData = new UTMData();
 
+    private User createdBy;
     private User acceptedBy;
     private User completedBy;
     private User closedBy;
@@ -56,6 +57,14 @@ public abstract class Request extends BaseEntity<Integer> {
 
     public void setClosed(Date closed) {
 	this.closed = closed;
+    }
+
+    public User getCreatedBy() {
+	return createdBy;
+    }
+
+    public void setCreatedBy(User createdBy) {
+	this.createdBy = createdBy;
     }
 
     public Date getAccepted() {

@@ -35,9 +35,13 @@ public interface RequestFilter {
 
     Date getCompletedBefore();
 
+    User getCreatedBy();
+
     User getAcceptedBy();
 
     User getCompletedBy();
+
+    User getClosedBy();
 
     // InsuranceRequest properties
 
@@ -54,4 +58,5 @@ public interface RequestFilter {
     TransactionStatus getTransactionStatus();
 
     TransactionProblem getTransactionProblem();
+
 }

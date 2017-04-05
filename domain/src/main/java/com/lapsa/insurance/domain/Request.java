@@ -10,7 +10,7 @@ import com.lapsa.insurance.validation.NotNullValue;
 
 public abstract class Request extends BaseEntity<Integer> {
     private static final long serialVersionUID = -4738852384873507942L;
-    private Date created = new Date();
+    private Date created;
     private Date updated;
     private Date accepted;
     private Date completed;

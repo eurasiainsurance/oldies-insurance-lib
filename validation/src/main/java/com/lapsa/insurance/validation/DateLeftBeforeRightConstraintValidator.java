@@ -3,19 +3,19 @@ package com.lapsa.insurance.validation;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class DateBeforeConstraintValidator implements ConstraintValidator<DateBefore, DateComparision> {
+public class DateLeftBeforeRightConstraintValidator implements ConstraintValidator<DateLeftBeforeRight, LocalDateComparision> {
 
     @Override
-    public void initialize(DateBefore constraintAnnotation) {
+    public void initialize(DateLeftBeforeRight constraintAnnotation) {
     }
 
     @Override
-    public boolean isValid(DateComparision value, ConstraintValidatorContext context) {
+    public boolean isValid(LocalDateComparision value, ConstraintValidatorContext context) {
 	if (value == null)
 	    return true;
-	if (value.leftDate() == null || value.rightDate() == null)
+	if (value.left() == null || value.right() == null)
 	    return true;
-	return value.leftDate().isBefore(value.rightDate());
+	return value.left().isBefore(value.right());
     }
 
 }

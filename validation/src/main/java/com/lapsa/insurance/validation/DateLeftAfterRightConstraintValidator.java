@@ -3,19 +3,37 @@ package com.lapsa.insurance.validation;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class DateAfterConstraintValidator implements ConstraintValidator<DateAfter, DateComparision> {
+public class DateLeftAfterRightConstraintValidator implements ConstraintValidator<DateLeftAfterRight, Object> {
 
     @Override
-    public void initialize(DateAfter constraintAnnotation) {
+    public void initialize(DateLeftAfterRight constraintAnnotation) {
     }
 
     @Override
-    public boolean isValid(DateComparision value, ConstraintValidatorContext context) {
+    public boolean isValid(Object value, ConstraintValidatorContext context) {
 	if (value == null)
 	    return true;
-	if (value.leftDate() == null || value.rightDate() == null)
+
+	if (value instanceof LocalDateComparision)
+	    return compare((LocalDateComparision) value);
+
+	if (value instanceof LocalDateTimeComparision)
+	    return compare((LocalDateTimeComparision) value);
+
+	return true;
+
+    }
+
+    private boolean compare(LocalDateTimeComparision value) {
+	if (value.left() == null || value.right() == null)
 	    return true;
-	return value.leftDate().isAfter(value.rightDate());
+	return value.left().isAfter(value.right());
+    }
+
+    private boolean compare(LocalDateComparision value) {
+	if (value.left() == null || value.right() == null)
+	    return true;
+	return value.left().isAfter(value.right());
     }
 
 }

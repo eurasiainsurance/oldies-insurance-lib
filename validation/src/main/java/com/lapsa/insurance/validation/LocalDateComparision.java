@@ -2,7 +2,7 @@ package com.lapsa.insurance.validation;
 
 import java.time.LocalDate;
 
-public interface DateComparision {
-    LocalDate leftDate();
-    LocalDate rightDate();
+public interface LocalDateComparision {
+    LocalDate left();
+    LocalDate right();
 }

@@ -1,5 +1,5 @@
-﻿com.lapsa.insurance.validation.DateAfter.message = В датах нарушена хронология. Первая дата должна быть раньше второй
-com.lapsa.insurance.validation.DateBefore.message = В датах нарушена хронология. Первая дата должна быть позже второй
+com.lapsa.insurance.validation.DateLeftAfterRight.message = В датах нарушена хронология. Первая дата должна быть раньше второй
+com.lapsa.insurance.validation.DateLeftBeforeRight.message = В датах нарушена хронология. Первая дата должна быть позже второй
 com.lapsa.insurance.validation.DaysAfterNow.message = Өте ерте күн
 com.lapsa.insurance.validation.DaysBeforeNow.message = Өте кеш күн
 com.lapsa.insurance.validation.NotEmptyString.message = Міндетті жол

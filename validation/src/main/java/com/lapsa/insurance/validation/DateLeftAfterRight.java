@@ -11,9 +11,9 @@ import javax.validation.Payload;
 
 @Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER })
 @Retention(RUNTIME)
-@Constraint(validatedBy = DateBeforeConstraintValidator.class)
-public @interface DateBefore {
-    String message() default "{com.lapsa.insurance.validation.DateBefore.message}";
+@Constraint(validatedBy = DateLeftAfterRightConstraintValidator.class)
+public @interface DateLeftAfterRight {
+    String message() default "{com.lapsa.insurance.validation.DateLeftAfterRight.message}";
 
     Class<?>[] groups() default {};
 

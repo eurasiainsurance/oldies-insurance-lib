@@ -4,6 +4,7 @@ public abstract class InsuranceProduct extends BaseEntity<Integer> {
     private static final long serialVersionUID = -9132371112866863979L;
 
     protected CalculationData calculation = new CalculationData();
+    protected InsurancePeriodData period;
 
     // GENERATED
 
@@ -15,4 +16,11 @@ public abstract class InsuranceProduct extends BaseEntity<Integer> {
 	this.calculation = calculation;
     }
 
+    public InsurancePeriodData getPeriod() {
+	return period;
+    }
+
+    public void setPeriod(InsurancePeriodData period) {
+	this.period = period;
+    }
 }

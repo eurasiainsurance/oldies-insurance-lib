@@ -3,6 +3,7 @@ package com.lapsa.insurance.services.other;
 import com.lapsa.insurance.elements.InsuranceClassType;
 import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredExpirienceClass;
+import com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory;
 import com.lapsa.insurance.elements.VehicleAgeClass;
 import com.lapsa.insurance.elements.VehicleClass;
 import com.lapsa.kz.country.KZArea;
@@ -12,6 +13,8 @@ public interface PolicyRatesService {
     double getBase();
 
     double getBaseRate();
+
+    double getPolicyTemporaryEntryTimeCategoryRate(PolicyTemporaryEntryTimeCategory timeCategory);
 
     double getRegionRate(KZArea region);
 

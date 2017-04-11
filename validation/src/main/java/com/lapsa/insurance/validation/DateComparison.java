@@ -21,4 +21,9 @@ public final class DateComparison implements TemporalComparison<Date> {
     public Date right() {
 	return right;
     }
+
+    @Override
+    public String toString() {
+	return String.format("%1$s, %2$s", left, right);
+    }
 }

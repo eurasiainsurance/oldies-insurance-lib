@@ -21,4 +21,9 @@ public final class CalendarComparison implements TemporalComparison<Calendar> {
     public Calendar right() {
 	return right;
     }
+
+    @Override
+    public String toString() {
+	return String.format("%1$s, %2$s", left, right);
+    }
 }

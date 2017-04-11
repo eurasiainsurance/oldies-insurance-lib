@@ -21,4 +21,9 @@ public final class LocalDateComparison implements TemporalComparison<LocalDate> 
     public LocalDate right() {
 	return right;
     }
+
+    @Override
+    public String toString() {
+	return String.format("%1$s, %2$s", left, right);
+    }
 }

@@ -1,9 +1,11 @@
-package com.lapsa.insurance.validation;
+package com.lapsa.insurance.validation.validators;
 
 import java.util.Date;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
+
+import com.lapsa.insurance.validation.ValidDateOfBirth;
 
 public class ValidDateOfBirthConstraintValidator implements ConstraintValidator<ValidDateOfBirth, Date> {
 

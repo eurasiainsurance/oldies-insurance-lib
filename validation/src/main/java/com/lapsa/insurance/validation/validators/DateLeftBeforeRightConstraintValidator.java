@@ -1,7 +1,10 @@
-package com.lapsa.insurance.validation;
+package com.lapsa.insurance.validation.validators;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
+
+import com.lapsa.insurance.validation.DateLeftBeforeRight;
+import com.lapsa.insurance.validation.LocalDateComparision;
 
 public class DateLeftBeforeRightConstraintValidator implements ConstraintValidator<DateLeftBeforeRight, LocalDateComparision> {
 

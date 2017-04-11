@@ -1,9 +1,10 @@
-package com.lapsa.insurance.validation;
+package com.lapsa.insurance.validation.validators;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 import com.lapsa.insurance.elements.Sex;
+import com.lapsa.insurance.validation.ValidSex;
 
 public class ValidSexConstraintValidator
 	implements ConstraintValidator<ValidSex, Sex> {

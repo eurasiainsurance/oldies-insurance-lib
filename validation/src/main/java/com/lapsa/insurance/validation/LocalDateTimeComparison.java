@@ -2,12 +2,12 @@ package com.lapsa.insurance.validation;
 
 import java.time.LocalDateTime;
 
-public final class LocalDateTimeComparision implements TemporalComparison<LocalDateTime> {
+public final class LocalDateTimeComparison implements TemporalComparison<LocalDateTime> {
 
     private final LocalDateTime left;
     private final LocalDateTime right;
 
-    public LocalDateTimeComparision(LocalDateTime left, LocalDateTime right) {
+    public LocalDateTimeComparison(LocalDateTime left, LocalDateTime right) {
 	this.left = left;
 	this.right = right;
     }

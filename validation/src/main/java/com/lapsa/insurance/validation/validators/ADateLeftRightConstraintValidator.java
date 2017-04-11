@@ -9,10 +9,10 @@ import java.time.LocalDateTime;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-import com.lapsa.insurance.validation.CalendarComparision;
-import com.lapsa.insurance.validation.DateComparision;
-import com.lapsa.insurance.validation.LocalDateComparision;
-import com.lapsa.insurance.validation.LocalDateTimeComparision;
+import com.lapsa.insurance.validation.CalendarComparison;
+import com.lapsa.insurance.validation.DateComparison;
+import com.lapsa.insurance.validation.LocalDateComparison;
+import com.lapsa.insurance.validation.LocalDateTimeComparison;
 import com.lapsa.insurance.validation.TemporalComparison;
 
 public abstract class ADateLeftRightConstraintValidator<A extends Annotation>
@@ -27,34 +27,34 @@ public abstract class ADateLeftRightConstraintValidator<A extends Annotation>
 	if (value == null)
 	    return true;
 
-	if (value instanceof CalendarComparision)
-	    return compare((CalendarComparision) value);
+	if (value instanceof CalendarComparison)
+	    return compare((CalendarComparison) value);
 
-	if (value instanceof DateComparision)
-	    return compare((DateComparision) value);
+	if (value instanceof DateComparison)
+	    return compare((DateComparison) value);
 
-	if (value instanceof LocalDateComparision)
-	    return compare((LocalDateComparision) value);
+	if (value instanceof LocalDateComparison)
+	    return compare((LocalDateComparison) value);
 
-	if (value instanceof LocalDateTimeComparision)
-	    return compare((LocalDateTimeComparision) value);
+	if (value instanceof LocalDateTimeComparison)
+	    return compare((LocalDateTimeComparison) value);
 
 	return true;
     }
 
-    private boolean compare(LocalDateTimeComparision value) {
+    private boolean compare(LocalDateTimeComparison value) {
 	return compare(value.left(), value.right());
     }
 
-    private boolean compare(LocalDateComparision value) {
+    private boolean compare(LocalDateComparison value) {
 	return compare(value.left(), value.right());
     }
 
-    private boolean compare(DateComparision value) {
+    private boolean compare(DateComparison value) {
 	return compare(toLocalDateTime(value.left()), toLocalDateTime(value.right()));
     }
 
-    private boolean compare(CalendarComparision value) {
+    private boolean compare(CalendarComparison value) {
 	return compare(toLocalDateTime(value.left()), toLocalDateTime(value.right()));
     }
 

@@ -2,12 +2,12 @@ package com.lapsa.insurance.validation;
 
 import java.util.Calendar;
 
-public final class CalendarComparision implements TemporalComparison<Calendar> {
+public final class CalendarComparison implements TemporalComparison<Calendar> {
 
     private final Calendar left;
     private final Calendar right;
 
-    public CalendarComparision(Calendar left, Calendar right) {
+    public CalendarComparison(Calendar left, Calendar right) {
 	this.left = left;
 	this.right = right;
     }

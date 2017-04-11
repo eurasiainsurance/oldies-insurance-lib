@@ -1,5 +1,7 @@
+com.lapsa.insurance.validation.DateFuture.message = Дата должна быть в будущем
 com.lapsa.insurance.validation.DateLeftAfterRight.message = В датах нарушена хронология. Первая дата должна быть раньше второй
 com.lapsa.insurance.validation.DateLeftBeforeRight.message = В датах нарушена хронология. Первая дата должна быть позже второй
+com.lapsa.insurance.validation.DatePast.message = Дата должна быть в прошлом
 com.lapsa.insurance.validation.DaysAfterNow.message = Слишком ранняя дата
 com.lapsa.insurance.validation.DaysBeforeNow.message = Слишком поздняя дата
 com.lapsa.insurance.validation.NotEmptyString.message = Обязательное поле

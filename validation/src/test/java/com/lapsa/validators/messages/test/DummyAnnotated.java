@@ -1,5 +1,9 @@
 package com.lapsa.validators.messages.test;
 
+import com.lapsa.insurance.validation.DateFuture;
+import com.lapsa.insurance.validation.DateLeftAfterRight;
+import com.lapsa.insurance.validation.DateLeftBeforeRight;
+import com.lapsa.insurance.validation.DatePast;
 import com.lapsa.insurance.validation.DaysAfterNow;
 import com.lapsa.insurance.validation.DaysBeforeNow;
 import com.lapsa.insurance.validation.Mode;
@@ -20,12 +24,16 @@ import com.lapsa.insurance.validation.ValidVehicleYearOfIssue;
 
 public interface DummyAnnotated {
 
+    @DateFuture
+    @DateLeftAfterRight
+    @DateLeftBeforeRight
+    @DatePast
     @DaysAfterNow(mode = Mode.MUST, value = 1)
     @DaysBeforeNow(mode = Mode.MUST, value = 1)
     @NotEmptyString
     @NotNullValue
-//    @NotTooOldYearOfIssue(maxAge = 1)
-//    @NotTooYoungYearOfIssue(minAge = 1)
+    // @NotTooOldYearOfIssue(maxAge = 1)
+    // @NotTooYoungYearOfIssue(minAge = 1)
     @ValidDateOfBirth
     @ValidDateOfIssue
     @ValidEnumerationValue

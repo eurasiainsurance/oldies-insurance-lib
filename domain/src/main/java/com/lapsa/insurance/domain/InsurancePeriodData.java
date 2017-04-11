@@ -29,18 +29,7 @@ public class InsurancePeriodData extends BaseDomain {
 
     @DateLeftBeforeRight
     public LocalDateComparision comparisionFromAndTo() {
-	return new LocalDateComparision() {
-	    @Override
-	    public LocalDate left() {
-		return from;
-	    }
-
-	    @Override
-	    public LocalDate right() {
-		return to;
-	    }
-
-	};
+	return new LocalDateComparision(from, to);
     }
 
     public LocalDate getFrom() {

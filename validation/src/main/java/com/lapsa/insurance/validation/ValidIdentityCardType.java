@@ -10,6 +10,7 @@ import javax.validation.Constraint;
 import javax.validation.Payload;
 
 import com.lapsa.insurance.elements.IdentityCardType;
+import com.lapsa.insurance.validation.validators.ValidIdentityCardTypeConstraintValidator;
 
 @Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER })
 @Retention(RUNTIME)

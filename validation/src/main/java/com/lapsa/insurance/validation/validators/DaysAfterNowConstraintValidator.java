@@ -1,4 +1,4 @@
-package com.lapsa.insurance.validation;
+package com.lapsa.insurance.validation.validators;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
@@ -6,6 +6,9 @@ import java.util.Date;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
+
+import com.lapsa.insurance.validation.DaysAfterNow;
+import com.lapsa.insurance.validation.Mode;
 
 public class DaysAfterNowConstraintValidator implements ConstraintValidator<DaysAfterNow, Date> {
 

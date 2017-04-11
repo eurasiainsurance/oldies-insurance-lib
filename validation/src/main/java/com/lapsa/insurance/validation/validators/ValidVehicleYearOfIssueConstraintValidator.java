@@ -1,9 +1,11 @@
-package com.lapsa.insurance.validation;
+package com.lapsa.insurance.validation.validators;
 
 import java.util.Calendar;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
+
+import com.lapsa.insurance.validation.ValidVehicleYearOfIssue;
 
 public class ValidVehicleYearOfIssueConstraintValidator implements ConstraintValidator<ValidVehicleYearOfIssue, Integer> {
 

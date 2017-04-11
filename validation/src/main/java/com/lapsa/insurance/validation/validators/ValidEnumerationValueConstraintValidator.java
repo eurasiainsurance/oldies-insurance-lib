@@ -1,7 +1,9 @@
-package com.lapsa.insurance.validation;
+package com.lapsa.insurance.validation.validators;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
+
+import com.lapsa.insurance.validation.ValidEnumerationValue;
 
 public class ValidEnumerationValueConstraintValidator
 	implements ConstraintValidator<ValidEnumerationValue, Enum<?>> {

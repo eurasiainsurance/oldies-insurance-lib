@@ -1,4 +1,4 @@
-package com.lapsa.insurance.validation;
+package com.lapsa.insurance.validation.validators;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,6 +6,8 @@ import java.util.regex.Pattern;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
+
+import com.lapsa.insurance.validation.ValidHumanName;
 
 public class ValidHumanNameConstraintValidator implements ConstraintValidator<ValidHumanName, String> {
 

@@ -1,43 +1,24 @@
 package com.lapsa.insurance.validation.validators;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
-import com.lapsa.insurance.validation.DateLeftAfterRight;
-import com.lapsa.insurance.validation.LocalDateComparision;
-import com.lapsa.insurance.validation.LocalDateTimeComparision;
+import com.lapsa.insurance.validation.DateLeftBeforeRight;
 
-public class DateLeftAfterRightConstraintValidator implements ConstraintValidator<DateLeftAfterRight, Object> {
+public class DateLeftAfterRightConstraintValidator extends ADateLeftRightConstraintValidator<DateLeftBeforeRight> {
 
     @Override
-    public void initialize(DateLeftAfterRight constraintAnnotation) {
+    protected boolean compare(LocalDateTime left, LocalDateTime right) {
+	if (left == null || right == null)
+	    return true;
+	return left.isAfter(right);
     }
 
     @Override
-    public boolean isValid(Object value, ConstraintValidatorContext context) {
-	if (value == null)
+    protected boolean compare(LocalDate left, LocalDate right) {
+	if (left == null || right == null)
 	    return true;
-
-	if (value instanceof LocalDateComparision)
-	    return compare((LocalDateComparision) value);
-
-	if (value instanceof LocalDateTimeComparision)
-	    return compare((LocalDateTimeComparision) value);
-
-	return true;
-
-    }
-
-    private boolean compare(LocalDateTimeComparision value) {
-	if (value.left() == null || value.right() == null)
-	    return true;
-	return value.left().isAfter(value.right());
-    }
-
-    private boolean compare(LocalDateComparision value) {
-	if (value.left() == null || value.right() == null)
-	    return true;
-	return value.left().isAfter(value.right());
+	return left.isAfter(right);
     }
 
 }

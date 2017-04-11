@@ -1,24 +1,23 @@
 package com.lapsa.insurance.validation.validators;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import com.lapsa.insurance.validation.DateLeftBeforeRight;
-import com.lapsa.insurance.validation.LocalDateComparision;
 
-public class DateLeftBeforeRightConstraintValidator implements ConstraintValidator<DateLeftBeforeRight, LocalDateComparision> {
+public class DateLeftBeforeRightConstraintValidator extends ADateLeftRightConstraintValidator<DateLeftBeforeRight> {
 
     @Override
-    public void initialize(DateLeftBeforeRight constraintAnnotation) {
+    protected boolean compare(LocalDateTime left, LocalDateTime right) {
+	if (left == null || right == null)
+	    return true;
+	return left.isBefore(right);
     }
 
     @Override
-    public boolean isValid(LocalDateComparision value, ConstraintValidatorContext context) {
-	if (value == null)
+    protected boolean compare(LocalDate left, LocalDate right) {
+	if (left == null || right == null)
 	    return true;
-	if (value.left() == null || value.right() == null)
-	    return true;
-	return value.left().isBefore(value.right());
+	return left.isBefore(right);
     }
-
 }

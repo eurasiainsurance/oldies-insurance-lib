@@ -28,7 +28,9 @@ public class InsurancePeriodData extends BaseDomain {
     private LocalDate to;
 
     @DateLeftBeforeRight
-    public LocalDateComparison comparisionFromAndTo() {
+    // method must be a getter (name begins with "get"). validation is not
+    // processed if not
+    public LocalDateComparison getComparision() {
 	return new LocalDateComparison(from, to);
     }
 

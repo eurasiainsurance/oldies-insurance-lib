@@ -1,9 +1,10 @@
-package com.lapsa.insurance.validation;
+package com.lapsa.insurance.validation.validators;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 import com.lapsa.insurance.elements.VehicleAgeClass;
+import com.lapsa.insurance.validation.ValidVehicleAgeClass;
 
 public class ValidVehicleAgeClassConstraintValidator
 	implements ConstraintValidator<ValidVehicleAgeClass, VehicleAgeClass> {

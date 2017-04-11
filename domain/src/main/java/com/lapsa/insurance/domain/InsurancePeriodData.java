@@ -3,7 +3,7 @@ package com.lapsa.insurance.domain;
 import java.time.LocalDate;
 
 import com.lapsa.insurance.validation.DateLeftBeforeRight;
-import com.lapsa.insurance.validation.LocalDateComparision;
+import com.lapsa.insurance.validation.LocalDateComparison;
 import com.lapsa.insurance.validation.NotNullValue;
 
 public class InsurancePeriodData extends BaseDomain {
@@ -28,19 +28,10 @@ public class InsurancePeriodData extends BaseDomain {
     private LocalDate to;
 
     @DateLeftBeforeRight
-    public LocalDateComparision comparisionFromAndTo() {
-	return new LocalDateComparision() {
-	    @Override
-	    public LocalDate left() {
-		return from;
-	    }
-
-	    @Override
-	    public LocalDate right() {
-		return to;
-	    }
-
-	};
+    // method must be a getter (name begins with "get"). validation is not
+    // processed if not
+    public LocalDateComparison getComparision() {
+	return new LocalDateComparison(from, to);
     }
 
     public LocalDate getFrom() {

@@ -1,9 +1,10 @@
-package com.lapsa.insurance.validation;
+package com.lapsa.insurance.validation.validators;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 import com.lapsa.insurance.elements.IdentityCardType;
+import com.lapsa.insurance.validation.ValidIdentityCardType;
 
 public class ValidIdentityCardTypeConstraintValidator
 	implements ConstraintValidator<ValidIdentityCardType, IdentityCardType> {

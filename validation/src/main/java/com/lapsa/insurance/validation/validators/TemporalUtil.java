@@ -1,4 +1,4 @@
-package com.lapsa.insurance.validation.constr;
+package com.lapsa.insurance.validation.validators;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

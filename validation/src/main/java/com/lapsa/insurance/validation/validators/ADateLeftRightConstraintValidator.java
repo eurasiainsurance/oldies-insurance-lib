@@ -1,6 +1,6 @@
 package com.lapsa.insurance.validation.validators;
 
-import static com.lapsa.insurance.validation.validators.TemporalUtil.*;
+import static com.lapsa.utils.TemporalUtils.*;
 
 import java.lang.annotation.Annotation;
 import java.time.LocalDate;

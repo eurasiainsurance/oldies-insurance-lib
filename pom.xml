@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.lapsa.maven.pom</groupId>
@@ -9,7 +10,7 @@
 
 	<groupId>com.lapsa.insurance-lib</groupId>
 	<artifactId>parent</artifactId>
-	<version>1.10.2-SNAPSHOT</version>
+	<version>1.11-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Insurance Lib</name>
@@ -32,6 +33,7 @@
 		<fin-lib.version>1.1.0.1</fin-lib.version>
 		<image-lib.version>1.1</image-lib.version>
 		<donkeyfaces-lib.version>1.2.2</donkeyfaces-lib.version>
+		<lapsa-lib.version>1.3-SNAPSHOT</lapsa-lib.version>
 	</properties>
 
 	<dependencyManagement>
@@ -77,7 +79,7 @@
 				<artifactId>insurance-esbd</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-			<!-- internal -->
+			<!-- internal kz -->
 			<dependency>
 				<groupId>com.lapsa.kz-lib</groupId>
 				<artifactId>kz-core</artifactId>
@@ -88,6 +90,7 @@
 				<artifactId>kz-eelib</artifactId>
 				<version>${kz-lib.version}</version>
 			</dependency>
+			<!-- internal international -->
 			<dependency>
 				<groupId>com.lapsa.international-lib</groupId>
 				<artifactId>international-core</artifactId>
@@ -98,16 +101,19 @@
 				<artifactId>international-eelib</artifactId>
 				<version>${international-lib.version}</version>
 			</dependency>
+			<!-- internal image -->
 			<dependency>
 				<groupId>com.lapsa.image-lib</groupId>
 				<artifactId>image-core</artifactId>
 				<version>${image-lib.version}</version>
 			</dependency>
+			<!-- internal fin -->
 			<dependency>
 				<groupId>com.lapsa.fin-lib</groupId>
 				<artifactId>fin-core</artifactId>
 				<version>${fin-lib.version}</version>
 			</dependency>
+			<!-- internal donkeyfaces -->
 			<dependency>
 				<groupId>com.lapsa.donkeyfaces-lib</groupId>
 				<artifactId>donkeyfaces-model</artifactId>
@@ -117,6 +123,12 @@
 				<groupId>com.lapsa.donkeyfaces-lib</groupId>
 				<artifactId>donkeyfaces-validation</artifactId>
 				<version>${donkeyfaces-lib.version}</version>
+			</dependency>
+			<!-- internal lapsa -->
+			<dependency>
+				<groupId>com.lapsa.lapsa-lib</groupId>
+				<artifactId>lapsa-utils</artifactId>
+				<version>${lapsa-lib.version}</version>
 			</dependency>
 			<!-- external -->
 			<dependency>

@@ -9,7 +9,7 @@
 
 	<groupId>com.lapsa.insurance-lib</groupId>
 	<artifactId>parent</artifactId>
-	<version>1.10</version>
+	<version>1.10.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Insurance Lib</name>

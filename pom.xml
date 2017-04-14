@@ -18,6 +18,7 @@
 	<modules>
 		<module>elements</module>
 		<module>validation</module>
+		<module>security</module>
 		<module>services</module>
 		<module>domain</module>
 		<module>dao</module>
@@ -47,6 +48,11 @@
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>insurance-validation</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>insurance-security</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>

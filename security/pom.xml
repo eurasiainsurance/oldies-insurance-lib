@@ -11,4 +11,14 @@
 	<packaging>jar</packaging>
 
 	<name>Insurance Lib : Security Core</name>
+
+	<dependencies>
+		<!-- JavaEE -->
+		<dependency>
+			<groupId>javax.faces</groupId>
+			<artifactId>javax.faces-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
 </project>

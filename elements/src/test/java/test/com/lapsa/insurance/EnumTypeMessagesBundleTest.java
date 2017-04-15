@@ -1,9 +1,9 @@
 package test.com.lapsa.insurance;
 
-import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
 import java.util.Locale;
+import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 import org.junit.Test;
@@ -33,8 +33,12 @@ public abstract class EnumTypeMessagesBundleTest<T extends Enum<?>> extends Base
 	Locale locale = getLocale(languageTag);
 	ResourceBundle resourceBundle = getResourceBundle(bundleBaseName, locale);
 	for (T c : getAllEnumValues()) {
-	    String name = resourceBundle.getString(String.format("%s.%s", c.getClass().getName(), c.name()));
-	    assertThat(name, not(nullValue()));
+	    String key = String.format("%s.%s", c.getClass().getName(), c.name());
+	    try {
+		resourceBundle.getString(String.format("%s.%s", c.getClass().getName(), c.name()));
+	    } catch (MissingResourceException e) {
+		fail(String.format("Missing key %1$s", key));
+	    }
 	}
     }
 }

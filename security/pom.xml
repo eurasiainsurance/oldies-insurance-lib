@@ -14,6 +14,13 @@
 	<name>Insurance Lib : Security Core</name>
 
 	<dependencies>
+		<!-- internal lapsa -->
+		<dependency>
+			<groupId>com.lapsa.lapsa-lib</groupId>
+			<artifactId>lapsa-utils</artifactId>
+			<scope>compile</scope>
+			<optional>false</optional>
+		</dependency>
 		<!-- JavaEE -->
 		<dependency>
 			<groupId>javax.faces</groupId>

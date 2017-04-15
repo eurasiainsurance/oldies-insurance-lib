@@ -1,29 +1,31 @@
 package com.lapsa.insurance.security;
 
-public enum SecurityRoleGroup implements RoleGroup {
+import com.lapsa.utils.security.RoleGroup;
 
-    VIEW_OWN_OWNED(SecurityRole.PARTNER),
+public enum InsuranceRoleGroup implements RoleGroup {
+
+    VIEW_OWN_OWNED(InsuranceRole.PARTNER),
 
     VIEWERS(
-	    SecurityRole.PARTNER,
-	    SecurityRole.REPORTER,
-	    SecurityRole.SPECIALIST,
-	    SecurityRole.SUPERVISOR),
+	    InsuranceRole.PARTNER,
+	    InsuranceRole.REPORTER,
+	    InsuranceRole.SPECIALIST,
+	    InsuranceRole.SUPERVISOR),
 
     CHANGERS(
-	    SecurityRole.SPECIALIST,
-	    SecurityRole.SUPERVISOR),
+	    InsuranceRole.SPECIALIST,
+	    InsuranceRole.SUPERVISOR),
 
-    CLOSERS(SecurityRole.SUPERVISOR);
+    CLOSERS(InsuranceRole.SUPERVISOR);
 
-    private final SecurityRole[] roles;
+    private final InsuranceRole[] roles;
 
-    private SecurityRoleGroup(SecurityRole... roles) {
+    private InsuranceRoleGroup(InsuranceRole... roles) {
 	this.roles = roles;
     }
 
     @Override
-    public SecurityRole[] getRoles() {
+    public InsuranceRole[] getRoles() {
 	return roles;
     }
 }

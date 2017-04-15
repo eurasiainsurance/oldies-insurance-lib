@@ -1,8 +1,8 @@
 package com.lapsa.insurance.security;
 
-import com.lapsa.utils.security.RoleGroup;
+import com.lapsa.utils.security.SecurityRoleGroup;
 
-public enum InsuranceRoleGroup implements RoleGroup {
+public enum InsuranceRoleGroup implements SecurityRoleGroup {
 
     VIEW_OWN_OWNED(InsuranceRole.PARTNER),
 

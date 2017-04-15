@@ -1,8 +1,8 @@
 package com.lapsa.insurance.security;
 
-import com.lapsa.utils.security.Role;
+import com.lapsa.utils.security.SecurityRole;
 
-public final class InsuranceRole implements Role {
+public final class InsuranceRole implements SecurityRole {
 
     public static final String PARTNER_NAME = "partner";
     public static final String SUPERVISOR_NAME = "supervisor";
@@ -23,8 +23,8 @@ public final class InsuranceRole implements Role {
     }
 
     @Override
-    public Role[] getRoles() {
-	return new Role[] { this };
+    public SecurityRole[] getRoles() {
+	return new SecurityRole[] { this };
     }
 
     @Override

@@ -4,19 +4,18 @@ import com.lapsa.utils.security.SecurityRoleGroup;
 
 public enum InsuranceRoleGroup implements SecurityRoleGroup {
 
-    VIEW_OWN_OWNED(InsuranceRole.PARTNER),
+    VIEW_OWN_OWNED(InsuranceRole.AGENT_ROLE),
 
     VIEWERS(
-	    InsuranceRole.PARTNER,
-	    InsuranceRole.REPORTER,
-	    InsuranceRole.SPECIALIST,
-	    InsuranceRole.SUPERVISOR),
+	    InsuranceRole.AGENT_ROLE,
+	    InsuranceRole.SPECIALIST_ROLE,
+	    InsuranceRole.ADMIN_ROLE),
 
     CHANGERS(
-	    InsuranceRole.SPECIALIST,
-	    InsuranceRole.SUPERVISOR),
+	    InsuranceRole.SPECIALIST_ROLE,
+	    InsuranceRole.ADMIN_ROLE),
 
-    CLOSERS(InsuranceRole.SUPERVISOR);
+    CLOSERS(InsuranceRole.ADMIN_ROLE);
 
     private final InsuranceRole[] roles;
 

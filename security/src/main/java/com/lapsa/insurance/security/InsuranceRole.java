@@ -4,17 +4,13 @@ import com.lapsa.utils.security.SecurityRole;
 
 public final class InsuranceRole implements SecurityRole {
 
-    public static final String PARTNER_NAME = "partner";
-    public static final String SUPERVISOR_NAME = "supervisor";
-    public static final String SPECIALIST_NAME = "specialist";
-    public static final String REPORTER_NAME = "reporter";
-    public static final String APIUSER_NAME = "apiuser";
+    public static final String ADMIN = "admin";
+    public static final String SPECIALIST = "specialist";
+    public static final String AGENT = "agent";
 
-    public static InsuranceRole APIUSER = new InsuranceRole(APIUSER_NAME);
-    public static InsuranceRole REPORTER = new InsuranceRole(REPORTER_NAME);
-    public static InsuranceRole SPECIALIST = new InsuranceRole(SPECIALIST_NAME);
-    public static InsuranceRole SUPERVISOR = new InsuranceRole(SUPERVISOR_NAME);
-    public static InsuranceRole PARTNER = new InsuranceRole(PARTNER_NAME);
+    public static InsuranceRole ADMIN_ROLE = new InsuranceRole(ADMIN);
+    public static InsuranceRole SPECIALIST_ROLE = new InsuranceRole(SPECIALIST);
+    public static InsuranceRole AGENT_ROLE = new InsuranceRole(AGENT);
 
     private final String name;
 

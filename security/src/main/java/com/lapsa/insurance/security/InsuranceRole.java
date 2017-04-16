@@ -32,4 +32,21 @@ public final class InsuranceRole implements SecurityRole {
     public String name() {
 	return name;
     }
+
+    @Override
+    public int hashCode() {
+	return 17 * name.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	if (obj == null)
+	    return false;
+	if (obj == this)
+	    return true;
+	if (!(obj instanceof InsuranceRole))
+	    return false;
+	InsuranceRole that = (InsuranceRole) obj;
+	return name.equals(that.name);
+    }
 }

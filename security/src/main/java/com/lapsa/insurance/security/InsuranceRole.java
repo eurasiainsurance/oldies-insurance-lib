@@ -35,7 +35,7 @@ public final class InsuranceRole implements SecurityRole {
 
     @Override
     public int hashCode() {
-	return 17 * name.hashCode();
+	return InsuranceRole.class.hashCode() * 17 * name.hashCode();
     }
 
     @Override

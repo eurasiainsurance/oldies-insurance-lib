@@ -1,5 +1,7 @@
 package com.lapsa.insurance.security;
 
+import java.util.StringJoiner;
+
 import com.lapsa.utils.security.SecurityRoleGroup;
 
 public enum InsuranceRoleGroup implements SecurityRoleGroup {
@@ -26,5 +28,13 @@ public enum InsuranceRoleGroup implements SecurityRoleGroup {
     @Override
     public InsuranceRole[] getRoles() {
 	return roles;
+    }
+
+    @Override
+    public String toString() {
+	StringJoiner sj = new StringJoiner(", ", "[", "]");
+	for (InsuranceRole r : roles)
+	    sj.add(r.toString());
+	return sj.toString();
     }
 }

@@ -19,6 +19,11 @@ public final class InsuranceRole implements SecurityRole {
     }
 
     @Override
+    public String toString() {
+	return name;
+    }
+
+    @Override
     public SecurityRole[] getRoles() {
 	return new SecurityRole[] { this };
     }
@@ -27,5 +32,4 @@ public final class InsuranceRole implements SecurityRole {
     public String name() {
 	return name;
     }
-
 }

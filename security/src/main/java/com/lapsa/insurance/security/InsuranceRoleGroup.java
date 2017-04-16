@@ -6,7 +6,7 @@ import com.lapsa.utils.security.SecurityRoleGroup;
 
 public enum InsuranceRoleGroup implements SecurityRoleGroup {
 
-    VIEW_OWN_OWNED(InsuranceRole.AGENT_ROLE),
+    VIEW_OWNED_ONLY(InsuranceRole.AGENT_ROLE),
 
     VIEWERS(
 	    InsuranceRole.AGENT_ROLE,

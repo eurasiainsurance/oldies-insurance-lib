@@ -7,12 +7,13 @@ import com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory;
 import com.lapsa.insurance.elements.VehicleAgeClass;
 import com.lapsa.insurance.elements.VehicleClass;
 import com.lapsa.kz.country.KZArea;
-import com.lapsa.kz.country.KZCity;
 
 public interface PolicyRatesService {
     double getBase() throws CalculationFailed;
 
     double getBaseRate() throws CalculationFailed;
+
+    double getTemporaryEntryRate();
 
     double getPolicyTemporaryEntryTimeCategoryRate(PolicyTemporaryEntryTimeCategory timeCategory)
 	    throws CalculationFailed;
@@ -21,11 +22,6 @@ public interface PolicyRatesService {
 
     double getIsMajorCityCorrectionRate(boolean isMajorCity) throws CalculationFailed;
 
-    double getIsMajorCityCorrectionRate(KZCity city) throws CalculationFailed;
-
-    double getTotalAreaRate(KZArea area, KZCity city, boolean temporaryEntry, boolean forcedMajorCity)
-	    throws CalculationFailed;
-
     double getVehicleTypeRate(VehicleClass vehicleType) throws CalculationFailed;
 
     double getDriverExpirienceTypeRate(InsuredAgeClass ageClass, InsuredExpirienceClass driverExpirienceClass)
@@ -33,8 +29,9 @@ public interface PolicyRatesService {
 
     double getVehicleAgeTypeRate(VehicleAgeClass vehicleAgeType) throws CalculationFailed;
 
-    double getInsuranceClassTypeRate(InsuranceClassType insuranceClassType, boolean temporaryEntry)
+    double getInsuranceClassTypeRate(InsuranceClassType insuranceClassType)
 	    throws CalculationFailed;
 
     double getPrivilegeRate(boolean hasPrivilege) throws CalculationFailed;
+
 }

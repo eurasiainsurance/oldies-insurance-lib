@@ -13,5 +13,8 @@
 	<security-role>
 		<role-name>agent</role-name>
 	</security-role>
+	<security-role>
+		<role-name>reporter</role-name>
+	</security-role>
 
 </web-fragment>

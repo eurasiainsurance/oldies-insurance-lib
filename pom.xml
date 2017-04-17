@@ -9,7 +9,7 @@
 
 	<groupId>com.lapsa.insurance-lib</groupId>
 	<artifactId>parent</artifactId>
-	<version>1.11.2-SNAPSHOT</version>
+	<version>1.11.2</version>
 	<packaging>pom</packaging>
 
 	<name>Insurance Lib</name>
@@ -166,7 +166,7 @@
 	<scm>
 		<connection>scm:git:https://gitlab.lapsa.tech/lapsa/insurance-lib.git</connection>
 		<developerConnection>scm:git:https://gitlab.lapsa.tech/lapsa/insurance-lib.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>v1.11.2</tag>
 	</scm>
 
 	<issueManagement>

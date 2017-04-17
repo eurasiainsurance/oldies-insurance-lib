@@ -6,10 +6,12 @@ public final class InsuranceRole implements SecurityRole {
 
     public static final String ADMIN = "admin";
     public static final String SPECIALIST = "specialist";
+    public static final String REPORTER = "reporter";
     public static final String AGENT = "agent";
 
     public static final InsuranceRole ADMIN_ROLE = new InsuranceRole(ADMIN);
     public static final InsuranceRole SPECIALIST_ROLE = new InsuranceRole(SPECIALIST);
+    public static final InsuranceRole REPORTER_ROLE = new InsuranceRole(REPORTER);
     public static final InsuranceRole AGENT_ROLE = new InsuranceRole(AGENT);
 
     private final String name;

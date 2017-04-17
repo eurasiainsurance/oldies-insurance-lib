@@ -33,6 +33,8 @@ public class ValidHumanNameConstraintValidator implements ConstraintValidator<Va
     public boolean isValid(String value, ConstraintValidatorContext cvc) {
 	if (value == null)
 	    return true;
+	if (value.trim().isEmpty())
+	    return true;
 	for (String lang : languagesAllowed) {
 	    Pattern p = languagePatterns.get(lang);
 	    if (p != null && p.matcher(value.toString()).matches())

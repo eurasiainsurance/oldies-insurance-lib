@@ -1,6 +1,6 @@
 package com.lapsa.insurance.dao.filter;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import com.lapsa.insurance.crm.InsuranceRequestType;
 import com.lapsa.insurance.crm.ObtainingStatus;
@@ -27,13 +27,13 @@ public interface RequestFilter {
 
     ProgressStatus getProgressStatus();
 
-    Date getCreatedAfter();
+    LocalDateTime getCreatedAfter();
 
-    Date getCreatedBefore();
+    LocalDateTime getCreatedBefore();
 
-    Date getCompletedAfter();
+    LocalDateTime getCompletedAfter();
 
-    Date getCompletedBefore();
+    LocalDateTime getCompletedBefore();
 
     User getCreatedBy();
 

@@ -1,6 +1,6 @@
 package com.lapsa.insurance.domain;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import com.lapsa.insurance.elements.Sex;
 import com.lapsa.insurance.validation.NotEmptyString;
@@ -41,7 +41,7 @@ public class PersonalData extends BaseDomain {
 
     @NotNullValue
     @ValidDateOfBirth
-    private Date dayOfBirth;
+    private LocalDate dayOfBirth;
 
     @NotNullValue
     @ValidSex
@@ -79,11 +79,11 @@ public class PersonalData extends BaseDomain {
 	this.patronymic = patronymic;
     }
 
-    public Date getDayOfBirth() {
+    public LocalDate getDayOfBirth() {
 	return dayOfBirth;
     }
 
-    public void setDayOfBirth(Date dayOfBirth) {
+    public void setDayOfBirth(LocalDate dayOfBirth) {
 	this.dayOfBirth = dayOfBirth;
     }
 

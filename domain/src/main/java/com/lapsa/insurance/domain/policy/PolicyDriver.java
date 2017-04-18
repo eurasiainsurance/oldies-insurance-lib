@@ -55,12 +55,14 @@ public class PolicyDriver extends Driver {
     private PensionerCertificateData pensionerCertificateData = new PensionerCertificateData();
 
     public String getDisplayName() {
+	if (personalData == null)
+	    return null;
 	return personalData.getDisplayName();
     }
 
     @Override
     public String toString() {
-	return personalData.getDisplayName();
+	return getDisplayName();
     }
 
     // GENERATED

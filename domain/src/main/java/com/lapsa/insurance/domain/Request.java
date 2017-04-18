@@ -1,6 +1,6 @@
 package com.lapsa.insurance.domain;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import com.lapsa.insurance.crm.ProgressStatus;
 import com.lapsa.insurance.crm.RequestStatus;
@@ -10,11 +10,11 @@ import com.lapsa.insurance.validation.NotNullValue;
 
 public abstract class Request extends BaseEntity<Integer> {
     private static final long serialVersionUID = -4738852384873507942L;
-    private Date created;
-    private Date updated;
-    private Date accepted;
-    private Date completed;
-    private Date closed;
+    private LocalDateTime created;
+    private LocalDateTime updated;
+    private LocalDateTime accepted;
+    private LocalDateTime completed;
+    private LocalDateTime closed;
 
     @NotNullValue
     private RequestStatus status = RequestStatus.OPEN;
@@ -35,27 +35,27 @@ public abstract class Request extends BaseEntity<Integer> {
 
     // GENERATED
 
-    public Date getCreated() {
+    public LocalDateTime getCreated() {
 	return created;
     }
 
-    public void setCreated(Date created) {
+    public void setCreated(LocalDateTime created) {
 	this.created = created;
     }
 
-    public Date getUpdated() {
+    public LocalDateTime getUpdated() {
 	return updated;
     }
 
-    public void setUpdated(Date updated) {
+    public void setUpdated(LocalDateTime updated) {
 	this.updated = updated;
     }
 
-    public Date getClosed() {
+    public LocalDateTime getClosed() {
 	return closed;
     }
 
-    public void setClosed(Date closed) {
+    public void setClosed(LocalDateTime closed) {
 	this.closed = closed;
     }
 
@@ -67,19 +67,19 @@ public abstract class Request extends BaseEntity<Integer> {
 	this.createdBy = createdBy;
     }
 
-    public Date getAccepted() {
+    public LocalDateTime getAccepted() {
 	return accepted;
     }
 
-    public void setAccepted(Date accepted) {
+    public void setAccepted(LocalDateTime accepted) {
 	this.accepted = accepted;
     }
 
-    public Date getCompleted() {
+    public LocalDateTime getCompleted() {
 	return completed;
     }
 
-    public void setCompleted(Date completed) {
+    public void setCompleted(LocalDateTime completed) {
 	this.completed = completed;
     }
 

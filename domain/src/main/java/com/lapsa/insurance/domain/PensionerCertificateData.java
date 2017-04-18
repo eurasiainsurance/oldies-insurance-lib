@@ -1,6 +1,6 @@
 package com.lapsa.insurance.domain;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
@@ -27,7 +27,7 @@ public class PensionerCertificateData extends BaseDomain {
 
     @NotNullValue
     @ValidDateOfIssue
-    private Date dateOfIssue;
+    private LocalDate dateOfIssue;
 
     private TwoSidedDocumentScan scan = new TwoSidedDocumentScan();
 
@@ -41,11 +41,11 @@ public class PensionerCertificateData extends BaseDomain {
 	this.number = number;
     }
 
-    public Date getDateOfIssue() {
+    public LocalDate getDateOfIssue() {
 	return dateOfIssue;
     }
 
-    public void setDateOfIssue(Date dateOfIssue) {
+    public void setDateOfIssue(LocalDate dateOfIssue) {
 	this.dateOfIssue = dateOfIssue;
     }
 

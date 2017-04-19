@@ -1,19 +1,30 @@
 package com.lapsa.insurance.validation.validators;
 
-import java.util.Date;
-
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 import com.lapsa.insurance.validation.ValidDateOfIssue;
 
-public class ValidDateOfIssueConstraintValidator implements ConstraintValidator<ValidDateOfIssue, Date> {
+public class ValidDateOfIssueConstraintValidator extends ATemporalConstraintValidator<ValidDateOfIssue> {
 
+    @Override
     public void initialize(ValidDateOfIssue a) {
     }
 
-    public boolean isValid(Date value, ConstraintValidatorContext cvc) {
+    @Override
+    protected boolean validate(LocalDateTime value) {
+	throw unsupportedType(value.getClass());
+    }
+
+    @Override
+    protected boolean validate(LocalDate value) {
 	return true;
+    }
+
+    @Override
+    protected boolean validate(LocalTime value) {
+	throw unsupportedType(value.getClass());
     }
 
 }

@@ -15,12 +15,8 @@ import com.lapsa.insurance.validation.LocalDateComparison;
 import com.lapsa.insurance.validation.LocalDateTimeComparison;
 import com.lapsa.insurance.validation.TemporalComparison;
 
-public abstract class ADateLeftRightConstraintValidator<A extends Annotation>
+public abstract class ATemporalLeftRightConstraintValidator<A extends Annotation>
 	implements ConstraintValidator<A, TemporalComparison<?>> {
-
-    @Override
-    public void initialize(A constraintAnnotation) {
-    }
 
     @Override
     public boolean isValid(TemporalComparison<?> value, ConstraintValidatorContext context) {

@@ -1,39 +1,29 @@
 package com.lapsa.insurance.validation.validators;
 
-import static com.lapsa.utils.TemporalUtils.*;
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Calendar;
-import java.util.Date;
-
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import java.time.LocalTime;
 
 import com.lapsa.insurance.validation.DateFuture;
 
-public class DateFutureConstraintValidator implements ConstraintValidator<DateFuture, Object> {
+public class DateFutureConstraintValidator extends ATemporalConstraintValidator<DateFuture> {
 
     @Override
     public void initialize(DateFuture constraintAnnotation) {
     }
 
     @Override
-    public boolean isValid(Object value, ConstraintValidatorContext context) {
-	if (value == null)
-	    return true;
-	if (value instanceof Date)
-	    return compare(toLocalDateTime((Date) value));
-	if (value instanceof Calendar)
-	    return compare(toLocalDateTime((Calendar) value));
-	if (value instanceof LocalDate)
-	    return compare(toLocalDateTime((LocalDate) value));
-	if (value instanceof LocalDateTime)
-	    return compare((LocalDateTime) value);
-	return true;
+    protected boolean validate(LocalDateTime value) {
+	return value.isAfter(LocalDateTime.now());
     }
 
-    private boolean compare(LocalDateTime value) {
-	return value.isAfter(LocalDateTime.now());
+    @Override
+    protected boolean validate(LocalDate value) {
+	return value.isAfter(LocalDate.now());
+    }
+
+    @Override
+    protected boolean validate(LocalTime value) {
+	return value.isAfter(LocalTime.now());
     }
 }

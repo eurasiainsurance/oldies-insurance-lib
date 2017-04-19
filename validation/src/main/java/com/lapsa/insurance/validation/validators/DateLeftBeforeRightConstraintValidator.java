@@ -5,7 +5,11 @@ import java.time.LocalDateTime;
 
 import com.lapsa.insurance.validation.DateLeftBeforeRight;
 
-public class DateLeftBeforeRightConstraintValidator extends ADateLeftRightConstraintValidator<DateLeftBeforeRight> {
+public class DateLeftBeforeRightConstraintValidator extends ATemporalLeftRightConstraintValidator<DateLeftBeforeRight> {
+
+    @Override
+    public void initialize(DateLeftBeforeRight constraintAnnotation) {
+    }
 
     @Override
     protected boolean compare(LocalDateTime left, LocalDateTime right) {

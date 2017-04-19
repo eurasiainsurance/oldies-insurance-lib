@@ -8,7 +8,7 @@ import javax.validation.constraints.Min;
 import com.lapsa.insurance.domain.InsuranceProduct;
 import com.lapsa.insurance.elements.CascoDeductibleFullRate;
 import com.lapsa.insurance.elements.CascoDeductiblePartialRate;
-import com.lapsa.insurance.validation.NotNullValue;
+import com.lapsa.validation.NotNullValue;
 
 public class Casco extends InsuranceProduct {
     private static final long serialVersionUID = -1919280207677627360L;

@@ -5,9 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.lapsa.insurance.validation.NotEmptyString;
-import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.localization.LocalizationLanguage;
+import com.lapsa.validation.NotEmptyString;
+import com.lapsa.validation.NotNullValue;
 
 public class CompanyPointOfSale extends BaseEntity<Integer> {
     private static final long serialVersionUID = 2591037979593224479L;

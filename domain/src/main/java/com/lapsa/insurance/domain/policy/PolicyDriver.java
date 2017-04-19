@@ -8,9 +8,9 @@ import com.lapsa.insurance.domain.PrivilegerCertificateData;
 import com.lapsa.insurance.elements.InsuranceClassType;
 import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredExpirienceClass;
-import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidInsuranceAgeClass;
 import com.lapsa.insurance.validation.ValidInsuranceExpirienceClass;
+import com.lapsa.validation.NotNullValue;
 
 public class PolicyDriver extends Driver {
     private static final long serialVersionUID = 5209394299289430299L;

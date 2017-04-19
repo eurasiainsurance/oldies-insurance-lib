@@ -2,10 +2,10 @@ package com.lapsa.insurance.domain;
 
 import com.lapsa.insurance.domain.policy.PolicyDriver;
 import com.lapsa.insurance.elements.WhoIsInsurant;
-import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.kz.economic.KZEconomicSector;
 import com.lapsa.kz.idnumber.validators.ValidIdNumber;
-import com.lapsa.lapsa.validation.ValidEnumerationValue;
+import com.lapsa.validation.NotNullValue;
+import com.lapsa.validation.ValidEnumerationValue;
 
 public class InsurantData extends BaseEntity<Integer> {
     private static final long serialVersionUID = 5242824083075950955L;

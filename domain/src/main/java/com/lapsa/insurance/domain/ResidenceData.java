@@ -1,9 +1,9 @@
 package com.lapsa.insurance.domain;
 
-import com.lapsa.insurance.validation.NotEmptyString;
-import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.kz.country.KZCity;
 import com.lapsa.kz.country.validators.ValidKZCity;
+import com.lapsa.validation.NotEmptyString;
+import com.lapsa.validation.NotNullValue;
 
 public class ResidenceData extends BaseDomain {
     private static final long serialVersionUID = 6787004222278561370L;

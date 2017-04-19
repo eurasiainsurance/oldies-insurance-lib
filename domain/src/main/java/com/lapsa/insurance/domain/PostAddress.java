@@ -3,11 +3,11 @@ package com.lapsa.insurance.domain;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.lapsa.insurance.validation.NotEmptyString;
-import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.kz.country.KZCity;
 import com.lapsa.kz.country.validators.ValidKZCity;
 import com.lapsa.localization.LocalizationLanguage;
+import com.lapsa.validation.NotEmptyString;
+import com.lapsa.validation.NotNullValue;
 
 public class PostAddress extends BaseDomain {
     private static final long serialVersionUID = -5557010401647487544L;

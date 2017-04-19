@@ -5,12 +5,12 @@ import java.time.LocalDate;
 import com.lapsa.insurance.crm.ObtainingStatus;
 import com.lapsa.insurance.elements.DeliveryTimeSlot;
 import com.lapsa.insurance.elements.ObtainingMethod;
-import com.lapsa.insurance.validation.DaysAfterNow;
-import com.lapsa.insurance.validation.DaysBeforeNow;
-import com.lapsa.insurance.validation.Mode;
-import com.lapsa.insurance.validation.NotEmptyString;
-import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.kz.country.KZCity;
+import com.lapsa.validation.DaysAfterNow;
+import com.lapsa.validation.DaysBeforeNow;
+import com.lapsa.validation.Mode;
+import com.lapsa.validation.NotEmptyString;
+import com.lapsa.validation.NotNullValue;
 
 public class ObtainingData extends BaseDomain {
     private static final long serialVersionUID = -6326848114328976035L;

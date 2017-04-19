@@ -2,9 +2,9 @@ package com.lapsa.insurance.domain;
 
 import java.time.LocalDate;
 
-import com.lapsa.insurance.validation.NotEmptyString;
-import com.lapsa.insurance.validation.NotNullValue;
-import com.lapsa.insurance.validation.ValidDateOfIssue;
+import com.lapsa.validation.NotEmptyString;
+import com.lapsa.validation.NotNullValue;
+import com.lapsa.validation.ValidDateOfIssue;
 
 public class DriverLicenseData extends SidedScannedDocument {
     private static final long serialVersionUID = -4979156573374546371L;

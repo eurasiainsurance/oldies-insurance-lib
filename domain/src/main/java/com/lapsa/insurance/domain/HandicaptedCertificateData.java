@@ -2,8 +2,8 @@ package com.lapsa.insurance.domain;
 
 import java.time.LocalDate;
 
-import com.lapsa.insurance.validation.NotEmptyString;
-import com.lapsa.insurance.validation.NotNullValue;
+import com.lapsa.validation.NotEmptyString;
+import com.lapsa.validation.NotNullValue;
 
 public class HandicaptedCertificateData extends BaseDomain {
     private static final long serialVersionUID = 3008779514582207946L;

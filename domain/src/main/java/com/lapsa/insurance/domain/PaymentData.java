@@ -2,7 +2,7 @@ package com.lapsa.insurance.domain;
 
 import com.lapsa.insurance.crm.PaymentStatus;
 import com.lapsa.insurance.elements.PaymentMethod;
-import com.lapsa.insurance.validation.NotNullValue;
+import com.lapsa.validation.NotNullValue;
 
 public class PaymentData extends BaseDomain {
     private static final long serialVersionUID = -6326848114328976035L;

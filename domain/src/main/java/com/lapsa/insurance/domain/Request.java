@@ -6,7 +6,7 @@ import com.lapsa.insurance.crm.ProgressStatus;
 import com.lapsa.insurance.crm.RequestStatus;
 import com.lapsa.insurance.domain.crm.UTMData;
 import com.lapsa.insurance.domain.crm.User;
-import com.lapsa.insurance.validation.NotNullValue;
+import com.lapsa.validation.NotNullValue;
 
 public abstract class Request extends BaseEntity<Integer> {
     private static final long serialVersionUID = -4738852384873507942L;

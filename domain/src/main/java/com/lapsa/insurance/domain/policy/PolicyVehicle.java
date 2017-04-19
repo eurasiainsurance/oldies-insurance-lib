@@ -3,9 +3,9 @@ package com.lapsa.insurance.domain.policy;
 import com.lapsa.insurance.domain.Vehicle;
 import com.lapsa.insurance.elements.VehicleAgeClass;
 import com.lapsa.insurance.elements.VehicleClass;
-import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidVehicleAgeClass;
 import com.lapsa.insurance.validation.ValidVehicleClass;
+import com.lapsa.validation.NotNullValue;
 
 public class PolicyVehicle extends Vehicle {
     private static final long serialVersionUID = -944934937361936981L;

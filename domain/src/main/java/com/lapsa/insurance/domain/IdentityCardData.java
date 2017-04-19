@@ -3,10 +3,10 @@ package com.lapsa.insurance.domain;
 import java.time.LocalDate;
 
 import com.lapsa.insurance.elements.IdentityCardType;
-import com.lapsa.insurance.validation.NotEmptyString;
-import com.lapsa.insurance.validation.NotNullValue;
-import com.lapsa.insurance.validation.ValidDateOfIssue;
 import com.lapsa.insurance.validation.ValidIdentityCardType;
+import com.lapsa.validation.NotEmptyString;
+import com.lapsa.validation.NotNullValue;
+import com.lapsa.validation.ValidDateOfIssue;
 
 public class IdentityCardData extends SidedScannedDocument {
     private static final long serialVersionUID = 6150409229272494445L;

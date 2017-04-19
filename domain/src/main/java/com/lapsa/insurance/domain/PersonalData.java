@@ -3,11 +3,11 @@ package com.lapsa.insurance.domain;
 import java.time.LocalDate;
 
 import com.lapsa.insurance.elements.Sex;
-import com.lapsa.insurance.validation.NotEmptyString;
-import com.lapsa.insurance.validation.NotNullValue;
-import com.lapsa.insurance.validation.ValidDateOfBirth;
-import com.lapsa.insurance.validation.ValidHumanName;
 import com.lapsa.insurance.validation.ValidSex;
+import com.lapsa.validation.NotEmptyString;
+import com.lapsa.validation.NotNullValue;
+import com.lapsa.validation.ValidDateOfBirth;
+import com.lapsa.validation.ValidHumanName;
 
 public class PersonalData extends BaseDomain {
     private static final long serialVersionUID = 6108831386319756885L;

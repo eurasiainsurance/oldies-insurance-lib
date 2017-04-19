@@ -1,13 +1,13 @@
 package com.lapsa.insurance.domain;
 
 import com.lapsa.cars.validators.ValidVINCode;
-import com.lapsa.insurance.validation.NotEmptyString;
-import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidVehicleYearOfIssue;
 import com.lapsa.kz.country.KZArea;
 import com.lapsa.kz.country.KZCity;
 import com.lapsa.kz.country.validators.ValidKZArea;
 import com.lapsa.kz.country.validators.ValidKZCity;
+import com.lapsa.validation.NotEmptyString;
+import com.lapsa.validation.NotNullValue;
 
 public abstract class Vehicle extends BaseEntity<Integer> {
     private static final long serialVersionUID = -7589698813986815583L;

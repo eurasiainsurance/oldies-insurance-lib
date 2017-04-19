@@ -2,13 +2,13 @@ package com.lapsa.insurance.domain;
 
 import javax.validation.constraints.AssertTrue;
 
-import com.lapsa.insurance.validation.NotNullValue;
-import com.lapsa.insurance.validation.ValidHumanName;
 import com.lapsa.internet.validators.ValidEmail;
 import com.lapsa.kz.idnumber.validators.ValidIdNumber;
 import com.lapsa.localization.LocalizationLanguage;
 import com.lapsa.phone.PhoneNumber;
 import com.lapsa.phone.validators.ValidPhoneNumber;
+import com.lapsa.validation.NotNullValue;
+import com.lapsa.validation.ValidHumanName;
 
 public class RequesterData extends BaseDomain {
     private static final long serialVersionUID = 2536050924805456436L;

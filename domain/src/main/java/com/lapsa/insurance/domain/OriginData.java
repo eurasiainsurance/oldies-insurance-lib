@@ -2,7 +2,7 @@ package com.lapsa.insurance.domain;
 
 import com.lapsa.country.Country;
 import com.lapsa.country.validators.ValidCountry;
-import com.lapsa.insurance.validation.NotNullValue;
+import com.lapsa.validation.NotNullValue;
 
 public class OriginData extends BaseDomain {
     private static final long serialVersionUID = -2811566798584800985L;

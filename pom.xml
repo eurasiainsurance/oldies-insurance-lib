@@ -33,7 +33,7 @@
 		<fin-lib.version>1.1.0.1</fin-lib.version>
 		<image-lib.version>1.1</image-lib.version>
 		<donkeyfaces-lib.version>1.2.2</donkeyfaces-lib.version>
-		<lapsa-lib.version>1.4</lapsa-lib.version>
+		<lapsa-lib.version>1.5-SNAPSHOT</lapsa-lib.version>
 	</properties>
 
 	<dependencyManagement>
@@ -130,6 +130,11 @@
 				<version>${donkeyfaces-lib.version}</version>
 			</dependency>
 			<!-- internal lapsa -->
+			<dependency>
+				<groupId>com.lapsa.lapsa-lib</groupId>
+				<artifactId>lapsa-validation</artifactId>
+				<version>${lapsa-lib.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>com.lapsa.lapsa-lib</groupId>
 				<artifactId>lapsa-utils</artifactId>

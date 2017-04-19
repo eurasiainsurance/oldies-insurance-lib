@@ -2,9 +2,9 @@ package com.lapsa.insurance.domain;
 
 import java.time.LocalDate;
 
-import com.lapsa.insurance.validation.NotEmptyString;
-import com.lapsa.insurance.validation.NotNullValue;
-import com.lapsa.insurance.validation.ValidDateOfIssue;
+import com.lapsa.validation.NotEmptyString;
+import com.lapsa.validation.NotNullValue;
+import com.lapsa.validation.ValidDateOfIssue;
 
 public class GPWParticipantCertificateData extends BaseDomain {
     private static final long serialVersionUID = -2962825826022534176L;

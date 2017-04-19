@@ -8,9 +8,9 @@ import com.lapsa.donkeyfaces.validators.FileSizeMeasure;
 import com.lapsa.donkeyfaces.validators.MaxImageFileSize;
 import com.lapsa.insurance.domain.Vehicle;
 import com.lapsa.insurance.elements.CascoCarAgeClass;
-import com.lapsa.insurance.validation.NotNullValue;
-import com.lapsa.insurance.validation.NotTooOldYearOfIssue;
-import com.lapsa.insurance.validation.NotTooYoungYearOfIssue;
+import com.lapsa.validation.NotNullValue;
+import com.lapsa.validation.NotTooOldYearOfIssue;
+import com.lapsa.validation.NotTooYoungYearOfIssue;
 
 public class CascoVehicle extends Vehicle {
     private static final long serialVersionUID = 2602178314016175969L;

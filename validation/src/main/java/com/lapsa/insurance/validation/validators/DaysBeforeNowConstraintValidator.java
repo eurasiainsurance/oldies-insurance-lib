@@ -1,16 +1,13 @@
 package com.lapsa.insurance.validation.validators;
 
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
-import java.util.Date;
-
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 import com.lapsa.insurance.validation.DaysBeforeNow;
 import com.lapsa.insurance.validation.Mode;
 
-public class DaysBeforeNowConstraintValidator implements ConstraintValidator<DaysBeforeNow, Date> {
+public class DaysBeforeNowConstraintValidator extends ATemporalConstraintValidator<DaysBeforeNow> {
 
     private Mode mode;
     private long days;
@@ -22,16 +19,30 @@ public class DaysBeforeNowConstraintValidator implements ConstraintValidator<Day
     }
 
     @Override
-    public boolean isValid(Date value, ConstraintValidatorContext context) {
-	if (value == null)
-	    return true;
+    protected boolean validate(LocalDateTime value) {
 	switch (mode) {
 	case MUST_NOT:
-	    return value.toInstant().isBefore(Instant.now().plus(days, ChronoUnit.DAYS));
+	    return value.isBefore(LocalDateTime.now().minusDays(days));
 	case MUST:
 	default:
-	    return value.toInstant().isBefore(Instant.now().minus(days, ChronoUnit.DAYS));
+	    return value.isBefore(LocalDateTime.now().plusDays(days));
 	}
+    }
+
+    @Override
+    protected boolean validate(LocalDate value) {
+	switch (mode) {
+	case MUST_NOT:
+	    return value.isBefore(LocalDate.now().minusDays(days));
+	case MUST:
+	default:
+	    return value.isBefore(LocalDate.now().plusDays(days));
+	}
+    }
+
+    @Override
+    protected boolean validate(LocalTime value) {
+	throw unsupportedType(value.getClass());
     }
 
 }

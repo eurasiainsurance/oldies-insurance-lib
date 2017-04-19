@@ -1,17 +1,3 @@
-com.lapsa.insurance.validation.DateFuture.message = Дата должна быть в будущем
-com.lapsa.insurance.validation.DateLeftAfterRight.message = В датах нарушена хронология. Первая дата должна быть раньше второй
-com.lapsa.insurance.validation.DateLeftBeforeRight.message = В датах нарушена хронология. Первая дата должна быть позже второй
-com.lapsa.insurance.validation.DatePast.message = Дата должна быть в прошлом
-com.lapsa.insurance.validation.DaysAfterNow.message = Слишком ранняя дата
-com.lapsa.insurance.validation.DaysBeforeNow.message = Слишком поздняя дата
-com.lapsa.insurance.validation.NotEmptyString.message = Обязательное поле
-com.lapsa.insurance.validation.NotNullValue.message = Обязательное поле
-com.lapsa.insurance.validation.NotTooYoungYearOfIssue.message = Минимальный допустимый возраст составляет {minAge} лет
-com.lapsa.insurance.validation.NotTooOldYearOfIssue.message = Максимальный допустимый возраст составляет {maxAge} лет
-com.lapsa.insurance.validation.NotZeroAmount.message = Размер суммы должна быть больше ноля
-com.lapsa.insurance.validation.ValidDateOfBirth.message = Некорректная дата рождения
-com.lapsa.insurance.validation.ValidDateOfIssue.message = Некорректная дата выдачи
-com.lapsa.insurance.validation.ValidHumanName.message = Некорректное значение. Возможно значение, которое Вы ввели содержит неразрешенные символы
 com.lapsa.insurance.validation.ValidIdentityCardType.message = Некорректный тип документа
 com.lapsa.insurance.validation.ValidInsuranceAgeClass.message = Указана некорректная категория возраста
 com.lapsa.insurance.validation.ValidInsuranceExpirienceClass.message = Указан некорректный стаж вождения

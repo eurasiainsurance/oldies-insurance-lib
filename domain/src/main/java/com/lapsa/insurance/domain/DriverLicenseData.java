@@ -1,6 +1,6 @@
 package com.lapsa.insurance.domain;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
@@ -27,7 +27,7 @@ public class DriverLicenseData extends SidedScannedDocument {
 
     @NotNullValue
     @ValidDateOfIssue
-    private Date dateOfIssue;
+    private LocalDate dateOfIssue;
 
     // GENERATED
 
@@ -39,11 +39,11 @@ public class DriverLicenseData extends SidedScannedDocument {
 	this.number = number;
     }
 
-    public Date getDateOfIssue() {
+    public LocalDate getDateOfIssue() {
 	return dateOfIssue;
     }
 
-    public void setDateOfIssue(Date dateOfIssue) {
+    public void setDateOfIssue(LocalDate dateOfIssue) {
 	this.dateOfIssue = dateOfIssue;
     }
 }

@@ -1,6 +1,6 @@
 package com.lapsa.insurance.domain;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import com.lapsa.insurance.elements.IdentityCardType;
 import com.lapsa.insurance.validation.NotEmptyString;
@@ -25,7 +25,7 @@ public class IdentityCardData extends SidedScannedDocument {
 
     @NotNullValue
     @ValidDateOfIssue
-    private Date dateOfIssue;
+    private LocalDate dateOfIssue;
 
     @NotNullValue
     @NotEmptyString
@@ -41,11 +41,11 @@ public class IdentityCardData extends SidedScannedDocument {
 
     // GENERATED
 
-    public Date getDateOfIssue() {
+    public LocalDate getDateOfIssue() {
 	return dateOfIssue;
     }
 
-    public void setDateOfIssue(Date dateOfIssue) {
+    public void setDateOfIssue(LocalDate dateOfIssue) {
 	this.dateOfIssue = dateOfIssue;
     }
 

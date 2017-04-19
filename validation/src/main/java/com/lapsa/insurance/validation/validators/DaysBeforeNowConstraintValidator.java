@@ -22,10 +22,10 @@ public class DaysBeforeNowConstraintValidator extends ATemporalConstraintValidat
     protected boolean validate(LocalDateTime value) {
 	switch (mode) {
 	case MUST_NOT:
-	    return value.isBefore(LocalDateTime.now().minusDays(days));
+	    return value.isBefore(LocalDateTime.now().plusDays(days));
 	case MUST:
 	default:
-	    return value.isBefore(LocalDateTime.now().plusDays(days));
+	    return value.isBefore(LocalDateTime.now().minusDays(days));
 	}
     }
 
@@ -33,10 +33,10 @@ public class DaysBeforeNowConstraintValidator extends ATemporalConstraintValidat
     protected boolean validate(LocalDate value) {
 	switch (mode) {
 	case MUST_NOT:
-	    return value.isBefore(LocalDate.now().minusDays(days));
+	    return value.isBefore(LocalDate.now().plusDays(days));
 	case MUST:
 	default:
-	    return value.isBefore(LocalDate.now().plusDays(days));
+	    return value.isBefore(LocalDate.now().minusDays(days));
 	}
     }
 

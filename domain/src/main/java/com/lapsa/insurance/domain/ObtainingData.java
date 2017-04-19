@@ -1,6 +1,6 @@
 package com.lapsa.insurance.domain;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import com.lapsa.insurance.crm.ObtainingStatus;
 import com.lapsa.insurance.elements.DeliveryTimeSlot;
@@ -42,7 +42,7 @@ public class ObtainingData extends BaseDomain {
     @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.deliveryDate.NotNullValue.message}")
     @DaysAfterNow(mode = Mode.MUST, value = 0, message = "{com.lapsa.insurance.domain.ObtainingData.deliveryDate.DaysAfterNow.messages}")
     @DaysBeforeNow(mode = Mode.MUST_NOT, value = 7, message = "{com.lapsa.insurance.domain.ObtainingData.deliveryDate.DaysBeforeNow.messages}")
-    private Date deliveryDate;
+    private LocalDate deliveryDate;
 
     @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.deliveryTime.NotNullValue.message}")
     private DeliveryTimeSlot deliveryTime;
@@ -88,11 +88,11 @@ public class ObtainingData extends BaseDomain {
 	this.pickupPOS = pickupPOS;
     }
 
-    public Date getDeliveryDate() {
+    public LocalDate getDeliveryDate() {
 	return deliveryDate;
     }
 
-    public void setDeliveryDate(Date deliveryDate) {
+    public void setDeliveryDate(LocalDate deliveryDate) {
 	this.deliveryDate = deliveryDate;
     }
 

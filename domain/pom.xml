@@ -26,7 +26,7 @@
 			<scope>compile</scope>
 			<optional>false</optional>
 		</dependency>
-		<!-- internal -->
+		<!-- internal kz -->
 		<dependency>
 			<groupId>com.lapsa.kz-lib</groupId>
 			<artifactId>kz-core</artifactId>
@@ -39,6 +39,7 @@
 			<scope>compile</scope>
 			<optional>false</optional>
 		</dependency>
+		<!-- internal international -->
 		<dependency>
 			<groupId>com.lapsa.international-lib</groupId>
 			<artifactId>international-core</artifactId>
@@ -51,12 +52,14 @@
 			<scope>compile</scope>
 			<optional>false</optional>
 		</dependency>
+		<!-- internal fin -->
 		<dependency>
 			<groupId>com.lapsa.fin-lib</groupId>
 			<artifactId>fin-core</artifactId>
 			<scope>compile</scope>
 			<optional>false</optional>
 		</dependency>
+		<!-- internal donkeyfaces -->
 		<dependency>
 			<groupId>com.lapsa.donkeyfaces-lib</groupId>
 			<artifactId>donkeyfaces-model</artifactId>
@@ -66,6 +69,13 @@
 		<dependency>
 			<groupId>com.lapsa.donkeyfaces-lib</groupId>
 			<artifactId>donkeyfaces-validation</artifactId>
+			<scope>compile</scope>
+			<optional>false</optional>
+		</dependency>
+		<!-- internal lapsa -->
+		<dependency>
+			<groupId>com.lapsa.lapsa-lib</groupId>
+			<artifactId>lapsa-validation</artifactId>
 			<scope>compile</scope>
 			<optional>false</optional>
 		</dependency>

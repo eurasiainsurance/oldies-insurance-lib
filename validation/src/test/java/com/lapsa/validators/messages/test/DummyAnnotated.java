@@ -11,7 +11,6 @@ import com.lapsa.insurance.validation.NotEmptyString;
 import com.lapsa.insurance.validation.NotNullValue;
 import com.lapsa.insurance.validation.ValidDateOfBirth;
 import com.lapsa.insurance.validation.ValidDateOfIssue;
-import com.lapsa.insurance.validation.ValidEnumerationValue;
 import com.lapsa.insurance.validation.ValidHumanName;
 import com.lapsa.insurance.validation.ValidIdentityCardType;
 import com.lapsa.insurance.validation.ValidInsuranceAgeClass;
@@ -36,7 +35,6 @@ public interface DummyAnnotated {
     // @NotTooYoungYearOfIssue(minAge = 1)
     @ValidDateOfBirth
     @ValidDateOfIssue
-    @ValidEnumerationValue
     @ValidIdentityCardType
     @ValidInsuranceAgeClass
     @ValidInsuranceExpirienceClass

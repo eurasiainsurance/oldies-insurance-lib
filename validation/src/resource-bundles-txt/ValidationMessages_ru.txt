@@ -11,7 +11,6 @@ com.lapsa.insurance.validation.NotTooOldYearOfIssue.message = Максималь
 com.lapsa.insurance.validation.NotZeroAmount.message = Размер суммы должна быть больше ноля
 com.lapsa.insurance.validation.ValidDateOfBirth.message = Некорректная дата рождения
 com.lapsa.insurance.validation.ValidDateOfIssue.message = Некорректная дата выдачи
-com.lapsa.insurance.validation.ValidEnumerationValue.message = Некорректное значение
 com.lapsa.insurance.validation.ValidHumanName.message = Некорректное значение. Возможно значение, которое Вы ввели содержит неразрешенные символы
 com.lapsa.insurance.validation.ValidIdentityCardType.message = Некорректный тип документа
 com.lapsa.insurance.validation.ValidInsuranceAgeClass.message = Указана некорректная категория возраста

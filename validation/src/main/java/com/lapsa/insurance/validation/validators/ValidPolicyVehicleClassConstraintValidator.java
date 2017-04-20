@@ -4,26 +4,20 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 import com.lapsa.insurance.elements.VehicleClass;
-import com.lapsa.insurance.validation.ValidVehicleClass;
+import com.lapsa.insurance.validation.ValidPolicyVehicleClass;
 
-public class ValidVehicleClassConstraintValidator
-	implements ConstraintValidator<ValidVehicleClass, VehicleClass> {
-
-    private VehicleClass[] invalidTypes;
+public class ValidPolicyVehicleClassConstraintValidator
+	implements ConstraintValidator<ValidPolicyVehicleClass, VehicleClass> {
 
     @Override
-    public void initialize(ValidVehicleClass constraintAnnotation) {
-	this.invalidTypes = constraintAnnotation.invalidValues();
+    public void initialize(ValidPolicyVehicleClass constraintAnnotation) {
     }
 
     @Override
     public boolean isValid(VehicleClass value, ConstraintValidatorContext context) {
 	if (value == null)
 	    return true;
-	for (VehicleClass i : invalidTypes)
-	    if (i.equals(value))
-		return false;
-	return true;
+	return value.isValidForPolicy();
     }
 
 }

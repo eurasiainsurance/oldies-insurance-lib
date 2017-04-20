@@ -3,8 +3,8 @@ package com.lapsa.insurance.domain.policy;
 import com.lapsa.insurance.domain.Vehicle;
 import com.lapsa.insurance.elements.VehicleAgeClass;
 import com.lapsa.insurance.elements.VehicleClass;
-import com.lapsa.insurance.validation.ValidVehicleAgeClass;
-import com.lapsa.insurance.validation.ValidVehicleClass;
+import com.lapsa.insurance.validation.ValidPolicyVehicleAgeClass;
+import com.lapsa.insurance.validation.ValidPolicyVehicleClass;
 import com.lapsa.validation.NotNullValue;
 
 public class PolicyVehicle extends Vehicle {
@@ -23,11 +23,11 @@ public class PolicyVehicle extends Vehicle {
     }
 
     @NotNullValue
-    @ValidVehicleClass
+    @ValidPolicyVehicleClass
     private VehicleClass vehicleClass;
 
     @NotNullValue
-    @ValidVehicleAgeClass
+    @ValidPolicyVehicleAgeClass
     private VehicleAgeClass vehicleAgeClass;
 
     private boolean temporaryEntry = false;

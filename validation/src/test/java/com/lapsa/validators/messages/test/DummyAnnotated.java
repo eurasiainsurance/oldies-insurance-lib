@@ -2,6 +2,7 @@ package com.lapsa.validators.messages.test;
 
 import com.lapsa.insurance.validation.ValidIdentityCardType;
 import com.lapsa.insurance.validation.ValidInsuranceAgeClass;
+import com.lapsa.insurance.validation.ValidInsuranceClassType;
 import com.lapsa.insurance.validation.ValidInsuranceExpirienceClass;
 import com.lapsa.insurance.validation.ValidSex;
 import com.lapsa.insurance.validation.ValidVehicleAgeClass;
@@ -18,5 +19,6 @@ public interface DummyAnnotated {
     @ValidVehicleClass
     @ValidVehicleRegistrationNumber
     @ValidVehicleYearOfIssue
+    @ValidInsuranceClassType
     void dummy();
 }

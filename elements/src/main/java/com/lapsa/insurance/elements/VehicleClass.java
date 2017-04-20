@@ -22,13 +22,13 @@ public enum VehicleClass implements ElementsBundleBase {
 	return String.format("%1$s.%2$s", this.getClass().getName(), name());
     }
 
-    private final boolean applicableForOSGPOVTS;
+    private final boolean validForPolicy;
 
-    VehicleClass(boolean applicableForOSGPOVTS) {
-	this.applicableForOSGPOVTS = applicableForOSGPOVTS;
+    private VehicleClass(boolean validForPolicy) {
+	this.validForPolicy = validForPolicy;
     }
 
-    public boolean isApplicableForOSGPOVTS() {
-	return applicableForOSGPOVTS;
+    public boolean isValidForPolicy() {
+	return validForPolicy;
     }
 }

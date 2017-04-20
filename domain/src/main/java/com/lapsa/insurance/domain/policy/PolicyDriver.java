@@ -27,6 +27,8 @@ public class PolicyDriver extends Driver {
 	return MULTIPLIER;
     }
 
+    @NotNullValue
+    @ValidInsuranceClassType
     private InsuranceClassType insuranceClassType;
 
     @NotNullValue

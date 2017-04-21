@@ -17,7 +17,7 @@ public class ValidPolicyVehicleClassConstraintValidator
     public boolean isValid(VehicleClass value, ConstraintValidatorContext context) {
 	if (value == null)
 	    return true;
-	return value.isValidForPolicy();
+	return value.isValidForIndividualsPolicy();
     }
 
 }

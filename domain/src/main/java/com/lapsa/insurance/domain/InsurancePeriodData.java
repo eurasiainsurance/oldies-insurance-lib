@@ -2,6 +2,7 @@ package com.lapsa.insurance.domain;
 
 import java.time.LocalDate;
 
+import com.lapsa.validation.DateFuture;
 import com.lapsa.validation.DateLeftBeforeRight;
 import com.lapsa.validation.LocalDateComparison;
 import com.lapsa.validation.NotNullValue;
@@ -22,9 +23,11 @@ public class InsurancePeriodData extends BaseDomain {
     }
 
     @NotNullValue
+    @DateFuture(allowNow = true)
     private LocalDate from;
 
     @NotNullValue
+    @DateFuture
     private LocalDate to;
 
     @DateLeftBeforeRight

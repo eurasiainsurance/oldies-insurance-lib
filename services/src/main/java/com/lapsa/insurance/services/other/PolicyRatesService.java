@@ -20,7 +20,7 @@ public interface PolicyRatesService {
 
     double getRegionRate(KZArea region) throws CalculationFailed;
 
-    double getIsMajorCityCorrectionRate(boolean isMajorCity) throws CalculationFailed;
+    double getNonMajorCityCorrectionRate() throws CalculationFailed;
 
     double getVehicleTypeRate(VehicleClass vehicleType) throws CalculationFailed;
 
@@ -32,6 +32,6 @@ public interface PolicyRatesService {
     double getInsuranceClassTypeRate(InsuranceClassType insuranceClassType)
 	    throws CalculationFailed;
 
-    double getPrivilegeRate(boolean hasPrivilege) throws CalculationFailed;
+    double getPrivilegerRate() throws CalculationFailed;
 
 }

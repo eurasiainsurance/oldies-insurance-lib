@@ -9,7 +9,7 @@ public enum VehicleClass implements ElementsBundleBase {
     TRAILER(true), // Прицепы (полуприцепы)
     BUS16(true), // Автобусы до 16 пассажирских мест включительно
     BUSOVR16(true), // Автобусы свыше 16 пассажирских мест
-    TRAM(true), // Троллейбусы, трамваи
+    TRAM(false), // Троллейбусы, трамваи
     SEA(false), // Морское
     AIRCRAFT(false), // Воздушный транспорт
     RAILWAY(false), // Железнодорожный транспорт
@@ -22,13 +22,13 @@ public enum VehicleClass implements ElementsBundleBase {
 	return String.format("%1$s.%2$s", this.getClass().getName(), name());
     }
 
-    private final boolean applicableForOSGPOVTS;
+    private final boolean validForIndividualsPolicy;
 
-    VehicleClass(boolean applicableForOSGPOVTS) {
-	this.applicableForOSGPOVTS = applicableForOSGPOVTS;
+    private VehicleClass(boolean validForIndividualsPolicy) {
+	this.validForIndividualsPolicy = validForIndividualsPolicy;
     }
 
-    public boolean isApplicableForOSGPOVTS() {
-	return applicableForOSGPOVTS;
+    public boolean isValidForIndividualsPolicy() {
+	return validForIndividualsPolicy;
     }
 }

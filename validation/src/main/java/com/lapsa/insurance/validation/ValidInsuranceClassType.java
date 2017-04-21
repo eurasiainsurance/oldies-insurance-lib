@@ -9,17 +9,14 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-import com.lapsa.insurance.elements.VehicleAgeClass;
-import com.lapsa.insurance.validation.validators.ValidVehicleAgeClassConstraintValidator;
+import com.lapsa.insurance.validation.validators.ValidInsuranceClassTypeConstraintValidator;
 
 @Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER })
 @Retention(RUNTIME)
-@Constraint(validatedBy = ValidVehicleAgeClassConstraintValidator.class)
-public @interface ValidVehicleAgeClass {
+@Constraint(validatedBy = ValidInsuranceClassTypeConstraintValidator.class)
+public @interface ValidInsuranceClassType {
 
-    VehicleAgeClass[] invalidValues() default {};
-
-    String message() default "{com.lapsa.insurance.validation.ValidVehicleAgeClass.message}";
+    String message() default "{com.lapsa.insurance.validation.ValidInsuranceClassType.message}";
 
     Class<?>[] groups() default {};
 

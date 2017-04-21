@@ -9,6 +9,7 @@ import com.lapsa.insurance.elements.InsuranceClassType;
 import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredExpirienceClass;
 import com.lapsa.insurance.validation.ValidInsuranceAgeClass;
+import com.lapsa.insurance.validation.ValidInsuranceClassType;
 import com.lapsa.insurance.validation.ValidInsuranceExpirienceClass;
 import com.lapsa.validation.NotNullValue;
 
@@ -27,6 +28,8 @@ public class PolicyDriver extends Driver {
 	return MULTIPLIER;
     }
 
+    @NotNullValue
+    @ValidInsuranceClassType
     private InsuranceClassType insuranceClassType;
 
     @NotNullValue

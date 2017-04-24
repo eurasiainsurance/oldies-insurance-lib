@@ -2,8 +2,8 @@ package com.lapsa.insurance.domain;
 
 import java.time.LocalDate;
 
-import com.lapsa.validation.DateFuture;
-import com.lapsa.validation.DateLeftBeforeRight;
+import com.lapsa.validation.TemporalFuture;
+import com.lapsa.validation.TemporalLeftBeforeRight;
 import com.lapsa.validation.LocalDateComparison;
 import com.lapsa.validation.NotNullValue;
 
@@ -23,14 +23,14 @@ public class InsurancePeriodData extends BaseDomain {
     }
 
     @NotNullValue
-    @DateFuture(allowNow = true)
+    @TemporalFuture(allowNow = true)
     private LocalDate from;
 
     @NotNullValue
-    @DateFuture
+    @TemporalFuture
     private LocalDate to;
 
-    @DateLeftBeforeRight
+    @TemporalLeftBeforeRight
     // method must be a getter (name begins with "get"). validation is not
     // processed if not
     public LocalDateComparison getComparision() {

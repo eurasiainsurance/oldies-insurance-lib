@@ -55,7 +55,7 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 	Locale locale = getLocale(LANG_EN);
 	ResourceBundle resources = getResourceBundle(ElementsBundleBase.BUNDLE_BASENAME, locale);
 	assertThat(resources.getString("com.lapsa.insurance.elements.InsuranceClassType.CLASS_3"),
-		allOf(not(nullValue()), is("Class 3")));
+		allOf(not(nullValue()), is("Класс 3")));
 	testBundle(resources);
     }
 
@@ -63,8 +63,8 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
     public void testNoExcessRecordsKazakh() {
 	Locale locale = getLocale(LANG_KK);
 	ResourceBundle resources = getResourceBundle(ElementsBundleBase.BUNDLE_BASENAME, locale);
-	assertThat(resources.getString("com.lapsa.insurance.elements.IdentityCardType.PASSPORT"),
-		allOf(not(nullValue()), is("төлқұжат")));
+	assertThat(resources.getString("com.lapsa.insurance.elements.InsuranceClassType.CLASS_3"),
+		allOf(not(nullValue()), is("Класс 3")));
 	testBundle(resources);
     }
 

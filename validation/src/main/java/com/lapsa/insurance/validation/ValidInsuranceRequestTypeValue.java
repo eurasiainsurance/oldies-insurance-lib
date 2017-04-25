@@ -11,15 +11,12 @@ import javax.validation.Payload;
 
 import com.lapsa.insurance.crm.InsuranceRequestType;
 import com.lapsa.insurance.validation.validators.ValidInsuranceRequestTypeValueConstraintValidator;
+import com.lapsa.validation.ValidationMode;
 
 @Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER })
 @Retention(RUNTIME)
 @Constraint(validatedBy = ValidInsuranceRequestTypeValueConstraintValidator.class)
 public @interface ValidInsuranceRequestTypeValue {
-
-    public static enum ValidationMode {
-	DENY_IF_NOT_PERMITED, PERMIT_IF_NOT_DENIED, AUTO;
-    }
 
     InsuranceRequestType[] denied() default {};
 

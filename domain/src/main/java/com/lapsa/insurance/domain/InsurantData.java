@@ -5,7 +5,6 @@ import com.lapsa.insurance.elements.WhoIsInsurant;
 import com.lapsa.kz.economic.KZEconomicSector;
 import com.lapsa.kz.idnumber.validators.ValidIdNumber;
 import com.lapsa.validation.NotNullValue;
-import com.lapsa.validation.ValidEnumerationValue;
 
 public class InsurantData extends BaseEntity<Integer> {
     private static final long serialVersionUID = 5242824083075950955L;
@@ -40,7 +39,6 @@ public class InsurantData extends BaseEntity<Integer> {
     private PolicyDriver driverAsInsurant;
 
     @NotNullValue(message = "{com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.NotNull.message}")
-    @ValidEnumerationValue(message = "{com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message}")
     private WhoIsInsurant whoIsInsurant = null;
 
     private boolean fetched = false;

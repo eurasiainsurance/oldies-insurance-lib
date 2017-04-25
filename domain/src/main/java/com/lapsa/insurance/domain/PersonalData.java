@@ -3,7 +3,6 @@ package com.lapsa.insurance.domain;
 import java.time.LocalDate;
 
 import com.lapsa.insurance.elements.Sex;
-import com.lapsa.insurance.validation.ValidSex;
 import com.lapsa.validation.NotEmptyString;
 import com.lapsa.validation.NotNullValue;
 import com.lapsa.validation.ValidDateOfBirth;
@@ -44,7 +43,6 @@ public class PersonalData extends BaseDomain {
     private LocalDate dayOfBirth;
 
     @NotNullValue
-    @ValidSex
     private Sex sex;
 
     public String getDisplayName() {

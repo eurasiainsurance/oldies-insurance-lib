@@ -22,6 +22,7 @@ public class User extends BaseEntity<Integer> {
 
     private String name;
     private String email;
+    private boolean hidden;
 
     private List<UserLogin> logins = new ArrayList<>();
 
@@ -76,5 +77,13 @@ public class User extends BaseEntity<Integer> {
 
     public void setLogins(List<UserLogin> logins) {
 	this.logins = logins;
+    }
+
+    public boolean isHidden() {
+	return hidden;
+    }
+
+    public void setHidden(boolean hidden) {
+	this.hidden = hidden;
     }
 }

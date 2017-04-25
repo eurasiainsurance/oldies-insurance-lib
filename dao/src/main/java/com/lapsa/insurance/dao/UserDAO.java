@@ -8,4 +8,6 @@ public interface UserDAO extends GeneralDAO<User, Integer> {
     User findByLogin(String login) throws PeristenceOperationFailed, EntityNotFound;
 
     List<User> findAll() throws PeristenceOperationFailed;
+
+    List<User> findEnabled() throws PeristenceOperationFailed;
 }

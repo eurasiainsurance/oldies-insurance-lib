@@ -22,6 +22,7 @@ public class User extends BaseEntity<Integer> {
 
     private String name;
     private String email;
+    private boolean disabled;
 
     private List<UserLogin> logins = new ArrayList<>();
 
@@ -76,5 +77,13 @@ public class User extends BaseEntity<Integer> {
 
     public void setLogins(List<UserLogin> logins) {
 	this.logins = logins;
+    }
+
+    public boolean isDisabled() {
+	return disabled;
+    }
+
+    public void setDisabled(boolean disabled) {
+	this.disabled = disabled;
     }
 }

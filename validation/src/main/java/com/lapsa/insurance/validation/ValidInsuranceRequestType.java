@@ -10,13 +10,13 @@ import javax.validation.Constraint;
 import javax.validation.Payload;
 
 import com.lapsa.insurance.crm.InsuranceRequestType;
-import com.lapsa.insurance.validation.validators.ValidInsuranceRequestTypeValueConstraintValidator;
+import com.lapsa.insurance.validation.validators.ValidInsuranceRequestTypeConstraintValidator;
 import com.lapsa.validation.ValidationMode;
 
 @Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER })
 @Retention(RUNTIME)
-@Constraint(validatedBy = ValidInsuranceRequestTypeValueConstraintValidator.class)
-public @interface ValidInsuranceRequestTypeValue {
+@Constraint(validatedBy = ValidInsuranceRequestTypeConstraintValidator.class)
+public @interface ValidInsuranceRequestType {
 
     InsuranceRequestType[] denied() default {};
 
@@ -24,7 +24,7 @@ public @interface ValidInsuranceRequestTypeValue {
 
     ValidationMode mode() default ValidationMode.AUTO;
 
-    String message() default "{com.lapsa.insurance.validation.ValidInsuranceRequestTypeValue.message}";
+    String message() default "{com.lapsa.insurance.validation.ValidInsuranceRequestType.message}";
 
     Class<?>[] groups() default {};
 

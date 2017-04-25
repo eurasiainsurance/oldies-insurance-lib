@@ -1,5 +1,6 @@
 package com.lapsa.insurance.domain.policy;
 
+import com.lapsa.insurance.crm.RequestSource;
 import com.lapsa.insurance.domain.InsuranceProduct;
 import com.lapsa.insurance.domain.InsuranceRequest;
 import com.lapsa.insurance.elements.InsuranceProductType;
@@ -8,6 +9,13 @@ public class PolicyRequest extends InsuranceRequest {
     private static final long serialVersionUID = 944531653617396366L;
     private static final int PRIME = 83;
     private static final int MULTIPLIER = PRIME;
+
+    public PolicyRequest() {
+    }
+
+    public PolicyRequest(RequestSource source) {
+	super(source);
+    }
 
     @Override
     protected int getPrime() {

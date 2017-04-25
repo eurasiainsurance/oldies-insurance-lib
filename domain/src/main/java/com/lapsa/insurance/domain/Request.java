@@ -3,6 +3,7 @@ package com.lapsa.insurance.domain;
 import java.time.LocalDateTime;
 
 import com.lapsa.insurance.crm.ProgressStatus;
+import com.lapsa.insurance.crm.RequestSource;
 import com.lapsa.insurance.crm.RequestStatus;
 import com.lapsa.insurance.domain.crm.UTMData;
 import com.lapsa.insurance.domain.crm.User;
@@ -15,6 +16,16 @@ public abstract class Request extends BaseEntity<Integer> {
     private LocalDateTime accepted;
     private LocalDateTime completed;
     private LocalDateTime closed;
+
+    public Request() {
+    }
+
+    public Request(RequestSource source) {
+	this.source = source;
+    }
+
+    @NotNullValue
+    private RequestSource source;
 
     @NotNullValue
     private RequestStatus status = RequestStatus.OPEN;
@@ -145,5 +156,13 @@ public abstract class Request extends BaseEntity<Integer> {
 
     public void setNote(String note) {
 	this.note = note;
+    }
+
+    public RequestSource getSource() {
+	return source;
+    }
+
+    public void setSource(RequestSource source) {
+	this.source = source;
     }
 }

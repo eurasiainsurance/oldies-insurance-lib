@@ -1,5 +1,6 @@
 package com.lapsa.insurance.domain.casco;
 
+import com.lapsa.insurance.crm.RequestSource;
 import com.lapsa.insurance.domain.InsuranceProduct;
 import com.lapsa.insurance.domain.InsuranceRequest;
 import com.lapsa.insurance.elements.InsuranceProductType;
@@ -8,6 +9,13 @@ public class CascoRequest extends InsuranceRequest {
     private static final long serialVersionUID = -8067548829502589540L;
     private static final int PRIME = 137;
     private static final int MULTIPLIER = PRIME;
+
+    public CascoRequest() {
+    }
+
+    public CascoRequest(RequestSource source) {
+	super(source);
+    }
 
     @Override
     protected int getPrime() {

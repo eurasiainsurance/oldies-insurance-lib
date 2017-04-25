@@ -1,7 +1,7 @@
 com.lapsa.insurance.validation.ValidIdentityCardType.message = Некорректный тип документа
 com.lapsa.insurance.validation.ValidInsuranceAgeClass.message = Указана некорректная категория возраста
 com.lapsa.insurance.validation.ValidInsuranceExpirienceClass.message = Указан некорректный стаж вождения
-com.lapsa.insurance.validation.ValidInsuranceRequestTypeValue.message = Неразрешенное значение типа заявки на страхование
+com.lapsa.insurance.validation.ValidInsuranceRequestType.message = Неразрешенное значение типа заявки на страхование
 com.lapsa.insurance.validation.ValidPolicyVehicleAgeClass.message = Указан некорректный срок эксплуатации ТС для данного вида страхования
 com.lapsa.insurance.validation.ValidPolicyVehicleClass.message = Указан некорректный класс ТС для данного вида страхования
 com.lapsa.insurance.validation.ValidVehicleRegistrationNumber.message = Неверный регистрационный номер ТС

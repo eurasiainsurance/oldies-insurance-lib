@@ -157,4 +157,12 @@ public abstract class Request extends BaseEntity<Integer> {
     public void setNote(String note) {
 	this.note = note;
     }
+
+    public RequestSource getSource() {
+	return source;
+    }
+
+    public void setSource(RequestSource source) {
+	this.source = source;
+    }
 }

@@ -33,8 +33,8 @@ com.lapsa.insurance.crm.RequestStatus.CLOSED = Закрыто
 
 com.lapsa.insurance.crm.RequestSource.API            = Заявка через API веб-сервиса 
 com.lapsa.insurance.crm.RequestSource.API.short      = API 
-com.lapsa.insurance.crm.RequestSource.INTERNAL       = Собственное веб-приложение
-com.lapsa.insurance.crm.RequestSource.INTERNAL.short = WebApp
+com.lapsa.insurance.crm.RequestSource.INTERNAL       = Собственное Web-приложение
+com.lapsa.insurance.crm.RequestSource.INTERNAL.short = WEB
 
 com.lapsa.insurance.crm.TransactionProblem.CANCELED_BY_CONSUMER = Отменено клиентом
 com.lapsa.insurance.crm.TransactionProblem.WRONG_DATA_PROVIDED  = Предоставлены неверные данные

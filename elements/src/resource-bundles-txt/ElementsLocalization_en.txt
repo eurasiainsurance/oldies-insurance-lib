@@ -1,176 +1,176 @@
-com.lapsa.insurance.crm.InsuranceRequestType.ONLINE           = Он-лайн заявка
-com.lapsa.insurance.crm.InsuranceRequestType.ONLINE.short     = Он-лайн
-com.lapsa.insurance.crm.InsuranceRequestType.EXPRESS          = Экспресс заявка
-com.lapsa.insurance.crm.InsuranceRequestType.EXPRESS.short    = Экспресс
-com.lapsa.insurance.crm.InsuranceRequestType.UNCOMPLETE       = Незавершеная заявка (лид)
-com.lapsa.insurance.crm.InsuranceRequestType.UNCOMPLETE.short = Лид
+com.lapsa.insurance.crm.InsuranceRequestType.ONLINE           = =ENG= Он-лайн заявка
+com.lapsa.insurance.crm.InsuranceRequestType.ONLINE.short     = =ENG= Он-лайн
+com.lapsa.insurance.crm.InsuranceRequestType.EXPRESS          = =ENG= Экспресс заявка
+com.lapsa.insurance.crm.InsuranceRequestType.EXPRESS.short    = =ENG= Экспресс
+com.lapsa.insurance.crm.InsuranceRequestType.UNCOMPLETE       = =ENG= Незавершеная заявка (лид)
+com.lapsa.insurance.crm.InsuranceRequestType.UNCOMPLETE.short = =ENG= Лид
 
-com.lapsa.insurance.crm.ObtainingStatus.PENDING         = Получение ожидается
-com.lapsa.insurance.crm.ObtainingStatus.PENDING.short   = ожидается
-com.lapsa.insurance.crm.ObtainingStatus.DONE            = Получено
-com.lapsa.insurance.crm.ObtainingStatus.DONE.short      = получено
-com.lapsa.insurance.crm.ObtainingStatus.CANCELED        = Отменено
-com.lapsa.insurance.crm.ObtainingStatus.CANCELED.short  = отменено
-com.lapsa.insurance.crm.ObtainingStatus.UNDEFINED       = Не определено
-com.lapsa.insurance.crm.ObtainingStatus.UNDEFINED.short = не определено
+com.lapsa.insurance.crm.ObtainingStatus.PENDING         = =ENG= Получение ожидается
+com.lapsa.insurance.crm.ObtainingStatus.PENDING.short   = =ENG= ожидается
+com.lapsa.insurance.crm.ObtainingStatus.DONE            = =ENG= Получено
+com.lapsa.insurance.crm.ObtainingStatus.DONE.short      = =ENG= получено
+com.lapsa.insurance.crm.ObtainingStatus.CANCELED        = =ENG= Отменено
+com.lapsa.insurance.crm.ObtainingStatus.CANCELED.short  = =ENG= отменено
+com.lapsa.insurance.crm.ObtainingStatus.UNDEFINED       = =ENG= Не определено
+com.lapsa.insurance.crm.ObtainingStatus.UNDEFINED.short = =ENG= не определено
 
-com.lapsa.insurance.crm.PaymentStatus.PENDING         = Оплата ожидается
-com.lapsa.insurance.crm.PaymentStatus.PENDING.short   = ожидается
-com.lapsa.insurance.crm.PaymentStatus.DONE            = Оплачено
-com.lapsa.insurance.crm.PaymentStatus.DONE.short      = оплачено
-com.lapsa.insurance.crm.PaymentStatus.CANCELED        = Отменено
-com.lapsa.insurance.crm.PaymentStatus.CANCELED.short  = отменено
-com.lapsa.insurance.crm.PaymentStatus.UNDEFINED       = Не определено
-com.lapsa.insurance.crm.PaymentStatus.UNDEFINED.short = не определено
+com.lapsa.insurance.crm.PaymentStatus.PENDING         = =ENG= Оплата ожидается
+com.lapsa.insurance.crm.PaymentStatus.PENDING.short   = =ENG= ожидается
+com.lapsa.insurance.crm.PaymentStatus.DONE            = =ENG= Оплачено
+com.lapsa.insurance.crm.PaymentStatus.DONE.short      = =ENG= оплачено
+com.lapsa.insurance.crm.PaymentStatus.CANCELED        = =ENG= Отменено
+com.lapsa.insurance.crm.PaymentStatus.CANCELED.short  = =ENG= отменено
+com.lapsa.insurance.crm.PaymentStatus.UNDEFINED       = =ENG= Не определено
+com.lapsa.insurance.crm.PaymentStatus.UNDEFINED.short = =ENG= не определено
 
-com.lapsa.insurance.crm.ProgressStatus.NEW        = Новая 
-com.lapsa.insurance.crm.ProgressStatus.ON_PROCESS = В обработке
-com.lapsa.insurance.crm.ProgressStatus.ON_HOLD    = На паузе
-com.lapsa.insurance.crm.ProgressStatus.FINISHED   = Завершено
+com.lapsa.insurance.crm.ProgressStatus.NEW        = =ENG= Новая 
+com.lapsa.insurance.crm.ProgressStatus.ON_PROCESS = =ENG= В обработке
+com.lapsa.insurance.crm.ProgressStatus.ON_HOLD    = =ENG= На паузе
+com.lapsa.insurance.crm.ProgressStatus.FINISHED   = =ENG= Завершено
 
-com.lapsa.insurance.crm.RequestStatus.OPEN   = Открыто
-com.lapsa.insurance.crm.RequestStatus.CLOSED = Закрыто
+com.lapsa.insurance.crm.RequestStatus.OPEN   = =ENG= Открыто
+com.lapsa.insurance.crm.RequestStatus.CLOSED = =ENG= Закрыто
 
-com.lapsa.insurance.crm.RequestSource.API            = Заявка через API веб-сервиса 
-com.lapsa.insurance.crm.RequestSource.API.short      = API 
-com.lapsa.insurance.crm.RequestSource.INTERNAL       = Собственное Web-приложение
-com.lapsa.insurance.crm.RequestSource.INTERNAL.short = WEB
+com.lapsa.insurance.crm.RequestSource.API            = =ENG= Заявка через API веб-сервиса 
+com.lapsa.insurance.crm.RequestSource.API.short      = =ENG= API 
+com.lapsa.insurance.crm.RequestSource.INTERNAL       = =ENG= Собственное Web-приложение
+com.lapsa.insurance.crm.RequestSource.INTERNAL.short = =ENG= WEB
 
-com.lapsa.insurance.crm.TransactionProblem.CANCELED_BY_CONSUMER = Отменено клиентом
-com.lapsa.insurance.crm.TransactionProblem.WRONG_DATA_PROVIDED  = Предоставлены неверные данные
-com.lapsa.insurance.crm.TransactionProblem.TEST                 = Тестовая заявка
-com.lapsa.insurance.crm.TransactionProblem.DUPLICATE            = Дублирует другую заявку
-com.lapsa.insurance.crm.TransactionProblem.OTHER                = Другая причина
+com.lapsa.insurance.crm.TransactionProblem.CANCELED_BY_CONSUMER = =ENG= Отменено клиентом
+com.lapsa.insurance.crm.TransactionProblem.WRONG_DATA_PROVIDED  = =ENG= Предоставлены неверные данные
+com.lapsa.insurance.crm.TransactionProblem.TEST                 = =ENG= Тестовая заявка
+com.lapsa.insurance.crm.TransactionProblem.DUPLICATE            = =ENG= Дублирует другую заявку
+com.lapsa.insurance.crm.TransactionProblem.OTHER                = =ENG= Другая причина
 
-com.lapsa.insurance.crm.TransactionStatus.COMPLETED             = Сделка заключена
-com.lapsa.insurance.crm.TransactionStatus.NOT_COMPLETED         = Сделка отменена
+com.lapsa.insurance.crm.TransactionStatus.COMPLETED             = =ENG= Сделка заключена
+com.lapsa.insurance.crm.TransactionStatus.NOT_COMPLETED         = =ENG= Сделка отменена
 
-com.lapsa.insurance.elements.CancelationReason.CANCELATION_AND_RENEW   = Досрочное прекращение договора и заключение нового
-com.lapsa.insurance.elements.CancelationReason.CANCELATION             = Досрочное расторжение
-com.lapsa.insurance.elements.CancelationReason.MADE_INSURANCE_PAYMENT  = Произведена страховая выплата
-com.lapsa.insurance.elements.CancelationReason.PREMIUM_COST_ERROR      = Корректировка неверно рассчитанной премии
-com.lapsa.insurance.elements.CancelationReason.POLICY_LOST             = Утеря
-com.lapsa.insurance.elements.CancelationReason.ISSUED_DUPLICATE_POLICY = Выпущен дубликат
-com.lapsa.insurance.elements.CancelationReason.OTHER                   = Другая причина
-com.lapsa.insurance.elements.CancelationReason.HUMAN_FAILURE           = Ошибка оператора
+com.lapsa.insurance.elements.CancelationReason.CANCELATION_AND_RENEW   = =ENG= Досрочное прекращение договора и заключение нового
+com.lapsa.insurance.elements.CancelationReason.CANCELATION             = =ENG= Досрочное расторжение
+com.lapsa.insurance.elements.CancelationReason.MADE_INSURANCE_PAYMENT  = =ENG= Произведена страховая выплата
+com.lapsa.insurance.elements.CancelationReason.PREMIUM_COST_ERROR      = =ENG= Корректировка неверно рассчитанной премии
+com.lapsa.insurance.elements.CancelationReason.POLICY_LOST             = =ENG= Утеря
+com.lapsa.insurance.elements.CancelationReason.ISSUED_DUPLICATE_POLICY = =ENG= Выпущен дубликат
+com.lapsa.insurance.elements.CancelationReason.OTHER                   = =ENG= Другая причина
+com.lapsa.insurance.elements.CancelationReason.HUMAN_FAILURE           = =ENG= Ошибка оператора
 
-com.lapsa.insurance.elements.CascoCarAgeClass.FROM3TO7 = от 3-х до 7 лет
-com.lapsa.insurance.elements.CascoCarAgeClass.UNDER3   = до 3-х лет
-com.lapsa.insurance.elements.CascoCarAgeClass.OTHER7   = старше 7 лет
+com.lapsa.insurance.elements.CascoCarAgeClass.FROM3TO7 = =ENG= от 3-х до 7 лет
+com.lapsa.insurance.elements.CascoCarAgeClass.UNDER3   = =ENG= до 3-х лет
+com.lapsa.insurance.elements.CascoCarAgeClass.OTHER7   = =ENG= старше 7 лет
 
-com.lapsa.insurance.elements.CascoDeductibleFullRate.PERCENT10 = 10%
-com.lapsa.insurance.elements.CascoDeductibleFullRate.PERCENT5  = 5%
+com.lapsa.insurance.elements.CascoDeductibleFullRate.PERCENT10 = =ENG= 10%
+com.lapsa.insurance.elements.CascoDeductibleFullRate.PERCENT5  = =ENG= 5%
 
-com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT0_5 = 0,5%
-com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT1   = 1%
-com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT10  = 10%
-com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT2   = 2%
-com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT3   = 3%
-com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT5   = 5%
+com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT0_5 = =ENG= 0,5%
+com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT1   = =ENG= 1%
+com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT10  = =ENG= 10%
+com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT2   = =ENG= 2%
+com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT3   = =ENG= 3%
+com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT5   = =ENG= 5%
 
-com.lapsa.insurance.elements.DeliveryTimeSlot.DURING_THE_DAY       = в течении дня
-com.lapsa.insurance.elements.DeliveryTimeSlot.BEFORE_LUNCH         = в первой половине дня (с 9:00 до 13:00)
-com.lapsa.insurance.elements.DeliveryTimeSlot.BEFORE_LUNCH.short   = в первой половине дня
-com.lapsa.insurance.elements.DeliveryTimeSlot.AFTER_LUNCH          = во второй половине дня (с 13:00 до 18:00)
-com.lapsa.insurance.elements.DeliveryTimeSlot.AFTER_LUNCH.short    = во второй половине дня
-com.lapsa.insurance.elements.DeliveryTimeSlot.EVENING              = вечером (с 18:00 до 21:00)
-com.lapsa.insurance.elements.DeliveryTimeSlot.EVENING.short        = вечером
+com.lapsa.insurance.elements.DeliveryTimeSlot.DURING_THE_DAY       = =ENG= в течении дня
+com.lapsa.insurance.elements.DeliveryTimeSlot.BEFORE_LUNCH         = =ENG= в первой половине дня (с 9:00 до 13:00)
+com.lapsa.insurance.elements.DeliveryTimeSlot.BEFORE_LUNCH.short   = =ENG= в первой половине дня
+com.lapsa.insurance.elements.DeliveryTimeSlot.AFTER_LUNCH          = =ENG= во второй половине дня (с 13:00 до 18:00)
+com.lapsa.insurance.elements.DeliveryTimeSlot.AFTER_LUNCH.short    = =ENG= во второй половине дня
+com.lapsa.insurance.elements.DeliveryTimeSlot.EVENING              = =ENG= вечером (с 18:00 до 21:00)
+com.lapsa.insurance.elements.DeliveryTimeSlot.EVENING.short        = =ENG= вечером
 
-com.lapsa.insurance.elements.IdentityCardType.ID_CARD           = удостоверение личности
-com.lapsa.insurance.elements.IdentityCardType.PASSPORT          = паспорт
-com.lapsa.insurance.elements.IdentityCardType.BIRTH_CERTIFICATE = свидетельство о рождении
-com.lapsa.insurance.elements.IdentityCardType.RESIDENCE_PERMIT  = вид на жительство иностранца
+com.lapsa.insurance.elements.IdentityCardType.ID_CARD           = =ENG= удостоверение личности
+com.lapsa.insurance.elements.IdentityCardType.PASSPORT          = =ENG= паспорт
+com.lapsa.insurance.elements.IdentityCardType.BIRTH_CERTIFICATE = =ENG= свидетельство о рождении
+com.lapsa.insurance.elements.IdentityCardType.RESIDENCE_PERMIT  = =ENG= вид на жительство иностранца
 
-com.lapsa.insurance.elements.InsuranceProductType.CASCO        = Авто КАСКО
-com.lapsa.insurance.elements.InsuranceProductType.CASCO.short  = КАСКО
-com.lapsa.insurance.elements.InsuranceProductType.POLICY       = Полис ОС ГПО ВТС
-com.lapsa.insurance.elements.InsuranceProductType.POLICY.short = Полис
+com.lapsa.insurance.elements.InsuranceProductType.CASCO        = =ENG= Авто КАСКО
+com.lapsa.insurance.elements.InsuranceProductType.CASCO.short  = =ENG= КАСКО
+com.lapsa.insurance.elements.InsuranceProductType.POLICY       = =ENG= Полис ОС ГПО ВТС
+com.lapsa.insurance.elements.InsuranceProductType.POLICY.short = =ENG= Полис
 
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_0  = Класс 0
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_1  = Класс 1
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_2  = Класс 2
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_3  = Класс 3
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_4  = Класс 4
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_5  = Класс 5
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_6  = Класс 6
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_7  = Класс 7
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_8  = Класс 8
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_9  = Класс 9
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_10 = Класс 10
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_11 = Класс 11
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_12 = Класс 12
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_13 = Класс 13
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_M  = Класс М
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_0  = =ENG= Класс 0
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_1  = =ENG= Класс 1
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_2  = =ENG= Класс 2
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_3  = =ENG= Класс 3
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_4  = =ENG= Класс 4
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_5  = =ENG= Класс 5
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_6  = =ENG= Класс 6
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_7  = =ENG= Класс 7
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_8  = =ENG= Класс 8
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_9  = =ENG= Класс 9
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_10 = =ENG= Класс 10
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_11 = =ENG= Класс 11
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_12 = =ENG= Класс 12
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_13 = =ENG= Класс 13
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_M  = =ENG= Класс М
 
-com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.OVER25_MORE2  = возраст старше 25 лет, стаж вождения более 2 лет
-com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.UNDER25_LESS2 = возраст моложе 25 лет, стаж вождения менее 2 лет
-com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.UNDER25_MORE2 = возраст моложе 25 лет, стаж вождения более 2 лет
-com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.OVER25_LESS2  = возраст старше 25 лет, стаж вождения менее 2 лет
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.OVER25_MORE2  = =ENG= возраст старше 25 лет, стаж вождения более 2 лет
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.UNDER25_LESS2 = =ENG= возраст моложе 25 лет, стаж вождения менее 2 лет
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.UNDER25_MORE2 = =ENG= возраст моложе 25 лет, стаж вождения более 2 лет
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.OVER25_LESS2  = =ENG= возраст старше 25 лет, стаж вождения менее 2 лет
 
-com.lapsa.insurance.elements.InsuredAgeClass.OVER25        = возраст старше 25 лет
-com.lapsa.insurance.elements.InsuredAgeClass.OVER25.short  = старше 25 лет
-com.lapsa.insurance.elements.InsuredAgeClass.UNDER25       = возраст моложе 25 лет
-com.lapsa.insurance.elements.InsuredAgeClass.UNDER25.short = моложе 25 лет
+com.lapsa.insurance.elements.InsuredAgeClass.OVER25        = =ENG= возраст старше 25 лет
+com.lapsa.insurance.elements.InsuredAgeClass.OVER25.short  = =ENG= старше 25 лет
+com.lapsa.insurance.elements.InsuredAgeClass.UNDER25       = =ENG= возраст моложе 25 лет
+com.lapsa.insurance.elements.InsuredAgeClass.UNDER25.short = =ENG= моложе 25 лет
 
-com.lapsa.insurance.elements.InsuredExpirienceClass.MORE2       = стаж вождения более 2 лет
-com.lapsa.insurance.elements.InsuredExpirienceClass.MORE2.short = более 2 лет
-com.lapsa.insurance.elements.InsuredExpirienceClass.LESS2       = стаж вождения менее 2 лет
-com.lapsa.insurance.elements.InsuredExpirienceClass.LESS2.short = менее 2 лет
+com.lapsa.insurance.elements.InsuredExpirienceClass.MORE2       = =ENG= стаж вождения более 2 лет
+com.lapsa.insurance.elements.InsuredExpirienceClass.MORE2.short = =ENG= более 2 лет
+com.lapsa.insurance.elements.InsuredExpirienceClass.LESS2       = =ENG= стаж вождения менее 2 лет
+com.lapsa.insurance.elements.InsuredExpirienceClass.LESS2.short = =ENG= менее 2 лет
 
-com.lapsa.insurance.elements.MaritalStatus.MARRIED = женат / замужем
-com.lapsa.insurance.elements.MaritalStatus.SINGLE  = холост / незамужем
+com.lapsa.insurance.elements.MaritalStatus.MARRIED = =ENG= женат / замужем
+com.lapsa.insurance.elements.MaritalStatus.SINGLE  = =ENG= холост / незамужем
 
-com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE       = Оплата банковской картой
-com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE.short = картой on-line
-com.lapsa.insurance.elements.PaymentMethod.PAYCASH              = Оплата наличными курьеру при доставке полиса
-com.lapsa.insurance.elements.PaymentMethod.PAYCASH.short        = наличными
-com.lapsa.insurance.elements.PaymentMethod.UNDEFINED            = Не определено
-com.lapsa.insurance.elements.PaymentMethod.UNDEFINED.short      = не определено
+com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE       = =ENG= Оплата банковской картой
+com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE.short = =ENG= картой on-line
+com.lapsa.insurance.elements.PaymentMethod.PAYCASH              = =ENG= Оплата наличными курьеру при доставке полиса
+com.lapsa.insurance.elements.PaymentMethod.PAYCASH.short        = =ENG= наличными
+com.lapsa.insurance.elements.PaymentMethod.UNDEFINED            = =ENG= Не определено
+com.lapsa.insurance.elements.PaymentMethod.UNDEFINED.short      = =ENG= не определено
 
-com.lapsa.insurance.elements.ObtainingMethod.DELIVERY        = Доставить курьером
-com.lapsa.insurance.elements.ObtainingMethod.DELIVERY.short  = доставить курьером
-com.lapsa.insurance.elements.ObtainingMethod.PICKUP          = Забрать самостоятельно в офисе страховой компании
-com.lapsa.insurance.elements.ObtainingMethod.PICKUP.short    = забрать самостоятельно
-com.lapsa.insurance.elements.ObtainingMethod.UNDEFINED       = Не определено
-com.lapsa.insurance.elements.ObtainingMethod.UNDEFINED.short = не определено
+com.lapsa.insurance.elements.ObtainingMethod.DELIVERY        = =ENG= Доставить курьером
+com.lapsa.insurance.elements.ObtainingMethod.DELIVERY.short  = =ENG= доставить курьером
+com.lapsa.insurance.elements.ObtainingMethod.PICKUP          = =ENG= Забрать самостоятельно в офисе страховой компании
+com.lapsa.insurance.elements.ObtainingMethod.PICKUP.short    = =ENG= забрать самостоятельно
+com.lapsa.insurance.elements.ObtainingMethod.UNDEFINED       = =ENG= Не определено
+com.lapsa.insurance.elements.ObtainingMethod.UNDEFINED.short = =ENG= не определено
 
-com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.TO_15D_INCL          = до 15 дней включительно
-com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_16D_TO_1M_INCL  = от 16 дней до 1 месяца включительно
-com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_1M_TO_2M_INCL   = от 1 до 2 месяцев включительно
-com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_2M_TO_3M_INCL   = от 2 до 3 месяцев включительно
-com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_3M_TO_4M_INCL   = от 3 до 4 месяцев включительно
-com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_4M_TO_5M_INCL   = от 4 до 5 месяцев включительно
-com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_5M_TO_6M_INCL   = от 5 до 6 месяцев включительно
-com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_6M_TO_7M_INCL   = от 6 до 7 месяцев включительно
-com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_7M_TO_8M_INCL   = от 7 до 8 месяцев включительно
-com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_8M_TO_9M_INCL   = от 8 до 9 месяцев включительно
-com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_9M              = свыше 9 месяцев
+com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.TO_15D_INCL          = =ENG= до 15 дней включительно
+com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_16D_TO_1M_INCL  = =ENG= от 16 дней до 1 месяца включительно
+com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_1M_TO_2M_INCL   = =ENG= от 1 до 2 месяцев включительно
+com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_2M_TO_3M_INCL   = =ENG= от 2 до 3 месяцев включительно
+com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_3M_TO_4M_INCL   = =ENG= от 3 до 4 месяцев включительно
+com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_4M_TO_5M_INCL   = =ENG= от 4 до 5 месяцев включительно
+com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_5M_TO_6M_INCL   = =ENG= от 5 до 6 месяцев включительно
+com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_6M_TO_7M_INCL   = =ENG= от 6 до 7 месяцев включительно
+com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_7M_TO_8M_INCL   = =ENG= от 7 до 8 месяцев включительно
+com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_8M_TO_9M_INCL   = =ENG= от 8 до 9 месяцев включительно
+com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_9M              = =ENG= свыше 9 месяцев
 
-com.lapsa.insurance.elements.Sex.MALE   = мужской
-com.lapsa.insurance.elements.Sex.FEMALE = женский
+com.lapsa.insurance.elements.Sex.MALE   = =ENG= мужской
+com.lapsa.insurance.elements.Sex.FEMALE = =ENG= женский
 
-com.lapsa.insurance.elements.SteeringWheelLocation.RIGHT_SIDE = руль справа
-com.lapsa.insurance.elements.SteeringWheelLocation.LEFT_SIDE  = руль слева
+com.lapsa.insurance.elements.SteeringWheelLocation.RIGHT_SIDE = =ENG= руль справа
+com.lapsa.insurance.elements.SteeringWheelLocation.LEFT_SIDE  = =ENG= руль слева
 
-com.lapsa.insurance.elements.SubjectType.COMPANY = Юридическое лицо
-com.lapsa.insurance.elements.SubjectType.PERSON  = Физическое лицо
+com.lapsa.insurance.elements.SubjectType.COMPANY = =ENG= Юридическое лицо
+com.lapsa.insurance.elements.SubjectType.PERSON  = =ENG= Физическое лицо
 
-com.lapsa.insurance.elements.VehicleAgeClass.UNDER7 = До 7 лет включительно
-com.lapsa.insurance.elements.VehicleAgeClass.OVER7  = Свыше 7 лет
+com.lapsa.insurance.elements.VehicleAgeClass.UNDER7 = =ENG= До 7 лет включительно
+com.lapsa.insurance.elements.VehicleAgeClass.OVER7  = =ENG= Свыше 7 лет
 
-com.lapsa.insurance.elements.VehicleClass.BUS16          = Автобусы до 16 пассажирских мест включительно
-com.lapsa.insurance.elements.VehicleClass.BUS16.short    = Автобусы 16 и менее пассажиров
-com.lapsa.insurance.elements.VehicleClass.BUSOVR16       = Автобусы свыше 16 пассажирских мест
-com.lapsa.insurance.elements.VehicleClass.BUSOVR16.short = Автобусы более 16 пассажиров
-com.lapsa.insurance.elements.VehicleClass.CARGO          = Грузовые
-com.lapsa.insurance.elements.VehicleClass.CAR            = Легковые
-com.lapsa.insurance.elements.VehicleClass.MOTO           = Мототранспорт
-com.lapsa.insurance.elements.VehicleClass.TRAILER        = Прицепы (полуприцепы)
-com.lapsa.insurance.elements.VehicleClass.TRAM           = Троллейбусы, трамваи
-com.lapsa.insurance.elements.VehicleClass.SEA            = Морской транспорт
-com.lapsa.insurance.elements.VehicleClass.AIRCRAFT       = Воздушный транспорт
-com.lapsa.insurance.elements.VehicleClass.RAILWAY        = Железнодорожный транспорт
-com.lapsa.insurance.elements.VehicleClass.SPECIAL        = Спец.техника
+com.lapsa.insurance.elements.VehicleClass.BUS16          = =ENG= Автобусы до 16 пассажирских мест включительно
+com.lapsa.insurance.elements.VehicleClass.BUS16.short    = =ENG= Автобусы 16 и менее пассажиров
+com.lapsa.insurance.elements.VehicleClass.BUSOVR16       = =ENG= Автобусы свыше 16 пассажирских мест
+com.lapsa.insurance.elements.VehicleClass.BUSOVR16.short = =ENG= Автобусы более 16 пассажиров
+com.lapsa.insurance.elements.VehicleClass.CARGO          = =ENG= Грузовые
+com.lapsa.insurance.elements.VehicleClass.CAR            = =ENG= Легковые
+com.lapsa.insurance.elements.VehicleClass.MOTO           = =ENG= Мототранспорт
+com.lapsa.insurance.elements.VehicleClass.TRAILER        = =ENG= Прицепы (полуприцепы)
+com.lapsa.insurance.elements.VehicleClass.TRAM           = =ENG= Троллейбусы, трамваи
+com.lapsa.insurance.elements.VehicleClass.SEA            = =ENG= Морской транспорт
+com.lapsa.insurance.elements.VehicleClass.AIRCRAFT       = =ENG= Воздушный транспорт
+com.lapsa.insurance.elements.VehicleClass.RAILWAY        = =ENG= Железнодорожный транспорт
+com.lapsa.insurance.elements.VehicleClass.SPECIAL        = =ENG= Спец.техника
 
-com.lapsa.insurance.elements.WhoIsInsurant.DRIVER = Страхователем является один из застрахованных водителей
-com.lapsa.insurance.elements.WhoIsInsurant.OTHER  = Страхователем является другое лицо
+com.lapsa.insurance.elements.WhoIsInsurant.DRIVER = =ENG= Страхователем является один из застрахованных водителей
+com.lapsa.insurance.elements.WhoIsInsurant.OTHER  = =ENG= Страхователем является другое лицо

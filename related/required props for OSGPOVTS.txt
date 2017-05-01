@@ -1,4 +1,4 @@
-﻿-- Страхователь --
+-- Страхователь --
 PersonalData * ФИО
 PersonalData * Дата рождения 
 ResidenceData * Место жительства

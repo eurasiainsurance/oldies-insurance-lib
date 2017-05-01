@@ -1,4 +1,4 @@
-﻿com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.NotNull.message = Choose the data
+com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.NotNull.message = Choose the data
 com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message = Wrong data
 
 com.lapsa.insurance.domain.InsuranceRequest.allowProcessPersonalData.AssertTrue.message = You have to give consent to the processing of your personal data

@@ -1,4 +1,4 @@
-﻿com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.NotNull.message = Мәнін таңдаңыз 
+com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.NotNull.message = Мәнін таңдаңыз 
 com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message = Қате мән
 
 com.lapsa.insurance.domain.InsuranceRequest.allowProcessPersonalData.AssertTrue.message = Сіз беруге тиіс келісім өзінің дербес деректерін өңдеуге

@@ -134,7 +134,7 @@ com.lapsa.insurance.elements.ObtainingMethod.PICKUP.short    = өз бетінш
 com.lapsa.insurance.elements.ObtainingMethod.UNDEFINED       = Анықталмаған
 com.lapsa.insurance.elements.ObtainingMethod.UNDEFINED.short = анықталмаған
 
-сom.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.TO_15D_INCL          = қоса алғанда 15 күнге дейін
+com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.TO_15D_INCL          = қоса алғанда 15 күнге дейін
 com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_16D_TO_1M_INCL  = қоса алғанда 16 күннен 1 айға дейін
 com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_1M_TO_2M_INCL   = қоса алғанда 1 айдан 2 айға дейін
 com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_2M_TO_3M_INCL   = қоса алғанда 2 айдан 3 айға дейін

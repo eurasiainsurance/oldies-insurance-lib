@@ -1,10 +1,10 @@
 com.lapsa.insurance.validation.ValidIdentityCardType.message = ҚҰжаттың дұрыс емес түрі
 com.lapsa.insurance.validation.ValidInsuranceAgeClass.message = Жастың дұрыс емес санаты көрсетілген
 com.lapsa.insurance.validation.ValidInsuranceExpirienceClass.message = Жүргізудің дұрыс емес өтілі көрсетілген
-com.lapsa.insurance.validation.ValidInsuranceRequestType.message = =KAZ= Неразрешенное значение типа заявки на страхование
+com.lapsa.insurance.validation.ValidInsuranceRequestType.message = Сақтандыруға берілген өтінім түрінің рұқсат етілмеген  мәні
 com.lapsa.insurance.validation.ValidPolicyVehicleAgeClass.message = Сақтандырудың осы түрі үшін КҚ пайдаланудың дұрыс емес мерзімі көрсетілген
 com.lapsa.insurance.validation.ValidPolicyVehicleClass.message = Сақтандырудың осы түрі үшін КҚ дұрыс емес класы көрсетілген
 com.lapsa.insurance.validation.ValidVehicleRegistrationNumber.message = КҚ дұрыс емес тіркеу нөмірі 
 com.lapsa.insurance.validation.ValidVehicleYearOfIssue.message = Көлік құралының шығарылған жылы дұрыс емес
 com.lapsa.insurance.validation.ValidInsuranceClassType.message = Сақтандырудың дұрыс емес класы
-com.lapsa.insurance.validation.ValidPaymentMethod.message = =KAZ= Некорректный способ оплаты
+com.lapsa.insurance.validation.ValidPaymentMethod.message = Төлем жасаудың дұрыс емес тәсілі

@@ -1,6 +1,5 @@
 package test.com.lapsa.insurance;
 
-import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
 import java.util.Enumeration;
@@ -46,8 +45,6 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
     public void testNoExcessRecordsRussian() {
 	Locale locale = getLocale(LANG_RU);
 	ResourceBundle resources = getResourceBundle(ElementsBundleBase.BUNDLE_BASENAME, locale);
-	assertThat(resources.getString("com.lapsa.insurance.elements.InsuranceClassType.CLASS_3"),
-		allOf(not(nullValue()), is("Класс 3")));
 	testBundle(resources);
     }
 
@@ -55,8 +52,6 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
     public void testNoExcessRecordsEnglish() {
 	Locale locale = getLocale(LANG_EN);
 	ResourceBundle resources = getResourceBundle(ElementsBundleBase.BUNDLE_BASENAME, locale);
-	assertThat(resources.getString("com.lapsa.insurance.elements.InsuranceClassType.CLASS_3"),
-		allOf(not(nullValue()), is("Класс 3")));
 	testBundle(resources);
     }
 
@@ -64,8 +59,6 @@ public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
     public void testNoExcessRecordsKazakh() {
 	Locale locale = getLocale(LANG_KK);
 	ResourceBundle resources = getResourceBundle(ElementsBundleBase.BUNDLE_BASENAME, locale);
-	assertThat(resources.getString("com.lapsa.insurance.elements.InsuranceClassType.CLASS_3"),
-		allOf(not(nullValue()), is("Класс 3")));
 	testBundle(resources);
     }
 

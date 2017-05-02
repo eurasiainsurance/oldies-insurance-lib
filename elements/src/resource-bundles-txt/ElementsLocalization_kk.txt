@@ -1,176 +1,176 @@
-com.lapsa.insurance.crm.InsuranceRequestType.ONLINE           = =KAZ= Он-лайн заявка
-com.lapsa.insurance.crm.InsuranceRequestType.ONLINE.short     = =KAZ= Он-лайн
-com.lapsa.insurance.crm.InsuranceRequestType.EXPRESS          = =KAZ= Экспресс заявка
-com.lapsa.insurance.crm.InsuranceRequestType.EXPRESS.short    = =KAZ= Экспресс
-com.lapsa.insurance.crm.InsuranceRequestType.UNCOMPLETE       = =KAZ= Незавершеная заявка (лид)
-com.lapsa.insurance.crm.InsuranceRequestType.UNCOMPLETE.short = =KAZ= Лид
+com.lapsa.insurance.crm.InsuranceRequestType.ONLINE           = Он-лайн өтнім
+com.lapsa.insurance.crm.InsuranceRequestType.ONLINE.short     = Он-лайн
+com.lapsa.insurance.crm.InsuranceRequestType.EXPRESS          = Экспресс өтінім
+com.lapsa.insurance.crm.InsuranceRequestType.EXPRESS.short    = Экспресс
+com.lapsa.insurance.crm.InsuranceRequestType.UNCOMPLETE       = Аяқталмаған өтінім (лид)
+com.lapsa.insurance.crm.InsuranceRequestType.UNCOMPLETE.short = Лид
 
-com.lapsa.insurance.crm.ObtainingStatus.PENDING         = =KAZ= Получение ожидается
-com.lapsa.insurance.crm.ObtainingStatus.PENDING.short   = =KAZ= ожидается
-com.lapsa.insurance.crm.ObtainingStatus.DONE            = =KAZ= Получено
-com.lapsa.insurance.crm.ObtainingStatus.DONE.short      = =KAZ= получено
-com.lapsa.insurance.crm.ObtainingStatus.CANCELED        = =KAZ= Отменено
-com.lapsa.insurance.crm.ObtainingStatus.CANCELED.short  = =KAZ= отменено
-com.lapsa.insurance.crm.ObtainingStatus.UNDEFINED       = =KAZ= Не определено
-com.lapsa.insurance.crm.ObtainingStatus.UNDEFINED.short = =KAZ= не определено
+com.lapsa.insurance.crm.ObtainingStatus.PENDING         = Алу күтілуде
+com.lapsa.insurance.crm.ObtainingStatus.PENDING.short   = күтілуде
+com.lapsa.insurance.crm.ObtainingStatus.DONE            = Алынды
+com.lapsa.insurance.crm.ObtainingStatus.DONE.short      = алынды
+com.lapsa.insurance.crm.ObtainingStatus.CANCELED        = Жойылды
+com.lapsa.insurance.crm.ObtainingStatus.CANCELED.short  = жойылды
+com.lapsa.insurance.crm.ObtainingStatus.UNDEFINED       = Анықталмаған
+com.lapsa.insurance.crm.ObtainingStatus.UNDEFINED.short = анықталмаған
 
-com.lapsa.insurance.crm.PaymentStatus.PENDING         = =KAZ= Оплата ожидается
-com.lapsa.insurance.crm.PaymentStatus.PENDING.short   = =KAZ= ожидается
-com.lapsa.insurance.crm.PaymentStatus.DONE            = =KAZ= Оплачено
-com.lapsa.insurance.crm.PaymentStatus.DONE.short      = =KAZ= оплачено
-com.lapsa.insurance.crm.PaymentStatus.CANCELED        = =KAZ= Отменено
-com.lapsa.insurance.crm.PaymentStatus.CANCELED.short  = =KAZ= отменено
-com.lapsa.insurance.crm.PaymentStatus.UNDEFINED       = =KAZ= Не определено
-com.lapsa.insurance.crm.PaymentStatus.UNDEFINED.short = =KAZ= не определено
+com.lapsa.insurance.crm.PaymentStatus.PENDING         = Төлем күтілуде
+com.lapsa.insurance.crm.PaymentStatus.PENDING.short   = күтілуде
+com.lapsa.insurance.crm.PaymentStatus.DONE            = Төленді
+com.lapsa.insurance.crm.PaymentStatus.DONE.short      = төленді
+com.lapsa.insurance.crm.PaymentStatus.CANCELED        = Жойылды
+com.lapsa.insurance.crm.PaymentStatus.CANCELED.short  = жойылды
+com.lapsa.insurance.crm.PaymentStatus.UNDEFINED       = Анықталмаған
+com.lapsa.insurance.crm.PaymentStatus.UNDEFINED.short = анықталмаған
 
-com.lapsa.insurance.crm.ProgressStatus.NEW        = =KAZ= Новая 
-com.lapsa.insurance.crm.ProgressStatus.ON_PROCESS = =KAZ= В обработке
-com.lapsa.insurance.crm.ProgressStatus.ON_HOLD    = =KAZ= На паузе
-com.lapsa.insurance.crm.ProgressStatus.FINISHED   = =KAZ= Завершено
+com.lapsa.insurance.crm.ProgressStatus.NEW        = жаңа 
+com.lapsa.insurance.crm.ProgressStatus.ON_PROCESS = Өңдеуде
+com.lapsa.insurance.crm.ProgressStatus.ON_HOLD    = Үзілісте
+com.lapsa.insurance.crm.ProgressStatus.FINISHED   = Аяқталды
 
-com.lapsa.insurance.crm.RequestStatus.OPEN   = =KAZ= Открыто
-com.lapsa.insurance.crm.RequestStatus.CLOSED = =KAZ= Закрыто
+com.lapsa.insurance.crm.RequestStatus.OPEN   = Ашық
+com.lapsa.insurance.crm.RequestStatus.CLOSED = Жабық
 
 com.lapsa.insurance.crm.RequestSource.API            = =KAZ= Заявка через API веб-сервиса 
 com.lapsa.insurance.crm.RequestSource.API.short      = =KAZ= API 
 com.lapsa.insurance.crm.RequestSource.INTERNAL       = =KAZ= Собственное Web-приложение
 com.lapsa.insurance.crm.RequestSource.INTERNAL.short = =KAZ= WEB
 
-com.lapsa.insurance.crm.TransactionProblem.CANCELED_BY_CONSUMER = =KAZ= Отменено клиентом
-com.lapsa.insurance.crm.TransactionProblem.WRONG_DATA_PROVIDED  = =KAZ= Предоставлены неверные данные
-com.lapsa.insurance.crm.TransactionProblem.TEST                 = =KAZ= Тестовая заявка
-com.lapsa.insurance.crm.TransactionProblem.DUPLICATE            = =KAZ= Дублирует другую заявку
-com.lapsa.insurance.crm.TransactionProblem.OTHER                = =KAZ= Другая причина
+com.lapsa.insurance.crm.TransactionProblem.CANCELED_BY_CONSUMER = Клиентпен жойылды
+com.lapsa.insurance.crm.TransactionProblem.WRONG_DATA_PROVIDED  = Дұрыс емес деректер ұсынылған
+com.lapsa.insurance.crm.TransactionProblem.TEST                 = Тесттік өтінім
+com.lapsa.insurance.crm.TransactionProblem.DUPLICATE            = Басқа өтінімді қайталап тұр
+com.lapsa.insurance.crm.TransactionProblem.OTHER                = Басқа себеп
 
-com.lapsa.insurance.crm.TransactionStatus.COMPLETED             = =KAZ= Сделка заключена
-com.lapsa.insurance.crm.TransactionStatus.NOT_COMPLETED         = =KAZ= Сделка отменена
+com.lapsa.insurance.crm.TransactionStatus.COMPLETED             = Мәміле жасалды
+com.lapsa.insurance.crm.TransactionStatus.NOT_COMPLETED         = Мәміле жойылды
 
-com.lapsa.insurance.elements.CancelationReason.CANCELATION_AND_RENEW   = =KAZ= Досрочное прекращение договора и заключение нового
-com.lapsa.insurance.elements.CancelationReason.CANCELATION             = =KAZ= Досрочное расторжение
-com.lapsa.insurance.elements.CancelationReason.MADE_INSURANCE_PAYMENT  = =KAZ= Произведена страховая выплата
-com.lapsa.insurance.elements.CancelationReason.PREMIUM_COST_ERROR      = =KAZ= Корректировка неверно рассчитанной премии
-com.lapsa.insurance.elements.CancelationReason.POLICY_LOST             = =KAZ= Утеря
-com.lapsa.insurance.elements.CancelationReason.ISSUED_DUPLICATE_POLICY = =KAZ= Выпущен дубликат
-com.lapsa.insurance.elements.CancelationReason.OTHER                   = =KAZ= Другая причина
-com.lapsa.insurance.elements.CancelationReason.HUMAN_FAILURE           = =KAZ= Ошибка оператора
+com.lapsa.insurance.elements.CancelationReason.CANCELATION_AND_RENEW   = Шарттың мерзімінен бұрын тоқтатылуы және жаңасының жасалуы
+com.lapsa.insurance.elements.CancelationReason.CANCELATION             = Мерзімінен бұрын бұзу
+com.lapsa.insurance.elements.CancelationReason.MADE_INSURANCE_PAYMENT  = Сақтандыру төлемі жүргізілді
+com.lapsa.insurance.elements.CancelationReason.PREMIUM_COST_ERROR      = Есептелген сыйақының түзетуі дұрыс емес
+com.lapsa.insurance.elements.CancelationReason.POLICY_LOST             = Жоғалту
+com.lapsa.insurance.elements.CancelationReason.ISSUED_DUPLICATE_POLICY = Телнұсқасы шығарылды
+com.lapsa.insurance.elements.CancelationReason.OTHER                   = Басқа себеп
+com.lapsa.insurance.elements.CancelationReason.HUMAN_FAILURE           = Оператордың қателігі
 
-com.lapsa.insurance.elements.CascoCarAgeClass.FROM3TO7 = =KAZ= от 3-х до 7 лет
-com.lapsa.insurance.elements.CascoCarAgeClass.UNDER3   = =KAZ= до 3-х лет
-com.lapsa.insurance.elements.CascoCarAgeClass.OTHER7   = =KAZ= старше 7 лет
+com.lapsa.insurance.elements.CascoCarAgeClass.FROM3TO7 = 3-тен 7 жылға дейін
+com.lapsa.insurance.elements.CascoCarAgeClass.UNDER3   = 3 жылға дейін
+com.lapsa.insurance.elements.CascoCarAgeClass.OTHER7   = 7 жылдан жоғары
 
-com.lapsa.insurance.elements.CascoDeductibleFullRate.PERCENT10 = =KAZ= 10%
-com.lapsa.insurance.elements.CascoDeductibleFullRate.PERCENT5  = =KAZ= 5%
+com.lapsa.insurance.elements.CascoDeductibleFullRate.PERCENT10 = 10%
+com.lapsa.insurance.elements.CascoDeductibleFullRate.PERCENT5  = 5%
 
-com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT0_5 = =KAZ= 0,5%
-com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT1   = =KAZ= 1%
-com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT10  = =KAZ= 10%
-com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT2   = =KAZ= 2%
-com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT3   = =KAZ= 3%
-com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT5   = =KAZ= 5%
+com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT0_5 = 0,5%
+com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT1   = 1%
+com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT10  = 10%
+com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT2   = 2%
+com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT3   = 3%
+com.lapsa.insurance.elements.CascoDeductiblePartialRate.PERCENT5   = 5%
 
-com.lapsa.insurance.elements.DeliveryTimeSlot.DURING_THE_DAY       = =KAZ= в течении дня
-com.lapsa.insurance.elements.DeliveryTimeSlot.BEFORE_LUNCH         = =KAZ= в первой половине дня (с 9:00 до 13:00)
-com.lapsa.insurance.elements.DeliveryTimeSlot.BEFORE_LUNCH.short   = =KAZ= в первой половине дня
-com.lapsa.insurance.elements.DeliveryTimeSlot.AFTER_LUNCH          = =KAZ= во второй половине дня (с 13:00 до 18:00)
-com.lapsa.insurance.elements.DeliveryTimeSlot.AFTER_LUNCH.short    = =KAZ= во второй половине дня
-com.lapsa.insurance.elements.DeliveryTimeSlot.EVENING              = =KAZ= вечером (с 18:00 до 21:00)
-com.lapsa.insurance.elements.DeliveryTimeSlot.EVENING.short        = =KAZ= вечером
+com.lapsa.insurance.elements.DeliveryTimeSlot.DURING_THE_DAY       = бір күн ішінде
+com.lapsa.insurance.elements.DeliveryTimeSlot.BEFORE_LUNCH         = күннің бірінші жартысында  9:00 бастап 13:00 дейін)
+com.lapsa.insurance.elements.DeliveryTimeSlot.BEFORE_LUNCH.short   = күннің бірінші жартысында
+com.lapsa.insurance.elements.DeliveryTimeSlot.AFTER_LUNCH          = күннің екінші жартысында (13:00 бастап 18:00 дейін)
+com.lapsa.insurance.elements.DeliveryTimeSlot.AFTER_LUNCH.short    = күннің екінші жартысында
+com.lapsa.insurance.elements.DeliveryTimeSlot.EVENING              = кешек (18:00 бастап 21:00 дейін)
+com.lapsa.insurance.elements.DeliveryTimeSlot.EVENING.short        = кешек
 
-com.lapsa.insurance.elements.IdentityCardType.ID_CARD           = =KAZ= удостоверение личности
-com.lapsa.insurance.elements.IdentityCardType.PASSPORT          = =KAZ= паспорт
-com.lapsa.insurance.elements.IdentityCardType.BIRTH_CERTIFICATE = =KAZ= свидетельство о рождении
-com.lapsa.insurance.elements.IdentityCardType.RESIDENCE_PERMIT  = =KAZ= вид на жительство иностранца
+com.lapsa.insurance.elements.IdentityCardType.ID_CARD           = жеке куәлік
+com.lapsa.insurance.elements.IdentityCardType.PASSPORT          = паспорт
+com.lapsa.insurance.elements.IdentityCardType.BIRTH_CERTIFICATE = ттуу туралы куәлік
+com.lapsa.insurance.elements.IdentityCardType.RESIDENCE_PERMIT  = шетел азаматының ықтиярхаты
 
-com.lapsa.insurance.elements.InsuranceProductType.CASCO        = =KAZ= Авто КАСКО
-com.lapsa.insurance.elements.InsuranceProductType.CASCO.short  = =KAZ= КАСКО
-com.lapsa.insurance.elements.InsuranceProductType.POLICY       = =KAZ= Полис ОС ГПО ВТС
-com.lapsa.insurance.elements.InsuranceProductType.POLICY.short = =KAZ= Полис
+com.lapsa.insurance.elements.InsuranceProductType.CASCO        = Авто КАСКО
+com.lapsa.insurance.elements.InsuranceProductType.CASCO.short  = КАСКО
+com.lapsa.insurance.elements.InsuranceProductType.POLICY       = КҚИ АҚЖ МС полисі
+com.lapsa.insurance.elements.InsuranceProductType.POLICY.short = Полис
 
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_0  = =KAZ= Класс 0
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_1  = =KAZ= Класс 1
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_2  = =KAZ= Класс 2
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_3  = =KAZ= Класс 3
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_4  = =KAZ= Класс 4
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_5  = =KAZ= Класс 5
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_6  = =KAZ= Класс 6
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_7  = =KAZ= Класс 7
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_8  = =KAZ= Класс 8
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_9  = =KAZ= Класс 9
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_10 = =KAZ= Класс 10
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_11 = =KAZ= Класс 11
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_12 = =KAZ= Класс 12
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_13 = =KAZ= Класс 13
-com.lapsa.insurance.elements.InsuranceClassType.CLASS_M  = =KAZ= Класс М
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_0  = Класс 0
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_1  = Класс 1
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_2  = Класс 2
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_3  = Класс 3
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_4  = Класс 4
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_5  = Класс 5
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_6  = Класс 6
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_7  = Класс 7
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_8  = Класс 8
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_9  = Класс 9
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_10 = Класс 10
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_11 = Класс 11
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_12 = Класс 12
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_13 = Класс 13
+com.lapsa.insurance.elements.InsuranceClassType.CLASS_M  = Класс М
 
-com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.OVER25_MORE2  = =KAZ= возраст старше 25 лет, стаж вождения более 2 лет
-com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.UNDER25_LESS2 = =KAZ= возраст моложе 25 лет, стаж вождения менее 2 лет
-com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.UNDER25_MORE2 = =KAZ= возраст моложе 25 лет, стаж вождения более 2 лет
-com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.OVER25_LESS2  = =KAZ= возраст старше 25 лет, стаж вождения менее 2 лет
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.OVER25_MORE2  = Жасы 25 жастан жоғары, жүргізу өтілі 2 жылдан артық
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.UNDER25_LESS2 = жасы 25 жастан кіші, жүргізу өтілі 2 жылдан аз
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.UNDER25_MORE2 = жасы 25 жастан  кіші, жүргізу өтілі 2 жылдан артық
+com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass.OVER25_LESS2  = жасы 25 жастан жоғары, жүргізу өтілі 2 жылдан кем емес
 
-com.lapsa.insurance.elements.InsuredAgeClass.OVER25        = =KAZ= возраст старше 25 лет
-com.lapsa.insurance.elements.InsuredAgeClass.OVER25.short  = =KAZ= старше 25 лет
-com.lapsa.insurance.elements.InsuredAgeClass.UNDER25       = =KAZ= возраст моложе 25 лет
-com.lapsa.insurance.elements.InsuredAgeClass.UNDER25.short = =KAZ= моложе 25 лет
+com.lapsa.insurance.elements.InsuredAgeClass.OVER25        = жасы 25 жастан жоғары
+com.lapsa.insurance.elements.InsuredAgeClass.OVER25.short  = 25 жастан жоғары
+com.lapsa.insurance.elements.InsuredAgeClass.UNDER25       = жасы 25 жастан кіші
+com.lapsa.insurance.elements.InsuredAgeClass.UNDER25.short = 25 жастан кіші
 
-com.lapsa.insurance.elements.InsuredExpirienceClass.MORE2       = =KAZ= стаж вождения более 2 лет
-com.lapsa.insurance.elements.InsuredExpirienceClass.MORE2.short = =KAZ= более 2 лет
-com.lapsa.insurance.elements.InsuredExpirienceClass.LESS2       = =KAZ= стаж вождения менее 2 лет
-com.lapsa.insurance.elements.InsuredExpirienceClass.LESS2.short = =KAZ= менее 2 лет
+com.lapsa.insurance.elements.InsuredExpirienceClass.MORE2       = жүргзу өтілі 2 жылдан артық
+com.lapsa.insurance.elements.InsuredExpirienceClass.MORE2.short = 2 жылдан артық
+com.lapsa.insurance.elements.InsuredExpirienceClass.LESS2       = жүргізу өтілі 2 жылдан аз
+com.lapsa.insurance.elements.InsuredExpirienceClass.LESS2.short = 2 жылдан аз
 
-com.lapsa.insurance.elements.MaritalStatus.MARRIED = =KAZ= женат / замужем
-com.lapsa.insurance.elements.MaritalStatus.SINGLE  = =KAZ= холост / незамужем
+com.lapsa.insurance.elements.MaritalStatus.MARRIED = үйленген / тұрмыста
+com.lapsa.insurance.elements.MaritalStatus.SINGLE  = бойдақ / тұрмыста емес
 
-com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE       = =KAZ= Оплата банковской картой
-com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE.short = =KAZ= картой on-line
-com.lapsa.insurance.elements.PaymentMethod.PAYCASH              = =KAZ= Оплата наличными курьеру при доставке полиса
-com.lapsa.insurance.elements.PaymentMethod.PAYCASH.short        = =KAZ= наличными
-com.lapsa.insurance.elements.PaymentMethod.UNDEFINED            = =KAZ= Не определено
-com.lapsa.insurance.elements.PaymentMethod.UNDEFINED.short      = =KAZ= не определено
+com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE       = Банктік картамен төлеу
+com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE.short = картамен on-line
+com.lapsa.insurance.elements.PaymentMethod.PAYCASH              = Төлем полисті жеткізген кезде курьерге қолма қол ақшамен
+com.lapsa.insurance.elements.PaymentMethod.PAYCASH.short        = қолма қол ақшамен
+com.lapsa.insurance.elements.PaymentMethod.UNDEFINED            = Анықталмаған
+com.lapsa.insurance.elements.PaymentMethod.UNDEFINED.short      = анықталмаған
 
-com.lapsa.insurance.elements.ObtainingMethod.DELIVERY        = =KAZ= Доставить курьером
-com.lapsa.insurance.elements.ObtainingMethod.DELIVERY.short  = =KAZ= доставить курьером
-com.lapsa.insurance.elements.ObtainingMethod.PICKUP          = =KAZ= Забрать самостоятельно в офисе страховой компании
-com.lapsa.insurance.elements.ObtainingMethod.PICKUP.short    = =KAZ= забрать самостоятельно
-com.lapsa.insurance.elements.ObtainingMethod.UNDEFINED       = =KAZ= Не определено
-com.lapsa.insurance.elements.ObtainingMethod.UNDEFINED.short = =KAZ= не определено
+com.lapsa.insurance.elements.ObtainingMethod.DELIVERY        = Курьермен жеткізу
+com.lapsa.insurance.elements.ObtainingMethod.DELIVERY.short  = курьермен жеткізу
+com.lapsa.insurance.elements.ObtainingMethod.PICKUP          = Өз бетінше сақтандыру компаниясының кеңсесінен алып кету
+com.lapsa.insurance.elements.ObtainingMethod.PICKUP.short    = өз бетінше алып кету
+com.lapsa.insurance.elements.ObtainingMethod.UNDEFINED       = Анықталмаған
+com.lapsa.insurance.elements.ObtainingMethod.UNDEFINED.short = анықталмаған
 
-com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.TO_15D_INCL          = =KAZ= до 15 дней включительно
-com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_16D_TO_1M_INCL  = =KAZ= от 16 дней до 1 месяца включительно
-com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_1M_TO_2M_INCL   = =KAZ= от 1 до 2 месяцев включительно
-com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_2M_TO_3M_INCL   = =KAZ= от 2 до 3 месяцев включительно
-com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_3M_TO_4M_INCL   = =KAZ= от 3 до 4 месяцев включительно
-com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_4M_TO_5M_INCL   = =KAZ= от 4 до 5 месяцев включительно
-com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_5M_TO_6M_INCL   = =KAZ= от 5 до 6 месяцев включительно
-com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_6M_TO_7M_INCL   = =KAZ= от 6 до 7 месяцев включительно
-com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_7M_TO_8M_INCL   = =KAZ= от 7 до 8 месяцев включительно
-com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_8M_TO_9M_INCL   = =KAZ= от 8 до 9 месяцев включительно
-com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_9M              = =KAZ= свыше 9 месяцев
+сom.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.TO_15D_INCL          = қоса алғанда 15 күнге дейін
+com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_16D_TO_1M_INCL  = қоса алғанда 16 күннен 1 айға дейін
+com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_1M_TO_2M_INCL   = қоса алғанда 1 айдан 2 айға дейін
+com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_2M_TO_3M_INCL   = қоса алғанда 2 айдан 3 айға дейін
+com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_3M_TO_4M_INCL   = қоса алғанда 3 айдан 4 айға дейін
+com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_4M_TO_5M_INCL   = қоса алғанда 4 айдан 5 айға дейін
+com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_5M_TO_6M_INCL   = қоса алғанда 5 айдан 6 айға дейін
+com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_6M_TO_7M_INCL   = қоса алғанда 6 айдан 7 айға дейін
+com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_7M_TO_8M_INCL   = қоса алғанда 7 айдан 8 айға дейін
+com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_8M_TO_9M_INCL   = қоса алғанда 8 айдан 9 айға дейін
+com.lapsa.insurance.elements.PolicyTemporaryEntryTimeCategory.FROM_9M              = 9 айдан жоғары
 
-com.lapsa.insurance.elements.Sex.MALE   = =KAZ= мужской
-com.lapsa.insurance.elements.Sex.FEMALE = =KAZ= женский
+com.lapsa.insurance.elements.Sex.MALE   = ер
+com.lapsa.insurance.elements.Sex.FEMALE = әйел
 
-com.lapsa.insurance.elements.SteeringWheelLocation.RIGHT_SIDE = =KAZ= руль справа
-com.lapsa.insurance.elements.SteeringWheelLocation.LEFT_SIDE  = =KAZ= руль слева
+com.lapsa.insurance.elements.SteeringWheelLocation.RIGHT_SIDE = рулі сол жағында
+com.lapsa.insurance.elements.SteeringWheelLocation.LEFT_SIDE  = рулі оң жағында
 
-com.lapsa.insurance.elements.SubjectType.COMPANY = =KAZ= Юридическое лицо
-com.lapsa.insurance.elements.SubjectType.PERSON  = =KAZ= Физическое лицо
+com.lapsa.insurance.elements.SubjectType.COMPANY = Заңды тұлға
+com.lapsa.insurance.elements.SubjectType.PERSON  = Жеке тұлға
 
-com.lapsa.insurance.elements.VehicleAgeClass.UNDER7 = =KAZ= До 7 лет включительно
-com.lapsa.insurance.elements.VehicleAgeClass.OVER7  = =KAZ= Свыше 7 лет
+com.lapsa.insurance.elements.VehicleAgeClass.UNDER7 = Қоса алғанда 7 жылға дейін
+com.lapsa.insurance.elements.VehicleAgeClass.OVER7  = 7 жылдан жоғары
 
-com.lapsa.insurance.elements.VehicleClass.BUS16          = =KAZ= Автобусы до 16 пассажирских мест включительно
-com.lapsa.insurance.elements.VehicleClass.BUS16.short    = =KAZ= Автобусы 16 и менее пассажиров
-com.lapsa.insurance.elements.VehicleClass.BUSOVR16       = =KAZ= Автобусы свыше 16 пассажирских мест
-com.lapsa.insurance.elements.VehicleClass.BUSOVR16.short = =KAZ= Автобусы более 16 пассажиров
-com.lapsa.insurance.elements.VehicleClass.CARGO          = =KAZ= Грузовые
-com.lapsa.insurance.elements.VehicleClass.CAR            = =KAZ= Легковые
-com.lapsa.insurance.elements.VehicleClass.MOTO           = =KAZ= Мототранспорт
-com.lapsa.insurance.elements.VehicleClass.TRAILER        = =KAZ= Прицепы (полуприцепы)
-com.lapsa.insurance.elements.VehicleClass.TRAM           = =KAZ= Троллейбусы, трамваи
-com.lapsa.insurance.elements.VehicleClass.SEA            = =KAZ= Морской транспорт
-com.lapsa.insurance.elements.VehicleClass.AIRCRAFT       = =KAZ= Воздушный транспорт
-com.lapsa.insurance.elements.VehicleClass.RAILWAY        = =KAZ= Железнодорожный транспорт
-com.lapsa.insurance.elements.VehicleClass.SPECIAL        = =KAZ= Спец.техника
+com.lapsa.insurance.elements.VehicleClass.BUS16          = қоса алғанда 16 дейін жолаушылар орны бар автобустар
+com.lapsa.insurance.elements.VehicleClass.BUS16.short    = 16 және одан аз жолаушылары бар автобустар
+com.lapsa.insurance.elements.VehicleClass.BUSOVR16       = 16 жоғарды жолаушылар орны бар автобустар
+com.lapsa.insurance.elements.VehicleClass.BUSOVR16.short = 16 артық жолаушылары бар автобустар
+com.lapsa.insurance.elements.VehicleClass.CARGO          = Жүк
+com.lapsa.insurance.elements.VehicleClass.CAR            = Жеңіл
+com.lapsa.insurance.elements.VehicleClass.MOTO           = Мотокөлік
+com.lapsa.insurance.elements.VehicleClass.TRAILER        = Тіркемелер (жартылай тіркемелер)
+com.lapsa.insurance.elements.VehicleClass.TRAM           = Троллейбустар, трамвайлар
+com.lapsa.insurance.elements.VehicleClass.SEA            = Теңіз көлігі
+com.lapsa.insurance.elements.VehicleClass.AIRCRAFT       = Уәе көлігі
+com.lapsa.insurance.elements.VehicleClass.RAILWAY        = Темір жол көлігі
+com.lapsa.insurance.elements.VehicleClass.SPECIAL        = Арнайы техника
 
-com.lapsa.insurance.elements.WhoIsInsurant.DRIVER = =KAZ= Страхователем является один из застрахованных водителей
-com.lapsa.insurance.elements.WhoIsInsurant.OTHER  = =KAZ= Страхователем является другое лицо
+com.lapsa.insurance.elements.WhoIsInsurant.DRIVER = Сақтанушы сақтандырылған жүргізушілердің бірі болып табылады
+com.lapsa.insurance.elements.WhoIsInsurant.OTHER  = Сақтанушы басқа тұлға болып табылады

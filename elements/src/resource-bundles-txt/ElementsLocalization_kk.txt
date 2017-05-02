@@ -31,10 +31,10 @@ com.lapsa.insurance.crm.ProgressStatus.FINISHED   = Аяқталды
 com.lapsa.insurance.crm.RequestStatus.OPEN   = Ашық
 com.lapsa.insurance.crm.RequestStatus.CLOSED = Жабық
 
-com.lapsa.insurance.crm.RequestSource.API            = =KAZ= Заявка через API веб-сервиса 
-com.lapsa.insurance.crm.RequestSource.API.short      = =KAZ= API 
-com.lapsa.insurance.crm.RequestSource.INTERNAL       = =KAZ= Собственное Web-приложение
-com.lapsa.insurance.crm.RequestSource.INTERNAL.short = =KAZ= WEB
+com.lapsa.insurance.crm.RequestSource.API            = Өтінім API веб-сервис арқылы 
+com.lapsa.insurance.crm.RequestSource.API.short      = API 
+com.lapsa.insurance.crm.RequestSource.INTERNAL       = Жеке Web-осымша
+com.lapsa.insurance.crm.RequestSource.INTERNAL.short = WEB
 
 com.lapsa.insurance.crm.TransactionProblem.CANCELED_BY_CONSUMER = Клиентпен жойылды
 com.lapsa.insurance.crm.TransactionProblem.WRONG_DATA_PROVIDED  = Дұрыс емес деректер ұсынылған

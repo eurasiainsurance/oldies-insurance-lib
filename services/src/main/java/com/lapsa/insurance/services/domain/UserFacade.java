@@ -20,6 +20,14 @@ public interface UserFacade extends DomainService<User> {
 
     List<SelectItem> getSelectableItemsShortSI();
 
+    List<User> getWhoCreatedRequests();
+
+    List<SelectItem> getWhoCreatedRequestsSI();
+
+    List<SelectItem> getWhoCreatedRequestsShortSI();
+
+    List<SelectItem> getWhoCreatedRequestsFullSI();
+
     User findOrCreate(String principalName);
 
     User findOrCreate(Principal principal);

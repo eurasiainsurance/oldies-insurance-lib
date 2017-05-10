@@ -1,5 +1,7 @@
 package com.lapsa.insurance.domain;
 
+import static com.lapsa.phone.CountryCode.*;
+
 import javax.validation.constraints.AssertTrue;
 
 import com.lapsa.internet.validators.ValidEmail;
@@ -35,7 +37,7 @@ public class RequesterData extends BaseDomain {
     private String idNumber;
 
     @NotNullValue
-    @ValidPhoneNumber
+    @ValidPhoneNumber(countriesRequired = { KZ, RU, GE, BY, BY, CN, KG, UZ })
     private PhoneNumber phone;
 
     private boolean allowSpam;

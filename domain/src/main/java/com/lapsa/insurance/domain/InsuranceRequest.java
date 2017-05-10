@@ -26,6 +26,9 @@ public abstract class InsuranceRequest extends Request {
     @NotNullValue
     private TransactionProblem transactionProblem;
 
+    @NotNullValue
+    private String agreementNumber;
+
     private ObtainingData obtaining = new ObtainingData();
     private PaymentData payment = new PaymentData();
 
@@ -73,5 +76,13 @@ public abstract class InsuranceRequest extends Request {
 
     public void setPayment(PaymentData payment) {
 	this.payment = payment;
+    }
+
+    public String getAgreementNumber() {
+        return agreementNumber;
+    }
+
+    public void setAgreementNumber(String agreementNumber) {
+        this.agreementNumber = agreementNumber;
     }
 }

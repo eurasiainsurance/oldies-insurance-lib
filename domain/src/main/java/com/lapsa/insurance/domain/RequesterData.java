@@ -37,7 +37,7 @@ public class RequesterData extends BaseDomain {
     private String idNumber;
 
     @NotNullValue
-    @ValidPhoneNumber(countriesRequired = { KZ, RU, GE, BY, BY, CN, KG, UZ })
+    @ValidPhoneNumber(countriesRequired = { KZ, RU, GE, BY, BY, CN, KG, UZ, UA })
     private PhoneNumber phone;
 
     private boolean allowSpam;

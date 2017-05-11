@@ -60,6 +60,8 @@ public interface RequestFilter {
 
     TransactionStatus getTransactionStatus();
 
+    String getAgreementNumberMask();
+
     TransactionProblem getTransactionProblem();
 
 }

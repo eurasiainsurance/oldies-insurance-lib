@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import com.lapsa.insurance.crm.ProgressStatus;
 import com.lapsa.insurance.crm.RequestSource;
 import com.lapsa.insurance.crm.RequestStatus;
+import com.lapsa.insurance.domain.crm.InetAddrData;
 import com.lapsa.insurance.domain.crm.UTMData;
 import com.lapsa.insurance.domain.crm.User;
 import com.lapsa.validation.NotNullValue;
@@ -36,6 +37,7 @@ public abstract class Request extends BaseEntity<Integer> {
     private RequesterData requester = new RequesterData();
 
     private UTMData utmData = new UTMData();
+    private InetAddrData inetAddrData = new InetAddrData();
 
     private User createdBy;
     private User acceptedBy;
@@ -164,5 +166,13 @@ public abstract class Request extends BaseEntity<Integer> {
 
     public void setSource(RequestSource source) {
 	this.source = source;
+    }
+
+    public InetAddrData getInetAddrData() {
+        return inetAddrData;
+    }
+
+    public void setInetAddrData(InetAddrData inetAddrData) {
+        this.inetAddrData = inetAddrData;
     }
 }

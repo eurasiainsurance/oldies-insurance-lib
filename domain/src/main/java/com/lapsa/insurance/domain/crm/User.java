@@ -26,6 +26,9 @@ public class User extends BaseEntity<Integer> {
 
     private List<UserLogin> logins = new ArrayList<>();
 
+    private List<UserGroup> groups;
+
+
     public String getDefaultLogin() {
 	if (logins == null || logins.isEmpty())
 	    return null;
@@ -85,5 +88,13 @@ public class User extends BaseEntity<Integer> {
 
     public void setHidden(boolean hidden) {
 	this.hidden = hidden;
+    }
+
+    public List<UserGroup> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(List<UserGroup> groups) {
+        this.groups = groups;
     }
 }

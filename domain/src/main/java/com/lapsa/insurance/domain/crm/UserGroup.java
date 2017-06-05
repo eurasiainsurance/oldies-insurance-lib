@@ -19,6 +19,7 @@ public class UserGroup extends BaseEntity<Integer> {
 	return MULTIPLIER;
     }
 
+    private String name;
     private List<User> members;
 
     // GENERATED
@@ -29,6 +30,14 @@ public class UserGroup extends BaseEntity<Integer> {
 
     public void setMembers(List<User> members) {
 	this.members = members;
+    }
+
+    public String getName() {
+	return name;
+    }
+
+    public void setName(String name) {
+	this.name = name;
     }
 
 }

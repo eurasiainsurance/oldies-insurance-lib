@@ -17,5 +17,7 @@ public interface GeneralRequestDAO<T extends Request> extends GeneralDAO<T, Inte
 
     List<T> findByFilter(RequestFilter filter) throws PeristenceOperationFailed;
 
-    List<T> findRestrictedToUser(User user, RequestFilter filter) throws PeristenceOperationFailed;
+    List<T> findRestrictedToUserGroups(User user, RequestFilter filter) throws PeristenceOperationFailed;
+
+    List<T> findRestrictedToUserOnly(User user, RequestFilter filter) throws PeristenceOperationFailed;
 }

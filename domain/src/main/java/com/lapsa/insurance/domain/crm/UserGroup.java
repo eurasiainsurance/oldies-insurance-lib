@@ -23,11 +23,11 @@ public class UserGroup extends BaseEntity<Integer> {
 
     // GENERATED
 
-    protected List<User> getMembers() {
+    public List<User> getMembers() {
 	return members;
     }
 
-    protected void setMembers(List<User> members) {
+    public void setMembers(List<User> members) {
 	this.members = members;
     }
 

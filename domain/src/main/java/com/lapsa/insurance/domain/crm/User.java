@@ -28,7 +28,6 @@ public class User extends BaseEntity<Integer> {
 
     private List<UserGroup> groups;
 
-
     public String getDefaultLogin() {
 	if (logins == null || logins.isEmpty())
 	    return null;
@@ -54,6 +53,10 @@ public class User extends BaseEntity<Integer> {
 	if (logins != null) // nothing to remove from
 	    logins.remove(userLogin);
 	return userLogin;
+    }
+
+    public boolean isHasGroup() {
+	return groups != null && !groups.isEmpty();
     }
 
     // GENERATED
@@ -91,10 +94,10 @@ public class User extends BaseEntity<Integer> {
     }
 
     public List<UserGroup> getGroups() {
-        return groups;
+	return groups;
     }
 
     public void setGroups(List<UserGroup> groups) {
-        this.groups = groups;
+	this.groups = groups;
     }
 }

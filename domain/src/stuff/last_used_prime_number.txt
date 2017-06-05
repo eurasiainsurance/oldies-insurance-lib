@@ -41,7 +41,7 @@
      181 com.lapsa.insurance.domain.crm.InetAddrData
      191 
      193 
-     197 
+     197 com.lapsa.insurance.domain.crm.UserGroup
      199 
      211 
      223 

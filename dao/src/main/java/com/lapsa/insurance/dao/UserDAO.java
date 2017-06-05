@@ -12,4 +12,6 @@ public interface UserDAO extends GeneralDAO<User, Integer> {
     List<User> findVisible() throws PeristenceOperationFailed;
 
     List<User> findAllWhoCreatedRequest() throws PeristenceOperationFailed;
+
+    List<User> findAllWithNoGroup() throws PeristenceOperationFailed;
 }

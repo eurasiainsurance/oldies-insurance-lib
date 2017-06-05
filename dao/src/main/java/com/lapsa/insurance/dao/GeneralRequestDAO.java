@@ -5,6 +5,7 @@ import java.util.List;
 import com.lapsa.insurance.crm.RequestStatus;
 import com.lapsa.insurance.dao.filter.RequestFilter;
 import com.lapsa.insurance.domain.Request;
+import com.lapsa.insurance.domain.crm.User;
 
 public interface GeneralRequestDAO<T extends Request> extends GeneralDAO<T, Integer> {
 
@@ -15,4 +16,7 @@ public interface GeneralRequestDAO<T extends Request> extends GeneralDAO<T, Inte
     List<T> findAll() throws PeristenceOperationFailed;
 
     List<T> findByFilter(RequestFilter filter) throws PeristenceOperationFailed;
+
+    List<T> findByFilter(RequestFilter filter, boolean showNoCreators, User... onlyCreators)
+	    throws PeristenceOperationFailed;
 }

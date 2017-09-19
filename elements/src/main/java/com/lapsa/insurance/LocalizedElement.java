@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentMap;
 
 import com.lapsa.localization.LocalizationLanguage;
 
-public interface ElementsBundleBase {
+public interface LocalizedElement {
 
     public static final String BUNDDLE_BASE_NAME = "ElementsLocalization";
 
@@ -22,7 +22,7 @@ public interface ElementsBundleBase {
     default String displayName(Locale locale) {
 	return CachedResourceBundles.byLocale(locale).flatMap(v -> {
 	    try {
-		return Optional.of(v.getString(String.format("%1$s.%2$s", this.getClass().getName(), name())));
+		return Optional.ofNullable(v.getString(String.format("%1$s.%2$s", this.getClass().getName(), name())));
 	    } catch (NullPointerException | MissingResourceException | ClassCastException e) {
 		return Optional.empty();
 	    }
@@ -36,7 +36,7 @@ public interface ElementsBundleBase {
     default String displayNameFull(Locale locale) {
 	return CachedResourceBundles.byLocale(locale).flatMap(v -> {
 	    try {
-		return Optional.of(v.getString(String.format("%1$s.%2$s.full", this.getClass().getName(), name())));
+		return Optional.ofNullable(v.getString(String.format("%1$s.%2$s.full", this.getClass().getName(), name())));
 	    } catch (NullPointerException | MissingResourceException | ClassCastException e) {
 		return Optional.ofNullable(displayName(locale));
 	    }
@@ -50,7 +50,7 @@ public interface ElementsBundleBase {
     default String displayNameShort(Locale locale) {
 	return CachedResourceBundles.byLocale(locale).flatMap(v -> {
 	    try {
-		return Optional.of(v.getString(String.format("%1$s.%2$s.short", this.getClass().getName(), name())));
+		return Optional.ofNullable(v.getString(String.format("%1$s.%2$s.short", this.getClass().getName(), name())));
 	    } catch (Exception e) {
 		return Optional.ofNullable(displayName(locale));
 	    }

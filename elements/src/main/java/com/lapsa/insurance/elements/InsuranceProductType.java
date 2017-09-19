@@ -1,8 +1,8 @@
 package com.lapsa.insurance.elements;
 
-import com.lapsa.insurance.ElementsBundleBase;
+import com.lapsa.insurance.LocalizedElement;
 
-public enum InsuranceProductType implements ElementsBundleBase {
+public enum InsuranceProductType implements LocalizedElement {
     POLICY, // Полис ОС ГПО ВТС
     CASCO, // Авто КАСКО
     //

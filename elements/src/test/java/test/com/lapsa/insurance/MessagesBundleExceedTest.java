@@ -8,7 +8,7 @@ import java.util.ResourceBundle;
 
 import org.junit.Test;
 
-import com.lapsa.insurance.ElementsBundleBase;
+import com.lapsa.insurance.LocalizedElement;
 import com.lapsa.insurance.crm.InsuranceRequestType;
 import com.lapsa.insurance.crm.ObtainingStatus;
 import com.lapsa.insurance.crm.PaymentStatus;
@@ -41,7 +41,7 @@ import com.lapsa.insurance.elements.WhoIsInsurant;
 
 public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 
-    public static final String BUNDLE_BASENAME = ElementsBundleBase.BUNDDLE_BASE_NAME;
+    public static final String BUNDLE_BASENAME = LocalizedElement.BUNDDLE_BASE_NAME;
 
     @Test
     public void testNoExcessRecordsRussian() {

@@ -1,8 +1,8 @@
 package com.lapsa.insurance.elements;
 
-import com.lapsa.insurance.ElementsBundleBase;
+import com.lapsa.insurance.LocalizedElement;
 
-public enum SubjectType implements ElementsBundleBase {
+public enum SubjectType implements LocalizedElement {
     COMPANY, // юрлицо
     PERSON, // физлицо
     //

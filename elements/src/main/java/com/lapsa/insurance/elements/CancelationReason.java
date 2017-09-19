@@ -1,8 +1,8 @@
 package com.lapsa.insurance.elements;
 
-import com.lapsa.insurance.ElementsBundleBase;
+import com.lapsa.insurance.LocalizedElement;
 
-public enum CancelationReason implements ElementsBundleBase {
+public enum CancelationReason implements LocalizedElement {
     CANCELATION_AND_RENEW, // Досрочное прекращение договора и заключение
 			   // нового
     CANCELATION, // Досрочное расторжение

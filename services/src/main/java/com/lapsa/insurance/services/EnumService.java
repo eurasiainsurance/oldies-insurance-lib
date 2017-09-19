@@ -9,23 +9,17 @@ import com.lapsa.localization.LocalizationLanguage;
 
 public interface EnumService<T extends Enum<?>> extends ItemService<T> {
 
-    List<T> getAllItems();
-
-    List<SelectItem> getAllItemsSI();
-
-    List<SelectItem> getAllItemsShortSI();
-
-    List<T> getSelectableItems();
-
-    List<SelectItem> getSelectableItemsSI();
-
-    List<SelectItem> getSelectableItemsShortSI();
-
     String enumNameLocalized(T value);
 
     String enumNameLocalized(T value, Locale locale);
 
     String enumNameLocalized(T value, LocalizationLanguage lang);
+
+    String enumNameLocalizedFull(T value);
+
+    String enumNameLocalizedFull(T value, Locale locale);
+
+    String enumNameLocalizedFull(T value, LocalizationLanguage lang);
 
     String enumNameLocalizedShort(T value);
 
@@ -33,9 +27,15 @@ public interface EnumService<T extends Enum<?>> extends ItemService<T> {
 
     String enumNameLocalizedShort(T value, LocalizationLanguage lang);
 
-    String enumNameLocalizedFull(T value);
+    List<T> getAllItems();
 
-    String enumNameLocalizedFull(T value, Locale locale);
+    List<SelectItem> getAllItemsShortSI();
 
-    String enumNameLocalizedFull(T value, LocalizationLanguage lang);
+    List<SelectItem> getAllItemsSI();
+
+    List<T> getSelectableItems();
+
+    List<SelectItem> getSelectableItemsShortSI();
+
+    List<SelectItem> getSelectableItemsSI();
 }

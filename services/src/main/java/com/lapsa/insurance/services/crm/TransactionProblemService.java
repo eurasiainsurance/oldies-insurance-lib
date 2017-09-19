@@ -1,7 +1,7 @@
 package com.lapsa.insurance.services.crm;
 
 import com.lapsa.insurance.crm.TransactionProblem;
-import com.lapsa.insurance.services.EnumService;
+import com.lapsa.insurance.services.EnumListingNamingService;
 
-public interface TransactionProblemService extends EnumService<TransactionProblem> {
+public interface TransactionProblemService extends EnumListingNamingService<TransactionProblem> {
 }

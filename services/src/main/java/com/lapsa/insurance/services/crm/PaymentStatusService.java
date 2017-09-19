@@ -5,9 +5,9 @@ import java.util.List;
 import javax.faces.model.SelectItem;
 
 import com.lapsa.insurance.crm.PaymentStatus;
-import com.lapsa.insurance.services.EnumService;
+import com.lapsa.insurance.services.EnumListingNamingService;
 
-public interface PaymentStatusService extends EnumService<PaymentStatus> {
+public interface PaymentStatusService extends EnumListingNamingService<PaymentStatus> {
 
     List<PaymentStatus> getValueItems();
 

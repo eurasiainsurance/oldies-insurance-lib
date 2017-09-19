@@ -1,7 +1,7 @@
 package com.lapsa.insurance.services.elements;
 
 import com.lapsa.insurance.elements.Sex;
-import com.lapsa.insurance.services.EnumService;
+import com.lapsa.insurance.services.EnumListingNamingService;
 
-public interface SexService extends EnumService<Sex> {
+public interface SexService extends EnumListingNamingService<Sex> {
 }

@@ -1,7 +1,7 @@
 package com.lapsa.insurance.services.elements;
 
 import com.lapsa.insurance.elements.CascoDeductibleFullRate;
-import com.lapsa.insurance.services.EnumService;
+import com.lapsa.insurance.services.EnumListingNamingService;
 
-public interface CascoDeductibleFullRateService extends EnumService<CascoDeductibleFullRate> {
+public interface CascoDeductibleFullRateService extends EnumListingNamingService<CascoDeductibleFullRate> {
 }

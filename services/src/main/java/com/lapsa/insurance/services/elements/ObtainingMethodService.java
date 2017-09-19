@@ -5,9 +5,9 @@ import java.util.List;
 import javax.faces.model.SelectItem;
 
 import com.lapsa.insurance.elements.ObtainingMethod;
-import com.lapsa.insurance.services.EnumService;
+import com.lapsa.insurance.services.EnumListingNamingService;
 
-public interface ObtainingMethodService extends EnumService<ObtainingMethod> {
+public interface ObtainingMethodService extends EnumListingNamingService<ObtainingMethod> {
 
     List<ObtainingMethod> getValueItems();
 

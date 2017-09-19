@@ -1,7 +1,7 @@
 package com.lapsa.insurance.services.crm;
 
 import com.lapsa.insurance.crm.RequestSource;
-import com.lapsa.insurance.services.EnumService;
+import com.lapsa.insurance.services.EnumListingNamingService;
 
-public interface RequestSourceService extends EnumService<RequestSource> {
+public interface RequestSourceService extends EnumListingNamingService<RequestSource> {
 }

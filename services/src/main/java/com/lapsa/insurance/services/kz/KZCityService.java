@@ -5,11 +5,11 @@ import java.util.List;
 
 import javax.faces.model.SelectItem;
 
-import com.lapsa.insurance.services.EnumService;
+import com.lapsa.insurance.services.EnumListingNamingService;
 import com.lapsa.kz.country.KZArea;
 import com.lapsa.kz.country.KZCity;
 
-public interface KZCityService extends EnumService<KZCity> {
+public interface KZCityService extends EnumListingNamingService<KZCity> {
 
     List<KZCity> selectableItemsByArea(KZArea area);
 

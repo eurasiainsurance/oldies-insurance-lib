@@ -12,7 +12,7 @@ import javax.faces.model.SelectItem;
 
 import com.lapsa.localization.LocalizationLanguage;
 
-public interface ItemService<T> {
+public interface ItemNamingService<T> {
 
     // String
 

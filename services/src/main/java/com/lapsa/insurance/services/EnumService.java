@@ -7,7 +7,7 @@ import javax.faces.model.SelectItem;
 
 import com.lapsa.localization.LocalizationLanguage;
 
-public interface EnumService<T extends Enum<?>> extends ItemService<T> {
+public interface EnumService<T extends Enum<?>> extends ItemNamingService<T> {
 
     String enumNameLocalized(T value);
 

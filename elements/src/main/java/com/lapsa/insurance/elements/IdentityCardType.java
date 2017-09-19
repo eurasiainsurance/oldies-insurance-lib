@@ -9,9 +9,4 @@ public enum IdentityCardType implements ElementsBundleBase {
     RESIDENCE_PERMIT, // вид на жительство иностранца
     //
     ;
-
-    @Override
-    public String canonicalName() {
-	return String.format("%1$s.%2$s", this.getClass().getName(), name());
-    }
 }

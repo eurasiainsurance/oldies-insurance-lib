@@ -7,9 +7,4 @@ public enum WhoIsInsurant implements ElementsBundleBase {
     OTHER, // Страхователем является другое лицо
     //
     ;
-
-    @Override
-    public String canonicalName() {
-	return String.format("%1$s.%2$s", this.getClass().getName(), name());
-    }
 }

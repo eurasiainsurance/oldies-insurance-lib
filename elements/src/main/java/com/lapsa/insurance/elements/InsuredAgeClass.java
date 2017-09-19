@@ -7,9 +7,4 @@ public enum InsuredAgeClass implements ElementsBundleBase {
     UNDER25, // возраст моложе 25 лет
     //
     ;
-
-    @Override
-    public String canonicalName() {
-	return String.format("%1$s.%2$s", this.getClass().getName(), name());
-    }
 }

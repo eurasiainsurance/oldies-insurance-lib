@@ -7,9 +7,4 @@ public enum InsuredExpirienceClass implements ElementsBundleBase {
     LESS2, // стаж вождения менее 2 лет
     //
     ;
-
-    @Override
-    public String canonicalName() {
-	return String.format("%1$s.%2$s", this.getClass().getName(), name());
-    }
 }

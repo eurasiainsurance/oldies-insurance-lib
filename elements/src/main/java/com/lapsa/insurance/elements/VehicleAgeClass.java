@@ -7,9 +7,4 @@ public enum VehicleAgeClass implements ElementsBundleBase {
     OVER7, // Свыше 7 лет
     //
     ;
-
-    @Override
-    public String canonicalName() {
-	return String.format("%1$s.%2$s", this.getClass().getName(), name());
-    }
 }

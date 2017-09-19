@@ -7,9 +7,4 @@ public enum MaritalStatus implements ElementsBundleBase {
     SINGLE, // холост / незамужем
     //
     ;
-
-    @Override
-    public String canonicalName() {
-	return String.format("%1$s.%2$s", this.getClass().getName(), name());
-    }
 }

@@ -7,9 +7,4 @@ public enum CascoCarAgeClass implements ElementsBundleBase {
     FROM3TO7, // от 3 до 7 лет
     OTHER7, // старше 7 лет
     ;
-
-    @Override
-    public String canonicalName() {
-	return String.format("%1$s.%2$s", this.getClass().getName(), name());
-    }
 }

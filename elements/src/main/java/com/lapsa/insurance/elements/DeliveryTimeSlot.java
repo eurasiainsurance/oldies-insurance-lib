@@ -9,9 +9,4 @@ public enum DeliveryTimeSlot implements ElementsBundleBase {
     EVENING, // вечером (с 18:00 до 21:00)
     //
     ;
-
-    @Override
-    public String canonicalName() {
-	return String.format("%1$s.%2$s", this.getClass().getName(), name());
-    }
 }

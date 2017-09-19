@@ -13,11 +13,6 @@ public enum CascoDeductiblePartialRate implements ElementsBundleBase {
 
     private final double value;
 
-    @Override
-    public String canonicalName() {
-	return String.format("%1$s.%2$s", this.getClass().getName(), name());
-    }
-
     private CascoDeductiblePartialRate(double value) {
 	this.value = value;
     }

@@ -8,9 +8,4 @@ public enum ProgressStatus implements ElementsBundleBase {
     ON_HOLD, //
     FINISHED, //
     ;
-
-    @Override
-    public String canonicalName() {
-	return String.format("%1$s.%2$s", this.getClass().getName(), name());
-    }
 }

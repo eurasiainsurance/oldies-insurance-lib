@@ -10,11 +10,6 @@ public enum InsuredAgeAndExpirienceClass implements ElementsBundleBase {
     //
     ;
 
-    @Override
-    public String canonicalName() {
-	return String.format("%1$s.%2$s", this.getClass().getName(), name());
-    }
-
     private final InsuredExpirienceClass expirienceClass;
     private final InsuredAgeClass ageClass;
 

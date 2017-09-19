@@ -14,9 +14,4 @@ public enum CancelationReason implements ElementsBundleBase {
     HUMAN_FAILURE, // Ошибка оператора
     //
     ;
-
-    @Override
-    public String canonicalName() {
-	return String.format("%1$s.%2$s", this.getClass().getName(), name());
-    }
 }

@@ -9,9 +9,4 @@ public enum PaymentStatus implements ElementsBundleBase {
     UNDEFINED, // не определно
     //
     ;
-
-    @Override
-    public String canonicalName() {
-	return String.format("%1$s.%2$s", this.getClass().getName(), name());
-    }
 }

@@ -10,9 +10,4 @@ public class CascoCarAgeClassMessagesBundleTest extends EnumTypeMessagesBundleTe
     protected CascoCarAgeClass[] getAllEnumValues() {
 	return CascoCarAgeClass.values();
     }
-
-    @Override
-    protected String getBundleBaseName() {
-	return CascoCarAgeClass.BUNDLE_BASENAME;
-    }
 }

@@ -10,9 +10,4 @@ public class InsuranceProductTypeMessagesBundleTest extends EnumTypeMessagesBund
     protected InsuranceProductType[] getAllEnumValues() {
 	return InsuranceProductType.values();
     }
-
-    @Override
-    protected String getBundleBaseName() {
-	return InsuranceProductType.BUNDLE_BASENAME;
-    }
 }

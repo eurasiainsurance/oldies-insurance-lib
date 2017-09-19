@@ -10,10 +10,4 @@ public class VehicleClassMessagesBundleTest extends EnumTypeMessagesBundleTest<V
     protected VehicleClass[] getAllEnumValues() {
 	return VehicleClass.values();
     }
-
-    @Override
-    protected String getBundleBaseName() {
-	return VehicleClass.BUNDLE_BASENAME;
-    }
-
 }

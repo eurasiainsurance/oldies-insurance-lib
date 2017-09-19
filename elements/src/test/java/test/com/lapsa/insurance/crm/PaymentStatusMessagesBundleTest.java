@@ -10,9 +10,4 @@ public class PaymentStatusMessagesBundleTest extends EnumTypeMessagesBundleTest<
     protected PaymentStatus[] getAllEnumValues() {
 	return PaymentStatus.values();
     }
-
-    @Override
-    protected String getBundleBaseName() {
-	return PaymentStatus.BUNDLE_BASENAME;
-    }
 }

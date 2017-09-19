@@ -10,9 +10,4 @@ public class ObtainingMethodMessagesBundleTest extends EnumTypeMessagesBundleTes
     protected ObtainingMethod[] getAllEnumValues() {
 	return ObtainingMethod.values();
     }
-
-    @Override
-    protected String getBundleBaseName() {
-	return ObtainingMethod.BUNDLE_BASENAME;
-    }
 }

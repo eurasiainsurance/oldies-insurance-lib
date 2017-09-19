@@ -11,9 +11,4 @@ public class PolicyTemporaryEntryTimeCategoryMessagesBundleTest
     protected PolicyTemporaryEntryTimeCategory[] getAllEnumValues() {
 	return PolicyTemporaryEntryTimeCategory.values();
     }
-
-    @Override
-    protected String getBundleBaseName() {
-	return PolicyTemporaryEntryTimeCategory.BUNDLE_BASENAME;
-    }
 }

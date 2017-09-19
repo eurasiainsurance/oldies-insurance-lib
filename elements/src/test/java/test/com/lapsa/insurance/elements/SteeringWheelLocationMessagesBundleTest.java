@@ -9,9 +9,4 @@ public class SteeringWheelLocationMessagesBundleTest extends EnumTypeMessagesBun
     protected SteeringWheelLocation[] getAllEnumValues() {
 	return SteeringWheelLocation.values();
     }
-
-    @Override
-    protected String getBundleBaseName() {
-	return SteeringWheelLocation.BUNDLE_BASENAME;
-    }
 }

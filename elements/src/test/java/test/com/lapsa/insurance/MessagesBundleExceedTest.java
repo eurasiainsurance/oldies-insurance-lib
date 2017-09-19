@@ -41,24 +41,26 @@ import com.lapsa.insurance.elements.WhoIsInsurant;
 
 public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 
+    public static final String BUNDLE_BASENAME = ElementsBundleBase.BUNDDLE_BASE_NAME;
+
     @Test
     public void testNoExcessRecordsRussian() {
 	Locale locale = getLocale(LANG_RU);
-	ResourceBundle resources = getResourceBundle(ElementsBundleBase.BUNDLE_BASENAME, locale);
+	ResourceBundle resources = getResourceBundle(BUNDLE_BASENAME, locale);
 	testBundle(resources);
     }
 
     @Test
     public void testNoExcessRecordsEnglish() {
 	Locale locale = getLocale(LANG_EN);
-	ResourceBundle resources = getResourceBundle(ElementsBundleBase.BUNDLE_BASENAME, locale);
+	ResourceBundle resources = getResourceBundle(BUNDLE_BASENAME, locale);
 	testBundle(resources);
     }
 
     @Test
     public void testNoExcessRecordsKazakh() {
 	Locale locale = getLocale(LANG_KK);
-	ResourceBundle resources = getResourceBundle(ElementsBundleBase.BUNDLE_BASENAME, locale);
+	ResourceBundle resources = getResourceBundle(BUNDLE_BASENAME, locale);
 	testBundle(resources);
     }
 

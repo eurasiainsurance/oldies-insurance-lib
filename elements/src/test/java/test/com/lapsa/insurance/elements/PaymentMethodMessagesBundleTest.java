@@ -10,9 +10,4 @@ public class PaymentMethodMessagesBundleTest extends EnumTypeMessagesBundleTest<
     protected PaymentMethod[] getAllEnumValues() {
 	return PaymentMethod.values();
     }
-
-    @Override
-    protected String getBundleBaseName() {
-	return PaymentMethod.BUNDLE_BASENAME;
-    }
 }

@@ -10,9 +10,4 @@ public class RequestSourceMessagesBundleTest extends EnumTypeMessagesBundleTest<
     protected RequestSource[] getAllEnumValues() {
 	return RequestSource.values();
     }
-
-    @Override
-    protected String getBundleBaseName() {
-	return RequestSource.BUNDLE_BASENAME;
-    }
 }

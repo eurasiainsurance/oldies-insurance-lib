@@ -4,15 +4,10 @@ import com.lapsa.insurance.elements.InsuranceClassType;
 
 import test.com.lapsa.insurance.EnumTypeMessagesBundleTest;
 
-public class InsuranceClassTypeMessagesBundleTest extends EnumTypeMessagesBundleTest<InsuranceClassType>{
+public class InsuranceClassTypeMessagesBundleTest extends EnumTypeMessagesBundleTest<InsuranceClassType> {
 
     @Override
     protected InsuranceClassType[] getAllEnumValues() {
 	return InsuranceClassType.values();
-    }
-
-    @Override
-    protected String getBundleBaseName() {
-	return InsuranceClassType.BUNDLE_BASENAME;
     }
 }

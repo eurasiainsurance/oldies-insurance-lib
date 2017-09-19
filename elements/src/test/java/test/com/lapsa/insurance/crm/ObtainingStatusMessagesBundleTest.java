@@ -10,9 +10,4 @@ public class ObtainingStatusMessagesBundleTest extends EnumTypeMessagesBundleTes
     protected ObtainingStatus[] getAllEnumValues() {
 	return ObtainingStatus.values();
     }
-
-    @Override
-    protected String getBundleBaseName() {
-	return ObtainingStatus.BUNDLE_BASENAME;
-    }
 }

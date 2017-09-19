@@ -10,10 +10,4 @@ public class SubjectTypeMessagesBundleTest extends EnumTypeMessagesBundleTest<Su
     protected SubjectType[] getAllEnumValues() {
 	return SubjectType.values();
     }
-
-    @Override
-    protected String getBundleBaseName() {
-	return SubjectType.BUNDLE_BASENAME;
-    }
-
 }

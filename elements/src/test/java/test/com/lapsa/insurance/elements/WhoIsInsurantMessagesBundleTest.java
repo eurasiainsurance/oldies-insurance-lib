@@ -10,9 +10,4 @@ public class WhoIsInsurantMessagesBundleTest extends EnumTypeMessagesBundleTest<
     protected WhoIsInsurant[] getAllEnumValues() {
 	return WhoIsInsurant.values();
     }
-
-    @Override
-    protected String getBundleBaseName() {
-	return WhoIsInsurant.BUNDLE_BASENAME;
-    }
 }

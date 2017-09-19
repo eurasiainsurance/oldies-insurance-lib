@@ -4,15 +4,10 @@ import com.lapsa.insurance.elements.MaritalStatus;
 
 import test.com.lapsa.insurance.EnumTypeMessagesBundleTest;
 
-public class MaritalStatusMessagesBundleTest extends EnumTypeMessagesBundleTest<MaritalStatus>{
+public class MaritalStatusMessagesBundleTest extends EnumTypeMessagesBundleTest<MaritalStatus> {
 
     @Override
     protected MaritalStatus[] getAllEnumValues() {
 	return MaritalStatus.values();
-    }
-
-    @Override
-    protected String getBundleBaseName() {
-	return MaritalStatus.BUNDLE_BASENAME;
     }
 }

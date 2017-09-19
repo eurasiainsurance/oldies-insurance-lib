@@ -10,9 +10,4 @@ public class DeliveryTimeSlotMessagesBundleTest extends EnumTypeMessagesBundleTe
     protected DeliveryTimeSlot[] getAllEnumValues() {
 	return DeliveryTimeSlot.values();
     }
-
-    @Override
-    protected String getBundleBaseName() {
-	return DeliveryTimeSlot.BUNDLE_BASENAME;
-    }
 }

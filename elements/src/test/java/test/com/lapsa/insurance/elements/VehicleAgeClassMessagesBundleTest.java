@@ -10,10 +10,4 @@ public class VehicleAgeClassMessagesBundleTest extends EnumTypeMessagesBundleTes
     protected VehicleAgeClass[] getAllEnumValues() {
 	return VehicleAgeClass.values();
     }
-
-    @Override
-    protected String getBundleBaseName() {
-	return VehicleAgeClass.BUNDLE_BASENAME;
-    }
-
 }

@@ -10,9 +10,4 @@ public class RequestStatusMessagesBundleTest extends EnumTypeMessagesBundleTest<
     protected RequestStatus[] getAllEnumValues() {
 	return RequestStatus.values();
     }
-
-    @Override
-    protected String getBundleBaseName() {
-	return RequestStatus.BUNDLE_BASENAME;
-    }
 }

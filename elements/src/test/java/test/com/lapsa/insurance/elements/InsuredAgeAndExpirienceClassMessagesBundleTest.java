@@ -11,9 +11,4 @@ public class InsuredAgeAndExpirienceClassMessagesBundleTest
     protected InsuredAgeAndExpirienceClass[] getAllEnumValues() {
 	return InsuredAgeAndExpirienceClass.values();
     }
-
-    @Override
-    protected String getBundleBaseName() {
-	return InsuredAgeAndExpirienceClass.BUNDLE_BASENAME;
-    }
 }

@@ -1,4 +1,4 @@
-package test.com.lapsa.insurance;
+package test.localization;
 
 import static org.junit.Assert.*;
 

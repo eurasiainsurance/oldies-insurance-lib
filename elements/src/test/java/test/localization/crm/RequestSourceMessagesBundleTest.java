@@ -1,8 +1,8 @@
-package test.com.lapsa.insurance.crm;
+package test.localization.crm;
 
 import com.lapsa.insurance.crm.RequestSource;
 
-import test.com.lapsa.insurance.EnumTypeMessagesBundleTest;
+import test.localization.EnumTypeMessagesBundleTest;
 
 public class RequestSourceMessagesBundleTest extends EnumTypeMessagesBundleTest<RequestSource> {
 

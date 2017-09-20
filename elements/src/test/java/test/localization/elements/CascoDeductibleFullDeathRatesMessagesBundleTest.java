@@ -1,8 +1,8 @@
-package test.com.lapsa.insurance.elements;
+package test.localization.elements;
 
 import com.lapsa.insurance.elements.CascoDeductibleFullRate;
 
-import test.com.lapsa.insurance.EnumTypeMessagesBundleTest;
+import test.localization.EnumTypeMessagesBundleTest;
 
 public class CascoDeductibleFullDeathRatesMessagesBundleTest
 	extends EnumTypeMessagesBundleTest<CascoDeductibleFullRate> {

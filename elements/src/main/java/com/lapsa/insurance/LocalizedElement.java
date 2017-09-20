@@ -7,7 +7,7 @@ import java.util.ResourceBundle;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-import com.lapsa.localization.LocalizationLanguage;
+import com.lapsa.international.localization.LocalizationLanguage;
 
 public interface LocalizedElement {
 

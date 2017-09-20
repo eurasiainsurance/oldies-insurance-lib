@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 import javax.faces.model.SelectItem;
 
-import com.lapsa.localization.LocalizationLanguage;
+import com.lapsa.international.localization.LocalizationLanguage;
 
 public interface ItemNamingService<T> {
 

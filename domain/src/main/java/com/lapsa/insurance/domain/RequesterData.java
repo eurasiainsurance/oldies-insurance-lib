@@ -1,13 +1,13 @@
 package com.lapsa.insurance.domain;
 
-import static com.lapsa.phone.CountryCode.*;
+import static com.lapsa.international.phone.CountryCode.*;
 
 import javax.validation.constraints.AssertTrue;
 
+import com.lapsa.international.localization.LocalizationLanguage;
+import com.lapsa.international.phone.PhoneNumber;
 import com.lapsa.internet.validators.ValidEmail;
 import com.lapsa.kz.idnumber.validators.ValidIdNumber;
-import com.lapsa.localization.LocalizationLanguage;
-import com.lapsa.phone.PhoneNumber;
 import com.lapsa.phone.validators.ValidPhoneNumber;
 import com.lapsa.validation.NotNullValue;
 import com.lapsa.validation.ValidHumanName;

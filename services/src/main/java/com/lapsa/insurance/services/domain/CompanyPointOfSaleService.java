@@ -6,8 +6,8 @@ import java.util.Locale;
 import javax.faces.model.SelectItem;
 
 import com.lapsa.insurance.domain.CompanyPointOfSale;
+import com.lapsa.international.localization.LocalizationLanguage;
 import com.lapsa.kz.country.KZCity;
-import com.lapsa.localization.LocalizationLanguage;
 
 public interface CompanyPointOfSaleService extends DomainService<CompanyPointOfSale> {
     List<CompanyPointOfSale> pointOfSalesForPickup(KZCity city);

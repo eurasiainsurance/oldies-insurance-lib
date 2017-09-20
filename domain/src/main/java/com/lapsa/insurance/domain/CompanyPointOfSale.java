@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.lapsa.localization.LocalizationLanguage;
+import com.lapsa.international.localization.LocalizationLanguage;
 import com.lapsa.validation.NotEmptyString;
 import com.lapsa.validation.NotNullValue;
 

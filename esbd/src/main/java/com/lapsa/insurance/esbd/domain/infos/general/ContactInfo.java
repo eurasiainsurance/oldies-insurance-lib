@@ -1,6 +1,6 @@
 package com.lapsa.insurance.esbd.domain.infos.general;
 
-import com.lapsa.phone.PhoneNumber;
+import com.lapsa.international.phone.PhoneNumber;
 
 /**
  * Класс для представления контактных данных

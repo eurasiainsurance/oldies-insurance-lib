@@ -1,6 +1,6 @@
 package com.lapsa.insurance.esbd.domain.infos.general;
 
-import com.lapsa.country.Country;
+import com.lapsa.international.country.Country;
 import com.lapsa.kz.country.KZCity;
 
 /**

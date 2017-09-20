@@ -3,9 +3,9 @@ package com.lapsa.insurance.domain;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.lapsa.international.localization.LocalizationLanguage;
 import com.lapsa.kz.country.KZCity;
 import com.lapsa.kz.country.validators.ValidKZCity;
-import com.lapsa.localization.LocalizationLanguage;
 import com.lapsa.validation.NotEmptyString;
 import com.lapsa.validation.NotNullValue;
 

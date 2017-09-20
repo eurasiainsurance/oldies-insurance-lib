@@ -2,10 +2,10 @@ package com.lapsa.insurance.domain;
 
 import java.time.LocalDate;
 
-import com.lapsa.validation.TemporalFuture;
-import com.lapsa.validation.TemporalLeftBeforeRight;
 import com.lapsa.validation.LocalDateComparison;
 import com.lapsa.validation.NotNullValue;
+import com.lapsa.validation.TemporalFuture;
+import com.lapsa.validation.TemporalLeftBeforeRight;
 
 public class InsurancePeriodData extends BaseDomain {
     private static final long serialVersionUID = 5019017773831664143L;

@@ -2,7 +2,7 @@ package com.lapsa.insurance.services.other;
 
 import java.util.Locale;
 
-import com.lapsa.localization.LocalizationLanguage;
+import com.lapsa.international.localization.LocalizationLanguage;
 
 public interface CurrentLanguageService {
     LocalizationLanguage getLanguage();

@@ -5,7 +5,7 @@ import java.util.Locale;
 
 import javax.faces.model.SelectItem;
 
-import com.lapsa.localization.LocalizationLanguage;
+import com.lapsa.international.localization.LocalizationLanguage;
 
 public interface EnumListingNamingService<T extends Enum<?>> extends ItemNamingService<T> {
 

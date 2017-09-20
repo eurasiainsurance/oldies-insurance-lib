@@ -1,7 +1,7 @@
 package com.lapsa.insurance.domain;
 
-import com.lapsa.country.validators.ValidCountry;
 import com.lapsa.international.country.Country;
+import com.lapsa.international.country.validators.ValidCountry;
 import com.lapsa.validation.NotNullValue;
 
 public class OriginData extends BaseDomain {

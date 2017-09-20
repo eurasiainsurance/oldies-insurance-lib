@@ -1,7 +1,7 @@
 package com.lapsa.insurance.domain;
 
-import com.lapsa.cars.validators.ValidVINCode;
 import com.lapsa.insurance.validation.ValidVehicleYearOfIssue;
+import com.lapsa.international.cars.validators.ValidVINCode;
 import com.lapsa.kz.country.KZArea;
 import com.lapsa.kz.country.KZCity;
 import com.lapsa.kz.country.validators.ValidKZArea;

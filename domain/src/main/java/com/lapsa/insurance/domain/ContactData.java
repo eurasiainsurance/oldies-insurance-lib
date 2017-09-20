@@ -1,9 +1,9 @@
 package com.lapsa.insurance.domain;
 
+import com.lapsa.international.internet.validators.ValidEmail;
+import com.lapsa.international.internet.validators.ValidURL;
 import com.lapsa.international.phone.PhoneNumber;
-import com.lapsa.internet.validators.ValidEmail;
-import com.lapsa.internet.validators.ValidURL;
-import com.lapsa.phone.validators.ValidPhoneNumber;
+import com.lapsa.international.phone.validators.ValidPhoneNumber;
 import com.lapsa.validation.NotNullValue;
 
 public class ContactData extends BaseDomain {

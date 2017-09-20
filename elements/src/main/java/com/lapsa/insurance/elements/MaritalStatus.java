@@ -1,6 +1,6 @@
 package com.lapsa.insurance.elements;
 
-public enum MaritalStatus implements LocalizedElement {
+public enum MaritalStatus implements InsuranceLocalizedElement {
     MARRIED, // женат / замужем
     SINGLE, // холост / незамужем
     //

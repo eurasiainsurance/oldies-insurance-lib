@@ -1,6 +1,6 @@
 package com.lapsa.insurance.elements;
 
-public enum PolicyTemporaryEntryTimeCategory implements LocalizedElement {
+public enum PolicyTemporaryEntryTimeCategory implements InsuranceLocalizedElement {
     TO_15D_INCL, // до 15 дней включительно
     FROM_16D_TO_1M_INCL, // от 16 дней до 1 месяца
     FROM_1M_TO_2M_INCL, // 2 месяца

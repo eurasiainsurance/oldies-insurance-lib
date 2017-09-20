@@ -1,6 +1,6 @@
 package com.lapsa.insurance.elements;
 
-public enum InsuranceClassType implements LocalizedElement {
+public enum InsuranceClassType implements InsuranceLocalizedElement {
     CLASS_0,
     CLASS_1,
     CLASS_2,

@@ -1,6 +1,6 @@
 package com.lapsa.insurance.elements;
 
-public enum RequestStatus implements LocalizedElement {
+public enum RequestStatus implements InsuranceLocalizedElement {
     OPEN, // Открыто
     CLOSED, // Закрыто
     //

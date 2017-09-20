@@ -1,6 +1,6 @@
 package com.lapsa.insurance.elements;
 
-public enum CascoDeductibleFullRate implements LocalizedElement {
+public enum CascoDeductibleFullRate implements InsuranceLocalizedElement {
     PERCENT5(.05d), // 5%
     PERCENT10(.10d), // 10%
     ;

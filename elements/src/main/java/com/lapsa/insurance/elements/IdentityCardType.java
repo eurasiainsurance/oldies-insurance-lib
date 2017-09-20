@@ -1,6 +1,6 @@
 package com.lapsa.insurance.elements;
 
-public enum IdentityCardType implements LocalizedElement {
+public enum IdentityCardType implements InsuranceLocalizedElement {
     ID_CARD, // удостоверение личности
     PASSPORT, // паспорт
     BIRTH_CERTIFICATE, // свидетельство о рождении

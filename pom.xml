@@ -132,6 +132,11 @@
 			<!-- internal lapsa -->
 			<dependency>
 				<groupId>com.lapsa.lapsa-lib</groupId>
+				<artifactId>lapsa-commons</artifactId>
+				<version>${lapsa-lib.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.lapsa.lapsa-lib</groupId>
 				<artifactId>lapsa-validation</artifactId>
 				<version>${lapsa-lib.version}</version>
 			</dependency>

@@ -20,7 +20,7 @@ import com.lapsa.insurance.elements.InsuranceRequestType;
 import com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass;
 import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredExpirienceClass;
-import com.lapsa.insurance.elements.LocalizedElement;
+import com.lapsa.insurance.elements.InsuranceLocalizedElement;
 import com.lapsa.insurance.elements.MaritalStatus;
 import com.lapsa.insurance.elements.ObtainingMethod;
 import com.lapsa.insurance.elements.ObtainingStatus;
@@ -41,7 +41,7 @@ import com.lapsa.insurance.elements.WhoIsInsurant;
 
 public class MessagesBundleExceedTest extends BaseMessagesBundleTest {
 
-    public static final String BUNDLE_BASENAME = LocalizedElement.BUNDDLE_BASE_NAME;
+    public static final String BUNDLE_BASENAME = InsuranceLocalizedElement.BUNDDLE_BASE_NAME;
 
     @Test
     public void testNoExcessRecordsRussian() {

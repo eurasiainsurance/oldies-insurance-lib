@@ -1,6 +1,4 @@
-package com.lapsa.insurance.crm;
-
-import com.lapsa.insurance.LocalizedElement;
+package com.lapsa.insurance.elements;
 
 public enum RequestSource implements LocalizedElement {
     API,

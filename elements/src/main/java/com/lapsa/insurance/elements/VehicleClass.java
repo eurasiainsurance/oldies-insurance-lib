@@ -1,7 +1,5 @@
 package com.lapsa.insurance.elements;
 
-import com.lapsa.insurance.LocalizedElement;
-
 public enum VehicleClass implements LocalizedElement {
     CAR(true), // Легковые
     MOTO(true), // Мототранспорт

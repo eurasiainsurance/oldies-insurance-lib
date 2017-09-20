@@ -1,7 +1,5 @@
 package com.lapsa.insurance.elements;
 
-import com.lapsa.insurance.LocalizedElement;
-
 public enum InsuredAgeAndExpirienceClass implements LocalizedElement {
     OVER25_MORE2(InsuredAgeClass.OVER25, InsuredExpirienceClass.MORE2), // возраст старше 25 лет, стаж вождения более 2 лет
     UNDER25_LESS2(InsuredAgeClass.UNDER25, InsuredExpirienceClass.LESS2), // возраст моложе 25 лет, стаж вождения менее 2 лет

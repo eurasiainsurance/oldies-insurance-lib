@@ -1,4 +1,4 @@
-package com.lapsa.insurance;
+package com.lapsa.insurance.elements;
 
 import java.util.Locale;
 import java.util.MissingResourceException;

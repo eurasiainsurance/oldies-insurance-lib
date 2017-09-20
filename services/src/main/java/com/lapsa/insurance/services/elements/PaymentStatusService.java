@@ -1,4 +1,4 @@
-package com.lapsa.insurance.services.crm;
+package com.lapsa.insurance.services.elements;
 
 import java.util.List;
 

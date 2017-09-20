@@ -6,8 +6,8 @@ public interface InsuranceLocalizedElement extends LocalizedElement {
 
     public static final String BUNDLE_BASENAME = "ElementsLocalization";
 
+    @Override
     default String getBundleBaseName() {
 	return BUNDLE_BASENAME;
     }
-
 }

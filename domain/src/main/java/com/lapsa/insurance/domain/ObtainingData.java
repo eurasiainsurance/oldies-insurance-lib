@@ -2,9 +2,9 @@ package com.lapsa.insurance.domain;
 
 import java.time.LocalDate;
 
-import com.lapsa.insurance.crm.ObtainingStatus;
 import com.lapsa.insurance.elements.DeliveryTimeSlot;
 import com.lapsa.insurance.elements.ObtainingMethod;
+import com.lapsa.insurance.elements.ObtainingStatus;
 import com.lapsa.kz.country.KZCity;
 import com.lapsa.validation.DaysAfterNow;
 import com.lapsa.validation.DaysBeforeNow;

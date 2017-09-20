@@ -1,10 +1,10 @@
 package com.lapsa.insurance.domain;
 
-import com.lapsa.insurance.crm.InsuranceRequestType;
-import com.lapsa.insurance.crm.RequestSource;
-import com.lapsa.insurance.crm.TransactionProblem;
-import com.lapsa.insurance.crm.TransactionStatus;
 import com.lapsa.insurance.elements.InsuranceProductType;
+import com.lapsa.insurance.elements.InsuranceRequestType;
+import com.lapsa.insurance.elements.RequestSource;
+import com.lapsa.insurance.elements.TransactionProblem;
+import com.lapsa.insurance.elements.TransactionStatus;
 import com.lapsa.validation.NotNullValue;
 
 public abstract class InsuranceRequest extends Request {

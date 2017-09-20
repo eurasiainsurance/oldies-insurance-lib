@@ -1,49 +1,49 @@
-com.lapsa.insurance.crm.InsuranceRequestType.ONLINE           = Он-лайн заявка
-com.lapsa.insurance.crm.InsuranceRequestType.ONLINE.short     = Он-лайн
-com.lapsa.insurance.crm.InsuranceRequestType.EXPRESS          = Экспресс заявка
-com.lapsa.insurance.crm.InsuranceRequestType.EXPRESS.short    = Экспресс
-com.lapsa.insurance.crm.InsuranceRequestType.UNCOMPLETE       = Незавершеная заявка (лид)
-com.lapsa.insurance.crm.InsuranceRequestType.UNCOMPLETE.short = Лид
+com.lapsa.insurance.elements.InsuranceRequestType.ONLINE           = Он-лайн заявка
+com.lapsa.insurance.elements.InsuranceRequestType.ONLINE.short     = Он-лайн
+com.lapsa.insurance.elements.InsuranceRequestType.EXPRESS          = Экспресс заявка
+com.lapsa.insurance.elements.InsuranceRequestType.EXPRESS.short    = Экспресс
+com.lapsa.insurance.elements.InsuranceRequestType.UNCOMPLETE       = Незавершеная заявка (лид)
+com.lapsa.insurance.elements.InsuranceRequestType.UNCOMPLETE.short = Лид
 
-com.lapsa.insurance.crm.ObtainingStatus.PENDING         = Получение ожидается
-com.lapsa.insurance.crm.ObtainingStatus.PENDING.short   = ожидается
-com.lapsa.insurance.crm.ObtainingStatus.DONE            = Получено
-com.lapsa.insurance.crm.ObtainingStatus.DONE.short      = получено
-com.lapsa.insurance.crm.ObtainingStatus.CANCELED        = Отменено
-com.lapsa.insurance.crm.ObtainingStatus.CANCELED.short  = отменено
-com.lapsa.insurance.crm.ObtainingStatus.UNDEFINED       = Не определено
-com.lapsa.insurance.crm.ObtainingStatus.UNDEFINED.short = не определено
+com.lapsa.insurance.elements.ObtainingStatus.PENDING         = Получение ожидается
+com.lapsa.insurance.elements.ObtainingStatus.PENDING.short   = ожидается
+com.lapsa.insurance.elements.ObtainingStatus.DONE            = Получено
+com.lapsa.insurance.elements.ObtainingStatus.DONE.short      = получено
+com.lapsa.insurance.elements.ObtainingStatus.CANCELED        = Отменено
+com.lapsa.insurance.elements.ObtainingStatus.CANCELED.short  = отменено
+com.lapsa.insurance.elements.ObtainingStatus.UNDEFINED       = Не определено
+com.lapsa.insurance.elements.ObtainingStatus.UNDEFINED.short = не определено
 
-com.lapsa.insurance.crm.PaymentStatus.PENDING         = Оплата ожидается
-com.lapsa.insurance.crm.PaymentStatus.PENDING.short   = ожидается
-com.lapsa.insurance.crm.PaymentStatus.DONE            = Оплачено
-com.lapsa.insurance.crm.PaymentStatus.DONE.short      = оплачено
-com.lapsa.insurance.crm.PaymentStatus.CANCELED        = Отменено
-com.lapsa.insurance.crm.PaymentStatus.CANCELED.short  = отменено
-com.lapsa.insurance.crm.PaymentStatus.UNDEFINED       = Не определено
-com.lapsa.insurance.crm.PaymentStatus.UNDEFINED.short = не определено
+com.lapsa.insurance.elements.PaymentStatus.PENDING         = Оплата ожидается
+com.lapsa.insurance.elements.PaymentStatus.PENDING.short   = ожидается
+com.lapsa.insurance.elements.PaymentStatus.DONE            = Оплачено
+com.lapsa.insurance.elements.PaymentStatus.DONE.short      = оплачено
+com.lapsa.insurance.elements.PaymentStatus.CANCELED        = Отменено
+com.lapsa.insurance.elements.PaymentStatus.CANCELED.short  = отменено
+com.lapsa.insurance.elements.PaymentStatus.UNDEFINED       = Не определено
+com.lapsa.insurance.elements.PaymentStatus.UNDEFINED.short = не определено
 
-com.lapsa.insurance.crm.ProgressStatus.NEW        = Новая 
-com.lapsa.insurance.crm.ProgressStatus.ON_PROCESS = В обработке
-com.lapsa.insurance.crm.ProgressStatus.ON_HOLD    = На паузе
-com.lapsa.insurance.crm.ProgressStatus.FINISHED   = Завершено
+com.lapsa.insurance.elements.ProgressStatus.NEW        = Новая 
+com.lapsa.insurance.elements.ProgressStatus.ON_PROCESS = В обработке
+com.lapsa.insurance.elements.ProgressStatus.ON_HOLD    = На паузе
+com.lapsa.insurance.elements.ProgressStatus.FINISHED   = Завершено
 
-com.lapsa.insurance.crm.RequestStatus.OPEN   = Открыто
-com.lapsa.insurance.crm.RequestStatus.CLOSED = Закрыто
+com.lapsa.insurance.elements.RequestStatus.OPEN   = Открыто
+com.lapsa.insurance.elements.RequestStatus.CLOSED = Закрыто
 
-com.lapsa.insurance.crm.RequestSource.API            = Заявка через API веб-сервиса 
-com.lapsa.insurance.crm.RequestSource.API.short      = API 
-com.lapsa.insurance.crm.RequestSource.INTERNAL       = Собственное Web-приложение
-com.lapsa.insurance.crm.RequestSource.INTERNAL.short = WEB
+com.lapsa.insurance.elements.RequestSource.API            = Заявка через API веб-сервиса 
+com.lapsa.insurance.elements.RequestSource.API.short      = API 
+com.lapsa.insurance.elements.RequestSource.INTERNAL       = Собственное Web-приложение
+com.lapsa.insurance.elements.RequestSource.INTERNAL.short = WEB
 
-com.lapsa.insurance.crm.TransactionProblem.CANCELED_BY_CONSUMER = Отменено клиентом
-com.lapsa.insurance.crm.TransactionProblem.WRONG_DATA_PROVIDED  = Предоставлены неверные данные
-com.lapsa.insurance.crm.TransactionProblem.TEST                 = Тестовая заявка
-com.lapsa.insurance.crm.TransactionProblem.DUPLICATE            = Дублирует другую заявку
-com.lapsa.insurance.crm.TransactionProblem.OTHER                = Другая причина
+com.lapsa.insurance.elements.TransactionProblem.CANCELED_BY_CONSUMER = Отменено клиентом
+com.lapsa.insurance.elements.TransactionProblem.WRONG_DATA_PROVIDED  = Предоставлены неверные данные
+com.lapsa.insurance.elements.TransactionProblem.TEST                 = Тестовая заявка
+com.lapsa.insurance.elements.TransactionProblem.DUPLICATE            = Дублирует другую заявку
+com.lapsa.insurance.elements.TransactionProblem.OTHER                = Другая причина
 
-com.lapsa.insurance.crm.TransactionStatus.COMPLETED             = Сделка заключена
-com.lapsa.insurance.crm.TransactionStatus.NOT_COMPLETED         = Сделка отменена
+com.lapsa.insurance.elements.TransactionStatus.COMPLETED             = Сделка заключена
+com.lapsa.insurance.elements.TransactionStatus.NOT_COMPLETED         = Сделка отменена
 
 com.lapsa.insurance.elements.CancelationReason.CANCELATION_AND_RENEW   = Досрочное прекращение договора и заключение нового
 com.lapsa.insurance.elements.CancelationReason.CANCELATION             = Досрочное расторжение

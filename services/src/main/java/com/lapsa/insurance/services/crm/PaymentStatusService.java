@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.faces.model.SelectItem;
 
-import com.lapsa.insurance.crm.PaymentStatus;
+import com.lapsa.insurance.elements.PaymentStatus;
 import com.lapsa.insurance.services.EnumListingNamingService;
 
 public interface PaymentStatusService extends EnumListingNamingService<PaymentStatus> {

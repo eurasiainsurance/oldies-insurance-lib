@@ -1,9 +1,9 @@
 package com.lapsa.insurance.domain.policy;
 
-import com.lapsa.insurance.crm.RequestSource;
 import com.lapsa.insurance.domain.InsuranceProduct;
 import com.lapsa.insurance.domain.InsuranceRequest;
 import com.lapsa.insurance.elements.InsuranceProductType;
+import com.lapsa.insurance.elements.RequestSource;
 
 public class PolicyRequest extends InsuranceRequest {
     private static final long serialVersionUID = 944531653617396366L;

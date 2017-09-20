@@ -1,9 +1,9 @@
 package com.lapsa.insurance.domain.casco;
 
-import com.lapsa.insurance.crm.RequestSource;
 import com.lapsa.insurance.domain.InsuranceProduct;
 import com.lapsa.insurance.domain.InsuranceRequest;
 import com.lapsa.insurance.elements.InsuranceProductType;
+import com.lapsa.insurance.elements.RequestSource;
 
 public class CascoRequest extends InsuranceRequest {
     private static final long serialVersionUID = -8067548829502589540L;

@@ -1,6 +1,6 @@
 package com.lapsa.insurance.validation.validators;
 
-import com.lapsa.insurance.crm.InsuranceRequestType;
+import com.lapsa.insurance.elements.InsuranceRequestType;
 import com.lapsa.insurance.validation.ValidInsuranceRequestType;
 import com.lapsa.validation.ValidationMode;
 import com.lapsa.validation.constraints.AValidEnumValueConstraintValidator;

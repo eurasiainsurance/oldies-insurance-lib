@@ -1,6 +1,6 @@
 package test.localization.crm;
 
-import com.lapsa.insurance.crm.RequestStatus;
+import com.lapsa.insurance.elements.RequestStatus;
 
 import test.localization.EnumTypeMessagesBundleTest;
 

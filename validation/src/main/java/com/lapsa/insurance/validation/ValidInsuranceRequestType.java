@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-import com.lapsa.insurance.crm.InsuranceRequestType;
+import com.lapsa.insurance.elements.InsuranceRequestType;
 import com.lapsa.insurance.validation.validators.ValidInsuranceRequestTypeConstraintValidator;
 import com.lapsa.validation.ValidationMode;
 

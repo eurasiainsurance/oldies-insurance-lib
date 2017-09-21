@@ -20,6 +20,8 @@ public enum ObtainingMethod implements InsuranceLocalizedElement {
 	this.selectable = selectable;
     }
 
+    //
+
     private static final Predicate<ObtainingMethod> SELECTABLE_FILTER = ObtainingMethod::isSelectable;
 
     public static final ObtainingMethod[] selectableValues() {

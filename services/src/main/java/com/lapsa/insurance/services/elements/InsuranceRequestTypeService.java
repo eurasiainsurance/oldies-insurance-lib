@@ -1,7 +1,22 @@
 package com.lapsa.insurance.services.elements;
 
+import com.lapsa.commons.elements.NamingListingService;
 import com.lapsa.insurance.elements.InsuranceRequestType;
-import com.lapsa.insurance.services.EnumListingNamingService;
 
-public interface InsuranceRequestTypeService extends EnumListingNamingService<InsuranceRequestType> {
+public interface InsuranceRequestTypeService extends NamingListingService<InsuranceRequestType> {
+
+    @Override
+    default InsuranceRequestType[] getAll() {
+	return InsuranceRequestType.values();
+    }
+
+    @Override
+    default InsuranceRequestType[] getSelectable() {
+	return InsuranceRequestType.values();
+    }
+
+    @Override
+    default InsuranceRequestType[] getNonSelectable() {
+	return new InsuranceRequestType[0];
+    }
 }

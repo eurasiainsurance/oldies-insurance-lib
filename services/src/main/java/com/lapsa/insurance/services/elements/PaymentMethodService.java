@@ -1,19 +1,22 @@
 package com.lapsa.insurance.services.elements;
 
-import java.util.List;
-
-import javax.faces.model.SelectItem;
-
+import com.lapsa.commons.elements.NamingListingService;
 import com.lapsa.insurance.elements.PaymentMethod;
-import com.lapsa.insurance.services.EnumListingNamingService;
 
-public interface PaymentMethodService extends EnumListingNamingService<PaymentMethod> {
+public interface PaymentMethodService extends NamingListingService<PaymentMethod> {
 
-    List<PaymentMethod> getValueItems();
+    @Override
+    default PaymentMethod[] getAll() {
+	return PaymentMethod.values();
+    }
 
-    List<SelectItem> getValueItemsSI();
+    @Override
+    default PaymentMethod[] getSelectable() {
+	return PaymentMethod.selectableValues();
+    }
 
-    List<SelectItem> getValueItemsShortSI();
-
-    List<SelectItem> getValueItemsFullSI();
+    @Override
+    default PaymentMethod[] getNonSelectable() {
+	return PaymentMethod.nonSelectableValues();
+    }
 }

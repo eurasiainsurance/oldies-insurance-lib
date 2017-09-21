@@ -1,7 +1,22 @@
 package com.lapsa.insurance.services.elements;
 
+import com.lapsa.commons.elements.NamingListingService;
 import com.lapsa.insurance.elements.RequestStatus;
-import com.lapsa.insurance.services.EnumListingNamingService;
 
-public interface RequestStatusService extends EnumListingNamingService<RequestStatus> {
+public interface RequestStatusService extends NamingListingService<RequestStatus> {
+
+    @Override
+    default RequestStatus[] getAll() {
+	return RequestStatus.values();
+    }
+
+    @Override
+    default RequestStatus[] getSelectable() {
+	return RequestStatus.values();
+    }
+
+    @Override
+    default RequestStatus[] getNonSelectable() {
+	return new RequestStatus[0];
+    }
 }

@@ -1,7 +1,22 @@
 package com.lapsa.insurance.services.elements;
 
+import com.lapsa.commons.elements.NamingListingService;
 import com.lapsa.insurance.elements.IdentityCardType;
-import com.lapsa.insurance.services.EnumListingNamingService;
 
-public interface IdentityCardTypeService extends EnumListingNamingService<IdentityCardType> {
+public interface IdentityCardTypeService extends NamingListingService<IdentityCardType> {
+
+    @Override
+    default IdentityCardType[] getAll() {
+	return IdentityCardType.values();
+    }
+
+    @Override
+    default IdentityCardType[] getSelectable() {
+	return IdentityCardType.values();
+    }
+
+    @Override
+    default IdentityCardType[] getNonSelectable() {
+	return new IdentityCardType[0];
+    }
 }

@@ -1,7 +1,22 @@
 package com.lapsa.insurance.services.elements;
 
+import com.lapsa.commons.elements.NamingListingService;
 import com.lapsa.insurance.elements.InsuranceClassType;
-import com.lapsa.insurance.services.EnumListingNamingService;
 
-public interface InsuranceClassTypeService extends EnumListingNamingService<InsuranceClassType> {
+public interface InsuranceClassTypeService extends NamingListingService<InsuranceClassType> {
+
+    @Override
+    default InsuranceClassType[] getAll() {
+	return InsuranceClassType.values();
+    }
+
+    @Override
+    default InsuranceClassType[] getSelectable() {
+	return InsuranceClassType.values();
+    }
+
+    @Override
+    default InsuranceClassType[] getNonSelectable() {
+	return new InsuranceClassType[0];
+    }
 }

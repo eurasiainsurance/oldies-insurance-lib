@@ -1,27 +1,22 @@
 package com.lapsa.insurance.services.elements;
 
-import java.util.List;
-
-import javax.faces.model.SelectItem;
-
+import com.lapsa.commons.elements.NamingListingService;
 import com.lapsa.insurance.elements.PaymentStatus;
-import com.lapsa.insurance.services.EnumListingNamingService;
 
-public interface PaymentStatusService extends EnumListingNamingService<PaymentStatus> {
+public interface PaymentStatusService extends NamingListingService<PaymentStatus> {
 
-    List<PaymentStatus> getValueItems();
+    @Override
+    default PaymentStatus[] getAll() {
+	return PaymentStatus.values();
+    }
 
-    List<SelectItem> getValueItemsSI();
+    @Override
+    default PaymentStatus[] getSelectable() {
+	return PaymentStatus.selectableValues();
+    }
 
-    List<SelectItem> getValueItemsShortSI();
-
-    List<SelectItem> getValueItemsFullSI();
-
-    List<PaymentStatus> getNonValueItems();
-
-    List<SelectItem> getNonValueItemsSI();
-
-    List<SelectItem> getNonValueItemsShortSI();
-
-    List<SelectItem> getNonValueItemsFullSI();
+    @Override
+    default PaymentStatus[] getNonSelectable() {
+	return PaymentStatus.nonSelectableValues();
+    }
 }

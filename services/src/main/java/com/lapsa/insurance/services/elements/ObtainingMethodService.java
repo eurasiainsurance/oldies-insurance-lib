@@ -1,19 +1,22 @@
 package com.lapsa.insurance.services.elements;
 
-import java.util.List;
-
-import javax.faces.model.SelectItem;
-
+import com.lapsa.commons.elements.NamingListingService;
 import com.lapsa.insurance.elements.ObtainingMethod;
-import com.lapsa.insurance.services.EnumListingNamingService;
 
-public interface ObtainingMethodService extends EnumListingNamingService<ObtainingMethod> {
+public interface ObtainingMethodService extends NamingListingService<ObtainingMethod> {
 
-    List<ObtainingMethod> getValueItems();
+    @Override
+    default ObtainingMethod[] getAll() {
+	return ObtainingMethod.values();
+    }
 
-    List<SelectItem> getValueItemsSI();
+    @Override
+    default ObtainingMethod[] getSelectable() {
+	return ObtainingMethod.selectableValues();
+    }
 
-    List<SelectItem> getValueItemsShortSI();
-
-    List<SelectItem> getValueItemsFullSI();
+    @Override
+    default ObtainingMethod[] getNonSelectable() {
+	return ObtainingMethod.nonSelectableValues();
+    }
 }

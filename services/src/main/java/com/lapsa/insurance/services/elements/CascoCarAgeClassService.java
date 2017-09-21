@@ -1,7 +1,22 @@
 package com.lapsa.insurance.services.elements;
 
+import com.lapsa.commons.elements.NamingListingService;
 import com.lapsa.insurance.elements.CascoCarAgeClass;
-import com.lapsa.insurance.services.EnumListingNamingService;
 
-public interface CascoCarAgeClassService extends EnumListingNamingService<CascoCarAgeClass> {
+public interface CascoCarAgeClassService extends NamingListingService<CascoCarAgeClass> {
+
+    @Override
+    default CascoCarAgeClass[] getAll() {
+	return CascoCarAgeClass.values();
+    }
+
+    @Override
+    default CascoCarAgeClass[] getSelectable() {
+	return CascoCarAgeClass.values();
+    }
+
+    @Override
+    default CascoCarAgeClass[] getNonSelectable() {
+	return new CascoCarAgeClass[0];
+    }
 }

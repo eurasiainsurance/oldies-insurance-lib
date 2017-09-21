@@ -1,7 +1,22 @@
 package com.lapsa.insurance.services.elements;
 
+import com.lapsa.commons.elements.NamingListingService;
 import com.lapsa.insurance.elements.InsuredExpirienceClass;
-import com.lapsa.insurance.services.EnumListingNamingService;
 
-public interface InsuredExpirienceClassService extends EnumListingNamingService<InsuredExpirienceClass> {
+public interface InsuredExpirienceClassService extends NamingListingService<InsuredExpirienceClass> {
+
+    @Override
+    default InsuredExpirienceClass[] getAll() {
+	return InsuredExpirienceClass.values();
+    }
+
+    @Override
+    default InsuredExpirienceClass[] getSelectable() {
+	return InsuredExpirienceClass.values();
+    }
+
+    @Override
+    default InsuredExpirienceClass[] getNonSelectable() {
+	return new InsuredExpirienceClass[0];
+    }
 }

@@ -1,7 +1,22 @@
 package com.lapsa.insurance.services.elements;
 
+import com.lapsa.commons.elements.NamingListingService;
 import com.lapsa.insurance.elements.DeliveryTimeSlot;
-import com.lapsa.insurance.services.EnumListingNamingService;
 
-public interface DeliveryTimeSlotService extends EnumListingNamingService<DeliveryTimeSlot> {
+public interface DeliveryTimeSlotService extends NamingListingService<DeliveryTimeSlot> {
+
+    @Override
+    default DeliveryTimeSlot[] getAll() {
+	return DeliveryTimeSlot.values();
+    }
+
+    @Override
+    default DeliveryTimeSlot[] getSelectable() {
+	return DeliveryTimeSlot.values();
+    }
+
+    @Override
+    default DeliveryTimeSlot[] getNonSelectable() {
+	return new DeliveryTimeSlot[0];
+    }
 }

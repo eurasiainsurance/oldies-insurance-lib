@@ -1,7 +1,22 @@
 package com.lapsa.insurance.services.elements;
 
+import com.lapsa.commons.elements.NamingListingService;
 import com.lapsa.insurance.elements.CascoDeductibleFullRate;
-import com.lapsa.insurance.services.EnumListingNamingService;
 
-public interface CascoDeductibleFullRateService extends EnumListingNamingService<CascoDeductibleFullRate> {
+public interface CascoDeductibleFullRateService extends NamingListingService<CascoDeductibleFullRate> {
+
+    @Override
+    default CascoDeductibleFullRate[] getAll() {
+	return CascoDeductibleFullRate.values();
+    }
+
+    @Override
+    default CascoDeductibleFullRate[] getSelectable() {
+	return CascoDeductibleFullRate.values();
+    }
+
+    @Override
+    default CascoDeductibleFullRate[] getNonSelectable() {
+	return new CascoDeductibleFullRate[0];
+    }
 }

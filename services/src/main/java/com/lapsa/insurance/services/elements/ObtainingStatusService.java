@@ -1,27 +1,22 @@
 package com.lapsa.insurance.services.elements;
 
-import java.util.List;
-
-import javax.faces.model.SelectItem;
-
+import com.lapsa.commons.elements.NamingListingService;
 import com.lapsa.insurance.elements.ObtainingStatus;
-import com.lapsa.insurance.services.EnumListingNamingService;
 
-public interface ObtainingStatusService extends EnumListingNamingService<ObtainingStatus> {
+public interface ObtainingStatusService extends NamingListingService<ObtainingStatus> {
 
-    List<ObtainingStatus> getValueItems();
+    @Override
+    default ObtainingStatus[] getAll() {
+	return ObtainingStatus.values();
+    }
 
-    List<SelectItem> getValueItemsSI();
+    @Override
+    default ObtainingStatus[] getSelectable() {
+	return ObtainingStatus.selectableValues();
+    }
 
-    List<SelectItem> getValueItemsShortSI();
-
-    List<SelectItem> getValueItemsFullSI();
-
-    List<ObtainingStatus> getNonValueItems();
-
-    List<SelectItem> getNonValueItemsSI();
-
-    List<SelectItem> getNonValueItemsShortSI();
-
-    List<SelectItem> getNonValueItemsFullSI();
+    @Override
+    default ObtainingStatus[] getNonSelectable() {
+	return ObtainingStatus.nonSelectableValues();
+    }
 }

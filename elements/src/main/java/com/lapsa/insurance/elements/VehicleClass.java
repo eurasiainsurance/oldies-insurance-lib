@@ -1,5 +1,8 @@
 package com.lapsa.insurance.elements;
 
+import java.util.function.Predicate;
+import java.util.stream.Stream;
+
 public enum VehicleClass implements InsuranceLocalizedElement {
     CAR(true), // Легковые
     MOTO(true), // Мототранспорт
@@ -20,6 +23,24 @@ public enum VehicleClass implements InsuranceLocalizedElement {
     private VehicleClass(boolean validForIndividualsPolicy) {
 	this.validForIndividualsPolicy = validForIndividualsPolicy;
     }
+
+    private static final Predicate<VehicleClass> SELECTABLE_FILTER = VehicleClass::isValidForIndividualsPolicy;
+
+    public static final VehicleClass[] selectableValues() {
+	return Stream.of(values()) //
+		.filter(SELECTABLE_FILTER) //
+		.toArray(VehicleClass[]::new);
+    }
+
+    private static final Predicate<VehicleClass> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
+
+    public static final VehicleClass[] nonSelectableValues() {
+	return Stream.of(values()) //
+		.filter(NON_SELECTABLE_FILTER) //
+		.toArray(VehicleClass[]::new);
+    }
+
+    // GENERATED
 
     public boolean isValidForIndividualsPolicy() {
 	return validForIndividualsPolicy;

@@ -10,14 +10,35 @@ public enum PaymentMethod implements InsuranceLocalizedElement {
     //
     ;
 
-    private static final Predicate<PaymentMethod> SELECTABLE_FILTER = x -> PaymentMethod.UNDEFINED != x;
-    private static final Predicate<PaymentMethod> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
+    private final boolean selectable;
 
-    public static final PaymentMethod[] selectableValues() {
-	return Stream.of(values()).filter(SELECTABLE_FILTER).toArray(PaymentMethod[]::new);
+    private PaymentMethod() {
+	this.selectable = true;
     }
 
+    private PaymentMethod(boolean selectable) {
+	this.selectable = selectable;
+    }
+
+    private static final Predicate<PaymentMethod> SELECTABLE_FILTER = PaymentMethod::isSelectable;
+
+    public static final PaymentMethod[] selectableValues() {
+	return Stream.of(values()) //
+		.filter(SELECTABLE_FILTER) //
+		.toArray(PaymentMethod[]::new);
+    }
+
+    private static final Predicate<PaymentMethod> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
+
     public static final PaymentMethod[] nonSelectableValues() {
-	return Stream.of(values()).filter(NON_SELECTABLE_FILTER).toArray(PaymentMethod[]::new);
+	return Stream.of(values()) //
+		.filter(NON_SELECTABLE_FILTER) //
+		.toArray(PaymentMethod[]::new);
+    }
+
+    // GENERATED
+
+    public boolean isSelectable() {
+	return selectable;
     }
 }

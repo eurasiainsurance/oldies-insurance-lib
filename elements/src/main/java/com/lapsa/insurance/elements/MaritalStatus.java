@@ -24,10 +24,16 @@ public enum MaritalStatus implements InsuranceLocalizedElement {
 
     //
 
+    public static final Stream<MaritalStatus> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
     private static final Predicate<MaritalStatus> SELECTABLE_FILTER = MaritalStatus::isSelectable;
 
     public static final MaritalStatus[] selectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
 		.toArray(MaritalStatus[]::new);
     }
@@ -35,7 +41,7 @@ public enum MaritalStatus implements InsuranceLocalizedElement {
     private static final Predicate<MaritalStatus> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
     public static final MaritalStatus[] nonSelectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(MaritalStatus[]::new);
     }

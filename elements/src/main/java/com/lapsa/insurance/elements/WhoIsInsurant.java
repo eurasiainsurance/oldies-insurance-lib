@@ -24,10 +24,16 @@ public enum WhoIsInsurant implements InsuranceLocalizedElement {
 
     //
 
+    public static final Stream<WhoIsInsurant> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
     private static final Predicate<WhoIsInsurant> SELECTABLE_FILTER = WhoIsInsurant::isSelectable;
 
     public static final WhoIsInsurant[] selectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
 		.toArray(WhoIsInsurant[]::new);
     }
@@ -35,7 +41,7 @@ public enum WhoIsInsurant implements InsuranceLocalizedElement {
     private static final Predicate<WhoIsInsurant> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
     public static final WhoIsInsurant[] nonSelectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(WhoIsInsurant[]::new);
     }

@@ -26,10 +26,16 @@ public enum DeliveryTimeSlot implements InsuranceLocalizedElement {
 
     //
 
+    public static final Stream<DeliveryTimeSlot> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
     private static final Predicate<DeliveryTimeSlot> SELECTABLE_FILTER = DeliveryTimeSlot::isSelectable;
 
     public static final DeliveryTimeSlot[] selectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
 		.toArray(DeliveryTimeSlot[]::new);
     }
@@ -37,7 +43,7 @@ public enum DeliveryTimeSlot implements InsuranceLocalizedElement {
     private static final Predicate<DeliveryTimeSlot> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
     public static final DeliveryTimeSlot[] nonSelectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(DeliveryTimeSlot[]::new);
     }

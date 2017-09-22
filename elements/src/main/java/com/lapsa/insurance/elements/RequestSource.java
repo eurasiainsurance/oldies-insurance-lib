@@ -24,10 +24,16 @@ public enum RequestSource implements InsuranceLocalizedElement {
 
     //
 
+    public static final Stream<RequestSource> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
     private static final Predicate<RequestSource> SELECTABLE_FILTER = RequestSource::isSelectable;
 
     public static final RequestSource[] selectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
 		.toArray(RequestSource[]::new);
     }
@@ -35,7 +41,7 @@ public enum RequestSource implements InsuranceLocalizedElement {
     private static final Predicate<RequestSource> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
     public static final RequestSource[] nonSelectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(RequestSource[]::new);
     }

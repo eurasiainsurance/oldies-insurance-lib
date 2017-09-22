@@ -25,10 +25,16 @@ public enum CascoCarAgeClass implements InsuranceLocalizedElement {
 
     //
 
+    public static final Stream<CascoCarAgeClass> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
     private static final Predicate<CascoCarAgeClass> SELECTABLE_FILTER = CascoCarAgeClass::isSelectable;
 
     public static final CascoCarAgeClass[] selectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
 		.toArray(CascoCarAgeClass[]::new);
     }
@@ -36,7 +42,7 @@ public enum CascoCarAgeClass implements InsuranceLocalizedElement {
     private static final Predicate<CascoCarAgeClass> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
     public static final CascoCarAgeClass[] nonSelectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(CascoCarAgeClass[]::new);
     }

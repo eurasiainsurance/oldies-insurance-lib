@@ -25,10 +25,16 @@ public enum InsuranceRequestType implements InsuranceLocalizedElement {
 
     //
 
+    public static final Stream<InsuranceRequestType> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
     private static final Predicate<InsuranceRequestType> SELECTABLE_FILTER = InsuranceRequestType::isSelectable;
 
     public static final InsuranceRequestType[] selectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
 		.toArray(InsuranceRequestType[]::new);
     }
@@ -36,7 +42,7 @@ public enum InsuranceRequestType implements InsuranceLocalizedElement {
     private static final Predicate<InsuranceRequestType> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
     public static final InsuranceRequestType[] nonSelectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(InsuranceRequestType[]::new);
     }

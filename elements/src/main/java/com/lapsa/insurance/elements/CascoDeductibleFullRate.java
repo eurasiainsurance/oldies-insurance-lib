@@ -27,10 +27,16 @@ public enum CascoDeductibleFullRate implements InsuranceLocalizedElement {
 
     //
 
+    public static final Stream<CascoDeductibleFullRate> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
     private static final Predicate<CascoDeductibleFullRate> SELECTABLE_FILTER = CascoDeductibleFullRate::isSelectable;
 
     public static final CascoDeductibleFullRate[] selectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
 		.toArray(CascoDeductibleFullRate[]::new);
     }
@@ -38,7 +44,7 @@ public enum CascoDeductibleFullRate implements InsuranceLocalizedElement {
     private static final Predicate<CascoDeductibleFullRate> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
     public static final CascoDeductibleFullRate[] nonSelectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(CascoDeductibleFullRate[]::new);
     }

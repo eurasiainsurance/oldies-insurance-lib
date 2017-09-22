@@ -27,10 +27,16 @@ public enum TransactionProblem implements InsuranceLocalizedElement {
 
     //
 
+    public static final Stream<TransactionProblem> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
     private static final Predicate<TransactionProblem> SELECTABLE_FILTER = TransactionProblem::isSelectable;
 
     public static final TransactionProblem[] selectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
 		.toArray(TransactionProblem[]::new);
     }
@@ -38,7 +44,7 @@ public enum TransactionProblem implements InsuranceLocalizedElement {
     private static final Predicate<TransactionProblem> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
     public static final TransactionProblem[] nonSelectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(TransactionProblem[]::new);
     }

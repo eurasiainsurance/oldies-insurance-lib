@@ -24,10 +24,16 @@ public enum TransactionStatus implements InsuranceLocalizedElement {
 
     //
 
+    public static final Stream<TransactionStatus> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
     private static final Predicate<TransactionStatus> SELECTABLE_FILTER = TransactionStatus::isSelectable;
 
     public static final TransactionStatus[] selectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
 		.toArray(TransactionStatus[]::new);
     }
@@ -35,7 +41,7 @@ public enum TransactionStatus implements InsuranceLocalizedElement {
     private static final Predicate<TransactionStatus> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
     public static final TransactionStatus[] nonSelectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(TransactionStatus[]::new);
     }

@@ -26,10 +26,16 @@ public enum ProgressStatus implements InsuranceLocalizedElement {
 
     //
 
+    public static final Stream<ProgressStatus> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
     private static final Predicate<ProgressStatus> SELECTABLE_FILTER = ProgressStatus::isSelectable;
 
     public static final ProgressStatus[] selectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
 		.toArray(ProgressStatus[]::new);
     }
@@ -37,7 +43,7 @@ public enum ProgressStatus implements InsuranceLocalizedElement {
     private static final Predicate<ProgressStatus> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
     public static final ProgressStatus[] nonSelectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(ProgressStatus[]::new);
     }

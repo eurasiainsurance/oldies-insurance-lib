@@ -33,10 +33,16 @@ public enum PolicyTemporaryEntryTimeCategory implements InsuranceLocalizedElemen
 
     //
 
+    public static final Stream<PolicyTemporaryEntryTimeCategory> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
     private static final Predicate<PolicyTemporaryEntryTimeCategory> SELECTABLE_FILTER = PolicyTemporaryEntryTimeCategory::isSelectable;
 
     public static final PolicyTemporaryEntryTimeCategory[] selectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
 		.toArray(PolicyTemporaryEntryTimeCategory[]::new);
     }
@@ -44,7 +50,7 @@ public enum PolicyTemporaryEntryTimeCategory implements InsuranceLocalizedElemen
     private static final Predicate<PolicyTemporaryEntryTimeCategory> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
     public static final PolicyTemporaryEntryTimeCategory[] nonSelectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(PolicyTemporaryEntryTimeCategory[]::new);
     }

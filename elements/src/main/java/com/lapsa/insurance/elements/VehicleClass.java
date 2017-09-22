@@ -27,10 +27,18 @@ public enum VehicleClass implements InsuranceLocalizedElement {
 	this.selectable = selectable;
     }
 
+    //
+
+    public static final Stream<VehicleClass> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
     private static final Predicate<VehicleClass> SELECTABLE_FILTER = VehicleClass::isSelectable;
 
     public static final VehicleClass[] selectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
 		.toArray(VehicleClass[]::new);
     }
@@ -38,7 +46,7 @@ public enum VehicleClass implements InsuranceLocalizedElement {
     private static final Predicate<VehicleClass> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
     public static final VehicleClass[] nonSelectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(VehicleClass[]::new);
     }

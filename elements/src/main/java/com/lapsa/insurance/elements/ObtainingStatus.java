@@ -26,10 +26,16 @@ public enum ObtainingStatus implements InsuranceLocalizedElement {
 
     //
 
+    public static final Stream<ObtainingStatus> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
     private static final Predicate<ObtainingStatus> SELECTABLE_FILTER = ObtainingStatus::isSelectable;
 
     public static final ObtainingStatus[] selectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
 		.toArray(ObtainingStatus[]::new);
     }
@@ -37,7 +43,7 @@ public enum ObtainingStatus implements InsuranceLocalizedElement {
     private static final Predicate<ObtainingStatus> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
     public static final ObtainingStatus[] nonSelectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(ObtainingStatus[]::new);
     }

@@ -31,10 +31,16 @@ public enum CancelationReason implements InsuranceLocalizedElement {
 
     //
 
+    public static final Stream<CancelationReason> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
     private static final Predicate<CancelationReason> SELECTABLE_FILTER = CancelationReason::isSelectable;
 
     public static final CancelationReason[] selectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
 		.toArray(CancelationReason[]::new);
     }
@@ -42,7 +48,7 @@ public enum CancelationReason implements InsuranceLocalizedElement {
     private static final Predicate<CancelationReason> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
     public static final CancelationReason[] nonSelectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(CancelationReason[]::new);
     }

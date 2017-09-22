@@ -25,10 +25,16 @@ public enum PaymentMethod implements InsuranceLocalizedElement {
 
     //
 
+    public static final Stream<PaymentMethod> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
     private static final Predicate<PaymentMethod> SELECTABLE_FILTER = PaymentMethod::isSelectable;
 
     public static final PaymentMethod[] selectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
 		.toArray(PaymentMethod[]::new);
     }
@@ -36,7 +42,7 @@ public enum PaymentMethod implements InsuranceLocalizedElement {
     private static final Predicate<PaymentMethod> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
     public static final PaymentMethod[] nonSelectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(PaymentMethod[]::new);
     }

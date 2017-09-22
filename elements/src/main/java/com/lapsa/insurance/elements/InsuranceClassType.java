@@ -37,10 +37,16 @@ public enum InsuranceClassType implements InsuranceLocalizedElement {
 
     //
 
+    public static final Stream<InsuranceClassType> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
     private static final Predicate<InsuranceClassType> SELECTABLE_FILTER = InsuranceClassType::isSelectable;
 
     public static final InsuranceClassType[] selectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
 		.toArray(InsuranceClassType[]::new);
     }
@@ -48,7 +54,7 @@ public enum InsuranceClassType implements InsuranceLocalizedElement {
     private static final Predicate<InsuranceClassType> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
     public static final InsuranceClassType[] nonSelectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(InsuranceClassType[]::new);
     }

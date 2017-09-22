@@ -24,10 +24,16 @@ public enum SubjectType implements InsuranceLocalizedElement {
 
     //
 
+    public static final Stream<SubjectType> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
     private static final Predicate<SubjectType> SELECTABLE_FILTER = SubjectType::isSelectable;
 
     public static final SubjectType[] selectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
 		.toArray(SubjectType[]::new);
     }
@@ -35,7 +41,7 @@ public enum SubjectType implements InsuranceLocalizedElement {
     private static final Predicate<SubjectType> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
     public static final SubjectType[] nonSelectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(SubjectType[]::new);
     }

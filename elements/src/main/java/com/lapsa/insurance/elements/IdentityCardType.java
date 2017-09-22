@@ -26,10 +26,16 @@ public enum IdentityCardType implements InsuranceLocalizedElement {
 
     //
 
+    public static final Stream<IdentityCardType> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
     private static final Predicate<IdentityCardType> SELECTABLE_FILTER = IdentityCardType::isSelectable;
 
     public static final IdentityCardType[] selectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
 		.toArray(IdentityCardType[]::new);
     }
@@ -37,7 +43,7 @@ public enum IdentityCardType implements InsuranceLocalizedElement {
     private static final Predicate<IdentityCardType> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
     public static final IdentityCardType[] nonSelectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(IdentityCardType[]::new);
     }

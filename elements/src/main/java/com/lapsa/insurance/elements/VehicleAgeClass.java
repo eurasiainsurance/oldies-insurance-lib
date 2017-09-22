@@ -24,10 +24,16 @@ public enum VehicleAgeClass implements InsuranceLocalizedElement {
 
     //
 
+    public static final Stream<VehicleAgeClass> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
     private static final Predicate<VehicleAgeClass> SELECTABLE_FILTER = VehicleAgeClass::isSelectable;
 
     public static final VehicleAgeClass[] selectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
 		.toArray(VehicleAgeClass[]::new);
     }
@@ -35,7 +41,7 @@ public enum VehicleAgeClass implements InsuranceLocalizedElement {
     private static final Predicate<VehicleAgeClass> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
     public static final VehicleAgeClass[] nonSelectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(VehicleAgeClass[]::new);
     }

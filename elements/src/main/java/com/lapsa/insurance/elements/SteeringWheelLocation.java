@@ -24,10 +24,16 @@ public enum SteeringWheelLocation implements InsuranceLocalizedElement {
 
     //
 
+    public static final Stream<SteeringWheelLocation> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
     private static final Predicate<SteeringWheelLocation> SELECTABLE_FILTER = SteeringWheelLocation::isSelectable;
 
     public static final SteeringWheelLocation[] selectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
 		.toArray(SteeringWheelLocation[]::new);
     }
@@ -35,7 +41,7 @@ public enum SteeringWheelLocation implements InsuranceLocalizedElement {
     private static final Predicate<SteeringWheelLocation> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
     public static final SteeringWheelLocation[] nonSelectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(SteeringWheelLocation[]::new);
     }

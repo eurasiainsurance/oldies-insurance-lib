@@ -24,10 +24,16 @@ public enum Sex implements InsuranceLocalizedElement {
 
     //
 
+    public static final Stream<Sex> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
     private static final Predicate<Sex> SELECTABLE_FILTER = Sex::isSelectable;
 
     public static final Sex[] selectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
 		.toArray(Sex[]::new);
     }
@@ -35,7 +41,7 @@ public enum Sex implements InsuranceLocalizedElement {
     private static final Predicate<Sex> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
     public static final Sex[] nonSelectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(Sex[]::new);
     }

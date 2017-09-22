@@ -37,10 +37,16 @@ public enum InsuredAgeAndExpirienceClass implements InsuranceLocalizedElement {
 
     //
 
+    public static final Stream<InsuredAgeAndExpirienceClass> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
     private static final Predicate<InsuredAgeAndExpirienceClass> SELECTABLE_FILTER = InsuredAgeAndExpirienceClass::isSelectable;
 
     public static final InsuredAgeAndExpirienceClass[] selectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
 		.toArray(InsuredAgeAndExpirienceClass[]::new);
     }
@@ -48,7 +54,7 @@ public enum InsuredAgeAndExpirienceClass implements InsuranceLocalizedElement {
     private static final Predicate<InsuredAgeAndExpirienceClass> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
     public static final InsuredAgeAndExpirienceClass[] nonSelectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(InsuredAgeAndExpirienceClass[]::new);
     }

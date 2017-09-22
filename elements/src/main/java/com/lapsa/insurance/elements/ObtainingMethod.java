@@ -25,10 +25,16 @@ public enum ObtainingMethod implements InsuranceLocalizedElement {
 
     //
 
+    public static final Stream<ObtainingMethod> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
     private static final Predicate<ObtainingMethod> SELECTABLE_FILTER = ObtainingMethod::isSelectable;
 
     public static final ObtainingMethod[] selectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
 		.toArray(ObtainingMethod[]::new);
     }
@@ -36,7 +42,7 @@ public enum ObtainingMethod implements InsuranceLocalizedElement {
     private static final Predicate<ObtainingMethod> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
     public static final ObtainingMethod[] nonSelectableValues() {
-	return Stream.of(values()) //
+	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(ObtainingMethod[]::new);
     }

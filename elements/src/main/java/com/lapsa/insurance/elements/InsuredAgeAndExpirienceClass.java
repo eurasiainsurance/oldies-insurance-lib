@@ -1,5 +1,6 @@
 package com.lapsa.insurance.elements;
 
+import java.util.Objects;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
@@ -24,15 +25,15 @@ public enum InsuredAgeAndExpirienceClass implements InsuranceLocalizedElement {
 
     private InsuredAgeAndExpirienceClass(InsuredAgeClass ageClass, InsuredExpirienceClass expirienceClass) {
 	this.selectable = true;
-	this.expirienceClass = expirienceClass;
-	this.ageClass = ageClass;
+	this.expirienceClass = Objects.requireNonNull(expirienceClass);
+	this.ageClass = Objects.requireNonNull(ageClass);
     }
 
     private InsuredAgeAndExpirienceClass(InsuredAgeClass ageClass, InsuredExpirienceClass expirienceClass,
 	    boolean selectable) {
 	this.selectable = selectable;
-	this.expirienceClass = expirienceClass;
-	this.ageClass = ageClass;
+	this.expirienceClass = Objects.requireNonNull(expirienceClass);
+	this.ageClass = Objects.requireNonNull(ageClass);
     }
 
     //

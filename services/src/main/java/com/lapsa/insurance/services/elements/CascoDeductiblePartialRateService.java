@@ -12,11 +12,11 @@ public interface CascoDeductiblePartialRateService extends NamingListingService<
 
     @Override
     default CascoDeductiblePartialRate[] getSelectable() {
-	return CascoDeductiblePartialRate.values();
+	return CascoDeductiblePartialRate.selectableValues();
     }
 
     @Override
     default CascoDeductiblePartialRate[] getNonSelectable() {
-	return new CascoDeductiblePartialRate[0];
+	return CascoDeductiblePartialRate.nonSelectableValues();
     }
 }

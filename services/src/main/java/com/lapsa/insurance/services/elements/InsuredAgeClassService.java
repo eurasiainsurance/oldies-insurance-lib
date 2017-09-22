@@ -12,11 +12,11 @@ public interface InsuredAgeClassService extends NamingListingService<InsuredAgeC
 
     @Override
     default InsuredAgeClass[] getSelectable() {
-	return InsuredAgeClass.values();
+	return InsuredAgeClass.selectableValues();
     }
 
     @Override
     default InsuredAgeClass[] getNonSelectable() {
-	return new InsuredAgeClass[0];
+	return InsuredAgeClass.nonSelectableValues();
     }
 }

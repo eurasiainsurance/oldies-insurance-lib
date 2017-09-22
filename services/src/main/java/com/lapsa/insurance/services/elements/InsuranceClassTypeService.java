@@ -12,11 +12,11 @@ public interface InsuranceClassTypeService extends NamingListingService<Insuranc
 
     @Override
     default InsuranceClassType[] getSelectable() {
-	return InsuranceClassType.values();
+	return InsuranceClassType.selectableValues();
     }
 
     @Override
     default InsuranceClassType[] getNonSelectable() {
-	return new InsuranceClassType[0];
+	return InsuranceClassType.nonSelectableValues();
     }
 }

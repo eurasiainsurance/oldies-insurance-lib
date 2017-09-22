@@ -12,11 +12,11 @@ public interface ProgressStatusService extends NamingListingService<ProgressStat
 
     @Override
     default ProgressStatus[] getSelectable() {
-	return ProgressStatus.values();
+	return ProgressStatus.selectableValues();
     }
 
     @Override
     default ProgressStatus[] getNonSelectable() {
-	return new ProgressStatus[0];
+	return ProgressStatus.nonSelectableValues();
     }
 }

@@ -7,10 +7,13 @@ public enum ObtainingMethod implements InsuranceLocalizedElement {
     DELIVERY, // доставить курьером
     PICKUP, // забрать самостоятельно в офисе компании
     UNDEFINED(false), // не определен
-    //
     ;
 
+    //
+
     private final boolean selectable;
+
+    //
 
     private ObtainingMethod() {
 	this.selectable = true;

@@ -12,11 +12,11 @@ public interface CascoCarAgeClassService extends NamingListingService<CascoCarAg
 
     @Override
     default CascoCarAgeClass[] getSelectable() {
-	return CascoCarAgeClass.values();
+	return CascoCarAgeClass.selectableValues();
     }
 
     @Override
     default CascoCarAgeClass[] getNonSelectable() {
-	return new CascoCarAgeClass[0];
+	return CascoCarAgeClass.nonSelectableValues();
     }
 }

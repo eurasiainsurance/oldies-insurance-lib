@@ -8,9 +8,13 @@ public enum PaymentStatus implements InsuranceLocalizedElement {
     DONE, // оплачено
     CANCELED, // отменено
     UNDEFINED(false), // не определно
-    //
     ;
+
+    //
+
     private final boolean selectable;
+
+    //
 
     private PaymentStatus() {
 	this.selectable = true;
@@ -20,6 +24,8 @@ public enum PaymentStatus implements InsuranceLocalizedElement {
 	this.selectable = selectable;
     }
 
+    //
+    
     private static final Predicate<PaymentStatus> SELECTABLE_FILTER = PaymentStatus::isSelectable;
 
     public static final PaymentStatus[] selectableValues() {

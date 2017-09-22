@@ -12,11 +12,11 @@ public interface InsuredAgeAndExpirienceClassService extends NamingListingServic
 
     @Override
     default InsuredAgeAndExpirienceClass[] getSelectable() {
-	return InsuredAgeAndExpirienceClass.values();
+	return InsuredAgeAndExpirienceClass.selectableValues();
     }
 
     @Override
     default InsuredAgeAndExpirienceClass[] getNonSelectable() {
-	return new InsuredAgeAndExpirienceClass[0];
+	return InsuredAgeAndExpirienceClass.nonSelectableValues();
     }
 }

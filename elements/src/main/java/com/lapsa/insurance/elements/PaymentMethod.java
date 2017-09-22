@@ -7,10 +7,13 @@ public enum PaymentMethod implements InsuranceLocalizedElement {
     PAYCASH, // наличными курьеру
     PAYCARD_ONLINE, // картой на сайте
     UNDEFINED, // не определен
-    //
     ;
 
+    //
+
     private final boolean selectable;
+
+    //
 
     private PaymentMethod() {
 	this.selectable = true;
@@ -19,6 +22,8 @@ public enum PaymentMethod implements InsuranceLocalizedElement {
     private PaymentMethod(boolean selectable) {
 	this.selectable = selectable;
     }
+
+    //
 
     private static final Predicate<PaymentMethod> SELECTABLE_FILTER = PaymentMethod::isSelectable;
 

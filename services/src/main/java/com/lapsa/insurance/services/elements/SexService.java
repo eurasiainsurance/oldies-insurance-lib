@@ -12,11 +12,11 @@ public interface SexService extends NamingListingService<Sex> {
 
     @Override
     default Sex[] getSelectable() {
-	return Sex.values();
+	return Sex.selectableValues();
     }
 
     @Override
     default Sex[] getNonSelectable() {
-	return new Sex[0];
+	return Sex.nonSelectableValues();
     }
 }

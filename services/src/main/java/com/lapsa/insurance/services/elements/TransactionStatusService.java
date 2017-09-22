@@ -12,11 +12,11 @@ public interface TransactionStatusService extends NamingListingService<Transacti
 
     @Override
     default TransactionStatus[] getSelectable() {
-	return TransactionStatus.values();
+	return TransactionStatus.selectableValues();
     }
 
     @Override
     default TransactionStatus[] getNonSelectable() {
-	return new TransactionStatus[0];
+	return TransactionStatus.nonSelectableValues();
     }
 }

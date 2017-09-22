@@ -12,11 +12,11 @@ public interface CancelationReasonService extends NamingListingService<Cancelati
 
     @Override
     default CancelationReason[] getSelectable() {
-	return CancelationReason.values();
+	return CancelationReason.selectableValues();
     }
 
     @Override
     default CancelationReason[] getNonSelectable() {
-	return new CancelationReason[0];
+	return CancelationReason.nonSelectableValues();
     }
 }

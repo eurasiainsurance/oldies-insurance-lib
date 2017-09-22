@@ -12,11 +12,11 @@ public interface InsuredExpirienceClassService extends NamingListingService<Insu
 
     @Override
     default InsuredExpirienceClass[] getSelectable() {
-	return InsuredExpirienceClass.values();
+	return InsuredExpirienceClass.selectableValues();
     }
 
     @Override
     default InsuredExpirienceClass[] getNonSelectable() {
-	return new InsuredExpirienceClass[0];
+	return InsuredExpirienceClass.nonSelectableValues();
     }
 }

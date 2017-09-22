@@ -12,11 +12,11 @@ public interface InsuranceProductTypeService extends NamingListingService<Insura
 
     @Override
     default InsuranceProductType[] getSelectable() {
-	return InsuranceProductType.values();
+	return InsuranceProductType.selectableValues();
     }
 
     @Override
     default InsuranceProductType[] getNonSelectable() {
-	return new InsuranceProductType[0];
+	return InsuranceProductType.nonSelectableValues();
     }
 }

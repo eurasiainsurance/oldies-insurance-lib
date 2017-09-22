@@ -12,11 +12,11 @@ public interface RequestStatusService extends NamingListingService<RequestStatus
 
     @Override
     default RequestStatus[] getSelectable() {
-	return RequestStatus.values();
+	return RequestStatus.selectableValues();
     }
 
     @Override
     default RequestStatus[] getNonSelectable() {
-	return new RequestStatus[0];
+	return RequestStatus.nonSelectableValues();
     }
 }

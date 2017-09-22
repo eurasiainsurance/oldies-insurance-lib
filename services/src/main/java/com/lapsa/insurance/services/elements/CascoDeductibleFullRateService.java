@@ -12,11 +12,11 @@ public interface CascoDeductibleFullRateService extends NamingListingService<Cas
 
     @Override
     default CascoDeductibleFullRate[] getSelectable() {
-	return CascoDeductibleFullRate.values();
+	return CascoDeductibleFullRate.selectableValues();
     }
 
     @Override
     default CascoDeductibleFullRate[] getNonSelectable() {
-	return new CascoDeductibleFullRate[0];
+	return CascoDeductibleFullRate.nonSelectableValues();
     }
 }

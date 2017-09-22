@@ -12,11 +12,11 @@ public interface SubjectTypeService extends NamingListingService<SubjectType> {
 
     @Override
     default SubjectType[] getSelectable() {
-	return SubjectType.values();
+	return SubjectType.selectableValues();
     }
 
     @Override
     default SubjectType[] getNonSelectable() {
-	return new SubjectType[0];
+	return SubjectType.nonSelectableValues();
     }
 }

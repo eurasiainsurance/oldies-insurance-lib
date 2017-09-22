@@ -12,11 +12,11 @@ public interface VehicleAgeClassService extends NamingListingService<VehicleAgeC
 
     @Override
     default VehicleAgeClass[] getSelectable() {
-	return VehicleAgeClass.values();
+	return VehicleAgeClass.selectableValues();
     }
 
     @Override
     default VehicleAgeClass[] getNonSelectable() {
-	return new VehicleAgeClass[0];
+	return VehicleAgeClass.nonSelectableValues();
     }
 }

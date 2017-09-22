@@ -12,11 +12,11 @@ public interface DeliveryTimeSlotService extends NamingListingService<DeliveryTi
 
     @Override
     default DeliveryTimeSlot[] getSelectable() {
-	return DeliveryTimeSlot.values();
+	return DeliveryTimeSlot.selectableValues();
     }
 
     @Override
     default DeliveryTimeSlot[] getNonSelectable() {
-	return new DeliveryTimeSlot[0];
+	return DeliveryTimeSlot.nonSelectableValues();
     }
 }

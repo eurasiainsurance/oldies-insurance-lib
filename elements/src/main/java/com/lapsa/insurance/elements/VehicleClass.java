@@ -15,16 +15,19 @@ public enum VehicleClass implements InsuranceLocalizedElement {
     AIRCRAFT(false), // Воздушный транспорт
     RAILWAY(false), // Железнодорожный транспорт
     SPECIAL(false), // Спец.техника
-    //
     ;
 
-    private final boolean validForIndividualsPolicy;
+    //
 
-    private VehicleClass(boolean validForIndividualsPolicy) {
-	this.validForIndividualsPolicy = validForIndividualsPolicy;
+    private final boolean selectable;
+
+    //
+
+    private VehicleClass(boolean selectable) {
+	this.selectable = selectable;
     }
 
-    private static final Predicate<VehicleClass> SELECTABLE_FILTER = VehicleClass::isValidForIndividualsPolicy;
+    private static final Predicate<VehicleClass> SELECTABLE_FILTER = VehicleClass::isSelectable;
 
     public static final VehicleClass[] selectableValues() {
 	return Stream.of(values()) //
@@ -42,7 +45,7 @@ public enum VehicleClass implements InsuranceLocalizedElement {
 
     // GENERATED
 
-    public boolean isValidForIndividualsPolicy() {
-	return validForIndividualsPolicy;
+    public boolean isSelectable() {
+	return selectable;
     }
 }

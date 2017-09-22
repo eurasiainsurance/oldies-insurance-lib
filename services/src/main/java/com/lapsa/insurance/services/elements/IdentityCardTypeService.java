@@ -12,11 +12,11 @@ public interface IdentityCardTypeService extends NamingListingService<IdentityCa
 
     @Override
     default IdentityCardType[] getSelectable() {
-	return IdentityCardType.values();
+	return IdentityCardType.selectableValues();
     }
 
     @Override
     default IdentityCardType[] getNonSelectable() {
-	return new IdentityCardType[0];
+	return IdentityCardType.nonSelectableValues();
     }
 }

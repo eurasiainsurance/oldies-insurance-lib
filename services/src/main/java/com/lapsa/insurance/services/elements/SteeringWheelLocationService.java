@@ -12,11 +12,11 @@ public interface SteeringWheelLocationService extends NamingListingService<Steer
 
     @Override
     default SteeringWheelLocation[] getSelectable() {
-	return SteeringWheelLocation.values();
+	return SteeringWheelLocation.selectableValues();
     }
 
     @Override
     default SteeringWheelLocation[] getNonSelectable() {
-	return new SteeringWheelLocation[0];
+	return SteeringWheelLocation.nonSelectableValues();
     }
 }

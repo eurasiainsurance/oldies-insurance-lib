@@ -8,10 +8,13 @@ public enum ObtainingStatus implements InsuranceLocalizedElement {
     DONE, // получено
     CANCELED, // отменено
     UNDEFINED(false), // не определно
-    //
     ;
 
+    //
+
     private final boolean selectable;
+
+    //
 
     private ObtainingStatus() {
 	this.selectable = true;
@@ -20,6 +23,8 @@ public enum ObtainingStatus implements InsuranceLocalizedElement {
     private ObtainingStatus(boolean selectable) {
 	this.selectable = selectable;
     }
+
+    //
 
     private static final Predicate<ObtainingStatus> SELECTABLE_FILTER = ObtainingStatus::isSelectable;
 

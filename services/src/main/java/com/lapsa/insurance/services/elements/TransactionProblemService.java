@@ -12,11 +12,11 @@ public interface TransactionProblemService extends NamingListingService<Transact
 
     @Override
     default TransactionProblem[] getSelectable() {
-	return TransactionProblem.values();
+	return TransactionProblem.selectableValues();
     }
 
     @Override
     default TransactionProblem[] getNonSelectable() {
-	return new TransactionProblem[0];
+	return TransactionProblem.nonSelectableValues();
     }
 }

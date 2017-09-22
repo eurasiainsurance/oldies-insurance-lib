@@ -1,5 +1,8 @@
 package com.lapsa.insurance.elements;
 
+import java.util.function.Predicate;
+import java.util.stream.Stream;
+
 public enum PolicyTemporaryEntryTimeCategory implements InsuranceLocalizedElement {
     TO_15D_INCL, // до 15 дней включительно
     FROM_16D_TO_1M_INCL, // от 16 дней до 1 месяца
@@ -12,6 +15,43 @@ public enum PolicyTemporaryEntryTimeCategory implements InsuranceLocalizedElemen
     FROM_7M_TO_8M_INCL, // от 7 до 8 месяцев включительно
     FROM_8M_TO_9M_INCL, // от 8 до 9 месяцев включительно
     FROM_9M, // свыше 11 месяцев
-    //
     ;
+
+    //
+
+    private final boolean selectable;
+
+    //
+
+    private PolicyTemporaryEntryTimeCategory() {
+	this.selectable = true;
+    }
+
+    private PolicyTemporaryEntryTimeCategory(boolean selectable) {
+	this.selectable = selectable;
+    }
+
+    //
+
+    private static final Predicate<PolicyTemporaryEntryTimeCategory> SELECTABLE_FILTER = PolicyTemporaryEntryTimeCategory::isSelectable;
+
+    public static final PolicyTemporaryEntryTimeCategory[] selectableValues() {
+	return Stream.of(values()) //
+		.filter(SELECTABLE_FILTER) //
+		.toArray(PolicyTemporaryEntryTimeCategory[]::new);
+    }
+
+    private static final Predicate<PolicyTemporaryEntryTimeCategory> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
+
+    public static final PolicyTemporaryEntryTimeCategory[] nonSelectableValues() {
+	return Stream.of(values()) //
+		.filter(NON_SELECTABLE_FILTER) //
+		.toArray(PolicyTemporaryEntryTimeCategory[]::new);
+    }
+
+    // GENERATED
+
+    public boolean isSelectable() {
+	return selectable;
+    }
 }

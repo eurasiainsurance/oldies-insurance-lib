@@ -12,11 +12,11 @@ public interface RequestSourceService extends NamingListingService<RequestSource
 
     @Override
     default RequestSource[] getSelectable() {
-	return RequestSource.values();
+	return RequestSource.selectableValues();
     }
 
     @Override
     default RequestSource[] getNonSelectable() {
-	return new RequestSource[0];
+	return RequestSource.nonSelectableValues();
     }
 }

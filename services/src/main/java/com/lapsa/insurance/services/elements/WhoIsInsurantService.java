@@ -12,11 +12,11 @@ public interface WhoIsInsurantService extends NamingListingService<WhoIsInsurant
 
     @Override
     default WhoIsInsurant[] getSelectable() {
-	return WhoIsInsurant.values();
+	return WhoIsInsurant.selectableValues();
     }
 
     @Override
     default WhoIsInsurant[] getNonSelectable() {
-	return new WhoIsInsurant[0];
+	return WhoIsInsurant.nonSelectableValues();
     }
 }

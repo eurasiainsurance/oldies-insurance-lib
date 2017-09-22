@@ -19,4 +19,8 @@ public interface VehicleClassService extends NamingListingService<VehicleClass> 
     default VehicleClass[] getNonSelectable() {
 	return VehicleClass.nonSelectableValues();
     }
+
+    default VehicleClass[] getValidForMotorTPL() {
+	return VehicleClass.validForMotorTPLValues();
+    }
 }

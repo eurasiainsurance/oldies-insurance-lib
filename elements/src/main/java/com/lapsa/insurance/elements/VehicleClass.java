@@ -4,26 +4,28 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public enum VehicleClass implements InsuranceLocalizedElement {
-    CAR(true), // Легковые
-    MOTO(true), // Мототранспорт
-    CARGO(true), // Грузовые
-    TRAILER(true), // Прицепы (полуприцепы)
-    BUS16(true), // Автобусы до 16 пассажирских мест включительно
-    BUSOVR16(true), // Автобусы свыше 16 пассажирских мест
-    TRAM(false), // Троллейбусы, трамваи
-    SEA(false), // Морское
-    AIRCRAFT(false), // Воздушный транспорт
-    RAILWAY(false), // Железнодорожный транспорт
-    SPECIAL(false), // Спец.техника
+    CAR(true, true), // Легковые
+    MOTO(true, true), // Мототранспорт
+    CARGO(true, true), // Грузовые
+    TRAILER(true, true), // Прицепы (полуприцепы)
+    BUS16(true, true), // Автобусы до 16 пассажирских мест включительно
+    BUSOVR16(true, true), // Автобусы свыше 16 пассажирских мест
+    TRAM(true, false), // Троллейбусы, трамваи
+    SEA(true, false), // Морское
+    AIRCRAFT(true, false), // Воздушный транспорт
+    RAILWAY(true, false), // Железнодорожный транспорт
+    SPECIAL(true, false), // Спец.техника
     ;
 
     //
 
     private final boolean selectable;
+    private final boolean validForMotorTPL;
 
     //
 
-    private VehicleClass(boolean selectable) {
+    private VehicleClass(boolean validForMotorTPL, boolean selectable) {
+	this.validForMotorTPL = validForMotorTPL;
 	this.selectable = selectable;
     }
 
@@ -51,9 +53,21 @@ public enum VehicleClass implements InsuranceLocalizedElement {
 		.toArray(VehicleClass[]::new);
     }
 
+    private static final Predicate<VehicleClass> VALID_FOR_MOTOR_TPL_FILTER = VehicleClass::isValidForMotorTPL;
+
+    public static final VehicleClass[] validForMotorTPLValues() {
+	return valuesStream() //
+		.filter(VALID_FOR_MOTOR_TPL_FILTER) //
+		.toArray(VehicleClass[]::new);
+    }
+
     // GENERATED
 
     public boolean isSelectable() {
 	return selectable;
+    }
+
+    public boolean isValidForMotorTPL() {
+	return validForMotorTPL;
     }
 }

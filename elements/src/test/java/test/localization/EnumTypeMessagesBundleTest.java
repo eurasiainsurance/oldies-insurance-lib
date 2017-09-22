@@ -35,7 +35,7 @@ public abstract class EnumTypeMessagesBundleTest<T extends LocalizedElement> ext
 		String displayName = c.displayName(locale);
 		assertThat(displayName, not(nullValue()));
 	    } catch (IllegalArgumentException e) {
-		fail(String.format("Missing display name for %1$s", c));
+		fail(String.format("Missing display name for %1$s", c.canonicalName()));
 	    }
 	}
     }

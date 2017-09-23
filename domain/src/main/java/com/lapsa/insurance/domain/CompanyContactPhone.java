@@ -1,5 +1,11 @@
 package com.lapsa.insurance.domain;
 
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
+
+import java.util.Locale;
+import java.util.Objects;
+import java.util.StringJoiner;
+
 import com.lapsa.international.phone.PhoneNumber;
 import com.lapsa.international.phone.PhoneType;
 
@@ -20,6 +26,16 @@ public class CompanyContactPhone extends BaseEntity<Integer> {
 
     private PhoneNumber phone;
     private PhoneType phoneType;
+
+    @Override
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	final StringJoiner sb = new StringJoiner(" ", COMPANY_CONTACT_PHONE.displayName(variant, locale) + " ", "");
+	sb.add(Objects.isNull(phone) ? "<" + COMPANY_CONTACT_PHONE_EMPTY.displayName(variant, locale) + ">"
+		: phone.getFormatted());
+	if (Objects.nonNull(phoneType))
+	    sb.add("(" + phoneType.displayName(variant, locale) + ")");
+	return appendEntityId(sb).toString();
+    }
 
     // GENERATED
 

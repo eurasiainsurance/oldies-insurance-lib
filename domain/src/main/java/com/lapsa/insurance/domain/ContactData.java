@@ -1,5 +1,11 @@
 package com.lapsa.insurance.domain;
 
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
+
+import java.util.Locale;
+import java.util.Objects;
+import java.util.StringJoiner;
+
 import com.lapsa.international.internet.validators.ValidEmail;
 import com.lapsa.international.internet.validators.ValidURL;
 import com.lapsa.international.phone.PhoneNumber;
@@ -31,6 +37,19 @@ public class ContactData extends BaseDomain {
 
     @ValidURL
     private String siteUrl;
+
+    @Override
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringJoiner sj = new StringJoiner(", ", CONTACT_DATA.displayName(variant, locale) + " ", "");
+	sj.setEmptyValue(CONTACT_DATA_EMPTY.displayName(variant, locale));
+	if (Objects.nonNull(email))
+	    sj.add(email);
+	if (Objects.nonNull(phone))
+	    sj.add(phone.getFormatted());
+	if (Objects.nonNull(siteUrl))
+	    sj.add(siteUrl);
+	return sj.toString();
+    }
 
     // GENERATED
 

@@ -75,6 +75,12 @@
 		<!-- internal lapsa -->
 		<dependency>
 			<groupId>com.lapsa.lapsa-lib</groupId>
+			<artifactId>lapsa-commons</artifactId>
+			<scope>compile</scope>
+			<optional>false</optional>
+		</dependency>
+		<dependency>
+			<groupId>com.lapsa.lapsa-lib</groupId>
 			<artifactId>lapsa-validation</artifactId>
 			<scope>compile</scope>
 			<optional>false</optional>

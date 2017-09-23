@@ -55,8 +55,7 @@ public abstract class BaseEntity<T> extends BaseDomain implements Serializable {
 	return id;
     }
 
-    @Deprecated
-    public void setId(T id) {
+    protected void setId(T id) {
 	this.id = id;
     }
 

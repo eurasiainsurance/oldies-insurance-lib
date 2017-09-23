@@ -1,6 +1,8 @@
 package com.lapsa.insurance.domain;
 
 import java.io.Serializable;
+import java.util.Objects;
+import java.util.StringJoiner;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -9,11 +11,6 @@ public abstract class BaseEntity<T> extends BaseDomain implements Serializable {
     private static final long serialVersionUID = 2914122165051543297L;
 
     protected T id;
-
-    @Override
-    public String toString() {
-	return String.format("%1$s.ID:%2$s", this.getClass().getSimpleName(), id != null ? id : "NULL");
-    }
 
     @Override
     public int hashCode() {
@@ -36,6 +33,20 @@ public abstract class BaseEntity<T> extends BaseDomain implements Serializable {
 	if (id == null)
 	    return eb.appendSuper(super.equals(that)).isEquals();
 	return eb.append(id, that.id).isEquals();
+    }
+
+    //
+
+    protected String appendEntityId() {
+	return " [ID=" + (Objects.isNull(id) ? "NONE" : id) + "]";
+    }
+
+    protected StringBuilder appendEntityId(StringBuilder builder) {
+	return builder.append(appendEntityId());
+    }
+
+    protected StringJoiner appendEntityId(StringJoiner joiner) {
+	return joiner.add(appendEntityId().trim());
     }
 
     // GENERATED

@@ -6,7 +6,9 @@ import java.util.UUID;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
-public abstract class BaseDomain implements Serializable {
+import com.lapsa.commons.elements.Localized;
+
+public abstract class BaseDomain implements Serializable, Localized {
     private static final long serialVersionUID = 3664529817399340371L;
 
     protected final UUID instanceUUID = UUID.randomUUID();
@@ -15,6 +17,11 @@ public abstract class BaseDomain implements Serializable {
     protected abstract int getPrime();
 
     protected abstract int getMultiplier();
+
+    @Override
+    public String toString() {
+	return displayName();
+    }
 
     @Override
     public int hashCode() {

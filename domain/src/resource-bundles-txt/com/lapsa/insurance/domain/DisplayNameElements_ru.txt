@@ -17,3 +17,7 @@ com.lapsa.insurance.domain.DisplayNameElements.COMPANY_POINT_OF_SALE_EMPTY = О�
 com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT = Географические координаты
 com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT_LAT = широта
 com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT_LNG = долгота
+com.lapsa.insurance.domain.DisplayNameElements.DRIVER_LICENSE_DATA = Водительское удостоверение
+com.lapsa.insurance.domain.DisplayNameElements.DRIVER_LICENSE_DATA_EMPTY = Данные водительского удостоверения не заданы
+com.lapsa.insurance.domain.DisplayNameElements.DRIVER_LICENSE_DATA_NUMBER = номер
+com.lapsa.insurance.domain.DisplayNameElements.DRIVER_LICENSE_DATA_ISSUED = выдано

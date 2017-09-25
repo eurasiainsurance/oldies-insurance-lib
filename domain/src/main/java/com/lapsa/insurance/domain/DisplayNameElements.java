@@ -30,5 +30,9 @@ public enum DisplayNameElements implements LocalizedElement {
     GEO_POINT_LAT,
     GEO_POINT_LNG,
     //
+    DRIVER_LICENSE_DATA,
+    DRIVER_LICENSE_DATA_EMPTY,
+    DRIVER_LICENSE_DATA_NUMBER,
+    DRIVER_LICENSE_DATA_ISSUED,
     ;
 }

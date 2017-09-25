@@ -43,12 +43,15 @@ public class GeoPoint extends BaseDomain implements Serializable {
 
     @Override
     public String displayName(DisplayNameVariant variant, Locale locale) {
-	StringJoiner sj = new StringJoiner(", ", GEO_POINT.displayName(variant, locale) + " ", "");
+	StringBuilder sb = new StringBuilder();
+	sb.append(GEO_POINT.displayName(variant, locale));
 
+	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.add(GEO_POINT_LAT.displayName(variant, locale) + ": " + GEO_LONG_NUMBER_FORMAT.format(latitude) + "°");
 	sj.add(GEO_POINT_LNG.displayName(variant, locale) + ": " + GEO_LONG_NUMBER_FORMAT.format(longitude) + "°");
-
-	return sj.toString();
+	sb.append(sj.toString());
+	
+	return sb.toString();
     }
 
     // GENERATED

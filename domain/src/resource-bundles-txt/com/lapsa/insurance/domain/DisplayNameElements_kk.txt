@@ -7,7 +7,7 @@ com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA_EMPTY = =KAZ= Р
 com.lapsa.insurance.domain.DisplayNameElements.POST_ADDRESS = =KAZ= Адрес
 com.lapsa.insurance.domain.DisplayNameElements.POST_ADDRESS_EMPTY = =KAZ= Адрес не задан
 com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_EMAIL = =KAZ= Контактный email
-com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_EMAIL_EMPTY = =KAZ= Не задан
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_EMAIL_UNDEFINED = =KAZ= Не задан
 com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA = =KAZ= Период страхования
 com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA_EMPTY = =KAZ= Период страхования не задан
 com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA_FROM = =KAZ= с

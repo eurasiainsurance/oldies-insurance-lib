@@ -31,7 +31,7 @@ public class CompanyContactEmail extends BaseEntity<Integer> {
 
 	sj.add(Optional.ofNullable(address) //
 		.filter(MyStrings::nonEmptyString) //
-		.orElse("<" + COMPANY_CONTACT_EMAIL_EMPTY.displayName(variant, locale) + ">"));
+		.orElse("<" + COMPANY_CONTACT_EMAIL_UNDEFINED.displayName(variant, locale) + ">"));
 
 	return sj.toString() + appendEntityId();
     }

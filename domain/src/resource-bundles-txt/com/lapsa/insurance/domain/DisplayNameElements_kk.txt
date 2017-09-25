@@ -2,3 +2,5 @@ com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_PHONE = =KAZ= К�
 com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_PHONE_EMPTY = =KAZ= Не задан
 com.lapsa.insurance.domain.DisplayNameElements.CONTACT_DATA = =KAZ= Контакты
 com.lapsa.insurance.domain.DisplayNameElements.CONTACT_DATA_EMPTY = =KAZ= Пустой контакт
+com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA = =KAZ= Стоимость
+com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA_EMPTY = =KAZ= Расчитанная стоимость

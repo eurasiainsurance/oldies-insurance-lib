@@ -1,5 +1,11 @@
 package com.lapsa.insurance.domain;
 
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
+
+import java.util.Locale;
+import java.util.Objects;
+import java.util.StringJoiner;
+
 import com.lapsa.fin.FinCurrency;
 
 public class CalculationData extends BaseDomain {
@@ -26,6 +32,15 @@ public class CalculationData extends BaseDomain {
 	if (actualPremiumCost > 0)
 	    return actualPremiumCost;
 	return calculatedPremiumCost - discountAmount;
+    }
+
+    @Override
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringJoiner sj = new StringJoiner(", ", CALCULATION_DATA.displayName(variant, locale) + " ", "");
+	sj.setEmptyValue(CALCULATION_DATA_EMPTY.displayName(variant, locale));
+	if (Objects.nonNull(premiumCurrency))
+	    sj.add(premiumCurrency.formatAmount(getPremiumCost()));
+	return sj.toString();
     }
 
     // GENEERATED

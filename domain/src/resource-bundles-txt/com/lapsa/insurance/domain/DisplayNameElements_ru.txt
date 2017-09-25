@@ -2,3 +2,5 @@ com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_PHONE = Конт�
 com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_PHONE_EMPTY = Не задан
 com.lapsa.insurance.domain.DisplayNameElements.CONTACT_DATA = Контакты
 com.lapsa.insurance.domain.DisplayNameElements.CONTACT_DATA_EMPTY = Пустой контакт
+com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA = Стоимость
+com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA_EMPTY = Расчитанная стоимость

@@ -6,6 +6,7 @@ import java.util.Locale;
 import java.util.Optional;
 import java.util.StringJoiner;
 
+import com.lapsa.commons.function.MyStrings;
 import com.lapsa.international.phone.PhoneNumber;
 import com.lapsa.international.phone.PhoneType;
 
@@ -36,7 +37,9 @@ public class CompanyContactPhone extends BaseEntity<Integer> {
 		.orElse(COMPANY_CONTACT_PHONE_EMPTY.displayName(variant, locale)) + ">");
 
 	Optional.ofNullable(phoneType) //
-		.map(x -> "(" + x.displayName(variant, locale) + ")") //
+		.map(x -> x.displayName(variant, locale))
+		.map(MyStrings::capitalizeFirstLetter)
+		.map(x -> "(" + x + ")") //
 		.ifPresent(sj::add);
 
 	return sj.toString() + appendEntityId();

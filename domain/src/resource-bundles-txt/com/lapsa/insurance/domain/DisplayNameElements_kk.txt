@@ -4,3 +4,5 @@ com.lapsa.insurance.domain.DisplayNameElements.CONTACT_DATA = =KAZ= Контак
 com.lapsa.insurance.domain.DisplayNameElements.CONTACT_DATA_EMPTY = =KAZ= Пустой контакт
 com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA = =KAZ= Стоимость
 com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA_EMPTY = =KAZ= Расчитанная стоимость
+com.lapsa.insurance.domain.DisplayNameElements.POST_ADDRESS = =KAZ= Адрес
+com.lapsa.insurance.domain.DisplayNameElements.POST_ADDRESS_EMPTY = =KAZ= Адрес не задан

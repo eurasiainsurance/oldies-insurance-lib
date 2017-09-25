@@ -4,3 +4,5 @@ com.lapsa.insurance.domain.DisplayNameElements.CONTACT_DATA = Контакты
 com.lapsa.insurance.domain.DisplayNameElements.CONTACT_DATA_EMPTY = Пустой контакт
 com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA = Стоимость
 com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA_EMPTY = Расчитанная стоимость
+com.lapsa.insurance.domain.DisplayNameElements.POST_ADDRESS = Адрес
+com.lapsa.insurance.domain.DisplayNameElements.POST_ADDRESS_EMPTY = Адрес не задан

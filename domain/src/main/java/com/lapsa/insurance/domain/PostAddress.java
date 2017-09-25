@@ -54,7 +54,7 @@ public class PostAddress extends BaseDomain {
 		.ifPresent(sj::add);
 
 	Optional.ofNullable(city) //
-		.map(x -> x.displayName(variant, locale))
+		.map(x -> x.displayName(variant, locale)) //
 		.ifPresent(sj::add);
 
 	Optional.ofNullable(streetLocalization.getOrDefault(LocalizationLanguage.byLocale(locale), street))

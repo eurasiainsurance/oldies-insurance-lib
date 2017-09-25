@@ -46,8 +46,9 @@ public class PostAddress extends BaseDomain {
 
     @Override
     public String displayName(DisplayNameVariant variant, Locale locale) {
-	StringJoiner sj = new StringJoiner(", ", POST_ADDRESS.displayName(variant, locale) + " ", "");
-	sj.setEmptyValue(POST_ADDRESS_EMPTY.displayName(variant, locale));
+	StringJoiner sj = new StringJoiner(", ");
+
+	sj.add(POST_ADDRESS.displayName(variant, locale));
 
 	Optional.ofNullable(postIndex) //
 		.filter(MyStrings::nonEmptyString) //

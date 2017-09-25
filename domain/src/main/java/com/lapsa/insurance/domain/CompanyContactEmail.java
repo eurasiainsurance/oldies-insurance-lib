@@ -6,6 +6,8 @@ import java.util.Locale;
 import java.util.Optional;
 import java.util.StringJoiner;
 
+import com.lapsa.commons.function.MyStrings;
+
 public class CompanyContactEmail extends BaseEntity<Integer> {
     private static final long serialVersionUID = 4127152799405864110L;
     private static final int PRIME = 5;
@@ -27,8 +29,9 @@ public class CompanyContactEmail extends BaseEntity<Integer> {
     public String displayName(DisplayNameVariant variant, Locale locale) {
 	final StringJoiner sj = new StringJoiner(" ", COMPANY_CONTACT_EMAIL.displayName(variant, locale) + " ", "");
 
-	sj.add("<" + Optional.ofNullable(address) //
-		.orElse(COMPANY_CONTACT_EMAIL_EMPTY.displayName(variant, locale)) + ">");
+	sj.add(Optional.ofNullable(address) //
+		.filter(MyStrings::nonEmptyString) //
+		.orElse("<" + COMPANY_CONTACT_EMAIL_EMPTY.displayName(variant, locale) + ">"));
 
 	return sj.toString() + appendEntityId();
     }

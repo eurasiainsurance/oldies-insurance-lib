@@ -3,7 +3,7 @@ package com.lapsa.insurance.domain;
 import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
 import java.util.Locale;
-import java.util.Objects;
+import java.util.Optional;
 import java.util.StringJoiner;
 
 import com.lapsa.fin.FinCurrency;
@@ -31,6 +31,8 @@ public class CalculationData extends BaseDomain {
     public double getPremiumCost() {
 	if (actualPremiumCost > 0)
 	    return actualPremiumCost;
+	if (discountAmount > calculatedPremiumCost)
+	    return 0;
 	return calculatedPremiumCost - discountAmount;
     }
 
@@ -38,8 +40,11 @@ public class CalculationData extends BaseDomain {
     public String displayName(DisplayNameVariant variant, Locale locale) {
 	StringJoiner sj = new StringJoiner(", ", CALCULATION_DATA.displayName(variant, locale) + " ", "");
 	sj.setEmptyValue(CALCULATION_DATA_EMPTY.displayName(variant, locale));
-	if (Objects.nonNull(premiumCurrency))
-	    sj.add(premiumCurrency.formatAmount(getPremiumCost()));
+
+	Optional.ofNullable(premiumCurrency) //
+		.map(x -> x.formatAmount(getPremiumCost())) //
+		.ifPresent(sj::add);
+
 	return sj.toString();
     }
 

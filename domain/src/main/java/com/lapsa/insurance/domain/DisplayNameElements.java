@@ -10,7 +10,7 @@ public enum DisplayNameElements implements LocalizedElement {
     COMPANY_CONTACT_PHONE_UNDEFINED,
     //
     CALCULATION_DATA,
-    CALCULATION_DATA_EMPTY,
+    CALCULATION_DATA_UNDEFINED,
     //
     POST_ADDRESS,
     //

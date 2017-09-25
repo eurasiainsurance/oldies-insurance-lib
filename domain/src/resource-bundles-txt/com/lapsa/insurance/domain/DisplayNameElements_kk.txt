@@ -2,8 +2,8 @@ com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_PHONE = =KAZ= К�
 com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_PHONE_UNDEFINED = =KAZ= Не задан
 com.lapsa.insurance.domain.DisplayNameElements.CONTACT_DATA = =KAZ= Контакты
 com.lapsa.insurance.domain.DisplayNameElements.CONTACT_DATA_EMPTY = =KAZ= Пустой контакт
-com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA = =KAZ= Стоимость
-com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA_EMPTY = =KAZ= Расчитанная стоимость
+com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA = =KAZ= Расчитанная стоимость
+com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA_UNDEFINED = =KAZ= Не задана
 com.lapsa.insurance.domain.DisplayNameElements.POST_ADDRESS = =KAZ= Почтовый адрес
 com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_EMAIL = =KAZ= Контактный email
 com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_EMAIL_UNDEFINED = =KAZ= Не задан

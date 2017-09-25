@@ -12,3 +12,5 @@ com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA = Пери�
 com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA_EMPTY = Период страхования не задан
 com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA_FROM = с
 com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA_TILL = по
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_POINT_OF_SALE = Офис продаж
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_POINT_OF_SALE_EMPTY = Офис продаж

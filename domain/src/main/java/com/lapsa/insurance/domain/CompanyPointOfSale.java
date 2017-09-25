@@ -65,7 +65,7 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
 		.map(x -> x.displayName(variant, locale))
 		.ifPresent(sj::add);
 
-	return appendEntityId(sj).toString();
+	return sj.toString() + appendEntityId();
     }
 
     public CompanyContactPhone addPhone(CompanyContactPhone phone) {

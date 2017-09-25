@@ -2,7 +2,6 @@ package com.lapsa.insurance.domain;
 
 import java.io.Serializable;
 import java.util.Optional;
-import java.util.StringJoiner;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -38,15 +37,11 @@ public abstract class BaseEntity<T> extends BaseDomain implements Serializable {
     //
 
     protected String appendEntityId() {
-	return "[ID=" + Optional.ofNullable(id).map(Object::toString).orElse("NONE") + "]";
+	return " [ID=" + Optional.ofNullable(id).map(Object::toString).orElse("NONE") + "]";
     }
 
     protected StringBuilder appendEntityId(StringBuilder builder) {
-	return builder.append(" " + appendEntityId());
-    }
-
-    protected StringJoiner appendEntityId(StringJoiner joiner) {
-	return joiner.add(appendEntityId());
+	return builder.append(appendEntityId());
     }
 
     // GENERATED

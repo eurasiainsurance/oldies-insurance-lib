@@ -6,3 +6,5 @@ com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA = Calculated amo
 com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA_EMPTY = Unavailable amount
 com.lapsa.insurance.domain.DisplayNameElements.POST_ADDRESS = Post address
 com.lapsa.insurance.domain.DisplayNameElements.POST_ADDRESS_EMPTY = Post address unavailable
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_EMAIL = Contact email
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_EMAIL_EMPTY = Undefined

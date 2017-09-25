@@ -6,3 +6,5 @@ com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA = =KAZ= Стои
 com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA_EMPTY = =KAZ= Расчитанная стоимость
 com.lapsa.insurance.domain.DisplayNameElements.POST_ADDRESS = =KAZ= Адрес
 com.lapsa.insurance.domain.DisplayNameElements.POST_ADDRESS_EMPTY = =KAZ= Адрес не задан
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_EMAIL = =KAZ= Контактный email
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_EMAIL_EMPTY = =KAZ= Не задан

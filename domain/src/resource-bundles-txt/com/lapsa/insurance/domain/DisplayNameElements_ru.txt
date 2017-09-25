@@ -6,3 +6,5 @@ com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA = Стоимос
 com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA_EMPTY = Расчитанная стоимость
 com.lapsa.insurance.domain.DisplayNameElements.POST_ADDRESS = Адрес
 com.lapsa.insurance.domain.DisplayNameElements.POST_ADDRESS_EMPTY = Адрес не задан
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_EMAIL = Контактный email
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_EMAIL_EMPTY = Не задан

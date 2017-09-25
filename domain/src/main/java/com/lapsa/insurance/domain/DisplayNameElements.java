@@ -14,5 +14,8 @@ public enum DisplayNameElements implements LocalizedElement {
     //
     POST_ADDRESS,
     POST_ADDRESS_EMPTY,
+    //
+    COMPANY_CONTACT_EMAIL,
+    COMPANY_CONTACT_EMAIL_EMPTY,
     ;
 }

@@ -3,7 +3,9 @@ package com.lapsa.insurance.elements;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public enum TransactionProblem implements InsuranceLocalizedElement {
+import com.lapsa.commons.elements.LocalizedElement;
+
+public enum TransactionProblem implements LocalizedElement {
     CANCELED_BY_CONSUMER, //
     WRONG_DATA_PROVIDED, //
     TEST, //

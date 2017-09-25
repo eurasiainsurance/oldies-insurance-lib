@@ -3,7 +3,9 @@ package com.lapsa.insurance.elements;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public enum ObtainingMethod implements InsuranceLocalizedElement {
+import com.lapsa.commons.elements.LocalizedElement;
+
+public enum ObtainingMethod implements LocalizedElement {
     DELIVERY, // доставить курьером
     PICKUP, // забрать самостоятельно в офисе компании
     UNDEFINED(false), // не определен

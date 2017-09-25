@@ -3,7 +3,9 @@ package com.lapsa.insurance.elements;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public enum PaymentStatus implements InsuranceLocalizedElement {
+import com.lapsa.commons.elements.LocalizedElement;
+
+public enum PaymentStatus implements LocalizedElement {
     PENDING, // ожидается оплата
     DONE, // оплачено
     CANCELED, // отменено

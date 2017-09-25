@@ -1,0 +1,4 @@
+com.lapsa.insurance.elements.IdentityCardType.ID_CARD           = ID Card
+com.lapsa.insurance.elements.IdentityCardType.PASSPORT          = Passport
+com.lapsa.insurance.elements.IdentityCardType.BIRTH_CERTIFICATE = Birth Certificate
+com.lapsa.insurance.elements.IdentityCardType.RESIDENCE_PERMIT  = Foreign national's Resience Permit

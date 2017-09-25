@@ -3,7 +3,9 @@ package com.lapsa.insurance.elements;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public enum ProgressStatus implements InsuranceLocalizedElement {
+import com.lapsa.commons.elements.LocalizedElement;
+
+public enum ProgressStatus implements LocalizedElement {
     NEW, //
     ON_PROCESS, //
     ON_HOLD, //

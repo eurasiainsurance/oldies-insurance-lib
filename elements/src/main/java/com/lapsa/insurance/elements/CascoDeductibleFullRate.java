@@ -3,7 +3,9 @@ package com.lapsa.insurance.elements;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public enum CascoDeductibleFullRate implements InsuranceLocalizedElement {
+import com.lapsa.commons.elements.LocalizedElement;
+
+public enum CascoDeductibleFullRate implements LocalizedElement {
     PERCENT5(.05d), // 5%
     PERCENT10(.10d), // 10%
     ;

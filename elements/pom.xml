@@ -14,21 +14,19 @@
 	<name>Insurance Lib : Elements</name>
 
 	<dependencies>
-		<!-- internal lapsa -->
+		<!-- internal lapsa-commons -->
 		<dependency>
-			<groupId>com.lapsa.lapsa-lib</groupId>
+			<groupId>com.lapsa.lapsa-commons-lib</groupId>
 			<artifactId>lapsa-commons</artifactId>
 			<scope>compile</scope>
 			<optional>false</optional>
 		</dependency>
-		<!-- internal international -->
-		<dependency>
-			<groupId>com.lapsa.international-lib</groupId>
-			<artifactId>international-core</artifactId>
-			<scope>compile</scope>
-			<optional>false</optional>
-		</dependency>
 		<!-- test -->
+		<dependency>
+			<groupId>com.lapsa.lapsa-commons-lib</groupId>
+			<artifactId>lapsa-commons-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

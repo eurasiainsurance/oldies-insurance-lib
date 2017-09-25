@@ -3,7 +3,9 @@ package com.lapsa.insurance.elements;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public enum WhoIsInsurant implements InsuranceLocalizedElement {
+import com.lapsa.commons.elements.LocalizedElement;
+
+public enum WhoIsInsurant implements LocalizedElement {
     DRIVER, // Страхователем является один из застрахованных водителей
     OTHER, // Страхователем является другое лицо
     ;

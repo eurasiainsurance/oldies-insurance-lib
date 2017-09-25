@@ -3,7 +3,9 @@ package com.lapsa.insurance.elements;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public enum SteeringWheelLocation implements InsuranceLocalizedElement {
+import com.lapsa.commons.elements.LocalizedElement;
+
+public enum SteeringWheelLocation implements LocalizedElement {
     RIGHT_SIDE, // руль справа
     LEFT_SIDE, // руль слева
     ;

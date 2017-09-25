@@ -4,7 +4,9 @@ import java.util.Objects;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public enum InsuredAgeAndExpirienceClass implements InsuranceLocalizedElement {
+import com.lapsa.commons.elements.LocalizedElement;
+
+public enum InsuredAgeAndExpirienceClass implements LocalizedElement {
     // возраст старше 25 лет, стаж вождения более 2 лет
     OVER25_MORE2(InsuredAgeClass.OVER25, InsuredExpirienceClass.MORE2),
     // возраст моложе 25 лет, стаж вождения менее 2 лет

@@ -3,7 +3,9 @@ package com.lapsa.insurance.elements;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public enum TransactionStatus implements InsuranceLocalizedElement {
+import com.lapsa.commons.elements.LocalizedElement;
+
+public enum TransactionStatus implements LocalizedElement {
     COMPLETED, // Сделка состоялась
     NOT_COMPLETED, // Сделка не состоялась
     ;

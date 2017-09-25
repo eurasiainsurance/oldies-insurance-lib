@@ -34,6 +34,7 @@
 		<image-lib.version>1.1</image-lib.version>
 		<donkeyfaces-lib.version>1.3</donkeyfaces-lib.version>
 		<lapsa-lib.version>2.2-SNAPSHOT</lapsa-lib.version>
+		<lapsa-commons-lib.version>2.2-SNAPSHOT</lapsa-commons-lib.version>
 	</properties>
 
 	<dependencyManagement>
@@ -129,12 +130,18 @@
 				<artifactId>donkeyfaces-validation</artifactId>
 				<version>${donkeyfaces-lib.version}</version>
 			</dependency>
-			<!-- internal lapsa -->
+			<!-- internal lapsa-commons -->
 			<dependency>
-				<groupId>com.lapsa.lapsa-lib</groupId>
+				<groupId>com.lapsa.lapsa-commons-lib</groupId>
 				<artifactId>lapsa-commons</artifactId>
-				<version>${lapsa-lib.version}</version>
+				<version>${lapsa-commons-lib.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>com.lapsa.lapsa-commons-lib</groupId>
+				<artifactId>lapsa-commons-test</artifactId>
+				<version>${lapsa-commons-lib.version}</version>
+			</dependency>
+			<!-- internal lapsa -->
 			<dependency>
 				<groupId>com.lapsa.lapsa-lib</groupId>
 				<artifactId>lapsa-validation</artifactId>

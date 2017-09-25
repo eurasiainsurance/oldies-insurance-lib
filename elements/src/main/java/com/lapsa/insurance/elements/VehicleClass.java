@@ -3,7 +3,9 @@ package com.lapsa.insurance.elements;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public enum VehicleClass implements InsuranceLocalizedElement {
+import com.lapsa.commons.elements.LocalizedElement;
+
+public enum VehicleClass implements LocalizedElement {
     CAR(true, true), // Легковые
     MOTO(true, true), // Мототранспорт
     CARGO(true, true), // Грузовые

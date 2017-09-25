@@ -1,0 +1,2 @@
+com.lapsa.insurance.elements.SubjectType.COMPANY = Юридическое лицо
+com.lapsa.insurance.elements.SubjectType.PERSON  = Физическое лицо

@@ -3,7 +3,9 @@ package com.lapsa.insurance.elements;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public enum SubjectType implements InsuranceLocalizedElement {
+import com.lapsa.commons.elements.LocalizedElement;
+
+public enum SubjectType implements LocalizedElement {
     COMPANY, // юрлицо
     PERSON, // физлицо
     ;

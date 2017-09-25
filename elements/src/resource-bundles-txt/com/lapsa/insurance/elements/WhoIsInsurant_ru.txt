@@ -1,0 +1,2 @@
+com.lapsa.insurance.elements.WhoIsInsurant.DRIVER = Страхователем является один из застрахованных водителей
+com.lapsa.insurance.elements.WhoIsInsurant.OTHER  = Страхователем является другое лицо

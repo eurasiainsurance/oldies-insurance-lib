@@ -3,7 +3,9 @@ package com.lapsa.insurance.elements;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public enum VehicleAgeClass implements InsuranceLocalizedElement {
+import com.lapsa.commons.elements.LocalizedElement;
+
+public enum VehicleAgeClass implements LocalizedElement {
     UNDER7, // До 7 лет включительно
     OVER7, // Свыше 7 лет
     ;

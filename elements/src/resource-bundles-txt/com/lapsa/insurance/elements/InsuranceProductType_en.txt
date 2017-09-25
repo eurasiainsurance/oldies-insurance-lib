@@ -1,0 +1,4 @@
+com.lapsa.insurance.elements.InsuranceProductType.CASCO        = Motor Hull Insurance
+com.lapsa.insurance.elements.InsuranceProductType.CASCO.short  = Hull
+com.lapsa.insurance.elements.InsuranceProductType.POLICY       = Compulsory Motor TPL Insurance Policy 
+com.lapsa.insurance.elements.InsuranceProductType.POLICY.short = Policy

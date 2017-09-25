@@ -9,7 +9,6 @@ com.lapsa.insurance.domain.DisplayNameElements.POST_ADDRESS_EMPTY = Адрес �
 com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_EMAIL = Контактный email
 com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_EMAIL_UNDEFINED = Не задан
 com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA = Период страхования
-com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA_EMPTY = Период страхования не задан
 com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA_FROM = с
 com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA_TILL = по
 com.lapsa.insurance.domain.DisplayNameElements.COMPANY_POINT_OF_SALE = Офис продаж

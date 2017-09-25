@@ -17,5 +17,10 @@ public enum DisplayNameElements implements LocalizedElement {
     //
     COMPANY_CONTACT_EMAIL,
     COMPANY_CONTACT_EMAIL_EMPTY,
+    //
+    INSURANCE_PERIOD_DATA,
+    INSURANCE_PERIOD_DATA_EMPTY,
+    INSURANCE_PERIOD_DATA_FROM,
+    INSURANCE_PERIOD_DATA_TILL,
     ;
 }

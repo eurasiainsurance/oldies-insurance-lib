@@ -1,6 +1,12 @@
 package com.lapsa.insurance.domain;
 
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
+
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+import java.util.Optional;
+import java.util.StringJoiner;
 
 import com.lapsa.validation.LocalDateComparison;
 import com.lapsa.validation.NotNullValue;
@@ -29,6 +35,24 @@ public class InsurancePeriodData extends BaseDomain {
     @NotNullValue
     @TemporalFuture
     private LocalDate to;
+
+    @Override
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringJoiner sj = new StringJoiner(" ", INSURANCE_PERIOD_DATA.displayName(variant, locale) + " ", "");
+	sj.setEmptyValue(INSURANCE_PERIOD_DATA_EMPTY.displayName(variant, locale));
+
+	Optional.ofNullable(from) //
+		.map(DateTimeFormatter.ISO_LOCAL_DATE::format)
+		.map(x -> INSURANCE_PERIOD_DATA_FROM.displayName(variant, locale) + " " + x)
+		.ifPresent(sj::add);
+
+	Optional.ofNullable(to) //
+		.map(DateTimeFormatter.ISO_LOCAL_DATE::format)
+		.map(x -> INSURANCE_PERIOD_DATA_TILL.displayName(variant, locale) + " " + x)
+		.ifPresent(sj::add);
+
+	return sj.toString();
+    }
 
     @TemporalLeftBeforeRight
     // method must be a getter (name begins with "get"). validation is not

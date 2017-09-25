@@ -3,7 +3,7 @@ package com.lapsa.insurance.domain;
 import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
 import java.util.Locale;
-import java.util.Objects;
+import java.util.Optional;
 import java.util.StringJoiner;
 
 import com.lapsa.international.phone.PhoneNumber;
@@ -29,12 +29,17 @@ public class CompanyContactPhone extends BaseEntity<Integer> {
 
     @Override
     public String displayName(DisplayNameVariant variant, Locale locale) {
-	final StringJoiner sb = new StringJoiner(" ", COMPANY_CONTACT_PHONE.displayName(variant, locale) + " ", "");
-	sb.add(Objects.isNull(phone) ? "<" + COMPANY_CONTACT_PHONE_EMPTY.displayName(variant, locale) + ">"
-		: phone.getFormatted());
-	if (Objects.nonNull(phoneType))
-	    sb.add("(" + phoneType.displayName(variant, locale) + ")");
-	return appendEntityId(sb).toString();
+	final StringJoiner sj = new StringJoiner(" ", COMPANY_CONTACT_PHONE.displayName(variant, locale) + " ", "");
+
+	sj.add("<" + Optional.ofNullable(phone) //
+		.map(PhoneNumber::getFormatted) //
+		.orElse(COMPANY_CONTACT_PHONE_EMPTY.displayName(variant, locale)) + ">");
+
+	Optional.ofNullable(phoneType) //
+		.map(x -> "(" + x.displayName(variant, locale) + ")") //
+		.ifPresent(sj::add);
+
+	return appendEntityId(sj).toString();
     }
 
     // GENERATED

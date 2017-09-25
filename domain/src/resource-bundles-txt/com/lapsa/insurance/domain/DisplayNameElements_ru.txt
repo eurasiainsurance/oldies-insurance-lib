@@ -21,3 +21,6 @@ com.lapsa.insurance.domain.DisplayNameElements.DRIVER_LICENSE_DATA = Водит�
 com.lapsa.insurance.domain.DisplayNameElements.DRIVER_LICENSE_DATA_EMPTY = Данные водительского удостоверения не заданы
 com.lapsa.insurance.domain.DisplayNameElements.DRIVER_LICENSE_DATA_NUMBER = номер
 com.lapsa.insurance.domain.DisplayNameElements.DRIVER_LICENSE_DATA_ISSUED = выдано
+com.lapsa.insurance.domain.DisplayNameElements.IDENTITY_CARD_DATA = Документ удостоверяющий личность
+com.lapsa.insurance.domain.DisplayNameElements.IDENTITY_CARD_DATA_ISSUED = выдан
+com.lapsa.insurance.domain.DisplayNameElements.IDENTITY_CARD_DATA_NUMBER = номер

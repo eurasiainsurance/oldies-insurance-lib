@@ -21,3 +21,6 @@ com.lapsa.insurance.domain.DisplayNameElements.DRIVER_LICENSE_DATA = =KAZ= Во�
 com.lapsa.insurance.domain.DisplayNameElements.DRIVER_LICENSE_DATA_EMPTY = =KAZ= Данные водительского удостоверения не заданы
 com.lapsa.insurance.domain.DisplayNameElements.DRIVER_LICENSE_DATA_NUMBER = =KAZ= номер
 com.lapsa.insurance.domain.DisplayNameElements.DRIVER_LICENSE_DATA_ISSUED = =KAZ= выдано
+com.lapsa.insurance.domain.DisplayNameElements.IDENTITY_CARD_DATA = =KAZ= Документ удостоверяющий личность
+com.lapsa.insurance.domain.DisplayNameElements.IDENTITY_CARD_DATA_ISSUED = =KAZ= выдан
+com.lapsa.insurance.domain.DisplayNameElements.IDENTITY_CARD_DATA_NUMBER = =KAZ= номер

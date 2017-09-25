@@ -34,5 +34,10 @@ public enum DisplayNameElements implements LocalizedElement {
     DRIVER_LICENSE_DATA_EMPTY,
     DRIVER_LICENSE_DATA_NUMBER,
     DRIVER_LICENSE_DATA_ISSUED,
+    //
+    IDENTITY_CARD_DATA,
+    IDENTITY_CARD_DATA_NUMBER,
+    IDENTITY_CARD_DATA_ISSUED,
+    //
     ;
 }

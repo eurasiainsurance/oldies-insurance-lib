@@ -1,7 +1,14 @@
 package com.lapsa.insurance.domain;
 
-import java.time.LocalDate;
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+import java.util.Optional;
+import java.util.StringJoiner;
+
+import com.lapsa.commons.function.MyStrings;
 import com.lapsa.insurance.elements.IdentityCardType;
 import com.lapsa.insurance.validation.ValidIdentityCardType;
 import com.lapsa.validation.NotEmptyString;
@@ -38,6 +45,28 @@ public class IdentityCardData extends SidedScannedDocument {
     @NotNullValue
     @ValidIdentityCardType
     private IdentityCardType type;
+
+    @Override
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringJoiner sj = new StringJoiner(" ");
+
+	sj.add(Optional.ofNullable(type) //
+		.map(x -> x.displayName(variant, locale)) //
+		.map(MyStrings::capitalizeFirstLetter) //
+		.orElse(IDENTITY_CARD_DATA.displayName(variant, locale)));
+
+	Optional.ofNullable(number)
+		.filter(MyStrings::nonEmptyString)
+		.map(x -> IDENTITY_CARD_DATA_NUMBER.displayName(variant, locale) + " " + x)
+		.ifPresent(sj::add);
+
+	Optional.ofNullable(dateOfIssue) //
+		.map(DateTimeFormatter.ISO_LOCAL_DATE::format)
+		.map(x -> IDENTITY_CARD_DATA_ISSUED.displayName(variant, locale) + " " + x)
+		.ifPresent(sj::add);
+
+	return sj.toString() + appendEntityId();
+    }
 
     // GENERATED
 

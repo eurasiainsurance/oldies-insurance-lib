@@ -14,3 +14,6 @@ com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA_FROM = from
 com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA_TILL = till
 com.lapsa.insurance.domain.DisplayNameElements.COMPANY_POINT_OF_SALE = Point of sale
 com.lapsa.insurance.domain.DisplayNameElements.COMPANY_POINT_OF_SALE_EMPTY = Point of sale
+com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT = Geographic coordinate
+com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT_LAT = latitude
+com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT_LNG = longitude

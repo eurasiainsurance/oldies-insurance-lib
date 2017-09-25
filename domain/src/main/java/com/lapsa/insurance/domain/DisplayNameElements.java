@@ -24,5 +24,11 @@ public enum DisplayNameElements implements LocalizedElement {
     INSURANCE_PERIOD_DATA_TILL,
     //
     COMPANY_POINT_OF_SALE,
-    COMPANY_POINT_OF_SALE_EMPTY;
+    COMPANY_POINT_OF_SALE_EMPTY,
+    //
+    GEO_POINT,
+    GEO_POINT_LAT,
+    GEO_POINT_LNG,
+    //
+    ;
 }

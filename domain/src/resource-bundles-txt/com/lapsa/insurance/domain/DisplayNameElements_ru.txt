@@ -11,7 +11,6 @@ com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA = Пери�
 com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA_FROM = с
 com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA_TILL = по
 com.lapsa.insurance.domain.DisplayNameElements.COMPANY_POINT_OF_SALE = Офис продаж
-com.lapsa.insurance.domain.DisplayNameElements.COMPANY_POINT_OF_SALE_EMPTY = Офис продаж
 com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT = Географические координаты
 com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT_LAT = широта
 com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT_LNG = долгота

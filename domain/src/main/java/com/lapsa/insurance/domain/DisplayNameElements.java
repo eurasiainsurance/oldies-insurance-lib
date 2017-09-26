@@ -4,7 +4,6 @@ import com.lapsa.commons.elements.LocalizedElement;
 
 public enum DisplayNameElements implements LocalizedElement {
     CONTACT_DATA,
-    CONTACT_DATA_EMPTY,
     //
     COMPANY_CONTACT_PHONE,
     COMPANY_CONTACT_PHONE_UNDEFINED,
@@ -22,7 +21,6 @@ public enum DisplayNameElements implements LocalizedElement {
     INSURANCE_PERIOD_DATA_TILL,
     //
     COMPANY_POINT_OF_SALE,
-    COMPANY_POINT_OF_SALE_EMPTY,
     //
     GEO_POINT,
     GEO_POINT_LAT,

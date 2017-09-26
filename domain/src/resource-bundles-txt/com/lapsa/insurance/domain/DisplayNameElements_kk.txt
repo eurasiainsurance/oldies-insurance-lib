@@ -11,7 +11,6 @@ com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA = =KAZ= П�
 com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA_FROM = =KAZ= с
 com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA_TILL = =KAZ= по
 com.lapsa.insurance.domain.DisplayNameElements.COMPANY_POINT_OF_SALE = =KAZ= Офис продаж
-com.lapsa.insurance.domain.DisplayNameElements.COMPANY_POINT_OF_SALE_EMPTY = =KAZ= Офис продаж
 com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT = =KAZ= Географические координаты
 com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT_LAT = =KAZ= широта
 com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT_LNG = =KAZ= долгота

@@ -42,7 +42,7 @@ public class RequesterData extends BaseDomain {
 
     private boolean allowSpam;
 
-    @AssertTrue(message = "{com.lapsa.insurance.domain.InsuranceRequest.allowProcessPersonalData.AssertTrue.message}")
+    @AssertTrue(message = "{com.lapsa.insurance.domain.RequesterData.allowProcessPersonalData.AssertTrue.message}")
     private boolean allowProcessPersonalData;
 
     private LocalizationLanguage preferLanguage;

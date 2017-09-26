@@ -73,6 +73,13 @@ public enum DisplayNameElements implements LocalizedElement {
     INET_ADDR_DATA,
     INET_ADDR_DATA_HOST,
     //
+    UTM_DATA,
+    UTM_DATA_SOURCE,
+    UTM_DATA_MEDIUM,
+    UTM_DATA_CAMPAIGN,
+    UTM_DATA_CONTENT,
+    UTM_DATA_TERM,
+    //
     FIELD_ID_NUMBER,
     FIELD_EMAIL,
     FIELD_PHONE,

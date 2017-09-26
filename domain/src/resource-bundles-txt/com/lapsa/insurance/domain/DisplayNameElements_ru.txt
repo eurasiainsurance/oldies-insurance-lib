@@ -1,29 +1,47 @@
 com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_PHONE = Контактный телефон
 com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_PHONE_UNDEFINED = Не задан
 com.lapsa.insurance.domain.DisplayNameElements.CONTACT_DATA = Контакты
+
 com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA = Расчитанная стоимость
 com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA_UNDEFINED = Не задана
+
 com.lapsa.insurance.domain.DisplayNameElements.POST_ADDRESS = Почтовый адрес
+
 com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_EMAIL = Контактный email
 com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_EMAIL_UNDEFINED = Не задан
+
 com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA = Период страхования
 com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA_FROM = с
 com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA_TILL = по
+
 com.lapsa.insurance.domain.DisplayNameElements.COMPANY_POINT_OF_SALE = Офис продаж
+
 com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT = Географические координаты
 com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT_LAT = широта
 com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT_LNG = долгота
+
 com.lapsa.insurance.domain.DisplayNameElements.DRIVER_LICENSE_DATA = Водительское удостоверение
 com.lapsa.insurance.domain.DisplayNameElements.DRIVER_LICENSE_DATA_ISSUED = выдано
+
 com.lapsa.insurance.domain.DisplayNameElements.IDENTITY_CARD_DATA = Документ удостоверяющий личность
 com.lapsa.insurance.domain.DisplayNameElements.IDENTITY_CARD_DATA_ISSUED = выдан
+
 com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA = ПТС
 com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA.full = Паспорт транспортного средства
 com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA_ISSUED = выдан
 com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA_REGNUMBER = гос. номер
 com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA_REGNUMBER.full = государственный регистрационный номер
+
 com.lapsa.insurance.domain.DisplayNameElements.REQUESTER_DATA = Инициатор запроса
+
+com.lapsa.insurance.domain.DisplayNameElements.OBTAINING_DATA = Способ получения
+
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_DATA = Способ оплаты
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_REFERENCE = платежный референс
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_REFERENCE.short = референс
+
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = ИИН
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = e-mail
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_PHONE = телефон
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_NUMBER = номер
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_STATUS = статус

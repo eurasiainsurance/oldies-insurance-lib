@@ -38,9 +38,15 @@ public enum DisplayNameElements implements LocalizedElement {
     //
     REQUESTER_DATA,
     //
+    OBTAINING_DATA,
+    //
+    PAYMENT_DATA,
+    PAYMENT_REFERENCE,
+    //
     FIELD_ID_NUMBER,
     FIELD_EMAIL,
     FIELD_PHONE,
     FIELD_NUMBER,
+    FIELD_STATUS,
     ;
 }

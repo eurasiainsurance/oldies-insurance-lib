@@ -62,23 +62,20 @@ public class RequesterData extends BaseDomain {
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
-	Optional.ofNullable(name) //
-		.filter(MyStrings::nonEmptyString) //
+	MyStrings.optionalString(name) //
 		.ifPresent(sj::add);
 
-	Optional.ofNullable(idNumber) //
-		.filter(MyStrings::nonEmptyString) //
-		.map(x -> FIELD_ID_NUMBER.displayName(variant, locale) + " " + x)
+	MyStrings.optionalString(idNumber) //
+		.map(FIELD_ID_NUMBER.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
-	Optional.ofNullable(email) //
-		.filter(MyStrings::nonEmptyString) //
-		.map(x -> FIELD_EMAIL.displayName(variant, locale) + " " + x)
+	MyStrings.optionalString(email) //
+		.map(FIELD_EMAIL.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
 	Optional.ofNullable(phone) //
 		.map(PhoneNumber::getFormatted) //
-		.map(x -> FIELD_PHONE.displayName(variant, locale) + " " + x)
+		.map(FIELD_PHONE.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
 	return sb.append(sj.toString()) //

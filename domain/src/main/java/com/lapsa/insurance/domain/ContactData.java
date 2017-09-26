@@ -48,16 +48,14 @@ public class ContactData extends BaseDomain {
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
-	Optional.ofNullable(email) //
-		.filter(MyStrings::nonEmptyString) //
+	MyStrings.optionalString(email) //
 		.ifPresent(sj::add);
 
 	Optional.ofNullable(phone) //
 		.map(PhoneNumber::getFormatted) //
 		.ifPresent(sj::add);
 
-	Optional.ofNullable(siteUrl) //
-		.filter(MyStrings::nonEmptyString) //
+	MyStrings.optionalString(siteUrl) //
 		.ifPresent(sj::add);
 
 	return sb.append(sj.toString()) //

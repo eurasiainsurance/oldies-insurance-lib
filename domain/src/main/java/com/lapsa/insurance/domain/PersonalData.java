@@ -57,8 +57,7 @@ public class PersonalData extends BaseDomain {
     public String displayName(DisplayNameVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(Optional.ofNullable(getFullName()) //
-		.map(MyStrings::nullOnEmpty)
+	sb.append(MyStrings.optionalString(getFullName()) //
 		.orElseGet(() -> PERSONAL_DATA.displayName(variant, locale)));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
@@ -81,19 +80,17 @@ public class PersonalData extends BaseDomain {
     public String getFullName() {
 	StringJoiner sj = new StringJoiner(" ");
 
-	Optional.ofNullable(surename) //
-		.map(MyStrings::nullOnEmpty)
+	MyStrings.optionalString(surename) //
 		.map(String::trim)
 		.map(MyStrings::capitalizeFirstLetter)
 		.ifPresent(sj::add);
 
-	Optional.ofNullable(name) //
-		.map(MyStrings::nullOnEmpty)
+	MyStrings.optionalString(name) //
 		.map(String::trim)
 		.map(MyStrings::capitalizeFirstLetter)
 		.ifPresent(sj::add);
 
-	Optional.ofNullable(name) //
+	MyStrings.optionalString(name) //
 		.map(x -> patronymic) // patronymic used only in conjuction with
 				      // first name
 		.map(MyStrings::nullOnEmpty)

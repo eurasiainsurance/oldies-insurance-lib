@@ -7,6 +7,7 @@ import java.util.Locale;
 import java.util.Optional;
 import java.util.StringJoiner;
 
+import com.lapsa.commons.elements.Localized;
 import com.lapsa.commons.function.MyStrings;
 import com.lapsa.insurance.elements.DeliveryTimeSlot;
 import com.lapsa.insurance.elements.ObtainingMethod;
@@ -66,7 +67,7 @@ public class ObtainingData extends BaseDomain {
 
 	sb.append(Optional.ofNullable(method) //
 		.filter(ObtainingMethod::isDefined) //
-		.map(x -> x.displayName(variant, locale)) //
+		.map(Localized.toDisplayNameMapper(variant, locale)) //
 		.map(MyStrings::capitalizeFirstLetter) //
 		.orElseGet(() -> OBTAINING_DATA.displayName(variant, locale)));
 
@@ -75,8 +76,8 @@ public class ObtainingData extends BaseDomain {
 
 	Optional.ofNullable(status) //
 		.filter(ObtainingStatus::isDefined) //
-		.map(x -> x.displayName(variant, locale)) //
-		.map(x -> FIELD_STATUS.displayName(variant, locale) + " " + x)
+		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.map(FIELD_STATUS.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
 	return sb.append(sj.toString()) //

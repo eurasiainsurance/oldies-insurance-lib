@@ -3,7 +3,6 @@ package com.lapsa.insurance.domain;
 import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
 import java.util.Locale;
-import java.util.Optional;
 import java.util.StringJoiner;
 
 import com.lapsa.commons.function.MyStrings;
@@ -34,8 +33,7 @@ public class CompanyContactEmail extends BaseEntity<Integer> {
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
-	sj.add(Optional.ofNullable(address) //
-		.filter(MyStrings::nonEmptyString) //
+	sj.add(MyStrings.optionalString(address)
 		.orElseGet(() -> "<" + COMPANY_CONTACT_EMAIL_UNDEFINED.displayName(variant, locale) + ">"));
 
 	return sb.append(sj.toString()) //

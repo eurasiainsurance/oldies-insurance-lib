@@ -45,14 +45,13 @@ public class DriverLicenseData extends SidedScannedDocument {
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
-	Optional.ofNullable(number)
-		.filter(MyStrings::nonEmptyString)
-		.map(x -> FIELD_NUMBER.displayName(variant, locale) + " " + x)
+	MyStrings.optionalString(number) //
+		.map(FIELD_NUMBER.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
 	Optional.ofNullable(dateOfIssue) //
 		.map(DateTimeFormatter.ISO_LOCAL_DATE::format)
-		.map(x -> DRIVER_LICENSE_DATA_ISSUED.displayName(variant, locale) + " " + x)
+		.map(DRIVER_LICENSE_DATA_ISSUED.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
 	return sb.append(sj.toString()) //

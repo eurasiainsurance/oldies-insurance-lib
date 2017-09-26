@@ -8,6 +8,7 @@ import java.util.Locale;
 import java.util.Optional;
 import java.util.StringJoiner;
 
+import com.lapsa.commons.elements.Localized;
 import com.lapsa.commons.function.MyStrings;
 import com.lapsa.insurance.elements.IdentityCardType;
 import com.lapsa.insurance.validation.ValidIdentityCardType;
@@ -51,21 +52,20 @@ public class IdentityCardData extends SidedScannedDocument {
 	StringBuilder sb = new StringBuilder();
 
 	sb.append(Optional.ofNullable(type) //
-		.map(x -> x.displayName(variant, locale)) //
+		.map(Localized.toDisplayNameMapper(variant, locale)) //
 		.map(MyStrings::capitalizeFirstLetter) //
-		.orElseGet(() ->IDENTITY_CARD_DATA.displayName(variant, locale)));
+		.orElseGet(() -> IDENTITY_CARD_DATA.displayName(variant, locale)));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
-	Optional.ofNullable(number)
-		.filter(MyStrings::nonEmptyString)
-		.map(x -> FIELD_NUMBER.displayName(variant, locale) + " " + x)
+	MyStrings.optionalString(number) //
+		.map(FIELD_NUMBER.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
 	Optional.ofNullable(dateOfIssue) //
-		.map(DateTimeFormatter.ISO_LOCAL_DATE::format)
-		.map(x -> IDENTITY_CARD_DATA_ISSUED.displayName(variant, locale) + " " + x)
+		.map(DateTimeFormatter.ISO_LOCAL_DATE::format) //
+		.map(IDENTITY_CARD_DATA_ISSUED.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
 	return sb.append(sj.toString()) //

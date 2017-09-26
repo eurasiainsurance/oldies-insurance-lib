@@ -51,19 +51,17 @@ public class VehicleCertificateData extends SidedScannedDocument {
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
-	Optional.ofNullable(number)
-		.filter(MyStrings::nonEmptyString)
-		.map(x -> FIELD_NUMBER.displayName(variant, locale) + " " + x)
+	MyStrings.optionalString(number)
+		.map(FIELD_NUMBER.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
 	Optional.ofNullable(dateOfIssue) //
 		.map(DateTimeFormatter.ISO_LOCAL_DATE::format)
-		.map(x -> VEHICLE_CERTIFICATE_DATA_ISSUED.displayName(variant, locale) + " " + x)
+		.map(VEHICLE_CERTIFICATE_DATA_ISSUED.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
-	Optional.ofNullable(registrationNumber)
-		.filter(MyStrings::nonEmptyString)
-		.map(x -> VEHICLE_CERTIFICATE_DATA_REGNUMBER.displayName(variant, locale) + " " + x)
+	MyStrings.optionalString(registrationNumber)
+		.map(VEHICLE_CERTIFICATE_DATA_REGNUMBER.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
 	return sb.append(sj.toString()) //

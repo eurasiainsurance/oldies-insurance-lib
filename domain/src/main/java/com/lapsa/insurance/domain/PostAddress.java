@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.StringJoiner;
 
+import com.lapsa.commons.elements.Localized;
 import com.lapsa.commons.function.MyMaps;
 import com.lapsa.commons.function.MyStrings;
 import com.lapsa.international.localization.LocalizationLanguage;
@@ -53,15 +54,14 @@ public class PostAddress extends BaseDomain {
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
-	Optional.ofNullable(postIndex) //
-		.filter(MyStrings::nonEmptyString) //
+	MyStrings.optionalString(postIndex)
 		.ifPresent(sj::add);
 
 	Optional.ofNullable(city) //
-		.map(x -> x.displayName(variant, locale)) //
+		.map(Localized.toDisplayNameMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
-	Optional.ofNullable(streetLocalization.getOrDefault(LocalizationLanguage.byLocale(locale), street))
+	MyStrings.optionalString(streetLocalization.getOrDefault(LocalizationLanguage.byLocale(locale), street))
 		.ifPresent(sj::add);
 
 	return sb.append(sj.toString()) //

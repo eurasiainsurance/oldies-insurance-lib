@@ -56,9 +56,8 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
     public String displayName(DisplayNameVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(Optional.ofNullable(nameLocalization.getOrDefault(LocalizationLanguage.byLocale(locale), name)) //
-		.filter(MyStrings::nonEmptyString)
-		.map(MyStrings::capitalizeFirstLetter)
+	sb.append(MyStrings.optionalString(nameLocalization.getOrDefault(LocalizationLanguage.byLocale(locale), name)) //
+		.map(MyStrings::capitalizeFirstLetter) //
 		.orElseGet(() -> COMPANY_POINT_OF_SALE.displayName(variant, locale)));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");

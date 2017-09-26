@@ -6,6 +6,7 @@ import java.util.Locale;
 import java.util.Optional;
 import java.util.StringJoiner;
 
+import com.lapsa.commons.elements.Localized;
 import com.lapsa.commons.function.MyStrings;
 import com.lapsa.insurance.elements.PaymentMethod;
 import com.lapsa.insurance.elements.PaymentStatus;
@@ -40,7 +41,7 @@ public class PaymentData extends BaseDomain {
 
 	sb.append(Optional.ofNullable(method) //
 		.filter(PaymentMethod::isDefined) //
-		.map(x -> x.displayName(variant, locale)) //
+		.map(Localized.toDisplayNameMapper(variant, locale)) //
 		.map(MyStrings::capitalizeFirstLetter) //
 		.orElseGet(() -> PAYMENT_DATA.displayName(variant, locale)));
 
@@ -49,19 +50,18 @@ public class PaymentData extends BaseDomain {
 
 	Optional.ofNullable(status) //
 		.filter(PaymentStatus::isDefined) //
-		.map(x -> x.displayName(variant, locale)) //
-		.map(x -> FIELD_STATUS.displayName(variant, locale) + " " + x)
+		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.map(FIELD_STATUS.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
-	Optional.ofNullable(paymentReference) //
-		.filter(MyStrings::nonEmptyString)
-		.map(x -> PAYMENT_REFERENCE.displayName(variant, locale) + " " + x)
+	MyStrings.optionalString(paymentReference)
+		.map(PAYMENT_REFERENCE.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
 	return sb.append(sj.toString()) //
 		.toString();
     }
-    
+
     // GENERATED
 
     public PaymentMethod getMethod() {

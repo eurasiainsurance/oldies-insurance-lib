@@ -47,12 +47,12 @@ public class InsurancePeriodData extends BaseDomain {
 
 	Optional.ofNullable(from) //
 		.map(DateTimeFormatter.ISO_LOCAL_DATE::format)
-		.map(x -> INSURANCE_PERIOD_DATA_FROM.displayName(variant, locale) + " " + x)
+		.map(INSURANCE_PERIOD_DATA_FROM.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
 	Optional.ofNullable(to) //
 		.map(DateTimeFormatter.ISO_LOCAL_DATE::format)
-		.map(x -> INSURANCE_PERIOD_DATA_TILL.displayName(variant, locale) + " " + x)
+		.map(INSURANCE_PERIOD_DATA_TILL.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
 	return sb.append(sj.toString()) //

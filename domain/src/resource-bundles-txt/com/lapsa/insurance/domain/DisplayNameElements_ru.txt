@@ -60,6 +60,11 @@ com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE_COST = стоимо
 com.lapsa.insurance.domain.DisplayNameElements.CASCO_DRIVER = Застрахованный водитель
 com.lapsa.insurance.domain.DisplayNameElements.CASCO_DRIVER.short = Застрахованный
 
+com.lapsa.insurance.domain.DisplayNameElements.USER = Пользователь
+com.lapsa.insurance.domain.DisplayNameElements.USER_LOGIN = логин
+
+com.lapsa.insurance.domain.DisplayNameElements.USER_LOGIN_LOGIN = Логин
+
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = ИИН
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = e-mail
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_PHONE = телефон

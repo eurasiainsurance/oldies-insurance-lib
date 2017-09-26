@@ -62,6 +62,11 @@ public enum DisplayNameElements implements LocalizedElement {
     //
     CASCO_DRIVER,
     //
+    USER,
+    USER_LOGIN,
+    //
+    USER_LOGIN_LOGIN,
+    //
     FIELD_ID_NUMBER,
     FIELD_EMAIL,
     FIELD_PHONE,

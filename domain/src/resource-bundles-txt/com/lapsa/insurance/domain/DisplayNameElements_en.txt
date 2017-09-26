@@ -55,6 +55,11 @@ com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE_COST = cost
 
 com.lapsa.insurance.domain.DisplayNameElements.CASCO_DRIVER = Insured driver
 
+com.lapsa.insurance.domain.DisplayNameElements.USER = User
+com.lapsa.insurance.domain.DisplayNameElements.USER_LOGIN = login
+
+com.lapsa.insurance.domain.DisplayNameElements.USER_LOGIN_LOGIN = login
+
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = ID number
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = e-mail
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_PHONE = phone

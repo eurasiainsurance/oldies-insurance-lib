@@ -1,8 +1,14 @@
 package com.lapsa.insurance.domain.crm;
 
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.StringJoiner;
+import java.util.stream.Stream;
 
+import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.insurance.domain.BaseEntity;
 
 public class User extends BaseEntity<Integer> {
@@ -29,9 +35,11 @@ public class User extends BaseEntity<Integer> {
     private List<UserGroup> groups;
 
     public String getDefaultLogin() {
-	if (logins == null || logins.isEmpty())
-	    return null;
-	return logins.iterator().next().getName();
+	return MyOptionals.of(logins) //
+		.map(List::stream)
+		.flatMap(Stream::findFirst) //
+		.map(UserLogin::getName) //
+		.orElse(null);
     }
 
     public UserLogin addLogin(UserLogin userLogin) {
@@ -57,6 +65,47 @@ public class User extends BaseEntity<Integer> {
 
     public boolean isHasGroup() {
 	return groups != null && !groups.isEmpty();
+    }
+
+    @Override
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringBuilder sb = new StringBuilder();
+
+	sb.append(USER.displayName(variant, locale));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
+
+	MyOptionals.of(name) //
+		.ifPresent(sj::add);
+
+	MyOptionals.of(logins) //
+		.map(List::stream) //
+		.flatMap(Stream::findFirst) //
+		.map(UserLogin::getName) //
+		.map(USER_LOGIN.fieldAsCaptionMapper(variant, locale)) //
+		.ifPresent(sj::add);
+
+	MyOptionals.of(email) //
+		.map(FIELD_EMAIL.fieldAsCaptionMapper(variant, locale)) //
+		.ifPresent(sj::add);
+
+	return sb.append(sj.toString()) //
+		.append(appendEntityId())
+		.toString();
+    }
+
+    public static void main(String[] args) {
+	UserLogin l = new UserLogin();
+	l.setName("vadim.isaev");
+
+	System.out.println(l);
+
+	User u = new User();
+	u.setName("Вадим Исаев");
+	u.setEmail("vadim.isaev@theeurasia.kz");
+	u.addLogin(l);
+	System.out.println(u);
     }
 
     // GENERATED

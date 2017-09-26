@@ -56,6 +56,11 @@ com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE_COST = =KAZ= сто
 
 com.lapsa.insurance.domain.DisplayNameElements.CASCO_DRIVER = =KAZ= Застрахованный водитель
 
+com.lapsa.insurance.domain.DisplayNameElements.USER = =KAZ= Пользователь
+com.lapsa.insurance.domain.DisplayNameElements.USER_LOGIN = =KAZ= логин
+
+com.lapsa.insurance.domain.DisplayNameElements.USER_LOGIN_LOGIN = =KAZ= Логин
+
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = =KAZ= ИИН
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = =KAZ= e-mail
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_PHONE = =KAZ= телефон

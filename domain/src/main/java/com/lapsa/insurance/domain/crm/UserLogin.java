@@ -1,5 +1,11 @@
 package com.lapsa.insurance.domain.crm;
 
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
+
+import java.util.Locale;
+import java.util.StringJoiner;
+
+import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.insurance.domain.BaseEntity;
 
 public class UserLogin extends BaseEntity<Integer> {
@@ -19,6 +25,23 @@ public class UserLogin extends BaseEntity<Integer> {
 
     private String name;
     private User user;
+
+    @Override
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringBuilder sb = new StringBuilder();
+
+	sb.append(USER_LOGIN_LOGIN.displayName(variant, locale));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
+
+	MyOptionals.of(name) //
+		.ifPresent(sj::add);
+
+	return sb.append(sj.toString()) //
+		.append(appendEntityId())
+		.toString();
+    }
 
     // GENERATED
 

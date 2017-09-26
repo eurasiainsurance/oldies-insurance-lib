@@ -1,9 +1,15 @@
 package com.lapsa.insurance.domain;
 
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import static com.lapsa.international.phone.CountryCode.*;
+
+import java.util.Locale;
+import java.util.Optional;
+import java.util.StringJoiner;
 
 import javax.validation.constraints.AssertTrue;
 
+import com.lapsa.commons.function.MyStrings;
 import com.lapsa.international.internet.validators.ValidEmail;
 import com.lapsa.international.localization.LocalizationLanguage;
 import com.lapsa.international.phone.PhoneNumber;
@@ -46,6 +52,38 @@ public class RequesterData extends BaseDomain {
     private boolean allowProcessPersonalData;
 
     private LocalizationLanguage preferLanguage;
+
+    @Override
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringBuilder sb = new StringBuilder();
+
+	sb.append(REQUESTER_DATA.displayName(variant, locale));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
+
+	Optional.ofNullable(name) //
+		.filter(MyStrings::nonEmptyString) //
+		.ifPresent(sj::add);
+
+	Optional.ofNullable(idNumber) //
+		.filter(MyStrings::nonEmptyString) //
+		.map(x -> FIELD_ID_NUMBER.displayName(variant, locale) + " " + x)
+		.ifPresent(sj::add);
+
+	Optional.ofNullable(email) //
+		.filter(MyStrings::nonEmptyString) //
+		.map(x -> FIELD_EMAIL.displayName(variant, locale) + " " + x)
+		.ifPresent(sj::add);
+
+	Optional.ofNullable(phone) //
+		.map(PhoneNumber::getFormatted) //
+		.map(x -> FIELD_PHONE.displayName(variant, locale) + " " + x)
+		.ifPresent(sj::add);
+
+	return sb.append(sj.toString()) //
+		.toString();
+    }
 
     // GENERATED
 

@@ -53,7 +53,7 @@ public class VehicleCertificateData extends SidedScannedDocument {
 
 	Optional.ofNullable(number)
 		.filter(MyStrings::nonEmptyString)
-		.map(x -> VEHICLE_CERTIFICATE_DATA_NUMBER.displayName(variant, locale) + " " + x)
+		.map(x -> FIELD_NUMBER.displayName(variant, locale) + " " + x)
 		.ifPresent(sj::add);
 
 	Optional.ofNullable(dateOfIssue) //

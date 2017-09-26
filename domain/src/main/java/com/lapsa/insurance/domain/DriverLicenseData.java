@@ -47,7 +47,7 @@ public class DriverLicenseData extends SidedScannedDocument {
 
 	Optional.ofNullable(number)
 		.filter(MyStrings::nonEmptyString)
-		.map(x -> DRIVER_LICENSE_DATA_NUMBER.displayName(variant, locale) + " " + x)
+		.map(x -> FIELD_NUMBER.displayName(variant, locale) + " " + x)
 		.ifPresent(sj::add);
 
 	Optional.ofNullable(dateOfIssue) //

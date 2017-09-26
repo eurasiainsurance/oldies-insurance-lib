@@ -60,7 +60,7 @@ public class IdentityCardData extends SidedScannedDocument {
 
 	Optional.ofNullable(number)
 		.filter(MyStrings::nonEmptyString)
-		.map(x -> IDENTITY_CARD_DATA_NUMBER.displayName(variant, locale) + " " + x)
+		.map(x -> FIELD_NUMBER.displayName(variant, locale) + " " + x)
 		.ifPresent(sj::add);
 
 	Optional.ofNullable(dateOfIssue) //

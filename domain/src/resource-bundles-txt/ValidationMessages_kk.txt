@@ -1,6 +1,6 @@
-com.lapsa.insurance.domain.RequesterData.allowProcessPersonalData.AssertTrue.message = Сіз беруге тиіс келісім өзінің дербес деректерін өңдеуге
-
 com.lapsa.insurance.domain.policy.PolicyDriver.IdNumber.NotNull.message = ЖСН көрсетілмеген 
+
+com.lapsa.insurance.domain.RequesterData.allowProcessPersonalData.AssertTrue.message = Сіз беруге тиіс келісім өзінің дербес деректерін өңдеуге
 
 com.lapsa.insurance.domain.casco.Casco.deductiblePartialRate.NotNullValue.message = Таңдау қажет франшиза мөлшері бойынша ішінара залал
 com.lapsa.insurance.domain.casco.Casco.deductibleFullRate.NotNullValue.message = Таңдау қажет франшиза мөлшері бойынша толық жойылған немесе көлікті айдап әкету

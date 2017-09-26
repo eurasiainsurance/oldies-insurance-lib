@@ -1,6 +1,6 @@
-com.lapsa.insurance.domain.RequesterData.allowProcessPersonalData.AssertTrue.message = You have to give consent to the processing of your personal data
-
 com.lapsa.insurance.domain.policy.PolicyDriver.IdNumber.NotNull.message = IIN not filled in
+
+com.lapsa.insurance.domain.RequesterData.allowProcessPersonalData.AssertTrue.message = You have to give consent to the processing of your personal data
 
 com.lapsa.insurance.domain.casco.Casco.deductiblePartialRate.NotNullValue.message = You must select the size of the franchise for partial damage
 com.lapsa.insurance.domain.casco.Casco.deductibleFullRate.NotNullValue.message = You must select the size of the franchise for the total loss of or hijacking

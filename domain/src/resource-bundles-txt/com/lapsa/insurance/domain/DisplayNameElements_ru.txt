@@ -44,6 +44,16 @@ com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA = Личные да
 com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA_DOB = дата рождения
 com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA_SEX = пол
 
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE = Затрахованное ТС
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE.short = ТС
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE_AGE_CLASS = возраст
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE_CLASS = класс
+
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE = Застрахованное ТС
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE.short = ТС
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE_AGE_CLASS = возраст
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE_COST = стоимость
+
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = ИИН
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = e-mail
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_PHONE = телефон

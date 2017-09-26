@@ -44,6 +44,14 @@ com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA = =KAZ= Личны�
 com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA_DOB = =KAZ= дата рождения
 com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA_SEX = =KAZ= пол
 
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE = =KAZ= Затрахованное ТС
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE_AGE_CLASS = =KAZ= возраст
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE_CLASS = =KAZ= класс
+
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE = =KAZ= Застрахованное ТС
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE_AGE_CLASS = =KAZ= возраст
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE_COST = =KAZ= стоимость
+
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = =KAZ= ИИН
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = =KAZ= e-mail
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_PHONE = =KAZ= телефон

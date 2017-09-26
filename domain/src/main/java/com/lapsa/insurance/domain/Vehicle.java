@@ -1,5 +1,8 @@
 package com.lapsa.insurance.domain;
 
+import java.util.StringJoiner;
+
+import com.lapsa.commons.function.MyStrings;
 import com.lapsa.insurance.validation.ValidVehicleYearOfIssue;
 import com.lapsa.international.cars.validators.ValidVINCode;
 import com.lapsa.kz.country.KZArea;
@@ -41,9 +44,20 @@ public abstract class Vehicle extends BaseEntity<Integer> {
 
     protected VehicleCertificateData certificateData = new VehicleCertificateData();
 
-    public String getDisplayName() {
-	return (((manufacturer == null || manufacturer.isEmpty()) ? "" : (manufacturer + " "))
-		+ ((model == null || model.isEmpty()) ? "" : (model + " "))).trim();
+    public String getFullName() {
+	StringJoiner sj = new StringJoiner(" ");
+
+	MyStrings.optionalString(manufacturer) //
+		.map(String::trim) //
+		.ifPresent(sj::add);
+
+	MyStrings.optionalString(manufacturer) //
+		.map(x -> model) // model used only in conjuction with first
+				 // manufacturer
+		.map(String::trim) //
+		.ifPresent(sj::add);
+
+	return MyStrings.nullOnEmpty(sj.toString());
     }
 
     // GENERATED
@@ -108,7 +122,7 @@ public abstract class Vehicle extends BaseEntity<Integer> {
 	return certificateData;
     }
 
-    public void setCertificateData(VehicleCertificateData certificateData) {
+    protected void setCertificateData(VehicleCertificateData certificateData) {
 	this.certificateData = certificateData;
     }
 }

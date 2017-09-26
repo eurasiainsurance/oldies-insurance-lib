@@ -1,5 +1,13 @@
 package com.lapsa.insurance.domain.policy;
 
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
+
+import java.util.Locale;
+import java.util.Optional;
+import java.util.StringJoiner;
+
+import com.lapsa.commons.elements.Localized;
+import com.lapsa.commons.function.MyStrings;
 import com.lapsa.insurance.domain.Vehicle;
 import com.lapsa.insurance.elements.VehicleAgeClass;
 import com.lapsa.insurance.elements.VehicleClass;
@@ -35,6 +43,31 @@ public class PolicyVehicle extends Vehicle {
     private boolean forcedMajorCity;
 
     private boolean fetched = false;
+
+    @Override
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringBuilder sb = new StringBuilder();
+
+	sb.append(MyStrings.optionalString(getFullName()) //
+		.orElseGet(() -> POLICY_VEHICLE.displayName(variant, locale)));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
+
+	Optional.ofNullable(vehicleClass) //
+		.map(Localized.toDisplayNameMapper(variant, locale))
+		.map(POLICY_VEHICLE_CLASS.fieldAsCaptionMapper(variant, locale))
+		.ifPresent(sj::add);
+
+	Optional.ofNullable(vehicleAgeClass) //
+		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.map(POLICY_VEHICLE_AGE_CLASS.fieldAsCaptionMapper(variant, locale))
+		.ifPresent(sj::add);
+
+	return sb.append(sj.toString()) //
+		.append(appendEntityId()) //
+		.toString();
+    }
 
     // GENERATED
 

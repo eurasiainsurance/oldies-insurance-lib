@@ -40,6 +40,10 @@ com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_DATA = Способ оп�
 com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_REFERENCE = платежный референс
 com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_REFERENCE.short = референс
 
+com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA = Личные данные
+com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA_DOB = дата рождения
+com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA_SEX = пол
+
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = ИИН
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = e-mail
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_PHONE = телефон

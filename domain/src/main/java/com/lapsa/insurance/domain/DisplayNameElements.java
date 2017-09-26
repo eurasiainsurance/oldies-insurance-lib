@@ -1,5 +1,8 @@
 package com.lapsa.insurance.domain;
 
+import java.util.Locale;
+import java.util.function.Function;
+
 import com.lapsa.commons.elements.LocalizedElement;
 
 public enum DisplayNameElements implements LocalizedElement {
@@ -43,10 +46,19 @@ public enum DisplayNameElements implements LocalizedElement {
     PAYMENT_DATA,
     PAYMENT_REFERENCE,
     //
+    PERSONAL_DATA,
+    PERSONAL_DATA_DOB,
+    PERSONAL_DATA_SEX,
+    //
     FIELD_ID_NUMBER,
     FIELD_EMAIL,
     FIELD_PHONE,
     FIELD_NUMBER,
     FIELD_STATUS,
     ;
+
+    public Function<String, String> fieldAsCaptionMapper(final DisplayNameVariant variant,
+	    final Locale locale) {
+	return x -> displayName(variant, locale) + " " + x;
+    }
 }

@@ -40,6 +40,10 @@ com.lapsa.insurance.domain.DisplayNameElements.OBTAINING_DATA = =KAZ= Спосо
 com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_DATA = =KAZ= Способ оплаты
 com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_REFERENCE = =KAZ= платежный референс
 
+com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA = =KAZ= Личные данные
+com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA_DOB = =KAZ= дата рождения
+com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA_SEX = =KAZ= пол
+
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = =KAZ= ИИН
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = =KAZ= e-mail
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_PHONE = =KAZ= телефон

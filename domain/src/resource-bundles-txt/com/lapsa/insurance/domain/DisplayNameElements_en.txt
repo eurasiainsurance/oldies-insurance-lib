@@ -38,6 +38,11 @@ com.lapsa.insurance.domain.DisplayNameElements.OBTAINING_DATA = Obtaining method
 com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_DATA = Payment method
 com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_REFERENCE = reference
 
+com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA = Personal data
+com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA_DOB = date of birth
+com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA_DOB.short = dob
+com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA_SEX = sex
+
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = ID number
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = e-mail
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_PHONE = phone

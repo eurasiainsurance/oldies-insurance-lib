@@ -20,3 +20,9 @@ com.lapsa.insurance.domain.DisplayNameElements.DRIVER_LICENSE_DATA_ISSUED = =KAZ
 com.lapsa.insurance.domain.DisplayNameElements.IDENTITY_CARD_DATA = =KAZ= Документ удостоверяющий личность
 com.lapsa.insurance.domain.DisplayNameElements.IDENTITY_CARD_DATA_ISSUED = =KAZ= выдан
 com.lapsa.insurance.domain.DisplayNameElements.IDENTITY_CARD_DATA_NUMBER = =KAZ= номер
+com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA = =KAZ= ПТС
+com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA.full = =KAZ= Паспорт транспортного средства
+com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA_ISSUED = =KAZ= выдан
+com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA_NUMBER = =KAZ= номер
+com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA_REGNUMBER = =KAZ= гос. номер
+com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA_REGNUMBER.full = =KAZ= государственный регистрационный номер

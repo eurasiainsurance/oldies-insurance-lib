@@ -8,21 +8,21 @@ import com.lapsa.commons.elements.LocalizedElement;
 public enum PaymentMethod implements LocalizedElement {
     PAYCASH, // наличными курьеру
     PAYCARD_ONLINE, // картой на сайте
-    UNDEFINED, // не определен
+    UNDEFINED(false), // не определен
     ;
 
     //
 
-    private final boolean selectable;
+    private final boolean defined;
 
     //
 
     private PaymentMethod() {
-	this.selectable = true;
+	this.defined = true;
     }
 
     private PaymentMethod(boolean selectable) {
-	this.selectable = selectable;
+	this.defined = selectable;
     }
 
     //
@@ -52,6 +52,10 @@ public enum PaymentMethod implements LocalizedElement {
     // GENERATED
 
     public boolean isSelectable() {
-	return selectable;
+	return defined;
+    }
+
+    public boolean isDefined() {
+	return defined;
     }
 }

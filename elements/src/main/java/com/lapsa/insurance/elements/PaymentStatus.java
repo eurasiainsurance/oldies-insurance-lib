@@ -14,16 +14,16 @@ public enum PaymentStatus implements LocalizedElement {
 
     //
 
-    private final boolean selectable;
+    private final boolean defined;
 
     //
 
     private PaymentStatus() {
-	this.selectable = true;
+	this.defined = true;
     }
 
     private PaymentStatus(boolean selectable) {
-	this.selectable = selectable;
+	this.defined = selectable;
     }
 
     //
@@ -53,6 +53,10 @@ public enum PaymentStatus implements LocalizedElement {
     // GENERATED
 
     public boolean isSelectable() {
-	return selectable;
+	return defined;
+    }
+
+    public boolean isDefined() {
+	return defined;
     }
 }

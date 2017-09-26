@@ -14,16 +14,16 @@ public enum ObtainingStatus implements LocalizedElement {
 
     //
 
-    private final boolean selectable;
+    private final boolean defined;
 
     //
 
     private ObtainingStatus() {
-	this.selectable = true;
+	this.defined = true;
     }
 
     private ObtainingStatus(boolean selectable) {
-	this.selectable = selectable;
+	this.defined = selectable;
     }
 
     //
@@ -53,6 +53,10 @@ public enum ObtainingStatus implements LocalizedElement {
     // GENERATED
 
     public boolean isSelectable() {
-	return selectable;
+	return defined;
+    }
+
+    public boolean isDefined() {
+	return defined;
     }
 }

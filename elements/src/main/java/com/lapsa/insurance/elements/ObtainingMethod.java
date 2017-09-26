@@ -13,16 +13,16 @@ public enum ObtainingMethod implements LocalizedElement {
 
     //
 
-    private final boolean selectable;
+    private final boolean defined;
 
     //
 
     private ObtainingMethod() {
-	this.selectable = true;
+	this.defined = true;
     }
 
-    private ObtainingMethod(boolean selectable) {
-	this.selectable = selectable;
+    private ObtainingMethod(boolean defined) {
+	this.defined = defined;
     }
 
     //
@@ -52,6 +52,10 @@ public enum ObtainingMethod implements LocalizedElement {
     // GENERATED
 
     public boolean isSelectable() {
-	return selectable;
+	return defined;
+    }
+
+    public boolean isDefined() {
+	return defined;
     }
 }

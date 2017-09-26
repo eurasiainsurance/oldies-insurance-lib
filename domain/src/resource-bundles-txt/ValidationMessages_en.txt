@@ -1,6 +1,3 @@
-com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.NotNull.message = Choose the data
-com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message = Wrong data
-
 com.lapsa.insurance.domain.InsuranceRequest.allowProcessPersonalData.AssertTrue.message = You have to give consent to the processing of your personal data
 
 com.lapsa.insurance.domain.policy.PolicyDriver.IdNumber.NotNull.message = IIN not filled in
@@ -12,8 +9,6 @@ com.lapsa.insurance.domain.casco.CascoVehicle.cost.Min.message = The cost of the
 com.lapsa.insurance.domain.casco.CascoVehicle.cost.Max.message = The cost of the car by Auto CASCO program may not exceed ₸ {value}
 com.lapsa.insurance.domain.casco.CascoVehicle.yearOfManufacture.NotTooOldYearOfIssue.message = Сақтандыру бойынша арограмме Авто КАСКО қабылданады автомобильде емес, {maxAge} жастан асқан
 com.lapsa.insurance.domain.casco.CascoVehicle.yearOfManufacture.NotTooYoungYearOfIssue.message = Көрсетіңіз дұрыс шығарылған автокөлік
-
-com.lapsa.insurance.domain.InsurantData.IdNumber.NotNull.message = {com.lapsa.insurance.domain.policy.PolicyDriver.IdNumber.NotNull.message}
 
 com.lapsa.insurance.domain.ObtainingData.method.NotNullValue.message = Please state the method of Policy receiving
 com.lapsa.insurance.domain.ObtainingData.pickupCity.NotNullValue.message = It is necessary to state the city in order to choose the office of Insurance Company

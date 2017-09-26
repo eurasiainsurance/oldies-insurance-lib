@@ -1,9 +1,6 @@
-com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.NotNull.message = Выберите значение
-com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message = Неверное значение
+com.lapsa.insurance.domain.policy.PolicyDriver.IdNumber.NotNull.message = ИИН не указан
 
 com.lapsa.insurance.domain.InsuranceRequest.allowProcessPersonalData.AssertTrue.message = Вы должны дать согласие на обработку своих персональных данных
-
-com.lapsa.insurance.domain.policy.PolicyDriver.IdNumber.NotNull.message = ИИН не указан
 
 com.lapsa.insurance.domain.casco.Casco.deductiblePartialRate.NotNullValue.message = Необходимо выбрать размер франшизы по частичному ущербу
 com.lapsa.insurance.domain.casco.Casco.deductibleFullRate.NotNullValue.message = Необходимо выбрать размер франшизы по полной гибели или угону
@@ -12,8 +9,6 @@ com.lapsa.insurance.domain.casco.CascoVehicle.cost.Min.message = Стоимос�
 com.lapsa.insurance.domain.casco.CascoVehicle.cost.Max.message = Стоимость автомобиля по программе Авто КАСКО не может превышать ₸  {value}
 com.lapsa.insurance.domain.casco.CascoVehicle.yearOfManufacture.NotTooOldYearOfIssue.message = К страхованию по программе Авто КАСКО принимаются автомобиле не старше {maxAge} лет
 com.lapsa.insurance.domain.casco.CascoVehicle.yearOfManufacture.NotTooYoungYearOfIssue.message = Укажите корректный год выпуска автомобиля
-
-com.lapsa.insurance.domain.InsurantData.IdNumber.NotNull.message = {com.lapsa.insurance.domain.policy.PolicyDriver.IdNumber.NotNull.message}
 
 com.lapsa.insurance.domain.ObtainingData.method.NotNullValue.message = Укажите способ получения полиса
 com.lapsa.insurance.domain.ObtainingData.pickupCity.NotNullValue.message = Необходимо указать город для того, чтобы выбрать офис страховой компани

@@ -1,2 +1,0 @@
-com.lapsa.insurance.elements.WhoIsInsurant.DRIVER = Сақтанушы сақтандырылған жүргізушілердің бірі болып табылады
-com.lapsa.insurance.elements.WhoIsInsurant.OTHER  = Сақтанушы басқа тұлға болып табылады

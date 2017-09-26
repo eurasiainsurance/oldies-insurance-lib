@@ -65,6 +65,12 @@ com.lapsa.insurance.domain.DisplayNameElements.USER_LOGIN = логин
 
 com.lapsa.insurance.domain.DisplayNameElements.USER_LOGIN_LOGIN = Логин
 
+com.lapsa.insurance.domain.DisplayNameElements.USER_GROUP = Пользовательская группа
+com.lapsa.insurance.domain.DisplayNameElements.USER_GROUP.short = Группа
+
+com.lapsa.insurance.domain.DisplayNameElements.USER_GRPOUP_MEMBER = количество участников
+com.lapsa.insurance.domain.DisplayNameElements.USER_GRPOUP_MEMBER.short = участников
+
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = ИИН
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = e-mail
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_PHONE = телефон

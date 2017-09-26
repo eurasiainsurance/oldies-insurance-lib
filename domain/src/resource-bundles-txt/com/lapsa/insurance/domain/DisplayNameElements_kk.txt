@@ -61,6 +61,10 @@ com.lapsa.insurance.domain.DisplayNameElements.USER_LOGIN = =KAZ= логин
 
 com.lapsa.insurance.domain.DisplayNameElements.USER_LOGIN_LOGIN = =KAZ= Логин
 
+com.lapsa.insurance.domain.DisplayNameElements.USER_GROUP = =KAZ= Пользовательская группа
+
+com.lapsa.insurance.domain.DisplayNameElements.USER_GRPOUP_MEMBER = =KAZ= количество участников
+
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = =KAZ= ИИН
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = =KAZ= e-mail
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_PHONE = =KAZ= телефон

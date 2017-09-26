@@ -67,6 +67,9 @@ public enum DisplayNameElements implements LocalizedElement {
     //
     USER_LOGIN_LOGIN,
     //
+    USER_GROUP,
+    USER_GRPOUP_MEMBER,
+    //
     FIELD_ID_NUMBER,
     FIELD_EMAIL,
     FIELD_PHONE,

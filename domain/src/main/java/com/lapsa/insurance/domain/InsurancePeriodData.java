@@ -38,9 +38,11 @@ public class InsurancePeriodData extends BaseDomain {
 
     @Override
     public String displayName(DisplayNameVariant variant, Locale locale) {
-	StringJoiner sj = new StringJoiner(" ");
+	StringBuilder sb = new StringBuilder();
 
-	sj.add(INSURANCE_PERIOD_DATA.displayName(variant, locale));
+	sb.append(INSURANCE_PERIOD_DATA.displayName(variant, locale));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
 
 	Optional.ofNullable(from) //
 		.map(DateTimeFormatter.ISO_LOCAL_DATE::format)
@@ -52,7 +54,8 @@ public class InsurancePeriodData extends BaseDomain {
 		.map(x -> INSURANCE_PERIOD_DATA_TILL.displayName(variant, locale) + " " + x)
 		.ifPresent(sj::add);
 
-	return sj.toString();
+	return sb.append(sj.toString()) //
+		.toString();
     }
 
     @TemporalLeftBeforeRight

@@ -27,13 +27,19 @@ public class CompanyContactEmail extends BaseEntity<Integer> {
 
     @Override
     public String displayName(DisplayNameVariant variant, Locale locale) {
-	final StringJoiner sj = new StringJoiner(" ", COMPANY_CONTACT_EMAIL.displayName(variant, locale) + " ", "");
+	StringBuilder sb = new StringBuilder();
+
+	sb.append(COMPANY_CONTACT_EMAIL.displayName(variant, locale));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
 
 	sj.add(Optional.ofNullable(address) //
 		.filter(MyStrings::nonEmptyString) //
-		.orElse("<" + COMPANY_CONTACT_EMAIL_UNDEFINED.displayName(variant, locale) + ">"));
+		.orElseGet(() -> "<" + COMPANY_CONTACT_EMAIL_UNDEFINED.displayName(variant, locale) + ">"));
 
-	return sj.toString() + appendEntityId();
+	return sb.append(sj.toString()) //
+		.append(appendEntityId()) //
+		.toString();
     }
 
     // GENERATED

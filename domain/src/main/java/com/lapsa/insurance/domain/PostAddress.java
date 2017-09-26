@@ -46,9 +46,11 @@ public class PostAddress extends BaseDomain {
 
     @Override
     public String displayName(DisplayNameVariant variant, Locale locale) {
-	StringJoiner sj = new StringJoiner(", ");
+	StringBuilder sb = new StringBuilder();
 
-	sj.add(POST_ADDRESS.displayName(variant, locale));
+	sb.append(POST_ADDRESS.displayName(variant, locale));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
 
 	Optional.ofNullable(postIndex) //
 		.filter(MyStrings::nonEmptyString) //
@@ -61,7 +63,8 @@ public class PostAddress extends BaseDomain {
 	Optional.ofNullable(streetLocalization.getOrDefault(LocalizationLanguage.byLocale(locale), street))
 		.ifPresent(sj::add);
 
-	return sj.toString();
+	return sb.append(sj.toString()) //
+		.toString();
     }
 
     // GENERATED

@@ -39,18 +39,19 @@ public class CalculationData extends BaseDomain {
     @Override
     public String displayName(DisplayNameVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
+
 	sb.append(CALCULATION_DATA.displayName(variant, locale));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
+
 	sj.add(Optional.of(this) //
 		.filter(x -> x.getPremiumCost() > 0)
 		.map(x -> x.premiumCurrency)
 		.map(x -> x.formatAmount(getPremiumCost())) //
-		.orElse("<" + CALCULATION_DATA_UNDEFINED.displayName(variant, locale) + ">"));
+		.orElseGet(() -> "<" + CALCULATION_DATA_UNDEFINED.displayName(variant, locale) + ">"));
 
-	sb.append(sj.toString());
-
-	return sb.toString();
+	return sb.append(sj.toString()) //
+		.toString();
     }
 
     // GENEERATED

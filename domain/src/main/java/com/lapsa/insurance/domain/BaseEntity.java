@@ -40,10 +40,6 @@ public abstract class BaseEntity<T> extends BaseDomain implements Serializable {
 	return " [ID=" + Optional.ofNullable(id).map(Object::toString).orElse("NONE") + "]";
     }
 
-    protected StringBuilder appendEntityId(StringBuilder builder) {
-	return builder.append(appendEntityId());
-    }
-
     // GENERATED
 
     public T getId() {

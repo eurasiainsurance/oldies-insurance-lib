@@ -30,18 +30,22 @@ public class CompanyContactPhone extends BaseEntity<Integer> {
 
     @Override
     public String displayName(DisplayNameVariant variant, Locale locale) {
-	final StringJoiner sj = new StringJoiner(" ");
+	StringBuilder sb = new StringBuilder();
 
-	sj.add(Optional.ofNullable(phoneType) //
+	sb.append(Optional.ofNullable(phoneType) //
 		.map(x -> x.displayName(variant, locale)) //
 		.map(MyStrings::capitalizeFirstLetter) //
-		.orElse(COMPANY_CONTACT_PHONE.displayName(variant, locale)));
+		.orElseGet(() -> COMPANY_CONTACT_PHONE.displayName(variant, locale)));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
 
 	sj.add(Optional.ofNullable(phone) //
 		.map(PhoneNumber::getFormatted) //
-		.orElse("<" + COMPANY_CONTACT_PHONE_UNDEFINED.displayName(variant, locale) + ">"));
+		.orElseGet(() -> "<" + COMPANY_CONTACT_PHONE_UNDEFINED.displayName(variant, locale) + ">"));
 
-	return sj.toString() + appendEntityId();
+	return sb.append(sj.toString()) //
+		.append(appendEntityId()) //
+		.toString();
     }
 
     // GENERATED

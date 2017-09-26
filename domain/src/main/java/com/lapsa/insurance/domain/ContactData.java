@@ -41,8 +41,11 @@ public class ContactData extends BaseDomain {
 
     @Override
     public String displayName(DisplayNameVariant variant, Locale locale) {
-	StringJoiner sj = new StringJoiner(", ", CONTACT_DATA.displayName(variant, locale) + " ", "");
-	sj.setEmptyValue(CONTACT_DATA_EMPTY.displayName(variant, locale));
+	StringBuilder sb = new StringBuilder();
+
+	sb.append(CONTACT_DATA.displayName(variant, locale));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
 
 	Optional.ofNullable(email) //
 		.filter(MyStrings::nonEmptyString) //
@@ -56,14 +59,8 @@ public class ContactData extends BaseDomain {
 		.filter(MyStrings::nonEmptyString) //
 		.ifPresent(sj::add);
 
-	return sj.toString();
-    }
-
-    public static void main(String[] args) {
-	ContactData cd = new ContactData();
-	// cd.setEmail("vadim.o.isaev@gmail.com");
-	// cd.setPhone(PhoneNumber.of(CountryCode.AE, "701", "9377979"));
-	System.out.println(cd);
+	return sb.append(sj.toString()) //
+		.toString();
     }
 
     // GENERATED

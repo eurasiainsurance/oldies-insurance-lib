@@ -48,12 +48,14 @@ public class IdentityCardData extends SidedScannedDocument {
 
     @Override
     public String displayName(DisplayNameVariant variant, Locale locale) {
-	StringJoiner sj = new StringJoiner(" ");
+	StringBuilder sb = new StringBuilder();
 
-	sj.add(Optional.ofNullable(type) //
+	sb.append(Optional.ofNullable(type) //
 		.map(x -> x.displayName(variant, locale)) //
 		.map(MyStrings::capitalizeFirstLetter) //
-		.orElse(IDENTITY_CARD_DATA.displayName(variant, locale)));
+		.orElseGet(() ->IDENTITY_CARD_DATA.displayName(variant, locale)));
+
+	StringJoiner sj = new StringJoiner(" ");
 
 	Optional.ofNullable(number)
 		.filter(MyStrings::nonEmptyString)
@@ -65,7 +67,9 @@ public class IdentityCardData extends SidedScannedDocument {
 		.map(x -> IDENTITY_CARD_DATA_ISSUED.displayName(variant, locale) + " " + x)
 		.ifPresent(sj::add);
 
-	return sj.toString() + appendEntityId();
+	return sb.append(sj.toString()) //
+		.append(appendEntityId()) //
+		.toString();
     }
 
     // GENERATED

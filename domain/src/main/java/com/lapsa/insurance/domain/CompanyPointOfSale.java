@@ -54,18 +54,22 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
 
     @Override
     public String displayName(DisplayNameVariant variant, Locale locale) {
-	StringJoiner sj = new StringJoiner(", ", COMPANY_POINT_OF_SALE.displayName(variant, locale) + " ", "");
-	sj.setEmptyValue(COMPANY_POINT_OF_SALE_EMPTY.displayName(variant, locale));
+	StringBuilder sb = new StringBuilder();
 
-	Optional.ofNullable(nameLocalization.getOrDefault(LocalizationLanguage.byLocale(locale), name)) //
+	sb.append(Optional.ofNullable(nameLocalization.getOrDefault(LocalizationLanguage.byLocale(locale), name)) //
 		.filter(MyStrings::nonEmptyString)
-		.ifPresent(sj::add);
+		.map(MyStrings::capitalizeFirstLetter)
+		.orElseGet(() -> COMPANY_POINT_OF_SALE.displayName(variant, locale)));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
 
 	Optional.ofNullable(address) //
 		.map(x -> x.displayName(variant, locale))
 		.ifPresent(sj::add);
 
-	return sj.toString() + appendEntityId();
+	return sb.append(sj.toString()) //
+		.append(appendEntityId()) //
+		.toString();
     }
 
     public CompanyContactPhone addPhone(CompanyContactPhone phone) {

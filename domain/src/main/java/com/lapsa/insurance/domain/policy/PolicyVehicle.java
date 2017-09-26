@@ -3,11 +3,10 @@ package com.lapsa.insurance.domain.policy;
 import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
 import java.util.Locale;
-import java.util.Optional;
 import java.util.StringJoiner;
 
 import com.lapsa.commons.elements.Localized;
-import com.lapsa.commons.function.MyStrings;
+import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.insurance.domain.Vehicle;
 import com.lapsa.insurance.elements.VehicleAgeClass;
 import com.lapsa.insurance.elements.VehicleClass;
@@ -48,18 +47,18 @@ public class PolicyVehicle extends Vehicle {
     public String displayName(DisplayNameVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(MyStrings.optionalString(getFullName()) //
+	sb.append(MyOptionals.of(getFullName()) //
 		.orElseGet(() -> POLICY_VEHICLE.displayName(variant, locale)));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
-	Optional.ofNullable(vehicleClass) //
+	MyOptionals.of(vehicleClass) //
 		.map(Localized.toDisplayNameMapper(variant, locale))
 		.map(POLICY_VEHICLE_CLASS.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
-	Optional.ofNullable(vehicleAgeClass) //
+	MyOptionals.of(vehicleAgeClass) //
 		.map(Localized.toDisplayNameMapper(variant, locale)) //
 		.map(POLICY_VEHICLE_AGE_CLASS.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);

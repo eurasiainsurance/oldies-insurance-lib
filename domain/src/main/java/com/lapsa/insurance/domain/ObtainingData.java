@@ -4,10 +4,10 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
 import java.time.LocalDate;
 import java.util.Locale;
-import java.util.Optional;
 import java.util.StringJoiner;
 
 import com.lapsa.commons.elements.Localized;
+import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.commons.function.MyStrings;
 import com.lapsa.insurance.elements.DeliveryTimeSlot;
 import com.lapsa.insurance.elements.ObtainingMethod;
@@ -65,7 +65,7 @@ public class ObtainingData extends BaseDomain {
     public String displayName(DisplayNameVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(Optional.ofNullable(method) //
+	sb.append(MyOptionals.of(method) //
 		.filter(ObtainingMethod::isDefined) //
 		.map(Localized.toDisplayNameMapper(variant, locale)) //
 		.map(MyStrings::capitalizeFirstLetter) //
@@ -74,7 +74,7 @@ public class ObtainingData extends BaseDomain {
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
-	Optional.ofNullable(status) //
+	MyOptionals.of(status) //
 		.filter(ObtainingStatus::isDefined) //
 		.map(Localized.toDisplayNameMapper(variant, locale)) //
 		.map(FIELD_STATUS.fieldAsCaptionMapper(variant, locale))

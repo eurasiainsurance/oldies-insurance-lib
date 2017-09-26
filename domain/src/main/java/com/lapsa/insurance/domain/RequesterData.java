@@ -4,12 +4,11 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import static com.lapsa.international.phone.CountryCode.*;
 
 import java.util.Locale;
-import java.util.Optional;
 import java.util.StringJoiner;
 
 import javax.validation.constraints.AssertTrue;
 
-import com.lapsa.commons.function.MyStrings;
+import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.international.internet.validators.ValidEmail;
 import com.lapsa.international.localization.LocalizationLanguage;
 import com.lapsa.international.phone.PhoneNumber;
@@ -62,18 +61,18 @@ public class RequesterData extends BaseDomain {
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
-	MyStrings.optionalString(name) //
+	MyOptionals.of(name) //
 		.ifPresent(sj::add);
 
-	MyStrings.optionalString(idNumber) //
+	MyOptionals.of(idNumber) //
 		.map(FIELD_ID_NUMBER.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
-	MyStrings.optionalString(email) //
+	MyOptionals.of(email) //
 		.map(FIELD_EMAIL.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
-	Optional.ofNullable(phone) //
+	MyOptionals.of(phone) //
 		.map(PhoneNumber::getFormatted) //
 		.map(FIELD_PHONE.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);

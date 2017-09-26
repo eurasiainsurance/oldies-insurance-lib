@@ -1,10 +1,11 @@
 package com.lapsa.insurance.domain;
 
 import java.io.Serializable;
-import java.util.Optional;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
+
+import com.lapsa.commons.function.MyOptionals;
 
 public abstract class BaseEntity<T> extends BaseDomain implements Serializable {
     private static final long serialVersionUID = 2914122165051543297L;
@@ -37,7 +38,7 @@ public abstract class BaseEntity<T> extends BaseDomain implements Serializable {
     //
 
     protected String appendEntityId() {
-	return " [ID=" + Optional.ofNullable(id).map(Object::toString).orElse("NONE") + "]";
+	return " [ID=" + MyOptionals.of(id).map(Object::toString).orElse("NONE") + "]";
     }
 
     // GENERATED

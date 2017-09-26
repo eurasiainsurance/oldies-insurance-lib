@@ -3,14 +3,13 @@ package com.lapsa.insurance.domain.casco;
 import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
 import java.util.Locale;
-import java.util.Optional;
 import java.util.StringJoiner;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
 import com.lapsa.commons.elements.Localized;
-import com.lapsa.commons.function.MyStrings;
+import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.donkeyfaces.model.Image;
 import com.lapsa.donkeyfaces.validators.FileSizeMeasure;
 import com.lapsa.donkeyfaces.validators.MaxImageFileSize;
@@ -64,18 +63,18 @@ public class CascoVehicle extends Vehicle {
     public String displayName(DisplayNameVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(MyStrings.optionalString(getFullName()) //
+	sb.append(MyOptionals.of(getFullName()) //
 		.orElseGet(() -> CASCO_VEHICLE.displayName(variant, locale)));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
-	Optional.ofNullable(cost)
+	MyOptionals.of(cost)
 		.map(x -> FinCurrency.KZT.formatAmount(x))
 		.map(CASCO_VEHICLE_COST.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
-	Optional.ofNullable(carAgeClass) //
+	MyOptionals.of(carAgeClass) //
 		.map(Localized.toDisplayNameMapper(variant, locale)) //
 		.map(CASCO_VEHICLE_AGE_CLASS.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
@@ -83,6 +82,12 @@ public class CascoVehicle extends Vehicle {
 	return sb.append(sj.toString()) //
 		.append(appendEntityId()) //
 		.toString();
+    }
+
+    public static void main(String[] args) {
+	CascoVehicle c = new CascoVehicle();
+	c.setCost(Double.valueOf(0d));
+	System.out.println(c);
     }
 
     // GENERATED

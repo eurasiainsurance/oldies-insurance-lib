@@ -2,6 +2,7 @@ package com.lapsa.insurance.domain;
 
 import java.util.StringJoiner;
 
+import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.commons.function.MyStrings;
 import com.lapsa.insurance.validation.ValidVehicleYearOfIssue;
 import com.lapsa.international.cars.validators.ValidVINCode;
@@ -47,11 +48,11 @@ public abstract class Vehicle extends BaseEntity<Integer> {
     public String getFullName() {
 	StringJoiner sj = new StringJoiner(" ");
 
-	MyStrings.optionalString(manufacturer) //
+	MyOptionals.of(manufacturer) //
 		.map(String::trim) //
 		.ifPresent(sj::add);
 
-	MyStrings.optionalString(manufacturer) //
+	MyOptionals.of(manufacturer) //
 		.map(x -> model) // model used only in conjuction with first
 				 // manufacturer
 		.map(String::trim) //

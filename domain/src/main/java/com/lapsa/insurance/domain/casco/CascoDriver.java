@@ -3,10 +3,9 @@ package com.lapsa.insurance.domain.casco;
 import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
 import java.util.Locale;
-import java.util.Optional;
 import java.util.StringJoiner;
 
-import com.lapsa.commons.function.MyStrings;
+import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.insurance.domain.Driver;
 import com.lapsa.insurance.domain.PersonalData;
 
@@ -34,11 +33,11 @@ public class CascoDriver extends Driver {
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
-	Optional.ofNullable(personalData) //
+	MyOptionals.of(personalData) //
 		.map(PersonalData::getFullName) //
 		.ifPresent(sj::add);
 
-	MyStrings.optionalString(idNumber) //
+	MyOptionals.of(idNumber) //
 		.map(FIELD_ID_NUMBER.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 

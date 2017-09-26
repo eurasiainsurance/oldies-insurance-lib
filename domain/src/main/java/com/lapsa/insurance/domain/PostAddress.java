@@ -4,12 +4,11 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
 import java.util.Locale;
 import java.util.Map;
-import java.util.Optional;
 import java.util.StringJoiner;
 
 import com.lapsa.commons.elements.Localized;
 import com.lapsa.commons.function.MyMaps;
-import com.lapsa.commons.function.MyStrings;
+import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.international.localization.LocalizationLanguage;
 import com.lapsa.kz.country.KZCity;
 import com.lapsa.kz.country.validators.ValidKZCity;
@@ -54,14 +53,14 @@ public class PostAddress extends BaseDomain {
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
-	MyStrings.optionalString(postIndex)
+	MyOptionals.of(postIndex)
 		.ifPresent(sj::add);
 
-	Optional.ofNullable(city) //
+	MyOptionals.of(city) //
 		.map(Localized.toDisplayNameMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
-	MyStrings.optionalString(streetLocalization.getOrDefault(LocalizationLanguage.byLocale(locale), street))
+	MyOptionals.of(streetLocalization.getOrDefault(LocalizationLanguage.byLocale(locale), street))
 		.ifPresent(sj::add);
 
 	return sb.append(sj.toString()) //

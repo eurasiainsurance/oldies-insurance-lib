@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Optional;
 import java.util.StringJoiner;
 
 import com.lapsa.commons.function.MyMaps;
+import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.commons.function.MyStrings;
 import com.lapsa.international.localization.LocalizationLanguage;
 import com.lapsa.validation.NotEmptyString;
@@ -56,14 +56,14 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
     public String displayName(DisplayNameVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(MyStrings.optionalString(nameLocalization.getOrDefault(LocalizationLanguage.byLocale(locale), name)) //
+	sb.append(MyOptionals.of(nameLocalization.getOrDefault(LocalizationLanguage.byLocale(locale), name)) //
 		.map(MyStrings::capitalizeFirstLetter) //
 		.orElseGet(() -> COMPANY_POINT_OF_SALE.displayName(variant, locale)));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
-	Optional.ofNullable(address) //
+	MyOptionals.of(address) //
 		.map(x -> x.displayName(variant, locale))
 		.ifPresent(sj::add);
 

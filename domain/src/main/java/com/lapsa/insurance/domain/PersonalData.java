@@ -5,10 +5,10 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
-import java.util.Optional;
 import java.util.StringJoiner;
 
 import com.lapsa.commons.elements.Localized;
+import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.commons.function.MyStrings;
 import com.lapsa.insurance.elements.Sex;
 import com.lapsa.validation.NotEmptyString;
@@ -57,18 +57,18 @@ public class PersonalData extends BaseDomain {
     public String displayName(DisplayNameVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(MyStrings.optionalString(getFullName()) //
+	sb.append(MyOptionals.of(getFullName()) //
 		.orElseGet(() -> PERSONAL_DATA.displayName(variant, locale)));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
-	Optional.ofNullable(dayOfBirth) //
+	MyOptionals.of(dayOfBirth) //
 		.map(DateTimeFormatter.ISO_LOCAL_DATE::format)
 		.map(PERSONAL_DATA_DOB.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
-	Optional.ofNullable(sex) //
+	MyOptionals.of(sex) //
 		.map(Localized.toDisplayNameMapper(variant, locale)) //
 		.map(PERSONAL_DATA_SEX.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
@@ -80,17 +80,17 @@ public class PersonalData extends BaseDomain {
     public String getFullName() {
 	StringJoiner sj = new StringJoiner(" ");
 
-	MyStrings.optionalString(surename) //
+	MyOptionals.of(surename) //
 		.map(String::trim)
 		.map(MyStrings::capitalizeFirstLetter)
 		.ifPresent(sj::add);
 
-	MyStrings.optionalString(name) //
+	MyOptionals.of(name) //
 		.map(String::trim)
 		.map(MyStrings::capitalizeFirstLetter)
 		.ifPresent(sj::add);
 
-	MyStrings.optionalString(name) //
+	MyOptionals.of(name) //
 		.map(x -> patronymic) // patronymic used only in conjuction with
 				      // first name
 		.map(MyStrings::nullOnEmpty)

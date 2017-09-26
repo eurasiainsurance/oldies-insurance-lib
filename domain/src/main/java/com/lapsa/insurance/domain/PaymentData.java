@@ -3,10 +3,10 @@ package com.lapsa.insurance.domain;
 import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
 import java.util.Locale;
-import java.util.Optional;
 import java.util.StringJoiner;
 
 import com.lapsa.commons.elements.Localized;
+import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.commons.function.MyStrings;
 import com.lapsa.insurance.elements.PaymentMethod;
 import com.lapsa.insurance.elements.PaymentStatus;
@@ -39,7 +39,7 @@ public class PaymentData extends BaseDomain {
     public String displayName(DisplayNameVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(Optional.ofNullable(method) //
+	sb.append(MyOptionals.of(method) //
 		.filter(PaymentMethod::isDefined) //
 		.map(Localized.toDisplayNameMapper(variant, locale)) //
 		.map(MyStrings::capitalizeFirstLetter) //
@@ -48,13 +48,13 @@ public class PaymentData extends BaseDomain {
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
-	Optional.ofNullable(status) //
+	MyOptionals.of(status) //
 		.filter(PaymentStatus::isDefined) //
 		.map(Localized.toDisplayNameMapper(variant, locale)) //
 		.map(FIELD_STATUS.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
-	MyStrings.optionalString(paymentReference)
+	MyOptionals.of(paymentReference)
 		.map(PAYMENT_REFERENCE.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 

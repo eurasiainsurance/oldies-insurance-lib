@@ -5,10 +5,9 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
-import java.util.Optional;
 import java.util.StringJoiner;
 
-import com.lapsa.commons.function.MyStrings;
+import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.insurance.validation.ValidVehicleRegistrationNumber;
 import com.lapsa.validation.NotEmptyString;
 import com.lapsa.validation.NotNullValue;
@@ -51,16 +50,16 @@ public class VehicleCertificateData extends SidedScannedDocument {
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
-	MyStrings.optionalString(number)
+	MyOptionals.of(number)
 		.map(FIELD_NUMBER.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
-	Optional.ofNullable(dateOfIssue) //
+	MyOptionals.of(dateOfIssue) //
 		.map(DateTimeFormatter.ISO_LOCAL_DATE::format)
 		.map(VEHICLE_CERTIFICATE_DATA_ISSUED.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
-	MyStrings.optionalString(registrationNumber)
+	MyOptionals.of(registrationNumber)
 		.map(VEHICLE_CERTIFICATE_DATA_REGNUMBER.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 

@@ -3,9 +3,10 @@ package com.lapsa.insurance.domain;
 import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
 import java.util.Locale;
-import java.util.Optional;
 import java.util.StringJoiner;
 
+import com.lapsa.commons.elements.Localized;
+import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.commons.function.MyStrings;
 import com.lapsa.international.phone.PhoneNumber;
 import com.lapsa.international.phone.PhoneType;
@@ -32,15 +33,15 @@ public class CompanyContactPhone extends BaseEntity<Integer> {
     public String displayName(DisplayNameVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(Optional.ofNullable(phoneType) //
-		.map(x -> x.displayName(variant, locale)) //
+	sb.append(MyOptionals.of(phoneType) //
+		.map(Localized.toDisplayNameMapper(variant, locale)) //
 		.map(MyStrings::capitalizeFirstLetter) //
 		.orElseGet(() -> COMPANY_CONTACT_PHONE.displayName(variant, locale)));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
-	sj.add(Optional.ofNullable(phone) //
+	sj.add(MyOptionals.of(phone) //
 		.map(PhoneNumber::getFormatted) //
 		.orElseGet(() -> "<" + COMPANY_CONTACT_PHONE_UNDEFINED.displayName(variant, locale) + ">"));
 

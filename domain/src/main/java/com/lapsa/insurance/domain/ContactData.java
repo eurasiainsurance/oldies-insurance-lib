@@ -3,10 +3,9 @@ package com.lapsa.insurance.domain;
 import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
 import java.util.Locale;
-import java.util.Optional;
 import java.util.StringJoiner;
 
-import com.lapsa.commons.function.MyStrings;
+import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.international.internet.validators.ValidEmail;
 import com.lapsa.international.internet.validators.ValidURL;
 import com.lapsa.international.phone.PhoneNumber;
@@ -48,14 +47,14 @@ public class ContactData extends BaseDomain {
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
-	MyStrings.optionalString(email) //
+	MyOptionals.of(email) //
 		.ifPresent(sj::add);
 
-	Optional.ofNullable(phone) //
+	MyOptionals.of(phone) //
 		.map(PhoneNumber::getFormatted) //
 		.ifPresent(sj::add);
 
-	MyStrings.optionalString(siteUrl) //
+	MyOptionals.of(siteUrl) //
 		.ifPresent(sj::add);
 
 	return sb.append(sj.toString()) //

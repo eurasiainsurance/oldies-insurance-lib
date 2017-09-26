@@ -2,20 +2,16 @@ package com.lapsa.insurance.domain.policy;
 
 import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
-import java.time.LocalDate;
 import java.util.Locale;
-import java.util.Optional;
 import java.util.StringJoiner;
 
 import com.lapsa.commons.elements.Localized;
-import com.lapsa.commons.function.MyStrings;
+import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.insurance.domain.Driver;
 import com.lapsa.insurance.domain.PersonalData;
-import com.lapsa.insurance.domain.casco.CascoDriver;
 import com.lapsa.insurance.elements.InsuranceClassType;
 import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredExpirienceClass;
-import com.lapsa.insurance.elements.Sex;
 import com.lapsa.insurance.validation.ValidInsuranceAgeClass;
 import com.lapsa.insurance.validation.ValidInsuranceClassType;
 import com.lapsa.insurance.validation.ValidInsuranceExpirienceClass;
@@ -62,23 +58,23 @@ public class PolicyDriver extends Driver {
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
-	Optional.ofNullable(personalData) //
+	MyOptionals.of(personalData) //
 		.map(PersonalData::getFullName) //
 		.ifPresent(sj::add);
 
-	MyStrings.optionalString(idNumber) //
+	MyOptionals.of(idNumber) //
 		.map(FIELD_ID_NUMBER.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
-	Optional.ofNullable(insuranceClassType) //
+	MyOptionals.of(insuranceClassType) //
 		.map(Localized.toDisplayNameMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
-	Optional.ofNullable(ageClass) //
+	MyOptionals.of(ageClass) //
 		.map(Localized.toDisplayNameMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
-	Optional.ofNullable(expirienceClass) //
+	MyOptionals.of(expirienceClass) //
 		.map(Localized.toDisplayNameMapper(variant, locale)) //
 		.ifPresent(sj::add);
 

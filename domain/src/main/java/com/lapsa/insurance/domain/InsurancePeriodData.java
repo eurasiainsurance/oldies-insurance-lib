@@ -5,9 +5,9 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
-import java.util.Optional;
 import java.util.StringJoiner;
 
+import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.validation.LocalDateComparison;
 import com.lapsa.validation.NotNullValue;
 import com.lapsa.validation.TemporalFuture;
@@ -45,12 +45,12 @@ public class InsurancePeriodData extends BaseDomain {
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
-	Optional.ofNullable(from) //
+	MyOptionals.of(from) //
 		.map(DateTimeFormatter.ISO_LOCAL_DATE::format)
 		.map(INSURANCE_PERIOD_DATA_FROM.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
-	Optional.ofNullable(to) //
+	MyOptionals.of(to) //
 		.map(DateTimeFormatter.ISO_LOCAL_DATE::format)
 		.map(INSURANCE_PERIOD_DATA_TILL.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);

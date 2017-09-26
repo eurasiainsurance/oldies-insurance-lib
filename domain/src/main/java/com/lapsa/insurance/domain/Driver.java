@@ -17,15 +17,6 @@ public abstract class Driver extends BaseEntity<Integer> {
     protected DriverLicenseData driverLicenseData = new DriverLicenseData();
     protected ContactData contactData = new ContactData();
 
-    public String getDisplayName() {
-	return personalData.getDisplayName();
-    }
-
-    @Override
-    public String toString() {
-	return personalData.getDisplayName();
-    }
-
     // GENERATED
 
     public String getIdNumber() {

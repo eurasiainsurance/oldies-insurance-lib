@@ -47,9 +47,13 @@ com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE = Insured vehicle
 com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE_AGE_CLASS = age
 com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE_CLASS = class
 
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_DRIVER = Insured driver
+
 com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE = Insured vehicle
 com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE_AGE_CLASS = age
 com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE_COST = cost
+
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_DRIVER = Insured driver
 
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = ID number
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = e-mail

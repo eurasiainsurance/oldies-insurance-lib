@@ -49,10 +49,16 @@ com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE.short = ТС
 com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE_AGE_CLASS = возраст
 com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE_CLASS = класс
 
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_DRIVER = Застрахованный водитель
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_DRIVER.short = Застрахованный
+
 com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE = Застрахованное ТС
 com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE.short = ТС
 com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE_AGE_CLASS = возраст
 com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE_COST = стоимость
+
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_DRIVER = Застрахованный водитель
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_DRIVER.short = Застрахованный
 
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = ИИН
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = e-mail

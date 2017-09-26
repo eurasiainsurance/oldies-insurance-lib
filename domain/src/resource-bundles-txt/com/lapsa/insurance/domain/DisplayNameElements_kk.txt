@@ -48,9 +48,13 @@ com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE = =KAZ= Затра
 com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE_AGE_CLASS = =KAZ= возраст
 com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE_CLASS = =KAZ= класс
 
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_DRIVER = =KAZ= Застрахованный водитель
+
 com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE = =KAZ= Застрахованное ТС
 com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE_AGE_CLASS = =KAZ= возраст
 com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE_COST = =KAZ= стоимость
+
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_DRIVER = =KAZ= Застрахованный водитель
 
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = =KAZ= ИИН
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = =KAZ= e-mail

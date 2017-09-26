@@ -54,9 +54,13 @@ public enum DisplayNameElements implements LocalizedElement {
     POLICY_VEHICLE_CLASS,
     POLICY_VEHICLE_AGE_CLASS,
     //
+    POLICY_DRIVER,
+    //
     CASCO_VEHICLE,
     CASCO_VEHICLE_COST,
     CASCO_VEHICLE_AGE_CLASS,
+    //
+    CASCO_DRIVER,
     //
     FIELD_ID_NUMBER,
     FIELD_EMAIL,
@@ -67,6 +71,6 @@ public enum DisplayNameElements implements LocalizedElement {
 
     public Function<String, String> fieldAsCaptionMapper(final DisplayNameVariant variant,
 	    final Locale locale) {
-	return x -> displayName(variant, locale) + " " + x;
+	return x -> displayName(variant, locale) + " '" + x + "'";
     }
 }

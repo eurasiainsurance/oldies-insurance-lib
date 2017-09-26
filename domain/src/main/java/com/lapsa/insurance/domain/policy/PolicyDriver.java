@@ -1,13 +1,21 @@
 package com.lapsa.insurance.domain.policy;
 
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
+
+import java.time.LocalDate;
+import java.util.Locale;
+import java.util.Optional;
+import java.util.StringJoiner;
+
+import com.lapsa.commons.elements.Localized;
+import com.lapsa.commons.function.MyStrings;
 import com.lapsa.insurance.domain.Driver;
-import com.lapsa.insurance.domain.GPWParticipantCertificateData;
-import com.lapsa.insurance.domain.HandicaptedCertificateData;
-import com.lapsa.insurance.domain.PensionerCertificateData;
-import com.lapsa.insurance.domain.PrivilegerCertificateData;
+import com.lapsa.insurance.domain.PersonalData;
+import com.lapsa.insurance.domain.casco.CascoDriver;
 import com.lapsa.insurance.elements.InsuranceClassType;
 import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredExpirienceClass;
+import com.lapsa.insurance.elements.Sex;
 import com.lapsa.insurance.validation.ValidInsuranceAgeClass;
 import com.lapsa.insurance.validation.ValidInsuranceClassType;
 import com.lapsa.insurance.validation.ValidInsuranceExpirienceClass;
@@ -45,27 +53,38 @@ public class PolicyDriver extends Driver {
     // privileges
     private boolean hasAnyPrivilege = false;
 
-    private boolean priveleger = false;
-    private PrivilegerCertificateData privilegerCertificateData = new PrivilegerCertificateData();
-
-    private boolean handicaped = false;
-    private HandicaptedCertificateData handicapedCertificateData = new HandicaptedCertificateData();
-
-    private boolean gpwParticipant = false;
-    private GPWParticipantCertificateData gpwParticipantCertificateData = new GPWParticipantCertificateData();
-
-    private boolean pensioner = false;
-    private PensionerCertificateData pensionerCertificateData = new PensionerCertificateData();
-
-    public String getDisplayName() {
-	if (personalData == null)
-	    return null;
-	return personalData.getDisplayName();
-    }
-
     @Override
-    public String toString() {
-	return getDisplayName();
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringBuilder sb = new StringBuilder();
+
+	sb.append(POLICY_DRIVER.displayName(variant, locale));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
+
+	Optional.ofNullable(personalData) //
+		.map(PersonalData::getFullName) //
+		.ifPresent(sj::add);
+
+	MyStrings.optionalString(idNumber) //
+		.map(FIELD_ID_NUMBER.fieldAsCaptionMapper(variant, locale)) //
+		.ifPresent(sj::add);
+
+	Optional.ofNullable(insuranceClassType) //
+		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.ifPresent(sj::add);
+
+	Optional.ofNullable(ageClass) //
+		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.ifPresent(sj::add);
+
+	Optional.ofNullable(expirienceClass) //
+		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.ifPresent(sj::add);
+
+	return sb.append(sj.toString()) //
+		.append(appendEntityId()) //
+		.toString();
     }
 
     // GENERATED
@@ -108,69 +127,5 @@ public class PolicyDriver extends Driver {
 
     public void setHasAnyPrivilege(boolean hasAnyPrivilege) {
 	this.hasAnyPrivilege = hasAnyPrivilege;
-    }
-
-    public boolean isPriveleger() {
-	return priveleger;
-    }
-
-    public void setPriveleger(boolean priveleger) {
-	this.priveleger = priveleger;
-    }
-
-    public PrivilegerCertificateData getPrivilegerCertificateData() {
-	return privilegerCertificateData;
-    }
-
-    public void setPrivilegerCertificateData(PrivilegerCertificateData privilegerCertificateData) {
-	this.privilegerCertificateData = privilegerCertificateData;
-    }
-
-    public boolean isHandicaped() {
-	return handicaped;
-    }
-
-    public void setHandicaped(boolean handicaped) {
-	this.handicaped = handicaped;
-    }
-
-    public HandicaptedCertificateData getHandicapedCertificateData() {
-	return handicapedCertificateData;
-    }
-
-    public void setHandicapedCertificateData(HandicaptedCertificateData handicapedCertificateData) {
-	this.handicapedCertificateData = handicapedCertificateData;
-    }
-
-    public boolean isGpwParticipant() {
-	return gpwParticipant;
-    }
-
-    public void setGpwParticipant(boolean gpwParticipant) {
-	this.gpwParticipant = gpwParticipant;
-    }
-
-    public GPWParticipantCertificateData getGpwParticipantCertificateData() {
-	return gpwParticipantCertificateData;
-    }
-
-    public void setGpwParticipantCertificateData(GPWParticipantCertificateData gpwParticipantCertificateData) {
-	this.gpwParticipantCertificateData = gpwParticipantCertificateData;
-    }
-
-    public boolean isPensioner() {
-	return pensioner;
-    }
-
-    public void setPensioner(boolean pensioner) {
-	this.pensioner = pensioner;
-    }
-
-    public PensionerCertificateData getPensionerCertificateData() {
-	return pensionerCertificateData;
-    }
-
-    public void setPensionerCertificateData(PensionerCertificateData pensionerCertificateData) {
-	this.pensionerCertificateData = pensionerCertificateData;
     }
 }

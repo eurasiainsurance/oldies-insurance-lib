@@ -43,6 +43,7 @@ public class InsurancePeriodData extends BaseDomain {
 	sb.append(INSURANCE_PERIOD_DATA.displayName(variant, locale));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
 
 	Optional.ofNullable(from) //
 		.map(DateTimeFormatter.ISO_LOCAL_DATE::format)

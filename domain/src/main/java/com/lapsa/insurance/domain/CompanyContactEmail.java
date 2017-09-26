@@ -32,6 +32,7 @@ public class CompanyContactEmail extends BaseEntity<Integer> {
 	sb.append(COMPANY_CONTACT_EMAIL.displayName(variant, locale));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
 
 	sj.add(Optional.ofNullable(address) //
 		.filter(MyStrings::nonEmptyString) //

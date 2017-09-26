@@ -43,6 +43,7 @@ public class DriverLicenseData extends SidedScannedDocument {
 	sb.append(DRIVER_LICENSE_DATA.displayName(variant, locale));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
 
 	Optional.ofNullable(number)
 		.filter(MyStrings::nonEmptyString)

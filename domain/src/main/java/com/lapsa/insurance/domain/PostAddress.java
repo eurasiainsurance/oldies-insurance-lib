@@ -51,6 +51,7 @@ public class PostAddress extends BaseDomain {
 	sb.append(POST_ADDRESS.displayName(variant, locale));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
 
 	Optional.ofNullable(postIndex) //
 		.filter(MyStrings::nonEmptyString) //

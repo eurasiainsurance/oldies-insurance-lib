@@ -62,6 +62,7 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
 		.orElseGet(() -> COMPANY_POINT_OF_SALE.displayName(variant, locale)));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
 
 	Optional.ofNullable(address) //
 		.map(x -> x.displayName(variant, locale))

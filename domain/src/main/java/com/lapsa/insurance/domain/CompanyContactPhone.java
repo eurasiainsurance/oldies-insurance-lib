@@ -38,6 +38,7 @@ public class CompanyContactPhone extends BaseEntity<Integer> {
 		.orElseGet(() -> COMPANY_CONTACT_PHONE.displayName(variant, locale)));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
 
 	sj.add(Optional.ofNullable(phone) //
 		.map(PhoneNumber::getFormatted) //

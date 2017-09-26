@@ -43,6 +43,7 @@ public class CalculationData extends BaseDomain {
 	sb.append(CALCULATION_DATA.displayName(variant, locale));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
 
 	sj.add(Optional.of(this) //
 		.filter(x -> x.getPremiumCost() > 0)

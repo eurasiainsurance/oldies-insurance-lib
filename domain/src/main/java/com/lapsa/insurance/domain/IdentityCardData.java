@@ -55,7 +55,8 @@ public class IdentityCardData extends SidedScannedDocument {
 		.map(MyStrings::capitalizeFirstLetter) //
 		.orElseGet(() ->IDENTITY_CARD_DATA.displayName(variant, locale)));
 
-	StringJoiner sj = new StringJoiner(" ");
+	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
 
 	Optional.ofNullable(number)
 		.filter(MyStrings::nonEmptyString)

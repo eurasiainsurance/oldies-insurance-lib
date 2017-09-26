@@ -46,6 +46,7 @@ public class ContactData extends BaseDomain {
 	sb.append(CONTACT_DATA.displayName(variant, locale));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
 
 	Optional.ofNullable(email) //
 		.filter(MyStrings::nonEmptyString) //

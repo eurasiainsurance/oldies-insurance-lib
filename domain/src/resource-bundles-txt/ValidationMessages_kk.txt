@@ -1,4 +1,4 @@
-com.lapsa.insurance.domain.InsuranceRequest.allowProcessPersonalData.AssertTrue.message = Сіз беруге тиіс келісім өзінің дербес деректерін өңдеуге
+com.lapsa.insurance.domain.RequesterData.allowProcessPersonalData.AssertTrue.message = Сіз беруге тиіс келісім өзінің дербес деректерін өңдеуге
 
 com.lapsa.insurance.domain.policy.PolicyDriver.IdNumber.NotNull.message = ЖСН көрсетілмеген 
 

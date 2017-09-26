@@ -1,4 +1,4 @@
-com.lapsa.insurance.domain.InsuranceRequest.allowProcessPersonalData.AssertTrue.message = You have to give consent to the processing of your personal data
+com.lapsa.insurance.domain.RequesterData.allowProcessPersonalData.AssertTrue.message = You have to give consent to the processing of your personal data
 
 com.lapsa.insurance.domain.policy.PolicyDriver.IdNumber.NotNull.message = IIN not filled in
 

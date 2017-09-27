@@ -84,6 +84,12 @@ com.lapsa.insurance.domain.DisplayNameElements.CASCO = Auto CASCO
 com.lapsa.insurance.domain.DisplayNameElements.CASCO_COST = premium
 com.lapsa.insurance.domain.DisplayNameElements.CASCO_CASCO_VEHICLE_COST = insured vehicle cost
 
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA = Residence
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_ADDRESS = address
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_CITY = 
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_RESIDENT = is resident
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_NONRESIDENT = is non resident
+
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = ID number
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = e-mail
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_PHONE = phone

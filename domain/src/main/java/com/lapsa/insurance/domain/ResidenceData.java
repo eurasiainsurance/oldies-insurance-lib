@@ -1,5 +1,12 @@
 package com.lapsa.insurance.domain;
 
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
+
+import java.util.Locale;
+import java.util.StringJoiner;
+
+import com.lapsa.commons.elements.Localized;
+import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.kz.country.KZCity;
 import com.lapsa.kz.country.validators.ValidKZCity;
 import com.lapsa.validation.NotEmptyString;
@@ -20,7 +27,7 @@ public class ResidenceData extends BaseDomain {
 	return MULTIPLIER;
     }
 
-    private boolean resident;
+    private Boolean resident;
 
     @NotNullValue
     @ValidKZCity
@@ -30,13 +37,40 @@ public class ResidenceData extends BaseDomain {
     @NotEmptyString
     private String address;
 
+    @Override
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringBuilder sb = new StringBuilder();
+
+	sb.append(RESIDENCE_DATA.displayName(variant, locale));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
+
+	MyOptionals.of(city) //
+		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.map(RESIDENCE_DATA_CITY.fieldAsCaptionMapper(variant, locale)) //
+		.ifPresent(sj::add);
+
+	MyOptionals.of(address)
+		.map(RESIDENCE_DATA_ADDRESS.fieldAsCaptionMapper(variant, locale)) //
+		.ifPresent(sj::add);
+
+	MyOptionals.of(resident)
+		.map(x -> x.booleanValue() ? RESIDENCE_DATA_RESIDENT : RESIDENCE_DATA_NONRESIDENT)
+		.map(Localized.toDisplayNameMapper(variant, locale))
+		.ifPresent(sj::add);
+
+	return sb.append(sj.toString()) //
+		.toString();
+    }
+
     // GENERATED
 
-    public boolean isResident() {
+    public Boolean isResident() {
 	return resident;
     }
 
-    public void setResident(boolean resident) {
+    public void setResident(Boolean resident) {
 	this.resident = resident;
     }
 
@@ -55,5 +89,4 @@ public class ResidenceData extends BaseDomain {
     public void setAddress(String address) {
 	this.address = address;
     }
-
 }

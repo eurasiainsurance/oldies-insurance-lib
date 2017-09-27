@@ -99,6 +99,12 @@ com.lapsa.insurance.domain.DisplayNameElements.CASCO_COST = сумма прем�
 com.lapsa.insurance.domain.DisplayNameElements.CASCO_COST.short = премия
 com.lapsa.insurance.domain.DisplayNameElements.CASCO_CASCO_VEHICLE_COST = стоимость авто
 
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA = Место жительства
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_ADDRESS = адрес
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_CITY = город
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_RESIDENT = является резидентом
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_NONRESIDENT = не является резидентом
+
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = ИИН
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = e-mail
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_PHONE = телефон

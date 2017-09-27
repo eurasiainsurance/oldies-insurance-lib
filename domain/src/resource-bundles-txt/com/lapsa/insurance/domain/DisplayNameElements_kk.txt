@@ -85,6 +85,12 @@ com.lapsa.insurance.domain.DisplayNameElements.CASCO = =KAZ= АвтоКАСКО
 com.lapsa.insurance.domain.DisplayNameElements.CASCO_COST = =KAZ= сумма премии
 com.lapsa.insurance.domain.DisplayNameElements.CASCO_CASCO_VEHICLE_COST = =KAZ= стоимость авто
 
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA = =KAZ= Место жительства
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_ADDRESS = =KAZ= адрес
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_CITY = =KAZ= город
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_RESIDENT = =KAZ= является резидентом
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_NONRESIDENT = =KAZ= не является резидентом
+
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = =KAZ= ИИН
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = =KAZ= e-mail
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_PHONE = =KAZ= телефон

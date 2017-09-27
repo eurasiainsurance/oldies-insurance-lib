@@ -89,6 +89,12 @@ public enum DisplayNameElements implements LocalizedElement {
     CASCO_COST,
     CASCO_CASCO_VEHICLE_COST,
     //
+    RESIDENCE_DATA,
+    RESIDENCE_DATA_RESIDENT,
+    RESIDENCE_DATA_NONRESIDENT,
+    RESIDENCE_DATA_CITY,
+    RESIDENCE_DATA_ADDRESS,
+    //
     FIELD_ID_NUMBER,
     FIELD_EMAIL,
     FIELD_PHONE,

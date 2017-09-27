@@ -79,10 +79,10 @@ public abstract class InsuranceRequest extends Request {
     }
 
     public String getAgreementNumber() {
-        return agreementNumber;
+	return agreementNumber;
     }
 
     public void setAgreementNumber(String agreementNumber) {
-        this.agreementNumber = agreementNumber;
+	this.agreementNumber = agreementNumber;
     }
 }

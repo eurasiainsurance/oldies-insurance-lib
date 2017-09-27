@@ -105,6 +105,9 @@ com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_CITY = город
 com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_RESIDENT = является резидентом
 com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_NONRESIDENT = не является резидентом
 
+com.lapsa.insurance.domain.DisplayNameElements.ORIGIN_DATA = Место рождения
+com.lapsa.insurance.domain.DisplayNameElements.ORIGIN_DATA_COUNTRY = страна
+
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = ИИН
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = e-mail
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_PHONE = телефон

@@ -95,6 +95,9 @@ public enum DisplayNameElements implements LocalizedElement {
     RESIDENCE_DATA_CITY,
     RESIDENCE_DATA_ADDRESS,
     //
+    ORIGIN_DATA,
+    ORIGIN_DATA_COUNTRY,
+    //
     FIELD_ID_NUMBER,
     FIELD_EMAIL,
     FIELD_PHONE,

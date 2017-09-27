@@ -22,7 +22,6 @@
 		<module>domain</module>
 		<module>dao</module>
 		<module>mesenger</module>
-		<module>faces</module>
 		<module>esbd</module>
 	</modules>
 
@@ -73,11 +72,6 @@
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>insurance-mesenger</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>${project.groupId}</groupId>
-				<artifactId>insurance-faces</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>

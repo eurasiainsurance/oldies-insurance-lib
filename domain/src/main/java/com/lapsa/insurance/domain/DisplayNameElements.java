@@ -102,6 +102,8 @@ public enum DisplayNameElements implements LocalizedElement {
     //
     CASCO_REQUEST,
     //
+    CALLBACK_REQUEST,
+    //
     FIELD_ID_NUMBER,
     FIELD_EMAIL,
     FIELD_PHONE,

@@ -112,6 +112,8 @@ com.lapsa.insurance.domain.DisplayNameElements.POLICY_REQUEST = Запрос н�
 
 com.lapsa.insurance.domain.DisplayNameElements.CASCO_REQUEST = Запрос на страхование АвтоКАСКО
 
+com.lapsa.insurance.domain.DisplayNameElements.CALLBACK_REQUEST = Запрос на обратный звонок
+
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = ИИН
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = e-mail
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_PHONE = телефон

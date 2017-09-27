@@ -3,12 +3,12 @@ package com.lapsa.insurance.domain;
 import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.StringJoiner;
 
-import com.lapsa.commons.function.MyMaps;
 import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.commons.function.MyStrings;
 import com.lapsa.international.localization.LocalizationLanguage;
@@ -34,7 +34,7 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
     @NotEmptyString
     private String name;
 
-    private Map<LocalizationLanguage, String> nameLocalization = MyMaps.empty();
+    private Map<LocalizationLanguage, String> nameLocalization = new HashMap<>();
 
     private PostAddress address;
 

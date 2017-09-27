@@ -2,12 +2,12 @@ package com.lapsa.insurance.domain;
 
 import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
+import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import java.util.StringJoiner;
 
 import com.lapsa.commons.elements.Localized;
-import com.lapsa.commons.function.MyMaps;
 import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.international.localization.LocalizationLanguage;
 import com.lapsa.kz.country.KZCity;
@@ -42,7 +42,7 @@ public class PostAddress extends BaseDomain {
     @NotEmptyString
     private String street;
 
-    private Map<LocalizationLanguage, String> streetLocalization = MyMaps.empty();
+    private Map<LocalizationLanguage, String> streetLocalization = new HashMap<>();
 
     @Override
     public String displayName(DisplayNameVariant variant, Locale locale) {

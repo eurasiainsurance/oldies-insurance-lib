@@ -123,7 +123,7 @@ public abstract class Vehicle extends BaseEntity<Integer> {
 	return certificateData;
     }
 
-    protected void setCertificateData(VehicleCertificateData certificateData) {
+    public void setCertificateData(VehicleCertificateData certificateData) {
 	this.certificateData = certificateData;
     }
 }

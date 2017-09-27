@@ -3,9 +3,11 @@ package com.lapsa.insurance.domain;
 import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
 import java.util.Locale;
-import java.util.Optional;
+import java.util.Objects;
 import java.util.StringJoiner;
 
+import com.lapsa.commons.function.MyNumbers;
+import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.fin.FinCurrency;
 
 public class CalculationData extends BaseDomain {
@@ -45,10 +47,10 @@ public class CalculationData extends BaseDomain {
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
-	sj.add(Optional.of(this) //
-		.filter(x -> x.getPremiumCost() > 0)
-		.map(x -> x.premiumCurrency)
-		.map(x -> x.formatAmount(getPremiumCost())) //
+	sj.add(MyOptionals.of(this) //
+		.filter(x -> MyNumbers.nonZero(getPremiumCost()))
+		.filter(x -> Objects.nonNull(x.premiumCurrency))
+		.map(x -> x.premiumCurrency.formatAmount(getPremiumCost())) //
 		.orElseGet(() -> "<" + CALCULATION_DATA_UNDEFINED.displayName(variant, locale) + ">"));
 
 	return sb.append(sj.toString()) //

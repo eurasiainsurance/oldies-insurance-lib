@@ -98,11 +98,16 @@ public enum DisplayNameElements implements LocalizedElement {
     ORIGIN_DATA,
     ORIGIN_DATA_COUNTRY,
     //
+    POLICY_REQUEST,
+    //
     FIELD_ID_NUMBER,
     FIELD_EMAIL,
     FIELD_PHONE,
     FIELD_NUMBER,
     FIELD_STATUS,
+    //
+    FIELD_REQUEST_CREATED,
+    FIELD_REQUEST_COMPLETED,
     ;
 
     public Function<String, String> fieldAsCaptionMapper(final DisplayNameVariant variant,

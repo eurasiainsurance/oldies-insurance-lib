@@ -82,6 +82,23 @@ com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA_MEDIUM = medium
 com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA_SOURCE = source
 com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA_TERM = term
 
+com.lapsa.insurance.domain.DisplayNameElements.POLICY = Полис ОСГПОВТС
+com.lapsa.insurance.domain.DisplayNameElements.POLICY.full = Полис обязательного страхования гражданско-правовой ответственности владельцев транспортных средств (ОСГПОВТС)
+com.lapsa.insurance.domain.DisplayNameElements.POLICY.short = ОСГПОВТС
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_COST = сумма премии
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_COST.short = премия
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_DRIVERS_COUNT = застрахованных водителей
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_DRIVERS_COUNT.full = количество застрахованных водителей
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_DRIVERS_COUNT.short = водителей
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLES_COUNT = застрахованных ТС
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLES_COUNT.full = количество застрахованных транспортных средств
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLES_COUNT.short = ТС
+
+com.lapsa.insurance.domain.DisplayNameElements.CASCO = АвтоКАСКО
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_COST = сумма премии
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_COST.short = премия
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_CASCO_VEHICLE_COST = стоимость авто
+
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = ИИН
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = e-mail
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_PHONE = телефон

@@ -80,6 +80,15 @@ public enum DisplayNameElements implements LocalizedElement {
     UTM_DATA_CONTENT,
     UTM_DATA_TERM,
     //
+    POLICY,
+    POLICY_COST,
+    POLICY_DRIVERS_COUNT,
+    POLICY_VEHICLES_COUNT,
+    //
+    CASCO,
+    CASCO_COST,
+    CASCO_CASCO_VEHICLE_COST,
+    //
     FIELD_ID_NUMBER,
     FIELD_EMAIL,
     FIELD_PHONE,

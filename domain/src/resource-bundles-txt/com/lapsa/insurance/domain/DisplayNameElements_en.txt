@@ -75,12 +75,12 @@ com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA_MEDIUM = medium
 com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA_SOURCE = source
 com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA_TERM = term
 
-com.lapsa.insurance.domain.DisplayNameElements.POLICY = MTPL policy
+com.lapsa.insurance.domain.DisplayNameElements.POLICY = MTPL insurance
 com.lapsa.insurance.domain.DisplayNameElements.POLICY_COST = premium
 com.lapsa.insurance.domain.DisplayNameElements.POLICY_DRIVERS_COUNT = insured drivers
 com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLES_COUNT = insured vehicles
 
-com.lapsa.insurance.domain.DisplayNameElements.CASCO = Auto CASCO
+com.lapsa.insurance.domain.DisplayNameElements.CASCO = Motor insurance
 com.lapsa.insurance.domain.DisplayNameElements.CASCO_COST = premium
 com.lapsa.insurance.domain.DisplayNameElements.CASCO_CASCO_VEHICLE_COST = insured vehicle cost
 
@@ -93,7 +93,9 @@ com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_NONRESIDENT = is n
 com.lapsa.insurance.domain.DisplayNameElements.ORIGIN_DATA = Origin
 com.lapsa.insurance.domain.DisplayNameElements.ORIGIN_DATA_COUNTRY = country
 
-com.lapsa.insurance.domain.DisplayNameElements.POLICY_REQUEST = MTPL policy request
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_REQUEST = MTPL insurance request
+
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_REQUEST = Motor insurance request
 
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = ID number
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = e-mail

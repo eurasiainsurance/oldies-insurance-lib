@@ -110,11 +110,13 @@ com.lapsa.insurance.domain.DisplayNameElements.ORIGIN_DATA_COUNTRY = стран�
 
 com.lapsa.insurance.domain.DisplayNameElements.POLICY_REQUEST = Запрос на полис ОСГПОВТС
 
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_REQUEST = Запрос на страхование АвтоКАСКО
+
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = ИИН
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = e-mail
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_PHONE = телефон
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_NUMBER = номер
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_STATUS = статус
 
-com.lapsa.insurance.domain.DisplayNameElements.FIELD_REQUEST_CREATED = дата создания
-com.lapsa.insurance.domain.DisplayNameElements.FIELD_REQUEST_COMPLETED = дата завершения
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_REQUEST_CREATED = создан
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_REQUEST_COMPLETED = завершен

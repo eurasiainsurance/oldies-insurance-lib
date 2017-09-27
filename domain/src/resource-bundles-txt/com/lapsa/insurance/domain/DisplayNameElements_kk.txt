@@ -96,11 +96,13 @@ com.lapsa.insurance.domain.DisplayNameElements.ORIGIN_DATA_COUNTRY = =KAZ= ст�
 
 com.lapsa.insurance.domain.DisplayNameElements.POLICY_REQUEST = =KAZ= Запрос на полис ОСГПОВТС
 
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_REQUEST = =KAZ= Запрос на страхование АвтоКАСКО
+
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = =KAZ= ИИН
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = =KAZ= e-mail
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_PHONE = =KAZ= телефон
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_NUMBER = =KAZ= номер
 com.lapsa.insurance.domain.DisplayNameElements.FIELD_STATUS = =KAZ= статус
 
-com.lapsa.insurance.domain.DisplayNameElements.FIELD_REQUEST_CREATED = =KAZ= дата создания
-com.lapsa.insurance.domain.DisplayNameElements.FIELD_REQUEST_COMPLETED = =KAZ= дата завершения
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_REQUEST_CREATED = =KAZ= создан
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_REQUEST_COMPLETED = =KAZ= завершен

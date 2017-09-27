@@ -56,6 +56,11 @@ public class PolicyRequest extends InsuranceRequest {
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
+	MyOptionals.of(id)
+		.map(String::valueOf)
+		.map(FIELD_NUMBER.fieldAsCaptionMapper(variant, locale))//
+		.ifPresent(sj::add);
+
 	MyOptionals.of(created) //
 		.map(DisplayNames.localDateTimeMapper(locale)) //
 		.map(FIELD_REQUEST_CREATED.fieldAsCaptionMapper(variant, locale)) //

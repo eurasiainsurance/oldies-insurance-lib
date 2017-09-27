@@ -12,11 +12,12 @@ import com.lapsa.validation.NotNullValue;
 
 public abstract class Request extends BaseEntity<Integer> {
     private static final long serialVersionUID = -4738852384873507942L;
-    private LocalDateTime created;
-    private LocalDateTime updated;
-    private LocalDateTime accepted;
-    private LocalDateTime completed;
-    private LocalDateTime closed;
+
+    protected LocalDateTime created;
+    protected LocalDateTime updated;
+    protected LocalDateTime accepted;
+    protected LocalDateTime completed;
+    protected LocalDateTime closed;
 
     public Request() {
     }
@@ -26,25 +27,25 @@ public abstract class Request extends BaseEntity<Integer> {
     }
 
     @NotNullValue
-    private RequestSource source;
+    protected RequestSource source;
 
     @NotNullValue
-    private RequestStatus status = RequestStatus.OPEN;
+    protected RequestStatus status = RequestStatus.OPEN;
 
     @NotNullValue
-    private ProgressStatus progressStatus = ProgressStatus.NEW;
+    protected ProgressStatus progressStatus = ProgressStatus.NEW;
 
-    private RequesterData requester = new RequesterData();
+    protected RequesterData requester = new RequesterData();
 
-    private UTMData utmData = new UTMData();
-    private InetAddrData inetAddrData = new InetAddrData();
+    protected UTMData utmData = new UTMData();
+    protected InetAddrData inetAddrData = new InetAddrData();
 
-    private User createdBy;
-    private User acceptedBy;
-    private User completedBy;
-    private User closedBy;
+    protected User createdBy;
+    protected User acceptedBy;
+    protected User completedBy;
+    protected User closedBy;
 
-    private String note;
+    protected String note;
 
     // GENERATED
 

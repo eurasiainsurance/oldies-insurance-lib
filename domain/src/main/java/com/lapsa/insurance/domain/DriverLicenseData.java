@@ -3,7 +3,6 @@ package com.lapsa.insurance.domain;
 import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.StringJoiner;
 
@@ -45,12 +44,12 @@ public class DriverLicenseData extends SidedScannedDocument {
 	sj.setEmptyValue("");
 
 	MyOptionals.of(number) //
-		.map(FIELD_NUMBER.fieldAsCaptionMapper(variant, locale))
+		.map(FIELD_NUMBER.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
 	MyOptionals.of(dateOfIssue) //
-		.map(DateTimeFormatter.ISO_LOCAL_DATE::format)
-		.map(DRIVER_LICENSE_DATA_ISSUED.fieldAsCaptionMapper(variant, locale))
+		.map(DisplayNames.localDateMapper(locale)) //
+		.map(DRIVER_LICENSE_DATA_ISSUED.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
 	return sb.append(sj.toString()) //

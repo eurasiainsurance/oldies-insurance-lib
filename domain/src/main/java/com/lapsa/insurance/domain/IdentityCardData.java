@@ -3,7 +3,6 @@ package com.lapsa.insurance.domain;
 import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.StringJoiner;
 
@@ -64,7 +63,7 @@ public class IdentityCardData extends SidedScannedDocument {
 		.ifPresent(sj::add);
 
 	MyOptionals.of(dateOfIssue) //
-		.map(DateTimeFormatter.ISO_LOCAL_DATE::format) //
+		.map(DisplayNames.localDateMapper(locale)) //
 		.map(IDENTITY_CARD_DATA_ISSUED.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 

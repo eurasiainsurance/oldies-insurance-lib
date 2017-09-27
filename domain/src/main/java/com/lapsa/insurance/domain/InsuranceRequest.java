@@ -18,19 +18,19 @@ public abstract class InsuranceRequest extends Request {
     }
 
     @NotNullValue
-    private InsuranceRequestType type = InsuranceRequestType.UNCOMPLETE;
+    protected InsuranceRequestType type = InsuranceRequestType.UNCOMPLETE;
 
     @NotNullValue
-    private TransactionStatus transactionStatus;
+    protected TransactionStatus transactionStatus;
 
     @NotNullValue
-    private TransactionProblem transactionProblem;
+    protected TransactionProblem transactionProblem;
 
     @NotNullValue
-    private String agreementNumber;
+    protected String agreementNumber;
 
-    private ObtainingData obtaining = new ObtainingData();
-    private PaymentData payment = new PaymentData();
+    protected ObtainingData obtaining = new ObtainingData();
+    protected PaymentData payment = new PaymentData();
 
     public abstract InsuranceProduct getProduct();
 

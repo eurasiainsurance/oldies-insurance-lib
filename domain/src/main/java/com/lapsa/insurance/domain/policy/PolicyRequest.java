@@ -2,7 +2,6 @@ package com.lapsa.insurance.domain.policy;
 
 import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
-import java.time.LocalDateTime;
 import java.util.Locale;
 import java.util.StringJoiner;
 
@@ -12,7 +11,6 @@ import com.lapsa.insurance.domain.DisplayNames;
 import com.lapsa.insurance.domain.InsuranceProduct;
 import com.lapsa.insurance.domain.InsuranceRequest;
 import com.lapsa.insurance.elements.InsuranceProductType;
-import com.lapsa.insurance.elements.ProgressStatus;
 import com.lapsa.insurance.elements.RequestSource;
 
 public class PolicyRequest extends InsuranceRequest {

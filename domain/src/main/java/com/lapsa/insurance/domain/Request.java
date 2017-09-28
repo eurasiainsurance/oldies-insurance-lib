@@ -170,10 +170,10 @@ public abstract class Request extends BaseEntity<Integer> {
     }
 
     public InetAddrData getInetAddrData() {
-        return inetAddrData;
+	return inetAddrData;
     }
 
     public void setInetAddrData(InetAddrData inetAddrData) {
-        this.inetAddrData = inetAddrData;
+	this.inetAddrData = inetAddrData;
     }
 }

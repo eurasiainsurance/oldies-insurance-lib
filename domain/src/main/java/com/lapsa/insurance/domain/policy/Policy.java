@@ -28,7 +28,7 @@ public class Policy extends InsuranceProduct {
 	return MULTIPLIER;
     }
 
-    private List<PolicyDriver> insuredDrivers;// = new ArrayList<>();
+    private List<PolicyDriver> insuredDrivers = new ArrayList<>();
     private List<PolicyVehicle> insuredVehicles = new ArrayList<>();
 
     public PolicyDriver addDriver(PolicyDriver driver) {

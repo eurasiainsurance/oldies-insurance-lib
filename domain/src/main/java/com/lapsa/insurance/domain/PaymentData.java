@@ -2,6 +2,7 @@ package com.lapsa.insurance.domain;
 
 import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
+import java.time.Instant;
 import java.util.Locale;
 import java.util.StringJoiner;
 
@@ -33,7 +34,11 @@ public class PaymentData extends BaseDomain {
     @NotNullValue
     private PaymentStatus status = PaymentStatus.UNDEFINED;
 
-    private String paymentReference;
+    private String externalId;
+
+    private String postReference;
+
+    private Instant postInstant;
 
     @Override
     public String displayName(DisplayNameVariant variant, Locale locale) {
@@ -54,8 +59,8 @@ public class PaymentData extends BaseDomain {
 		.map(FIELD_STATUS.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
-	MyOptionals.of(paymentReference)
-		.map(PAYMENT_REFERENCE.fieldAsCaptionMapper(variant, locale))
+	MyOptionals.of(externalId)
+		.map(PAYMENT_EXTERNAL_ID.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
 	return sb.append(sj.toString()) //
@@ -72,12 +77,12 @@ public class PaymentData extends BaseDomain {
 	this.method = method;
     }
 
-    public String getPaymentReference() {
-	return paymentReference;
+    public String getExternalId() {
+	return externalId;
     }
 
-    public void setPaymentReference(String paymentReference) {
-	this.paymentReference = paymentReference;
+    public void setExternalId(String externalId) {
+	this.externalId = externalId;
     }
 
     public PaymentStatus getStatus() {
@@ -86,5 +91,21 @@ public class PaymentData extends BaseDomain {
 
     public void setStatus(PaymentStatus status) {
 	this.status = status;
+    }
+
+    public String getPostReference() {
+	return postReference;
+    }
+
+    public void setPostReference(String postReference) {
+	this.postReference = postReference;
+    }
+
+    public void setPostInstant(Instant postInstant) {
+	this.postInstant = postInstant;
+    }
+
+    public Instant getPostInstant() {
+	return postInstant;
     }
 }

@@ -40,6 +40,8 @@ com.lapsa.insurance.domain.DisplayNameElements.OBTAINING_DATA = =KAZ= Спосо
 com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_DATA = =KAZ= Способ оплаты
 com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_EXTERNAL_ID = =KAZ= идентификатор платежного документа
 com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_EXTERNAL_ID.short = =KAZ= платежный документ
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_POST_INSTANT = =KAZ= время оплаты
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_POST_REFERENCE = =KAZ= референс
 
 com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA = =KAZ= Личные данные
 com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA_DOB = =KAZ= дата рождения

@@ -39,6 +39,8 @@ com.lapsa.insurance.domain.DisplayNameElements.OBTAINING_DATA = Способ п�
 com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_DATA = Способ оплаты
 com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_EXTERNAL_ID = идентификатор платежного документа
 com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_EXTERNAL_ID.short = платежный документ
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_POST_INSTANT = время оплаты
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_POST_REFERENCE = референс
 
 com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA = Личные данные
 com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA_DOB = дата рождения

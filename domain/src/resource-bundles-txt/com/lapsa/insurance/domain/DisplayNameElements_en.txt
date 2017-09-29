@@ -37,6 +37,8 @@ com.lapsa.insurance.domain.DisplayNameElements.OBTAINING_DATA = Obtaining method
 
 com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_DATA = Payment method
 com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_EXTERNAL_ID = payment ID
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_POST_INSTANT = post instant
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_POST_REFERENCE = post reference
 
 com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA = Personal data
 com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA_DOB = date of birth

@@ -37,7 +37,6 @@ public class PaymentData extends BaseDomain {
     private String externalId;
 
     private String postReference;
-
     private Instant postInstant;
 
     @Override
@@ -59,8 +58,17 @@ public class PaymentData extends BaseDomain {
 		.map(FIELD_STATUS.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
-	MyOptionals.of(externalId)
-		.map(PAYMENT_EXTERNAL_ID.fieldAsCaptionMapper(variant, locale))
+	MyOptionals.of(externalId) //
+		.map(PAYMENT_EXTERNAL_ID.fieldAsCaptionMapper(variant, locale)) //
+		.ifPresent(sj::add);
+
+	MyOptionals.of(postInstant) //
+		.map(DisplayNames.instantMapper(locale)) //
+		.map(PAYMENT_POST_INSTANT.fieldAsCaptionMapper(variant, locale)) //
+		.ifPresent(sj::add);
+
+	MyOptionals.of(postReference) //
+		.map(PAYMENT_POST_REFERENCE.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
 	return sb.append(sj.toString()) //

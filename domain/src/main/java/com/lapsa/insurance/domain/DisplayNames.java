@@ -1,5 +1,6 @@
 package com.lapsa.insurance.domain;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -18,6 +19,10 @@ public final class DisplayNames {
 
     public static final Function<LocalDateTime, String> localDateTimeMapper(Locale locale) {
 	return x -> localDateTimeFormatter(locale).format(x);
+    }
+
+    public static final Function<Instant, String> instantMapper(Locale locale) {
+	return x -> instantFormatter(locale).format(x);
     }
 
     public static final Function<LocalTime, String> localTimeMapper(Locale locale) {
@@ -45,4 +50,10 @@ public final class DisplayNames {
 		.toFormatter(locale);
     }
 
+    public static DateTimeFormatter instantFormatter(Locale locale) {
+	Objects.requireNonNull(locale, "locale");
+	return new DateTimeFormatterBuilder() //
+		.appendInstant() //
+		.toFormatter(locale);
+    }
 }

@@ -26,7 +26,6 @@ public abstract class BaseEntity<T> extends BaseDomain implements Serializable {
 	    return false;
 	if (other == this)
 	    return true;
-
 	@SuppressWarnings("unchecked")
 	BaseEntity<T> that = (BaseEntity<T>) other;
 	EqualsBuilder eb = new EqualsBuilder();

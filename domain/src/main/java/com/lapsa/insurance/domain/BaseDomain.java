@@ -9,9 +9,9 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import com.lapsa.commons.elements.Localized;
 
 public abstract class BaseDomain implements Serializable, Localized {
-    private static final long serialVersionUID = 3664529817399340371L;
+    private static final long serialVersionUID = 1L;
 
-    protected final UUID instanceUUID = UUID.randomUUID();
+    protected transient final UUID instanceUUID = UUID.randomUUID();
     protected transient final String instanceWebSafeUUID = "UUID" + instanceUUID.toString().replace("-", "");
 
     protected abstract int getPrime();

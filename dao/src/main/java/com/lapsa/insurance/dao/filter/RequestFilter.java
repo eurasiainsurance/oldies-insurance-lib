@@ -1,6 +1,7 @@
 package com.lapsa.insurance.dao.filter;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 
 import com.lapsa.insurance.domain.crm.User;
 import com.lapsa.insurance.elements.InsuranceRequestType;
@@ -25,18 +26,18 @@ public interface RequestFilter {
     String getRequesterIdNumberMask();
 
     RequestSource getRequestSource();
-    
+
     RequestStatus getRequestStatus();
 
     ProgressStatus getProgressStatus();
 
-    Instant getCreatedAfter();
+    LocalDateTime getCreatedAfter();
 
-    Instant getCreatedBefore();
+    LocalDateTime getCreatedBefore();
 
-    Instant getCompletedAfter();
+    LocalDateTime getCompletedAfter();
 
-    Instant getCompletedBefore();
+    LocalDateTime getCompletedBefore();
 
     User getCreatedBy();
 
@@ -63,5 +64,7 @@ public interface RequestFilter {
     String getAgreementNumberMask();
 
     TransactionProblem getTransactionProblem();
+
+    ZoneId getZoneId();
 
 }

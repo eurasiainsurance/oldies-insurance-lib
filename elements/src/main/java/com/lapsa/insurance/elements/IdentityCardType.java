@@ -10,6 +10,7 @@ public enum IdentityCardType implements LocalizedElement {
     PASSPORT, // паспорт
     BIRTH_CERTIFICATE, // свидетельство о рождении
     RESIDENCE_PERMIT, // вид на жительство иностранца
+    DIPLOMATIC_PASSPORT, // дипломатический паспорт
     ;
 
     //

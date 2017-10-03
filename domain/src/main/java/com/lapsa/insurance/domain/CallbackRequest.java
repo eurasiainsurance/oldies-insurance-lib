@@ -50,7 +50,7 @@ public class CallbackRequest extends Request {
 		.ifPresent(sj::add);
 
 	MyOptionals.of(created) //
-		.map(DisplayNames.localDateTimeMapper(locale)) //
+		.map(DisplayNames.instantMapper(locale)) //
 		.map(FIELD_REQUEST_CREATED.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 

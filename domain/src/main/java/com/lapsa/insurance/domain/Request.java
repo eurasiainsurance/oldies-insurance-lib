@@ -1,6 +1,6 @@
 package com.lapsa.insurance.domain;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 import com.lapsa.insurance.domain.crm.InetAddrData;
 import com.lapsa.insurance.domain.crm.UTMData;
@@ -13,11 +13,11 @@ import com.lapsa.validation.NotNullValue;
 public abstract class Request extends BaseEntity<Integer> {
     private static final long serialVersionUID = -4738852384873507942L;
 
-    protected LocalDateTime created;
-    protected LocalDateTime updated;
-    protected LocalDateTime accepted;
-    protected LocalDateTime completed;
-    protected LocalDateTime closed;
+    protected Instant created;
+    protected Instant updated;
+    protected Instant accepted;
+    protected Instant completed;
+    protected Instant closed;
 
     public Request() {
     }
@@ -49,27 +49,27 @@ public abstract class Request extends BaseEntity<Integer> {
 
     // GENERATED
 
-    public LocalDateTime getCreated() {
+    public Instant getCreated() {
 	return created;
     }
 
-    public void setCreated(LocalDateTime created) {
+    public void setCreated(Instant created) {
 	this.created = created;
     }
 
-    public LocalDateTime getUpdated() {
+    public Instant getUpdated() {
 	return updated;
     }
 
-    public void setUpdated(LocalDateTime updated) {
+    public void setUpdated(Instant updated) {
 	this.updated = updated;
     }
 
-    public LocalDateTime getClosed() {
+    public Instant getClosed() {
 	return closed;
     }
 
-    public void setClosed(LocalDateTime closed) {
+    public void setClosed(Instant closed) {
 	this.closed = closed;
     }
 
@@ -81,19 +81,19 @@ public abstract class Request extends BaseEntity<Integer> {
 	this.createdBy = createdBy;
     }
 
-    public LocalDateTime getAccepted() {
+    public Instant getAccepted() {
 	return accepted;
     }
 
-    public void setAccepted(LocalDateTime accepted) {
+    public void setAccepted(Instant accepted) {
 	this.accepted = accepted;
     }
 
-    public LocalDateTime getCompleted() {
+    public Instant getCompleted() {
 	return completed;
     }
 
-    public void setCompleted(LocalDateTime completed) {
+    public void setCompleted(Instant completed) {
 	this.completed = completed;
     }
 

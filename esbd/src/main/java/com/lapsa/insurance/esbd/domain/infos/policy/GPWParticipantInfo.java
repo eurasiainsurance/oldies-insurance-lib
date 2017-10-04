@@ -1,6 +1,6 @@
 package com.lapsa.insurance.esbd.domain.infos.policy;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -25,7 +25,7 @@ public class GPWParticipantInfo {
     }
 
     private String certificateNumber;
-    private Calendar certificateDateOfIssue;
+    private LocalDate certificateDateOfIssue;
 
     // GENERATED
 
@@ -37,11 +37,11 @@ public class GPWParticipantInfo {
 	this.certificateNumber = certificateNumber;
     }
 
-    public Calendar getCertificateDateOfIssue() {
+    public LocalDate getCertificateDateOfIssue() {
 	return certificateDateOfIssue;
     }
 
-    public void setCertificateDateOfIssue(Calendar certificateDateOfIssue) {
+    public void setCertificateDateOfIssue(LocalDate certificateDateOfIssue) {
 	this.certificateDateOfIssue = certificateDateOfIssue;
     }
 

@@ -1,6 +1,6 @@
 package com.lapsa.insurance.esbd.domain.infos.general;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -43,7 +43,7 @@ public class PersonalInfo {
     private String patronymic;
 
     // Born s:string Дата рождения
-    private Calendar dayOfBirth;
+    private LocalDate dayOfBirth;
 
     // Sex_ID s:int Пол (справочник SEX)
     private Sex sex;
@@ -74,11 +74,11 @@ public class PersonalInfo {
 	this.patronymic = patronymic;
     }
 
-    public Calendar getDayOfBirth() {
+    public LocalDate getDayOfBirth() {
 	return dayOfBirth;
     }
 
-    public void setDayOfBirth(Calendar dayOfBirth) {
+    public void setDayOfBirth(LocalDate dayOfBirth) {
 	this.dayOfBirth = dayOfBirth;
     }
 

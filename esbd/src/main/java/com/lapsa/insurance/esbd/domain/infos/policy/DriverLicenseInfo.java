@@ -1,6 +1,6 @@
 package com.lapsa.insurance.esbd.domain.infos.policy;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -25,7 +25,7 @@ public class DriverLicenseInfo {
     }
 
     private String number;
-    private Calendar dateOfIssue;
+    private LocalDate dateOfIssue;
 
     // GENERATED
 
@@ -37,11 +37,11 @@ public class DriverLicenseInfo {
 	this.number = number;
     }
 
-    public Calendar getDateOfIssue() {
+    public LocalDate getDateOfIssue() {
 	return dateOfIssue;
     }
 
-    public void setDateOfIssue(Calendar dateOfIssue) {
+    public void setDateOfIssue(LocalDate dateOfIssue) {
 	this.dateOfIssue = dateOfIssue;
     }
 

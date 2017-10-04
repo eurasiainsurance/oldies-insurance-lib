@@ -1,6 +1,6 @@
 package com.lapsa.insurance.esbd.domain.infos.policy;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -25,8 +25,8 @@ public class InvalidInfo {
     }
 
     private String certificateNumber;
-    private Calendar certificateValidFrom;
-    private Calendar certificateValidTill;
+    private LocalDate certificateValidFrom;
+    private LocalDate certificateValidTill;
 
     // GENERATED
 
@@ -38,19 +38,19 @@ public class InvalidInfo {
 	this.certificateNumber = certificateNumber;
     }
 
-    public Calendar getCertificateValidFrom() {
+    public LocalDate getCertificateValidFrom() {
 	return certificateValidFrom;
     }
 
-    public void setCertificateValidFrom(Calendar certificateValidFrom) {
+    public void setCertificateValidFrom(LocalDate certificateValidFrom) {
 	this.certificateValidFrom = certificateValidFrom;
     }
 
-    public Calendar getCertificateValidTill() {
+    public LocalDate getCertificateValidTill() {
 	return certificateValidTill;
     }
 
-    public void setCertificateValidTill(Calendar certificateValidTill) {
+    public void setCertificateValidTill(LocalDate certificateValidTill) {
 	this.certificateValidTill = certificateValidTill;
     }
 

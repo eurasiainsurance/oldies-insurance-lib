@@ -1,6 +1,6 @@
 package com.lapsa.insurance.esbd.domain.entities.policy;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -57,7 +57,7 @@ public class VehicleEntity {
 
     // BORN s:string Год выпуска (обязательно)
     // BORN_MONTH s:int Месяц выпуска ТС
-    private Calendar realeaseDate;
+    private LocalDate realeaseDate;
 
     // GENERATED
 
@@ -133,11 +133,11 @@ public class VehicleEntity {
 	this.color = color;
     }
 
-    public Calendar getRealeaseDate() {
+    public LocalDate getRealeaseDate() {
 	return realeaseDate;
     }
 
-    public void setRealeaseDate(Calendar realeaseDate) {
+    public void setRealeaseDate(LocalDate realeaseDate) {
 	this.realeaseDate = realeaseDate;
     }
 }

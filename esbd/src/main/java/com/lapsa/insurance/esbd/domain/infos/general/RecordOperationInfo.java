@@ -1,6 +1,6 @@
 package com.lapsa.insurance.esbd.domain.infos.general;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -26,16 +26,16 @@ public class RecordOperationInfo {
 	return HashCodeBuilder.reflectionHashCode(this, false);
     }
 
-    private Calendar date;
+    private LocalDate date;
     private UserEntity author;
 
     // GENERATED
 
-    public Calendar getDate() {
+    public LocalDate getDate() {
 	return date;
     }
 
-    public void setDate(Calendar date) {
+    public void setDate(LocalDate date) {
 	this.date = date;
     }
 

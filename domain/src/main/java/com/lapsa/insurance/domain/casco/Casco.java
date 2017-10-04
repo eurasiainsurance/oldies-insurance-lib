@@ -5,12 +5,12 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
 import java.util.StringJoiner;
 
 import javax.validation.constraints.Min;
 
 import com.lapsa.commons.function.MyNumbers;
+import com.lapsa.commons.function.MyObjects;
 import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.fin.FinCurrency;
 import com.lapsa.insurance.domain.InsuranceProduct;
@@ -95,7 +95,7 @@ public class Casco extends InsuranceProduct {
     private Integer driverAndPassengerCount;
 
     public CascoDriver addDriver(CascoDriver driver) {
-	Objects.requireNonNull(driver, "Value must not be null");
+	MyObjects.requireNonNull(driver, "Value must not be null");
 	if (insuredDrivers == null)
 	    insuredDrivers = new ArrayList<>();
 	insuredDrivers.add(driver);
@@ -103,7 +103,7 @@ public class Casco extends InsuranceProduct {
     }
 
     public CascoDriver removeDriver(CascoDriver driver) {
-	Objects.requireNonNull(driver, "Value must not be null");
+	MyObjects.requireNonNull(driver, "Value must not be null");
 	if (insuredDrivers != null)
 	    insuredDrivers.remove(driver);
 	return driver;
@@ -120,7 +120,7 @@ public class Casco extends InsuranceProduct {
 
 	MyOptionals.of(calculation) //
 		.filter(x -> MyNumbers.nonZero(x.getPremiumCost())) //
-		.filter(x -> Objects.nonNull(x.getPremiumCurrency()))
+		.filter(x -> MyObjects.nonNull(x.getPremiumCurrency()))
 		.map(x -> x.getPremiumCurrency().formatAmount(x.getPremiumCost())) //
 		.map(CASCO_COST.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);

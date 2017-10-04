@@ -1,10 +1,10 @@
 package com.lapsa.insurance.elements;
 
-import java.util.Objects;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 import com.lapsa.commons.elements.LocalizedElement;
+import com.lapsa.commons.function.MyObjects;
 
 public enum InsuredAgeAndExpirienceClass implements LocalizedElement {
     // возраст старше 25 лет, стаж вождения более 2 лет
@@ -27,15 +27,15 @@ public enum InsuredAgeAndExpirienceClass implements LocalizedElement {
 
     private InsuredAgeAndExpirienceClass(InsuredAgeClass ageClass, InsuredExpirienceClass expirienceClass) {
 	this.selectable = true;
-	this.expirienceClass = Objects.requireNonNull(expirienceClass);
-	this.ageClass = Objects.requireNonNull(ageClass);
+	this.expirienceClass = MyObjects.requireNonNull(expirienceClass);
+	this.ageClass = MyObjects.requireNonNull(ageClass);
     }
 
     private InsuredAgeAndExpirienceClass(InsuredAgeClass ageClass, InsuredExpirienceClass expirienceClass,
 	    boolean selectable) {
 	this.selectable = selectable;
-	this.expirienceClass = Objects.requireNonNull(expirienceClass);
-	this.ageClass = Objects.requireNonNull(ageClass);
+	this.expirienceClass = MyObjects.requireNonNull(expirienceClass);
+	this.ageClass = MyObjects.requireNonNull(ageClass);
     }
 
     //

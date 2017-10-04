@@ -5,11 +5,11 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
 import java.util.StringJoiner;
 import java.util.stream.Stream;
 
 import com.lapsa.commons.function.MyNumbers;
+import com.lapsa.commons.function.MyObjects;
 import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.insurance.domain.InsuranceProduct;
 
@@ -32,7 +32,7 @@ public class Policy extends InsuranceProduct {
     private List<PolicyVehicle> insuredVehicles = new ArrayList<>();
 
     public PolicyDriver addDriver(PolicyDriver driver) {
-	Objects.requireNonNull(driver, "Value must not be null");
+	MyObjects.requireNonNull(driver, "Value must not be null");
 	if (insuredDrivers == null)
 	    insuredDrivers = new ArrayList<>();
 	insuredDrivers.add(driver);
@@ -40,14 +40,14 @@ public class Policy extends InsuranceProduct {
     }
 
     public PolicyDriver removeDriver(PolicyDriver driver) {
-	Objects.requireNonNull(driver, "Value must not be null");
+	MyObjects.requireNonNull(driver, "Value must not be null");
 	if (insuredDrivers != null)
 	    insuredDrivers.remove(driver);
 	return driver;
     }
 
     public PolicyVehicle addVehicle(PolicyVehicle vehicle) {
-	Objects.requireNonNull(vehicle, "Value must not be null");
+	MyObjects.requireNonNull(vehicle, "Value must not be null");
 	if (insuredVehicles == null)
 	    insuredVehicles = new ArrayList<>();
 	insuredVehicles.add(vehicle);
@@ -55,7 +55,7 @@ public class Policy extends InsuranceProduct {
     }
 
     public PolicyVehicle removeVehicle(PolicyVehicle vehicle) {
-	Objects.requireNonNull(vehicle, "Value must not be null");
+	MyObjects.requireNonNull(vehicle, "Value must not be null");
 	if (insuredVehicles != null)
 	    insuredVehicles.remove(vehicle);
 	return vehicle;
@@ -72,7 +72,7 @@ public class Policy extends InsuranceProduct {
 
 	MyOptionals.of(calculation) //
 		.filter(x -> MyNumbers.nonZero(x.getPremiumCost())) //
-		.filter(x -> Objects.nonNull(x.getPremiumCurrency()))
+		.filter(x -> MyObjects.nonNull(x.getPremiumCurrency()))
 		.map(x -> x.getPremiumCurrency().formatAmount(x.getPremiumCost())) //
 		.map(POLICY_COST.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);

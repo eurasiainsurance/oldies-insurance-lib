@@ -3,10 +3,10 @@ package com.lapsa.insurance.domain;
 import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
 import java.util.Locale;
-import java.util.Objects;
 import java.util.StringJoiner;
 
 import com.lapsa.commons.function.MyNumbers;
+import com.lapsa.commons.function.MyObjects;
 import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.fin.FinCurrency;
 
@@ -49,7 +49,7 @@ public class CalculationData extends BaseDomain {
 
 	sj.add(MyOptionals.of(this) //
 		.filter(x -> MyNumbers.nonZero(getPremiumCost()))
-		.filter(x -> Objects.nonNull(x.premiumCurrency))
+		.filter(x -> MyObjects.nonNull(x.premiumCurrency))
 		.map(x -> x.premiumCurrency.formatAmount(getPremiumCost())) //
 		.orElseGet(() -> "<" + CALCULATION_DATA_UNDEFINED.displayName(variant, locale) + ">"));
 

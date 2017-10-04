@@ -1,6 +1,27 @@
 package com.lapsa.insurance.esbd.domain.entities.general;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 public class UserEntity {
+
+    @Override
+    public String toString() {
+	return ToStringBuilder.reflectionToString(this, ToStringStyle.NO_CLASS_NAME_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	return EqualsBuilder.reflectionEquals(this, obj, false);
+    }
+
+    @Override
+    public int hashCode() {
+	return HashCodeBuilder.reflectionHashCode(this, false);
+    }
+
     // ID s:int Идентификатор пользователя
     private long id;
 
@@ -25,16 +46,6 @@ public class UserEntity {
 
     // ErrorMessage s:string Описание ошибки аутентификации
     // LastRequestTime s:string Время последнего действия пользователя
-
-    @Override
-    public int hashCode() {
-	return this.getClass().hashCode() * new Long(id).hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-	return obj != null && this.getClass().isInstance(obj) && getId() == this.getClass().cast(obj).getId();
-    }
 
     // GENERATED
 

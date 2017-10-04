@@ -2,6 +2,11 @@ package com.lapsa.insurance.esbd.domain.infos.general;
 
 import java.util.Calendar;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 import com.lapsa.insurance.elements.Sex;
 
 /**
@@ -12,6 +17,21 @@ import com.lapsa.insurance.elements.Sex;
  *
  */
 public class PersonalInfo {
+
+    @Override
+    public String toString() {
+	return ToStringBuilder.reflectionToString(this, ToStringStyle.NO_CLASS_NAME_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	return EqualsBuilder.reflectionEquals(this, obj, false);
+    }
+
+    @Override
+    public int hashCode() {
+	return HashCodeBuilder.reflectionHashCode(this, false);
+    }
 
     // First_Name s:string Имя (для физ. лица)
     private String name;

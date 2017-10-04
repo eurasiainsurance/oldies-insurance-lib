@@ -1,5 +1,10 @@
 package com.lapsa.insurance.esbd.domain.infos.general;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 import com.lapsa.international.phone.PhoneNumber;
 
 /**
@@ -9,6 +14,21 @@ import com.lapsa.international.phone.PhoneNumber;
  *
  */
 public class ContactInfo {
+
+    @Override
+    public String toString() {
+	return ToStringBuilder.reflectionToString(this, ToStringStyle.NO_CLASS_NAME_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	return EqualsBuilder.reflectionEquals(this, obj, false);
+    }
+
+    @Override
+    public int hashCode() {
+	return HashCodeBuilder.reflectionHashCode(this, false);
+    }
 
     // PHONES s:string Номера телефонов
     private PhoneNumber phone;

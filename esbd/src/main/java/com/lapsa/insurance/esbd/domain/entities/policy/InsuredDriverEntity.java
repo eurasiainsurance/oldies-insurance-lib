@@ -1,8 +1,13 @@
 package com.lapsa.insurance.esbd.domain.entities.policy;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 import com.lapsa.insurance.elements.InsuranceClassType;
-import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredAgeAndExpirienceClass;
+import com.lapsa.insurance.elements.InsuredAgeClass;
 import com.lapsa.insurance.elements.InsuredExpirienceClass;
 import com.lapsa.insurance.elements.MaritalStatus;
 import com.lapsa.insurance.esbd.domain.entities.general.InsuranceCompanyEntity;
@@ -15,6 +20,22 @@ import com.lapsa.insurance.esbd.domain.infos.policy.PensionerInfo;
 import com.lapsa.insurance.esbd.domain.infos.policy.PrivilegerInfo;
 
 public class InsuredDriverEntity {
+
+    @Override
+    public String toString() {
+	return ToStringBuilder.reflectionToString(this, ToStringStyle.NO_CLASS_NAME_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	return EqualsBuilder.reflectionEquals(this, obj, false);
+    }
+
+    @Override
+    public int hashCode() {
+	return HashCodeBuilder.reflectionHashCode(this, false);
+    }
+
     // DRIVER_ID s:int Идентификатор водителя
     private long id;
 
@@ -78,16 +99,6 @@ public class InsuredDriverEntity {
 
     // SYSTEM_DELIMITER_ID s:int Идентификатор страховой компании
     private InsuranceCompanyEntity insurer;
-
-    @Override
-    public int hashCode() {
-	return this.getClass().hashCode() * new Long(id).hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-	return obj != null && this.getClass().isInstance(obj) && getId() == this.getClass().cast(obj).getId();
-    }
 
     public InsuredAgeClass getAgeClass() {
 	return insuredAgeExpirienceClass.getAgeClass();

@@ -1,5 +1,11 @@
 package com.lapsa.insurance.domain.crm;
 
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
+
+import java.util.Locale;
+import java.util.StringJoiner;
+
+import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.insurance.domain.BaseDomain;
 
 public class UTMData extends BaseDomain {
@@ -22,6 +28,39 @@ public class UTMData extends BaseDomain {
     private String campaign;
     private String content;
     private String term;
+
+    @Override
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringBuilder sb = new StringBuilder();
+
+	sb.append(UTM_DATA.displayName(variant, locale));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
+
+	MyOptionals.of(source) //
+		.map(UTM_DATA_SOURCE.fieldAsCaptionMapper(variant, locale)) //
+		.ifPresent(sj::add);
+
+	MyOptionals.of(medium) //
+		.map(UTM_DATA_MEDIUM.fieldAsCaptionMapper(variant, locale)) //
+		.ifPresent(sj::add);
+
+	MyOptionals.of(campaign) //
+		.map(UTM_DATA_CAMPAIGN.fieldAsCaptionMapper(variant, locale)) //
+		.ifPresent(sj::add);
+
+	MyOptionals.of(content) //
+		.map(UTM_DATA_CONTENT.fieldAsCaptionMapper(variant, locale)) //
+		.ifPresent(sj::add);
+
+	MyOptionals.of(term) //
+		.map(UTM_DATA_TERM.fieldAsCaptionMapper(variant, locale)) //
+		.ifPresent(sj::add);
+
+	return sb.append(sj.toString()) //
+		.toString();
+    }
 
     // GENERATED
 

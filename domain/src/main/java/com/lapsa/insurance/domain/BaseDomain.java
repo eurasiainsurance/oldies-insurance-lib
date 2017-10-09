@@ -6,15 +6,22 @@ import java.util.UUID;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
-public abstract class BaseDomain implements Serializable {
-    private static final long serialVersionUID = 3664529817399340371L;
+import com.lapsa.commons.elements.Localized;
 
-    protected final UUID instanceUUID = UUID.randomUUID();
+public abstract class BaseDomain implements Serializable, Localized {
+    private static final long serialVersionUID = 1L;
+
+    protected transient final UUID instanceUUID = UUID.randomUUID();
     protected transient final String instanceWebSafeUUID = "UUID" + instanceUUID.toString().replace("-", "");
 
     protected abstract int getPrime();
 
     protected abstract int getMultiplier();
+
+    @Override
+    public String toString() {
+	return displayName();
+    }
 
     @Override
     public int hashCode() {

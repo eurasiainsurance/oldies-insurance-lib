@@ -1,10 +1,18 @@
 package com.lapsa.insurance.domain.casco;
 
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.StringJoiner;
 
 import javax.validation.constraints.Min;
 
+import com.lapsa.commons.function.MyNumbers;
+import com.lapsa.commons.function.MyObjects;
+import com.lapsa.commons.function.MyOptionals;
+import com.lapsa.fin.FinCurrency;
 import com.lapsa.insurance.domain.InsuranceProduct;
 import com.lapsa.insurance.elements.CascoDeductibleFullRate;
 import com.lapsa.insurance.elements.CascoDeductiblePartialRate;
@@ -87,8 +95,7 @@ public class Casco extends InsuranceProduct {
     private Integer driverAndPassengerCount;
 
     public CascoDriver addDriver(CascoDriver driver) {
-	if (driver == null)
-	    throw new NullPointerException("Value must not be null");
+	MyObjects.requireNonNull(driver, "Value must not be null");
 	if (insuredDrivers == null)
 	    insuredDrivers = new ArrayList<>();
 	insuredDrivers.add(driver);
@@ -96,11 +103,38 @@ public class Casco extends InsuranceProduct {
     }
 
     public CascoDriver removeDriver(CascoDriver driver) {
-	if (driver == null)
-	    throw new NullPointerException("Value must not be null");
+	MyObjects.requireNonNull(driver, "Value must not be null");
 	if (insuredDrivers != null)
 	    insuredDrivers.remove(driver);
 	return driver;
+    }
+
+    @Override
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringBuilder sb = new StringBuilder();
+
+	sb.append(CASCO.displayName(variant, locale));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
+
+	MyOptionals.of(calculation) //
+		.filter(x -> MyNumbers.nonZero(x.getPremiumCost())) //
+		.filter(x -> MyObjects.nonNull(x.getPremiumCurrency()))
+		.map(x -> x.getPremiumCurrency().formatAmount(x.getPremiumCost())) //
+		.map(CASCO_COST.fieldAsCaptionMapper(variant, locale)) //
+		.ifPresent(sj::add);
+
+	MyOptionals.of(insuredVehicle)
+		.map(x -> insuredVehicle.getCost())
+		.filter(MyNumbers::nonZero)
+		.map(x -> FinCurrency.KZT.formatAmount(x))
+		.map(CASCO_CASCO_VEHICLE_COST.fieldAsCaptionMapper(variant, locale))
+		.ifPresent(sj::add);
+
+	return sb.append(sj.toString()) //
+		.append(appendEntityId()) //
+		.toString();
     }
 
     // GENERATED
@@ -121,7 +155,7 @@ public class Casco extends InsuranceProduct {
 	return insuredDrivers;
     }
 
-    public void setInsuredDrivers(List<CascoDriver> insuredDrivers) {
+    protected void setInsuredDrivers(List<CascoDriver> insuredDrivers) {
 	this.insuredDrivers = insuredDrivers;
     }
 

@@ -1,0 +1,113 @@
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_PHONE = =KAZ= Контактный телефон
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_PHONE_UNDEFINED = =KAZ= Не задан
+
+com.lapsa.insurance.domain.DisplayNameElements.CONTACT_DATA = =KAZ= Контакты
+
+com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA = =KAZ= Расчитанная стоимость
+com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA_UNDEFINED = =KAZ= Не задана
+
+com.lapsa.insurance.domain.DisplayNameElements.POST_ADDRESS = =KAZ= Почтовый адрес
+
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_EMAIL = =KAZ= Контактный email
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_EMAIL_UNDEFINED = =KAZ= Не задан
+
+com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA = =KAZ= Период страхования
+com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA_FROM = =KAZ= с
+com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA_TILL = =KAZ= по
+
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_POINT_OF_SALE = =KAZ= Офис продаж
+
+com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT = =KAZ= Географические координаты
+com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT_LAT = =KAZ= широта
+com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT_LNG = =KAZ= долгота
+
+com.lapsa.insurance.domain.DisplayNameElements.DRIVER_LICENSE_DATA = =KAZ= Водительское удостоверение
+com.lapsa.insurance.domain.DisplayNameElements.DRIVER_LICENSE_DATA_ISSUED = =KAZ= выдано
+
+com.lapsa.insurance.domain.DisplayNameElements.IDENTITY_CARD_DATA = =KAZ= Документ удостоверяющий личность
+com.lapsa.insurance.domain.DisplayNameElements.IDENTITY_CARD_DATA_ISSUED = =KAZ= выдан
+
+com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA = =KAZ= ПТС
+com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA.full = =KAZ= Паспорт транспортного средства
+com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA_ISSUED = =KAZ= выдан
+com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA_REGNUMBER = =KAZ= гос. номер
+com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA_REGNUMBER.full = =KAZ= государственный регистрационный номер
+
+com.lapsa.insurance.domain.DisplayNameElements.REQUESTER_DATA = =KAZ= Инициатор запроса
+
+com.lapsa.insurance.domain.DisplayNameElements.OBTAINING_DATA = =KAZ= Способ получения
+
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_DATA = =KAZ= Способ оплаты
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_EXTERNAL_ID = =KAZ= идентификатор платежного документа
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_EXTERNAL_ID.short = =KAZ= платежный документ
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_POST_INSTANT = =KAZ= время оплаты
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_POST_REFERENCE = =KAZ= референс
+
+com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA = =KAZ= Личные данные
+com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA_DOB = =KAZ= дата рождения
+com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA_SEX = =KAZ= пол
+
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE = =KAZ= Затрахованное ТС
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE_AGE_CLASS = =KAZ= возраст
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE_CLASS = =KAZ= класс
+
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_DRIVER = =KAZ= Застрахованный водитель
+
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE = =KAZ= Застрахованное ТС
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE_AGE_CLASS = =KAZ= возраст
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE_COST = =KAZ= стоимость
+
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_DRIVER = =KAZ= Застрахованный водитель
+
+com.lapsa.insurance.domain.DisplayNameElements.USER = =KAZ= Пользователь
+com.lapsa.insurance.domain.DisplayNameElements.USER_LOGIN = =KAZ= логин
+
+com.lapsa.insurance.domain.DisplayNameElements.USER_LOGIN_LOGIN = =KAZ= Логин
+
+com.lapsa.insurance.domain.DisplayNameElements.USER_GROUP = =KAZ= Пользовательская группа
+
+com.lapsa.insurance.domain.DisplayNameElements.USER_GRPOUP_MEMBER = =KAZ= количество участников
+
+com.lapsa.insurance.domain.DisplayNameElements.INET_ADDR_DATA = =KAZ= Интернет адрес
+com.lapsa.insurance.domain.DisplayNameElements.INET_ADDR_DATA_HOST = =KAZ= хост
+
+com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA = =KAZ= UTM метки
+com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA.short = UTM
+com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA_CAMPAIGN = campaign
+com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA_CONTENT = content
+com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA_MEDIUM = medium
+com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA_SOURCE = source
+com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA_TERM = term
+
+com.lapsa.insurance.domain.DisplayNameElements.POLICY = =KAZ= Полис ОСГПОВТС
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_COST = =KAZ= сумма премии
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_DRIVERS_COUNT = =KAZ= застрахованных водителей
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLES_COUNT = =KAZ= застрахованных ТС
+
+com.lapsa.insurance.domain.DisplayNameElements.CASCO = =KAZ= АвтоКАСКО
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_COST = =KAZ= сумма премии
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_CASCO_VEHICLE_COST = =KAZ= стоимость авто
+
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA = =KAZ= Место жительства
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_ADDRESS = =KAZ= адрес
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_CITY = =KAZ= город
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_RESIDENT = =KAZ= является резидентом
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_NONRESIDENT = =KAZ= не является резидентом
+
+com.lapsa.insurance.domain.DisplayNameElements.ORIGIN_DATA = =KAZ= Место рождения
+com.lapsa.insurance.domain.DisplayNameElements.ORIGIN_DATA_COUNTRY = =KAZ= страна
+
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_REQUEST = =KAZ= Запрос на полис ОСГПОВТС
+
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_REQUEST = =KAZ= Запрос на страхование АвтоКАСКО
+
+com.lapsa.insurance.domain.DisplayNameElements.CALLBACK_REQUEST = =KAZ= Запрос на обратный звонок
+
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = =KAZ= ИИН
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = =KAZ= e-mail
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_PHONE = =KAZ= телефон
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_NUMBER = =KAZ= номер
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_STATUS = =KAZ= статус
+
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_REQUEST_CREATED = =KAZ= создан
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_REQUEST_COMPLETED = =KAZ= завершен

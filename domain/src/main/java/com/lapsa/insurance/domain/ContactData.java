@@ -1,9 +1,15 @@
 package com.lapsa.insurance.domain;
 
-import com.lapsa.internet.validators.ValidEmail;
-import com.lapsa.internet.validators.ValidURL;
-import com.lapsa.phone.PhoneNumber;
-import com.lapsa.phone.validators.ValidPhoneNumber;
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
+
+import java.util.Locale;
+import java.util.StringJoiner;
+
+import com.lapsa.commons.function.MyOptionals;
+import com.lapsa.international.internet.validators.ValidEmail;
+import com.lapsa.international.internet.validators.ValidURL;
+import com.lapsa.international.phone.PhoneNumber;
+import com.lapsa.international.phone.validators.ValidPhoneNumber;
 import com.lapsa.validation.NotNullValue;
 
 public class ContactData extends BaseDomain {
@@ -31,6 +37,29 @@ public class ContactData extends BaseDomain {
 
     @ValidURL
     private String siteUrl;
+
+    @Override
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringBuilder sb = new StringBuilder();
+
+	sb.append(CONTACT_DATA.displayName(variant, locale));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
+
+	MyOptionals.of(email) //
+		.ifPresent(sj::add);
+
+	MyOptionals.of(phone) //
+		.map(PhoneNumber::getFormatted) //
+		.ifPresent(sj::add);
+
+	MyOptionals.of(siteUrl) //
+		.ifPresent(sj::add);
+
+	return sb.append(sj.toString()) //
+		.toString();
+    }
 
     // GENERATED
 

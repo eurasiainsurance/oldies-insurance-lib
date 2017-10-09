@@ -13,6 +13,18 @@
 	<name>Insurance Lib : Domain</name>
 
 	<dependencies>
+		<!-- tech -->
+		<dependency>
+			<groupId>tech.lapsa.java</groupId>
+			<artifactId>java-commons</artifactId>
+			<scope>compile</scope>
+			<optional>false</optional>
+		</dependency>
+		<dependency>
+			<groupId>tech.lapsa.java</groupId>
+			<artifactId>java-commons-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 		<!-- own -->
 		<dependency>
 			<groupId>${project.groupId}</groupId>
@@ -26,7 +38,7 @@
 			<scope>compile</scope>
 			<optional>false</optional>
 		</dependency>
-		<!-- internal kz -->
+		<!-- oldies -->
 		<dependency>
 			<groupId>com.lapsa.kz-lib</groupId>
 			<artifactId>kz-core</artifactId>
@@ -39,7 +51,6 @@
 			<scope>compile</scope>
 			<optional>false</optional>
 		</dependency>
-		<!-- internal international -->
 		<dependency>
 			<groupId>com.lapsa.international-lib</groupId>
 			<artifactId>international-core</artifactId>
@@ -52,14 +63,12 @@
 			<scope>compile</scope>
 			<optional>false</optional>
 		</dependency>
-		<!-- internal fin -->
 		<dependency>
 			<groupId>com.lapsa.fin-lib</groupId>
 			<artifactId>fin-core</artifactId>
 			<scope>compile</scope>
 			<optional>false</optional>
 		</dependency>
-		<!-- internal donkeyfaces -->
 		<dependency>
 			<groupId>com.lapsa.donkeyfaces-lib</groupId>
 			<artifactId>donkeyfaces-model</artifactId>
@@ -69,13 +78,6 @@
 		<dependency>
 			<groupId>com.lapsa.donkeyfaces-lib</groupId>
 			<artifactId>donkeyfaces-validation</artifactId>
-			<scope>compile</scope>
-			<optional>false</optional>
-		</dependency>
-		<!-- internal lapsa -->
-		<dependency>
-			<groupId>com.lapsa.lapsa-lib</groupId>
-			<artifactId>lapsa-validation</artifactId>
 			<scope>compile</scope>
 			<optional>false</optional>
 		</dependency>
@@ -91,6 +93,17 @@
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
 			<scope>provided</scope>
+		</dependency>
+		<!-- test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-all</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 

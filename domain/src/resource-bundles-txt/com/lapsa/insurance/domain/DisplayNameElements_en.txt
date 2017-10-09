@@ -1,0 +1,111 @@
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_PHONE = Contact phone
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_PHONE_UNDEFINED = Undefined
+
+com.lapsa.insurance.domain.DisplayNameElements.CONTACT_DATA = Contacts
+
+com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA = =KAZ= Calculated amount
+com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA_UNDEFINED = Unavailable
+
+com.lapsa.insurance.domain.DisplayNameElements.POST_ADDRESS = Post address
+
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_EMAIL = Contact email
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_EMAIL_UNDEFINED = Undefined
+
+com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA = Insurance period
+com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA_FROM = from
+com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA_TILL = till
+
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_POINT_OF_SALE = Point of sale
+
+com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT = Geographic coordinate
+com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT_LAT = latitude
+com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT_LNG = longitude
+
+com.lapsa.insurance.domain.DisplayNameElements.DRIVER_LICENSE_DATA = Driver license
+com.lapsa.insurance.domain.DisplayNameElements.DRIVER_LICENSE_DATA_ISSUED = issued
+
+com.lapsa.insurance.domain.DisplayNameElements.IDENTITY_CARD_DATA = Identity
+com.lapsa.insurance.domain.DisplayNameElements.IDENTITY_CARD_DATA_ISSUED = issued on
+
+com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA = Vehicle passport
+com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA_ISSUED = issued on
+com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA_REGNUMBER = registration number
+
+com.lapsa.insurance.domain.DisplayNameElements.REQUESTER_DATA = Requester
+
+com.lapsa.insurance.domain.DisplayNameElements.OBTAINING_DATA = Obtaining method
+
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_DATA = Payment method
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_EXTERNAL_ID = payment ID
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_POST_INSTANT = post instant
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_POST_REFERENCE = post reference
+
+com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA = Personal data
+com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA_DOB = date of birth
+com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA_DOB.short = dob
+com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA_SEX = sex
+
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE = Insured vehicle
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE_AGE_CLASS = age
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE_CLASS = class
+
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_DRIVER = Insured driver
+
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE = Insured vehicle
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE_AGE_CLASS = age
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE_COST = cost
+
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_DRIVER = Insured driver
+
+com.lapsa.insurance.domain.DisplayNameElements.USER = User
+com.lapsa.insurance.domain.DisplayNameElements.USER_LOGIN = login
+
+com.lapsa.insurance.domain.DisplayNameElements.USER_LOGIN_LOGIN = login
+
+com.lapsa.insurance.domain.DisplayNameElements.USER_GROUP = User group
+
+com.lapsa.insurance.domain.DisplayNameElements.USER_GRPOUP_MEMBER = members count
+
+com.lapsa.insurance.domain.DisplayNameElements.INET_ADDR_DATA = Inet address
+com.lapsa.insurance.domain.DisplayNameElements.INET_ADDR_DATA_HOST = hostname
+
+com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA = UTM data
+com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA.short = UTM
+com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA_CAMPAIGN = campaign
+com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA_CONTENT = content
+com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA_MEDIUM = medium
+com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA_SOURCE = source
+com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA_TERM = term
+
+com.lapsa.insurance.domain.DisplayNameElements.POLICY = MTPL insurance
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_COST = premium
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_DRIVERS_COUNT = insured drivers
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLES_COUNT = insured vehicles
+
+com.lapsa.insurance.domain.DisplayNameElements.CASCO = Motor insurance
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_COST = premium
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_CASCO_VEHICLE_COST = insured vehicle cost
+
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA = Residence
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_ADDRESS = address
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_CITY = 
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_RESIDENT = is resident
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_NONRESIDENT = is non resident
+
+com.lapsa.insurance.domain.DisplayNameElements.ORIGIN_DATA = Origin
+com.lapsa.insurance.domain.DisplayNameElements.ORIGIN_DATA_COUNTRY = country
+
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_REQUEST = MTPL insurance request
+
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_REQUEST = Motor insurance request
+
+com.lapsa.insurance.domain.DisplayNameElements.CALLBACK_REQUEST = Callback request
+
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = ID number
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = e-mail
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_PHONE = phone
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_NUMBER = number
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_STATUS = status
+
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_REQUEST_CREATED = created at
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_REQUEST_COMPLETED = completed at

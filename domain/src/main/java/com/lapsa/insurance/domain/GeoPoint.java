@@ -1,6 +1,11 @@
 package com.lapsa.insurance.domain;
 
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
+
 import java.io.Serializable;
+import java.text.NumberFormat;
+import java.util.Locale;
+import java.util.StringJoiner;
 
 public class GeoPoint extends BaseDomain implements Serializable {
     private static final long serialVersionUID = -2196615504671366442L;
@@ -29,9 +34,27 @@ public class GeoPoint extends BaseDomain implements Serializable {
 	this.longitude = longitude;
     }
 
+    private static final NumberFormat GEO_LONG_NUMBER_FORMAT = NumberFormat.getNumberInstance();
+    {
+	GEO_LONG_NUMBER_FORMAT.setMinimumFractionDigits(6);
+	GEO_LONG_NUMBER_FORMAT.setMaximumFractionDigits(6);
+	GEO_LONG_NUMBER_FORMAT.setGroupingUsed(false);
+    }
+
     @Override
-    public String toString() {
-	return "Lat:" + latitude + ", Lng:" + longitude;
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringBuilder sb = new StringBuilder();
+
+	sb.append(GEO_POINT.displayName(variant, locale));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
+
+	sj.add(GEO_POINT_LAT.displayName(variant, locale) + ": " + GEO_LONG_NUMBER_FORMAT.format(latitude) + "°");
+	sj.add(GEO_POINT_LNG.displayName(variant, locale) + ": " + GEO_LONG_NUMBER_FORMAT.format(longitude) + "°");
+
+	return sb.append(sj.toString()) //
+		.toString();
     }
 
     // GENERATED

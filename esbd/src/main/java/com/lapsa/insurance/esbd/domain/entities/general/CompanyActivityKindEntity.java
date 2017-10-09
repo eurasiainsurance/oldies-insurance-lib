@@ -1,19 +1,30 @@
 package com.lapsa.insurance.esbd.domain.entities.general;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 public class CompanyActivityKindEntity {
-    private long id;
-    private String code;
-    private String name;
 
     @Override
-    public int hashCode() {
-	return this.getClass().hashCode() * new Long(id).hashCode();
+    public String toString() {
+	return ToStringBuilder.reflectionToString(this, ToStringStyle.NO_CLASS_NAME_STYLE);
     }
 
     @Override
     public boolean equals(Object obj) {
-	return obj != null && this.getClass().isInstance(obj) && getId() == this.getClass().cast(obj).getId();
+	return EqualsBuilder.reflectionEquals(this, obj, false);
     }
+
+    @Override
+    public int hashCode() {
+	return HashCodeBuilder.reflectionHashCode(this, false);
+    }
+
+    private long id;
+    private String code;
+    private String name;
 
     // GENERATED
 

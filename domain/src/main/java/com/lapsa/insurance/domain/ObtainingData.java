@@ -1,10 +1,17 @@
 package com.lapsa.insurance.domain;
 
-import java.time.LocalDate;
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
-import com.lapsa.insurance.crm.ObtainingStatus;
+import java.time.LocalDate;
+import java.util.Locale;
+import java.util.StringJoiner;
+
+import com.lapsa.commons.elements.Localized;
+import com.lapsa.commons.function.MyOptionals;
+import com.lapsa.commons.function.MyStrings;
 import com.lapsa.insurance.elements.DeliveryTimeSlot;
 import com.lapsa.insurance.elements.ObtainingMethod;
+import com.lapsa.insurance.elements.ObtainingStatus;
 import com.lapsa.kz.country.KZCity;
 import com.lapsa.validation.DaysAfterNow;
 import com.lapsa.validation.DaysBeforeNow;
@@ -53,6 +60,29 @@ public class ObtainingData extends BaseDomain {
     @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.deliveryAddress.NotNullValue.message}")
     @NotEmptyString(message = "{com.lapsa.insurance.domain.ObtainingData.deliveryAddress.NotEmptyString.message}")
     private String deliveryAddress;
+
+    @Override
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringBuilder sb = new StringBuilder();
+
+	sb.append(MyOptionals.of(method) //
+		.filter(ObtainingMethod::isDefined) //
+		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.map(MyStrings::capitalizeFirstLetter) //
+		.orElseGet(() -> OBTAINING_DATA.displayName(variant, locale)));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
+
+	MyOptionals.of(status) //
+		.filter(ObtainingStatus::isDefined) //
+		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.map(FIELD_STATUS.fieldAsCaptionMapper(variant, locale))
+		.ifPresent(sj::add);
+
+	return sb.append(sj.toString()) //
+		.toString();
+    }
 
     // GENERATED
 

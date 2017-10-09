@@ -1,0 +1,126 @@
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_PHONE = Контактный телефон
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_PHONE_UNDEFINED = Не задан
+com.lapsa.insurance.domain.DisplayNameElements.CONTACT_DATA = Контакты
+
+com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA = Расчитанная стоимость
+com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA_UNDEFINED = Не задана
+
+com.lapsa.insurance.domain.DisplayNameElements.POST_ADDRESS = Почтовый адрес
+
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_EMAIL = Контактный email
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_EMAIL_UNDEFINED = Не задан
+
+com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA = Период страхования
+com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA_FROM = с
+com.lapsa.insurance.domain.DisplayNameElements.INSURANCE_PERIOD_DATA_TILL = по
+
+com.lapsa.insurance.domain.DisplayNameElements.COMPANY_POINT_OF_SALE = Офис продаж
+
+com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT = Географические координаты
+com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT_LAT = широта
+com.lapsa.insurance.domain.DisplayNameElements.GEO_POINT_LNG = долгота
+
+com.lapsa.insurance.domain.DisplayNameElements.DRIVER_LICENSE_DATA = Водительское удостоверение
+com.lapsa.insurance.domain.DisplayNameElements.DRIVER_LICENSE_DATA_ISSUED = выдано
+
+com.lapsa.insurance.domain.DisplayNameElements.IDENTITY_CARD_DATA = Документ удостоверяющий личность
+com.lapsa.insurance.domain.DisplayNameElements.IDENTITY_CARD_DATA_ISSUED = выдан
+
+com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA = ПТС
+com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA.full = Паспорт транспортного средства
+com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA_ISSUED = выдан
+com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA_REGNUMBER = гос. номер
+com.lapsa.insurance.domain.DisplayNameElements.VEHICLE_CERTIFICATE_DATA_REGNUMBER.full = государственный регистрационный номер
+
+com.lapsa.insurance.domain.DisplayNameElements.REQUESTER_DATA = Инициатор запроса
+
+com.lapsa.insurance.domain.DisplayNameElements.OBTAINING_DATA = Способ получения
+
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_DATA = Способ оплаты
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_EXTERNAL_ID = идентификатор платежного документа
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_EXTERNAL_ID.short = платежный документ
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_POST_INSTANT = время оплаты
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_POST_REFERENCE = референс
+
+com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA = Личные данные
+com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA_DOB = дата рождения
+com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA_SEX = пол
+
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE = Затрахованное ТС
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE.short = ТС
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE_AGE_CLASS = возраст
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE_CLASS = класс
+
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_DRIVER = Застрахованный водитель
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_DRIVER.short = Застрахованный
+
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE = Застрахованное ТС
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE.short = ТС
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE_AGE_CLASS = возраст
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_VEHICLE_COST = стоимость
+
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_DRIVER = Застрахованный водитель
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_DRIVER.short = Застрахованный
+
+com.lapsa.insurance.domain.DisplayNameElements.USER = Пользователь
+com.lapsa.insurance.domain.DisplayNameElements.USER_LOGIN = логин
+
+com.lapsa.insurance.domain.DisplayNameElements.USER_LOGIN_LOGIN = Логин
+
+com.lapsa.insurance.domain.DisplayNameElements.USER_GROUP = Пользовательская группа
+com.lapsa.insurance.domain.DisplayNameElements.USER_GROUP.short = Группа
+
+com.lapsa.insurance.domain.DisplayNameElements.USER_GRPOUP_MEMBER = количество участников
+com.lapsa.insurance.domain.DisplayNameElements.USER_GRPOUP_MEMBER.short = участников
+
+com.lapsa.insurance.domain.DisplayNameElements.INET_ADDR_DATA = Интернет адрес
+com.lapsa.insurance.domain.DisplayNameElements.INET_ADDR_DATA_HOST = хост
+
+com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA = UTM метки
+com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA.short = UTM
+com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA_CAMPAIGN = campaign
+com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA_CONTENT = content
+com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA_MEDIUM = medium
+com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA_SOURCE = source
+com.lapsa.insurance.domain.DisplayNameElements.UTM_DATA_TERM = term
+
+com.lapsa.insurance.domain.DisplayNameElements.POLICY = Полис ОСГПОВТС
+com.lapsa.insurance.domain.DisplayNameElements.POLICY.full = Полис обязательного страхования гражданско-правовой ответственности владельцев транспортных средств (ОСГПОВТС)
+com.lapsa.insurance.domain.DisplayNameElements.POLICY.short = ОСГПОВТС
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_COST = сумма премии
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_COST.short = премия
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_DRIVERS_COUNT = застрахованных водителей
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_DRIVERS_COUNT.full = количество застрахованных водителей
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_DRIVERS_COUNT.short = водителей
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLES_COUNT = застрахованных ТС
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLES_COUNT.full = количество застрахованных транспортных средств
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLES_COUNT.short = ТС
+
+com.lapsa.insurance.domain.DisplayNameElements.CASCO = АвтоКАСКО
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_COST = сумма премии
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_COST.short = премия
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_CASCO_VEHICLE_COST = стоимость авто
+
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA = Место жительства
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_ADDRESS = адрес
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_CITY = город
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_RESIDENT = является резидентом
+com.lapsa.insurance.domain.DisplayNameElements.RESIDENCE_DATA_NONRESIDENT = не является резидентом
+
+com.lapsa.insurance.domain.DisplayNameElements.ORIGIN_DATA = Место рождения
+com.lapsa.insurance.domain.DisplayNameElements.ORIGIN_DATA_COUNTRY = страна
+
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_REQUEST = Запрос на полис ОСГПОВТС
+
+com.lapsa.insurance.domain.DisplayNameElements.CASCO_REQUEST = Запрос на страхование АвтоКАСКО
+
+com.lapsa.insurance.domain.DisplayNameElements.CALLBACK_REQUEST = Запрос на обратный звонок
+
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_ID_NUMBER = ИИН
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_EMAIL = e-mail
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_PHONE = телефон
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_NUMBER = номер
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_STATUS = статус
+
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_REQUEST_CREATED = создан
+com.lapsa.insurance.domain.DisplayNameElements.FIELD_REQUEST_COMPLETED = завершен

@@ -1,15 +1,56 @@
 package com.lapsa.insurance.elements;
 
-import com.lapsa.insurance.ElementsBundleBase;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
-public enum SubjectType implements ElementsBundleBase {
+import com.lapsa.commons.elements.LocalizedElement;
+
+public enum SubjectType implements LocalizedElement {
     COMPANY, // юрлицо
     PERSON, // физлицо
-    //
     ;
 
-    @Override
-    public String canonicalName() {
-	return String.format("%1$s.%2$s", this.getClass().getName(), name());
+    //
+
+    private final boolean selectable;
+
+    //
+
+    private SubjectType() {
+	this.selectable = true;
+    }
+
+    private SubjectType(boolean selectable) {
+	this.selectable = selectable;
+    }
+
+    //
+
+    public static final Stream<SubjectType> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
+    private static final Predicate<SubjectType> SELECTABLE_FILTER = SubjectType::isSelectable;
+
+    public static final SubjectType[] selectableValues() {
+	return valuesStream() //
+		.filter(SELECTABLE_FILTER) //
+		.toArray(SubjectType[]::new);
+    }
+
+    private static final Predicate<SubjectType> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
+
+    public static final SubjectType[] nonSelectableValues() {
+	return valuesStream() //
+		.filter(NON_SELECTABLE_FILTER) //
+		.toArray(SubjectType[]::new);
+    }
+
+    // GENERATED
+
+    public boolean isSelectable() {
+	return selectable;
     }
 }

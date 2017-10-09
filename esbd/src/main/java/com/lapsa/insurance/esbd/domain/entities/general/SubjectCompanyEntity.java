@@ -1,5 +1,10 @@
 package com.lapsa.insurance.esbd.domain.entities.general;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 import com.lapsa.insurance.elements.SubjectType;
 
 /**
@@ -9,6 +14,21 @@ import com.lapsa.insurance.elements.SubjectType;
  *
  */
 public class SubjectCompanyEntity extends SubjectEntity {
+
+    @Override
+    public String toString() {
+	return ToStringBuilder.reflectionToString(this, ToStringStyle.NO_CLASS_NAME_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	return EqualsBuilder.reflectionEquals(this, obj, false);
+    }
+
+    @Override
+    public int hashCode() {
+	return HashCodeBuilder.reflectionHashCode(this, false);
+    }
 
     // Juridical_Person_Name s:string Наименование (для юр. лица)
     private String companyName;
@@ -22,16 +42,6 @@ public class SubjectCompanyEntity extends SubjectEntity {
     // ACTIVITY_KIND_ID s:int Вид деятельности (справочник ACTIVITY_KINDS)
     private long companyActivityKindId;
     private CompanyActivityKindEntity companyActivityKind;
-
-    @Override
-    public int hashCode() {
-	return this.getClass().hashCode() * new Long(getId()).hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-	return obj != null && this.getClass().isInstance(obj) && getId() == this.getClass().cast(obj).getId();
-    }
 
     @Override
     public SubjectType getSubjectType() {

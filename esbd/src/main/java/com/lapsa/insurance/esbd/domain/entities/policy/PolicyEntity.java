@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 import com.lapsa.insurance.elements.CancelationReason;
 import com.lapsa.insurance.esbd.domain.entities.general.BranchEntity;
 import com.lapsa.insurance.esbd.domain.entities.general.InsuranceCompanyEntity;
@@ -11,6 +16,22 @@ import com.lapsa.insurance.esbd.domain.entities.general.SubjectEntity;
 import com.lapsa.insurance.esbd.domain.infos.general.RecordOperationInfo;
 
 public class PolicyEntity {
+
+    @Override
+    public String toString() {
+	return ToStringBuilder.reflectionToString(this, ToStringStyle.NO_CLASS_NAME_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	return EqualsBuilder.reflectionEquals(this, obj, false);
+    }
+
+    @Override
+    public int hashCode() {
+	return HashCodeBuilder.reflectionHashCode(this, false);
+    }
+
     // POLICY_ID s:int Идентификатор полиса (обязательно)
     private long id;
 
@@ -80,16 +101,6 @@ public class PolicyEntity {
     // MIDDLEMAN_ID s:int Посредник (Идентификатор)
     // MIDDLEMAN_CONTRACT_NUMBER s:string Номер договора посредника
     // CLIENT_FORM_ID s:int Форма клиента (справочник CLIENT_FORMS)
-
-    @Override
-    public int hashCode() {
-	return this.getClass().hashCode() * new Long(id).hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-	return obj != null && this.getClass().isInstance(obj) && getId() == this.getClass().cast(obj).getId();
-    }
 
     // GENERATED
 

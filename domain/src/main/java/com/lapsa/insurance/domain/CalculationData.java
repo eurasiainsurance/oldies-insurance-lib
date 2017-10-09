@@ -1,5 +1,13 @@
 package com.lapsa.insurance.domain;
 
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
+
+import java.util.Locale;
+import java.util.StringJoiner;
+
+import com.lapsa.commons.function.MyNumbers;
+import com.lapsa.commons.function.MyObjects;
+import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.fin.FinCurrency;
 
 public class CalculationData extends BaseDomain {
@@ -25,7 +33,28 @@ public class CalculationData extends BaseDomain {
     public double getPremiumCost() {
 	if (actualPremiumCost > 0)
 	    return actualPremiumCost;
+	if (discountAmount > calculatedPremiumCost)
+	    return 0;
 	return calculatedPremiumCost - discountAmount;
+    }
+
+    @Override
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringBuilder sb = new StringBuilder();
+
+	sb.append(CALCULATION_DATA.displayName(variant, locale));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
+
+	sj.add(MyOptionals.of(this) //
+		.filter(x -> MyNumbers.nonZero(getPremiumCost()))
+		.filter(x -> MyObjects.nonNull(x.premiumCurrency))
+		.map(x -> x.premiumCurrency.formatAmount(getPremiumCost())) //
+		.orElseGet(() -> "<" + CALCULATION_DATA_UNDEFINED.displayName(variant, locale) + ">"));
+
+	return sb.append(sj.toString()) //
+		.toString();
     }
 
     // GENEERATED

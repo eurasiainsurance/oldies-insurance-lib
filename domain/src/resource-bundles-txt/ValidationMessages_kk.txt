@@ -1,9 +1,6 @@
-com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.NotNull.message = Мәнін таңдаңыз 
-com.lapsa.insurance.domain.InsurantData.WhoIsInsurant.ValidEnumeration.message = Қате мән
-
-com.lapsa.insurance.domain.InsuranceRequest.allowProcessPersonalData.AssertTrue.message = Сіз беруге тиіс келісім өзінің дербес деректерін өңдеуге
-
 com.lapsa.insurance.domain.policy.PolicyDriver.IdNumber.NotNull.message = ЖСН көрсетілмеген 
+
+com.lapsa.insurance.domain.RequesterData.allowProcessPersonalData.AssertTrue.message = Сіз беруге тиіс келісім өзінің дербес деректерін өңдеуге
 
 com.lapsa.insurance.domain.casco.Casco.deductiblePartialRate.NotNullValue.message = Таңдау қажет франшиза мөлшері бойынша ішінара залал
 com.lapsa.insurance.domain.casco.Casco.deductibleFullRate.NotNullValue.message = Таңдау қажет франшиза мөлшері бойынша толық жойылған немесе көлікті айдап әкету
@@ -12,8 +9,6 @@ com.lapsa.insurance.domain.casco.CascoVehicle.cost.Min.message = Автомоб�
 com.lapsa.insurance.domain.casco.CascoVehicle.cost.Max.message = Автомобильдің құны бағдарламасы бойынша Авто КАСКО аспауы тиіс ₸  {value}
 com.lapsa.insurance.domain.casco.CascoVehicle.yearOfManufacture.NotTooOldYearOfIssue.message = Сақтандыру бойынша арограмме Авто КАСКО қабылданады автомобильде емес, {maxAge} жастан асқан
 com.lapsa.insurance.domain.casco.CascoVehicle.yearOfManufacture.NotTooYoungYearOfIssue.message = Көрсетіңіз дұрыс шығарылған автокөлік
-
-com.lapsa.insurance.domain.InsurantData.IdNumber.NotNull.message = {com.lapsa.insurance.domain.policy.PolicyDriver.IdNumber.NotNull.message}
 
 com.lapsa.insurance.domain.ObtainingData.method.NotNullValue.message = Полисті алу тәсілін көрсетіңіз 
 com.lapsa.insurance.domain.ObtainingData.pickupCity.NotNullValue.message = Сақтандыру компаниясының офисін таңдау үшін қаланы көрсету қажет 

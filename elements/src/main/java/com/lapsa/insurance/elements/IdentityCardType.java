@@ -1,17 +1,59 @@
 package com.lapsa.insurance.elements;
 
-import com.lapsa.insurance.ElementsBundleBase;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
-public enum IdentityCardType implements ElementsBundleBase {
+import com.lapsa.commons.elements.LocalizedElement;
+
+public enum IdentityCardType implements LocalizedElement {
     ID_CARD, // удостоверение личности
     PASSPORT, // паспорт
     BIRTH_CERTIFICATE, // свидетельство о рождении
     RESIDENCE_PERMIT, // вид на жительство иностранца
-    //
+    DIPLOMATIC_PASSPORT, // дипломатический паспорт
     ;
 
-    @Override
-    public String canonicalName() {
-	return String.format("%1$s.%2$s", this.getClass().getName(), name());
+    //
+
+    private final boolean selectable;
+
+    //
+
+    private IdentityCardType() {
+	this.selectable = true;
+    }
+
+    private IdentityCardType(boolean selectable) {
+	this.selectable = selectable;
+    }
+
+    //
+
+    public static final Stream<IdentityCardType> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
+    private static final Predicate<IdentityCardType> SELECTABLE_FILTER = IdentityCardType::isSelectable;
+
+    public static final IdentityCardType[] selectableValues() {
+	return valuesStream() //
+		.filter(SELECTABLE_FILTER) //
+		.toArray(IdentityCardType[]::new);
+    }
+
+    private static final Predicate<IdentityCardType> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
+
+    public static final IdentityCardType[] nonSelectableValues() {
+	return valuesStream() //
+		.filter(NON_SELECTABLE_FILTER) //
+		.toArray(IdentityCardType[]::new);
+    }
+
+    // GENERATED
+
+    public boolean isSelectable() {
+	return selectable;
     }
 }

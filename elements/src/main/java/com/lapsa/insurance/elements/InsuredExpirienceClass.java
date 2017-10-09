@@ -1,15 +1,56 @@
 package com.lapsa.insurance.elements;
 
-import com.lapsa.insurance.ElementsBundleBase;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
-public enum InsuredExpirienceClass implements ElementsBundleBase {
+import com.lapsa.commons.elements.LocalizedElement;
+
+public enum InsuredExpirienceClass implements LocalizedElement {
     MORE2, // стаж вождения более 2 лет
     LESS2, // стаж вождения менее 2 лет
-    //
     ;
 
-    @Override
-    public String canonicalName() {
-	return String.format("%1$s.%2$s", this.getClass().getName(), name());
+    //
+
+    private final boolean selectable;
+
+    //
+
+    private InsuredExpirienceClass() {
+	this.selectable = true;
+    }
+
+    private InsuredExpirienceClass(boolean selectable) {
+	this.selectable = selectable;
+    }
+
+    //
+
+    public static final Stream<InsuredExpirienceClass> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
+    private static final Predicate<InsuredExpirienceClass> SELECTABLE_FILTER = InsuredExpirienceClass::isSelectable;
+
+    public static final InsuredExpirienceClass[] selectableValues() {
+	return valuesStream() //
+		.filter(SELECTABLE_FILTER) //
+		.toArray(InsuredExpirienceClass[]::new);
+    }
+
+    private static final Predicate<InsuredExpirienceClass> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
+
+    public static final InsuredExpirienceClass[] nonSelectableValues() {
+	return valuesStream() //
+		.filter(NON_SELECTABLE_FILTER) //
+		.toArray(InsuredExpirienceClass[]::new);
+    }
+
+    // GENERATED
+
+    public boolean isSelectable() {
+	return selectable;
     }
 }

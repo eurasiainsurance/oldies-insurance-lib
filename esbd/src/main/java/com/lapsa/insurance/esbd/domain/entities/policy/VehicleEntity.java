@@ -1,11 +1,32 @@
 package com.lapsa.insurance.esbd.domain.entities.policy;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 import com.lapsa.insurance.elements.SteeringWheelLocation;
 import com.lapsa.insurance.elements.VehicleClass;
 
 public class VehicleEntity {
+
+    @Override
+    public String toString() {
+	return ToStringBuilder.reflectionToString(this, ToStringStyle.NO_CLASS_NAME_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	return EqualsBuilder.reflectionEquals(this, obj, false);
+    }
+
+    @Override
+    public int hashCode() {
+	return HashCodeBuilder.reflectionHashCode(this, false);
+    }
+
     // TF_ID s:int Идентификатор ТС
     private long id;
 
@@ -36,18 +57,8 @@ public class VehicleEntity {
 
     // BORN s:string Год выпуска (обязательно)
     // BORN_MONTH s:int Месяц выпуска ТС
-    private Calendar realeaseDate;
+    private LocalDate realeaseDate;
 
-    @Override
-    public int hashCode() {
-	return this.getClass().hashCode() * new Long(id).hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-	return obj != null && this.getClass().isInstance(obj) && getId() == this.getClass().cast(obj).getId();
-    }
-    
     // GENERATED
 
     public long getId() {
@@ -122,11 +133,11 @@ public class VehicleEntity {
 	this.color = color;
     }
 
-    public Calendar getRealeaseDate() {
+    public LocalDate getRealeaseDate() {
 	return realeaseDate;
     }
 
-    public void setRealeaseDate(Calendar realeaseDate) {
+    public void setRealeaseDate(LocalDate realeaseDate) {
 	this.realeaseDate = realeaseDate;
     }
 }

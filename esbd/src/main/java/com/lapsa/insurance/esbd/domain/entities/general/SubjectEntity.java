@@ -1,5 +1,10 @@
 package com.lapsa.insurance.esbd.domain.entities.general;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 import com.lapsa.insurance.elements.SubjectType;
 import com.lapsa.insurance.esbd.domain.infos.general.ContactInfo;
 import com.lapsa.insurance.esbd.domain.infos.general.OriginInfo;
@@ -12,6 +17,21 @@ import com.lapsa.kz.economic.KZEconomicSector;
  *
  */
 public abstract class SubjectEntity {
+
+    @Override
+    public String toString() {
+	return ToStringBuilder.reflectionToString(this, ToStringStyle.NO_CLASS_NAME_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	return EqualsBuilder.reflectionEquals(this, obj, false);
+    }
+
+    @Override
+    public int hashCode() {
+	return HashCodeBuilder.reflectionHashCode(this, false);
+    }
 
     // ID s:int Идентификатор клиента (обязательно)
     private long id;
@@ -47,10 +67,6 @@ public abstract class SubjectEntity {
 
     // ECONOMICS_SECTOR_ID s:int Сектор экономики (справочник ECONOMICS_SECTORS)
     private KZEconomicSector economicsSector;
-
-    public abstract int hashCode();
-
-    public abstract boolean equals(Object obj);
 
     // GENERATED
 

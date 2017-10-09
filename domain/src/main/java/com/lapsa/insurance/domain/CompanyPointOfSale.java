@@ -1,11 +1,17 @@
 package com.lapsa.insurance.domain;
 
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import java.util.StringJoiner;
 
-import com.lapsa.localization.LocalizationLanguage;
+import com.lapsa.commons.function.MyOptionals;
+import com.lapsa.commons.function.MyStrings;
+import com.lapsa.international.localization.LocalizationLanguage;
 import com.lapsa.validation.NotEmptyString;
 import com.lapsa.validation.NotNullValue;
 
@@ -45,6 +51,26 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
     private List<CompanyContactPhone> phones = new ArrayList<>();
 
     private List<CompanyContactEmail> emailAddresses = new ArrayList<>();
+
+    @Override
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringBuilder sb = new StringBuilder();
+
+	sb.append(MyOptionals.of(nameLocalization.getOrDefault(LocalizationLanguage.byLocale(locale), name)) //
+		.map(MyStrings::capitalizeFirstLetter) //
+		.orElseGet(() -> COMPANY_POINT_OF_SALE.displayName(variant, locale)));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
+
+	MyOptionals.of(address) //
+		.map(x -> x.displayName(variant, locale))
+		.ifPresent(sj::add);
+
+	return sb.append(sj.toString()) //
+		.append(appendEntityId()) //
+		.toString();
+    }
 
     public CompanyContactPhone addPhone(CompanyContactPhone phone) {
 	if (phone == null)
@@ -94,7 +120,7 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
 	return nameLocalization;
     }
 
-    public void setNameLocalization(Map<LocalizationLanguage, String> nameLocalization) {
+    protected void setNameLocalization(Map<LocalizationLanguage, String> nameLocalization) {
 	this.nameLocalization = nameLocalization;
     }
 
@@ -118,7 +144,7 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
 	return emailAddresses;
     }
 
-    public void setEmailAddresses(List<CompanyContactEmail> emailAddresses) {
+    protected void setEmailAddresses(List<CompanyContactEmail> emailAddresses) {
 	this.emailAddresses = emailAddresses;
     }
 
@@ -134,7 +160,7 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
 	return phones;
     }
 
-    public void setPhones(List<CompanyContactPhone> phones) {
+    protected void setPhones(List<CompanyContactPhone> phones) {
 	this.phones = phones;
     }
 

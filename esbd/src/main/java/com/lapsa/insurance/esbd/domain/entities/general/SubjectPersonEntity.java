@@ -1,5 +1,10 @@
 package com.lapsa.insurance.esbd.domain.entities.general;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 import com.lapsa.insurance.elements.SubjectType;
 import com.lapsa.insurance.esbd.domain.infos.general.IdentityCardInfo;
 import com.lapsa.insurance.esbd.domain.infos.general.PersonalInfo;
@@ -11,6 +16,22 @@ import com.lapsa.insurance.esbd.domain.infos.general.PersonalInfo;
  *
  */
 public class SubjectPersonEntity extends SubjectEntity {
+
+    @Override
+    public String toString() {
+	return ToStringBuilder.reflectionToString(this, ToStringStyle.NO_CLASS_NAME_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	return EqualsBuilder.reflectionEquals(this, obj, false);
+    }
+
+    @Override
+    public int hashCode() {
+	return HashCodeBuilder.reflectionHashCode(this, false);
+    }
+
     // First_Name s:string Имя (для физ. лица)
     // Last_Name s:string Фамилия (для физ. лица)
     // Middle_Name s:string Отчество (для физ. лица)
@@ -23,16 +44,6 @@ public class SubjectPersonEntity extends SubjectEntity {
     // DOCUMENT_GIVED_BY s:string Документ выдан
     // DOCUMENT_GIVED_DATE s:string Дата выдачи документа
     private IdentityCardInfo identityCardInfo = new IdentityCardInfo();
-
-    @Override
-    public int hashCode() {
-	return this.getClass().hashCode() * new Long(getId()).hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-	return obj != null && this.getClass().isInstance(obj) && getId() == this.getClass().cast(obj).getId();
-    }
 
     @Override
     public SubjectType getSubjectType() {

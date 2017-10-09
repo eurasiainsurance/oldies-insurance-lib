@@ -1,14 +1,19 @@
 package com.lapsa.insurance.domain;
 
-import static com.lapsa.phone.CountryCode.*;
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
+import static com.lapsa.international.phone.CountryCode.*;
+
+import java.util.Locale;
+import java.util.StringJoiner;
 
 import javax.validation.constraints.AssertTrue;
 
-import com.lapsa.internet.validators.ValidEmail;
+import com.lapsa.commons.function.MyOptionals;
+import com.lapsa.international.internet.validators.ValidEmail;
+import com.lapsa.international.localization.LocalizationLanguage;
+import com.lapsa.international.phone.PhoneNumber;
+import com.lapsa.international.phone.validators.ValidPhoneNumber;
 import com.lapsa.kz.idnumber.validators.ValidIdNumber;
-import com.lapsa.localization.LocalizationLanguage;
-import com.lapsa.phone.PhoneNumber;
-import com.lapsa.phone.validators.ValidPhoneNumber;
 import com.lapsa.validation.NotNullValue;
 import com.lapsa.validation.ValidHumanName;
 
@@ -42,10 +47,39 @@ public class RequesterData extends BaseDomain {
 
     private boolean allowSpam;
 
-    @AssertTrue(message = "{com.lapsa.insurance.domain.InsuranceRequest.allowProcessPersonalData.AssertTrue.message}")
+    @AssertTrue(message = "{com.lapsa.insurance.domain.RequesterData.allowProcessPersonalData.AssertTrue.message}")
     private boolean allowProcessPersonalData;
 
     private LocalizationLanguage preferLanguage;
+
+    @Override
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringBuilder sb = new StringBuilder();
+
+	sb.append(REQUESTER_DATA.displayName(variant, locale));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
+
+	MyOptionals.of(name) //
+		.ifPresent(sj::add);
+
+	MyOptionals.of(idNumber) //
+		.map(FIELD_ID_NUMBER.fieldAsCaptionMapper(variant, locale))
+		.ifPresent(sj::add);
+
+	MyOptionals.of(email) //
+		.map(FIELD_EMAIL.fieldAsCaptionMapper(variant, locale))
+		.ifPresent(sj::add);
+
+	MyOptionals.of(phone) //
+		.map(PhoneNumber::getFormatted) //
+		.map(FIELD_PHONE.fieldAsCaptionMapper(variant, locale))
+		.ifPresent(sj::add);
+
+	return sb.append(sj.toString()) //
+		.toString();
+    }
 
     // GENERATED
 

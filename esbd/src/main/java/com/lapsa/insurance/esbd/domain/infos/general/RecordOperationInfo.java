@@ -1,20 +1,41 @@
 package com.lapsa.insurance.esbd.domain.infos.general;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 import com.lapsa.insurance.esbd.domain.entities.general.UserEntity;
 
 public class RecordOperationInfo {
-    private Calendar date;
+
+    @Override
+    public String toString() {
+	return ToStringBuilder.reflectionToString(this, ToStringStyle.NO_CLASS_NAME_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	return EqualsBuilder.reflectionEquals(this, obj, false);
+    }
+
+    @Override
+    public int hashCode() {
+	return HashCodeBuilder.reflectionHashCode(this, false);
+    }
+
+    private LocalDate date;
     private UserEntity author;
 
     // GENERATED
 
-    public Calendar getDate() {
+    public LocalDate getDate() {
 	return date;
     }
 
-    public void setDate(Calendar date) {
+    public void setDate(LocalDate date) {
 	this.date = date;
     }
 

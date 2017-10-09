@@ -1,22 +1,23 @@
 package com.lapsa.insurance.domain;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 
-import com.lapsa.insurance.crm.ProgressStatus;
-import com.lapsa.insurance.crm.RequestSource;
-import com.lapsa.insurance.crm.RequestStatus;
 import com.lapsa.insurance.domain.crm.InetAddrData;
 import com.lapsa.insurance.domain.crm.UTMData;
 import com.lapsa.insurance.domain.crm.User;
+import com.lapsa.insurance.elements.ProgressStatus;
+import com.lapsa.insurance.elements.RequestSource;
+import com.lapsa.insurance.elements.RequestStatus;
 import com.lapsa.validation.NotNullValue;
 
 public abstract class Request extends BaseEntity<Integer> {
     private static final long serialVersionUID = -4738852384873507942L;
-    private LocalDateTime created;
-    private LocalDateTime updated;
-    private LocalDateTime accepted;
-    private LocalDateTime completed;
-    private LocalDateTime closed;
+
+    protected Instant created;
+    protected Instant updated;
+    protected Instant accepted;
+    protected Instant completed;
+    protected Instant closed;
 
     public Request() {
     }
@@ -26,49 +27,49 @@ public abstract class Request extends BaseEntity<Integer> {
     }
 
     @NotNullValue
-    private RequestSource source;
+    protected RequestSource source;
 
     @NotNullValue
-    private RequestStatus status = RequestStatus.OPEN;
+    protected RequestStatus status = RequestStatus.OPEN;
 
     @NotNullValue
-    private ProgressStatus progressStatus = ProgressStatus.NEW;
+    protected ProgressStatus progressStatus = ProgressStatus.NEW;
 
-    private RequesterData requester = new RequesterData();
+    protected RequesterData requester = new RequesterData();
 
-    private UTMData utmData = new UTMData();
-    private InetAddrData inetAddrData = new InetAddrData();
+    protected UTMData utmData = new UTMData();
+    protected InetAddrData inetAddrData = new InetAddrData();
 
-    private User createdBy;
-    private User acceptedBy;
-    private User completedBy;
-    private User closedBy;
+    protected User createdBy;
+    protected User acceptedBy;
+    protected User completedBy;
+    protected User closedBy;
 
-    private String note;
+    protected String note;
 
     // GENERATED
 
-    public LocalDateTime getCreated() {
+    public Instant getCreated() {
 	return created;
     }
 
-    public void setCreated(LocalDateTime created) {
+    public void setCreated(Instant created) {
 	this.created = created;
     }
 
-    public LocalDateTime getUpdated() {
+    public Instant getUpdated() {
 	return updated;
     }
 
-    public void setUpdated(LocalDateTime updated) {
+    public void setUpdated(Instant updated) {
 	this.updated = updated;
     }
 
-    public LocalDateTime getClosed() {
+    public Instant getClosed() {
 	return closed;
     }
 
-    public void setClosed(LocalDateTime closed) {
+    public void setClosed(Instant closed) {
 	this.closed = closed;
     }
 
@@ -80,19 +81,19 @@ public abstract class Request extends BaseEntity<Integer> {
 	this.createdBy = createdBy;
     }
 
-    public LocalDateTime getAccepted() {
+    public Instant getAccepted() {
 	return accepted;
     }
 
-    public void setAccepted(LocalDateTime accepted) {
+    public void setAccepted(Instant accepted) {
 	this.accepted = accepted;
     }
 
-    public LocalDateTime getCompleted() {
+    public Instant getCompleted() {
 	return completed;
     }
 
-    public void setCompleted(LocalDateTime completed) {
+    public void setCompleted(Instant completed) {
 	this.completed = completed;
     }
 
@@ -169,10 +170,10 @@ public abstract class Request extends BaseEntity<Integer> {
     }
 
     public InetAddrData getInetAddrData() {
-        return inetAddrData;
+	return inetAddrData;
     }
 
     public void setInetAddrData(InetAddrData inetAddrData) {
-        this.inetAddrData = inetAddrData;
+	this.inetAddrData = inetAddrData;
     }
 }

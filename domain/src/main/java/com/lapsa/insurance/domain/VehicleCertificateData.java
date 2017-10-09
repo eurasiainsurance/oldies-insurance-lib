@@ -1,7 +1,12 @@
 package com.lapsa.insurance.domain;
 
-import java.time.LocalDate;
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
+import java.time.LocalDate;
+import java.util.Locale;
+import java.util.StringJoiner;
+
+import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.insurance.validation.ValidVehicleRegistrationNumber;
 import com.lapsa.validation.NotEmptyString;
 import com.lapsa.validation.NotNullValue;
@@ -34,6 +39,33 @@ public class VehicleCertificateData extends SidedScannedDocument {
     @NotNullValue
     @ValidDateOfIssue
     private LocalDate dateOfIssue;
+
+    @Override
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringBuilder sb = new StringBuilder();
+
+	sb.append(VEHICLE_CERTIFICATE_DATA.displayName(variant, locale));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
+
+	MyOptionals.of(number)
+		.map(FIELD_NUMBER.fieldAsCaptionMapper(variant, locale))
+		.ifPresent(sj::add);
+
+	MyOptionals.of(dateOfIssue) //
+		.map(DisplayNames.localDateMapper(locale))//
+		.map(VEHICLE_CERTIFICATE_DATA_ISSUED.fieldAsCaptionMapper(variant, locale))
+		.ifPresent(sj::add);
+
+	MyOptionals.of(registrationNumber)
+		.map(VEHICLE_CERTIFICATE_DATA_REGNUMBER.fieldAsCaptionMapper(variant, locale))
+		.ifPresent(sj::add);
+
+	return sb.append(sj.toString()) //
+		.append(appendEntityId()) //
+		.toString();
+    }
 
     // GENERATED
 

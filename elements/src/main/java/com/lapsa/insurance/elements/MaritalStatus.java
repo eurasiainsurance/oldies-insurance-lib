@@ -1,15 +1,56 @@
 package com.lapsa.insurance.elements;
 
-import com.lapsa.insurance.ElementsBundleBase;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
-public enum MaritalStatus implements ElementsBundleBase {
+import com.lapsa.commons.elements.LocalizedElement;
+
+public enum MaritalStatus implements LocalizedElement {
     MARRIED, // женат / замужем
     SINGLE, // холост / незамужем
-    //
     ;
 
-    @Override
-    public String canonicalName() {
-	return String.format("%1$s.%2$s", this.getClass().getName(), name());
+    //
+
+    private final boolean selectable;
+
+    //
+
+    private MaritalStatus() {
+	this.selectable = true;
+    }
+
+    private MaritalStatus(boolean selectable) {
+	this.selectable = selectable;
+    }
+
+    //
+
+    public static final Stream<MaritalStatus> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
+    private static final Predicate<MaritalStatus> SELECTABLE_FILTER = MaritalStatus::isSelectable;
+
+    public static final MaritalStatus[] selectableValues() {
+	return valuesStream() //
+		.filter(SELECTABLE_FILTER) //
+		.toArray(MaritalStatus[]::new);
+    }
+
+    private static final Predicate<MaritalStatus> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
+
+    public static final MaritalStatus[] nonSelectableValues() {
+	return valuesStream() //
+		.filter(NON_SELECTABLE_FILTER) //
+		.toArray(MaritalStatus[]::new);
+    }
+
+    // GENERATED
+
+    public boolean isSelectable() {
+	return selectable;
     }
 }

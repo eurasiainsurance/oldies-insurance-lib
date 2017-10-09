@@ -1,15 +1,56 @@
 package com.lapsa.insurance.elements;
 
-import com.lapsa.insurance.ElementsBundleBase;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
-public enum Sex implements ElementsBundleBase {
+import com.lapsa.commons.elements.LocalizedElement;
+
+public enum Sex implements LocalizedElement {
     MALE, // мужской
     FEMALE, // женский
-    //
     ;
 
-    @Override
-    public String canonicalName() {
-	return String.format("%1$s.%2$s", this.getClass().getName(), name());
+    //
+
+    private final boolean selectable;
+
+    //
+
+    private Sex() {
+	this.selectable = true;
+    }
+
+    private Sex(boolean selectable) {
+	this.selectable = selectable;
+    }
+
+    //
+
+    public static final Stream<Sex> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
+    private static final Predicate<Sex> SELECTABLE_FILTER = Sex::isSelectable;
+
+    public static final Sex[] selectableValues() {
+	return valuesStream() //
+		.filter(SELECTABLE_FILTER) //
+		.toArray(Sex[]::new);
+    }
+
+    private static final Predicate<Sex> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
+
+    public static final Sex[] nonSelectableValues() {
+	return valuesStream() //
+		.filter(NON_SELECTABLE_FILTER) //
+		.toArray(Sex[]::new);
+    }
+
+    // GENERATED
+
+    public boolean isSelectable() {
+	return selectable;
     }
 }

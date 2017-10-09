@@ -1,7 +1,14 @@
 package com.lapsa.insurance.domain;
 
-import com.lapsa.country.Country;
-import com.lapsa.country.validators.ValidCountry;
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
+
+import java.util.Locale;
+import java.util.StringJoiner;
+
+import com.lapsa.commons.elements.Localized;
+import com.lapsa.commons.function.MyOptionals;
+import com.lapsa.international.country.Country;
+import com.lapsa.international.country.validators.ValidCountry;
 import com.lapsa.validation.NotNullValue;
 
 public class OriginData extends BaseDomain {
@@ -33,4 +40,21 @@ public class OriginData extends BaseDomain {
 	this.country = country;
     }
 
+    @Override
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringBuilder sb = new StringBuilder();
+
+	sb.append(ORIGIN_DATA.displayName(variant, locale));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
+
+	MyOptionals.of(country) //
+		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.map(ORIGIN_DATA_COUNTRY.fieldAsCaptionMapper(variant, locale)) //
+		.ifPresent(sj::add);
+
+	return sb.append(sj.toString()) //
+		.toString();
+    }
 }

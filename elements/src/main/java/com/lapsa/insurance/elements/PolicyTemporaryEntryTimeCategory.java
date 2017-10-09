@@ -1,8 +1,11 @@
 package com.lapsa.insurance.elements;
 
-import com.lapsa.insurance.ElementsBundleBase;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
-public enum PolicyTemporaryEntryTimeCategory implements ElementsBundleBase {
+import com.lapsa.commons.elements.LocalizedElement;
+
+public enum PolicyTemporaryEntryTimeCategory implements LocalizedElement {
     TO_15D_INCL, // до 15 дней включительно
     FROM_16D_TO_1M_INCL, // от 16 дней до 1 месяца
     FROM_1M_TO_2M_INCL, // 2 месяца
@@ -14,12 +17,49 @@ public enum PolicyTemporaryEntryTimeCategory implements ElementsBundleBase {
     FROM_7M_TO_8M_INCL, // от 7 до 8 месяцев включительно
     FROM_8M_TO_9M_INCL, // от 8 до 9 месяцев включительно
     FROM_9M, // свыше 11 месяцев
-    //
     ;
 
-    @Override
-    public String canonicalName() {
-	return String.format("%1$s.%2$s", this.getClass().getName(), name());
+    //
+
+    private final boolean selectable;
+
+    //
+
+    private PolicyTemporaryEntryTimeCategory() {
+	this.selectable = true;
     }
 
+    private PolicyTemporaryEntryTimeCategory(boolean selectable) {
+	this.selectable = selectable;
+    }
+
+    //
+
+    public static final Stream<PolicyTemporaryEntryTimeCategory> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
+    private static final Predicate<PolicyTemporaryEntryTimeCategory> SELECTABLE_FILTER = PolicyTemporaryEntryTimeCategory::isSelectable;
+
+    public static final PolicyTemporaryEntryTimeCategory[] selectableValues() {
+	return valuesStream() //
+		.filter(SELECTABLE_FILTER) //
+		.toArray(PolicyTemporaryEntryTimeCategory[]::new);
+    }
+
+    private static final Predicate<PolicyTemporaryEntryTimeCategory> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
+
+    public static final PolicyTemporaryEntryTimeCategory[] nonSelectableValues() {
+	return valuesStream() //
+		.filter(NON_SELECTABLE_FILTER) //
+		.toArray(PolicyTemporaryEntryTimeCategory[]::new);
+    }
+
+    // GENERATED
+
+    public boolean isSelectable() {
+	return selectable;
+    }
 }

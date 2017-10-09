@@ -1,5 +1,12 @@
 package com.lapsa.insurance.domain;
 
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
+
+import java.util.Locale;
+import java.util.StringJoiner;
+
+import com.lapsa.commons.function.MyOptionals;
+
 public class CompanyContactEmail extends BaseEntity<Integer> {
     private static final long serialVersionUID = 4127152799405864110L;
     private static final int PRIME = 5;
@@ -17,6 +24,23 @@ public class CompanyContactEmail extends BaseEntity<Integer> {
 
     private String address;
 
+    @Override
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringBuilder sb = new StringBuilder();
+
+	sb.append(COMPANY_CONTACT_EMAIL.displayName(variant, locale));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
+
+	sj.add(MyOptionals.of(address)
+		.orElseGet(() -> "<" + COMPANY_CONTACT_EMAIL_UNDEFINED.displayName(variant, locale) + ">"));
+
+	return sb.append(sj.toString()) //
+		.append(appendEntityId()) //
+		.toString();
+    }
+
     // GENERATED
 
     public String getAddress() {
@@ -26,5 +50,4 @@ public class CompanyContactEmail extends BaseEntity<Integer> {
     public void setAddress(String address) {
 	this.address = address;
     }
-
 }

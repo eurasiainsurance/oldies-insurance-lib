@@ -1,7 +1,16 @@
 package com.lapsa.insurance.domain;
 
-import com.lapsa.insurance.crm.PaymentStatus;
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
+
+import java.time.Instant;
+import java.util.Locale;
+import java.util.StringJoiner;
+
+import com.lapsa.commons.elements.Localized;
+import com.lapsa.commons.function.MyOptionals;
+import com.lapsa.commons.function.MyStrings;
 import com.lapsa.insurance.elements.PaymentMethod;
+import com.lapsa.insurance.elements.PaymentStatus;
 import com.lapsa.validation.NotNullValue;
 
 public class PaymentData extends BaseDomain {
@@ -25,7 +34,46 @@ public class PaymentData extends BaseDomain {
     @NotNullValue
     private PaymentStatus status = PaymentStatus.UNDEFINED;
 
-    private String paymentReference;
+    private String externalId;
+
+    private String postReference;
+    private Instant postInstant;
+
+    @Override
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringBuilder sb = new StringBuilder();
+
+	sb.append(MyOptionals.of(method) //
+		.filter(PaymentMethod::isDefined) //
+		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.map(MyStrings::capitalizeFirstLetter) //
+		.orElseGet(() -> PAYMENT_DATA.displayName(variant, locale)));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
+
+	MyOptionals.of(status) //
+		.filter(PaymentStatus::isDefined) //
+		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.map(FIELD_STATUS.fieldAsCaptionMapper(variant, locale)) //
+		.ifPresent(sj::add);
+
+	MyOptionals.of(externalId) //
+		.map(PAYMENT_EXTERNAL_ID.fieldAsCaptionMapper(variant, locale)) //
+		.ifPresent(sj::add);
+
+	MyOptionals.of(postInstant) //
+		.map(DisplayNames.instantMapper(locale)) //
+		.map(PAYMENT_POST_INSTANT.fieldAsCaptionMapper(variant, locale)) //
+		.ifPresent(sj::add);
+
+	MyOptionals.of(postReference) //
+		.map(PAYMENT_POST_REFERENCE.fieldAsCaptionMapper(variant, locale)) //
+		.ifPresent(sj::add);
+
+	return sb.append(sj.toString()) //
+		.toString();
+    }
 
     // GENERATED
 
@@ -37,12 +85,12 @@ public class PaymentData extends BaseDomain {
 	this.method = method;
     }
 
-    public String getPaymentReference() {
-	return paymentReference;
+    public String getExternalId() {
+	return externalId;
     }
 
-    public void setPaymentReference(String paymentReference) {
-	this.paymentReference = paymentReference;
+    public void setExternalId(String externalId) {
+	this.externalId = externalId;
     }
 
     public PaymentStatus getStatus() {
@@ -51,5 +99,21 @@ public class PaymentData extends BaseDomain {
 
     public void setStatus(PaymentStatus status) {
 	this.status = status;
+    }
+
+    public String getPostReference() {
+	return postReference;
+    }
+
+    public void setPostReference(String postReference) {
+	this.postReference = postReference;
+    }
+
+    public void setPostInstant(Instant postInstant) {
+	this.postInstant = postInstant;
+    }
+
+    public Instant getPostInstant() {
+	return postInstant;
     }
 }

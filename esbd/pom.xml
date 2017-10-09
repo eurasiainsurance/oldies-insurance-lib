@@ -20,7 +20,7 @@
 			<scope>compile</scope>
 			<optional>false</optional>
 		</dependency>
-		<!-- internal -->
+		<!-- oldies -->
 		<dependency>
 			<groupId>com.lapsa.international-lib</groupId>
 			<artifactId>international-core</artifactId>
@@ -30,6 +30,13 @@
 		<dependency>
 			<groupId>com.lapsa.kz-lib</groupId>
 			<artifactId>kz-core</artifactId>
+			<scope>compile</scope>
+			<optional>false</optional>
+		</dependency>
+		<!-- external -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
 			<scope>compile</scope>
 			<optional>false</optional>
 		</dependency>

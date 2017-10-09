@@ -1,15 +1,57 @@
 package com.lapsa.insurance.elements;
 
-import com.lapsa.insurance.ElementsBundleBase;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
-public enum CascoCarAgeClass implements ElementsBundleBase {
+import com.lapsa.commons.elements.LocalizedElement;
+
+public enum CascoCarAgeClass implements LocalizedElement {
     UNDER3, // до 3 лет
     FROM3TO7, // от 3 до 7 лет
     OTHER7, // старше 7 лет
     ;
 
-    @Override
-    public String canonicalName() {
-	return String.format("%1$s.%2$s", this.getClass().getName(), name());
+    //
+
+    private final boolean selectable;
+
+    //
+
+    private CascoCarAgeClass() {
+	this.selectable = true;
+    }
+
+    private CascoCarAgeClass(boolean selectable) {
+	this.selectable = selectable;
+    }
+
+    //
+
+    public static final Stream<CascoCarAgeClass> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
+    private static final Predicate<CascoCarAgeClass> SELECTABLE_FILTER = CascoCarAgeClass::isSelectable;
+
+    public static final CascoCarAgeClass[] selectableValues() {
+	return valuesStream() //
+		.filter(SELECTABLE_FILTER) //
+		.toArray(CascoCarAgeClass[]::new);
+    }
+
+    private static final Predicate<CascoCarAgeClass> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
+
+    public static final CascoCarAgeClass[] nonSelectableValues() {
+	return valuesStream() //
+		.filter(NON_SELECTABLE_FILTER) //
+		.toArray(CascoCarAgeClass[]::new);
+    }
+
+    // GENERATED
+
+    public boolean isSelectable() {
+	return selectable;
     }
 }

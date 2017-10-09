@@ -1,15 +1,56 @@
 package com.lapsa.insurance.elements;
 
-import com.lapsa.insurance.ElementsBundleBase;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
-public enum SteeringWheelLocation implements ElementsBundleBase {
+import com.lapsa.commons.elements.LocalizedElement;
+
+public enum SteeringWheelLocation implements LocalizedElement {
     RIGHT_SIDE, // руль справа
     LEFT_SIDE, // руль слева
-    //
     ;
 
-    @Override
-    public String canonicalName() {
-	return String.format("%1$s.%2$s", this.getClass().getName(), name());
+    //
+
+    private final boolean selectable;
+
+    //
+
+    private SteeringWheelLocation() {
+	this.selectable = true;
+    }
+
+    private SteeringWheelLocation(boolean selectable) {
+	this.selectable = selectable;
+    }
+
+    //
+
+    public static final Stream<SteeringWheelLocation> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
+    private static final Predicate<SteeringWheelLocation> SELECTABLE_FILTER = SteeringWheelLocation::isSelectable;
+
+    public static final SteeringWheelLocation[] selectableValues() {
+	return valuesStream() //
+		.filter(SELECTABLE_FILTER) //
+		.toArray(SteeringWheelLocation[]::new);
+    }
+
+    private static final Predicate<SteeringWheelLocation> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
+
+    public static final SteeringWheelLocation[] nonSelectableValues() {
+	return valuesStream() //
+		.filter(NON_SELECTABLE_FILTER) //
+		.toArray(SteeringWheelLocation[]::new);
+    }
+
+    // GENERATED
+
+    public boolean isSelectable() {
+	return selectable;
     }
 }

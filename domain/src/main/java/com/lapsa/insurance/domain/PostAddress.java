@@ -1,11 +1,17 @@
 package com.lapsa.insurance.domain;
 
-import java.util.HashMap;
-import java.util.Map;
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
+import java.util.StringJoiner;
+
+import com.lapsa.commons.elements.Localized;
+import com.lapsa.commons.function.MyOptionals;
+import com.lapsa.international.localization.LocalizationLanguage;
 import com.lapsa.kz.country.KZCity;
 import com.lapsa.kz.country.validators.ValidKZCity;
-import com.lapsa.localization.LocalizationLanguage;
 import com.lapsa.validation.NotEmptyString;
 import com.lapsa.validation.NotNullValue;
 
@@ -38,6 +44,29 @@ public class PostAddress extends BaseDomain {
 
     private Map<LocalizationLanguage, String> streetLocalization = new HashMap<>();
 
+    @Override
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringBuilder sb = new StringBuilder();
+
+	sb.append(POST_ADDRESS.displayName(variant, locale));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
+
+	MyOptionals.of(postIndex)
+		.ifPresent(sj::add);
+
+	MyOptionals.of(city) //
+		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.ifPresent(sj::add);
+
+	MyOptionals.of(streetLocalization.getOrDefault(LocalizationLanguage.byLocale(locale), street))
+		.ifPresent(sj::add);
+
+	return sb.append(sj.toString()) //
+		.toString();
+    }
+
     // GENERATED
 
     public String getPostIndex() {
@@ -68,7 +97,7 @@ public class PostAddress extends BaseDomain {
 	return streetLocalization;
     }
 
-    public void setStreetLocalization(Map<LocalizationLanguage, String> streetLocalization) {
+    protected void setStreetLocalization(Map<LocalizationLanguage, String> streetLocalization) {
 	this.streetLocalization = streetLocalization;
     }
 }

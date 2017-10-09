@@ -1,8 +1,11 @@
 package com.lapsa.insurance.elements;
 
-import com.lapsa.insurance.ElementsBundleBase;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
-public enum CancelationReason implements ElementsBundleBase {
+import com.lapsa.commons.elements.LocalizedElement;
+
+public enum CancelationReason implements LocalizedElement {
     CANCELATION_AND_RENEW, // Досрочное прекращение договора и заключение
 			   // нового
     CANCELATION, // Досрочное расторжение
@@ -12,11 +15,49 @@ public enum CancelationReason implements ElementsBundleBase {
     ISSUED_DUPLICATE_POLICY, // Выпущен дубликат
     OTHER, // Другая причина
     HUMAN_FAILURE, // Ошибка оператора
-    //
     ;
 
-    @Override
-    public String canonicalName() {
-	return String.format("%1$s.%2$s", this.getClass().getName(), name());
+    //
+
+    private final boolean selectable;
+
+    //
+
+    private CancelationReason() {
+	this.selectable = true;
+    }
+
+    private CancelationReason(boolean selectable) {
+	this.selectable = selectable;
+    }
+
+    //
+
+    public static final Stream<CancelationReason> valuesStream() {
+	return Stream.of(values());
+    }
+
+    //
+
+    private static final Predicate<CancelationReason> SELECTABLE_FILTER = CancelationReason::isSelectable;
+
+    public static final CancelationReason[] selectableValues() {
+	return valuesStream() //
+		.filter(SELECTABLE_FILTER) //
+		.toArray(CancelationReason[]::new);
+    }
+
+    private static final Predicate<CancelationReason> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
+
+    public static final CancelationReason[] nonSelectableValues() {
+	return valuesStream() //
+		.filter(NON_SELECTABLE_FILTER) //
+		.toArray(CancelationReason[]::new);
+    }
+
+    // GENERATED
+
+    public boolean isSelectable() {
+	return selectable;
     }
 }

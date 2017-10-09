@@ -1,11 +1,16 @@
 package com.lapsa.insurance.domain;
 
-import java.time.LocalDate;
+import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
-import com.lapsa.validation.TemporalFuture;
-import com.lapsa.validation.TemporalLeftBeforeRight;
+import java.time.LocalDate;
+import java.util.Locale;
+import java.util.StringJoiner;
+
+import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.validation.LocalDateComparison;
 import com.lapsa.validation.NotNullValue;
+import com.lapsa.validation.TemporalFuture;
+import com.lapsa.validation.TemporalLeftBeforeRight;
 
 public class InsurancePeriodData extends BaseDomain {
     private static final long serialVersionUID = 5019017773831664143L;
@@ -29,6 +34,29 @@ public class InsurancePeriodData extends BaseDomain {
     @NotNullValue
     @TemporalFuture
     private LocalDate to;
+
+    @Override
+    public String displayName(DisplayNameVariant variant, Locale locale) {
+	StringBuilder sb = new StringBuilder();
+
+	sb.append(INSURANCE_PERIOD_DATA.displayName(variant, locale));
+
+	StringJoiner sj = new StringJoiner(", ", " ", "");
+	sj.setEmptyValue("");
+
+	MyOptionals.of(from) //
+		.map(DisplayNames.localDateMapper(locale)) //
+		.map(INSURANCE_PERIOD_DATA_FROM.fieldAsCaptionMapper(variant, locale))
+		.ifPresent(sj::add);
+
+	MyOptionals.of(to) //
+		.map(DisplayNames.localDateMapper(locale)) //
+		.map(INSURANCE_PERIOD_DATA_TILL.fieldAsCaptionMapper(variant, locale))
+		.ifPresent(sj::add);
+
+	return sb.append(sj.toString()) //
+		.toString();
+    }
 
     @TemporalLeftBeforeRight
     // method must be a getter (name begins with "get"). validation is not

@@ -15,12 +15,12 @@
 	<dependencies>
 		<!-- own -->
 		<dependency>
-			<groupId>com.lapsa.insurance-lib</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>insurance-elements</artifactId>
 			<scope>compile</scope>
 			<optional>false</optional>
 		</dependency>
-		<!-- internal lapsa -->
+		<!-- oldies -->
 		<dependency>
 			<groupId>com.lapsa.lapsa-lib</groupId>
 			<artifactId>lapsa-utils</artifactId>
@@ -56,7 +56,7 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.glassfish.web</groupId>
+			<groupId>org.glassfish</groupId>
 			<artifactId>javax.el</artifactId>
 			<scope>test</scope>
 		</dependency>

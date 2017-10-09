@@ -14,19 +14,19 @@
 	<name>Insurance Lib : Elements</name>
 
 	<dependencies>
-		<!-- internal lapsa-commons -->
+		<!-- tech -->
 		<dependency>
-			<groupId>tech.lapsa.lapsa</groupId>
-			<artifactId>lapsa-commons</artifactId>
+			<groupId>tech.lapsa.java</groupId>
+			<artifactId>java-commons</artifactId>
 			<scope>compile</scope>
 			<optional>false</optional>
 		</dependency>
-		<!-- test -->
 		<dependency>
-			<groupId>tech.lapsa.lapsa</groupId>
-			<artifactId>lapsa-commons-test</artifactId>
+			<groupId>tech.lapsa.java</groupId>
+			<artifactId>java-commons-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- test -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

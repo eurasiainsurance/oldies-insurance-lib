@@ -5,14 +5,15 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
-import com.lapsa.commons.elements.Localized;
-import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.insurance.domain.Vehicle;
 import com.lapsa.insurance.elements.VehicleAgeClass;
 import com.lapsa.insurance.elements.VehicleClass;
 import com.lapsa.insurance.validation.ValidPolicyVehicleAgeClass;
 import com.lapsa.insurance.validation.ValidPolicyVehicleClass;
 import com.lapsa.validation.NotNullValue;
+
+import tech.lapsa.java.commons.function.MyOptionals;
+import tech.lapsa.java.commons.localization.Localized;
 
 public class PolicyVehicle extends Vehicle {
     private static final long serialVersionUID = -944934937361936981L;

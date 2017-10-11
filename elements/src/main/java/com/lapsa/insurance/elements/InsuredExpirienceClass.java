@@ -3,7 +3,7 @@ package com.lapsa.insurance.elements;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-import com.lapsa.commons.elements.LocalizedElement;
+import tech.lapsa.java.commons.localization.LocalizedElement;
 
 public enum InsuredExpirienceClass implements LocalizedElement {
     MORE2, // стаж вождения более 2 лет

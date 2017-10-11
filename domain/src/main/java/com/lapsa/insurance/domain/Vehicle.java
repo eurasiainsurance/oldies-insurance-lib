@@ -2,8 +2,6 @@ package com.lapsa.insurance.domain;
 
 import java.util.StringJoiner;
 
-import com.lapsa.commons.function.MyOptionals;
-import com.lapsa.commons.function.MyStrings;
 import com.lapsa.insurance.validation.ValidVehicleYearOfIssue;
 import com.lapsa.international.cars.validators.ValidVINCode;
 import com.lapsa.kz.country.KZArea;
@@ -12,6 +10,9 @@ import com.lapsa.kz.country.validators.ValidKZArea;
 import com.lapsa.kz.country.validators.ValidKZCity;
 import com.lapsa.validation.NotEmptyString;
 import com.lapsa.validation.NotNullValue;
+
+import tech.lapsa.java.commons.function.MyOptionals;
+import tech.lapsa.java.commons.function.MyStrings;
 
 public abstract class Vehicle extends BaseEntity<Integer> {
     private static final long serialVersionUID = -7589698813986815583L;

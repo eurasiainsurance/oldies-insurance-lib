@@ -8,8 +8,9 @@ import java.util.Locale;
 import java.util.StringJoiner;
 import java.util.stream.Stream;
 
-import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.insurance.domain.BaseEntity;
+
+import tech.lapsa.java.commons.function.MyOptionals;
 
 public class User extends BaseEntity<Integer> {
     private static final long serialVersionUID = -8270933167719645431L;

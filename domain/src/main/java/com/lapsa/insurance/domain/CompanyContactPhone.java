@@ -5,11 +5,12 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
-import com.lapsa.commons.elements.Localized;
-import com.lapsa.commons.function.MyOptionals;
-import com.lapsa.commons.function.MyStrings;
 import com.lapsa.international.phone.PhoneNumber;
 import com.lapsa.international.phone.PhoneType;
+
+import tech.lapsa.java.commons.function.MyOptionals;
+import tech.lapsa.java.commons.function.MyStrings;
+import tech.lapsa.java.commons.localization.Localized;
 
 public class CompanyContactPhone extends BaseEntity<Integer> {
     private static final long serialVersionUID = -1005845698858843018L;

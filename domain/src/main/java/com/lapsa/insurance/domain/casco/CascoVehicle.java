@@ -8,8 +8,6 @@ import java.util.StringJoiner;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
-import com.lapsa.commons.elements.Localized;
-import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.donkeyfaces.model.Image;
 import com.lapsa.donkeyfaces.validators.FileSizeMeasure;
 import com.lapsa.donkeyfaces.validators.MaxImageFileSize;
@@ -19,6 +17,9 @@ import com.lapsa.insurance.elements.CascoCarAgeClass;
 import com.lapsa.validation.NotNullValue;
 import com.lapsa.validation.NotTooOldYearOfIssue;
 import com.lapsa.validation.NotTooYoungYearOfIssue;
+
+import tech.lapsa.java.commons.function.MyOptionals;
+import tech.lapsa.java.commons.localization.Localized;
 
 public class CascoVehicle extends Vehicle {
     private static final long serialVersionUID = 2602178314016175969L;

@@ -3,7 +3,7 @@ package com.lapsa.insurance.domain;
 import java.util.Locale;
 import java.util.function.Function;
 
-import com.lapsa.commons.elements.LocalizedElement;
+import tech.lapsa.java.commons.localization.LocalizedElement;
 
 public enum DisplayNameElements implements LocalizedElement {
     CONTACT_DATA,

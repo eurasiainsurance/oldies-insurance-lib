@@ -9,14 +9,15 @@ import java.util.StringJoiner;
 
 import javax.validation.constraints.Min;
 
-import com.lapsa.commons.function.MyNumbers;
-import com.lapsa.commons.function.MyObjects;
-import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.fin.FinCurrency;
 import com.lapsa.insurance.domain.InsuranceProduct;
 import com.lapsa.insurance.elements.CascoDeductibleFullRate;
 import com.lapsa.insurance.elements.CascoDeductiblePartialRate;
 import com.lapsa.validation.NotNullValue;
+
+import tech.lapsa.java.commons.function.MyNumbers;
+import tech.lapsa.java.commons.function.MyObjects;
+import tech.lapsa.java.commons.function.MyOptionals;
 
 public class Casco extends InsuranceProduct {
     private static final long serialVersionUID = -1919280207677627360L;

@@ -6,14 +6,15 @@ import java.time.LocalDate;
 import java.util.Locale;
 import java.util.StringJoiner;
 
-import com.lapsa.commons.elements.Localized;
-import com.lapsa.commons.function.MyOptionals;
-import com.lapsa.commons.function.MyStrings;
 import com.lapsa.insurance.elements.IdentityCardType;
 import com.lapsa.insurance.validation.ValidIdentityCardType;
 import com.lapsa.validation.NotEmptyString;
 import com.lapsa.validation.NotNullValue;
 import com.lapsa.validation.ValidDateOfIssue;
+
+import tech.lapsa.java.commons.function.MyOptionals;
+import tech.lapsa.java.commons.function.MyStrings;
+import tech.lapsa.java.commons.localization.Localized;
 
 public class IdentityCardData extends SidedScannedDocument {
     private static final long serialVersionUID = 6150409229272494445L;

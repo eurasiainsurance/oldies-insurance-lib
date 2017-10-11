@@ -5,8 +5,6 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
-import com.lapsa.commons.elements.Localized;
-import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.insurance.domain.Driver;
 import com.lapsa.insurance.domain.PersonalData;
 import com.lapsa.insurance.elements.InsuranceClassType;
@@ -16,6 +14,9 @@ import com.lapsa.insurance.validation.ValidInsuranceAgeClass;
 import com.lapsa.insurance.validation.ValidInsuranceClassType;
 import com.lapsa.insurance.validation.ValidInsuranceExpirienceClass;
 import com.lapsa.validation.NotNullValue;
+
+import tech.lapsa.java.commons.function.MyOptionals;
+import tech.lapsa.java.commons.localization.Localized;
 
 public class PolicyDriver extends Driver {
     private static final long serialVersionUID = 5209394299289430299L;

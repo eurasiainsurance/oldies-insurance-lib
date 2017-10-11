@@ -5,8 +5,9 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
-import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.insurance.domain.BaseEntity;
+
+import tech.lapsa.java.commons.function.MyOptionals;
 
 public class UserLogin extends BaseEntity<Integer> {
     private static final long serialVersionUID = -3456756685893976599L;

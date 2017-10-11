@@ -5,9 +5,10 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
-import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.insurance.domain.Driver;
 import com.lapsa.insurance.domain.PersonalData;
+
+import tech.lapsa.java.commons.function.MyOptionals;
 
 public class CascoDriver extends Driver {
     private static final long serialVersionUID = 6781864890008476284L;

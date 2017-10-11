@@ -6,9 +6,6 @@ import java.time.LocalDate;
 import java.util.Locale;
 import java.util.StringJoiner;
 
-import com.lapsa.commons.elements.Localized;
-import com.lapsa.commons.function.MyOptionals;
-import com.lapsa.commons.function.MyStrings;
 import com.lapsa.insurance.elements.DeliveryTimeSlot;
 import com.lapsa.insurance.elements.ObtainingMethod;
 import com.lapsa.insurance.elements.ObtainingStatus;
@@ -18,6 +15,10 @@ import com.lapsa.validation.DaysBeforeNow;
 import com.lapsa.validation.Mode;
 import com.lapsa.validation.NotEmptyString;
 import com.lapsa.validation.NotNullValue;
+
+import tech.lapsa.java.commons.function.MyOptionals;
+import tech.lapsa.java.commons.function.MyStrings;
+import tech.lapsa.java.commons.localization.Localized;
 
 public class ObtainingData extends BaseDomain {
     private static final long serialVersionUID = -6326848114328976035L;

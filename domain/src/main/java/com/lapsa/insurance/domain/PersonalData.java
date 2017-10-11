@@ -6,14 +6,15 @@ import java.time.LocalDate;
 import java.util.Locale;
 import java.util.StringJoiner;
 
-import com.lapsa.commons.elements.Localized;
-import com.lapsa.commons.function.MyOptionals;
-import com.lapsa.commons.function.MyStrings;
 import com.lapsa.insurance.elements.Sex;
 import com.lapsa.validation.NotEmptyString;
 import com.lapsa.validation.NotNullValue;
 import com.lapsa.validation.ValidDateOfBirth;
 import com.lapsa.validation.ValidHumanName;
+
+import tech.lapsa.java.commons.function.MyOptionals;
+import tech.lapsa.java.commons.function.MyStrings;
+import tech.lapsa.java.commons.localization.Localized;
 
 public class PersonalData extends BaseDomain {
     private static final long serialVersionUID = 6108831386319756885L;

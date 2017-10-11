@@ -3,7 +3,7 @@ package com.lapsa.insurance.elements;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-import com.lapsa.commons.elements.LocalizedElement;
+import tech.lapsa.java.commons.localization.LocalizedElement;
 
 public enum CancelationReason implements LocalizedElement {
     CANCELATION_AND_RENEW, // Досрочное прекращение договора и заключение

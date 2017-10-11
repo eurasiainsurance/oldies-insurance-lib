@@ -5,13 +5,14 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
-import com.lapsa.commons.elements.Localized;
-import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.insurance.domain.DisplayNames;
 import com.lapsa.insurance.domain.InsuranceProduct;
 import com.lapsa.insurance.domain.InsuranceRequest;
 import com.lapsa.insurance.elements.InsuranceProductType;
 import com.lapsa.insurance.elements.RequestSource;
+
+import tech.lapsa.java.commons.function.MyOptionals;
+import tech.lapsa.java.commons.localization.Localized;
 
 public class CascoRequest extends InsuranceRequest {
     private static final long serialVersionUID = -8067548829502589540L;

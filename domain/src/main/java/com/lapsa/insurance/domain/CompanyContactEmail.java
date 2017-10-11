@@ -5,7 +5,7 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
-import com.lapsa.commons.function.MyOptionals;
+import tech.lapsa.java.commons.function.MyOptionals;
 
 public class CompanyContactEmail extends BaseEntity<Integer> {
     private static final long serialVersionUID = 4127152799405864110L;

@@ -5,10 +5,11 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
-import com.lapsa.commons.function.MyNumbers;
-import com.lapsa.commons.function.MyObjects;
-import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.fin.FinCurrency;
+
+import tech.lapsa.java.commons.function.MyNumbers;
+import tech.lapsa.java.commons.function.MyObjects;
+import tech.lapsa.java.commons.function.MyOptionals;
 
 public class CalculationData extends BaseDomain {
     private static final long serialVersionUID = -1769681003179820909L;

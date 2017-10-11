@@ -8,10 +8,11 @@ import java.util.Locale;
 import java.util.StringJoiner;
 import java.util.stream.Stream;
 
-import com.lapsa.commons.function.MyNumbers;
-import com.lapsa.commons.function.MyObjects;
-import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.insurance.domain.InsuranceProduct;
+
+import tech.lapsa.java.commons.function.MyNumbers;
+import tech.lapsa.java.commons.function.MyObjects;
+import tech.lapsa.java.commons.function.MyOptionals;
 
 public class Policy extends InsuranceProduct {
     private static final long serialVersionUID = 1148321211581313286L;

@@ -5,8 +5,9 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
-import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.insurance.domain.BaseDomain;
+
+import tech.lapsa.java.commons.function.MyOptionals;
 
 public class InetAddrData extends BaseDomain {
     private static final long serialVersionUID = 7955301639535366812L;

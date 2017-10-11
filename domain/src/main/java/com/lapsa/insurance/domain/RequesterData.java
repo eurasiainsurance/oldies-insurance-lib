@@ -8,7 +8,6 @@ import java.util.StringJoiner;
 
 import javax.validation.constraints.AssertTrue;
 
-import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.international.internet.validators.ValidEmail;
 import com.lapsa.international.localization.LocalizationLanguage;
 import com.lapsa.international.phone.PhoneNumber;
@@ -16,6 +15,8 @@ import com.lapsa.international.phone.validators.ValidPhoneNumber;
 import com.lapsa.kz.idnumber.validators.ValidIdNumber;
 import com.lapsa.validation.NotNullValue;
 import com.lapsa.validation.ValidHumanName;
+
+import tech.lapsa.java.commons.function.MyOptionals;
 
 public class RequesterData extends BaseDomain {
     private static final long serialVersionUID = 2536050924805456436L;

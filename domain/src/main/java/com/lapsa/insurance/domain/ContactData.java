@@ -5,12 +5,13 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
-import com.lapsa.commons.function.MyOptionals;
 import com.lapsa.international.internet.validators.ValidEmail;
 import com.lapsa.international.internet.validators.ValidURL;
 import com.lapsa.international.phone.PhoneNumber;
 import com.lapsa.international.phone.validators.ValidPhoneNumber;
 import com.lapsa.validation.NotNullValue;
+
+import tech.lapsa.java.commons.function.MyOptionals;
 
 public class ContactData extends BaseDomain {
     private static final long serialVersionUID = 6954755236615159684L;

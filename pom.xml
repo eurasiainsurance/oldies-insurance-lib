@@ -8,7 +8,7 @@
 	</parent>
 
 	<groupId>com.lapsa.insurance-lib</groupId>
-	<artifactId>parent</artifactId>
+	<artifactId>insurance-root</artifactId>
 	<version>2.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
@@ -45,8 +45,8 @@
 				<groupId>tech.lapsa.javax</groupId>
 				<artifactId>javax-javaee-bom</artifactId>
 				<version>${javax-javaee-bom.version}</version>
-				<scope>import</scope>
 				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 			<dependency>
 				<groupId>tech.lapsa.java</groupId>
@@ -101,48 +101,38 @@
 			<!-- oldies -->
 			<dependency>
 				<groupId>com.lapsa.kz-lib</groupId>
-				<artifactId>kz-core</artifactId>
+				<artifactId>kz-root</artifactId>
 				<version>${kz-lib.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.lapsa.kz-lib</groupId>
-				<artifactId>kz-eelib</artifactId>
-				<version>${kz-lib.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 			<dependency>
 				<groupId>com.lapsa.international-lib</groupId>
-				<artifactId>international-core</artifactId>
+				<artifactId>international-root</artifactId>
 				<version>${international-lib.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.lapsa.international-lib</groupId>
-				<artifactId>international-eelib</artifactId>
-				<version>${international-lib.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 			<dependency>
 				<groupId>com.lapsa.fin-lib</groupId>
-				<artifactId>fin-core</artifactId>
+				<artifactId>fin-root</artifactId>
 				<version>${fin-lib.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 			<dependency>
 				<groupId>com.lapsa.donkeyfaces-lib</groupId>
-				<artifactId>donkeyfaces-model</artifactId>
+				<artifactId>parent</artifactId>
 				<version>${donkeyfaces-lib.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.lapsa.donkeyfaces-lib</groupId>
-				<artifactId>donkeyfaces-validation</artifactId>
-				<version>${donkeyfaces-lib.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 			<dependency>
 				<groupId>com.lapsa.lapsa-lib</groupId>
-				<artifactId>lapsa-validation</artifactId>
+				<artifactId>lapsa-root</artifactId>
 				<version>${lapsa-lib.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.lapsa.lapsa-lib</groupId>
-				<artifactId>lapsa-utils</artifactId>
-				<version>${lapsa-lib.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 			<!-- external -->
 			<dependency>

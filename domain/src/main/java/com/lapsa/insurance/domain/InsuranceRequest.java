@@ -5,7 +5,8 @@ import com.lapsa.insurance.elements.InsuranceRequestType;
 import com.lapsa.insurance.elements.RequestSource;
 import com.lapsa.insurance.elements.TransactionProblem;
 import com.lapsa.insurance.elements.TransactionStatus;
-import com.lapsa.validation.NotNullValue;
+
+import tech.lapsa.javax.validation.NotNullValue;
 
 public abstract class InsuranceRequest extends Request {
     private static final long serialVersionUID = 944531653617396366L;

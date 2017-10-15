@@ -11,7 +11,8 @@ import javax.validation.Payload;
 
 import com.lapsa.insurance.elements.PaymentMethod;
 import com.lapsa.insurance.validation.validators.ValidPaymentMethodConstraintValidator;
-import com.lapsa.validation.ValidationMode;
+
+import tech.lapsa.javax.validation.ValidationMode;
 
 @Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER })
 @Retention(RUNTIME)

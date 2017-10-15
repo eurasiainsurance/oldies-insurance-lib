@@ -8,11 +8,11 @@ import java.util.StringJoiner;
 
 import com.lapsa.insurance.elements.PaymentMethod;
 import com.lapsa.insurance.elements.PaymentStatus;
-import com.lapsa.validation.NotNullValue;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.function.MyStrings;
 import tech.lapsa.java.commons.localization.Localized;
+import tech.lapsa.javax.validation.NotNullValue;
 
 public class PaymentData extends BaseDomain {
     private static final long serialVersionUID = -6326848114328976035L;

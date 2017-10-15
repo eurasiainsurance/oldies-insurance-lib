@@ -10,11 +10,11 @@ import java.util.StringJoiner;
 import com.lapsa.international.localization.LocalizationLanguage;
 import com.lapsa.kz.country.KZCity;
 import com.lapsa.kz.country.validators.ValidKZCity;
-import com.lapsa.validation.NotEmptyString;
-import com.lapsa.validation.NotNullValue;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.localization.Localized;
+import tech.lapsa.javax.validation.NotEmptyString;
+import tech.lapsa.javax.validation.NotNullValue;
 
 public class PostAddress extends BaseDomain {
     private static final long serialVersionUID = -5557010401647487544L;

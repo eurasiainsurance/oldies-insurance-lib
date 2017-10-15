@@ -14,12 +14,12 @@ import com.lapsa.donkeyfaces.validators.MaxImageFileSize;
 import com.lapsa.fin.FinCurrency;
 import com.lapsa.insurance.domain.Vehicle;
 import com.lapsa.insurance.elements.CascoCarAgeClass;
-import com.lapsa.validation.NotNullValue;
-import com.lapsa.validation.NotTooOldYearOfIssue;
-import com.lapsa.validation.NotTooYoungYearOfIssue;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.localization.Localized;
+import tech.lapsa.javax.validation.NotNullValue;
+import tech.lapsa.javax.validation.NotTooOldYearOfIssue;
+import tech.lapsa.javax.validation.NotTooYoungYearOfIssue;
 
 public class CascoVehicle extends Vehicle {
     private static final long serialVersionUID = 2602178314016175969L;

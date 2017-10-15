@@ -7,14 +7,14 @@ import java.util.Locale;
 import java.util.StringJoiner;
 
 import com.lapsa.insurance.elements.Sex;
-import com.lapsa.validation.NotEmptyString;
-import com.lapsa.validation.NotNullValue;
-import com.lapsa.validation.ValidDateOfBirth;
-import com.lapsa.validation.ValidHumanName;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.function.MyStrings;
 import tech.lapsa.java.commons.localization.Localized;
+import tech.lapsa.javax.validation.NotEmptyString;
+import tech.lapsa.javax.validation.NotNullValue;
+import tech.lapsa.javax.validation.ValidDateOfBirth;
+import tech.lapsa.javax.validation.ValidHumanName;
 
 public class PersonalData extends BaseDomain {
     private static final long serialVersionUID = 6108831386319756885L;

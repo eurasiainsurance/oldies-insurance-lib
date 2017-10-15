@@ -7,11 +7,11 @@ import java.util.StringJoiner;
 
 import com.lapsa.kz.country.KZCity;
 import com.lapsa.kz.country.validators.ValidKZCity;
-import com.lapsa.validation.NotEmptyString;
-import com.lapsa.validation.NotNullValue;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.localization.Localized;
+import tech.lapsa.javax.validation.NotEmptyString;
+import tech.lapsa.javax.validation.NotNullValue;
 
 public class ResidenceData extends BaseDomain {
     private static final long serialVersionUID = 6787004222278561370L;

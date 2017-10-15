@@ -10,10 +10,10 @@ import com.lapsa.insurance.elements.VehicleAgeClass;
 import com.lapsa.insurance.elements.VehicleClass;
 import com.lapsa.insurance.validation.ValidPolicyVehicleAgeClass;
 import com.lapsa.insurance.validation.ValidPolicyVehicleClass;
-import com.lapsa.validation.NotNullValue;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.localization.Localized;
+import tech.lapsa.javax.validation.NotNullValue;
 
 public class PolicyVehicle extends Vehicle {
     private static final long serialVersionUID = -944934937361936981L;

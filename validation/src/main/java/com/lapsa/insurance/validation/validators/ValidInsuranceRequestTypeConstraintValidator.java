@@ -2,8 +2,9 @@ package com.lapsa.insurance.validation.validators;
 
 import com.lapsa.insurance.elements.InsuranceRequestType;
 import com.lapsa.insurance.validation.ValidInsuranceRequestType;
-import com.lapsa.validation.ValidationMode;
-import com.lapsa.validation.constraints.AValidEnumValueConstraintValidator;
+
+import tech.lapsa.javax.validation.ValidationMode;
+import tech.lapsa.javax.validation.constraints.AValidEnumValueConstraintValidator;
 
 public class ValidInsuranceRequestTypeConstraintValidator
 	extends AValidEnumValueConstraintValidator<ValidInsuranceRequestType, InsuranceRequestType> {

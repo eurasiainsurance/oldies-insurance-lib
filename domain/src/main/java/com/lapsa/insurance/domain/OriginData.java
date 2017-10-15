@@ -7,10 +7,10 @@ import java.util.StringJoiner;
 
 import com.lapsa.international.country.Country;
 import com.lapsa.international.country.validators.ValidCountry;
-import com.lapsa.validation.NotNullValue;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.localization.Localized;
+import tech.lapsa.javax.validation.NotNullValue;
 
 public class OriginData extends BaseDomain {
     private static final long serialVersionUID = -2811566798584800985L;

@@ -7,11 +7,11 @@ import java.util.Locale;
 import java.util.StringJoiner;
 
 import com.lapsa.insurance.validation.ValidVehicleRegistrationNumber;
-import com.lapsa.validation.NotEmptyString;
-import com.lapsa.validation.NotNullValue;
-import com.lapsa.validation.ValidDateOfIssue;
 
 import tech.lapsa.java.commons.function.MyOptionals;
+import tech.lapsa.javax.validation.NotEmptyString;
+import tech.lapsa.javax.validation.NotNullValue;
+import tech.lapsa.javax.validation.ValidDateOfIssue;
 
 public class VehicleCertificateData extends SidedScannedDocument {
     private static final long serialVersionUID = -8205031496636707778L;

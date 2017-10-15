@@ -6,12 +6,11 @@ import java.time.LocalDate;
 import java.util.Locale;
 import java.util.StringJoiner;
 
-import com.lapsa.validation.LocalDateComparison;
-import com.lapsa.validation.NotNullValue;
-import com.lapsa.validation.TemporalFuture;
-import com.lapsa.validation.TemporalLeftBeforeRight;
-
 import tech.lapsa.java.commons.function.MyOptionals;
+import tech.lapsa.javax.validation.LocalDateComparison;
+import tech.lapsa.javax.validation.NotNullValue;
+import tech.lapsa.javax.validation.TemporalFuture;
+import tech.lapsa.javax.validation.TemporalLeftBeforeRight;
 
 public class InsurancePeriodData extends BaseDomain {
     private static final long serialVersionUID = 5019017773831664143L;

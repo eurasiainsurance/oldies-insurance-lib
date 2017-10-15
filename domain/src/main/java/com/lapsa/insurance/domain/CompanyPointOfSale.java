@@ -10,11 +10,11 @@ import java.util.Map;
 import java.util.StringJoiner;
 
 import com.lapsa.international.localization.LocalizationLanguage;
-import com.lapsa.validation.NotEmptyString;
-import com.lapsa.validation.NotNullValue;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.function.MyStrings;
+import tech.lapsa.javax.validation.NotEmptyString;
+import tech.lapsa.javax.validation.NotNullValue;
 
 public class CompanyPointOfSale extends BaseEntity<Integer> {
     private static final long serialVersionUID = 2591037979593224479L;

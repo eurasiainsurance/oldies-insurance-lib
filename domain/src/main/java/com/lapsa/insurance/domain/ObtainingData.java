@@ -10,15 +10,15 @@ import com.lapsa.insurance.elements.DeliveryTimeSlot;
 import com.lapsa.insurance.elements.ObtainingMethod;
 import com.lapsa.insurance.elements.ObtainingStatus;
 import com.lapsa.kz.country.KZCity;
-import com.lapsa.validation.DaysAfterNow;
-import com.lapsa.validation.DaysBeforeNow;
-import com.lapsa.validation.Mode;
-import com.lapsa.validation.NotEmptyString;
-import com.lapsa.validation.NotNullValue;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.function.MyStrings;
 import tech.lapsa.java.commons.localization.Localized;
+import tech.lapsa.javax.validation.DaysAfterNow;
+import tech.lapsa.javax.validation.DaysBeforeNow;
+import tech.lapsa.javax.validation.Mode;
+import tech.lapsa.javax.validation.NotEmptyString;
+import tech.lapsa.javax.validation.NotNullValue;
 
 public class ObtainingData extends BaseDomain {
     private static final long serialVersionUID = -6326848114328976035L;

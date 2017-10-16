@@ -63,10 +63,10 @@ public class Policy extends InsuranceProduct {
     }
 
     @Override
-    public String displayName(DisplayNameVariant variant, Locale locale) {
+    public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(POLICY.displayName(variant, locale));
+	sb.append(POLICY.localized(variant, locale));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");

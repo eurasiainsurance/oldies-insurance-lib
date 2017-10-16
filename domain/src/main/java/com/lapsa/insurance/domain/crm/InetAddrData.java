@@ -37,10 +37,10 @@ public class InetAddrData extends BaseDomain {
     }
 
     @Override
-    public String displayName(DisplayNameVariant variant, Locale locale) {
+    public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(INET_ADDR_DATA.displayName(variant, locale));
+	sb.append(INET_ADDR_DATA.localized(variant, locale));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");

@@ -42,10 +42,10 @@ public class VehicleCertificateData extends SidedScannedDocument {
     private LocalDate dateOfIssue;
 
     @Override
-    public String displayName(DisplayNameVariant variant, Locale locale) {
+    public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(VEHICLE_CERTIFICATE_DATA.displayName(variant, locale));
+	sb.append(VEHICLE_CERTIFICATE_DATA.localized(variant, locale));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");

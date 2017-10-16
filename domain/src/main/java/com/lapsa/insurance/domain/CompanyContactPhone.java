@@ -31,20 +31,20 @@ public class CompanyContactPhone extends BaseEntity<Integer> {
     private PhoneType phoneType;
 
     @Override
-    public String displayName(DisplayNameVariant variant, Locale locale) {
+    public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
 	sb.append(MyOptionals.of(phoneType) //
-		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.map(Localized.toLocalizedMapper(variant, locale)) //
 		.map(MyStrings::capitalizeFirstLetter) //
-		.orElseGet(() -> COMPANY_CONTACT_PHONE.displayName(variant, locale)));
+		.orElseGet(() -> COMPANY_CONTACT_PHONE.localized(variant, locale)));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	sj.add(MyOptionals.of(phone) //
 		.map(PhoneNumber::getFormatted) //
-		.orElseGet(() -> "<" + COMPANY_CONTACT_PHONE_UNDEFINED.displayName(variant, locale) + ">"));
+		.orElseGet(() -> "<" + COMPANY_CONTACT_PHONE_UNDEFINED.localized(variant, locale) + ">"));
 
 	return sb.append(sj.toString()) //
 		.append(appendEntityId()) //

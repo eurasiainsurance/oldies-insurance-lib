@@ -39,10 +39,10 @@ public class CascoRequest extends InsuranceRequest {
     private Casco casco = new Casco();
 
     @Override
-    public String displayName(DisplayNameVariant variant, Locale locale) {
+    public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(CASCO_REQUEST.displayName(variant, locale));
+	sb.append(CASCO_REQUEST.localized(variant, locale));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
@@ -58,7 +58,7 @@ public class CascoRequest extends InsuranceRequest {
 		.ifPresent(sj::add);
 
 	MyOptionals.of(progressStatus)
-		.map(Localized.toDisplayNameMapper(variant, locale))
+		.map(Localized.toLocalizedMapper(variant, locale))
 		.map(FIELD_STATUS.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 

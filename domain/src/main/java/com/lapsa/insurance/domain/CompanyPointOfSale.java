@@ -54,18 +54,18 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
     private List<CompanyContactEmail> emailAddresses = new ArrayList<>();
 
     @Override
-    public String displayName(DisplayNameVariant variant, Locale locale) {
+    public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
 	sb.append(MyOptionals.of(nameLocalization.getOrDefault(LocalizationLanguage.byLocale(locale), name)) //
 		.map(MyStrings::capitalizeFirstLetter) //
-		.orElseGet(() -> COMPANY_POINT_OF_SALE.displayName(variant, locale)));
+		.orElseGet(() -> COMPANY_POINT_OF_SALE.localized(variant, locale)));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(address) //
-		.map(x -> x.displayName(variant, locale))
+		.map(x -> x.localized(variant, locale))
 		.ifPresent(sj::add);
 
 	return sb.append(sj.toString()) //

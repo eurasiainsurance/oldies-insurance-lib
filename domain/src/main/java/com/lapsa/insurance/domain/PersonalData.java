@@ -54,11 +54,11 @@ public class PersonalData extends BaseDomain {
     private Sex sex;
 
     @Override
-    public String displayName(DisplayNameVariant variant, Locale locale) {
+    public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
 	sb.append(MyOptionals.of(getFullName()) //
-		.orElseGet(() -> PERSONAL_DATA.displayName(variant, locale)));
+		.orElseGet(() -> PERSONAL_DATA.localized(variant, locale)));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
@@ -69,7 +69,7 @@ public class PersonalData extends BaseDomain {
 		.ifPresent(sj::add);
 
 	MyOptionals.of(sex) //
-		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.map(Localized.toLocalizedMapper(variant, locale)) //
 		.map(PERSONAL_DATA_SEX.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 

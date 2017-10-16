@@ -116,8 +116,8 @@ public enum DisplayNameElements implements LocalizedElement {
     FIELD_REQUEST_COMPLETED,
     ;
 
-    public Function<String, String> fieldAsCaptionMapper(final DisplayNameVariant variant,
+    public Function<String, String> fieldAsCaptionMapper(final LocalizationVariant variant,
 	    final Locale locale) {
-	return x -> displayName(variant, locale) + " '" + x + "'";
+	return x -> localized(variant, locale) + " '" + x + "'";
     }
 }

@@ -40,10 +40,10 @@ public class CalculationData extends BaseDomain {
     }
 
     @Override
-    public String displayName(DisplayNameVariant variant, Locale locale) {
+    public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(CALCULATION_DATA.displayName(variant, locale));
+	sb.append(CALCULATION_DATA.localized(variant, locale));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
@@ -52,7 +52,7 @@ public class CalculationData extends BaseDomain {
 		.filter(x -> MyNumbers.nonZero(getPremiumCost()))
 		.filter(x -> MyObjects.nonNull(x.premiumCurrency))
 		.map(x -> x.premiumCurrency.formatAmount(getPremiumCost())) //
-		.orElseGet(() -> "<" + CALCULATION_DATA_UNDEFINED.displayName(variant, locale) + ">"));
+		.orElseGet(() -> "<" + CALCULATION_DATA_UNDEFINED.localized(variant, locale) + ">"));
 
 	return sb.append(sj.toString()) //
 		.toString();

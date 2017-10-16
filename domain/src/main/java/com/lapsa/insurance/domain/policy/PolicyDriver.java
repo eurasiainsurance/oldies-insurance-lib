@@ -51,10 +51,10 @@ public class PolicyDriver extends Driver {
     private boolean hasAnyPrivilege = false;
 
     @Override
-    public String displayName(DisplayNameVariant variant, Locale locale) {
+    public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(POLICY_DRIVER.displayName(variant, locale));
+	sb.append(POLICY_DRIVER.localized(variant, locale));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
@@ -68,15 +68,15 @@ public class PolicyDriver extends Driver {
 		.ifPresent(sj::add);
 
 	MyOptionals.of(insuranceClassType) //
-		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.map(Localized.toLocalizedMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
 	MyOptionals.of(ageClass) //
-		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.map(Localized.toLocalizedMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
 	MyOptionals.of(expirienceClass) //
-		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.map(Localized.toLocalizedMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
 	return sb.append(sj.toString()) //

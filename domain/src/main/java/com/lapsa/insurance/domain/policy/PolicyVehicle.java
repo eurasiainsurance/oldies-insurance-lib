@@ -45,22 +45,22 @@ public class PolicyVehicle extends Vehicle {
     private boolean fetched = false;
 
     @Override
-    public String displayName(DisplayNameVariant variant, Locale locale) {
+    public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
 	sb.append(MyOptionals.of(getFullName()) //
-		.orElseGet(() -> POLICY_VEHICLE.displayName(variant, locale)));
+		.orElseGet(() -> POLICY_VEHICLE.localized(variant, locale)));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(vehicleClass) //
-		.map(Localized.toDisplayNameMapper(variant, locale))
+		.map(Localized.toLocalizedMapper(variant, locale))
 		.map(POLICY_VEHICLE_CLASS.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
 	MyOptionals.of(vehicleAgeClass) //
-		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.map(Localized.toLocalizedMapper(variant, locale)) //
 		.map(POLICY_VEHICLE_AGE_CLASS.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 

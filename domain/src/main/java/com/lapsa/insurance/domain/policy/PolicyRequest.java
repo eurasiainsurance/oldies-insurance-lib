@@ -49,10 +49,10 @@ public class PolicyRequest extends InsuranceRequest {
     }
 
     @Override
-    public String displayName(DisplayNameVariant variant, Locale locale) {
+    public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(POLICY_REQUEST.displayName(variant, locale));
+	sb.append(POLICY_REQUEST.localized(variant, locale));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
@@ -68,7 +68,7 @@ public class PolicyRequest extends InsuranceRequest {
 		.ifPresent(sj::add);
 
 	MyOptionals.of(progressStatus)
-		.map(Localized.toDisplayNameMapper(variant, locale))
+		.map(Localized.toLocalizedMapper(variant, locale))
 		.map(FIELD_STATUS.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 

@@ -31,10 +31,10 @@ public class UserGroup extends BaseEntity<Integer> {
     private List<User> members = new ArrayList<>();
 
     @Override
-    public String displayName(DisplayNameVariant variant, Locale locale) {
+    public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(USER_GROUP.displayName(variant, locale));
+	sb.append(USER_GROUP.localized(variant, locale));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");

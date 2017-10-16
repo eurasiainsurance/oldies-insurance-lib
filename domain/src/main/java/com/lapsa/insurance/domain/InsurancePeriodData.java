@@ -36,10 +36,10 @@ public class InsurancePeriodData extends BaseDomain {
     private LocalDate to;
 
     @Override
-    public String displayName(DisplayNameVariant variant, Locale locale) {
+    public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(INSURANCE_PERIOD_DATA.displayName(variant, locale));
+	sb.append(INSURANCE_PERIOD_DATA.localized(variant, locale));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");

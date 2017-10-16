@@ -42,16 +42,16 @@ public class OriginData extends BaseDomain {
     }
 
     @Override
-    public String displayName(DisplayNameVariant variant, Locale locale) {
+    public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(ORIGIN_DATA.displayName(variant, locale));
+	sb.append(ORIGIN_DATA.localized(variant, locale));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(country) //
-		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.map(Localized.toLocalizedMapper(variant, locale)) //
 		.map(ORIGIN_DATA_COUNTRY.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 

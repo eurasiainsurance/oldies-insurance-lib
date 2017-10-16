@@ -20,7 +20,6 @@
 		<module>validation</module>
 		<module>security</module>
 		<module>domain</module>
-		<module>dao</module>
 		<module>mesenger</module>
 		<module>esbd</module>
 	</modules>
@@ -90,11 +89,6 @@
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>insurance-domain</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>${project.groupId}</groupId>
-				<artifactId>insurance-dao</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>

@@ -20,7 +20,7 @@ public abstract class BaseDomain implements Serializable, Localized {
 
     @Override
     public String toString() {
-	return displayName();
+	return regular();
     }
 
     @Override

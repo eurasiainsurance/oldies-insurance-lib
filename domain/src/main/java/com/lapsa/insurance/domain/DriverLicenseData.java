@@ -35,10 +35,10 @@ public class DriverLicenseData extends SidedScannedDocument {
     private LocalDate dateOfIssue;
 
     @Override
-    public String displayName(DisplayNameVariant variant, Locale locale) {
+    public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(DRIVER_LICENSE_DATA.displayName(variant, locale));
+	sb.append(DRIVER_LICENSE_DATA.localized(variant, locale));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");

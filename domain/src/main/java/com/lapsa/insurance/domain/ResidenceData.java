@@ -39,16 +39,16 @@ public class ResidenceData extends BaseDomain {
     private String address;
 
     @Override
-    public String displayName(DisplayNameVariant variant, Locale locale) {
+    public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(RESIDENCE_DATA.displayName(variant, locale));
+	sb.append(RESIDENCE_DATA.localized(variant, locale));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(city) //
-		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.map(Localized.toLocalizedMapper(variant, locale)) //
 		.map(RESIDENCE_DATA_CITY.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
@@ -58,7 +58,7 @@ public class ResidenceData extends BaseDomain {
 
 	MyOptionals.of(resident)
 		.map(x -> x.booleanValue() ? RESIDENCE_DATA_RESIDENT : RESIDENCE_DATA_NONRESIDENT)
-		.map(Localized.toDisplayNameMapper(variant, locale))
+		.map(Localized.toLocalizedMapper(variant, locale))
 		.ifPresent(sj::add);
 
 	return sb.append(sj.toString()) //

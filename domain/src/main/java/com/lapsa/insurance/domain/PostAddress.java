@@ -46,10 +46,10 @@ public class PostAddress extends BaseDomain {
     private Map<LocalizationLanguage, String> streetLocalization = new HashMap<>();
 
     @Override
-    public String displayName(DisplayNameVariant variant, Locale locale) {
+    public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(POST_ADDRESS.displayName(variant, locale));
+	sb.append(POST_ADDRESS.localized(variant, locale));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
@@ -58,7 +58,7 @@ public class PostAddress extends BaseDomain {
 		.ifPresent(sj::add);
 
 	MyOptionals.of(city) //
-		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.map(Localized.toLocalizedMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
 	MyOptionals.of(streetLocalization.getOrDefault(LocalizationLanguage.byLocale(locale), street))

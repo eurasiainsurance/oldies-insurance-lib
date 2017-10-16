@@ -63,21 +63,21 @@ public class ObtainingData extends BaseDomain {
     private String deliveryAddress;
 
     @Override
-    public String displayName(DisplayNameVariant variant, Locale locale) {
+    public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
 	sb.append(MyOptionals.of(method) //
 		.filter(ObtainingMethod::isDefined) //
-		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.map(Localized.toLocalizedMapper(variant, locale)) //
 		.map(MyStrings::capitalizeFirstLetter) //
-		.orElseGet(() -> OBTAINING_DATA.displayName(variant, locale)));
+		.orElseGet(() -> OBTAINING_DATA.localized(variant, locale)));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(status) //
 		.filter(ObtainingStatus::isDefined) //
-		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.map(Localized.toLocalizedMapper(variant, locale)) //
 		.map(FIELD_STATUS.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 

@@ -28,10 +28,10 @@ public class UserLogin extends BaseEntity<Integer> {
     private User user;
 
     @Override
-    public String displayName(DisplayNameVariant variant, Locale locale) {
+    public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(USER_LOGIN_LOGIN.displayName(variant, locale));
+	sb.append(USER_LOGIN_LOGIN.localized(variant, locale));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");

@@ -48,13 +48,13 @@ public class IdentityCardData extends SidedScannedDocument {
     private IdentityCardType type;
 
     @Override
-    public String displayName(DisplayNameVariant variant, Locale locale) {
+    public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
 	sb.append(MyOptionals.of(type) //
-		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.map(Localized.toLocalizedMapper(variant, locale)) //
 		.map(MyStrings::capitalizeFirstLetter) //
-		.orElseGet(() -> IDENTITY_CARD_DATA.displayName(variant, locale)));
+		.orElseGet(() -> IDENTITY_CARD_DATA.localized(variant, locale)));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");

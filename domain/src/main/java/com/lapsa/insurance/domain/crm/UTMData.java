@@ -31,10 +31,10 @@ public class UTMData extends BaseDomain {
     private String term;
 
     @Override
-    public String displayName(DisplayNameVariant variant, Locale locale) {
+    public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(UTM_DATA.displayName(variant, locale));
+	sb.append(UTM_DATA.localized(variant, locale));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");

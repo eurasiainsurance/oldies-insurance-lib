@@ -25,16 +25,16 @@ public class CompanyContactEmail extends BaseEntity<Integer> {
     private String address;
 
     @Override
-    public String displayName(DisplayNameVariant variant, Locale locale) {
+    public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(COMPANY_CONTACT_EMAIL.displayName(variant, locale));
+	sb.append(COMPANY_CONTACT_EMAIL.localized(variant, locale));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	sj.add(MyOptionals.of(address)
-		.orElseGet(() -> "<" + COMPANY_CONTACT_EMAIL_UNDEFINED.displayName(variant, locale) + ">"));
+		.orElseGet(() -> "<" + COMPANY_CONTACT_EMAIL_UNDEFINED.localized(variant, locale) + ">"));
 
 	return sb.append(sj.toString()) //
 		.append(appendEntityId()) //

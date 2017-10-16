@@ -61,11 +61,11 @@ public class CascoVehicle extends Vehicle {
     private Image view4;
 
     @Override
-    public String displayName(DisplayNameVariant variant, Locale locale) {
+    public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
 	sb.append(MyOptionals.of(getFullName()) //
-		.orElseGet(() -> CASCO_VEHICLE.displayName(variant, locale)));
+		.orElseGet(() -> CASCO_VEHICLE.localized(variant, locale)));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
@@ -76,7 +76,7 @@ public class CascoVehicle extends Vehicle {
 		.ifPresent(sj::add);
 
 	MyOptionals.of(carAgeClass) //
-		.map(Localized.toDisplayNameMapper(variant, locale)) //
+		.map(Localized.toLocalizedMapper(variant, locale)) //
 		.map(CASCO_VEHICLE_AGE_CLASS.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 

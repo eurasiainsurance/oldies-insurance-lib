@@ -21,7 +21,6 @@
 		<module>security</module>
 		<module>domain</module>
 		<module>mesenger</module>
-		<module>esbd</module>
 	</modules>
 
 	<properties>
@@ -94,11 +93,6 @@
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>insurance-mesenger</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>${project.groupId}</groupId>
-				<artifactId>insurance-esbd</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<!-- oldies -->

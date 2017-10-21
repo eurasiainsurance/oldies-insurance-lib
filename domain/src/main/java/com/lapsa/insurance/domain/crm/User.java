@@ -5,6 +5,7 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Optional;
 import java.util.StringJoiner;
 import java.util.stream.Stream;
 
@@ -70,30 +71,41 @@ public class User extends BaseEntity<Integer> {
 
     @Override
     public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
 
-	sb.append(USER.localized(variant, locale));
+	switch (variant) {
+	case SHORT:
+	    Optional<String> optionalName = MyOptionals.of(name);
+	    if (optionalName.isPresent())
+		return optionalName.get();
+	case NORMAL:
+	case FULL:
+	default:
+	    StringBuilder sb = new StringBuilder();
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
-	sj.setEmptyValue("");
+	    sb.append(USER.localized(variant, locale));
 
-	MyOptionals.of(name) //
-		.ifPresent(sj::add);
+	    StringJoiner sj = new StringJoiner(", ", " ", "");
+	    sj.setEmptyValue("");
 
-	MyOptionals.of(logins) //
-		.map(List::stream) //
-		.flatMap(Stream::findFirst) //
-		.map(UserLogin::getName) //
-		.map(USER_LOGIN.fieldAsCaptionMapper(variant, locale)) //
-		.ifPresent(sj::add);
+	    MyOptionals.of(name) //
+		    .ifPresent(sj::add);
 
-	MyOptionals.of(email) //
-		.map(FIELD_EMAIL.fieldAsCaptionMapper(variant, locale)) //
-		.ifPresent(sj::add);
+	    MyOptionals.of(logins) //
+		    .map(List::stream) //
+		    .flatMap(Stream::findFirst) //
+		    .map(UserLogin::getName) //
+		    .map(USER_LOGIN.fieldAsCaptionMapper(variant, locale)) //
+		    .ifPresent(sj::add);
 
-	return sb.append(sj.toString()) //
-		.append(appendEntityId())
-		.toString();
+	    MyOptionals.of(email) //
+		    .map(FIELD_EMAIL.fieldAsCaptionMapper(variant, locale)) //
+		    .ifPresent(sj::add);
+
+	    return sb.append(sj.toString()) //
+		    .append(appendEntityId())
+		    .toString();
+
+	}
     }
 
     public static void main(String[] args) {

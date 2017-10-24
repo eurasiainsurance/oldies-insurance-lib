@@ -6,12 +6,12 @@ import java.time.LocalDate;
 import java.util.Locale;
 import java.util.StringJoiner;
 
-import com.lapsa.insurance.validation.ValidVehicleRegistrationNumber;
-
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.javax.validation.NotEmptyString;
 import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.javax.validation.ValidDateOfIssue;
+import tech.lapsa.kz.vehicle.VehicleRegNumber;
+import tech.lapsa.kz.vehicle.validators.ValidVehicleRegNumber;
 
 public class VehicleCertificateData extends SidedScannedDocument {
     private static final long serialVersionUID = -8205031496636707778L;
@@ -30,8 +30,8 @@ public class VehicleCertificateData extends SidedScannedDocument {
 
     @NotNullValue
     @NotEmptyString
-    @ValidVehicleRegistrationNumber
-    private String registrationNumber;
+    @ValidVehicleRegNumber
+    private VehicleRegNumber registrationNumber;
 
     @NotNullValue
     @NotEmptyString
@@ -60,7 +60,8 @@ public class VehicleCertificateData extends SidedScannedDocument {
 		.ifPresent(sj::add);
 
 	MyOptionals.of(registrationNumber)
-		.map(VEHICLE_CERTIFICATE_DATA_REGNUMBER.fieldAsCaptionMapper(variant, locale))
+		.map(VehicleRegNumber::getNumber) //
+		.map(VEHICLE_CERTIFICATE_DATA_REGNUMBER.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
 	return sb.append(sj.toString()) //
@@ -86,11 +87,11 @@ public class VehicleCertificateData extends SidedScannedDocument {
 	this.dateOfIssue = dateOfIssue;
     }
 
-    public String getRegistrationNumber() {
+    public VehicleRegNumber getRegistrationNumber() {
 	return registrationNumber;
     }
 
-    public void setRegistrationNumber(String registrationNumber) {
+    public void setRegistrationNumber(VehicleRegNumber registrationNumber) {
 	this.registrationNumber = registrationNumber;
     }
 }

@@ -1,12 +1,15 @@
 package com.lapsa.insurance.domain;
 
-import com.lapsa.kz.idnumber.validators.ValidIdNumber;
+import tech.lapsa.javax.validation.NotNullValue;
+import tech.lapsa.kz.taxpayer.TaxpayerNumber;
+import tech.lapsa.kz.taxpayer.validators.ValidTaxpayerNumber;
 
 public abstract class Driver extends BaseEntity<Integer> {
     private static final long serialVersionUID = -9161699848130198940L;
 
-    @ValidIdNumber
-    protected String idNumber;
+    @NotNullValue
+    @ValidTaxpayerNumber
+    protected TaxpayerNumber idNumber;
 
     protected String taxPayerNumber;
 
@@ -19,11 +22,11 @@ public abstract class Driver extends BaseEntity<Integer> {
 
     // GENERATED
 
-    public String getIdNumber() {
+    public TaxpayerNumber getIdNumber() {
 	return idNumber;
     }
 
-    public void setIdNumber(String idNumber) {
+    public void setIdNumber(TaxpayerNumber idNumber) {
 	this.idNumber = idNumber;
     }
 

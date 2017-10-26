@@ -13,6 +13,7 @@ import com.lapsa.donkeyfaces.validators.FileSizeMeasure;
 import com.lapsa.donkeyfaces.validators.MaxImageFileSize;
 import com.lapsa.fin.FinCurrency;
 import com.lapsa.insurance.domain.Vehicle;
+import com.lapsa.insurance.domain.VehicleCertificateData;
 import com.lapsa.insurance.elements.CascoCarAgeClass;
 
 import tech.lapsa.java.commons.function.MyOptionals;
@@ -20,6 +21,7 @@ import tech.lapsa.java.commons.localization.Localized;
 import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.javax.validation.NotTooOldYearOfIssue;
 import tech.lapsa.javax.validation.NotTooYoungYearOfIssue;
+import tech.lapsa.kz.vehicle.VehicleRegNumber;
 
 public class CascoVehicle extends Vehicle {
     private static final long serialVersionUID = 2602178314016175969L;
@@ -78,6 +80,12 @@ public class CascoVehicle extends Vehicle {
 	MyOptionals.of(carAgeClass) //
 		.map(Localized.toLocalizedMapper(variant, locale)) //
 		.map(CASCO_VEHICLE_AGE_CLASS.fieldAsCaptionMapper(variant, locale))
+		.ifPresent(sj::add);
+
+	MyOptionals.of(certificateData) //
+		.map(VehicleCertificateData::getRegistrationNumber) //
+		.map(VehicleRegNumber::getNumber) //
+		.map(POLICY_VEHICLE_REG_NUMBER.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
 	return sb.append(sj.toString()) //

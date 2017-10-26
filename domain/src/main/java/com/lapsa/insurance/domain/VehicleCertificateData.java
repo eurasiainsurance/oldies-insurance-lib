@@ -7,6 +7,7 @@ import java.util.Locale;
 import java.util.StringJoiner;
 
 import tech.lapsa.java.commons.function.MyOptionals;
+import tech.lapsa.java.commons.localization.Localizeds;
 import tech.lapsa.javax.validation.NotEmptyString;
 import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.javax.validation.ValidDateOfIssue;
@@ -55,7 +56,7 @@ public class VehicleCertificateData extends SidedScannedDocument {
 		.ifPresent(sj::add);
 
 	MyOptionals.of(dateOfIssue) //
-		.map(DisplayNames.localDateMapper(locale))//
+		.map(Localizeds.localDateMapper(locale))//
 		.map(VEHICLE_CERTIFICATE_DATA_ISSUED.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 

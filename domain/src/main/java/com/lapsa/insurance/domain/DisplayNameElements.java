@@ -55,6 +55,7 @@ public enum DisplayNameElements implements LocalizedElement {
     POLICY_VEHICLE,
     POLICY_VEHICLE_CLASS,
     POLICY_VEHICLE_AGE_CLASS,
+    POLICY_VEHICLE_REG_NUMBER,
     //
     POLICY_DRIVER,
     //

@@ -10,6 +10,7 @@ import com.lapsa.insurance.elements.Sex;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.function.MyStrings;
+import tech.lapsa.java.commons.localization.Localizeds;
 import tech.lapsa.java.commons.localization.Localized;
 import tech.lapsa.javax.validation.NotEmptyString;
 import tech.lapsa.javax.validation.NotNullValue;
@@ -64,7 +65,7 @@ public class PersonalData extends BaseDomain {
 	sj.setEmptyValue("");
 
 	MyOptionals.of(dayOfBirth) //
-		.map(DisplayNames.localDateMapper(locale))//
+		.map(Localizeds.localDateMapper(locale))//
 		.map(PERSONAL_DATA_DOB.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 

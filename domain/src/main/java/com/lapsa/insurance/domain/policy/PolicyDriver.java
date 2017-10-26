@@ -17,6 +17,7 @@ import com.lapsa.insurance.validation.ValidInsuranceExpirienceClass;
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.localization.Localized;
 import tech.lapsa.javax.validation.NotNullValue;
+import tech.lapsa.kz.taxpayer.TaxpayerNumber;
 
 public class PolicyDriver extends Driver {
     private static final long serialVersionUID = 5209394299289430299L;
@@ -64,6 +65,7 @@ public class PolicyDriver extends Driver {
 		.ifPresent(sj::add);
 
 	MyOptionals.of(idNumber) //
+		.map(TaxpayerNumber::getNumber) //
 		.map(FIELD_ID_NUMBER.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 

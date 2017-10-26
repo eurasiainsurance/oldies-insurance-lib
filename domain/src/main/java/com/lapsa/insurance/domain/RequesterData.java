@@ -12,11 +12,12 @@ import com.lapsa.international.internet.validators.ValidEmail;
 import com.lapsa.international.localization.LocalizationLanguage;
 import com.lapsa.international.phone.PhoneNumber;
 import com.lapsa.international.phone.validators.ValidPhoneNumber;
-import com.lapsa.kz.idnumber.validators.ValidIdNumber;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.javax.validation.ValidHumanName;
+import tech.lapsa.kz.taxpayer.TaxpayerNumber;
+import tech.lapsa.kz.taxpayer.validators.ValidTaxpayerNumber;
 
 public class RequesterData extends BaseDomain {
     private static final long serialVersionUID = 2536050924805456436L;
@@ -39,8 +40,8 @@ public class RequesterData extends BaseDomain {
     @ValidEmail
     private String email;
 
-    @ValidIdNumber
-    private String idNumber;
+    @ValidTaxpayerNumber
+    private TaxpayerNumber idNumber;
 
     @NotNullValue
     @ValidPhoneNumber(countriesRequired = { KZ, RU, GE, BY, BY, CN, KG, UZ, UA })
@@ -66,6 +67,7 @@ public class RequesterData extends BaseDomain {
 		.ifPresent(sj::add);
 
 	MyOptionals.of(idNumber) //
+		.map(TaxpayerNumber::getNumber) //
 		.map(FIELD_ID_NUMBER.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
@@ -108,11 +110,11 @@ public class RequesterData extends BaseDomain {
 	this.email = email;
     }
 
-    public String getIdNumber() {
+    public TaxpayerNumber getIdNumber() {
 	return idNumber;
     }
 
-    public void setIdNumber(String idNumber) {
+    public void setIdNumber(TaxpayerNumber idNumber) {
 	this.idNumber = idNumber;
     }
 

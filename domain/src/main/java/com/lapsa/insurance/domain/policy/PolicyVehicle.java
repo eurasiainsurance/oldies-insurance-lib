@@ -6,6 +6,7 @@ import java.util.Locale;
 import java.util.StringJoiner;
 
 import com.lapsa.insurance.domain.Vehicle;
+import com.lapsa.insurance.domain.VehicleCertificateData;
 import com.lapsa.insurance.elements.VehicleAgeClass;
 import com.lapsa.insurance.elements.VehicleClass;
 import com.lapsa.insurance.validation.ValidPolicyVehicleAgeClass;
@@ -14,6 +15,7 @@ import com.lapsa.insurance.validation.ValidPolicyVehicleClass;
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.localization.Localized;
 import tech.lapsa.javax.validation.NotNullValue;
+import tech.lapsa.kz.vehicle.VehicleRegNumber;
 
 public class PolicyVehicle extends Vehicle {
     private static final long serialVersionUID = -944934937361936981L;
@@ -57,6 +59,12 @@ public class PolicyVehicle extends Vehicle {
 	MyOptionals.of(vehicleClass) //
 		.map(Localized.toLocalizedMapper(variant, locale))
 		.map(POLICY_VEHICLE_CLASS.fieldAsCaptionMapper(variant, locale))
+		.ifPresent(sj::add);
+
+	MyOptionals.of(certificateData) //
+		.map(VehicleCertificateData::getRegistrationNumber) //
+		.map(VehicleRegNumber::getNumber) //
+		.map(POLICY_VEHICLE_REG_NUMBER.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
 	MyOptionals.of(vehicleAgeClass) //

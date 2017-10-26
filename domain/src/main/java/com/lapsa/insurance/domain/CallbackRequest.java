@@ -6,6 +6,7 @@ import java.util.Locale;
 import java.util.StringJoiner;
 
 import tech.lapsa.java.commons.function.MyOptionals;
+import tech.lapsa.java.commons.localization.Localizeds;
 import tech.lapsa.java.commons.localization.Localized;
 
 public class CallbackRequest extends Request {
@@ -50,7 +51,7 @@ public class CallbackRequest extends Request {
 		.ifPresent(sj::add);
 
 	MyOptionals.of(created) //
-		.map(DisplayNames.instantMapper(locale)) //
+		.map(Localizeds.instantMapper(locale)) //
 		.map(FIELD_REQUEST_CREATED.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 

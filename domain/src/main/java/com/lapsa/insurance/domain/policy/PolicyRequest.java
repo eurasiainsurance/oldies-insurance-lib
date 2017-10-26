@@ -5,13 +5,13 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
-import com.lapsa.insurance.domain.DisplayNames;
 import com.lapsa.insurance.domain.InsuranceProduct;
 import com.lapsa.insurance.domain.InsuranceRequest;
 import com.lapsa.insurance.elements.InsuranceProductType;
 import com.lapsa.insurance.elements.RequestSource;
 
 import tech.lapsa.java.commons.function.MyOptionals;
+import tech.lapsa.java.commons.localization.Localizeds;
 import tech.lapsa.java.commons.localization.Localized;
 
 public class PolicyRequest extends InsuranceRequest {
@@ -63,7 +63,7 @@ public class PolicyRequest extends InsuranceRequest {
 		.ifPresent(sj::add);
 
 	MyOptionals.of(created) //
-		.map(DisplayNames.instantMapper(locale)) //
+		.map(Localizeds.instantMapper(locale)) //
 		.map(FIELD_REQUEST_CREATED.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 

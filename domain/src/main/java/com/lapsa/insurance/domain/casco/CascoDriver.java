@@ -9,6 +9,7 @@ import com.lapsa.insurance.domain.Driver;
 import com.lapsa.insurance.domain.PersonalData;
 
 import tech.lapsa.java.commons.function.MyOptionals;
+import tech.lapsa.kz.taxpayer.TaxpayerNumber;
 
 public class CascoDriver extends Driver {
     private static final long serialVersionUID = 6781864890008476284L;
@@ -39,6 +40,7 @@ public class CascoDriver extends Driver {
 		.ifPresent(sj::add);
 
 	MyOptionals.of(idNumber) //
+		.map(TaxpayerNumber::getNumber) //
 		.map(FIELD_ID_NUMBER.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 

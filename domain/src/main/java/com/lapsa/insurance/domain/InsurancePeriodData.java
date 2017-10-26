@@ -7,6 +7,7 @@ import java.util.Locale;
 import java.util.StringJoiner;
 
 import tech.lapsa.java.commons.function.MyOptionals;
+import tech.lapsa.java.commons.localization.Localizeds;
 import tech.lapsa.javax.validation.LocalDateComparison;
 import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.javax.validation.TemporalFuture;
@@ -45,12 +46,12 @@ public class InsurancePeriodData extends BaseDomain {
 	sj.setEmptyValue("");
 
 	MyOptionals.of(from) //
-		.map(DisplayNames.localDateMapper(locale)) //
+		.map(Localizeds.localDateMapper(locale)) //
 		.map(INSURANCE_PERIOD_DATA_FROM.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 
 	MyOptionals.of(to) //
-		.map(DisplayNames.localDateMapper(locale)) //
+		.map(Localizeds.localDateMapper(locale)) //
 		.map(INSURANCE_PERIOD_DATA_TILL.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 

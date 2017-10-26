@@ -11,6 +11,7 @@ import com.lapsa.insurance.elements.PaymentStatus;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.function.MyStrings;
+import tech.lapsa.java.commons.localization.Localizeds;
 import tech.lapsa.java.commons.localization.Localized;
 import tech.lapsa.javax.validation.NotNullValue;
 
@@ -64,7 +65,7 @@ public class PaymentData extends BaseDomain {
 		.ifPresent(sj::add);
 
 	MyOptionals.of(postInstant) //
-		.map(DisplayNames.instantMapper(locale)) //
+		.map(Localizeds.instantMapper(locale)) //
 		.map(PAYMENT_POST_INSTANT.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 

@@ -50,6 +50,7 @@ com.lapsa.insurance.domain.DisplayNameElements.PERSONAL_DATA_SEX = =KAZ= пол
 com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE = =KAZ= Затрахованное ТС
 com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE_AGE_CLASS = =KAZ= возраст
 com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE_CLASS = =KAZ= класс
+com.lapsa.insurance.domain.DisplayNameElements.POLICY_VEHICLE_REG_NUMBER = =KAZ= рег.номер
 
 com.lapsa.insurance.domain.DisplayNameElements.POLICY_DRIVER = =KAZ= Застрахованный водитель
 

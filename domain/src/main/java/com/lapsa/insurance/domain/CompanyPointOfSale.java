@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.StringJoiner;
 
 import com.lapsa.international.localization.LocalizationLanguage;
 
@@ -55,22 +54,9 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
 
     @Override
     public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
-
-	sb.append(MyOptionals.of(nameLocalization.getOrDefault(LocalizationLanguage.byLocale(locale), name)) //
+	return MyOptionals.of(nameLocalization.getOrDefault(LocalizationLanguage.byLocale(locale), name)) //
 		.map(MyStrings::capitalizeFirstLetter) //
-		.orElseGet(() -> COMPANY_POINT_OF_SALE.localized(variant, locale)));
-
-	StringJoiner sj = new StringJoiner(", ", " ", "");
-	sj.setEmptyValue("");
-
-//	MyOptionals.of(address) //
-//		.map(x -> x.localized(variant, locale))
-//		.ifPresent(sj::add);
-
-	return sb.append(sj.toString()) //
-//		.append(appendEntityId()) //
-		.toString();
+		.orElseGet(() -> COMPANY_POINT_OF_SALE.localized(variant, locale));
     }
 
     public CompanyContactPhone addPhone(CompanyContactPhone phone) {

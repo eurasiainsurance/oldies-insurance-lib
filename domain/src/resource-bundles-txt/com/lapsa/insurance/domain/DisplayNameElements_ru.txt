@@ -6,7 +6,6 @@ com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA = Расчита
 com.lapsa.insurance.domain.DisplayNameElements.CALCULATION_DATA_UNDEFINED = Не задана
 
 com.lapsa.insurance.domain.DisplayNameElements.POST_ADDRESS = Почтовый адрес
-com.lapsa.insurance.domain.DisplayNameElements.POST_ADDRESS.short = Адрес
 
 com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_EMAIL = Контактный email
 com.lapsa.insurance.domain.DisplayNameElements.COMPANY_CONTACT_EMAIL_UNDEFINED = Не задан

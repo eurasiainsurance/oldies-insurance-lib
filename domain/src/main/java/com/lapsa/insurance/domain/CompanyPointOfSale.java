@@ -64,12 +64,12 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
 	StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
-	MyOptionals.of(address) //
-		.map(x -> x.localized(variant, locale))
-		.ifPresent(sj::add);
+//	MyOptionals.of(address) //
+//		.map(x -> x.localized(variant, locale))
+//		.ifPresent(sj::add);
 
 	return sb.append(sj.toString()) //
-		.append(appendEntityId()) //
+//		.append(appendEntityId()) //
 		.toString();
     }
 

@@ -53,6 +53,15 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
     private List<CompanyContactEmail> emailAddresses = new ArrayList<>();
 
     @Override
+    public void unlazy() {
+	super.unlazy();
+	MyOptionals.of(getAddress()).ifPresent(BaseDomain::unlazy);
+	getNameLocalization().size();
+	getPhones().size();
+	getEmailAddresses().size();
+    }
+
+    @Override
     public String localized(LocalizationVariant variant, Locale locale) {
 	return MyOptionals.of(nameLocalization.getOrDefault(LocalizationLanguage.byLocale(locale), name)) //
 		.map(MyStrings::capitalizeFirstLetter) //

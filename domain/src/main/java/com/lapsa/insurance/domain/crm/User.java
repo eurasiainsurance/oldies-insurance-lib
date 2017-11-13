@@ -11,6 +11,7 @@ import java.util.stream.Stream;
 
 import com.lapsa.insurance.domain.BaseEntity;
 
+import tech.lapsa.java.commons.function.MyObjects;
 import tech.lapsa.java.commons.function.MyOptionals;
 
 public class User extends BaseEntity<Integer> {
@@ -34,7 +35,21 @@ public class User extends BaseEntity<Integer> {
 
     private List<UserLogin> logins = new ArrayList<>();
 
-    private List<UserGroup> groups;
+    private List<UserGroup> groups = new ArrayList<>();
+
+    @Override
+    public void unlazy() {
+	super.unlazy();
+	MyOptionals.streamOf(getLogins()) //
+		.orElseGet(Stream::empty) //
+		.filter(MyObjects::nonNull) //
+		.forEach(BaseEntity::unlazy);
+	MyOptionals.streamOf(getGroups()) //
+		.orElseGet(Stream::empty) //
+		.filter(MyObjects::nonNull) //
+		.forEach(BaseEntity::unlazy);
+
+    }
 
     public String getDefaultLogin() {
 	return MyOptionals.of(logins) //

@@ -5,6 +5,7 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
+import com.lapsa.insurance.domain.BaseEntity;
 import com.lapsa.insurance.domain.InsuranceProduct;
 import com.lapsa.insurance.domain.InsuranceRequest;
 import com.lapsa.insurance.elements.InsuranceProductType;
@@ -37,6 +38,12 @@ public class CascoRequest extends InsuranceRequest {
     }
 
     private Casco casco = new Casco();
+
+    @Override
+    public void unlazy() {
+	super.unlazy();
+	MyOptionals.of(getCasco()).ifPresent(BaseEntity::unlazy);
+    }
 
     @Override
     public String localized(LocalizationVariant variant, Locale locale) {

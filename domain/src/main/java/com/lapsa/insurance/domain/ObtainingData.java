@@ -63,6 +63,12 @@ public class ObtainingData extends BaseDomain {
     private String deliveryAddress;
 
     @Override
+    public void unlazy() {
+	super.unlazy();
+	MyOptionals.of(getPickupPOS()).ifPresent(BaseEntity::unlazy);
+    }
+
+    @Override
     public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 

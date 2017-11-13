@@ -46,6 +46,12 @@ public abstract class Vehicle extends BaseEntity<Integer> {
 
     protected VehicleCertificateData certificateData = new VehicleCertificateData();
 
+    @Override
+    public void unlazy() {
+	super.unlazy();
+	MyOptionals.of(getCertificateData()).ifPresent(BaseDomain::unlazy);
+    }
+
     public String getFullName() {
 	StringJoiner sj = new StringJoiner(" ");
 

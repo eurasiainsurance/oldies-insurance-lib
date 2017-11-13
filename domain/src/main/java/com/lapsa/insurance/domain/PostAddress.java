@@ -46,6 +46,12 @@ public class PostAddress extends BaseDomain {
     private Map<LocalizationLanguage, String> streetLocalization = new HashMap<>();
 
     @Override
+    public void unlazy() {
+	super.unlazy();
+	getStreetLocalization().size();
+    }
+
+    @Override
     public String localized(LocalizationVariant variant, Locale locale) {
 	StringJoiner sj = new StringJoiner(", ");
 	sj.setEmptyValue(POST_ADDRESS.localized(variant, locale));

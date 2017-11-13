@@ -8,6 +8,7 @@ import java.util.Locale;
 import java.util.StringJoiner;
 import java.util.stream.Stream;
 
+import com.lapsa.insurance.domain.BaseEntity;
 import com.lapsa.insurance.domain.InsuranceProduct;
 
 import tech.lapsa.java.commons.function.MyNumbers;
@@ -31,6 +32,19 @@ public class Policy extends InsuranceProduct {
 
     private List<PolicyDriver> insuredDrivers = new ArrayList<>();
     private List<PolicyVehicle> insuredVehicles = new ArrayList<>();
+
+    @Override
+    public void unlazy() {
+	super.unlazy();
+	MyOptionals.streamOf(getInsuredDrivers()) //
+		.orElseGet(Stream::empty) //
+		.filter(MyObjects::nonNull) //
+		.forEach(BaseEntity::unlazy);
+	MyOptionals.streamOf(getInsuredVehicles()) //
+		.orElseGet(Stream::empty) //
+		.filter(MyObjects::nonNull) //
+		.forEach(BaseEntity::unlazy);
+    }
 
     public PolicyDriver addDriver(PolicyDriver driver) {
 	MyObjects.requireNonNull(driver, "Value must not be null");

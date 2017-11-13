@@ -6,6 +6,7 @@ import com.lapsa.insurance.elements.RequestSource;
 import com.lapsa.insurance.elements.TransactionProblem;
 import com.lapsa.insurance.elements.TransactionStatus;
 
+import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.javax.validation.NotNullValue;
 
 public abstract class InsuranceRequest extends Request {
@@ -36,6 +37,12 @@ public abstract class InsuranceRequest extends Request {
     public abstract InsuranceProduct getProduct();
 
     public abstract InsuranceProductType getProductType();
+
+    @Override
+    public void unlazy() {
+	super.unlazy();
+	MyOptionals.of(getObtaining()).ifPresent(BaseDomain::unlazy);
+    }
 
     // GENERATED
 

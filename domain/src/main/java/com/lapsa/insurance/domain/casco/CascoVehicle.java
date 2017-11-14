@@ -2,6 +2,7 @@ package com.lapsa.insurance.domain.casco;
 
 import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.StringJoiner;
 
@@ -16,6 +17,8 @@ import com.lapsa.insurance.domain.Vehicle;
 import com.lapsa.insurance.domain.VehicleCertificateData;
 import com.lapsa.insurance.elements.CascoCarAgeClass;
 
+import tech.lapsa.java.commons.function.MyFunctions;
+import tech.lapsa.java.commons.function.MyObjects;
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.localization.Localized;
 import tech.lapsa.javax.validation.NotNullValue;
@@ -61,6 +64,16 @@ public class CascoVehicle extends Vehicle {
     // @NotNullValue
     @MaxImageFileSize(measure = FileSizeMeasure.MB, value = 10)
     private Image view4;
+
+    @Override
+    public void unlazy() {
+	super.unlazy();
+	Arrays.asList(getView1(), getView2(), getView3(), getView4()) //
+		.stream() //
+		.filter(MyObjects::nonNull) //
+		.map(Image::getContent) //
+		.forEach(MyFunctions.voidConsumer());
+    }
 
     @Override
     public String localized(LocalizationVariant variant, Locale locale) {

@@ -5,14 +5,15 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
+import com.lapsa.insurance.domain.BaseEntity;
 import com.lapsa.insurance.domain.InsuranceProduct;
 import com.lapsa.insurance.domain.InsuranceRequest;
 import com.lapsa.insurance.elements.InsuranceProductType;
 import com.lapsa.insurance.elements.RequestSource;
 
 import tech.lapsa.java.commons.function.MyOptionals;
-import tech.lapsa.java.commons.localization.Localizeds;
 import tech.lapsa.java.commons.localization.Localized;
+import tech.lapsa.java.commons.localization.Localizeds;
 
 public class PolicyRequest extends InsuranceRequest {
     private static final long serialVersionUID = 944531653617396366L;
@@ -37,6 +38,12 @@ public class PolicyRequest extends InsuranceRequest {
     }
 
     private Policy policy = new Policy();
+
+    @Override
+    public void unlazy() {
+	super.unlazy();
+	MyOptionals.of(getPolicy()).ifPresent(BaseEntity::unlazy);
+    }
 
     @Override
     public InsuranceProduct getProduct() {

@@ -50,4 +50,6 @@ public abstract class BaseDomain implements Serializable, Localized {
 	return instanceWebSafeUUID;
     }
 
+    public void unlazy() {
+    }
 }

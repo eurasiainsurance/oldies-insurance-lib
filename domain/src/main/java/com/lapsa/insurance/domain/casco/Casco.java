@@ -6,10 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.StringJoiner;
+import java.util.stream.Stream;
 
 import javax.validation.constraints.Min;
 
 import com.lapsa.fin.FinCurrency;
+import com.lapsa.insurance.domain.BaseDomain;
+import com.lapsa.insurance.domain.BaseEntity;
 import com.lapsa.insurance.domain.InsuranceProduct;
 import com.lapsa.insurance.elements.CascoDeductibleFullRate;
 import com.lapsa.insurance.elements.CascoDeductiblePartialRate;
@@ -94,6 +97,16 @@ public class Casco extends InsuranceProduct {
     @NotNullValue
     @Min(message = "{com.lapsa.insurance.domain.casco.Casco.driverAndPassengerCount.Min.message}", value = 1)
     private Integer driverAndPassengerCount;
+
+    @Override
+    public void unlazy() {
+	super.unlazy();
+	MyOptionals.of(getInsuredVehicle()).ifPresent(BaseDomain::unlazy);
+	MyOptionals.streamOf(getInsuredDrivers()) //
+		.orElseGet(Stream::empty) //
+		.filter(MyObjects::nonNull) //
+		.forEach(BaseEntity::unlazy);
+    }
 
     public CascoDriver addDriver(CascoDriver driver) {
 	MyObjects.requireNonNull(driver, "Value must not be null");

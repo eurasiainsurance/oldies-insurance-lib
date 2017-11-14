@@ -1,5 +1,6 @@
 package com.lapsa.insurance.domain;
 
+import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.kz.taxpayer.TaxpayerNumber;
 import tech.lapsa.kz.taxpayer.validators.ValidTaxpayerNumber;
@@ -19,6 +20,12 @@ public abstract class Driver extends BaseEntity<Integer> {
     protected IdentityCardData identityCardData = new IdentityCardData();
     protected DriverLicenseData driverLicenseData = new DriverLicenseData();
     protected ContactData contactData = new ContactData();
+
+    @Override
+    public void unlazy() {
+	super.unlazy();
+	MyOptionals.of(getDriverLicenseData()).ifPresent(BaseDomain::unlazy);
+    }
 
     // GENERATED
 

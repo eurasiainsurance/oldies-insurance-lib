@@ -9,6 +9,7 @@ import com.lapsa.insurance.elements.ProgressStatus;
 import com.lapsa.insurance.elements.RequestSource;
 import com.lapsa.insurance.elements.RequestStatus;
 
+import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.javax.validation.NotNullValue;
 
 public abstract class Request extends BaseEntity<Integer> {
@@ -47,6 +48,15 @@ public abstract class Request extends BaseEntity<Integer> {
     protected User closedBy;
 
     protected String note;
+
+    @Override
+    public void unlazy() {
+	super.unlazy();
+	MyOptionals.of(getCreatedBy()).ifPresent(BaseEntity::unlazy);
+	MyOptionals.of(getAcceptedBy()).ifPresent(BaseEntity::unlazy);
+	MyOptionals.of(getCompletedBy()).ifPresent(BaseEntity::unlazy);
+	MyOptionals.of(getClosedBy()).ifPresent(BaseEntity::unlazy);
+    }
 
     // GENERATED
 

@@ -40,6 +40,7 @@ public class PaymentData extends BaseDomain {
 
     private String postReference;
     private Instant postInstant;
+    private String methodName;
 
     @Override
     public String localized(LocalizationVariant variant, Locale locale) {
@@ -117,5 +118,13 @@ public class PaymentData extends BaseDomain {
 
     public Instant getPostInstant() {
 	return postInstant;
+    }
+
+    public String getMethodName() {
+	return methodName;
+    }
+
+    public void setMethodName(String methodName) {
+	this.methodName = methodName;
     }
 }

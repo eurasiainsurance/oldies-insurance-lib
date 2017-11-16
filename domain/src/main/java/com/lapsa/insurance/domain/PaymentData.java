@@ -41,6 +41,7 @@ public class PaymentData extends BaseDomain {
     private String paymentReference;
     private Instant paymentInstant;
     private String methodName;
+    private Double paymentAmount;
 
     @Override
     public String localized(LocalizationVariant variant, Locale locale) {
@@ -126,5 +127,13 @@ public class PaymentData extends BaseDomain {
 
     public void setMethodName(String methodName) {
 	this.methodName = methodName;
+    }
+
+    public Double getPaymentAmount() {
+        return paymentAmount;
+    }
+
+    public void setPaymentAmount(Double paymentAmount) {
+        this.paymentAmount = paymentAmount;
     }
 }

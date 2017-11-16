@@ -38,8 +38,10 @@ public class PaymentData extends BaseDomain {
 
     private String externalId;
 
-    private String postReference;
-    private Instant postInstant;
+    private String paymentReference;
+    private Instant paymentInstant;
+    private String methodName;
+    private Double paymentAmount;
 
     @Override
     public String localized(LocalizationVariant variant, Locale locale) {
@@ -64,12 +66,12 @@ public class PaymentData extends BaseDomain {
 		.map(PAYMENT_EXTERNAL_ID.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
-	MyOptionals.of(postInstant) //
+	MyOptionals.of(paymentInstant) //
 		.map(Localizeds.instantMapper(locale)) //
 		.map(PAYMENT_POST_INSTANT.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
-	MyOptionals.of(postReference) //
+	MyOptionals.of(paymentReference) //
 		.map(PAYMENT_POST_REFERENCE.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
@@ -103,19 +105,35 @@ public class PaymentData extends BaseDomain {
 	this.status = status;
     }
 
-    public String getPostReference() {
-	return postReference;
+    public String getPaymentReference() {
+	return paymentReference;
     }
 
-    public void setPostReference(String postReference) {
-	this.postReference = postReference;
+    public void setPaymentReference(String paymentReference) {
+	this.paymentReference = paymentReference;
     }
 
-    public void setPostInstant(Instant postInstant) {
-	this.postInstant = postInstant;
+    public void setPaymentInstant(Instant paymentInstant) {
+	this.paymentInstant = paymentInstant;
     }
 
-    public Instant getPostInstant() {
-	return postInstant;
+    public Instant getPaymentInstant() {
+	return paymentInstant;
+    }
+
+    public String getMethodName() {
+	return methodName;
+    }
+
+    public void setMethodName(String methodName) {
+	this.methodName = methodName;
+    }
+
+    public Double getPaymentAmount() {
+        return paymentAmount;
+    }
+
+    public void setPaymentAmount(Double paymentAmount) {
+        this.paymentAmount = paymentAmount;
     }
 }

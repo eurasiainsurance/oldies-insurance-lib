@@ -1,6 +1,7 @@
 package com.lapsa.insurance.domain;
 
 import java.io.Serializable;
+import java.util.Locale;
 import java.util.UUID;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
@@ -20,7 +21,7 @@ public abstract class BaseDomain implements Serializable, Localized {
 
     @Override
     public String toString() {
-	return regular();
+	return regular(Locale.ENGLISH);
     }
 
     @Override

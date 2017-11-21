@@ -1,6 +1,0 @@
-com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE       = Оплата банковской картой
-com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE.short = картой on-line
-com.lapsa.insurance.elements.PaymentMethod.PAYCASH              = Оплата наличными курьеру при доставке полиса
-com.lapsa.insurance.elements.PaymentMethod.PAYCASH.short        = наличными
-com.lapsa.insurance.elements.PaymentMethod.UNDEFINED            = Не определено
-com.lapsa.insurance.elements.PaymentMethod.UNDEFINED.short      = не определено

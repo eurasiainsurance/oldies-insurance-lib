@@ -5,7 +5,6 @@ import com.lapsa.insurance.validation.ValidInsuranceAgeClass;
 import com.lapsa.insurance.validation.ValidInsuranceClassType;
 import com.lapsa.insurance.validation.ValidInsuranceExpirienceClass;
 import com.lapsa.insurance.validation.ValidInsuranceRequestType;
-import com.lapsa.insurance.validation.ValidPaymentMethod;
 import com.lapsa.insurance.validation.ValidPolicyVehicleAgeClass;
 import com.lapsa.insurance.validation.ValidPolicyVehicleClass;
 import com.lapsa.insurance.validation.ValidVehicleYearOfIssue;
@@ -16,7 +15,6 @@ public interface DummyAnnotated {
     @ValidInsuranceClassType
     @ValidInsuranceExpirienceClass
     @ValidInsuranceRequestType
-    @ValidPaymentMethod
     @ValidPolicyVehicleAgeClass
     @ValidPolicyVehicleClass
     @ValidVehicleYearOfIssue

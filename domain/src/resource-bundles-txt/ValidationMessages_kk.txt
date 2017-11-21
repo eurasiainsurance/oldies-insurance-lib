@@ -20,5 +20,3 @@ com.lapsa.insurance.domain.ObtainingData.deliveryDate.DaysBeforeNow.messages = �
 com.lapsa.insurance.domain.ObtainingData.deliveryTime.NotNullValue.message = Жеткізу уақытын көрсетіңіз 
 com.lapsa.insurance.domain.ObtainingData.deliveryAddress.NotNullValue.message = Жеткізу мекенжайын көрсетіңіз 
 com.lapsa.insurance.domain.ObtainingData.deliveryAddress.NotEmptyString.message = {com.lapsa.insurance.domain.ObtainingData.deliveryAddress.NotNullValue.message}
-
-com.lapsa.insurance.domain.PaymentData.method.NotNullValue.message = Төлем тәсілін таңдау қажет

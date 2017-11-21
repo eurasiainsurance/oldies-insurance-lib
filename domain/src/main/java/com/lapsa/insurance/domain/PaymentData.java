@@ -6,13 +6,11 @@ import java.time.Instant;
 import java.util.Locale;
 import java.util.StringJoiner;
 
-import com.lapsa.insurance.elements.PaymentMethod;
 import com.lapsa.insurance.elements.PaymentStatus;
 
 import tech.lapsa.java.commons.function.MyOptionals;
-import tech.lapsa.java.commons.function.MyStrings;
-import tech.lapsa.java.commons.localization.Localizeds;
 import tech.lapsa.java.commons.localization.Localized;
+import tech.lapsa.java.commons.localization.Localizeds;
 import tech.lapsa.javax.validation.NotNullValue;
 
 public class PaymentData extends BaseDomain {
@@ -30,9 +28,6 @@ public class PaymentData extends BaseDomain {
 	return MULTIPLIER;
     }
 
-    @NotNullValue(message = "{com.lapsa.insurance.domain.PaymentData.method.NotNullValue.message}")
-    private PaymentMethod method = PaymentMethod.UNDEFINED;
-
     @NotNullValue
     private PaymentStatus status = PaymentStatus.UNDEFINED;
 
@@ -47,10 +42,7 @@ public class PaymentData extends BaseDomain {
     public String localized(LocalizationVariant variant, Locale locale) {
 	StringBuilder sb = new StringBuilder();
 
-	sb.append(MyOptionals.of(method) //
-		.filter(PaymentMethod::isDefined) //
-		.map(Localized.toLocalizedMapper(variant, locale)) //
-		.map(MyStrings::capitalizeFirstLetter) //
+	sb.append(MyOptionals.of(methodName) //
 		.orElseGet(() -> PAYMENT_DATA.localized(variant, locale)));
 
 	StringJoiner sj = new StringJoiner(", ", " ", "");
@@ -80,14 +72,6 @@ public class PaymentData extends BaseDomain {
     }
 
     // GENERATED
-
-    public PaymentMethod getMethod() {
-	return method;
-    }
-
-    public void setMethod(PaymentMethod method) {
-	this.method = method;
-    }
 
     public String getExternalId() {
 	return externalId;
@@ -130,10 +114,10 @@ public class PaymentData extends BaseDomain {
     }
 
     public Double getPaymentAmount() {
-        return paymentAmount;
+	return paymentAmount;
     }
 
     public void setPaymentAmount(Double paymentAmount) {
-        this.paymentAmount = paymentAmount;
+	this.paymentAmount = paymentAmount;
     }
 }

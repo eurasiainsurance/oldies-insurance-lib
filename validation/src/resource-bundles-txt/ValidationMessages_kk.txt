@@ -6,4 +6,3 @@ com.lapsa.insurance.validation.ValidPolicyVehicleAgeClass.message = Сақтан
 com.lapsa.insurance.validation.ValidPolicyVehicleClass.message = Сақтандырудың осы түрі үшін КҚ дұрыс емес класы көрсетілген
 com.lapsa.insurance.validation.ValidVehicleYearOfIssue.message = Көлік құралының шығарылған жылы дұрыс емес
 com.lapsa.insurance.validation.ValidInsuranceClassType.message = Сақтандырудың дұрыс емес класы
-com.lapsa.insurance.validation.ValidPaymentMethod.message = Төлем жасаудың дұрыс емес тәсілі

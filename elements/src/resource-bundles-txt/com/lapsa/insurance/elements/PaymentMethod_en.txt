@@ -1,6 +1,0 @@
-com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE       = bank card payment
-com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE.short = on-line card payment
-com.lapsa.insurance.elements.PaymentMethod.PAYCASH              = payment to the courier upon delivery of the policy
-com.lapsa.insurance.elements.PaymentMethod.PAYCASH.short        = in cash
-com.lapsa.insurance.elements.PaymentMethod.UNDEFINED            = undefined
-com.lapsa.insurance.elements.PaymentMethod.UNDEFINED.short      = undefined

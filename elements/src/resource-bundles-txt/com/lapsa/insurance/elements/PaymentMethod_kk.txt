@@ -1,6 +1,0 @@
-com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE       = Банктік картамен төлеу
-com.lapsa.insurance.elements.PaymentMethod.PAYCARD_ONLINE.short = картамен on-line
-com.lapsa.insurance.elements.PaymentMethod.PAYCASH              = Төлем полисті жеткізген кезде курьерге қолма қол ақшамен
-com.lapsa.insurance.elements.PaymentMethod.PAYCASH.short        = қолма қол ақшамен
-com.lapsa.insurance.elements.PaymentMethod.UNDEFINED            = Анықталмаған
-com.lapsa.insurance.elements.PaymentMethod.UNDEFINED.short      = анықталмаған

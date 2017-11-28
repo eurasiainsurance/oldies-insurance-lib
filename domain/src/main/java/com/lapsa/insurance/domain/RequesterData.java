@@ -8,13 +8,13 @@ import java.util.StringJoiner;
 
 import javax.validation.constraints.AssertTrue;
 
-import com.lapsa.international.internet.validators.ValidEmail;
 import com.lapsa.international.localization.LocalizationLanguage;
 import com.lapsa.international.phone.PhoneNumber;
 import com.lapsa.international.phone.validators.ValidPhoneNumber;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.javax.validation.NotNullValue;
+import tech.lapsa.javax.validation.ValidEmail;
 import tech.lapsa.javax.validation.ValidHumanName;
 import tech.lapsa.kz.taxpayer.TaxpayerNumber;
 import tech.lapsa.kz.taxpayer.validators.ValidTaxpayerNumber;

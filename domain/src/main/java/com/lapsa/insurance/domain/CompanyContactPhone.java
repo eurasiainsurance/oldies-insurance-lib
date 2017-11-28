@@ -11,21 +11,12 @@ import com.lapsa.international.phone.PhoneType;
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.function.MyStrings;
 import tech.lapsa.java.commons.localization.Localized;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
+@HashCodePrime(7)
 public class CompanyContactPhone extends BaseEntity<Integer> {
-    private static final long serialVersionUID = -1005845698858843018L;
-    private static final int PRIME = 7;
-    private static final int MULTIPLIER = PRIME;
 
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
+    private static final long serialVersionUID = 1L;
 
     private PhoneNumber phone;
     private PhoneType phoneType;

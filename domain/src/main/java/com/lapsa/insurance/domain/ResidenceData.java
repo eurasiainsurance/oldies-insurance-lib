@@ -12,21 +12,13 @@ import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.localization.Localized;
 import tech.lapsa.javax.validation.NotEmptyString;
 import tech.lapsa.javax.validation.NotNullValue;
+import tech.lapsa.patterns.domain.Domain;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
-public class ResidenceData extends BaseDomain {
-    private static final long serialVersionUID = 6787004222278561370L;
-    private static final int PRIME = 103;
-    private static final int MULTIPLIER = PRIME;
+@HashCodePrime(103)
+public class ResidenceData extends Domain {
 
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
+    private static final long serialVersionUID = 1L;
 
     private Boolean resident;
 

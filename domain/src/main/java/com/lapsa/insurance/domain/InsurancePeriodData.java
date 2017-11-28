@@ -12,21 +12,13 @@ import tech.lapsa.javax.validation.LocalDateComparison;
 import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.javax.validation.TemporalFuture;
 import tech.lapsa.javax.validation.TemporalLeftBeforeRight;
+import tech.lapsa.patterns.domain.Domain;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
-public class InsurancePeriodData extends BaseDomain {
-    private static final long serialVersionUID = 5019017773831664143L;
-    private static final int PRIME = 179;
-    private static final int MULTIPLIER = PRIME;
+@HashCodePrime(179)
+public class InsurancePeriodData extends Domain {
 
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
+    private static final long serialVersionUID = 1L;
 
     @NotNullValue
     @TemporalFuture(allowNow = true)

@@ -14,27 +14,18 @@ import com.lapsa.insurance.elements.RequestSource;
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.localization.Localized;
 import tech.lapsa.java.commons.localization.Localizeds;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
+@HashCodePrime(83)
 public class PolicyRequest extends InsuranceRequest {
-    private static final long serialVersionUID = 944531653617396366L;
-    private static final int PRIME = 83;
-    private static final int MULTIPLIER = PRIME;
+
+    private static final long serialVersionUID = 1L;
 
     public PolicyRequest() {
     }
 
     public PolicyRequest(RequestSource source) {
 	super(source);
-    }
-
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
     }
 
     private Policy policy = new Policy();

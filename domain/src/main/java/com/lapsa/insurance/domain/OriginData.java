@@ -11,21 +11,13 @@ import com.lapsa.international.country.validators.ValidCountry;
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.localization.Localized;
 import tech.lapsa.javax.validation.NotNullValue;
+import tech.lapsa.patterns.domain.Domain;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
-public class OriginData extends BaseDomain {
-    private static final long serialVersionUID = -2811566798584800985L;
-    private static final int PRIME = 61;
-    private static final int MULTIPLIER = PRIME;
+@HashCodePrime(61)
+public class OriginData extends Domain {
 
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
+    private static final long serialVersionUID = 1L;
 
     @NotNullValue
     @ValidCountry

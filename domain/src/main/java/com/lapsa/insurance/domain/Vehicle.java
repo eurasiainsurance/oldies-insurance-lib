@@ -13,9 +13,11 @@ import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.function.MyStrings;
 import tech.lapsa.javax.validation.NotEmptyString;
 import tech.lapsa.javax.validation.NotNullValue;
+import tech.lapsa.patterns.domain.Domain;
 
 public abstract class Vehicle extends BaseEntity<Integer> {
-    private static final long serialVersionUID = -7589698813986815583L;
+
+    private static final long serialVersionUID = 1L;
 
     @NotNullValue
     @ValidVINCode(checkDigit = false)
@@ -49,7 +51,7 @@ public abstract class Vehicle extends BaseEntity<Integer> {
     @Override
     public void unlazy() {
 	super.unlazy();
-	MyOptionals.of(getCertificateData()).ifPresent(BaseDomain::unlazy);
+	MyOptionals.of(getCertificateData()).ifPresent(Domain::unlazy);
     }
 
     public String getFullName() {

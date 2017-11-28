@@ -10,21 +10,12 @@ import com.lapsa.insurance.domain.PersonalData;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.kz.taxpayer.TaxpayerNumber;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
+@HashCodePrime(113)
 public class CascoDriver extends Driver {
-    private static final long serialVersionUID = 6781864890008476284L;
-    private static final int PRIME = 113;
-    private static final int MULTIPLIER = PRIME;
 
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
+    private static final long serialVersionUID = 1L;
 
     @Override
     public String localized(LocalizationVariant variant, Locale locale) {

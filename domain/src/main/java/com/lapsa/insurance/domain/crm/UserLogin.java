@@ -8,21 +8,12 @@ import java.util.StringJoiner;
 import com.lapsa.insurance.domain.BaseEntity;
 
 import tech.lapsa.java.commons.function.MyOptionals;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
+@HashCodePrime(163)
 public class UserLogin extends BaseEntity<Integer> {
-    private static final long serialVersionUID = -3456756685893976599L;
-    private static final int PRIME = 163;
-    private static final int MULTIPLIER = PRIME;
 
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
+    private static final long serialVersionUID = 1L;
 
     private String name;
     private User user;

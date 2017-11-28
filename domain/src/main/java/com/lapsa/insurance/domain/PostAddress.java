@@ -15,21 +15,13 @@ import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.localization.Localized;
 import tech.lapsa.javax.validation.NotEmptyString;
 import tech.lapsa.javax.validation.NotNullValue;
+import tech.lapsa.patterns.domain.Domain;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
-public class PostAddress extends BaseDomain {
-    private static final long serialVersionUID = -5557010401647487544L;
-    private static final int PRIME = 97;
-    private static final int MULTIPLIER = PRIME;
+@HashCodePrime(97)
+public class PostAddress extends Domain {
 
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
+    private static final long serialVersionUID = 1L;
 
     @NotNullValue
     @NotEmptyString

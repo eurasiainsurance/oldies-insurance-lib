@@ -11,21 +11,11 @@ import tech.lapsa.java.commons.localization.Localizeds;
 import tech.lapsa.javax.validation.NotEmptyString;
 import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.javax.validation.ValidDateOfIssue;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
+@HashCodePrime(17)
 public class DriverLicenseData extends SidedScannedDocument {
     private static final long serialVersionUID = -4979156573374546371L;
-    private static final int PRIME = 17;
-    private static final int MULTIPLIER = PRIME;
-
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
 
     @NotNullValue
     @NotEmptyString

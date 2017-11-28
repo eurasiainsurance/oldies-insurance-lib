@@ -14,21 +14,12 @@ import com.lapsa.insurance.domain.InsuranceProduct;
 import tech.lapsa.java.commons.function.MyNumbers;
 import tech.lapsa.java.commons.function.MyObjects;
 import tech.lapsa.java.commons.function.MyOptionals;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
+@HashCodePrime(79)
 public class Policy extends InsuranceProduct {
-    private static final long serialVersionUID = 1148321211581313286L;
-    private static final int PRIME = 79;
-    private static final int MULTIPLIER = PRIME;
 
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
+    private static final long serialVersionUID = 1L;
 
     private List<PolicyDriver> insuredDrivers = new ArrayList<>();
     private List<PolicyVehicle> insuredVehicles = new ArrayList<>();

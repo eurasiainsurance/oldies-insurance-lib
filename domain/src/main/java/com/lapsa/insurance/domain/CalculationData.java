@@ -10,21 +10,13 @@ import com.lapsa.fin.FinCurrency;
 import tech.lapsa.java.commons.function.MyNumbers;
 import tech.lapsa.java.commons.function.MyObjects;
 import tech.lapsa.java.commons.function.MyOptionals;
+import tech.lapsa.patterns.domain.Domain;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
-public class CalculationData extends BaseDomain {
-    private static final long serialVersionUID = -1769681003179820909L;
-    private static final int PRIME = 3;
-    private static final int MULTIPLIER = PRIME;
+@HashCodePrime(3)
+public class CalculationData extends Domain {
 
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
+    private static final long serialVersionUID = 1L;
 
     private double calculatedPremiumCost;
     private double actualPremiumCost;

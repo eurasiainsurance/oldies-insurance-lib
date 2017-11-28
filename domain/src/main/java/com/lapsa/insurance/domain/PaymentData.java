@@ -12,21 +12,13 @@ import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.localization.Localized;
 import tech.lapsa.java.commons.localization.Localizeds;
 import tech.lapsa.javax.validation.NotNullValue;
+import tech.lapsa.patterns.domain.Domain;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
-public class PaymentData extends BaseDomain {
-    private static final long serialVersionUID = -6326848114328976035L;
-    private static final int PRIME = 127;
-    private static final int MULTIPLIER = PRIME;
+@HashCodePrime(127)
+public class PaymentData extends Domain {
 
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
+    private static final long serialVersionUID = 1L;
 
     @NotNullValue
     private PaymentStatus status = PaymentStatus.UNDEFINED;

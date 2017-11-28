@@ -2,25 +2,17 @@ package com.lapsa.insurance.domain;
 
 import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
-import java.io.Serializable;
 import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.StringJoiner;
 
-public class GeoPoint extends BaseDomain implements Serializable {
-    private static final long serialVersionUID = -2196615504671366442L;
-    private static final int PRIME = 19;
-    private static final int MULTIPLIER = PRIME;
+import tech.lapsa.patterns.domain.Domain;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
+@HashCodePrime(19)
+public class GeoPoint extends Domain {
 
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
+    private static final long serialVersionUID = 1L;
 
     private double latitude;
 

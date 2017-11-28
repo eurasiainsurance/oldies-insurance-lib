@@ -10,7 +10,8 @@ import tech.lapsa.java.commons.function.MyFunctions;
 import tech.lapsa.java.commons.function.MyObjects;
 
 public abstract class SidedScannedDocument extends BaseEntity<Integer> {
-    private static final long serialVersionUID = 3944590199706860072L;
+
+    private static final long serialVersionUID = 1L;
 
     @MaxImageFileSize(measure = FileSizeMeasure.MB, value = 10)
     private Image frontside;

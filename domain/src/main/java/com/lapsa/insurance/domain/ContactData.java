@@ -12,21 +12,13 @@ import com.lapsa.international.phone.validators.ValidPhoneNumber;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.javax.validation.NotNullValue;
+import tech.lapsa.patterns.domain.Domain;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
-public class ContactData extends BaseDomain {
-    private static final long serialVersionUID = 6954755236615159684L;
-    private static final int PRIME = 13;
-    private static final int MULTIPLIER = PRIME;
+@HashCodePrime(13)
+public class ContactData extends Domain {
 
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
+    private static final long serialVersionUID = 1L;
 
     @NotNullValue
     @ValidPhoneNumber

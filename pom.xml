@@ -27,6 +27,7 @@
 		<payara-bom.version>4.1.2-1</payara-bom.version>
 		<!-- tech -->
 		<javax-validation-commons.version>1.0</javax-validation-commons.version>
+		<patterns-domain.version>1.0-SNAPSHOT</patterns-domain.version>
 		<!-- oldies -->
 		<kz-lib.version>3.2-SNAPSHOT</kz-lib.version>
 		<international-lib.version>3.3-SNAPSHOT</international-lib.version>
@@ -65,6 +66,11 @@
 				<groupId>tech.lapsa.javax</groupId>
 				<artifactId>javax-validation-commons</artifactId>
 				<version>${javax-validation-commons.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>tech.lapsa.patterns</groupId>
+				<artifactId>patterns-domain</artifactId>
+				<version>${patterns-domain.version}</version>
 			</dependency>
 			<!-- own -->
 			<dependency>

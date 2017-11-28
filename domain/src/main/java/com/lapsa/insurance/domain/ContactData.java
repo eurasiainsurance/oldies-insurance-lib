@@ -5,13 +5,13 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
-import com.lapsa.international.internet.validators.ValidEmail;
-import com.lapsa.international.internet.validators.ValidURL;
 import com.lapsa.international.phone.PhoneNumber;
 import com.lapsa.international.phone.validators.ValidPhoneNumber;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.javax.validation.NotNullValue;
+import tech.lapsa.javax.validation.ValidEmail;
+import tech.lapsa.javax.validation.ValidURL;
 import tech.lapsa.patterns.domain.Domain;
 import tech.lapsa.patterns.domain.HashCodePrime;
 

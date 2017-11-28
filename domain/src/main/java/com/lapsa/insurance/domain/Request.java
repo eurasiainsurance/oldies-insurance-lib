@@ -11,9 +11,11 @@ import com.lapsa.insurance.elements.RequestStatus;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.javax.validation.NotNullValue;
+import tech.lapsa.patterns.domain.Domain;
 
 public abstract class Request extends BaseEntity<Integer> {
-    private static final long serialVersionUID = -4738852384873507942L;
+
+    private static final long serialVersionUID = 1L;
 
     protected Instant created;
     protected Instant updated;
@@ -52,10 +54,10 @@ public abstract class Request extends BaseEntity<Integer> {
     @Override
     public void unlazy() {
 	super.unlazy();
-	MyOptionals.of(getCreatedBy()).ifPresent(BaseEntity::unlazy);
-	MyOptionals.of(getAcceptedBy()).ifPresent(BaseEntity::unlazy);
-	MyOptionals.of(getCompletedBy()).ifPresent(BaseEntity::unlazy);
-	MyOptionals.of(getClosedBy()).ifPresent(BaseEntity::unlazy);
+	MyOptionals.of(getCreatedBy()).ifPresent(Domain::unlazy);
+	MyOptionals.of(getAcceptedBy()).ifPresent(Domain::unlazy);
+	MyOptionals.of(getCompletedBy()).ifPresent(Domain::unlazy);
+	MyOptionals.of(getClosedBy()).ifPresent(Domain::unlazy);
     }
 
     // GENERATED

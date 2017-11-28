@@ -8,9 +8,11 @@ import com.lapsa.insurance.elements.TransactionStatus;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.javax.validation.NotNullValue;
+import tech.lapsa.patterns.domain.Domain;
 
 public abstract class InsuranceRequest extends Request {
-    private static final long serialVersionUID = 944531653617396366L;
+
+    private static final long serialVersionUID = 1L;
 
     public InsuranceRequest() {
     }
@@ -41,7 +43,7 @@ public abstract class InsuranceRequest extends Request {
     @Override
     public void unlazy() {
 	super.unlazy();
-	MyOptionals.of(getObtaining()).ifPresent(BaseDomain::unlazy);
+	MyOptionals.of(getObtaining()).ifPresent(Domain::unlazy);
     }
 
     // GENERATED

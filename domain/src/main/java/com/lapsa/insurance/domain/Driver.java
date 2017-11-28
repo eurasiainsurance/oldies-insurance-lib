@@ -4,6 +4,7 @@ import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.kz.taxpayer.TaxpayerNumber;
 import tech.lapsa.kz.taxpayer.validators.ValidTaxpayerNumber;
+import tech.lapsa.patterns.domain.Domain;
 
 public abstract class Driver extends BaseEntity<Integer> {
     private static final long serialVersionUID = -9161699848130198940L;
@@ -24,7 +25,7 @@ public abstract class Driver extends BaseEntity<Integer> {
     @Override
     public void unlazy() {
 	super.unlazy();
-	MyOptionals.of(getDriverLicenseData()).ifPresent(BaseDomain::unlazy);
+	MyOptionals.of(getDriverLicenseData()).ifPresent(Domain::unlazy);
     }
 
     // GENERATED

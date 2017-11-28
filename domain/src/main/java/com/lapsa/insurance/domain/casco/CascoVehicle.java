@@ -25,21 +25,12 @@ import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.javax.validation.NotTooOldYearOfIssue;
 import tech.lapsa.javax.validation.NotTooYoungYearOfIssue;
 import tech.lapsa.kz.vehicle.VehicleRegNumber;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
+@HashCodePrime(157)
 public class CascoVehicle extends Vehicle {
-    private static final long serialVersionUID = 2602178314016175969L;
-    private static final int PRIME = 157;
-    private static final int MULTIPLIER = PRIME;
 
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
+    private static final long serialVersionUID = 1L;
 
     @NotNullValue
     @Min(message = "{com.lapsa.insurance.domain.casco.CascoVehicle.cost.Min.message}", value = 1000000)

@@ -11,7 +11,6 @@ import java.util.stream.Stream;
 import javax.validation.constraints.Min;
 
 import com.lapsa.fin.FinCurrency;
-import com.lapsa.insurance.domain.BaseDomain;
 import com.lapsa.insurance.domain.BaseEntity;
 import com.lapsa.insurance.domain.InsuranceProduct;
 import com.lapsa.insurance.elements.CascoDeductibleFullRate;
@@ -21,21 +20,13 @@ import tech.lapsa.java.commons.function.MyNumbers;
 import tech.lapsa.java.commons.function.MyObjects;
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.javax.validation.NotNullValue;
+import tech.lapsa.patterns.domain.Domain;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
+@HashCodePrime(131)
 public class Casco extends InsuranceProduct {
-    private static final long serialVersionUID = -1919280207677627360L;
-    private static final int PRIME = 131;
-    private static final int MULTIPLIER = PRIME;
 
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
+    private static final long serialVersionUID = 1L;
 
     // Покрытие только риска ДТП
     private boolean coverRoadAccidents;
@@ -101,7 +92,7 @@ public class Casco extends InsuranceProduct {
     @Override
     public void unlazy() {
 	super.unlazy();
-	MyOptionals.of(getInsuredVehicle()).ifPresent(BaseDomain::unlazy);
+	MyOptionals.of(getInsuredVehicle()).ifPresent(Domain::unlazy);
 	MyOptionals.streamOf(getInsuredDrivers()) //
 		.orElseGet(Stream::empty) //
 		.filter(MyObjects::nonNull) //

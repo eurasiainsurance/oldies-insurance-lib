@@ -18,21 +18,13 @@ import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.javax.validation.ValidHumanName;
 import tech.lapsa.kz.taxpayer.TaxpayerNumber;
 import tech.lapsa.kz.taxpayer.validators.ValidTaxpayerNumber;
+import tech.lapsa.patterns.domain.Domain;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
-public class RequesterData extends BaseDomain {
-    private static final long serialVersionUID = 2536050924805456436L;
-    private static final int PRIME = 73;
-    private static final int MULTIPLIER = PRIME;
+@HashCodePrime(73)
+public class RequesterData extends Domain {
 
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
+    private static final long serialVersionUID = 1L;
 
     @ValidHumanName
     private String name;

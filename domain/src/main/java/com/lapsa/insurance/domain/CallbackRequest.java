@@ -6,25 +6,16 @@ import java.util.Locale;
 import java.util.StringJoiner;
 
 import tech.lapsa.java.commons.function.MyOptionals;
-import tech.lapsa.java.commons.localization.Localizeds;
 import tech.lapsa.java.commons.localization.Localized;
+import tech.lapsa.java.commons.localization.Localizeds;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
+@HashCodePrime(173)
 public class CallbackRequest extends Request {
-    private static final long serialVersionUID = 4285018638039289108L;
-    private static final int PRIME = 173;
-    private static final int MULTIPLIER = PRIME;
+
+    private static final long serialVersionUID = 1L;
 
     private String comments;
-
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
 
     // GENERATED
 

@@ -16,21 +16,12 @@ import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.localization.Localized;
 import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.kz.vehicle.VehicleRegNumber;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
+@HashCodePrime(53)
 public class PolicyVehicle extends Vehicle {
-    private static final long serialVersionUID = -944934937361936981L;
-    private static final int PRIME = 53;
-    private static final int MULTIPLIER = PRIME;
 
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
+    private static final long serialVersionUID = 1L;
 
     @NotNullValue
     @ValidPolicyVehicleClass

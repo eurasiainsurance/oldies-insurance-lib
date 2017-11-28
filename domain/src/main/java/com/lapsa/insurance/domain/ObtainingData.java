@@ -19,21 +19,13 @@ import tech.lapsa.javax.validation.DaysBeforeNow;
 import tech.lapsa.javax.validation.Mode;
 import tech.lapsa.javax.validation.NotEmptyString;
 import tech.lapsa.javax.validation.NotNullValue;
+import tech.lapsa.patterns.domain.Domain;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
-public class ObtainingData extends BaseDomain {
-    private static final long serialVersionUID = -6326848114328976035L;
-    private static final int PRIME = 89;
-    private static final int MULTIPLIER = PRIME;
+@HashCodePrime(89)
+public class ObtainingData extends Domain {
 
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
+    private static final long serialVersionUID = 1L;
 
     @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.method.NotNullValue.message}")
     private ObtainingMethod method = ObtainingMethod.UNDEFINED;
@@ -65,7 +57,7 @@ public class ObtainingData extends BaseDomain {
     @Override
     public void unlazy() {
 	super.unlazy();
-	MyOptionals.of(getPickupPOS()).ifPresent(BaseEntity::unlazy);
+	MyOptionals.of(getPickupPOS()).ifPresent(Domain::unlazy);
     }
 
     @Override

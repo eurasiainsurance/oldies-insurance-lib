@@ -12,29 +12,20 @@ import com.lapsa.insurance.elements.InsuranceProductType;
 import com.lapsa.insurance.elements.RequestSource;
 
 import tech.lapsa.java.commons.function.MyOptionals;
-import tech.lapsa.java.commons.localization.Localizeds;
 import tech.lapsa.java.commons.localization.Localized;
+import tech.lapsa.java.commons.localization.Localizeds;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
+@HashCodePrime(137)
 public class CascoRequest extends InsuranceRequest {
-    private static final long serialVersionUID = -8067548829502589540L;
-    private static final int PRIME = 137;
-    private static final int MULTIPLIER = PRIME;
+
+    private static final long serialVersionUID = 1L;
 
     public CascoRequest() {
     }
 
     public CascoRequest(RequestSource source) {
 	super(source);
-    }
-
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
     }
 
     private Casco casco = new Casco();

@@ -13,21 +13,12 @@ import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.javax.validation.ValidDateOfIssue;
 import tech.lapsa.kz.vehicle.VehicleRegNumber;
 import tech.lapsa.kz.vehicle.validators.ValidVehicleRegNumber;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
+@HashCodePrime(109)
 public class VehicleCertificateData extends SidedScannedDocument {
-    private static final long serialVersionUID = -8205031496636707778L;
-    private static final int PRIME = 109;
-    private static final int MULTIPLIER = PRIME;
 
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
+    private static final long serialVersionUID = 1L;
 
     @NotNullValue
     @NotEmptyString

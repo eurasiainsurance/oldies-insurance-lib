@@ -10,27 +10,19 @@ import com.lapsa.insurance.elements.Sex;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.function.MyStrings;
-import tech.lapsa.java.commons.localization.Localizeds;
 import tech.lapsa.java.commons.localization.Localized;
+import tech.lapsa.java.commons.localization.Localizeds;
 import tech.lapsa.javax.validation.NotEmptyString;
 import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.javax.validation.ValidDateOfBirth;
 import tech.lapsa.javax.validation.ValidHumanName;
+import tech.lapsa.patterns.domain.Domain;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
-public class PersonalData extends BaseDomain {
-    private static final long serialVersionUID = 6108831386319756885L;
-    private static final int PRIME = 71;
-    private static final int MULTIPLIER = PRIME;
+@HashCodePrime(71)
+public class PersonalData extends Domain {
 
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
+    private static final long serialVersionUID = 1L;
 
     @NotNullValue
     @NotEmptyString

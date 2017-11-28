@@ -6,21 +6,12 @@ import java.util.Locale;
 import java.util.StringJoiner;
 
 import tech.lapsa.java.commons.function.MyOptionals;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
+@HashCodePrime(5)
 public class CompanyContactEmail extends BaseEntity<Integer> {
-    private static final long serialVersionUID = 4127152799405864110L;
-    private static final int PRIME = 5;
-    private static final int MULTIPLIER = PRIME;
 
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
+    private static final long serialVersionUID = 1L;
 
     private String address;
 

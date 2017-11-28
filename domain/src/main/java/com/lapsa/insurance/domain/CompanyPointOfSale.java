@@ -14,21 +14,13 @@ import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.function.MyStrings;
 import tech.lapsa.javax.validation.NotEmptyString;
 import tech.lapsa.javax.validation.NotNullValue;
+import tech.lapsa.patterns.domain.Domain;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
+@HashCodePrime(11)
 public class CompanyPointOfSale extends BaseEntity<Integer> {
-    private static final long serialVersionUID = 2591037979593224479L;
-    private static final int PRIME = 11;
-    private static final int MULTIPLIER = PRIME;
 
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
+    private static final long serialVersionUID = 1L;
 
     @NotNullValue
     @NotEmptyString
@@ -55,7 +47,7 @@ public class CompanyPointOfSale extends BaseEntity<Integer> {
     @Override
     public void unlazy() {
 	super.unlazy();
-	MyOptionals.of(getAddress()).ifPresent(BaseDomain::unlazy);
+	MyOptionals.of(getAddress()).ifPresent(Domain::unlazy);
 	getNameLocalization().size();
 	getPhones().size();
 	getEmailAddresses().size();

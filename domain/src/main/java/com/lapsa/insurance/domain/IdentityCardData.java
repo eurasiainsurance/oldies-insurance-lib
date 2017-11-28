@@ -11,26 +11,17 @@ import com.lapsa.insurance.validation.ValidIdentityCardType;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.function.MyStrings;
-import tech.lapsa.java.commons.localization.Localizeds;
 import tech.lapsa.java.commons.localization.Localized;
+import tech.lapsa.java.commons.localization.Localizeds;
 import tech.lapsa.javax.validation.NotEmptyString;
 import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.javax.validation.ValidDateOfIssue;
+import tech.lapsa.patterns.domain.HashCodePrime;
 
+@HashCodePrime(37)
 public class IdentityCardData extends SidedScannedDocument {
-    private static final long serialVersionUID = 6150409229272494445L;
-    private static final int PRIME = 37;
-    private static final int MULTIPLIER = PRIME;
 
-    @Override
-    protected int getPrime() {
-	return PRIME;
-    }
-
-    @Override
-    protected int getMultiplier() {
-	return MULTIPLIER;
-    }
+    private static final long serialVersionUID = 1L;
 
     @NotNullValue
     @ValidDateOfIssue

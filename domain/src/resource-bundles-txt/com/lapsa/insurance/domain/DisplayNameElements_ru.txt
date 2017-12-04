@@ -37,8 +37,8 @@ com.lapsa.insurance.domain.DisplayNameElements.REQUESTER_DATA = Инициато
 com.lapsa.insurance.domain.DisplayNameElements.OBTAINING_DATA = Способ получения
 
 com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_DATA = Способ оплаты
-com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_EXTERNAL_ID = идентификатор платежного документа
-com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_EXTERNAL_ID.short = платежный документ
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_INVOICE_NUMBER = идентификатор платежного документа
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_INVOICE_NUMBER.short = платежный документ
 com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_POST_INSTANT = время оплаты
 com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_POST_REFERENCE = референс
 

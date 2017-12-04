@@ -36,7 +36,7 @@ com.lapsa.insurance.domain.DisplayNameElements.REQUESTER_DATA = Requester
 com.lapsa.insurance.domain.DisplayNameElements.OBTAINING_DATA = Obtaining method
 
 com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_DATA = Payment method
-com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_EXTERNAL_ID = payment ID
+com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_INVOICE_NUMBER = payment ID
 com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_POST_INSTANT = post instant
 com.lapsa.insurance.domain.DisplayNameElements.PAYMENT_POST_REFERENCE = post reference
 

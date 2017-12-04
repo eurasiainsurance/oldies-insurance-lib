@@ -44,7 +44,7 @@ public enum DisplayNameElements implements LocalizedElement {
     OBTAINING_DATA,
     //
     PAYMENT_DATA,
-    PAYMENT_EXTERNAL_ID,
+    PAYMENT_INVOICE_NUMBER,
     PAYMENT_POST_INSTANT,
     PAYMENT_POST_REFERENCE,
     //

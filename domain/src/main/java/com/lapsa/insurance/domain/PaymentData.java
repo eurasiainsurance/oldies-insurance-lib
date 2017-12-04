@@ -23,7 +23,7 @@ public class PaymentData extends Domain {
     @NotNullValue
     private PaymentStatus status = PaymentStatus.UNDEFINED;
 
-    private String invoiceId;
+    private String invoiceNumber;
 
     private String paymentReference;
     private Instant paymentInstant;
@@ -46,8 +46,8 @@ public class PaymentData extends Domain {
 		.map(FIELD_STATUS.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
-	MyOptionals.of(invoiceId) //
-		.map(PAYMENT_EXTERNAL_ID.fieldAsCaptionMapper(variant, locale)) //
+	MyOptionals.of(invoiceNumber) //
+		.map(PAYMENT_INVOICE_NUMBER.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
 	MyOptionals.of(paymentInstant) //
@@ -65,17 +65,12 @@ public class PaymentData extends Domain {
 
     // GENERATED
 
-    @Deprecated
-    public String getExternalId() {
-	return invoiceId;
+    public String getInvoiceNumber() {
+	return invoiceNumber;
     }
 
-    public String getInvoiceId() {
-	return invoiceId;
-    }
-
-    public void setInvoiceId(String invoiceId) {
-	this.invoiceId = invoiceId;
+    public void setInvoiceNumber(String invoiceNumber) {
+	this.invoiceNumber = invoiceNumber;
     }
 
     public PaymentStatus getStatus() {

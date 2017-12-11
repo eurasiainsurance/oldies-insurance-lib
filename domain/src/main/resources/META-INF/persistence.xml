@@ -6,10 +6,6 @@
 	<persistence-unit name="insurancePU" transaction-type="JTA">
 		<jta-data-source>insurance/jdbc/DataSource</jta-data-source>
 
-		<mapping-file>META-INF/mapping/lapsa.xml</mapping-file>
-		<mapping-file>META-INF/mapping/international.xml</mapping-file>
-		<mapping-file>META-INF/mapping/kz.xml</mapping-file>
-
 		<mapping-file>META-INF/mapping/casco/Casco.xml</mapping-file>
 		<mapping-file>META-INF/mapping/casco/CascoDriver.xml</mapping-file>
 		<mapping-file>META-INF/mapping/casco/CascoRequest.xml</mapping-file>
@@ -49,6 +45,17 @@
 		<mapping-file>META-INF/mapping/VehicleCertificateData.xml</mapping-file>
 
 		<mapping-file>META-INF/mapping/InsuranceVersion.xml</mapping-file>
+
+		<class>tech.lapsa.javax.jpa.converters.CurrencyAttributeConverter</class>
+		<class>tech.lapsa.javax.jpa.converters.InstantAttributeConverter</class>
+		<class>tech.lapsa.javax.jpa.converters.LocalDateAttributeConverter</class>
+		<class>tech.lapsa.javax.jpa.converters.LocalDateTimeAttributeConverter</class>
+		<class>tech.lapsa.javax.jpa.converters.LocalTimeAttributeConverter</class>
+
+		<class>tech.lapsa.kz.taxpayer.converter.jpa.TaxpayerNumberAttributeConverter</class>
+		<class>tech.lapsa.kz.vehicle.converter.jpa.VehicleRegNumberAttributeConverter</class>
+
+		<class>com.lapsa.international.phone.converter.jpa.PhoneNumberAttributeConverter</class>
 
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 

@@ -12,6 +12,7 @@ import javax.validation.constraints.Min;
 
 import com.lapsa.fin.FinCurrency;
 import com.lapsa.insurance.domain.BaseEntity;
+import com.lapsa.insurance.domain.Domain;
 import com.lapsa.insurance.domain.InsuranceProduct;
 import com.lapsa.insurance.elements.CascoDeductibleFullRate;
 import com.lapsa.insurance.elements.CascoDeductiblePartialRate;
@@ -20,7 +21,6 @@ import tech.lapsa.java.commons.function.MyNumbers;
 import tech.lapsa.java.commons.function.MyObjects;
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.javax.validation.NotNullValue;
-import tech.lapsa.patterns.domain.Domain;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
 @HashCodePrime(131)

@@ -18,7 +18,6 @@ import tech.lapsa.javax.validation.ValidEmail;
 import tech.lapsa.javax.validation.ValidHumanName;
 import tech.lapsa.kz.taxpayer.TaxpayerNumber;
 import tech.lapsa.kz.taxpayer.validators.ValidTaxpayerNumber;
-import tech.lapsa.patterns.domain.Domain;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
 @HashCodePrime(73)

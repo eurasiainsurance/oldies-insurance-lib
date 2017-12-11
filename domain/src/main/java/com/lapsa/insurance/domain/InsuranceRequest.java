@@ -8,7 +8,6 @@ import com.lapsa.insurance.elements.TransactionStatus;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.javax.validation.NotNullValue;
-import tech.lapsa.patterns.domain.Domain;
 
 public abstract class InsuranceRequest extends Request {
 

@@ -12,7 +12,6 @@ import tech.lapsa.javax.validation.LocalDateComparison;
 import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.javax.validation.TemporalFuture;
 import tech.lapsa.javax.validation.TemporalLeftBeforeRight;
-import tech.lapsa.patterns.domain.Domain;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
 @HashCodePrime(179)

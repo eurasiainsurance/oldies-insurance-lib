@@ -11,7 +11,6 @@ import com.lapsa.international.country.validators.ValidCountry;
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.localization.Localized;
 import tech.lapsa.javax.validation.NotNullValue;
-import tech.lapsa.patterns.domain.Domain;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
 @HashCodePrime(61)

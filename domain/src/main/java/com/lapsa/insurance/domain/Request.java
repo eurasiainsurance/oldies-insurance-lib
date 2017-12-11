@@ -11,7 +11,6 @@ import com.lapsa.insurance.elements.RequestStatus;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.javax.validation.NotNullValue;
-import tech.lapsa.patterns.domain.Domain;
 
 public abstract class Request extends BaseEntity<Integer> {
 

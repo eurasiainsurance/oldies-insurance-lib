@@ -2,7 +2,6 @@ package com.lapsa.insurance.domain;
 
 import tech.lapsa.java.commons.function.MyObjects;
 import tech.lapsa.java.commons.function.MyOptionals;
-import tech.lapsa.patterns.domain.Domain;
 
 public abstract class BaseEntity<T> extends Domain {
 

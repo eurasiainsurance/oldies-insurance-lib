@@ -5,8 +5,9 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
+import com.lapsa.insurance.domain.Domain;
+
 import tech.lapsa.java.commons.function.MyOptionals;
-import tech.lapsa.patterns.domain.Domain;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
 @HashCodePrime(181)

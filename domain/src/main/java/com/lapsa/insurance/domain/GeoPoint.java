@@ -6,7 +6,6 @@ import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.StringJoiner;
 
-import tech.lapsa.patterns.domain.Domain;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
 @HashCodePrime(19)

@@ -27,6 +27,7 @@
 		<payara-bom.version>4.1.2-2-SNAPSHOT</payara-bom.version>
 		<!-- tech -->
 		<javax-validation-commons.version>1.1-SNAPSHOT</javax-validation-commons.version>
+		<javax-jpa-commons.version>1.1-SNAPSHOT</javax-jpa-commons.version>
 		<patterns-domain.version>1.0-SNAPSHOT</patterns-domain.version>
 		<lapsa-arquillian-test.version>1.1-SNAPSHOT</lapsa-arquillian-test.version>
 		<!-- oldies -->
@@ -72,6 +73,11 @@
 				<groupId>tech.lapsa.javax</groupId>
 				<artifactId>javax-validation-commons</artifactId>
 				<version>${javax-validation-commons.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>tech.lapsa.javax</groupId>
+				<artifactId>javax-jpa-commons</artifactId>
+				<version>${javax-jpa-commons.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>tech.lapsa.patterns</groupId>

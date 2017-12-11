@@ -2,9 +2,12 @@ package com.lapsa.insurance.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.MappedSuperclass;
+
 import tech.lapsa.java.commons.localization.Localized;
 import tech.lapsa.patterns.domain.MyHcEqToStr;
 
+@MappedSuperclass
 public abstract class Domain implements Localized, Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -19,7 +22,7 @@ public abstract class Domain implements Localized, Serializable {
 
     @Override
     public final int hashCode() {
-	return MyHcEqToStr.hashCode(this, MyHcEqToStr.primeOf(this.getClass()));
+	return MyHcEqToStr.hashCode(this);
     }
 
     @Override

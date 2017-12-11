@@ -14,7 +14,7 @@ import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
 @HashCodePrime(197)
-public class UserGroup extends BaseEntity<Integer> {
+public class UserGroup extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 

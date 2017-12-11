@@ -17,7 +17,7 @@ import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
 @HashCodePrime(11)
-public class CompanyPointOfSale extends BaseEntity<Integer> {
+public class CompanyPointOfSale extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 

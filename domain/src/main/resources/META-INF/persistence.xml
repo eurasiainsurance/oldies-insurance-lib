@@ -21,7 +21,6 @@
 		<mapping-file>META-INF/mapping/policy/PolicyDriver.xml</mapping-file>
 		<mapping-file>META-INF/mapping/policy/PolicyRequest.xml</mapping-file>
 		<mapping-file>META-INF/mapping/policy/PolicyVehicle.xml</mapping-file>
-		<mapping-file>META-INF/mapping/BaseEntity.xml</mapping-file>
 		<mapping-file>META-INF/mapping/CalculationData.xml</mapping-file>
 		<mapping-file>META-INF/mapping/CallbackRequest.xml</mapping-file>
 		<mapping-file>META-INF/mapping/CompanyContactEmail.xml</mapping-file>
@@ -56,6 +55,9 @@
 		<class>tech.lapsa.kz.vehicle.converter.jpa.VehicleRegNumberAttributeConverter</class>
 
 		<class>com.lapsa.international.phone.converter.jpa.PhoneNumberAttributeConverter</class>
+
+		<class>com.lapsa.insurance.domain.Domain</class>
+		<class>com.lapsa.insurance.domain.BaseEntity</class>
 
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 

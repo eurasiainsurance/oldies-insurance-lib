@@ -1,24 +1,32 @@
 package com.lapsa.insurance.domain;
 
-import tech.lapsa.java.commons.function.MyObjects;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+
+import tech.lapsa.java.commons.function.MyNumbers;
 import tech.lapsa.java.commons.function.MyOptionals;
 
-public abstract class BaseEntity<T> extends Domain {
+@MappedSuperclass
+public abstract class BaseEntity extends Domain {
 
     private static final long serialVersionUID = 1L;
 
     protected BaseEntity() {
     }
 
-    protected BaseEntity(final T id) {
-	this.id = MyObjects.requireNonNull(id, "id");
+    protected BaseEntity(final Integer id) {
+	this.id = MyNumbers.requireNonZero(id, "id");
     }
 
     // id
 
-    protected T id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    protected Integer id;
 
-    public T getId() {
+    public Integer getId() {
 	return id;
     }
 

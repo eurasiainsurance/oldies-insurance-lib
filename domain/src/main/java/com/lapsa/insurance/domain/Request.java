@@ -12,7 +12,7 @@ import com.lapsa.insurance.elements.RequestStatus;
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.javax.validation.NotNullValue;
 
-public abstract class Request extends BaseEntity<Integer> {
+public abstract class Request extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 

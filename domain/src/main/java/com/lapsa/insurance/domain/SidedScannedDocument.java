@@ -9,7 +9,7 @@ import com.lapsa.donkeyfaces.validators.MaxImageFileSize;
 import tech.lapsa.java.commons.function.MyFunctions;
 import tech.lapsa.java.commons.function.MyObjects;
 
-public abstract class SidedScannedDocument extends BaseEntity<Integer> {
+public abstract class SidedScannedDocument extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 

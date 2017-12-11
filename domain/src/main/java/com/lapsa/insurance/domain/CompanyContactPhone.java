@@ -14,7 +14,7 @@ import tech.lapsa.java.commons.localization.Localized;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
 @HashCodePrime(7)
-public class CompanyContactPhone extends BaseEntity<Integer> {
+public class CompanyContactPhone extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 

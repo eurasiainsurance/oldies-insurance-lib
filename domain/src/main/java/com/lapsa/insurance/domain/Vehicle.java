@@ -14,7 +14,7 @@ import tech.lapsa.java.commons.function.MyStrings;
 import tech.lapsa.javax.validation.NotEmptyString;
 import tech.lapsa.javax.validation.NotNullValue;
 
-public abstract class Vehicle extends BaseEntity<Integer> {
+public abstract class Vehicle extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 

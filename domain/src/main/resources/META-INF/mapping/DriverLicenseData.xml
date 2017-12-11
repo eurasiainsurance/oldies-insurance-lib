@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd">
+
+	<entity class="com.lapsa.insurance.domain.DriverLicenseData">
+		<table name="DRIVER_LICENSE" />
+		<attributes>
+			<basic name="dateOfIssue">
+				<column name="DATE_OF_ISSUE" />
+				<temporal>DATE</temporal>
+			</basic>
+			<basic name="number">
+				<column name="NUMBER" />
+			</basic>
+		</attributes>
+	</entity>
+
+</entity-mappings>

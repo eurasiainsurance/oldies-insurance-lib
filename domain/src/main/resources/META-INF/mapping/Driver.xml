@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd">
+
+	<entity class="com.lapsa.insurance.domain.Driver">
+		<table name="DRIVER" />
+		<inheritance strategy="JOINED" />
+		<attributes>
+			<basic name="idNumber">
+				<column name="ID_NUMBER" />
+			</basic>
+			<one-to-one name="identityCardData" orphan-removal="true">
+				<join-column name="IDENTITY_CARD_ID" />
+				<cascade>
+					<cascade-all />
+				</cascade>
+			</one-to-one>
+			<one-to-one name="driverLicenseData" orphan-removal="true">
+				<join-column name="DRIVER_LICENSE_ID" />
+				<cascade>
+					<cascade-all />
+				</cascade>
+			</one-to-one>
+			<transient name="taxPayerNumber" />
+			<transient name="personalData" />
+			<transient name="originData" />
+			<transient name="residenceData" />
+			<transient name="contactData" />
+		</attributes>
+	</entity>
+
+</entity-mappings>

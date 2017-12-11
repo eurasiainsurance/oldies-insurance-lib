@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd">
+
+	<embeddable class="com.lapsa.insurance.domain.PostAddress">
+		<attributes>
+			<basic name="postIndex">
+				<column name="ADDRESS_POSTINDEX" />
+			</basic>
+			<basic name="city">
+				<column name="ADDRESS_CITY" />
+				<enumerated>STRING</enumerated>
+			</basic>
+			<basic name="street">
+				<column name="ADDRESS_STREET" />
+			</basic>
+			<element-collection name="streetLocalization">
+				<map-key-enumerated>STRING</map-key-enumerated>
+				<map-key-column name="LANGUAGE" />
+				<column name="VALUE" />
+				<collection-table name="ADDRESS_STREET_LOCALIZATION">
+					<join-column name="ENTITY_ID" />
+					<unique-constraint>
+						<column-name>ENTITY_ID</column-name>
+						<column-name>LANGUAGE</column-name>
+					</unique-constraint>
+				</collection-table>
+			</element-collection>
+		</attributes>
+	</embeddable>
+
+</entity-mappings>

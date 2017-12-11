@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd">
+
+	<entity class="com.lapsa.insurance.domain.Request">
+		<table name="REQUEST">
+			<index name="REQUEST_IDX01" column-list="STATUS" />
+			<index name="REQUEST_IDX02" column-list="CREATED" />
+			<index name="REQUEST_IDX03" column-list="CLOSED" />
+		</table>
+		<inheritance strategy="JOINED" />
+		<attributes>
+			<basic name="created">
+				<column name="CREATED" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="closed">
+				<column name="CLOSED" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="updated">
+				<column name="UPDATED" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="accepted">
+				<column name="ACCEPTED" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="completed">
+				<column name="COMPLETED" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="status">
+				<column name="STATUS" />
+				<enumerated>STRING</enumerated>
+			</basic>
+			<basic name="source">
+				<column name="SOURCE" />
+				<enumerated>STRING</enumerated>
+			</basic>
+			<basic name="progressStatus">
+				<column name="PROGRESS_STATUS" />
+				<enumerated>STRING</enumerated>
+			</basic>
+			<basic name="note">
+				<column name="NOTE" />
+			</basic>
+			<many-to-one name="createdBy" fetch="LAZY" optional="true">
+				<join-column name="CREATED_BY_USER_ID" />
+				<cascade>
+					<cascade-all />
+				</cascade>
+			</many-to-one>
+			<many-to-one name="acceptedBy" fetch="LAZY" optional="true">
+				<join-column name="ACCEPTED_BY_USER_ID" />
+				<cascade>
+					<cascade-all />
+				</cascade>
+			</many-to-one>
+			<many-to-one name="completedBy" fetch="LAZY" optional="true">
+				<join-column name="COMPLETED_BY_USER_ID" />
+				<cascade>
+					<cascade-all />
+				</cascade>
+			</many-to-one>
+			<many-to-one name="closedBy" fetch="LAZY" optional="true">
+				<join-column name="CLOSED_BY_USER_ID" />
+				<cascade>
+					<cascade-all />
+				</cascade>
+			</many-to-one>
+			<embedded name="requester" />
+			<embedded name="utmData" />
+			<embedded name="inetAddrData">
+				<attribute-override name="inetAddress">
+					<column name="REQUESTER_INET_ADDR" />
+				</attribute-override>
+				<attribute-override name="inetHost">
+					<column name="REQUESTER_INET_HOST" />
+				</attribute-override>
+			</embedded>
+		</attributes>
+	</entity>
+
+</entity-mappings>

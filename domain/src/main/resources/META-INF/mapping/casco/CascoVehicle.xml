@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd">
+
+	<entity class="com.lapsa.insurance.domain.casco.CascoVehicle">
+		<table name="CASCO_VEHICLE" />
+		<attributes>
+			<basic name="carAgeClass">
+				<column name="VEHICLE_CAR_AGE_CLASS" />
+				<enumerated>STRING</enumerated>
+			</basic>
+			<basic name="cost">
+				<column name="VEHICLE_COST" />
+			</basic>
+
+			<one-to-one name="view1" fetch="LAZY" orphan-removal="true">
+				<join-column name="VIEW1_IMAGE_ID" />
+				<cascade>
+					<cascade-all />
+				</cascade>
+			</one-to-one>
+
+			<one-to-one name="view2" fetch="LAZY" orphan-removal="true">
+				<join-column name="VIEW2_IMAGE_ID" />
+				<cascade>
+					<cascade-all />
+				</cascade>
+			</one-to-one>
+
+			<one-to-one name="view3" fetch="LAZY" orphan-removal="true">
+				<join-column name="VIEW3_IMAGE_ID" />
+				<cascade>
+					<cascade-all />
+				</cascade>
+			</one-to-one>
+
+			<one-to-one name="view4" fetch="LAZY" orphan-removal="true">
+				<join-column name="VIEW4_IMAGE_ID" />
+				<cascade>
+					<cascade-all />
+				</cascade>
+			</one-to-one>
+
+		</attributes>
+	</entity>
+
+</entity-mappings>

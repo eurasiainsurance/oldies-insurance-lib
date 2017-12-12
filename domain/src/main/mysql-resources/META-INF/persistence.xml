@@ -6,8 +6,6 @@
 	<persistence-unit name="insurancePU" transaction-type="JTA">
 		<jta-data-source>insurance/jdbc/DataSource_MYSQL</jta-data-source>
 
-		<mapping-file>META-INF/mapping/Image.xml</mapping-file>
-
 		<class>tech.lapsa.javax.jpa.converters.CurrencyAttributeConverter</class>
 		<class>tech.lapsa.javax.jpa.converters.InstantAttributeConverter</class>
 		<class>tech.lapsa.javax.jpa.converters.LocalDateAttributeConverter</class>
@@ -21,6 +19,7 @@
 
 		<class>com.lapsa.insurance.domain.BaseEntity</class>
 		<class>com.lapsa.insurance.domain.RequesterData</class>
+		<class>com.lapsa.insurance.domain.Image</class>
 		<class>com.lapsa.insurance.domain.ObtainingData</class>
 		<class>com.lapsa.insurance.domain.CalculationData</class>
 		<class>com.lapsa.insurance.domain.InsuranceProduct</class>

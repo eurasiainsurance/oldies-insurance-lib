@@ -34,8 +34,6 @@
 		<kz-lib.version>3.2-SNAPSHOT</kz-lib.version>
 		<international-lib.version>3.3-SNAPSHOT</international-lib.version>
 		<fin-lib.version>2.1</fin-lib.version>
-		<image-lib.version>1.1</image-lib.version>
-		<donkeyfaces-lib.version>1.3</donkeyfaces-lib.version>
 		<lapsa-lib.version>2.2</lapsa-lib.version>
 		<!-- PLUGINS dependencies versions -->
 		<!-- version number copied from javax-javaee-web-bom -->
@@ -124,13 +122,6 @@
 				<groupId>com.lapsa.fin-lib</groupId>
 				<artifactId>fin-root</artifactId>
 				<version>${fin-lib.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>com.lapsa.donkeyfaces-lib</groupId>
-				<artifactId>parent</artifactId>
-				<version>${donkeyfaces-lib.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

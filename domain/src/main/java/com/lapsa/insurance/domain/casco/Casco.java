@@ -8,6 +8,17 @@ import java.util.Locale;
 import java.util.StringJoiner;
 import java.util.stream.Stream;
 
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.Min;
 
 import com.lapsa.fin.FinCurrency;
@@ -23,68 +34,106 @@ import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
+@Entity
+@Table(name = "CASCO")
 @HashCodePrime(131)
 public class Casco extends InsuranceProduct {
 
     private static final long serialVersionUID = 1L;
 
     // Покрытие только риска ДТП
+    @Basic
+    @Column(name = "COVER_ROAD_ACCIDENTS")
     private boolean coverRoadAccidents;
 
     // Покрытие без риска ДТП
+    @Basic
+    @Column(name = "COVER_NON_ROAD_ACCIDENTS")
     private boolean coverNonRoadAccidents;
 
     // информация о застрахованном ТС
+    @OneToOne(fetch = FetchType.EAGER, orphanRemoval = true, cascade = CascadeType.ALL)
+    @JoinColumn(name = "CASCO_VEHICLE_ID")
     private CascoVehicle insuredVehicle;
 
     // информация о допущенных к управлению
+    @OneToMany(fetch = FetchType.EAGER, orphanRemoval = true, cascade = CascadeType.ALL)
+    @JoinColumn(name = "CASCO_ID")
     private List<CascoDriver> insuredDrivers = new ArrayList<>();
 
     // применяется ли франшиза на частичный ущерб
+    @Basic
+    @Column(name = "DEDUCTIBLE_PARTIAL_REQUIRED")
     private boolean deductiblePartialRequired;
 
     // размер франшизы на частичный ущерб
+    @Basic
+    @Enumerated(EnumType.STRING)
+    @Column(name = "DEDUCTIBLE_PARTIAL_RATE")
     @NotNullValue(message = "{com.lapsa.insurance.domain.casco.Casco.deductiblePartialRate.NotNullValue.message}")
     private CascoDeductiblePartialRate deductiblePartialRate;
 
     // франшиза на гибель/угон
+    @Basic
+    @Enumerated(EnumType.STRING)
+    @Column(name = "DEDUCTIBLE_FULL_RATE")
     @NotNullValue(message = "{com.lapsa.insurance.domain.casco.Casco.deductibleFullRate.NotNullValue.message}")
     private CascoDeductibleFullRate deductibleFullRate;
 
     // Спец. СТО для ТС до 3-х лет
     // Спец. СТО для ТС от 3-х до 7 лет
+    @Basic
+    @Column(name = "SPECIAL_SERVICES_STATION_REQUIRED")
     private boolean specialServiceStationRequired;
 
     // При убытке (ДТП) до 200 000 тенге - без вызова ГАИ, но с обязательным
     // выездом аварийного комиссара на место события (Алматы, Астана и
     // Караганда)
+    @Basic
+    @Column(name = "NO_POLICE_CALL_REQUIRED")
     private boolean noPoliceCallRequired;
 
     // При возникновении ДТП не по вине застрахованного франшиза не применяется
+    @Basic
+    @Column(name = "NO_GUILT_NO_DEDUCTIBLE_REQUIRED")
     private boolean noGuiltNoDeductibleRequired;
 
     // Сбор документов в Дорожной Полиции компанией от имени клиента
+    @Basic
+    @Column(name = "HELP_WITH_POLICY_REQUIRED")
     private boolean helpWithPoliceRequired;
 
     // Покрытие расходов на услуги Эвакуатора, до 10 000 тенге.
+    @Basic
+    @Column(name = "EVACUATOR_REQUIRED")
     private boolean evacuatorRequired;
 
     // Предоставление во временное пользование ТС, пока ТС клиента находится на
     // СТО (до 10 дней);
+    @Basic
+    @Column(name = "REPLACEMENT_CAR_REQUIRED")
     private boolean replacementCarRequired;
 
     // Действие договора до 1-го страхового случая
+    @Basic
+    @Column(name = "CONTRACT_ENDS_AFTER_FIRST_CASE")
     private boolean contractEndsAfterFirstCase;
 
     // Комплексный договор (т.е. автокаско плюс секции ниже):
     // ДГПО ВТС с лимитом 20 000 000 тенге по случаю и в агрегате сверх лимита
     // по ОГПО ВТС
+    @Basic
+    @Column(name = "THIRD_PARTY_LIABILITY_COVERAGE")
     private boolean thirdPartyLiabilityCoverage;
 
     // НС для водителя и пассажиров с лимитом 1 000 000 тенге на 1-го
     // застрахованного по случаю и в агрегате
+    @Basic
+    @Column(name = "DRIVER_AND_PASSENGER_COVERAGE")
     private boolean driverAndPassengerCoverage;
 
+    @Basic
+    @Column(name = "DRIVER_AND_PASSENGER_COUNT")
     @NotNullValue
     @Min(message = "{com.lapsa.insurance.domain.casco.Casco.driverAndPassengerCount.Min.message}", value = 1)
     private Integer driverAndPassengerCount;

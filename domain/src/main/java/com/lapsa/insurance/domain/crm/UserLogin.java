@@ -5,17 +5,33 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 import com.lapsa.insurance.domain.BaseEntity;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
+@Entity
+@Table(name = "USER_LOGIN")
 @HashCodePrime(163)
 public class UserLogin extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
+    @Basic
+    @Column(name = "NAME", unique = true)
     private String name;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
+    @JoinColumn(name = "USER_ID")
     private User user;
 
     @Override

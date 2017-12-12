@@ -9,6 +9,7 @@ import tech.lapsa.java.commons.function.MyNumbers;
 import tech.lapsa.java.commons.function.MyOptionals;
 
 @MappedSuperclass
+//TODO Rename to EntitySuperclass
 public abstract class BaseEntity extends Domain {
 
     private static final long serialVersionUID = 1L;

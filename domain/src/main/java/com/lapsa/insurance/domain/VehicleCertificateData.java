@@ -6,6 +6,13 @@ import java.time.LocalDate;
 import java.util.Locale;
 import java.util.StringJoiner;
 
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.localization.Localizeds;
 import tech.lapsa.javax.validation.NotEmptyString;
@@ -15,20 +22,29 @@ import tech.lapsa.kz.vehicle.VehicleRegNumber;
 import tech.lapsa.kz.vehicle.validators.ValidVehicleRegNumber;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
+@Entity
+@Table(name = "VEHICLE_CERTIFICATE")
 @HashCodePrime(109)
 public class VehicleCertificateData extends SidedScannedDocument {
 
     private static final long serialVersionUID = 1L;
 
+    @Basic
+    @Column(name = "VEHICLE_REGISTRATION_NUMBER")
     @NotNullValue
     @NotEmptyString
     @ValidVehicleRegNumber
     private VehicleRegNumber registrationNumber;
 
+    @Basic
+    @Column(name = "VEHICLE_CERTITFICATE_NUMBER")
     @NotNullValue
     @NotEmptyString
     private String number;
 
+    @Basic
+    @Temporal(TemporalType.DATE)
+    @Column(name = "DATE_OF_ISSUE")
     @NotNullValue
     @ValidDateOfIssue
     private LocalDate dateOfIssue;

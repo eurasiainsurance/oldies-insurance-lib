@@ -6,6 +6,16 @@ import java.time.LocalDate;
 import java.util.Locale;
 import java.util.StringJoiner;
 
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import com.lapsa.insurance.elements.DeliveryTimeSlot;
 import com.lapsa.insurance.elements.ObtainingMethod;
 import com.lapsa.insurance.elements.ObtainingStatus;
@@ -21,34 +31,57 @@ import tech.lapsa.javax.validation.NotEmptyString;
 import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
+@Embeddable
 @HashCodePrime(89)
 public class ObtainingData extends Domain {
 
     private static final long serialVersionUID = 1L;
 
+    @Basic
+    @Enumerated(EnumType.STRING)
+    @Column(name = "OBTAINING_METHOD")
     @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.method.NotNullValue.message}")
     private ObtainingMethod method = ObtainingMethod.UNDEFINED;
 
+    @Basic
+    @Enumerated(EnumType.STRING)
+    @Column(name = "OBTAINING_STATUS")
     @NotNullValue
     private ObtainingStatus status = ObtainingStatus.UNDEFINED;
 
+    @Basic
+    @Enumerated(EnumType.STRING)
+    @Column(name = "OBTAINING_PICKUP_CITY")
     @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.pickupCity.NotNullValue.message}")
     private KZCity pickupCity;
 
+    @ManyToOne
+    @JoinColumn(name = "OBTAINING_PICKUPPOS_ID")
     @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.pickupPOS.NotNullValue.message}")
     private CompanyPointOfSale pickupPOS;
 
+    @Basic
+    @Temporal(TemporalType.DATE)
+    @Column(name = "OBTAINING_DELIVERY_DATE")
     @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.deliveryDate.NotNullValue.message}")
     @DaysAfterNow(mode = Mode.MUST, value = 0, message = "{com.lapsa.insurance.domain.ObtainingData.deliveryDate.DaysAfterNow.messages}")
     @DaysBeforeNow(mode = Mode.MUST_NOT, value = 7, message = "{com.lapsa.insurance.domain.ObtainingData.deliveryDate.DaysBeforeNow.messages}")
     private LocalDate deliveryDate;
 
+    @Basic
+    @Enumerated(EnumType.STRING)
+    @Column(name = "OBTAINING_DELIVERY_TIME")
     @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.deliveryTime.NotNullValue.message}")
     private DeliveryTimeSlot deliveryTime;
 
+    @Basic
+    @Enumerated(EnumType.STRING)
+    @Column(name = "OBTAINING_DELIVERY_CITY")
     @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.deliveryCity.NotNullValue.message}")
     private KZCity deliveryCity;
 
+    @Basic
+    @Column(name = "OBTAINING_DELIVERY_ADDRESS")
     @NotNullValue(message = "{com.lapsa.insurance.domain.ObtainingData.deliveryAddress.NotNullValue.message}")
     @NotEmptyString(message = "{com.lapsa.insurance.domain.ObtainingData.deliveryAddress.NotEmptyString.message}")
     private String deliveryAddress;

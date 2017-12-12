@@ -5,6 +5,12 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+
 import com.lapsa.fin.FinCurrency;
 
 import tech.lapsa.java.commons.function.MyNumbers;
@@ -12,14 +18,27 @@ import tech.lapsa.java.commons.function.MyObjects;
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
+@Embeddable
 @HashCodePrime(3)
 public class CalculationData extends Domain {
 
     private static final long serialVersionUID = 1L;
 
+    @Basic
+    @Column(name = "CALCULATED_PERMIUM_COST")
     private double calculatedPremiumCost;
+
+    @Basic
+    @Column(name = "ACTUAL_PERMIUM_COST")
     private double actualPremiumCost;
+
+    @Basic
+    @Column(name = "DISCOUNT_AMOUNT")
     private double discountAmount;
+
+    @Basic
+    @Enumerated(EnumType.STRING)
+    @Column(name = "PREMIUM_CURRENCY")
     private FinCurrency premiumCurrency;
 
     public double getPremiumCost() {

@@ -5,6 +5,14 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
 import com.lapsa.insurance.domain.Driver;
 import com.lapsa.insurance.domain.PersonalData;
 import com.lapsa.insurance.elements.InsuranceClassType;
@@ -20,26 +28,39 @@ import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.kz.taxpayer.TaxpayerNumber;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
+@Entity
+@Table(name = "POLICY_DRIVER")
 @HashCodePrime(47)
 public class PolicyDriver extends Driver {
 
     private static final long serialVersionUID = 1L;
 
+    @Basic
+    @Enumerated(EnumType.STRING)
+    @Column(name = "INSURANCE_CLASS")
     @NotNullValue
     @ValidInsuranceClassType
     private InsuranceClassType insuranceClassType;
 
+    @Basic
+    @Enumerated(EnumType.STRING)
+    @Column(name = "AGE_CLASS")
     @NotNullValue
     @ValidInsuranceAgeClass
     private InsuredAgeClass ageClass;
 
+    @Basic
+    @Enumerated(EnumType.STRING)
+    @Column(name = "EXPIRIENCE_CLASS")
     @NotNullValue
     @ValidInsuranceExpirienceClass
     private InsuredExpirienceClass expirienceClass;
 
+    @Transient
     private boolean fetched = false;
 
-    // privileges
+    @Basic
+    @Column(name = "IS_HAS_ANY_PRIVILEGE")
     private boolean hasAnyPrivilege = false;
 
     @Override

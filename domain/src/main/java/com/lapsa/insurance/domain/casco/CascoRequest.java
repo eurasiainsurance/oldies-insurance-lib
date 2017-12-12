@@ -5,6 +5,13 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
 import com.lapsa.insurance.domain.BaseEntity;
 import com.lapsa.insurance.domain.InsuranceProduct;
 import com.lapsa.insurance.domain.InsuranceRequest;
@@ -16,6 +23,8 @@ import tech.lapsa.java.commons.localization.Localized;
 import tech.lapsa.java.commons.localization.Localizeds;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
+@Entity
+@Table(name = "CASCO_REQUEST")
 @HashCodePrime(137)
 public class CascoRequest extends InsuranceRequest {
 
@@ -28,6 +37,8 @@ public class CascoRequest extends InsuranceRequest {
 	super(source);
     }
 
+    @OneToOne(fetch = FetchType.EAGER, orphanRemoval = true, cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(name = "CASCO_ID")
     private Casco casco = new Casco();
 
     @Override

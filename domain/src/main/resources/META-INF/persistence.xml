@@ -6,44 +6,7 @@
 	<persistence-unit name="insurancePU" transaction-type="JTA">
 		<jta-data-source>insurance/jdbc/DataSource</jta-data-source>
 
-		<mapping-file>META-INF/mapping/casco/Casco.xml</mapping-file>
-		<mapping-file>META-INF/mapping/casco/CascoDriver.xml</mapping-file>
-		<mapping-file>META-INF/mapping/casco/CascoRequest.xml</mapping-file>
-		<mapping-file>META-INF/mapping/casco/CascoVehicle.xml</mapping-file>
-
-		<mapping-file>META-INF/mapping/crm/UTMData.xml</mapping-file>
-		<mapping-file>META-INF/mapping/crm/User.xml</mapping-file>
-		<mapping-file>META-INF/mapping/crm/UserGroup.xml</mapping-file>
-		<mapping-file>META-INF/mapping/crm/UserLogin.xml</mapping-file>
-		<mapping-file>META-INF/mapping/crm/InetAddrData.xml</mapping-file>
-
-		<mapping-file>META-INF/mapping/policy/Policy.xml</mapping-file>
-		<mapping-file>META-INF/mapping/policy/PolicyDriver.xml</mapping-file>
-		<mapping-file>META-INF/mapping/policy/PolicyRequest.xml</mapping-file>
-		<mapping-file>META-INF/mapping/policy/PolicyVehicle.xml</mapping-file>
-		<mapping-file>META-INF/mapping/CalculationData.xml</mapping-file>
-		<mapping-file>META-INF/mapping/CallbackRequest.xml</mapping-file>
-		<mapping-file>META-INF/mapping/CompanyContactEmail.xml</mapping-file>
-		<mapping-file>META-INF/mapping/CompanyContactPhone.xml</mapping-file>
-		<mapping-file>META-INF/mapping/CompanyPointOfSale.xml</mapping-file>
-		<mapping-file>META-INF/mapping/Driver.xml</mapping-file>
-		<mapping-file>META-INF/mapping/DriverLicenseData.xml</mapping-file>
-		<mapping-file>META-INF/mapping/GeoPoint.xml</mapping-file>
-		<mapping-file>META-INF/mapping/IdentityCardData.xml</mapping-file>
 		<mapping-file>META-INF/mapping/Image.xml</mapping-file>
-		<mapping-file>META-INF/mapping/InsurancePeriodData.xml</mapping-file>
-		<mapping-file>META-INF/mapping/InsuranceProduct.xml</mapping-file>
-		<mapping-file>META-INF/mapping/InsuranceRequest.xml</mapping-file>
-		<mapping-file>META-INF/mapping/ObtainingData.xml</mapping-file>
-		<mapping-file>META-INF/mapping/PaymentData.xml</mapping-file>
-		<mapping-file>META-INF/mapping/PostAddress.xml</mapping-file>
-		<mapping-file>META-INF/mapping/Request.xml</mapping-file>
-		<mapping-file>META-INF/mapping/RequesterData.xml</mapping-file>
-		<mapping-file>META-INF/mapping/SidedScannedDocument.xml</mapping-file>
-		<mapping-file>META-INF/mapping/Vehicle.xml</mapping-file>
-		<mapping-file>META-INF/mapping/VehicleCertificateData.xml</mapping-file>
-
-		<mapping-file>META-INF/mapping/InsuranceVersion.xml</mapping-file>
 
 		<class>tech.lapsa.javax.jpa.converters.CurrencyAttributeConverter</class>
 		<class>tech.lapsa.javax.jpa.converters.InstantAttributeConverter</class>
@@ -56,16 +19,54 @@
 
 		<class>com.lapsa.international.phone.converter.jpa.PhoneNumberAttributeConverter</class>
 
-		<class>com.lapsa.insurance.domain.Domain</class>
 		<class>com.lapsa.insurance.domain.BaseEntity</class>
+		<class>com.lapsa.insurance.domain.RequesterData</class>
+		<class>com.lapsa.insurance.domain.ObtainingData</class>
+		<class>com.lapsa.insurance.domain.CalculationData</class>
+		<class>com.lapsa.insurance.domain.InsuranceProduct</class>
+		<class>com.lapsa.insurance.domain.InsurancePeriodData</class>
+		<class>com.lapsa.insurance.domain.GeoPoint</class>
+		<class>com.lapsa.insurance.domain.PaymentData</class>
+		<class>com.lapsa.insurance.domain.crm.InetAddrData</class>
+		<class>com.lapsa.insurance.domain.IdentityCardData</class>
+		<class>com.lapsa.insurance.domain.crm.UTMData</class>
+		<class>com.lapsa.insurance.domain.PostAddress</class>
+		<class>com.lapsa.insurance.domain.VehicleCertificateData</class>
+		<class>com.lapsa.insurance.domain.crm.User</class>
+		<class>com.lapsa.insurance.domain.crm.UserLogin</class>
+		<class>com.lapsa.insurance.domain.CompanyContactEmail</class>
+		<class>com.lapsa.insurance.domain.CompanyContactPhone</class>
+		<class>com.lapsa.insurance.domain.crm.UserGroup</class>
+		<class>com.lapsa.insurance.domain.Request</class>
+		<class>com.lapsa.insurance.domain.DriverLicenseData</class>
+		<class>com.lapsa.insurance.domain.SidedScannedDocument</class>
+		<class>com.lapsa.insurance.domain.InsuranceRequest</class>
+		<class>com.lapsa.insurance.domain.CompanyPointOfSale</class>
+		<class>com.lapsa.insurance.domain.CallbackRequest</class>
+		<class>com.lapsa.insurance.domain.Vehicle</class>
+		<class>com.lapsa.insurance.domain.Driver</class>
+	
+		<class>com.lapsa.insurance.domain.policy.PolicyRequest</class>
+		<class>com.lapsa.insurance.domain.policy.PolicyVehicle</class>
+		<class>com.lapsa.insurance.domain.policy.PolicyDriver</class>
+		<class>com.lapsa.insurance.domain.policy.Policy</class>
+
+		<class>com.lapsa.insurance.domain.casco.Casco</class>
+		<class>com.lapsa.insurance.domain.casco.CascoDriver</class>
+		<class>com.lapsa.insurance.domain.casco.CascoRequest</class>
+		<class>com.lapsa.insurance.domain.casco.CascoVehicle</class>
+		
+		<class>com.lapsa.insurance.jpa.InsuranceVersion</class>
 
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 
 		<validation-mode>NONE</validation-mode>
 
 		<properties>
-			<property name="javax.persistence.schema-generation.database.action" value="create" />
-			<property name="javax.persistence.schema-generation.scripts.action" value="none" />
+			<property name="javax.persistence.schema-generation.database.action"
+				value="create" />
+			<property name="javax.persistence.schema-generation.scripts.action"
+				value="none" />
 			<property name="eclipselink.logging.parameters" value="true" />
 			<property name="eclipselink.weaving" value="static" />
 		</properties>

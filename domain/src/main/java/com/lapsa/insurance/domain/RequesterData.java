@@ -6,6 +6,11 @@ import static com.lapsa.international.phone.CountryCode.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.validation.constraints.AssertTrue;
 
 import com.lapsa.international.localization.LocalizationLanguage;
@@ -20,29 +25,45 @@ import tech.lapsa.kz.taxpayer.TaxpayerNumber;
 import tech.lapsa.kz.taxpayer.validators.ValidTaxpayerNumber;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
+@Embeddable
 @HashCodePrime(73)
 public class RequesterData extends Domain {
 
     private static final long serialVersionUID = 1L;
 
+    @Basic
+    @Column(name = "REQUESTER_NAME")
     @ValidHumanName
     private String name;
 
+    @Basic
+    @Column(name = "REQUESTER_EMAIL")
     @ValidEmail
     private String email;
 
+    @Basic
+    @Column(name = "REQUESTER_ID_NUMBER")
     @ValidTaxpayerNumber
     private TaxpayerNumber idNumber;
 
+    @Basic
+    @Column(name = "REQUESTER_PHONE_NUMBER")
     @NotNullValue
     @ValidPhoneNumber(countriesRequired = { KZ, RU, GE, BY, BY, CN, KG, UZ, UA })
     private PhoneNumber phone;
 
+    @Basic
+    @Column(name = "REQUESTER_ALLOW_SPAM")
     private boolean allowSpam;
 
+    @Basic
+    @Column(name = "REQUESTER_ALLOW_PROCESS_PERSONAL_DATA")
     @AssertTrue(message = "{com.lapsa.insurance.domain.RequesterData.allowProcessPersonalData.AssertTrue.message}")
     private boolean allowProcessPersonalData;
 
+    @Basic
+    @Enumerated(EnumType.STRING)
+    @Column(name = "REQUESTER_PREFER_LANGUAGE")
     private LocalizationLanguage preferLanguage;
 
     @Override

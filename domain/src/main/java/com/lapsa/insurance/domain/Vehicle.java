@@ -2,6 +2,19 @@ package com.lapsa.insurance.domain;
 
 import java.util.StringJoiner;
 
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
 import com.lapsa.insurance.validation.ValidVehicleYearOfIssue;
 import com.lapsa.international.cars.validators.ValidVINCode;
 import com.lapsa.kz.country.KZArea;
@@ -14,37 +27,58 @@ import tech.lapsa.java.commons.function.MyStrings;
 import tech.lapsa.javax.validation.NotEmptyString;
 import tech.lapsa.javax.validation.NotNullValue;
 
+@Entity
+@Table(name = "VEHICLE")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Vehicle extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
+    @Basic
+    @Column(name = "VIN_CODE")
     @NotNullValue
     @ValidVINCode(checkDigit = false)
     protected String vinCode;
 
+    @Basic
+    @Column(name = "MODEL_NAME")
     @NotNullValue
     @NotEmptyString
     protected String model;
 
+    @Basic
+    @Column(name = "MANUFACTURER_NAME")
     @NotNullValue
     @NotEmptyString
     protected String manufacturer;
 
+    @Basic
+    @Column(name = "COLOR")
     @NotNullValue
     @NotEmptyString
     protected String color;
 
+    @Basic
+    @Column(name = "VEHICLE_YOM")
     @ValidVehicleYearOfIssue
     protected Integer yearOfManufacture;
 
+    @Basic
+    @Enumerated(EnumType.STRING)
+    @Column(name = "REGISTRATION_AREA")
     @NotNullValue
     @ValidKZArea
     protected KZArea area;
 
+    @Basic
+    @Enumerated(EnumType.STRING)
+    @Column(name = "REGISTRATION_CITY")
     @NotNullValue
     @ValidKZCity
     protected KZCity city;
 
+    @OneToOne(fetch = FetchType.EAGER, orphanRemoval = true, cascade = CascadeType.ALL)
+    @JoinColumn(name = "VEHICLE_CERTIFICATE_ID")
     protected VehicleCertificateData certificateData = new VehicleCertificateData();
 
     @Override

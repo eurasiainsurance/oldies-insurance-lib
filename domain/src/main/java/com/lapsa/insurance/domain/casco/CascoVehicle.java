@@ -6,13 +6,21 @@ import java.util.Arrays;
 import java.util.Locale;
 import java.util.StringJoiner;
 
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
-import com.lapsa.donkeyfaces.model.Image;
-import com.lapsa.donkeyfaces.validators.FileSizeMeasure;
-import com.lapsa.donkeyfaces.validators.MaxImageFileSize;
 import com.lapsa.fin.FinCurrency;
+import com.lapsa.insurance.domain.Image;
 import com.lapsa.insurance.domain.Vehicle;
 import com.lapsa.insurance.domain.VehicleCertificateData;
 import com.lapsa.insurance.elements.CascoCarAgeClass;
@@ -27,33 +35,44 @@ import tech.lapsa.javax.validation.NotTooYoungYearOfIssue;
 import tech.lapsa.kz.vehicle.VehicleRegNumber;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
+@Entity
+@Table(name = "CASCO_VEHICLE")
 @HashCodePrime(157)
 public class CascoVehicle extends Vehicle {
 
     private static final long serialVersionUID = 1L;
 
+    @Basic
+    @Column(name = "VEHICLE_COST")
     @NotNullValue
     @Min(message = "{com.lapsa.insurance.domain.casco.CascoVehicle.cost.Min.message}", value = 1000000)
     @Max(message = "{com.lapsa.insurance.domain.casco.CascoVehicle.cost.Max.message}", value = 52500000)
     private Double cost;
 
+    @Basic
+    @Enumerated(EnumType.STRING)
+    @Column(name = "VEHICLE_CAR_AGE_CLASS")
     @NotNullValue
     private CascoCarAgeClass carAgeClass;
 
-    // @NotNullValue
-    @MaxImageFileSize(measure = FileSizeMeasure.MB, value = 10)
+    @OneToOne(fetch = FetchType.EAGER, orphanRemoval = true, cascade = CascadeType.ALL)
+    @JoinColumn(name = "VIEW1_IMAGE_ID")
+    // @MaxImageFileSize(measure = FileSizeMeasure.MB, value = 10)
     private Image view1;
 
-    // @NotNullValue
-    @MaxImageFileSize(measure = FileSizeMeasure.MB, value = 10)
+    @OneToOne(fetch = FetchType.EAGER, orphanRemoval = true, cascade = CascadeType.ALL)
+    @JoinColumn(name = "VIEW2_IMAGE_ID")
+    // @MaxImageFileSize(measure = FileSizeMeasure.MB, value = 10)
     private Image view2;
 
-    // @NotNullValue
-    @MaxImageFileSize(measure = FileSizeMeasure.MB, value = 10)
+    @OneToOne(fetch = FetchType.EAGER, orphanRemoval = true, cascade = CascadeType.ALL)
+    @JoinColumn(name = "VIEW3_IMAGE_ID")
+    // @MaxImageFileSize(measure = FileSizeMeasure.MB, value = 10)
     private Image view3;
 
-    // @NotNullValue
-    @MaxImageFileSize(measure = FileSizeMeasure.MB, value = 10)
+    @OneToOne(fetch = FetchType.EAGER, orphanRemoval = true, cascade = CascadeType.ALL)
+    @JoinColumn(name = "VIEW4_IMAGE_ID")
+    // @MaxImageFileSize(measure = FileSizeMeasure.MB, value = 10)
     private Image view4;
 
     @Override
@@ -95,12 +114,6 @@ public class CascoVehicle extends Vehicle {
 	return sb.append(sj.toString()) //
 		.append(appendEntityId()) //
 		.toString();
-    }
-
-    public static void main(String[] args) {
-	CascoVehicle c = new CascoVehicle();
-	c.setCost(Double.valueOf(0d));
-	System.out.println(c);
     }
 
     // GENERATED

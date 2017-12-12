@@ -5,6 +5,14 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
 import com.lapsa.insurance.domain.Vehicle;
 import com.lapsa.insurance.domain.VehicleCertificateData;
 import com.lapsa.insurance.elements.VehicleAgeClass;
@@ -18,23 +26,36 @@ import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.kz.vehicle.VehicleRegNumber;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
+@Entity
+@Table(name = "POLICY_VEHICLE")
 @HashCodePrime(53)
 public class PolicyVehicle extends Vehicle {
 
     private static final long serialVersionUID = 1L;
 
+    @Basic
+    @Enumerated(EnumType.STRING)
+    @Column(name = "VEHICLE_CLASS")
     @NotNullValue
     @ValidPolicyVehicleClass
     private VehicleClass vehicleClass;
 
+    @Basic
+    @Enumerated(EnumType.STRING)
+    @Column(name = "VEHICLE_AGE_CLASS")
     @NotNullValue
     @ValidPolicyVehicleAgeClass
     private VehicleAgeClass vehicleAgeClass;
 
+    @Basic
+    @Column(name = "TEMPORARYENTRY")
     private boolean temporaryEntry = false;
 
+    @Basic
+    @Column(name = "FORCED_MAJOR_CITY")
     private boolean forcedMajorCity;
 
+    @Transient
     private boolean fetched = false;
 
     @Override

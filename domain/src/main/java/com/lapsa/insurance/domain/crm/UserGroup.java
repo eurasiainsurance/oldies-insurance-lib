@@ -8,17 +8,34 @@ import java.util.Locale;
 import java.util.StringJoiner;
 import java.util.stream.Stream;
 
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
 import com.lapsa.insurance.domain.BaseEntity;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
+@Entity
+@Table(name = "USER_GROUP")
 @HashCodePrime(197)
 public class UserGroup extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
+    @Basic
+    @Column(name = "NAME")
     private String name;
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name = "USER_2_GROUP", joinColumns = @JoinColumn(name = "USER_GROUP_ID"), inverseJoinColumns = @JoinColumn(name = "USER_ID"))
     private List<User> members = new ArrayList<>();
 
     @Override

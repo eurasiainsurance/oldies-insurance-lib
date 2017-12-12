@@ -2,8 +2,6 @@ package com.lapsa.insurance.domain;
 
 import java.util.Arrays;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -14,7 +12,6 @@ import tech.lapsa.java.commons.function.MyFunctions;
 import tech.lapsa.java.commons.function.MyObjects;
 
 @MappedSuperclass
-@Access(AccessType.PROPERTY)
 public abstract class SidedScannedDocument extends BaseEntity {
 
     private static final long serialVersionUID = 1L;

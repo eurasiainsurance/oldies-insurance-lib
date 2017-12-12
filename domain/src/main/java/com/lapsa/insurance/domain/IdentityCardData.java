@@ -6,6 +6,15 @@ import java.time.LocalDate;
 import java.util.Locale;
 import java.util.StringJoiner;
 
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import com.lapsa.insurance.elements.IdentityCardType;
 import com.lapsa.insurance.validation.ValidIdentityCardType;
 
@@ -18,23 +27,35 @@ import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.javax.validation.ValidDateOfIssue;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
+@Entity
+@Table(name = "IDENTITY_CARD")
 @HashCodePrime(37)
 public class IdentityCardData extends SidedScannedDocument {
 
     private static final long serialVersionUID = 1L;
 
+    @Basic
+    @Temporal(TemporalType.DATE)
+    @Column(name = "DATE_OF_ISSUE")
     @NotNullValue
     @ValidDateOfIssue
     private LocalDate dateOfIssue;
 
+    @Basic
+    @Column(name = "ISSUING_AUTHORITY")
     @NotNullValue
     @NotEmptyString
     private String issuingAuthority;
 
+    @Basic
+    @Column(name = "NUMBER")
     @NotNullValue
     @NotEmptyString
     private String number;
 
+    @Basic
+    @Enumerated(EnumType.STRING)
+    @Column(name = "TYPE")
     @NotNullValue
     @ValidIdentityCardType
     private IdentityCardType type;

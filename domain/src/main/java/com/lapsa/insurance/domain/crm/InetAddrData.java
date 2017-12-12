@@ -5,17 +5,27 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+
 import com.lapsa.insurance.domain.Domain;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
+@Embeddable
 @HashCodePrime(181)
 public class InetAddrData extends Domain {
 
     private static final long serialVersionUID = 1L;
 
+    @Basic
+    @Column(name = "INET_ADDRESS")
     private String inetAddress;
+
+    @Basic
+    @Column(name = "INET_HOST")
     private String inetHost;
 
     public InetAddrData() {

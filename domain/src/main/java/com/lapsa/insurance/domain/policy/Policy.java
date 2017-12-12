@@ -8,6 +8,13 @@ import java.util.Locale;
 import java.util.StringJoiner;
 import java.util.stream.Stream;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
 import com.lapsa.insurance.domain.BaseEntity;
 import com.lapsa.insurance.domain.InsuranceProduct;
 
@@ -16,12 +23,19 @@ import tech.lapsa.java.commons.function.MyObjects;
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
+@Entity
+@Table(name = "POLICY")
 @HashCodePrime(79)
 public class Policy extends InsuranceProduct {
 
     private static final long serialVersionUID = 1L;
 
+    @OneToMany(fetch = FetchType.EAGER, orphanRemoval = true, cascade = CascadeType.ALL)
+    @JoinColumn(name = "POLICY_ID")
     private List<PolicyDriver> insuredDrivers = new ArrayList<>();
+
+    @OneToMany(fetch = FetchType.EAGER, orphanRemoval = true, cascade = CascadeType.ALL)
+    @JoinColumn(name = "POLICY_ID")
     private List<PolicyVehicle> insuredVehicles = new ArrayList<>();
 
     @Override

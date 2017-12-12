@@ -6,15 +6,24 @@ import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.StringJoiner;
 
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+
 import tech.lapsa.patterns.domain.HashCodePrime;
 
+@Embeddable
 @HashCodePrime(19)
 public class GeoPoint extends Domain {
 
     private static final long serialVersionUID = 1L;
 
+    @Basic
+    @Column(name = "GEO_LATITUDE")
     private double latitude;
 
+    @Basic
+    @Column(name = "GEO_LONGITUDE")
     private double longitude;
 
     public GeoPoint() {

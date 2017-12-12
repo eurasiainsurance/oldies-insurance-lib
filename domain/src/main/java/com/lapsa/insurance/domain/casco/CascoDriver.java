@@ -5,6 +5,9 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import com.lapsa.insurance.domain.Driver;
 import com.lapsa.insurance.domain.PersonalData;
 
@@ -12,6 +15,8 @@ import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.kz.taxpayer.TaxpayerNumber;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
+@Entity
+@Table(name = "CASCO_DRIVER")
 @HashCodePrime(113)
 public class CascoDriver extends Driver {
 

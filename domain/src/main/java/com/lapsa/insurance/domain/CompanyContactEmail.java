@@ -5,14 +5,23 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
+@Entity
+@Table(name = "POS_CONTACT_EMAIL")
 @HashCodePrime(5)
-public class CompanyContactEmail extends BaseEntity<Integer> {
+public class CompanyContactEmail extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
+    @Basic
+    @Column(name = "EMAIL_ADDRESS")
     private String address;
 
     @Override

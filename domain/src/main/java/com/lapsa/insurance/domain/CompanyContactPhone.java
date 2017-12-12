@@ -5,6 +5,13 @@ import static com.lapsa.insurance.domain.DisplayNameElements.*;
 import java.util.Locale;
 import java.util.StringJoiner;
 
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Table;
+
 import com.lapsa.international.phone.PhoneNumber;
 import com.lapsa.international.phone.PhoneType;
 
@@ -13,12 +20,20 @@ import tech.lapsa.java.commons.function.MyStrings;
 import tech.lapsa.java.commons.localization.Localized;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
+@Entity
+@Table(name = "POS_CONTACT_PHONE")
 @HashCodePrime(7)
-public class CompanyContactPhone extends BaseEntity<Integer> {
+public class CompanyContactPhone extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
+    @Basic
+    @Column(name = "PHONE_NUMBER")
     private PhoneNumber phone;
+
+    @Basic
+    @Enumerated(EnumType.STRING)
+    @Column(name = "PHONE_TYPE")
     private PhoneType phoneType;
 
     @Override

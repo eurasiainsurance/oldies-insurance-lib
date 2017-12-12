@@ -1,8 +1,0 @@
-com.lapsa.insurance.validation.ValidIdentityCardType.message = Invalid type of document
-com.lapsa.insurance.validation.ValidInsuranceAgeClass.message = Invalid age category specified
-com.lapsa.insurance.validation.ValidInsuranceExpirienceClass.message = Invalid driving experience specified
-com.lapsa.insurance.validation.ValidInsuranceRequestType.message = Unauthorized insurance application value
-com.lapsa.insurance.validation.ValidPolicyVehicleAgeClass.message = Invalid vehicle service life for this type of insurance
-com.lapsa.insurance.validation.ValidPolicyVehicleClass.message = Invalid vehicle Class specified for this type of insurance
-com.lapsa.insurance.validation.ValidVehicleYearOfIssue.message = Invalid vehicle year of manufacture
-com.lapsa.insurance.validation.ValidInsuranceClassType.message = Invalid Insurance Class 

@@ -6,6 +6,12 @@ import java.time.LocalDate;
 import java.util.Locale;
 import java.util.StringJoiner;
 
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.java.commons.localization.Localizeds;
 import tech.lapsa.javax.validation.LocalDateComparison;
@@ -14,15 +20,22 @@ import tech.lapsa.javax.validation.TemporalFuture;
 import tech.lapsa.javax.validation.TemporalLeftBeforeRight;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
+@Embeddable
 @HashCodePrime(179)
 public class InsurancePeriodData extends Domain {
 
     private static final long serialVersionUID = 1L;
 
+    @Basic
+    @Temporal(TemporalType.DATE)
+    @Column(name = "PERIOD_FROM")
     @NotNullValue
     @TemporalFuture(allowNow = true)
     private LocalDate from;
 
+    @Basic
+    @Temporal(TemporalType.DATE)
+    @Column(name = "PERIOD_TO")
     @NotNullValue
     @TemporalFuture
     private LocalDate to;

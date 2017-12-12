@@ -9,23 +9,44 @@ import java.util.Optional;
 import java.util.StringJoiner;
 import java.util.stream.Stream;
 
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
 import com.lapsa.insurance.domain.BaseEntity;
 
 import tech.lapsa.java.commons.function.MyObjects;
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
+@Entity
+@Table(name = "USER")
 @HashCodePrime(59)
-public class User extends BaseEntity<Integer> {
+public class User extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
+    @Basic
+    @Column(name = "NAME")
     private String name;
+
+    @Basic
+    @Column(name = "EMAIL")
     private String email;
+
+    @Basic
+    @Column(name = "HIDDEN")
     private boolean hidden;
 
+    @OneToMany(fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "user")
     private List<UserLogin> logins = new ArrayList<>();
 
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "members", cascade = CascadeType.ALL)
     private List<UserGroup> groups = new ArrayList<>();
 
     @Override
@@ -112,19 +133,6 @@ public class User extends BaseEntity<Integer> {
 		    .toString();
 
 	}
-    }
-
-    public static void main(String[] args) {
-	UserLogin l = new UserLogin();
-	l.setName("vadim.isaev");
-
-	System.out.println(l);
-
-	User u = new User();
-	u.setName("Вадим Исаев");
-	u.setEmail("vadim.isaev@theeurasia.kz");
-	u.addLogin(l);
-	System.out.println(u);
     }
 
     // GENERATED

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>tech.lapsa.maven</groupId>
@@ -16,7 +17,6 @@
 
 	<modules>
 		<module>elements</module>
-		<module>validation</module>
 		<module>domain</module>
 	</modules>
 
@@ -26,10 +26,11 @@
 		<java-commons.version>1.1-SNAPSHOT</java-commons.version>
 		<payara-bom.version>4.1.2-2-SNAPSHOT</payara-bom.version>
 		<!-- tech -->
-		<javax-validation-commons.version>1.1-SNAPSHOT</javax-validation-commons.version>
 		<javax-jpa-commons.version>1.1-SNAPSHOT</javax-jpa-commons.version>
+		<javax-validation-commons.version>1.1-SNAPSHOT</javax-validation-commons.version>
 		<patterns-domain.version>1.0-SNAPSHOT</patterns-domain.version>
 		<lapsa-arquillian-test.version>1.1-SNAPSHOT</lapsa-arquillian-test.version>
+		<insurance-validation.version>1.0-SNAPSHOT</insurance-validation.version>
 		<!-- oldies -->
 		<kz-lib.version>3.2-SNAPSHOT</kz-lib.version>
 		<international-lib.version>3.3-SNAPSHOT</international-lib.version>
@@ -69,13 +70,14 @@
 			<!-- tech -->
 			<dependency>
 				<groupId>tech.lapsa.javax</groupId>
-				<artifactId>javax-validation-commons</artifactId>
-				<version>${javax-validation-commons.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>tech.lapsa.javax</groupId>
 				<artifactId>javax-jpa-commons</artifactId>
 				<version>${javax-jpa-commons.version}</version>
+			</dependency>
+			<!-- tech -->
+			<dependency>
+				<groupId>tech.lapsa.javax</groupId>
+				<artifactId>javax-validation-commons</artifactId>
+				<version>${javax-validation-commons.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>tech.lapsa.patterns</groupId>
@@ -87,15 +89,15 @@
 				<artifactId>lapsa-arquillian-test</artifactId>
 				<version>${lapsa-arquillian-test.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>tech.lapsa.insurance</groupId>
+				<artifactId>insurance-validation</artifactId>
+				<version>${insurance-validation.version}</version>
+			</dependency>
 			<!-- own -->
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>insurance-elements</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>${project.groupId}</groupId>
-				<artifactId>insurance-validation</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>

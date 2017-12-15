@@ -28,17 +28,17 @@ public class OriginData extends Domain {
 	return country;
     }
 
-    public void setCountry(Country country) {
+    public void setCountry(final Country country) {
 	this.country = country;
     }
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(ORIGIN_DATA.localized(variant, locale));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(country) //

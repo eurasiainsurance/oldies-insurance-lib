@@ -19,10 +19,10 @@ public enum ProgressStatus implements LocalizedElement {
     //
 
     private ProgressStatus() {
-	this.selectable = true;
+	selectable = true;
     }
 
-    private ProgressStatus(boolean selectable) {
+    private ProgressStatus(final boolean selectable) {
 	this.selectable = selectable;
     }
 

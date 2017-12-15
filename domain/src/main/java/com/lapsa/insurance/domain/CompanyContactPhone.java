@@ -37,15 +37,15 @@ public class CompanyContactPhone extends BaseEntity {
     private PhoneType phoneType;
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(MyOptionals.of(phoneType) //
 		.map(Localized.toLocalizedMapper(variant, locale)) //
 		.map(MyStrings::capitalizeFirstLetter) //
 		.orElseGet(() -> COMPANY_CONTACT_PHONE.localized(variant, locale)));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	sj.add(MyOptionals.of(phone) //
@@ -63,7 +63,7 @@ public class CompanyContactPhone extends BaseEntity {
 	return phone;
     }
 
-    public void setPhone(PhoneNumber phone) {
+    public void setPhone(final PhoneNumber phone) {
 	this.phone = phone;
     }
 
@@ -71,7 +71,7 @@ public class CompanyContactPhone extends BaseEntity {
 	return phoneType;
     }
 
-    public void setPhoneType(PhoneType phoneType) {
+    public void setPhoneType(final PhoneType phoneType) {
 	this.phoneType = phoneType;
     }
 }

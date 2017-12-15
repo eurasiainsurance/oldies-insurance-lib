@@ -17,10 +17,10 @@ public enum InsuranceProductType implements LocalizedElement {
     //
 
     private InsuranceProductType() {
-	this.selectable = true;
+	selectable = true;
     }
 
-    private InsuranceProductType(boolean selectable) {
+    private InsuranceProductType(final boolean selectable) {
 	this.selectable = selectable;
     }
 

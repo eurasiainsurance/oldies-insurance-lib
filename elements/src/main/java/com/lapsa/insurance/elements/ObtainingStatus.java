@@ -19,11 +19,11 @@ public enum ObtainingStatus implements LocalizedElement {
     //
 
     private ObtainingStatus() {
-	this.defined = true;
+	defined = true;
     }
 
-    private ObtainingStatus(boolean selectable) {
-	this.defined = selectable;
+    private ObtainingStatus(final boolean selectable) {
+	defined = selectable;
     }
 
     //

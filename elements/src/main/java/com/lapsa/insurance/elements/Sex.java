@@ -17,10 +17,10 @@ public enum Sex implements LocalizedElement {
     //
 
     private Sex() {
-	this.selectable = true;
+	selectable = true;
     }
 
-    private Sex(boolean selectable) {
+    private Sex(final boolean selectable) {
 	this.selectable = selectable;
     }
 

@@ -17,12 +17,12 @@ public enum CascoDeductibleFullRate implements LocalizedElement {
 
     //
 
-    private CascoDeductibleFullRate(double value) {
-	this.selectable = true;
+    private CascoDeductibleFullRate(final double value) {
+	selectable = true;
 	this.value = value;
     }
 
-    private CascoDeductibleFullRate(double value, boolean selectable) {
+    private CascoDeductibleFullRate(final double value, final boolean selectable) {
 	this.selectable = selectable;
 	this.value = value;
     }

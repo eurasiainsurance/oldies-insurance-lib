@@ -24,10 +24,10 @@ public enum CancelationReason implements LocalizedElement {
     //
 
     private CancelationReason() {
-	this.selectable = true;
+	selectable = true;
     }
 
-    private CancelationReason(boolean selectable) {
+    private CancelationReason(final boolean selectable) {
 	this.selectable = selectable;
     }
 

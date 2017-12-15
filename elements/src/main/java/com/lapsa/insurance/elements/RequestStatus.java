@@ -17,10 +17,10 @@ public enum RequestStatus implements LocalizedElement {
     //
 
     private RequestStatus() {
-	this.selectable = true;
+	selectable = true;
     }
 
-    private RequestStatus(boolean selectable) {
+    private RequestStatus(final boolean selectable) {
 	this.selectable = selectable;
     }
 

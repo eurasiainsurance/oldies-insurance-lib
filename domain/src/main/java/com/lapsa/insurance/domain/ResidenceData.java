@@ -30,12 +30,12 @@ public class ResidenceData extends Domain {
     private String address;
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(RESIDENCE_DATA.localized(variant, locale));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(city) //
@@ -62,7 +62,7 @@ public class ResidenceData extends Domain {
 	return resident;
     }
 
-    public void setResident(Boolean resident) {
+    public void setResident(final Boolean resident) {
 	this.resident = resident;
     }
 
@@ -70,7 +70,7 @@ public class ResidenceData extends Domain {
 	return city;
     }
 
-    public void setCity(KZCity city) {
+    public void setCity(final KZCity city) {
 	this.city = city;
     }
 
@@ -78,7 +78,7 @@ public class ResidenceData extends Domain {
 	return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(final String address) {
 	this.address = address;
     }
 }

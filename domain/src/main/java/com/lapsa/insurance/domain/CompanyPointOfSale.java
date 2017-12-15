@@ -101,13 +101,13 @@ public class CompanyPointOfSale extends BaseEntity {
     }
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
+    public String localized(final LocalizationVariant variant, final Locale locale) {
 	return MyOptionals.of(nameLocalization.getOrDefault(LocalizationLanguage.byLocale(locale), name)) //
 		.map(MyStrings::capitalizeFirstLetter) //
 		.orElseGet(() -> COMPANY_POINT_OF_SALE.localized(variant, locale));
     }
 
-    public CompanyContactPhone addPhone(CompanyContactPhone phone) {
+    public CompanyContactPhone addPhone(final CompanyContactPhone phone) {
 	if (phone == null)
 	    throw new NullPointerException("Value must not be null");
 	if (phones == null)
@@ -116,7 +116,7 @@ public class CompanyPointOfSale extends BaseEntity {
 	return phone;
     }
 
-    public CompanyContactPhone removePhone(CompanyContactPhone phone) {
+    public CompanyContactPhone removePhone(final CompanyContactPhone phone) {
 	if (phone == null)
 	    throw new NullPointerException("Value must not be null");
 	if (phones != null)
@@ -124,7 +124,7 @@ public class CompanyPointOfSale extends BaseEntity {
 	return phone;
     }
 
-    public CompanyContactEmail addEmailAddress(CompanyContactEmail phone) {
+    public CompanyContactEmail addEmailAddress(final CompanyContactEmail phone) {
 	if (phone == null)
 	    throw new NullPointerException("Value must not be null");
 	if (emailAddresses == null)
@@ -133,7 +133,7 @@ public class CompanyPointOfSale extends BaseEntity {
 	return phone;
     }
 
-    public CompanyContactEmail removeEmailAddress(CompanyContactEmail phone) {
+    public CompanyContactEmail removeEmailAddress(final CompanyContactEmail phone) {
 	if (phone == null)
 	    throw new NullPointerException("Value must not be null");
 	if (emailAddresses != null)
@@ -147,7 +147,7 @@ public class CompanyPointOfSale extends BaseEntity {
 	return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
 	this.name = name;
     }
 
@@ -155,7 +155,7 @@ public class CompanyPointOfSale extends BaseEntity {
 	return nameLocalization;
     }
 
-    protected void setNameLocalization(Map<LocalizationLanguage, String> nameLocalization) {
+    protected void setNameLocalization(final Map<LocalizationLanguage, String> nameLocalization) {
 	this.nameLocalization = nameLocalization;
     }
 
@@ -163,7 +163,7 @@ public class CompanyPointOfSale extends BaseEntity {
 	return address;
     }
 
-    public void setAddress(PostAddress address) {
+    public void setAddress(final PostAddress address) {
 	this.address = address;
     }
 
@@ -171,7 +171,7 @@ public class CompanyPointOfSale extends BaseEntity {
 	return geoPoint;
     }
 
-    public void setGeoPoint(GeoPoint geoPoint) {
+    public void setGeoPoint(final GeoPoint geoPoint) {
 	this.geoPoint = geoPoint;
     }
 
@@ -179,7 +179,7 @@ public class CompanyPointOfSale extends BaseEntity {
 	return emailAddresses;
     }
 
-    protected void setEmailAddresses(List<CompanyContactEmail> emailAddresses) {
+    protected void setEmailAddresses(final List<CompanyContactEmail> emailAddresses) {
 	this.emailAddresses = emailAddresses;
     }
 
@@ -187,7 +187,7 @@ public class CompanyPointOfSale extends BaseEntity {
 	return available;
     }
 
-    public void setAvailable(boolean available) {
+    public void setAvailable(final boolean available) {
 	this.available = available;
     }
 
@@ -195,7 +195,7 @@ public class CompanyPointOfSale extends BaseEntity {
 	return phones;
     }
 
-    protected void setPhones(List<CompanyContactPhone> phones) {
+    protected void setPhones(final List<CompanyContactPhone> phones) {
 	this.phones = phones;
     }
 
@@ -203,7 +203,7 @@ public class CompanyPointOfSale extends BaseEntity {
 	return companyOwnOffice;
     }
 
-    public void setCompanyOwnOffice(boolean companyOwnOffice) {
+    public void setCompanyOwnOffice(final boolean companyOwnOffice) {
 	this.companyOwnOffice = companyOwnOffice;
     }
 
@@ -211,7 +211,7 @@ public class CompanyPointOfSale extends BaseEntity {
 	return pickupAvailable;
     }
 
-    public void setPickupAvailable(boolean pickupAvailable) {
+    public void setPickupAvailable(final boolean pickupAvailable) {
 	this.pickupAvailable = pickupAvailable;
     }
 
@@ -219,7 +219,7 @@ public class CompanyPointOfSale extends BaseEntity {
 	return deliveryServicesAvailable;
     }
 
-    public void setDeliveryServicesAvailable(boolean deliveryServicesAvailable) {
+    public void setDeliveryServicesAvailable(final boolean deliveryServicesAvailable) {
 	this.deliveryServicesAvailable = deliveryServicesAvailable;
     }
 }

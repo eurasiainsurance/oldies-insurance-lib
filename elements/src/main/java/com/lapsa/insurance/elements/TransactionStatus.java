@@ -17,10 +17,10 @@ public enum TransactionStatus implements LocalizedElement {
     //
 
     private TransactionStatus() {
-	this.selectable = true;
+	selectable = true;
     }
 
-    private TransactionStatus(boolean selectable) {
+    private TransactionStatus(final boolean selectable) {
 	this.selectable = selectable;
     }
 

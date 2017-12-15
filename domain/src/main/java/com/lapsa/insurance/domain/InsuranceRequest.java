@@ -26,7 +26,7 @@ public abstract class InsuranceRequest extends Request {
     public InsuranceRequest() {
     }
 
-    public InsuranceRequest(RequestSource source) {
+    public InsuranceRequest(final RequestSource source) {
 	super(source);
     }
 
@@ -75,7 +75,7 @@ public abstract class InsuranceRequest extends Request {
 	return type;
     }
 
-    public void setType(InsuranceRequestType type) {
+    public void setType(final InsuranceRequestType type) {
 	this.type = type;
     }
 
@@ -83,7 +83,7 @@ public abstract class InsuranceRequest extends Request {
 	return transactionStatus;
     }
 
-    public void setTransactionStatus(TransactionStatus transactionStatus) {
+    public void setTransactionStatus(final TransactionStatus transactionStatus) {
 	this.transactionStatus = transactionStatus;
     }
 
@@ -91,7 +91,7 @@ public abstract class InsuranceRequest extends Request {
 	return transactionProblem;
     }
 
-    public void setTransactionProblem(TransactionProblem transactionProblem) {
+    public void setTransactionProblem(final TransactionProblem transactionProblem) {
 	this.transactionProblem = transactionProblem;
     }
 
@@ -99,15 +99,15 @@ public abstract class InsuranceRequest extends Request {
 	return obtaining;
     }
 
-    public void setObtaining(ObtainingData btaining) {
-	this.obtaining = btaining;
+    public void setObtaining(final ObtainingData btaining) {
+	obtaining = btaining;
     }
 
     public PaymentData getPayment() {
 	return payment;
     }
 
-    public void setPayment(PaymentData payment) {
+    public void setPayment(final PaymentData payment) {
 	this.payment = payment;
     }
 
@@ -115,7 +115,7 @@ public abstract class InsuranceRequest extends Request {
 	return agreementNumber;
     }
 
-    public void setAgreementNumber(String agreementNumber) {
+    public void setAgreementNumber(final String agreementNumber) {
 	this.agreementNumber = agreementNumber;
     }
 }

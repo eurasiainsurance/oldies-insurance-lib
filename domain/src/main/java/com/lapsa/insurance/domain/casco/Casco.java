@@ -148,7 +148,7 @@ public class Casco extends InsuranceProduct {
 		.forEach(BaseEntity::unlazy);
     }
 
-    public CascoDriver addDriver(CascoDriver driver) {
+    public CascoDriver addDriver(final CascoDriver driver) {
 	MyObjects.requireNonNull(driver, "Value must not be null");
 	if (insuredDrivers == null)
 	    insuredDrivers = new ArrayList<>();
@@ -156,7 +156,7 @@ public class Casco extends InsuranceProduct {
 	return driver;
     }
 
-    public CascoDriver removeDriver(CascoDriver driver) {
+    public CascoDriver removeDriver(final CascoDriver driver) {
 	MyObjects.requireNonNull(driver, "Value must not be null");
 	if (insuredDrivers != null)
 	    insuredDrivers.remove(driver);
@@ -164,12 +164,12 @@ public class Casco extends InsuranceProduct {
     }
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(CASCO.localized(variant, locale));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(calculation) //
@@ -201,7 +201,7 @@ public class Casco extends InsuranceProduct {
 	return insuredVehicle;
     }
 
-    public void setInsuredVehicle(CascoVehicle insuredVehicle) {
+    public void setInsuredVehicle(final CascoVehicle insuredVehicle) {
 	this.insuredVehicle = insuredVehicle;
     }
 
@@ -209,11 +209,11 @@ public class Casco extends InsuranceProduct {
 	return insuredDrivers;
     }
 
-    protected void setInsuredDrivers(List<CascoDriver> insuredDrivers) {
+    protected void setInsuredDrivers(final List<CascoDriver> insuredDrivers) {
 	this.insuredDrivers = insuredDrivers;
     }
 
-    public void setCoverRoadAccidents(boolean coverRoadAccidents) {
+    public void setCoverRoadAccidents(final boolean coverRoadAccidents) {
 	this.coverRoadAccidents = coverRoadAccidents;
     }
 
@@ -221,7 +221,7 @@ public class Casco extends InsuranceProduct {
 	return coverNonRoadAccidents;
     }
 
-    public void setCoverNonRoadAccidents(boolean coverNonRoadAccidents) {
+    public void setCoverNonRoadAccidents(final boolean coverNonRoadAccidents) {
 	this.coverNonRoadAccidents = coverNonRoadAccidents;
     }
 
@@ -229,7 +229,7 @@ public class Casco extends InsuranceProduct {
 	return deductiblePartialRequired;
     }
 
-    public void setDeductiblePartialRequired(boolean deductiblePartialRequired) {
+    public void setDeductiblePartialRequired(final boolean deductiblePartialRequired) {
 	this.deductiblePartialRequired = deductiblePartialRequired;
     }
 
@@ -237,7 +237,7 @@ public class Casco extends InsuranceProduct {
 	return deductiblePartialRate;
     }
 
-    public void setDeductiblePartialRate(CascoDeductiblePartialRate deductiblePartialRate) {
+    public void setDeductiblePartialRate(final CascoDeductiblePartialRate deductiblePartialRate) {
 	this.deductiblePartialRate = deductiblePartialRate;
     }
 
@@ -245,7 +245,7 @@ public class Casco extends InsuranceProduct {
 	return deductibleFullRate;
     }
 
-    public void setDeductibleFullRate(CascoDeductibleFullRate deductibleFullRate) {
+    public void setDeductibleFullRate(final CascoDeductibleFullRate deductibleFullRate) {
 	this.deductibleFullRate = deductibleFullRate;
     }
 
@@ -253,7 +253,7 @@ public class Casco extends InsuranceProduct {
 	return specialServiceStationRequired;
     }
 
-    public void setSpecialServiceStationRequired(boolean specialServiceStationRequired) {
+    public void setSpecialServiceStationRequired(final boolean specialServiceStationRequired) {
 	this.specialServiceStationRequired = specialServiceStationRequired;
     }
 
@@ -261,7 +261,7 @@ public class Casco extends InsuranceProduct {
 	return noPoliceCallRequired;
     }
 
-    public void setNoPoliceCallRequired(boolean noPoliceCallRequired) {
+    public void setNoPoliceCallRequired(final boolean noPoliceCallRequired) {
 	this.noPoliceCallRequired = noPoliceCallRequired;
     }
 
@@ -269,7 +269,7 @@ public class Casco extends InsuranceProduct {
 	return noGuiltNoDeductibleRequired;
     }
 
-    public void setNoGuiltNoDeductibleRequired(boolean noGuiltNoDeductibleRequired) {
+    public void setNoGuiltNoDeductibleRequired(final boolean noGuiltNoDeductibleRequired) {
 	this.noGuiltNoDeductibleRequired = noGuiltNoDeductibleRequired;
     }
 
@@ -277,7 +277,7 @@ public class Casco extends InsuranceProduct {
 	return helpWithPoliceRequired;
     }
 
-    public void setHelpWithPoliceRequired(boolean helpWithPoliceRequired) {
+    public void setHelpWithPoliceRequired(final boolean helpWithPoliceRequired) {
 	this.helpWithPoliceRequired = helpWithPoliceRequired;
     }
 
@@ -285,7 +285,7 @@ public class Casco extends InsuranceProduct {
 	return evacuatorRequired;
     }
 
-    public void setEvacuatorRequired(boolean evacuatorRequired) {
+    public void setEvacuatorRequired(final boolean evacuatorRequired) {
 	this.evacuatorRequired = evacuatorRequired;
     }
 
@@ -293,7 +293,7 @@ public class Casco extends InsuranceProduct {
 	return replacementCarRequired;
     }
 
-    public void setReplacementCarRequired(boolean replacementCarRequired) {
+    public void setReplacementCarRequired(final boolean replacementCarRequired) {
 	this.replacementCarRequired = replacementCarRequired;
     }
 
@@ -301,7 +301,7 @@ public class Casco extends InsuranceProduct {
 	return contractEndsAfterFirstCase;
     }
 
-    public void setContractEndsAfterFirstCase(boolean contractEndsAfterFirstCase) {
+    public void setContractEndsAfterFirstCase(final boolean contractEndsAfterFirstCase) {
 	this.contractEndsAfterFirstCase = contractEndsAfterFirstCase;
     }
 
@@ -309,7 +309,7 @@ public class Casco extends InsuranceProduct {
 	return thirdPartyLiabilityCoverage;
     }
 
-    public void setThirdPartyLiabilityCoverage(boolean thirdPartyLiabilityCoverage) {
+    public void setThirdPartyLiabilityCoverage(final boolean thirdPartyLiabilityCoverage) {
 	this.thirdPartyLiabilityCoverage = thirdPartyLiabilityCoverage;
     }
 
@@ -317,7 +317,7 @@ public class Casco extends InsuranceProduct {
 	return driverAndPassengerCoverage;
     }
 
-    public void setDriverAndPassengerCoverage(boolean driverAndPassengerCoverage) {
+    public void setDriverAndPassengerCoverage(final boolean driverAndPassengerCoverage) {
 	this.driverAndPassengerCoverage = driverAndPassengerCoverage;
     }
 
@@ -325,7 +325,7 @@ public class Casco extends InsuranceProduct {
 	return driverAndPassengerCount;
     }
 
-    public void setDriverAndPassengerCount(Integer driverAndPassengerCount) {
+    public void setDriverAndPassengerCount(final Integer driverAndPassengerCount) {
 	this.driverAndPassengerCount = driverAndPassengerCount;
     }
 }

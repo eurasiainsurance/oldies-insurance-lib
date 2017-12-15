@@ -35,12 +35,12 @@ public class UserLogin extends BaseEntity {
     private User user;
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(USER_LOGIN_LOGIN.localized(variant, locale));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(name) //
@@ -57,7 +57,7 @@ public class UserLogin extends BaseEntity {
 	return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
 	this.name = name;
     }
 
@@ -65,7 +65,7 @@ public class UserLogin extends BaseEntity {
 	return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(final User user) {
 	this.user = user;
     }
 }

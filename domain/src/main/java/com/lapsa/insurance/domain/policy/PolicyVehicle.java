@@ -59,13 +59,13 @@ public class PolicyVehicle extends Vehicle {
     private boolean fetched = false;
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(MyOptionals.of(getFullName()) //
 		.orElseGet(() -> POLICY_VEHICLE.localized(variant, locale)));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(vehicleClass) //
@@ -95,7 +95,7 @@ public class PolicyVehicle extends Vehicle {
 	return vehicleClass;
     }
 
-    public void setVehicleClass(VehicleClass vehicleClass) {
+    public void setVehicleClass(final VehicleClass vehicleClass) {
 	this.vehicleClass = vehicleClass;
     }
 
@@ -103,7 +103,7 @@ public class PolicyVehicle extends Vehicle {
 	return vehicleAgeClass;
     }
 
-    public void setVehicleAgeClass(VehicleAgeClass vehicleAgeClass) {
+    public void setVehicleAgeClass(final VehicleAgeClass vehicleAgeClass) {
 	this.vehicleAgeClass = vehicleAgeClass;
     }
 
@@ -111,7 +111,7 @@ public class PolicyVehicle extends Vehicle {
 	return temporaryEntry;
     }
 
-    public void setTemporaryEntry(boolean temporaryEntry) {
+    public void setTemporaryEntry(final boolean temporaryEntry) {
 	this.temporaryEntry = temporaryEntry;
     }
 
@@ -119,7 +119,7 @@ public class PolicyVehicle extends Vehicle {
 	return forcedMajorCity;
     }
 
-    public void setForcedMajorCity(boolean forcedMajorCity) {
+    public void setForcedMajorCity(final boolean forcedMajorCity) {
 	this.forcedMajorCity = forcedMajorCity;
     }
 
@@ -127,7 +127,7 @@ public class PolicyVehicle extends Vehicle {
 	return fetched;
     }
 
-    public void setFetched(boolean fetched) {
+    public void setFetched(final boolean fetched) {
 	this.fetched = fetched;
     }
 }

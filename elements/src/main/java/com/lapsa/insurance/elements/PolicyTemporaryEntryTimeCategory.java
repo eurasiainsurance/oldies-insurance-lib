@@ -26,10 +26,10 @@ public enum PolicyTemporaryEntryTimeCategory implements LocalizedElement {
     //
 
     private PolicyTemporaryEntryTimeCategory() {
-	this.selectable = true;
+	selectable = true;
     }
 
-    private PolicyTemporaryEntryTimeCategory(boolean selectable) {
+    private PolicyTemporaryEntryTimeCategory(final boolean selectable) {
 	this.selectable = selectable;
     }
 

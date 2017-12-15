@@ -17,10 +17,10 @@ public enum SubjectType implements LocalizedElement {
     //
 
     private SubjectType() {
-	this.selectable = true;
+	selectable = true;
     }
 
-    private SubjectType(boolean selectable) {
+    private SubjectType(final boolean selectable) {
 	this.selectable = selectable;
     }
 

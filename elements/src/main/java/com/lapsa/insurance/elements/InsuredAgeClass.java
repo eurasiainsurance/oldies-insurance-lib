@@ -17,10 +17,10 @@ public enum InsuredAgeClass implements LocalizedElement {
     //
 
     private InsuredAgeClass() {
-	this.selectable = true;
+	selectable = true;
     }
 
-    private InsuredAgeClass(boolean selectable) {
+    private InsuredAgeClass(final boolean selectable) {
 	this.selectable = selectable;
     }
 

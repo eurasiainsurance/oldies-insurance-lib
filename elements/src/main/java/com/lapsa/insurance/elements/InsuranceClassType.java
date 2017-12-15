@@ -30,10 +30,10 @@ public enum InsuranceClassType implements LocalizedElement {
     //
 
     private InsuranceClassType() {
-	this.selectable = true;
+	selectable = true;
     }
 
-    private InsuranceClassType(boolean selectable) {
+    private InsuranceClassType(final boolean selectable) {
 	this.selectable = selectable;
     }
 

@@ -26,7 +26,7 @@ public enum VehicleClass implements LocalizedElement {
 
     //
 
-    private VehicleClass(boolean validForMotorTPL, boolean selectable) {
+    private VehicleClass(final boolean validForMotorTPL, final boolean selectable) {
 	this.validForMotorTPL = validForMotorTPL;
 	this.selectable = selectable;
     }

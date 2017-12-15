@@ -86,13 +86,13 @@ public class CascoVehicle extends Vehicle {
     }
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(MyOptionals.of(getFullName()) //
 		.orElseGet(() -> CASCO_VEHICLE.localized(variant, locale)));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(cost)
@@ -122,7 +122,7 @@ public class CascoVehicle extends Vehicle {
 	return cost;
     }
 
-    public void setCost(Double cost) {
+    public void setCost(final Double cost) {
 	this.cost = cost;
     }
 
@@ -138,7 +138,7 @@ public class CascoVehicle extends Vehicle {
 	return carAgeClass;
     }
 
-    public void setCarAgeClass(CascoCarAgeClass carAgeClass) {
+    public void setCarAgeClass(final CascoCarAgeClass carAgeClass) {
 	this.carAgeClass = carAgeClass;
     }
 
@@ -146,7 +146,7 @@ public class CascoVehicle extends Vehicle {
 	return view1;
     }
 
-    public void setView1(Image view1) {
+    public void setView1(final Image view1) {
 	this.view1 = view1;
     }
 
@@ -154,7 +154,7 @@ public class CascoVehicle extends Vehicle {
 	return view2;
     }
 
-    public void setView2(Image view2) {
+    public void setView2(final Image view2) {
 	this.view2 = view2;
     }
 
@@ -162,7 +162,7 @@ public class CascoVehicle extends Vehicle {
 	return view3;
     }
 
-    public void setView3(Image view3) {
+    public void setView3(final Image view3) {
 	this.view3 = view3;
     }
 
@@ -170,7 +170,7 @@ public class CascoVehicle extends Vehicle {
 	return view4;
     }
 
-    public void setView4(Image view4) {
+    public void setView4(final Image view4) {
 	this.view4 = view4;
     }
 }

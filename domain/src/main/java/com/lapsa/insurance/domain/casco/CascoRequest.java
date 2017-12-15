@@ -33,7 +33,7 @@ public class CascoRequest extends InsuranceRequest {
     public CascoRequest() {
     }
 
-    public CascoRequest(RequestSource source) {
+    public CascoRequest(final RequestSource source) {
 	super(source);
     }
 
@@ -48,12 +48,12 @@ public class CascoRequest extends InsuranceRequest {
     }
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(CASCO_REQUEST.localized(variant, locale));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(id)
@@ -92,7 +92,7 @@ public class CascoRequest extends InsuranceRequest {
 	return casco;
     }
 
-    public void setCasco(Casco casco) {
+    public void setCasco(final Casco casco) {
 	this.casco = casco;
     }
 }

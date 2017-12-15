@@ -51,7 +51,7 @@ public class Policy extends InsuranceProduct {
 		.forEach(BaseEntity::unlazy);
     }
 
-    public PolicyDriver addDriver(PolicyDriver driver) {
+    public PolicyDriver addDriver(final PolicyDriver driver) {
 	MyObjects.requireNonNull(driver, "Value must not be null");
 	if (insuredDrivers == null)
 	    insuredDrivers = new ArrayList<>();
@@ -59,14 +59,14 @@ public class Policy extends InsuranceProduct {
 	return driver;
     }
 
-    public PolicyDriver removeDriver(PolicyDriver driver) {
+    public PolicyDriver removeDriver(final PolicyDriver driver) {
 	MyObjects.requireNonNull(driver, "Value must not be null");
 	if (insuredDrivers != null)
 	    insuredDrivers.remove(driver);
 	return driver;
     }
 
-    public PolicyVehicle addVehicle(PolicyVehicle vehicle) {
+    public PolicyVehicle addVehicle(final PolicyVehicle vehicle) {
 	MyObjects.requireNonNull(vehicle, "Value must not be null");
 	if (insuredVehicles == null)
 	    insuredVehicles = new ArrayList<>();
@@ -74,7 +74,7 @@ public class Policy extends InsuranceProduct {
 	return vehicle;
     }
 
-    public PolicyVehicle removeVehicle(PolicyVehicle vehicle) {
+    public PolicyVehicle removeVehicle(final PolicyVehicle vehicle) {
 	MyObjects.requireNonNull(vehicle, "Value must not be null");
 	if (insuredVehicles != null)
 	    insuredVehicles.remove(vehicle);
@@ -82,12 +82,12 @@ public class Policy extends InsuranceProduct {
     }
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(POLICY.localized(variant, locale));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(calculation) //
@@ -120,7 +120,7 @@ public class Policy extends InsuranceProduct {
 	return insuredDrivers;
     }
 
-    protected void setInsuredDrivers(List<PolicyDriver> insuredDrivers) {
+    protected void setInsuredDrivers(final List<PolicyDriver> insuredDrivers) {
 	this.insuredDrivers = insuredDrivers;
     }
 
@@ -128,7 +128,7 @@ public class Policy extends InsuranceProduct {
 	return insuredVehicles;
     }
 
-    protected void setInsuredVehicles(List<PolicyVehicle> insuredVehicles) {
+    protected void setInsuredVehicles(final List<PolicyVehicle> insuredVehicles) {
 	this.insuredVehicles = insuredVehicles;
     }
 }

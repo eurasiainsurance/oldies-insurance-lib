@@ -41,12 +41,12 @@ public class InsurancePeriodData extends Domain {
     private LocalDate to;
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(INSURANCE_PERIOD_DATA.localized(variant, locale));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(from) //
@@ -74,7 +74,7 @@ public class InsurancePeriodData extends Domain {
 	return from;
     }
 
-    public void setFrom(LocalDate from) {
+    public void setFrom(final LocalDate from) {
 	this.from = from;
     }
 
@@ -82,7 +82,7 @@ public class InsurancePeriodData extends Domain {
 	return to;
     }
 
-    public void setTo(LocalDate to) {
+    public void setTo(final LocalDate to) {
 	this.to = to;
     }
 }

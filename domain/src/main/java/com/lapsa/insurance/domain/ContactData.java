@@ -31,12 +31,12 @@ public class ContactData extends Domain {
     private String siteUrl;
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(CONTACT_DATA.localized(variant, locale));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(email) //
@@ -59,7 +59,7 @@ public class ContactData extends Domain {
 	return phone;
     }
 
-    public void setPhone(PhoneNumber phone) {
+    public void setPhone(final PhoneNumber phone) {
 	this.phone = phone;
     }
 
@@ -67,7 +67,7 @@ public class ContactData extends Domain {
 	return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(final String email) {
 	this.email = email;
     }
 
@@ -75,7 +75,7 @@ public class ContactData extends Domain {
 	return siteUrl;
     }
 
-    public void setSiteUrl(String siteUrl) {
+    public void setSiteUrl(final String siteUrl) {
 	this.siteUrl = siteUrl;
     }
 

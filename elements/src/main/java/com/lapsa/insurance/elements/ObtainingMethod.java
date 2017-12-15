@@ -18,10 +18,10 @@ public enum ObtainingMethod implements LocalizedElement {
     //
 
     private ObtainingMethod() {
-	this.defined = true;
+	defined = true;
     }
 
-    private ObtainingMethod(boolean defined) {
+    private ObtainingMethod(final boolean defined) {
 	this.defined = defined;
     }
 

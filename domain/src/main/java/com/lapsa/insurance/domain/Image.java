@@ -62,7 +62,7 @@ public class Image extends BaseEntity {
     @Column(name = "MIME_TYPE")
     private String mimeType;
 
-    @Basic(fetch = FetchType.EAGER)
+    @Basic(fetch = FetchType.LAZY)
     @Lob
     @Column(name = "CONTENT")
     private byte[] content;

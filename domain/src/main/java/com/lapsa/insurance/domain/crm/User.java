@@ -43,10 +43,10 @@ public class User extends BaseEntity {
     @Column(name = "HIDDEN")
     private boolean hidden;
 
-    @OneToMany(fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "user")
+    @OneToMany(fetch = FetchType.EAGER, orphanRemoval = true, mappedBy = "user")
     private List<UserLogin> logins = new ArrayList<>();
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "members", cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "members", cascade = CascadeType.ALL)
     private List<UserGroup> groups = new ArrayList<>();
 
     @Override

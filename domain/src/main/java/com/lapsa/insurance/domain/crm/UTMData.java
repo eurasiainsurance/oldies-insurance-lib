@@ -41,12 +41,12 @@ public class UTMData extends Domain {
     private String term;
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(UTM_DATA.localized(variant, locale));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(source) //
@@ -79,7 +79,7 @@ public class UTMData extends Domain {
 	return source;
     }
 
-    public void setSource(String source) {
+    public void setSource(final String source) {
 	this.source = source;
     }
 
@@ -87,7 +87,7 @@ public class UTMData extends Domain {
 	return medium;
     }
 
-    public void setMedium(String medium) {
+    public void setMedium(final String medium) {
 	this.medium = medium;
     }
 
@@ -95,7 +95,7 @@ public class UTMData extends Domain {
 	return campaign;
     }
 
-    public void setCampaign(String campaign) {
+    public void setCampaign(final String campaign) {
 	this.campaign = campaign;
     }
 
@@ -103,7 +103,7 @@ public class UTMData extends Domain {
 	return content;
     }
 
-    public void setContent(String content) {
+    public void setContent(final String content) {
 	this.content = content;
     }
 
@@ -111,7 +111,7 @@ public class UTMData extends Domain {
 	return term;
     }
 
-    public void setTerm(String term) {
+    public void setTerm(final String term) {
 	this.term = term;
     }
 }

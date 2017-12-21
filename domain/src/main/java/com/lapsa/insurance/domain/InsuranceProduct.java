@@ -20,7 +20,7 @@ public abstract class InsuranceProduct extends BaseEntity {
 	return calculation;
     }
 
-    public void setCalculation(CalculationData calculation) {
+    public void setCalculation(final CalculationData calculation) {
 	this.calculation = calculation;
     }
 
@@ -28,7 +28,7 @@ public abstract class InsuranceProduct extends BaseEntity {
 	return period;
     }
 
-    public void setPeriod(InsurancePeriodData period) {
+    public void setPeriod(final InsurancePeriodData period) {
 	this.period = period;
     }
 }

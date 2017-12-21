@@ -64,12 +64,12 @@ public class PolicyDriver extends Driver {
     private boolean hasAnyPrivilege = false;
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(POLICY_DRIVER.localized(variant, locale));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(personalData) //
@@ -104,7 +104,7 @@ public class PolicyDriver extends Driver {
 	return insuranceClassType;
     }
 
-    public void setInsuranceClassType(InsuranceClassType insuranceClassType) {
+    public void setInsuranceClassType(final InsuranceClassType insuranceClassType) {
 	this.insuranceClassType = insuranceClassType;
     }
 
@@ -112,7 +112,7 @@ public class PolicyDriver extends Driver {
 	return ageClass;
     }
 
-    public void setAgeClass(InsuredAgeClass ageClass) {
+    public void setAgeClass(final InsuredAgeClass ageClass) {
 	this.ageClass = ageClass;
     }
 
@@ -120,7 +120,7 @@ public class PolicyDriver extends Driver {
 	return expirienceClass;
     }
 
-    public void setExpirienceClass(InsuredExpirienceClass expirienceClass) {
+    public void setExpirienceClass(final InsuredExpirienceClass expirienceClass) {
 	this.expirienceClass = expirienceClass;
     }
 
@@ -128,7 +128,7 @@ public class PolicyDriver extends Driver {
 	return fetched;
     }
 
-    public void setFetched(boolean fetched) {
+    public void setFetched(final boolean fetched) {
 	this.fetched = fetched;
     }
 
@@ -136,7 +136,7 @@ public class PolicyDriver extends Driver {
 	return hasAnyPrivilege;
     }
 
-    public void setHasAnyPrivilege(boolean hasAnyPrivilege) {
+    public void setHasAnyPrivilege(final boolean hasAnyPrivilege) {
 	this.hasAnyPrivilege = hasAnyPrivilege;
     }
 }

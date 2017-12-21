@@ -19,10 +19,10 @@ public enum DeliveryTimeSlot implements LocalizedElement {
     //
 
     private DeliveryTimeSlot() {
-	this.selectable = true;
+	selectable = true;
     }
 
-    private DeliveryTimeSlot(boolean selectable) {
+    private DeliveryTimeSlot(final boolean selectable) {
 	this.selectable = selectable;
     }
 

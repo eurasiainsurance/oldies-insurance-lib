@@ -42,7 +42,7 @@ public abstract class SidedScannedDocument extends BaseEntity {
 	return frontside;
     }
 
-    public void setFrontside(Image frontside) {
+    public void setFrontside(final Image frontside) {
 	this.frontside = frontside;
     }
 
@@ -50,7 +50,7 @@ public abstract class SidedScannedDocument extends BaseEntity {
 	return backside;
     }
 
-    public void setBackside(Image backside) {
+    public void setBackside(final Image backside) {
 	this.backside = backside;
     }
 }

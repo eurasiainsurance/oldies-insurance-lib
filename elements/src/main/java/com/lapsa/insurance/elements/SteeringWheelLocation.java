@@ -17,10 +17,10 @@ public enum SteeringWheelLocation implements LocalizedElement {
     //
 
     private SteeringWheelLocation() {
-	this.selectable = true;
+	selectable = true;
     }
 
-    private SteeringWheelLocation(boolean selectable) {
+    private SteeringWheelLocation(final boolean selectable) {
 	this.selectable = selectable;
     }
 

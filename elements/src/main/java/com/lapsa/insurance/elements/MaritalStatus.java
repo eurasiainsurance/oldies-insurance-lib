@@ -17,10 +17,10 @@ public enum MaritalStatus implements LocalizedElement {
     //
 
     private MaritalStatus() {
-	this.selectable = true;
+	selectable = true;
     }
 
-    private MaritalStatus(boolean selectable) {
+    private MaritalStatus(final boolean selectable) {
 	this.selectable = selectable;
     }
 

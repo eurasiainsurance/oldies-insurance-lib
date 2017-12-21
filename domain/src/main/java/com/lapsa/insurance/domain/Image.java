@@ -30,7 +30,7 @@ public class Image extends BaseEntity {
 	private final int height;
 	private final long size;
 
-	public ImageProperties(int type, int width, int height, long size) {
+	public ImageProperties(final int type, final int width, final int height, final long size) {
 	    this.type = type;
 	    this.width = width;
 	    this.height = height;
@@ -62,7 +62,7 @@ public class Image extends BaseEntity {
     @Column(name = "MIME_TYPE")
     private String mimeType;
 
-    @Basic(fetch = FetchType.EAGER)
+    @Basic(fetch = FetchType.LAZY)
     @Lob
     @Column(name = "CONTENT")
     private byte[] content;
@@ -73,13 +73,13 @@ public class Image extends BaseEntity {
     public Image() {
     }
 
-    public Image(String fileName, String mimeType, byte[] content) {
+    public Image(final String fileName, final String mimeType, final byte[] content) {
 	this.fileName = fileName;
 	this.mimeType = mimeType;
 	setContent(content);
     }
 
-    public void setContent(byte[] content) {
+    public void setContent(final byte[] content) {
 	this.content = content;
 	imageProperties = null;
     }
@@ -91,21 +91,21 @@ public class Image extends BaseEntity {
     }
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
+    public String localized(final LocalizationVariant variant, final Locale locale) {
 	return fileName;
     }
 
     // PRIVATE
 
-    private static ImageProperties parseForProperties(byte[] content) {
+    private static ImageProperties parseForProperties(final byte[] content) {
 	if (content == null || content.length == 0)
 	    return null;
 	try {
-	    BufferedImage buf = ImageIO.read(new ByteArrayInputStream(content));
+	    final BufferedImage buf = ImageIO.read(new ByteArrayInputStream(content));
 	    if (buf == null)
 		return null;
 	    return new ImageProperties(buf.getType(), buf.getWidth(), buf.getHeight(), content.length);
-	} catch (IOException ignored) {
+	} catch (final IOException ignored) {
 	    return null;
 	}
     }
@@ -116,7 +116,7 @@ public class Image extends BaseEntity {
 	return fileName;
     }
 
-    public void setFileName(String fileName) {
+    public void setFileName(final String fileName) {
 	this.fileName = fileName;
     }
 
@@ -124,7 +124,7 @@ public class Image extends BaseEntity {
 	return mimeType;
     }
 
-    public void setMimeType(String mimeType) {
+    public void setMimeType(final String mimeType) {
 	this.mimeType = mimeType;
     }
 

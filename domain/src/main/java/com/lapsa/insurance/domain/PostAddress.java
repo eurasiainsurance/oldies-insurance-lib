@@ -75,8 +75,8 @@ public class PostAddress extends Domain {
     }
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringJoiner sj = new StringJoiner(", ");
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringJoiner sj = new StringJoiner(", ");
 	sj.setEmptyValue(POST_ADDRESS.localized(variant, locale));
 
 	MyOptionals.of(postIndex)
@@ -98,7 +98,7 @@ public class PostAddress extends Domain {
 	return postIndex;
     }
 
-    public void setPostIndex(String postIndex) {
+    public void setPostIndex(final String postIndex) {
 	this.postIndex = postIndex;
     }
 
@@ -106,7 +106,7 @@ public class PostAddress extends Domain {
 	return city;
     }
 
-    public void setCity(KZCity city) {
+    public void setCity(final KZCity city) {
 	this.city = city;
     }
 
@@ -114,7 +114,7 @@ public class PostAddress extends Domain {
 	return street;
     }
 
-    public void setStreet(String street) {
+    public void setStreet(final String street) {
 	this.street = street;
     }
 
@@ -122,7 +122,7 @@ public class PostAddress extends Domain {
 	return streetLocalization;
     }
 
-    protected void setStreetLocalization(Map<LocalizationLanguage, String> streetLocalization) {
+    protected void setStreetLocalization(final Map<LocalizationLanguage, String> streetLocalization) {
 	this.streetLocalization = streetLocalization;
     }
 }

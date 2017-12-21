@@ -29,7 +29,7 @@ public class GeoPoint extends Domain {
     public GeoPoint() {
     }
 
-    public GeoPoint(double latitude, double longitude) {
+    public GeoPoint(final double latitude, final double longitude) {
 	this.latitude = latitude;
 	this.longitude = longitude;
     }
@@ -42,12 +42,12 @@ public class GeoPoint extends Domain {
     }
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(GEO_POINT.localized(variant, locale));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	sj.add(GEO_POINT_LAT.localized(variant, locale) + ": " + GEO_LONG_NUMBER_FORMAT.format(latitude) + "°");
@@ -63,7 +63,7 @@ public class GeoPoint extends Domain {
 	return latitude;
     }
 
-    public void setLatitude(double latitude) {
+    public void setLatitude(final double latitude) {
 	this.latitude = latitude;
     }
 
@@ -71,7 +71,7 @@ public class GeoPoint extends Domain {
 	return longitude;
     }
 
-    public void setLongitude(double longitude) {
+    public void setLongitude(final double longitude) {
 	this.longitude = longitude;
     }
 }

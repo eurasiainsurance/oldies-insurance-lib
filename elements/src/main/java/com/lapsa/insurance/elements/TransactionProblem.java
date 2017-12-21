@@ -20,10 +20,10 @@ public enum TransactionProblem implements LocalizedElement {
     //
 
     private TransactionProblem() {
-	this.selectable = true;
+	selectable = true;
     }
 
-    private TransactionProblem(boolean selectable) {
+    private TransactionProblem(final boolean selectable) {
 	this.selectable = selectable;
     }
 

@@ -88,7 +88,7 @@ public abstract class Vehicle extends BaseEntity {
     }
 
     public String getFullName() {
-	StringJoiner sj = new StringJoiner(" ");
+	final StringJoiner sj = new StringJoiner(" ");
 
 	MyOptionals.of(manufacturer) //
 		.map(String::trim) //
@@ -109,7 +109,7 @@ public abstract class Vehicle extends BaseEntity {
 	return vinCode;
     }
 
-    public void setVinCode(String vinCode) {
+    public void setVinCode(final String vinCode) {
 	this.vinCode = vinCode;
     }
 
@@ -117,7 +117,7 @@ public abstract class Vehicle extends BaseEntity {
 	return model;
     }
 
-    public void setModel(String model) {
+    public void setModel(final String model) {
 	this.model = model;
     }
 
@@ -125,7 +125,7 @@ public abstract class Vehicle extends BaseEntity {
 	return manufacturer;
     }
 
-    public void setManufacturer(String manufacturer) {
+    public void setManufacturer(final String manufacturer) {
 	this.manufacturer = manufacturer;
     }
 
@@ -133,7 +133,7 @@ public abstract class Vehicle extends BaseEntity {
 	return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(final String color) {
 	this.color = color;
     }
 
@@ -141,7 +141,7 @@ public abstract class Vehicle extends BaseEntity {
 	return yearOfManufacture;
     }
 
-    public void setYearOfManufacture(Integer yearOfManufacture) {
+    public void setYearOfManufacture(final Integer yearOfManufacture) {
 	this.yearOfManufacture = yearOfManufacture;
     }
 
@@ -149,7 +149,7 @@ public abstract class Vehicle extends BaseEntity {
 	return area;
     }
 
-    public void setArea(KZArea area) {
+    public void setArea(final KZArea area) {
 	this.area = area;
     }
 
@@ -157,7 +157,7 @@ public abstract class Vehicle extends BaseEntity {
 	return city;
     }
 
-    public void setCity(KZCity city) {
+    public void setCity(final KZCity city) {
 	this.city = city;
     }
 
@@ -165,7 +165,7 @@ public abstract class Vehicle extends BaseEntity {
 	return certificateData;
     }
 
-    public void setCertificateData(VehicleCertificateData certificateData) {
+    public void setCertificateData(final VehicleCertificateData certificateData) {
 	this.certificateData = certificateData;
     }
 }

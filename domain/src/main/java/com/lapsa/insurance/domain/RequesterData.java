@@ -67,12 +67,12 @@ public class RequesterData extends Domain {
     private LocalizationLanguage preferLanguage;
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(REQUESTER_DATA.localized(variant, locale));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(name) //
@@ -102,7 +102,7 @@ public class RequesterData extends Domain {
 	return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
 	this.name = name;
     }
 
@@ -110,7 +110,7 @@ public class RequesterData extends Domain {
 	return phone;
     }
 
-    public void setPhone(PhoneNumber phone) {
+    public void setPhone(final PhoneNumber phone) {
 	this.phone = phone;
     }
 
@@ -118,7 +118,7 @@ public class RequesterData extends Domain {
 	return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(final String email) {
 	this.email = email;
     }
 
@@ -126,7 +126,7 @@ public class RequesterData extends Domain {
 	return idNumber;
     }
 
-    public void setIdNumber(TaxpayerNumber idNumber) {
+    public void setIdNumber(final TaxpayerNumber idNumber) {
 	this.idNumber = idNumber;
     }
 
@@ -134,7 +134,7 @@ public class RequesterData extends Domain {
 	return preferLanguage;
     }
 
-    public void setPreferLanguage(LocalizationLanguage preferLanguage) {
+    public void setPreferLanguage(final LocalizationLanguage preferLanguage) {
 	this.preferLanguage = preferLanguage;
     }
 
@@ -142,7 +142,7 @@ public class RequesterData extends Domain {
 	return allowSpam;
     }
 
-    public void setAllowSpam(boolean allowSpam) {
+    public void setAllowSpam(final boolean allowSpam) {
 	this.allowSpam = allowSpam;
     }
 
@@ -150,7 +150,7 @@ public class RequesterData extends Domain {
 	return allowProcessPersonalData;
     }
 
-    public void setAllowProcessPersonalData(boolean allowProcessPersonalData) {
+    public void setAllowProcessPersonalData(final boolean allowProcessPersonalData) {
 	this.allowProcessPersonalData = allowProcessPersonalData;
     }
 }

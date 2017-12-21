@@ -50,12 +50,12 @@ public class VehicleCertificateData extends SidedScannedDocument {
     private LocalDate dateOfIssue;
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(VEHICLE_CERTIFICATE_DATA.localized(variant, locale));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(number)
@@ -83,7 +83,7 @@ public class VehicleCertificateData extends SidedScannedDocument {
 	return number;
     }
 
-    public void setNumber(String number) {
+    public void setNumber(final String number) {
 	this.number = number;
     }
 
@@ -91,7 +91,7 @@ public class VehicleCertificateData extends SidedScannedDocument {
 	return dateOfIssue;
     }
 
-    public void setDateOfIssue(LocalDate dateOfIssue) {
+    public void setDateOfIssue(final LocalDate dateOfIssue) {
 	this.dateOfIssue = dateOfIssue;
     }
 
@@ -99,7 +99,7 @@ public class VehicleCertificateData extends SidedScannedDocument {
 	return registrationNumber;
     }
 
-    public void setRegistrationNumber(VehicleRegNumber registrationNumber) {
+    public void setRegistrationNumber(final VehicleRegNumber registrationNumber) {
 	this.registrationNumber = registrationNumber;
     }
 }

@@ -46,13 +46,13 @@ public class PersonalData extends Domain {
     private Sex sex;
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(MyOptionals.of(getFullName()) //
 		.orElseGet(() -> PERSONAL_DATA.localized(variant, locale)));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(dayOfBirth) //
@@ -70,7 +70,7 @@ public class PersonalData extends Domain {
     }
 
     public String getFullName() {
-	StringJoiner sj = new StringJoiner(" ");
+	final StringJoiner sj = new StringJoiner(" ");
 
 	MyOptionals.of(surename) //
 		.map(String::trim)
@@ -99,7 +99,7 @@ public class PersonalData extends Domain {
 	return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
 	this.name = name;
     }
 
@@ -107,7 +107,7 @@ public class PersonalData extends Domain {
 	return surename;
     }
 
-    public void setSurename(String surename) {
+    public void setSurename(final String surename) {
 	this.surename = surename;
     }
 
@@ -115,7 +115,7 @@ public class PersonalData extends Domain {
 	return patronymic;
     }
 
-    public void setPatronymic(String patronymic) {
+    public void setPatronymic(final String patronymic) {
 	this.patronymic = patronymic;
     }
 
@@ -123,7 +123,7 @@ public class PersonalData extends Domain {
 	return dayOfBirth;
     }
 
-    public void setDayOfBirth(LocalDate dayOfBirth) {
+    public void setDayOfBirth(final LocalDate dayOfBirth) {
 	this.dayOfBirth = dayOfBirth;
     }
 
@@ -131,7 +131,7 @@ public class PersonalData extends Domain {
 	return sex;
     }
 
-    public void setSex(Sex sex) {
+    public void setSex(final Sex sex) {
 	this.sex = sex;
     }
 }

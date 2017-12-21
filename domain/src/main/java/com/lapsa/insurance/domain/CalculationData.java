@@ -50,12 +50,12 @@ public class CalculationData extends Domain {
     }
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(CALCULATION_DATA.localized(variant, locale));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	sj.add(MyOptionals.of(this) //
@@ -74,7 +74,7 @@ public class CalculationData extends Domain {
 	return calculatedPremiumCost;
     }
 
-    public void setCalculatedPremiumCost(double calculatedPremiumCost) {
+    public void setCalculatedPremiumCost(final double calculatedPremiumCost) {
 	this.calculatedPremiumCost = calculatedPremiumCost;
     }
 
@@ -82,7 +82,7 @@ public class CalculationData extends Domain {
 	return actualPremiumCost;
     }
 
-    public void setActualPremiumCost(double actualPremiumCost) {
+    public void setActualPremiumCost(final double actualPremiumCost) {
 	this.actualPremiumCost = actualPremiumCost;
     }
 
@@ -90,7 +90,7 @@ public class CalculationData extends Domain {
 	return discountAmount;
     }
 
-    public void setDiscountAmount(double discountAmount) {
+    public void setDiscountAmount(final double discountAmount) {
 	this.discountAmount = discountAmount;
     }
 
@@ -98,7 +98,7 @@ public class CalculationData extends Domain {
 	return premiumCurrency;
     }
 
-    public void setPremiumCurrency(FinCurrency premiumCurrency) {
+    public void setPremiumCurrency(final FinCurrency premiumCurrency) {
 	this.premiumCurrency = premiumCurrency;
     }
 }

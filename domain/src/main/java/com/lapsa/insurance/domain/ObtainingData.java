@@ -93,8 +93,8 @@ public class ObtainingData extends Domain {
     }
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(MyOptionals.of(method) //
 		.filter(ObtainingMethod::isDefined) //
@@ -102,7 +102,7 @@ public class ObtainingData extends Domain {
 		.map(MyStrings::capitalizeFirstLetter) //
 		.orElseGet(() -> OBTAINING_DATA.localized(variant, locale)));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(status) //
@@ -121,7 +121,7 @@ public class ObtainingData extends Domain {
 	return method;
     }
 
-    public void setMethod(ObtainingMethod method) {
+    public void setMethod(final ObtainingMethod method) {
 	this.method = method;
     }
 
@@ -129,7 +129,7 @@ public class ObtainingData extends Domain {
 	return status;
     }
 
-    public void setStatus(ObtainingStatus status) {
+    public void setStatus(final ObtainingStatus status) {
 	this.status = status;
     }
 
@@ -137,7 +137,7 @@ public class ObtainingData extends Domain {
 	return pickupCity;
     }
 
-    public void setPickupCity(KZCity pickupCity) {
+    public void setPickupCity(final KZCity pickupCity) {
 	this.pickupCity = pickupCity;
     }
 
@@ -145,7 +145,7 @@ public class ObtainingData extends Domain {
 	return pickupPOS;
     }
 
-    public void setPickupPOS(CompanyPointOfSale pickupPOS) {
+    public void setPickupPOS(final CompanyPointOfSale pickupPOS) {
 	this.pickupPOS = pickupPOS;
     }
 
@@ -153,7 +153,7 @@ public class ObtainingData extends Domain {
 	return deliveryDate;
     }
 
-    public void setDeliveryDate(LocalDate deliveryDate) {
+    public void setDeliveryDate(final LocalDate deliveryDate) {
 	this.deliveryDate = deliveryDate;
     }
 
@@ -161,7 +161,7 @@ public class ObtainingData extends Domain {
 	return deliveryTime;
     }
 
-    public void setDeliveryTime(DeliveryTimeSlot deliveryTime) {
+    public void setDeliveryTime(final DeliveryTimeSlot deliveryTime) {
 	this.deliveryTime = deliveryTime;
     }
 
@@ -169,7 +169,7 @@ public class ObtainingData extends Domain {
 	return deliveryCity;
     }
 
-    public void setDeliveryCity(KZCity deliveryCity) {
+    public void setDeliveryCity(final KZCity deliveryCity) {
 	this.deliveryCity = deliveryCity;
     }
 
@@ -177,7 +177,7 @@ public class ObtainingData extends Domain {
 	return deliveryAddress;
     }
 
-    public void setDeliveryAddress(String deliveryAddress) {
+    public void setDeliveryAddress(final String deliveryAddress) {
 	this.deliveryAddress = deliveryAddress;
     }
 }

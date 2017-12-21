@@ -61,15 +61,15 @@ public class IdentityCardData extends SidedScannedDocument {
     private IdentityCardType type;
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(MyOptionals.of(type) //
 		.map(Localized.toLocalizedMapper(variant, locale)) //
 		.map(MyStrings::capitalizeFirstLetter) //
 		.orElseGet(() -> IDENTITY_CARD_DATA.localized(variant, locale)));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(number) //
@@ -92,7 +92,7 @@ public class IdentityCardData extends SidedScannedDocument {
 	return dateOfIssue;
     }
 
-    public void setDateOfIssue(LocalDate dateOfIssue) {
+    public void setDateOfIssue(final LocalDate dateOfIssue) {
 	this.dateOfIssue = dateOfIssue;
     }
 
@@ -100,7 +100,7 @@ public class IdentityCardData extends SidedScannedDocument {
 	return issuingAuthority;
     }
 
-    public void setIssuingAuthority(String issuingAuthority) {
+    public void setIssuingAuthority(final String issuingAuthority) {
 	this.issuingAuthority = issuingAuthority;
     }
 
@@ -108,7 +108,7 @@ public class IdentityCardData extends SidedScannedDocument {
 	return number;
     }
 
-    public void setNumber(String number) {
+    public void setNumber(final String number) {
 	this.number = number;
     }
 
@@ -116,7 +116,7 @@ public class IdentityCardData extends SidedScannedDocument {
 	return type;
     }
 
-    public void setType(IdentityCardType type) {
+    public void setType(final IdentityCardType type) {
 	this.type = type;
     }
 }

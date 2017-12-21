@@ -17,10 +17,10 @@ public enum RequestSource implements LocalizedElement {
     //
 
     private RequestSource() {
-	this.selectable = true;
+	selectable = true;
     }
 
-    private RequestSource(boolean selectable) {
+    private RequestSource(final boolean selectable) {
 	this.selectable = selectable;
     }
 

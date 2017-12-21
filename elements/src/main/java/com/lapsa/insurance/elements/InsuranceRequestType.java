@@ -18,10 +18,10 @@ public enum InsuranceRequestType implements LocalizedElement {
     //
 
     private InsuranceRequestType() {
-	this.selectable = true;
+	selectable = true;
     }
 
-    private InsuranceRequestType(boolean selectable) {
+    private InsuranceRequestType(final boolean selectable) {
 	this.selectable = selectable;
     }
 

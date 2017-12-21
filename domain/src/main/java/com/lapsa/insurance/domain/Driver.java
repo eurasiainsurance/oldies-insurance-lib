@@ -65,7 +65,7 @@ public abstract class Driver extends BaseEntity {
 	return idNumber;
     }
 
-    public void setIdNumber(TaxpayerNumber idNumber) {
+    public void setIdNumber(final TaxpayerNumber idNumber) {
 	this.idNumber = idNumber;
     }
 
@@ -73,7 +73,7 @@ public abstract class Driver extends BaseEntity {
 	return taxPayerNumber;
     }
 
-    public void setTaxPayerNumber(String taxPayerNumber) {
+    public void setTaxPayerNumber(final String taxPayerNumber) {
 	this.taxPayerNumber = taxPayerNumber;
     }
 
@@ -81,7 +81,7 @@ public abstract class Driver extends BaseEntity {
 	return personalData;
     }
 
-    public void setPersonalData(PersonalData personalData) {
+    public void setPersonalData(final PersonalData personalData) {
 	this.personalData = personalData;
     }
 
@@ -89,7 +89,7 @@ public abstract class Driver extends BaseEntity {
 	return originData;
     }
 
-    public void setOriginData(OriginData originData) {
+    public void setOriginData(final OriginData originData) {
 	this.originData = originData;
     }
 
@@ -97,7 +97,7 @@ public abstract class Driver extends BaseEntity {
 	return residenceData;
     }
 
-    public void setResidenceData(ResidenceData residenceData) {
+    public void setResidenceData(final ResidenceData residenceData) {
 	this.residenceData = residenceData;
     }
 
@@ -105,7 +105,7 @@ public abstract class Driver extends BaseEntity {
 	return identityCardData;
     }
 
-    public void setIdentityCardData(IdentityCardData identityCardData) {
+    public void setIdentityCardData(final IdentityCardData identityCardData) {
 	this.identityCardData = identityCardData;
     }
 
@@ -113,7 +113,7 @@ public abstract class Driver extends BaseEntity {
 	return driverLicenseData;
     }
 
-    public void setDriverLicenseData(DriverLicenseData driverLicenseData) {
+    public void setDriverLicenseData(final DriverLicenseData driverLicenseData) {
 	this.driverLicenseData = driverLicenseData;
     }
 
@@ -121,7 +121,7 @@ public abstract class Driver extends BaseEntity {
 	return contactData;
     }
 
-    public void setContactData(ContactData contactData) {
+    public void setContactData(final ContactData contactData) {
 	this.contactData = contactData;
     }
 }

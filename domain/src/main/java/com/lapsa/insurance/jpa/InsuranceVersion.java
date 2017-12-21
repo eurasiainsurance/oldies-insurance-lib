@@ -16,6 +16,6 @@ public class InsuranceVersion {
 	return 0;
     }
 
-    public void setDummy(int dummy) {
+    public void setDummy(final int dummy) {
     }
 }

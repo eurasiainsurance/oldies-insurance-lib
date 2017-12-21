@@ -17,10 +17,10 @@ public enum VehicleAgeClass implements LocalizedElement {
     //
 
     private VehicleAgeClass() {
-	this.selectable = true;
+	selectable = true;
     }
 
-    private VehicleAgeClass(boolean selectable) {
+    private VehicleAgeClass(final boolean selectable) {
 	this.selectable = selectable;
     }
 

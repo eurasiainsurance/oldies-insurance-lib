@@ -19,11 +19,11 @@ public enum PaymentStatus implements LocalizedElement {
     //
 
     private PaymentStatus() {
-	this.defined = true;
+	defined = true;
     }
 
-    private PaymentStatus(boolean selectable) {
-	this.defined = selectable;
+    private PaymentStatus(final boolean selectable) {
+	defined = selectable;
     }
 
     //

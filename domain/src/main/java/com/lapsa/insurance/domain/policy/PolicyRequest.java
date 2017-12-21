@@ -33,7 +33,7 @@ public class PolicyRequest extends InsuranceRequest {
     public PolicyRequest() {
     }
 
-    public PolicyRequest(RequestSource source) {
+    public PolicyRequest(final RequestSource source) {
 	super(source);
     }
 
@@ -58,12 +58,12 @@ public class PolicyRequest extends InsuranceRequest {
     }
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(POLICY_REQUEST.localized(variant, locale));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(id)
@@ -92,7 +92,7 @@ public class PolicyRequest extends InsuranceRequest {
 	return policy;
     }
 
-    public void setPolicy(Policy policy) {
+    public void setPolicy(final Policy policy) {
 	this.policy = policy;
     }
 }

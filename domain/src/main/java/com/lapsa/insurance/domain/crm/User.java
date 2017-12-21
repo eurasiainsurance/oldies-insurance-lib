@@ -71,7 +71,7 @@ public class User extends BaseEntity {
 		.orElse(null);
     }
 
-    public UserLogin addLogin(UserLogin userLogin) {
+    public UserLogin addLogin(final UserLogin userLogin) {
 	if (userLogin == null)
 	    throw new NullPointerException("Value must not be null");
 	if (userLogin.getUser() != null)
@@ -83,7 +83,7 @@ public class User extends BaseEntity {
 	return userLogin;
     }
 
-    public UserLogin removeLogin(UserLogin userLogin) {
+    public UserLogin removeLogin(final UserLogin userLogin) {
 	if (userLogin == null)
 	    throw new NullPointerException("Value must not be null");
 	userLogin.setUser(null);
@@ -97,21 +97,21 @@ public class User extends BaseEntity {
     }
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
+    public String localized(final LocalizationVariant variant, final Locale locale) {
 
 	switch (variant) {
 	case SHORT:
-	    Optional<String> optionalName = MyOptionals.of(name);
+	    final Optional<String> optionalName = MyOptionals.of(name);
 	    if (optionalName.isPresent())
 		return optionalName.get();
 	case NORMAL:
 	case FULL:
 	default:
-	    StringBuilder sb = new StringBuilder();
+	    final StringBuilder sb = new StringBuilder();
 
 	    sb.append(USER.localized(variant, locale));
 
-	    StringJoiner sj = new StringJoiner(", ", " ", "");
+	    final StringJoiner sj = new StringJoiner(", ", " ", "");
 	    sj.setEmptyValue("");
 
 	    MyOptionals.of(name) //
@@ -141,7 +141,7 @@ public class User extends BaseEntity {
 	return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
 	this.name = name;
     }
 
@@ -149,7 +149,7 @@ public class User extends BaseEntity {
 	return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(final String email) {
 	this.email = email;
     }
 
@@ -157,7 +157,7 @@ public class User extends BaseEntity {
 	return logins;
     }
 
-    public void setLogins(List<UserLogin> logins) {
+    public void setLogins(final List<UserLogin> logins) {
 	this.logins = logins;
     }
 
@@ -165,7 +165,7 @@ public class User extends BaseEntity {
 	return hidden;
     }
 
-    public void setHidden(boolean hidden) {
+    public void setHidden(final boolean hidden) {
 	this.hidden = hidden;
     }
 
@@ -173,7 +173,7 @@ public class User extends BaseEntity {
 	return groups;
     }
 
-    public void setGroups(List<UserGroup> groups) {
+    public void setGroups(final List<UserGroup> groups) {
 	this.groups = groups;
     }
 }

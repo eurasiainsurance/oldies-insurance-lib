@@ -25,12 +25,12 @@ public class CompanyContactEmail extends BaseEntity {
     private String address;
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(COMPANY_CONTACT_EMAIL.localized(variant, locale));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	sj.add(MyOptionals.of(address)
@@ -47,7 +47,7 @@ public class CompanyContactEmail extends BaseEntity {
 	return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(final String address) {
 	this.address = address;
     }
 }

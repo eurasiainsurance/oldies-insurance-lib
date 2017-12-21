@@ -31,18 +31,18 @@ public class InetAddrData extends Domain {
     public InetAddrData() {
     }
 
-    public InetAddrData(String inetAddress, String inetHost) {
+    public InetAddrData(final String inetAddress, final String inetHost) {
 	this.inetAddress = inetAddress;
 	this.inetHost = inetHost;
     }
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(INET_ADDR_DATA.localized(variant, locale));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(inetAddress) //
@@ -62,7 +62,7 @@ public class InetAddrData extends Domain {
 	return inetAddress;
     }
 
-    public void setInetAddress(String inetAddress) {
+    public void setInetAddress(final String inetAddress) {
 	this.inetAddress = inetAddress;
     }
 
@@ -70,7 +70,7 @@ public class InetAddrData extends Domain {
 	return inetHost;
     }
 
-    public void setInetHost(String inetHost) {
+    public void setInetHost(final String inetHost) {
 	this.inetHost = inetHost;
     }
 }

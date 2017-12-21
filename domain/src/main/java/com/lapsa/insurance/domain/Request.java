@@ -70,7 +70,7 @@ public abstract class Request extends BaseEntity {
     public Request() {
     }
 
-    public Request(RequestSource source) {
+    public Request(final RequestSource source) {
 	this.source = source;
     }
 
@@ -105,19 +105,19 @@ public abstract class Request extends BaseEntity {
     })
     protected InetAddrData inetAddrData = new InetAddrData();
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, optional = true, cascade = CascadeType.ALL)
     @JoinColumn(name = "CREATED_BY_USER_ID")
     protected User createdBy;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, optional = true, cascade = CascadeType.ALL)
     @JoinColumn(name = "ACCEPTED_BY_USER_ID")
     protected User acceptedBy;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, optional = true, cascade = CascadeType.ALL)
     @JoinColumn(name = "COMPLETED_BY_USER_ID")
     protected User completedBy;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, optional = true, cascade = CascadeType.ALL)
     @JoinColumn(name = "CLOSED_BY_USER_ID")
     protected User closedBy;
 
@@ -140,7 +140,7 @@ public abstract class Request extends BaseEntity {
 	return created;
     }
 
-    public void setCreated(Instant created) {
+    public void setCreated(final Instant created) {
 	this.created = created;
     }
 
@@ -148,7 +148,7 @@ public abstract class Request extends BaseEntity {
 	return updated;
     }
 
-    public void setUpdated(Instant updated) {
+    public void setUpdated(final Instant updated) {
 	this.updated = updated;
     }
 
@@ -156,7 +156,7 @@ public abstract class Request extends BaseEntity {
 	return closed;
     }
 
-    public void setClosed(Instant closed) {
+    public void setClosed(final Instant closed) {
 	this.closed = closed;
     }
 
@@ -164,7 +164,7 @@ public abstract class Request extends BaseEntity {
 	return createdBy;
     }
 
-    public void setCreatedBy(User createdBy) {
+    public void setCreatedBy(final User createdBy) {
 	this.createdBy = createdBy;
     }
 
@@ -172,7 +172,7 @@ public abstract class Request extends BaseEntity {
 	return accepted;
     }
 
-    public void setAccepted(Instant accepted) {
+    public void setAccepted(final Instant accepted) {
 	this.accepted = accepted;
     }
 
@@ -180,7 +180,7 @@ public abstract class Request extends BaseEntity {
 	return completed;
     }
 
-    public void setCompleted(Instant completed) {
+    public void setCompleted(final Instant completed) {
 	this.completed = completed;
     }
 
@@ -188,7 +188,7 @@ public abstract class Request extends BaseEntity {
 	return status;
     }
 
-    public void setStatus(RequestStatus status) {
+    public void setStatus(final RequestStatus status) {
 	this.status = status;
     }
 
@@ -196,7 +196,7 @@ public abstract class Request extends BaseEntity {
 	return progressStatus;
     }
 
-    public void setProgressStatus(ProgressStatus progressStatus) {
+    public void setProgressStatus(final ProgressStatus progressStatus) {
 	this.progressStatus = progressStatus;
     }
 
@@ -204,7 +204,7 @@ public abstract class Request extends BaseEntity {
 	return requester;
     }
 
-    public void setRequester(RequesterData requester) {
+    public void setRequester(final RequesterData requester) {
 	this.requester = requester;
     }
 
@@ -212,7 +212,7 @@ public abstract class Request extends BaseEntity {
 	return utmData;
     }
 
-    public void setUtmData(UTMData utmData) {
+    public void setUtmData(final UTMData utmData) {
 	this.utmData = utmData;
     }
 
@@ -220,7 +220,7 @@ public abstract class Request extends BaseEntity {
 	return acceptedBy;
     }
 
-    public void setAcceptedBy(User acceptedBy) {
+    public void setAcceptedBy(final User acceptedBy) {
 	this.acceptedBy = acceptedBy;
     }
 
@@ -228,7 +228,7 @@ public abstract class Request extends BaseEntity {
 	return completedBy;
     }
 
-    public void setCompletedBy(User completedBy) {
+    public void setCompletedBy(final User completedBy) {
 	this.completedBy = completedBy;
     }
 
@@ -236,7 +236,7 @@ public abstract class Request extends BaseEntity {
 	return closedBy;
     }
 
-    public void setClosedBy(User closedBy) {
+    public void setClosedBy(final User closedBy) {
 	this.closedBy = closedBy;
     }
 
@@ -244,7 +244,7 @@ public abstract class Request extends BaseEntity {
 	return note;
     }
 
-    public void setNote(String note) {
+    public void setNote(final String note) {
 	this.note = note;
     }
 
@@ -252,7 +252,7 @@ public abstract class Request extends BaseEntity {
 	return source;
     }
 
-    public void setSource(RequestSource source) {
+    public void setSource(final RequestSource source) {
 	this.source = source;
     }
 
@@ -260,7 +260,7 @@ public abstract class Request extends BaseEntity {
 	return inetAddrData;
     }
 
-    public void setInetAddrData(InetAddrData inetAddrData) {
+    public void setInetAddrData(final InetAddrData inetAddrData) {
 	this.inetAddrData = inetAddrData;
     }
 }

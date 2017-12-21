@@ -18,10 +18,10 @@ public enum CascoCarAgeClass implements LocalizedElement {
     //
 
     private CascoCarAgeClass() {
-	this.selectable = true;
+	selectable = true;
     }
 
-    private CascoCarAgeClass(boolean selectable) {
+    private CascoCarAgeClass(final boolean selectable) {
 	this.selectable = selectable;
     }
 

@@ -17,10 +17,10 @@ public enum InsuredExpirienceClass implements LocalizedElement {
     //
 
     private InsuredExpirienceClass() {
-	this.selectable = true;
+	selectable = true;
     }
 
-    private InsuredExpirienceClass(boolean selectable) {
+    private InsuredExpirienceClass(final boolean selectable) {
 	this.selectable = selectable;
     }
 

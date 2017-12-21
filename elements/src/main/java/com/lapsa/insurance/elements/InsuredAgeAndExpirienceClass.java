@@ -25,14 +25,14 @@ public enum InsuredAgeAndExpirienceClass implements LocalizedElement {
 
     //
 
-    private InsuredAgeAndExpirienceClass(InsuredAgeClass ageClass, InsuredExpirienceClass expirienceClass) {
-	this.selectable = true;
+    private InsuredAgeAndExpirienceClass(final InsuredAgeClass ageClass, final InsuredExpirienceClass expirienceClass) {
+	selectable = true;
 	this.expirienceClass = MyObjects.requireNonNull(expirienceClass);
 	this.ageClass = MyObjects.requireNonNull(ageClass);
     }
 
-    private InsuredAgeAndExpirienceClass(InsuredAgeClass ageClass, InsuredExpirienceClass expirienceClass,
-	    boolean selectable) {
+    private InsuredAgeAndExpirienceClass(final InsuredAgeClass ageClass, final InsuredExpirienceClass expirienceClass,
+	    final boolean selectable) {
 	this.selectable = selectable;
 	this.expirienceClass = MyObjects.requireNonNull(expirienceClass);
 	this.ageClass = MyObjects.requireNonNull(ageClass);
@@ -62,8 +62,8 @@ public enum InsuredAgeAndExpirienceClass implements LocalizedElement {
 		.toArray(InsuredAgeAndExpirienceClass[]::new);
     }
 
-    public static InsuredAgeAndExpirienceClass forPair(InsuredExpirienceClass expirienceClass,
-	    InsuredAgeClass ageClass) {
+    public static InsuredAgeAndExpirienceClass forPair(final InsuredExpirienceClass expirienceClass,
+	    final InsuredAgeClass ageClass) {
 	return Stream.of(values()) //
 		.filter(x -> ageClass == x.ageClass) //
 		.filter(x -> expirienceClass == x.expirienceClass) //

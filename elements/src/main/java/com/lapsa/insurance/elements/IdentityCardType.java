@@ -20,10 +20,10 @@ public enum IdentityCardType implements LocalizedElement {
     //
 
     private IdentityCardType() {
-	this.selectable = true;
+	selectable = true;
     }
 
-    private IdentityCardType(boolean selectable) {
+    private IdentityCardType(final boolean selectable) {
 	this.selectable = selectable;
     }
 

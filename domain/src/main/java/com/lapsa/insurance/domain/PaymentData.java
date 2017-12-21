@@ -53,13 +53,13 @@ public class PaymentData extends Domain {
     private Double paymentAmount;
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(MyOptionals.of(methodName) //
 		.orElseGet(() -> PAYMENT_DATA.localized(variant, locale)));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(status) //
@@ -91,7 +91,7 @@ public class PaymentData extends Domain {
 	return invoiceNumber;
     }
 
-    public void setInvoiceNumber(String invoiceNumber) {
+    public void setInvoiceNumber(final String invoiceNumber) {
 	this.invoiceNumber = invoiceNumber;
     }
 
@@ -99,7 +99,7 @@ public class PaymentData extends Domain {
 	return status;
     }
 
-    public void setStatus(PaymentStatus status) {
+    public void setStatus(final PaymentStatus status) {
 	this.status = status;
     }
 
@@ -107,11 +107,11 @@ public class PaymentData extends Domain {
 	return paymentReference;
     }
 
-    public void setPaymentReference(String paymentReference) {
+    public void setPaymentReference(final String paymentReference) {
 	this.paymentReference = paymentReference;
     }
 
-    public void setPaymentInstant(Instant paymentInstant) {
+    public void setPaymentInstant(final Instant paymentInstant) {
 	this.paymentInstant = paymentInstant;
     }
 
@@ -123,7 +123,7 @@ public class PaymentData extends Domain {
 	return methodName;
     }
 
-    public void setMethodName(String methodName) {
+    public void setMethodName(final String methodName) {
 	this.methodName = methodName;
     }
 
@@ -131,7 +131,7 @@ public class PaymentData extends Domain {
 	return paymentAmount;
     }
 
-    public void setPaymentAmount(Double paymentAmount) {
+    public void setPaymentAmount(final Double paymentAmount) {
 	this.paymentAmount = paymentAmount;
     }
 }

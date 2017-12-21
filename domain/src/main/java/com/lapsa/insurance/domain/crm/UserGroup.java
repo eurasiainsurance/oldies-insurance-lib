@@ -39,12 +39,12 @@ public class UserGroup extends BaseEntity {
     private List<User> members = new ArrayList<>();
 
     @Override
-    public String localized(LocalizationVariant variant, Locale locale) {
-	StringBuilder sb = new StringBuilder();
+    public String localized(final LocalizationVariant variant, final Locale locale) {
+	final StringBuilder sb = new StringBuilder();
 
 	sb.append(USER_GROUP.localized(variant, locale));
 
-	StringJoiner sj = new StringJoiner(", ", " ", "");
+	final StringJoiner sj = new StringJoiner(", ", " ", "");
 	sj.setEmptyValue("");
 
 	MyOptionals.of(name) //
@@ -69,7 +69,7 @@ public class UserGroup extends BaseEntity {
 	return members;
     }
 
-    protected void setMembers(List<User> members) {
+    protected void setMembers(final List<User> members) {
 	this.members = members;
     }
 
@@ -77,7 +77,7 @@ public class UserGroup extends BaseEntity {
 	return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
 	this.name = name;
     }
 }

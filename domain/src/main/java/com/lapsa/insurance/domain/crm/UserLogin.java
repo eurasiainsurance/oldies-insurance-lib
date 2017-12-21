@@ -30,7 +30,7 @@ public class UserLogin extends BaseEntity {
     @Column(name = "NAME", unique = true)
     private String name;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false, cascade = CascadeType.ALL)
     @JoinColumn(name = "USER_ID")
     private User user;
 

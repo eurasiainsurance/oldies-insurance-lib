@@ -34,7 +34,7 @@ public class UserGroup extends BaseEntity {
     @Column(name = "NAME")
     private String name;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "USER_2_GROUP", joinColumns = @JoinColumn(name = "USER_GROUP_ID"), inverseJoinColumns = @JoinColumn(name = "USER_ID"))
     private List<User> members = new ArrayList<>();
 

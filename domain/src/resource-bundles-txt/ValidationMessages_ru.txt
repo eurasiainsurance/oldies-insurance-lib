@@ -9,14 +9,3 @@ com.lapsa.insurance.domain.casco.CascoVehicle.cost.Min.message = Стоимос�
 com.lapsa.insurance.domain.casco.CascoVehicle.cost.Max.message = Стоимость автомобиля по программе Авто КАСКО не может превышать ₸  {value}
 com.lapsa.insurance.domain.casco.CascoVehicle.yearOfManufacture.NotTooOldYearOfIssue.message = К страхованию по программе Авто КАСКО принимаются автомобиле не старше {maxAge} лет
 com.lapsa.insurance.domain.casco.CascoVehicle.yearOfManufacture.NotTooYoungYearOfIssue.message = Укажите корректный год выпуска автомобиля
-
-com.lapsa.insurance.domain.ObtainingData.method.NotNullValue.message = Укажите способ получения полиса
-com.lapsa.insurance.domain.ObtainingData.pickupCity.NotNullValue.message = Необходимо указать город для того, чтобы выбрать офис страховой компани
-com.lapsa.insurance.domain.ObtainingData.pickupPOS.NotNullValue.message = Необходимо укзаать офис страховой компании для того, чтобы оформить самовывоз
-com.lapsa.insurance.domain.ObtainingData.deliveryCity.NotNullValue.message = Укажите Ваше местоположение
-com.lapsa.insurance.domain.ObtainingData.deliveryDate.NotNullValue.message = Укажите дату доставки
-com.lapsa.insurance.domain.ObtainingData.deliveryDate.DaysAfterNow.messages = Полис может быть доставлен только на следующий день после заказа
-com.lapsa.insurance.domain.ObtainingData.deliveryDate.DaysBeforeNow.messages = Слишком поздняя дата доставки полиса
-com.lapsa.insurance.domain.ObtainingData.deliveryTime.NotNullValue.message = Укажите время доставки
-com.lapsa.insurance.domain.ObtainingData.deliveryAddress.NotNullValue.message = Укажите адрес доставки
-com.lapsa.insurance.domain.ObtainingData.deliveryAddress.NotEmptyString.message = {com.lapsa.insurance.domain.ObtainingData.deliveryAddress.NotNullValue.message}

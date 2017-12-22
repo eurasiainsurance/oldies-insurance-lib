@@ -54,20 +54,11 @@ public abstract class InsuranceRequest extends Request {
     protected String agreementNumber;
 
     @Embedded
-    protected ObtainingData obtaining = new ObtainingData();
-
-    @Embedded
     protected PaymentData payment = new PaymentData();
 
     public abstract InsuranceProduct getProduct();
 
     public abstract InsuranceProductType getProductType();
-
-    @Override
-    public void unlazy() {
-	super.unlazy();
-	MyOptionals.of(getObtaining()).ifPresent(Domain::unlazy);
-    }
 
     // GENERATED
 
@@ -93,14 +84,6 @@ public abstract class InsuranceRequest extends Request {
 
     public void setTransactionProblem(final TransactionProblem transactionProblem) {
 	this.transactionProblem = transactionProblem;
-    }
-
-    public ObtainingData getObtaining() {
-	return obtaining;
-    }
-
-    public void setObtaining(final ObtainingData btaining) {
-	obtaining = btaining;
     }
 
     public PaymentData getPayment() {

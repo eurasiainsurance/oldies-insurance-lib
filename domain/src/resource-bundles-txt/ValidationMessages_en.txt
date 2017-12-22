@@ -9,14 +9,3 @@ com.lapsa.insurance.domain.casco.CascoVehicle.cost.Min.message = The cost of the
 com.lapsa.insurance.domain.casco.CascoVehicle.cost.Max.message = The cost of the car by Auto CASCO program may not exceed ₸ {value}
 com.lapsa.insurance.domain.casco.CascoVehicle.yearOfManufacture.NotTooOldYearOfIssue.message = Сақтандыру бойынша арограмме Авто КАСКО қабылданады автомобильде емес, {maxAge} жастан асқан
 com.lapsa.insurance.domain.casco.CascoVehicle.yearOfManufacture.NotTooYoungYearOfIssue.message = Көрсетіңіз дұрыс шығарылған автокөлік
-
-com.lapsa.insurance.domain.ObtainingData.method.NotNullValue.message = Please state the method of Policy receiving
-com.lapsa.insurance.domain.ObtainingData.pickupCity.NotNullValue.message = It is necessary to state the city in order to choose the office of Insurance Company
-com.lapsa.insurance.domain.ObtainingData.pickupPOS.NotNullValue.message = It is necessary to state the office of Insurance Company in order to arrange the self-pick-up
-com.lapsa.insurance.domain.ObtainingData.deliveryCity.NotNullValue.message = Please state your location
-com.lapsa.insurance.domain.ObtainingData.deliveryDate.NotNullValue.message = Please state the date of delivery
-com.lapsa.insurance.domain.ObtainingData.deliveryDate.DaysAfterNow.messages = Policy may be delivered only on the next day after placing the order
-com.lapsa.insurance.domain.ObtainingData.deliveryDate.DaysBeforeNow.messages = Date of Policy delivery too late
-com.lapsa.insurance.domain.ObtainingData.deliveryTime.NotNullValue.message = Please state the time of delivery
-com.lapsa.insurance.domain.ObtainingData.deliveryAddress.NotNullValue.message = Please state the address of delivery
-com.lapsa.insurance.domain.ObtainingData.deliveryAddress.NotEmptyString.message = {com.lapsa.insurance.domain.ObtainingData.deliveryAddress.NotNullValue.message}

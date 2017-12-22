@@ -20,7 +20,6 @@
 		<class>com.lapsa.insurance.domain.BaseEntity</class>
 		<class>com.lapsa.insurance.domain.RequesterData</class>
 		<class>com.lapsa.insurance.domain.Image</class>
-		<class>com.lapsa.insurance.domain.ObtainingData</class>
 		<class>com.lapsa.insurance.domain.CalculationData</class>
 		<class>com.lapsa.insurance.domain.InsuranceProduct</class>
 		<class>com.lapsa.insurance.domain.InsurancePeriodData</class>

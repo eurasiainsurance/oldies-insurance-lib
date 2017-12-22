@@ -3,6 +3,7 @@ package com.lapsa.insurance.domain.casco;
 import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
 import java.util.ArrayList;
+import java.util.Currency;
 import java.util.List;
 import java.util.Locale;
 import java.util.StringJoiner;
@@ -21,7 +22,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
 
-import com.lapsa.fin.FinCurrency;
 import com.lapsa.insurance.domain.BaseEntity;
 import com.lapsa.insurance.domain.Domain;
 import com.lapsa.insurance.domain.InsuranceProduct;
@@ -176,14 +176,14 @@ public class Casco extends InsuranceProduct {
 	MyOptionals.of(calculation) //
 		.filter(x -> MyNumbers.nonZero(x.getAmount())) //
 		.filter(x -> MyObjects.nonNull(x.getCurrency()))
-		.map(x -> MyCurrencies.formatAmount(x.getAmount(), x.getCurrency(), locale) ) //
+		.map(x -> MyCurrencies.formatAmount(x.getAmount(), x.getCurrency(), locale)) //
 		.map(CASCO_COST.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 
 	MyOptionals.of(insuredVehicle)
 		.map(x -> insuredVehicle.getCost())
 		.filter(MyNumbers::nonZero)
-		.map(x -> FinCurrency.KZT.formatAmount(x))
+		.map(x -> MyCurrencies.formatAmount(x, Currency.getInstance("KZT"), locale))
 		.map(CASCO_CASCO_VEHICLE_COST.fieldAsCaptionMapper(variant, locale))
 		.ifPresent(sj::add);
 

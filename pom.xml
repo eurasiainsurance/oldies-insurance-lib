@@ -34,7 +34,6 @@
 		<!-- oldies -->
 		<kz-lib.version>3.2-SNAPSHOT</kz-lib.version>
 		<international-lib.version>3.3-SNAPSHOT</international-lib.version>
-		<fin-lib.version>2.1</fin-lib.version>
 		<lapsa-lib.version>2.2</lapsa-lib.version>
 		<!-- PLUGINS dependencies versions -->
 		<!-- version number copied from javax-javaee-web-bom -->
@@ -117,13 +116,6 @@
 				<groupId>com.lapsa.international-lib</groupId>
 				<artifactId>international-root</artifactId>
 				<version>${international-lib.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>com.lapsa.fin-lib</groupId>
-				<artifactId>fin-root</artifactId>
-				<version>${fin-lib.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

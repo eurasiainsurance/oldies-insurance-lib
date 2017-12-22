@@ -3,6 +3,7 @@ package com.lapsa.insurance.domain;
 import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
 import java.time.Instant;
+import java.util.Currency;
 import java.util.Locale;
 import java.util.StringJoiner;
 
@@ -50,7 +51,11 @@ public class PaymentData extends Domain {
 
     @Basic
     @Column(name = "PAYMENT_AMOUNT")
-    private Double paymentAmount;
+    private Double amount;
+
+    @Basic
+    @Column(name = "PAYMENT_CURRENCY")
+    private Currency currency;
 
     @Override
     public String localized(final LocalizationVariant variant, final Locale locale) {
@@ -127,11 +132,19 @@ public class PaymentData extends Domain {
 	this.methodName = methodName;
     }
 
-    public Double getPaymentAmount() {
-	return paymentAmount;
+    public Double getAmount() {
+	return amount;
     }
 
-    public void setPaymentAmount(final Double paymentAmount) {
-	this.paymentAmount = paymentAmount;
+    public void setAmount(Double amount) {
+	this.amount = amount;
+    }
+
+    public Currency getCurrency() {
+	return currency;
+    }
+
+    public void setCurrency(Currency currency) {
+	this.currency = currency;
     }
 }

@@ -31,6 +31,7 @@ import com.lapsa.insurance.elements.CascoDeductiblePartialRate;
 import tech.lapsa.java.commons.function.MyNumbers;
 import tech.lapsa.java.commons.function.MyObjects;
 import tech.lapsa.java.commons.function.MyOptionals;
+import tech.lapsa.java.commons.util.MyCurrencies;
 import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
@@ -173,9 +174,9 @@ public class Casco extends InsuranceProduct {
 	sj.setEmptyValue("");
 
 	MyOptionals.of(calculation) //
-		.filter(x -> MyNumbers.nonZero(x.getPremiumCost())) //
-		.filter(x -> MyObjects.nonNull(x.getPremiumCurrency()))
-		.map(x -> x.getPremiumCurrency().formatAmount(x.getPremiumCost())) //
+		.filter(x -> MyNumbers.nonZero(x.getAmount())) //
+		.filter(x -> MyObjects.nonNull(x.getCurrency()))
+		.map(x -> MyCurrencies.formatAmount(x.getAmount(), x.getCurrency(), locale) ) //
 		.map(CASCO_COST.fieldAsCaptionMapper(variant, locale)) //
 		.ifPresent(sj::add);
 

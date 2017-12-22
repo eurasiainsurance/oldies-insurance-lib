@@ -2,6 +2,7 @@ package com.lapsa.insurance.domain;
 
 import static com.lapsa.insurance.domain.DisplayNameElements.*;
 
+import java.util.Currency;
 import java.util.Locale;
 import java.util.StringJoiner;
 
@@ -11,11 +12,10 @@ import javax.persistence.Embeddable;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
-import com.lapsa.fin.FinCurrency;
-
 import tech.lapsa.java.commons.function.MyNumbers;
 import tech.lapsa.java.commons.function.MyObjects;
 import tech.lapsa.java.commons.function.MyOptionals;
+import tech.lapsa.java.commons.util.MyCurrencies;
 import tech.lapsa.patterns.domain.HashCodePrime;
 
 @Embeddable
@@ -25,29 +25,19 @@ public class CalculationData extends Domain {
     private static final long serialVersionUID = 1L;
 
     @Basic
-    @Column(name = "CALCULATED_PERMIUM_COST")
-    private double calculatedPremiumCost;
+    @Column(name = "CALCULATED_AMOUNT")
+    private Double amount;
 
+    // TODO REFACT : To be removed in the next release
+    @Deprecated
     @Basic
-    @Column(name = "ACTUAL_PERMIUM_COST")
-    private double actualPremiumCost;
-
-    @Basic
-    @Column(name = "DISCOUNT_AMOUNT")
-    private double discountAmount;
+    @Column(name = "PAID_AMOUNT_TO_BE_REMOVED_IN_THE_NEXT_RELEASE")
+    private Double paidAmount;
 
     @Basic
     @Enumerated(EnumType.STRING)
-    @Column(name = "PREMIUM_CURRENCY")
-    private FinCurrency premiumCurrency;
-
-    public double getPremiumCost() {
-	if (actualPremiumCost > 0)
-	    return actualPremiumCost;
-	if (discountAmount > calculatedPremiumCost)
-	    return 0;
-	return calculatedPremiumCost - discountAmount;
-    }
+    @Column(name = "CALCULATED_CURRENCY")
+    private Currency currency;
 
     @Override
     public String localized(final LocalizationVariant variant, final Locale locale) {
@@ -59,9 +49,9 @@ public class CalculationData extends Domain {
 	sj.setEmptyValue("");
 
 	sj.add(MyOptionals.of(this) //
-		.filter(x -> MyNumbers.nonZero(getPremiumCost()))
-		.filter(x -> MyObjects.nonNull(x.premiumCurrency))
-		.map(x -> x.premiumCurrency.formatAmount(getPremiumCost())) //
+		.filter(x -> MyNumbers.positive(amount))
+		.filter(x -> MyObjects.nonNull(currency))
+		.map(x -> MyCurrencies.formatAmount(amount, currency, locale)) //
 		.orElseGet(() -> "<" + CALCULATION_DATA_UNDEFINED.localized(variant, locale) + ">"));
 
 	return sb.append(sj.toString()) //
@@ -70,35 +60,29 @@ public class CalculationData extends Domain {
 
     // GENEERATED
 
-    public double getCalculatedPremiumCost() {
-	return calculatedPremiumCost;
+    public Double getAmount() {
+	return amount;
     }
 
-    public void setCalculatedPremiumCost(final double calculatedPremiumCost) {
-	this.calculatedPremiumCost = calculatedPremiumCost;
+    public void setAmount(Double amount) {
+	this.amount = amount;
     }
 
-    public double getActualPremiumCost() {
-	return actualPremiumCost;
+    public Currency getCurrency() {
+	return currency;
     }
 
-    public void setActualPremiumCost(final double actualPremiumCost) {
-	this.actualPremiumCost = actualPremiumCost;
+    public void setCurrency(Currency currency) {
+	this.currency = currency;
     }
 
-    public double getDiscountAmount() {
-	return discountAmount;
+    @Deprecated
+    public Double getPaidAmount() {
+	return paidAmount;
     }
 
-    public void setDiscountAmount(final double discountAmount) {
-	this.discountAmount = discountAmount;
-    }
-
-    public FinCurrency getPremiumCurrency() {
-	return premiumCurrency;
-    }
-
-    public void setPremiumCurrency(final FinCurrency premiumCurrency) {
-	this.premiumCurrency = premiumCurrency;
+    @Deprecated
+    public void setPaidAmount(Double paidAmount) {
+	this.paidAmount = paidAmount;
     }
 }

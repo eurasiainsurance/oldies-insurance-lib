@@ -8,6 +8,7 @@ import tech.lapsa.java.commons.localization.LocalizedElement;
 public enum InsuranceProductType implements LocalizedElement {
     POLICY, // Полис ОС ГПО ВТС
     CASCO, // Авто КАСКО
+    UNKNOWN, // неизвестный
     ;
 
     //

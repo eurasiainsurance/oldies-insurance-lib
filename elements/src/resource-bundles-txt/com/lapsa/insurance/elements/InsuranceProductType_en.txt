@@ -1,4 +1,6 @@
-com.lapsa.insurance.elements.InsuranceProductType.CASCO        = Motor Hull Insurance
-com.lapsa.insurance.elements.InsuranceProductType.CASCO.short  = Hull
-com.lapsa.insurance.elements.InsuranceProductType.POLICY       = Compulsory Motor TPL Insurance Policy 
-com.lapsa.insurance.elements.InsuranceProductType.POLICY.short = Policy
+com.lapsa.insurance.elements.InsuranceProductType.CASCO         = Motor Hull Insurance
+com.lapsa.insurance.elements.InsuranceProductType.CASCO.short   = Hull
+com.lapsa.insurance.elements.InsuranceProductType.POLICY        = Compulsory Motor TPL Insurance Policy 
+com.lapsa.insurance.elements.InsuranceProductType.POLICY.short  = Policy
+com.lapsa.insurance.elements.InsuranceProductType.UNKNOWN       = =ENG= Неизвестный продукт
+com.lapsa.insurance.elements.InsuranceProductType.UNKNOWN.short = =ENG= Неизвестно

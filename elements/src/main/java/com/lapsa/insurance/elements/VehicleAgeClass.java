@@ -1,8 +1,10 @@
 package com.lapsa.insurance.elements;
 
+import java.time.LocalDate;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
+import tech.lapsa.java.commons.function.MyObjects;
 import tech.lapsa.java.commons.localization.LocalizedElement;
 
 public enum VehicleAgeClass implements LocalizedElement {
@@ -46,6 +48,17 @@ public enum VehicleAgeClass implements LocalizedElement {
 	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
 		.toArray(VehicleAgeClass[]::new);
+    }
+
+    public static VehicleAgeClass forYearOfManufacture(final int year) {
+	final int age = LocalDate.now().getYear() - year;
+	return (age <= 7)
+		? UNDER7
+		: OVER7;
+    }
+
+    public static VehicleAgeClass forDateOfManufacture(final LocalDate date) throws IllegalArgumentException {
+	return forYearOfManufacture(MyObjects.requireNonNull(date, "date").getYear());
     }
 
     // GENERATED

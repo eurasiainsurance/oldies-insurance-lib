@@ -1,0 +1,2 @@
+com.lapsa.insurance.elements.PersonType.INDIVIDUAL = Физическое лицо
+com.lapsa.insurance.elements.PersonType.INDIVIDUAL_ENTREPRENEUR =  Индивидуальный предприниматель/Крестьянское (фермерское) хозяйство

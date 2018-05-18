@@ -1,0 +1,2 @@
+com.lapsa.insurance.elements.PaymentType.BY_INSTALLMENTS = Оплата в рассрочку
+com.lapsa.insurance.elements.PaymentType.IMMEDIATELY = Оплата единовременно

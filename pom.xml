@@ -49,9 +49,4 @@
 		<tag>HEAD</tag>
 	</scm>
 
-	<issueManagement>
-		<system>gitlab</system>
-		<url>https://gitlab.lapsa.tech/lapsa/insurance-lib/issues</url>
-	</issueManagement>
-
 </project>

@@ -12,7 +12,7 @@
 	<version>CURRENT-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>Insurance Lib</name>
+	<name>Oldies Lib : Insurance Lib</name>
 
 	<modules>
 		<module>elements</module>

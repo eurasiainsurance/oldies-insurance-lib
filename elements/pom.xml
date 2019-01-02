@@ -10,7 +10,7 @@
 	<artifactId>insurance-elements</artifactId>
 	<packaging>jar</packaging>
 
-	<name>Insurance Lib : Elements</name>
+	<name>Oldies Lib : Insurance Lib : Elements</name>
 
 	<dependencies>
 		<!-- tech -->

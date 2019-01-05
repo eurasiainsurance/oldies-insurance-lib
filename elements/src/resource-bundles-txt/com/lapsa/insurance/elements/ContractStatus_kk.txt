@@ -1,0 +1,2 @@
+com.lapsa.insurance.elements.ContractStatus.COMPLETED             = Мәміле жасалды
+com.lapsa.insurance.elements.ContractStatus.CANCELED         = Мәміле жойылды

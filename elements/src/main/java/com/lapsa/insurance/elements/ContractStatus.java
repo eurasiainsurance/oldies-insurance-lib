@@ -7,7 +7,7 @@ import tech.lapsa.java.commons.localization.LocalizedElement;
 
 public enum ContractStatus implements LocalizedElement {
     COMPLETED, // Сделка состоялась
-    NOT_COMPLETED, // Сделка не состоялась
+    CANCELED, // Сделка не состоялась
     ;
 
     //

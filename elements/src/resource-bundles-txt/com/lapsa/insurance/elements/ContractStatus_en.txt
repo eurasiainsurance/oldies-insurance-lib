@@ -1,2 +1,2 @@
 com.lapsa.insurance.elements.ContractStatus.COMPLETED             = Transaction Completed
-com.lapsa.insurance.elements.ContractStatus.NOT_COMPLETED         = Transaction Cancelled
+com.lapsa.insurance.elements.ContractStatus.CANCELED         = Transaction Cancelled

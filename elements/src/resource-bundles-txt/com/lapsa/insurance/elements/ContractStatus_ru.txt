@@ -1,2 +1,2 @@
 com.lapsa.insurance.elements.ContractStatus.COMPLETED             = Сделка заключена
-com.lapsa.insurance.elements.ContractStatus.NOT_COMPLETED         = Сделка отменена
+com.lapsa.insurance.elements.ContractStatus.CANCELED         = Сделка отменена

@@ -1,12 +1,12 @@
 package test.localization.elements;
 
-import com.lapsa.insurance.elements.TransactionStatus;
+import com.lapsa.insurance.elements.ContractStatus;
 
 import test.localization.ElementsLocalizationTest;
 
-public class TransactionStatusKazakhTest extends ElementsLocalizationTest<TransactionStatus> {
+public class ContractStatusKazakhTest extends ElementsLocalizationTest<ContractStatus> {
 
-    public TransactionStatusKazakhTest() {
-	super(TransactionStatus.values(), TransactionStatus.class, LOCALE_KAZAKH);
+    public ContractStatusKazakhTest() {
+	super(ContractStatus.values(), ContractStatus.class, LOCALE_KAZAKH);
     }
 }

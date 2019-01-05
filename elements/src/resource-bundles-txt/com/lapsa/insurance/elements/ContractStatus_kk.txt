@@ -1,2 +1,2 @@
-com.lapsa.insurance.elements.TransactionStatus.COMPLETED             = Мәміле жасалды
-com.lapsa.insurance.elements.TransactionStatus.NOT_COMPLETED         = Мәміле жойылды
+com.lapsa.insurance.elements.ContractStatus.COMPLETED             = Мәміле жасалды
+com.lapsa.insurance.elements.ContractStatus.NOT_COMPLETED         = Мәміле жойылды

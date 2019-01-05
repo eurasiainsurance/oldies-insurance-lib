@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 
 import tech.lapsa.java.commons.localization.LocalizedElement;
 
-public enum TransactionStatus implements LocalizedElement {
+public enum ContractStatus implements LocalizedElement {
     COMPLETED, // Сделка состоялась
     NOT_COMPLETED, // Сделка не состоялась
     ;
@@ -16,36 +16,36 @@ public enum TransactionStatus implements LocalizedElement {
 
     //
 
-    private TransactionStatus() {
+    private ContractStatus() {
 	selectable = true;
     }
 
-    private TransactionStatus(final boolean selectable) {
+    private ContractStatus(final boolean selectable) {
 	this.selectable = selectable;
     }
 
     //
 
-    public static final Stream<TransactionStatus> valuesStream() {
+    public static final Stream<ContractStatus> valuesStream() {
 	return Stream.of(values());
     }
 
     //
 
-    private static final Predicate<TransactionStatus> SELECTABLE_FILTER = TransactionStatus::isSelectable;
+    private static final Predicate<ContractStatus> SELECTABLE_FILTER = ContractStatus::isSelectable;
 
-    public static final TransactionStatus[] selectableValues() {
+    public static final ContractStatus[] selectableValues() {
 	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
-		.toArray(TransactionStatus[]::new);
+		.toArray(ContractStatus[]::new);
     }
 
-    private static final Predicate<TransactionStatus> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
+    private static final Predicate<ContractStatus> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
-    public static final TransactionStatus[] nonSelectableValues() {
+    public static final ContractStatus[] nonSelectableValues() {
 	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
-		.toArray(TransactionStatus[]::new);
+		.toArray(ContractStatus[]::new);
     }
 
     // GENERATED

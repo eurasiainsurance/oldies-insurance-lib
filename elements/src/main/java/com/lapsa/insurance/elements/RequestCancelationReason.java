@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 
 import tech.lapsa.java.commons.localization.LocalizedElement;
 
-public enum TransactionProblem implements LocalizedElement {
+public enum RequestCancelationReason implements LocalizedElement {
     CANCELED_BY_CONSUMER, //
     WRONG_DATA_PROVIDED, //
     TEST, //
@@ -19,36 +19,36 @@ public enum TransactionProblem implements LocalizedElement {
 
     //
 
-    private TransactionProblem() {
+    private RequestCancelationReason() {
 	selectable = true;
     }
 
-    private TransactionProblem(final boolean selectable) {
+    private RequestCancelationReason(final boolean selectable) {
 	this.selectable = selectable;
     }
 
     //
 
-    public static final Stream<TransactionProblem> valuesStream() {
+    public static final Stream<RequestCancelationReason> valuesStream() {
 	return Stream.of(values());
     }
 
     //
 
-    private static final Predicate<TransactionProblem> SELECTABLE_FILTER = TransactionProblem::isSelectable;
+    private static final Predicate<RequestCancelationReason> SELECTABLE_FILTER = RequestCancelationReason::isSelectable;
 
-    public static final TransactionProblem[] selectableValues() {
+    public static final RequestCancelationReason[] selectableValues() {
 	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
-		.toArray(TransactionProblem[]::new);
+		.toArray(RequestCancelationReason[]::new);
     }
 
-    private static final Predicate<TransactionProblem> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
+    private static final Predicate<RequestCancelationReason> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
-    public static final TransactionProblem[] nonSelectableValues() {
+    public static final RequestCancelationReason[] nonSelectableValues() {
 	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
-		.toArray(TransactionProblem[]::new);
+		.toArray(RequestCancelationReason[]::new);
     }
 
     // GENERATED

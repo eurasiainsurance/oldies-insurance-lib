@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 
 import tech.lapsa.java.commons.localization.LocalizedElement;
 
-public enum InsuranceRequestCancelationReason implements LocalizedElement {
+public enum InsuranceRequestCancellationReason implements LocalizedElement {
     CANCELED_BY_CONSUMER, //
     WRONG_DATA_PROVIDED, //
     TEST, //
@@ -19,36 +19,36 @@ public enum InsuranceRequestCancelationReason implements LocalizedElement {
 
     //
 
-    private InsuranceRequestCancelationReason() {
+    private InsuranceRequestCancellationReason() {
 	selectable = true;
     }
 
-    private InsuranceRequestCancelationReason(final boolean selectable) {
+    private InsuranceRequestCancellationReason(final boolean selectable) {
 	this.selectable = selectable;
     }
 
     //
 
-    public static final Stream<InsuranceRequestCancelationReason> valuesStream() {
+    public static final Stream<InsuranceRequestCancellationReason> valuesStream() {
 	return Stream.of(values());
     }
 
     //
 
-    private static final Predicate<InsuranceRequestCancelationReason> SELECTABLE_FILTER = InsuranceRequestCancelationReason::isSelectable;
+    private static final Predicate<InsuranceRequestCancellationReason> SELECTABLE_FILTER = InsuranceRequestCancellationReason::isSelectable;
 
-    public static final InsuranceRequestCancelationReason[] selectableValues() {
+    public static final InsuranceRequestCancellationReason[] selectableValues() {
 	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
-		.toArray(InsuranceRequestCancelationReason[]::new);
+		.toArray(InsuranceRequestCancellationReason[]::new);
     }
 
-    private static final Predicate<InsuranceRequestCancelationReason> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
+    private static final Predicate<InsuranceRequestCancellationReason> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
-    public static final InsuranceRequestCancelationReason[] nonSelectableValues() {
+    public static final InsuranceRequestCancellationReason[] nonSelectableValues() {
 	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
-		.toArray(InsuranceRequestCancelationReason[]::new);
+		.toArray(InsuranceRequestCancellationReason[]::new);
     }
 
     // GENERATED

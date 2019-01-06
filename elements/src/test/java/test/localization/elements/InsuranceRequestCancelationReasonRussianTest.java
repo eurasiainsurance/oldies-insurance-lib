@@ -1,12 +1,12 @@
 package test.localization.elements;
 
-import com.lapsa.insurance.elements.InsuranceRequestCancelationReason;
+import com.lapsa.insurance.elements.InsuranceRequestCancellationReason;
 
 import test.localization.ElementsLocalizationTest;
 
-public class InsuranceRequestCancelationReasonRussianTest extends ElementsLocalizationTest<InsuranceRequestCancelationReason> {
+public class InsuranceRequestCancelationReasonRussianTest extends ElementsLocalizationTest<InsuranceRequestCancellationReason> {
 
     public InsuranceRequestCancelationReasonRussianTest() {
-	super(InsuranceRequestCancelationReason.values(), InsuranceRequestCancelationReason.class, LOCALE_RUSSIAN);
+	super(InsuranceRequestCancellationReason.values(), InsuranceRequestCancellationReason.class, LOCALE_RUSSIAN);
     }
 }

@@ -1,0 +1,2 @@
+com.lapsa.insurance.elements.InsuranceRequestStatus.COMPLETED	= Договор заключен
+com.lapsa.insurance.elements.InsuranceRequestStatus.CANCELED	= Договор не заключен

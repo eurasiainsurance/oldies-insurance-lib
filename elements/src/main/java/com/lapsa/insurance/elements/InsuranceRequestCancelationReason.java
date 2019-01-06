@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 
 import tech.lapsa.java.commons.localization.LocalizedElement;
 
-public enum RequestCancelationReason implements LocalizedElement {
+public enum InsuranceRequestCancelationReason implements LocalizedElement {
     CANCELED_BY_CONSUMER, //
     WRONG_DATA_PROVIDED, //
     TEST, //
@@ -19,36 +19,36 @@ public enum RequestCancelationReason implements LocalizedElement {
 
     //
 
-    private RequestCancelationReason() {
+    private InsuranceRequestCancelationReason() {
 	selectable = true;
     }
 
-    private RequestCancelationReason(final boolean selectable) {
+    private InsuranceRequestCancelationReason(final boolean selectable) {
 	this.selectable = selectable;
     }
 
     //
 
-    public static final Stream<RequestCancelationReason> valuesStream() {
+    public static final Stream<InsuranceRequestCancelationReason> valuesStream() {
 	return Stream.of(values());
     }
 
     //
 
-    private static final Predicate<RequestCancelationReason> SELECTABLE_FILTER = RequestCancelationReason::isSelectable;
+    private static final Predicate<InsuranceRequestCancelationReason> SELECTABLE_FILTER = InsuranceRequestCancelationReason::isSelectable;
 
-    public static final RequestCancelationReason[] selectableValues() {
+    public static final InsuranceRequestCancelationReason[] selectableValues() {
 	return valuesStream() //
 		.filter(SELECTABLE_FILTER) //
-		.toArray(RequestCancelationReason[]::new);
+		.toArray(InsuranceRequestCancelationReason[]::new);
     }
 
-    private static final Predicate<RequestCancelationReason> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
+    private static final Predicate<InsuranceRequestCancelationReason> NON_SELECTABLE_FILTER = SELECTABLE_FILTER.negate();
 
-    public static final RequestCancelationReason[] nonSelectableValues() {
+    public static final InsuranceRequestCancelationReason[] nonSelectableValues() {
 	return valuesStream() //
 		.filter(NON_SELECTABLE_FILTER) //
-		.toArray(RequestCancelationReason[]::new);
+		.toArray(InsuranceRequestCancelationReason[]::new);
     }
 
     // GENERATED

@@ -1,3 +1,4 @@
+com.lapsa.insurance.elements.InsuranceRequestStatus.PENDING          = =KAZ= В обработке
 com.lapsa.insurance.elements.InsuranceRequestStatus.POLICY_ISSUED    = =KAZ= Полис выпущен
 com.lapsa.insurance.elements.InsuranceRequestStatus.PREMIUM_PAID     = =KAZ= Премиия оплачена
 com.lapsa.insurance.elements.InsuranceRequestStatus.REQUEST_CANCELED = =KAZ= Заявка отменена

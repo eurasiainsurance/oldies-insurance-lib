@@ -1,3 +1,4 @@
+com.lapsa.insurance.elements.InsuranceRequestStatus.PENDING          = В обработке
 com.lapsa.insurance.elements.InsuranceRequestStatus.POLICY_ISSUED    = Полис выпущен
 com.lapsa.insurance.elements.InsuranceRequestStatus.PREMIUM_PAID     = Премиия оплачена
 com.lapsa.insurance.elements.InsuranceRequestStatus.REQUEST_CANCELED = Заявка отменена

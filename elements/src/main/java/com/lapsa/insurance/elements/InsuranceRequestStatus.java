@@ -6,6 +6,7 @@ import java.util.stream.Stream;
 import tech.lapsa.java.commons.localization.LocalizedElement;
 
 public enum InsuranceRequestStatus implements LocalizedElement {
+    PENDING, // На обработке
     POLICY_ISSUED, // Полис выпущен
     PREMIUM_PAID, // Премиия оплачена
     REQUEST_CANCELED, // Заявка отменена

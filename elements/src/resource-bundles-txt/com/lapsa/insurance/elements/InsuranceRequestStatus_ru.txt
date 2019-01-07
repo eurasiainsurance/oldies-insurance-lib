@@ -1,2 +1,3 @@
-com.lapsa.insurance.elements.InsuranceRequestStatus.COMPLETED	= Договор заключен
-com.lapsa.insurance.elements.InsuranceRequestStatus.CANCELED	= Договор не заключен
+com.lapsa.insurance.elements.InsuranceRequestStatus.POLICY_ISSUED    = Полис выпущен
+com.lapsa.insurance.elements.InsuranceRequestStatus.PREMIUM_PAID     = Премиия оплачена
+com.lapsa.insurance.elements.InsuranceRequestStatus.REQUEST_CANCELED = Заявка отменена

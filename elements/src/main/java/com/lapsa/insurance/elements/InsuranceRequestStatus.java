@@ -6,8 +6,10 @@ import java.util.stream.Stream;
 import tech.lapsa.java.commons.localization.LocalizedElement;
 
 public enum InsuranceRequestStatus implements LocalizedElement {
-    COMPLETED, // Сделка состоялась
-    CANCELED, // Сделка не состоялась
+    PENDING, // На обработке
+    POLICY_ISSUED, // Полис выпущен
+    PREMIUM_PAID, // Премиия оплачена
+    REQUEST_CANCELED, // Заявка отменена
     ;
 
     //

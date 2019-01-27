@@ -9,6 +9,7 @@ public enum InsuranceRequestStatus implements LocalizedElement {
     PENDING, // На обработке
     POLICY_ISSUED, // Полис выпущен
     PREMIUM_PAID, // Премиия оплачена
+    PAYMENT_CANCELED, // Оплата отменена
     REQUEST_CANCELED, // Заявка отменена
     ;
 

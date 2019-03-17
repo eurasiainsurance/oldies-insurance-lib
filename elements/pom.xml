@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.lapsa.insurance-lib</groupId>
 		<artifactId>insurance-root</artifactId>
-		<version>CURRENT-SNAPSHOT</version>
+		<version>20190317r6</version>
 	</parent>
 
 	<artifactId>insurance-elements</artifactId>
